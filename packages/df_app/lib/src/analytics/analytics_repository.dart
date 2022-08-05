@@ -1,0 +1,216 @@
+import 'dart:async';
+
+import 'package:app_tracking_transparency/app_tracking_transparency.dart';
+import 'package:facebook_app_events/facebook_app_events.dart';
+import 'package:firebase_analytics/firebase_analytics.dart';
+import 'package:flutter/foundation.dart' show kDebugMode, kIsWeb;
+import 'package:mixpanel_flutter/mixpanel_flutter.dart';
+
+class AnalyticsEvents {
+  const AnalyticsEvents();
+
+  static String get login => 'login';
+
+  static String get signUp => 'sign_up';
+
+  static String get screenView => 'screen_view';
+}
+
+class AnalyticsRepository {
+  static AnalyticsRepository get instance => _instance;
+  static final AnalyticsRepository _instance = AnalyticsRepository._internal();
+
+  AnalyticsRepository._internal();
+
+  late Map<String, Object?> _defaultParams = {};
+  late AnalyticsEvents _events;
+  late bool _disable;
+
+  // TODO(saiful): all functions have to check we are intialized
+
+  Future<AnalyticsRepository> init({
+    String? mixPanelToken,
+    bool disable = kDebugMode,
+    Map<String, Object?> defaultParams = const {},
+    AnalyticsEvents events = const AnalyticsEvents(),
+  }) async {
+    _events = events;
+    _defaultParams = defaultParams;
+    _disable = disable;
+
+    if (!_disable) {
+      mixpanel = mixPanelToken != null
+          ? await Mixpanel.init(
+              mixPanelToken,
+              optOutTrackingDefault: false,
+            )
+          : null;
+      if (!kIsWeb) {
+        facebookAppEvent = FacebookAppEvents();
+      }
+    }
+    toggleFireBaseAnalyticsCollection(!_disable);
+    showMixPanelDevLogs(kDebugMode);
+
+    return _instance;
+  }
+
+  Mixpanel? mixpanel;
+
+  final FirebaseAnalytics firebaseAnalytics = FirebaseAnalytics.instance;
+
+  FacebookAppEvents? facebookAppEvent;
+
+  Future<void> toggleFireBaseAnalyticsCollection(bool isCollecting) async {
+    await firebaseAnalytics.setAnalyticsCollectionEnabled(isCollecting);
+  }
+
+  Future<void> initATT() async {
+    if (!kIsWeb) {
+      final isEnabled = await _checkTrackingPermission();
+      await facebookAppEvent?.setAdvertiserTracking(
+        enabled: isEnabled,
+      );
+    }
+  }
+
+  Future<bool> _checkTrackingPermission() async {
+    final trackingStatus =
+        await AppTrackingTransparency.trackingAuthorizationStatus;
+    if (trackingStatus == TrackingStatus.notSupported) {
+      return true;
+    } else if (trackingStatus == TrackingStatus.notDetermined) {
+      final result =
+          await AppTrackingTransparency.requestTrackingAuthorization();
+
+      return result == TrackingStatus.authorized ? true : false;
+    } else {
+      return false;
+    }
+  }
+
+  void showMixPanelDevLogs(bool loggingEnabled) {
+    if (!kIsWeb) {
+      mixpanel?.setLoggingEnabled(loggingEnabled);
+    }
+  }
+
+  Map<String, String> _userPropertiesCache = {};
+
+  Future<void> setUserProperties({
+    String? id,
+    Map<String, String> properties = const {},
+  }) async {
+    _userPropertiesCache.clear();
+    _userPropertiesCache.addAll(properties);
+
+    await firebaseAnalytics.setUserId(id: id);
+    for (final entry in properties.entries) {
+      await firebaseAnalytics.setUserProperty(
+        name: entry.key,
+        value: entry.value,
+      );
+    }
+
+    mixpanel?.registerSuperProperties(
+      {'id': id, ...properties},
+    );
+
+    if (id != null) {
+      await facebookAppEvent?.setUserID(id);
+    }
+    await facebookAppEvent?.setUserData(
+        email: properties['email'], gender: properties['gender']);
+  }
+
+  Future<void> removeUserProperties() async {
+    await firebaseAnalytics.setUserId(id: null);
+    for (final key in [..._userPropertiesCache.keys, 'id']) {
+      mixpanel?.unregisterSuperProperty(key);
+    }
+    await facebookAppEvent?.clearUserID();
+    await facebookAppEvent?.clearUserData();
+  }
+
+  static const _kScreenName = 'screen_name';
+  static const _kScreenClass = 'screen_class';
+
+  Future<void> logScreenView({
+    required String? screenName,
+    String screenClassOverride = 'Flutter',
+  }) async {
+    final extraParams = {
+      _kScreenName: screenName,
+      _kScreenClass: screenClassOverride,
+    };
+    await logAnalyticsEvent(
+      AnalyticsEvents.screenView,
+      extraParams: extraParams,
+    );
+  }
+
+  Future<void> logAnalyticsEvent(
+    String name, {
+    Map<String, Object?>? extraParams,
+  }) async {
+    var params = <String, Object?>{};
+    params.addAll(_defaultParams);
+    if (extraParams != null) {
+      params.addAll(extraParams);
+    }
+
+    await _logFirebaseAnalyticsEvent(
+      name,
+      extraParams: params,
+    );
+    _logMixpanelEvent(name, extraParams: params);
+    await _logFacebookEvents(name, extraParams: params);
+  }
+
+  Future<void> _logFirebaseAnalyticsEvent(
+    String name, {
+    Map<String, Object?>? extraParams,
+  }) async {
+    // FirebaseAnalytics events does not trigger in development mode
+    // Done through setAnalyticsCollectionEnabled method in app_cubit.dart
+    await firebaseAnalytics.logEvent(
+      name: name,
+      parameters: extraParams,
+    );
+  }
+
+  void _logMixpanelEvent(
+    String name, {
+    required Map<String, Object?> extraParams,
+  }) {
+    if (!_disable) {
+      // mixPanel has no method to enable/disable collection
+      mixpanel?.track(
+        name,
+        properties: _filterOutNulls(extraParams),
+      );
+    }
+  }
+
+  Future<void> _logFacebookEvents(
+    String name, {
+    required Map<String, Object?> extraParams,
+  }) async {
+    // TODO(saiful): consider special facebook events (for now removed)
+    await facebookAppEvent?.logEvent(
+      name: name,
+      parameters: extraParams,
+    );
+  }
+
+  Map<String, Object> _filterOutNulls(Map<String, Object?> parameters) {
+    final Map<String, Object> filtered = <String, Object>{};
+    parameters.forEach((String key, Object? value) {
+      if (value != null) {
+        filtered[key] = value;
+      }
+    });
+
+    return filtered;
+  }
+}
