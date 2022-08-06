@@ -20,10 +20,10 @@ AppState _$AppStateFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$AppState {
-  bool get loading => throw _privateConstructorUsedError;
   bool get firstRun => throw _privateConstructorUsedError;
-  String get environment => throw _privateConstructorUsedError;
-  String get language => throw _privateConstructorUsedError;
+  AppEnvironment get environment => throw _privateConstructorUsedError;
+  String get locale => throw _privateConstructorUsedError;
+  Brightness get brightness => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -35,7 +35,11 @@ mixin _$AppState {
 abstract class $AppStateCopyWith<$Res> {
   factory $AppStateCopyWith(AppState value, $Res Function(AppState) then) =
       _$AppStateCopyWithImpl<$Res>;
-  $Res call({bool loading, bool firstRun, String environment, String language});
+  $Res call(
+      {bool firstRun,
+      AppEnvironment environment,
+      String locale,
+      Brightness brightness});
 }
 
 /// @nodoc
@@ -48,16 +52,12 @@ class _$AppStateCopyWithImpl<$Res> implements $AppStateCopyWith<$Res> {
 
   @override
   $Res call({
-    Object? loading = freezed,
     Object? firstRun = freezed,
     Object? environment = freezed,
-    Object? language = freezed,
+    Object? locale = freezed,
+    Object? brightness = freezed,
   }) {
     return _then(_value.copyWith(
-      loading: loading == freezed
-          ? _value.loading
-          : loading // ignore: cast_nullable_to_non_nullable
-              as bool,
       firstRun: firstRun == freezed
           ? _value.firstRun
           : firstRun // ignore: cast_nullable_to_non_nullable
@@ -65,11 +65,15 @@ class _$AppStateCopyWithImpl<$Res> implements $AppStateCopyWith<$Res> {
       environment: environment == freezed
           ? _value.environment
           : environment // ignore: cast_nullable_to_non_nullable
+              as AppEnvironment,
+      locale: locale == freezed
+          ? _value.locale
+          : locale // ignore: cast_nullable_to_non_nullable
               as String,
-      language: language == freezed
-          ? _value.language
-          : language // ignore: cast_nullable_to_non_nullable
-              as String,
+      brightness: brightness == freezed
+          ? _value.brightness
+          : brightness // ignore: cast_nullable_to_non_nullable
+              as Brightness,
     ));
   }
 }
@@ -80,7 +84,11 @@ abstract class _$$_AppStateCopyWith<$Res> implements $AppStateCopyWith<$Res> {
           _$_AppState value, $Res Function(_$_AppState) then) =
       __$$_AppStateCopyWithImpl<$Res>;
   @override
-  $Res call({bool loading, bool firstRun, String environment, String language});
+  $Res call(
+      {bool firstRun,
+      AppEnvironment environment,
+      String locale,
+      Brightness brightness});
 }
 
 /// @nodoc
@@ -95,16 +103,12 @@ class __$$_AppStateCopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? loading = freezed,
     Object? firstRun = freezed,
     Object? environment = freezed,
-    Object? language = freezed,
+    Object? locale = freezed,
+    Object? brightness = freezed,
   }) {
     return _then(_$_AppState(
-      loading: loading == freezed
-          ? _value.loading
-          : loading // ignore: cast_nullable_to_non_nullable
-              as bool,
       firstRun: firstRun == freezed
           ? _value.firstRun
           : firstRun // ignore: cast_nullable_to_non_nullable
@@ -112,11 +116,15 @@ class __$$_AppStateCopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res>
       environment: environment == freezed
           ? _value.environment
           : environment // ignore: cast_nullable_to_non_nullable
+              as AppEnvironment,
+      locale: locale == freezed
+          ? _value.locale
+          : locale // ignore: cast_nullable_to_non_nullable
               as String,
-      language: language == freezed
-          ? _value.language
-          : language // ignore: cast_nullable_to_non_nullable
-              as String,
+      brightness: brightness == freezed
+          ? _value.brightness
+          : brightness // ignore: cast_nullable_to_non_nullable
+              as Brightness,
     ));
   }
 }
@@ -125,30 +133,30 @@ class __$$_AppStateCopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_AppState with DiagnosticableTreeMixin implements _AppState {
   const _$_AppState(
-      {this.loading = false,
-      this.firstRun = true,
-      this.environment = 'production',
-      this.language = 'en'});
+      {this.firstRun = true,
+      this.environment = AppEnvironment.live,
+      this.locale = 'en',
+      this.brightness = Brightness.light});
 
   factory _$_AppState.fromJson(Map<String, dynamic> json) =>
       _$$_AppStateFromJson(json);
 
   @override
   @JsonKey()
-  final bool loading;
-  @override
-  @JsonKey()
   final bool firstRun;
   @override
   @JsonKey()
-  final String environment;
+  final AppEnvironment environment;
   @override
   @JsonKey()
-  final String language;
+  final String locale;
+  @override
+  @JsonKey()
+  final Brightness brightness;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'AppState(loading: $loading, firstRun: $firstRun, environment: $environment, language: $language)';
+    return 'AppState(firstRun: $firstRun, environment: $environment, locale: $locale, brightness: $brightness)';
   }
 
   @override
@@ -156,10 +164,10 @@ class _$_AppState with DiagnosticableTreeMixin implements _AppState {
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type', 'AppState'))
-      ..add(DiagnosticsProperty('loading', loading))
       ..add(DiagnosticsProperty('firstRun', firstRun))
       ..add(DiagnosticsProperty('environment', environment))
-      ..add(DiagnosticsProperty('language', language));
+      ..add(DiagnosticsProperty('locale', locale))
+      ..add(DiagnosticsProperty('brightness', brightness));
   }
 
   @override
@@ -167,21 +175,22 @@ class _$_AppState with DiagnosticableTreeMixin implements _AppState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_AppState &&
-            const DeepCollectionEquality().equals(other.loading, loading) &&
             const DeepCollectionEquality().equals(other.firstRun, firstRun) &&
             const DeepCollectionEquality()
                 .equals(other.environment, environment) &&
-            const DeepCollectionEquality().equals(other.language, language));
+            const DeepCollectionEquality().equals(other.locale, locale) &&
+            const DeepCollectionEquality()
+                .equals(other.brightness, brightness));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(loading),
       const DeepCollectionEquality().hash(firstRun),
       const DeepCollectionEquality().hash(environment),
-      const DeepCollectionEquality().hash(language));
+      const DeepCollectionEquality().hash(locale),
+      const DeepCollectionEquality().hash(brightness));
 
   @JsonKey(ignore: true)
   @override
@@ -198,21 +207,21 @@ class _$_AppState with DiagnosticableTreeMixin implements _AppState {
 
 abstract class _AppState implements AppState {
   const factory _AppState(
-      {final bool loading,
-      final bool firstRun,
-      final String environment,
-      final String language}) = _$_AppState;
+      {final bool firstRun,
+      final AppEnvironment environment,
+      final String locale,
+      final Brightness brightness}) = _$_AppState;
 
   factory _AppState.fromJson(Map<String, dynamic> json) = _$_AppState.fromJson;
 
   @override
-  bool get loading;
-  @override
   bool get firstRun;
   @override
-  String get environment;
+  AppEnvironment get environment;
   @override
-  String get language;
+  String get locale;
+  @override
+  Brightness get brightness;
   @override
   @JsonKey(ignore: true)
   _$$_AppStateCopyWith<_$_AppState> get copyWith =>

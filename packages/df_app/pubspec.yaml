@@ -23,6 +23,7 @@ dependencies:
   facebook_app_events: ^0.16.0
   mixpanel_flutter: ^1.5.1
   app_tracking_transparency: ^2.0.2+4
+  sentry_flutter: ^6.9.0
 
 dev_dependencies:
   flutter_test:

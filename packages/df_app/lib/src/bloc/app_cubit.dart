@@ -4,15 +4,18 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 
 part 'app_cubit.freezed.dart';
-part 'app_cubit.g.dart';
+
+part '../app_cubit.g.dart';
+
+enum AppEnvironment { live, sandbox }
 
 @freezed
 class AppState with _$AppState {
   const factory AppState({
-    @Default(false) bool loading,
     @Default(true) bool firstRun,
-    @Default('production') String environment,
-    @Default('en') String language,
+    @Default(AppEnvironment.live) AppEnvironment environment,
+    @Default('en') String locale,
+    @Default(Brightness.light) Brightness brightness,
   }) = _AppState;
 
   factory AppState.fromJson(Map<String, dynamic> json) =>
@@ -21,6 +24,13 @@ class AppState with _$AppState {
 
 class AppCubit extends HydratedCubit<AppState> {
   AppCubit() : super(AppState());
+
+  void toggleBrightness() => emit(
+        state.copyWith(
+            brightness: state.brightness == Brightness.light
+                ? Brightness.dark
+                : Brightness.light),
+      );
 
   @override
   AppState? fromJson(Map<String, dynamic> json) => AppState.fromJson(json);

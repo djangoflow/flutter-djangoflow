@@ -187,7 +187,9 @@ class AnalyticsRepository {
       // mixPanel has no method to enable/disable collection
       mixpanel?.track(
         name,
-        properties: _filterOutNulls(extraParams),
+        // TODO(saiful): why was this needed?
+        properties: Map.fromEntries(
+            extraParams.entries.where((element) => element.value != null)),
       );
     }
   }
@@ -201,16 +203,5 @@ class AnalyticsRepository {
       name: name,
       parameters: extraParams,
     );
-  }
-
-  Map<String, Object> _filterOutNulls(Map<String, Object?> parameters) {
-    final Map<String, Object> filtered = <String, Object>{};
-    parameters.forEach((String key, Object? value) {
-      if (value != null) {
-        filtered[key] = value;
-      }
-    });
-
-    return filtered;
   }
 }

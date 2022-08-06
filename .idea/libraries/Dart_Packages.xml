@@ -220,6 +220,13 @@
             </list>
           </value>
         </entry>
+        <entry key="ffi">
+          <value>
+            <list>
+              <option value="/opt/flutter/.pub-cache/hosted/pub.dartlang.org/ffi-2.0.1/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="file">
           <value>
             <list>
@@ -311,6 +318,13 @@
             </list>
           </value>
         </entry>
+        <entry key="flutter_localizations">
+          <value>
+            <list>
+              <option value="/opt/flutter/packages/flutter_localizations/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="flutter_test">
           <value>
             <list>
@@ -374,6 +388,13 @@
             </list>
           </value>
         </entry>
+        <entry key="http">
+          <value>
+            <list>
+              <option value="/opt/flutter/.pub-cache/hosted/pub.dartlang.org/http-0.13.5/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="http_multi_server">
           <value>
             <list>
@@ -392,6 +413,13 @@
           <value>
             <list>
               <option value="/opt/flutter/.pub-cache/hosted/pub.dartlang.org/hydrated_bloc-8.1.0/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="intl">
+          <value>
+            <list>
+              <option value="/opt/flutter/.pub-cache/hosted/pub.dartlang.org/intl-0.17.0/lib" />
             </list>
           </value>
         </entry>
@@ -488,6 +516,48 @@
             </list>
           </value>
         </entry>
+        <entry key="package_info_plus">
+          <value>
+            <list>
+              <option value="/opt/flutter/.pub-cache/hosted/pub.dartlang.org/package_info_plus-1.4.3/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="package_info_plus_linux">
+          <value>
+            <list>
+              <option value="/opt/flutter/.pub-cache/hosted/pub.dartlang.org/package_info_plus_linux-1.0.5/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="package_info_plus_macos">
+          <value>
+            <list>
+              <option value="/opt/flutter/.pub-cache/hosted/pub.dartlang.org/package_info_plus_macos-1.3.0/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="package_info_plus_platform_interface">
+          <value>
+            <list>
+              <option value="/opt/flutter/.pub-cache/hosted/pub.dartlang.org/package_info_plus_platform_interface-1.0.2/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="package_info_plus_web">
+          <value>
+            <list>
+              <option value="/opt/flutter/.pub-cache/hosted/pub.dartlang.org/package_info_plus_web-1.0.5/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="package_info_plus_windows">
+          <value>
+            <list>
+              <option value="/opt/flutter/.pub-cache/hosted/pub.dartlang.org/package_info_plus_windows-2.0.0/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="path">
           <value>
             <list>
@@ -528,6 +598,20 @@
           <value>
             <list>
               <option value="/opt/flutter/.pub-cache/hosted/pub.dartlang.org/quiver-3.1.0/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="sentry">
+          <value>
+            <list>
+              <option value="/opt/flutter/.pub-cache/hosted/pub.dartlang.org/sentry-6.9.0/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="sentry_flutter">
+          <value>
+            <list>
+              <option value="/opt/flutter/.pub-cache/hosted/pub.dartlang.org/sentry_flutter-6.9.0/lib" />
             </list>
           </value>
         </entry>
@@ -696,6 +780,13 @@
             </list>
           </value>
         </entry>
+        <entry key="uuid">
+          <value>
+            <list>
+              <option value="/opt/flutter/.pub-cache/hosted/pub.dartlang.org/uuid-3.0.6/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="vector_math">
           <value>
             <list>
@@ -728,6 +819,13 @@
           <value>
             <list>
               <option value="/opt/flutter/.pub-cache/hosted/pub.dartlang.org/webkit_inspection_protocol-1.1.0/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="win32">
+          <value>
+            <list>
+              <option value="/opt/flutter/.pub-cache/hosted/pub.dartlang.org/win32-2.7.0/lib" />
             </list>
           </value>
         </entry>
@@ -773,6 +871,7 @@
       <root url="file:///opt/flutter/.pub-cache/hosted/pub.dartlang.org/dio-4.0.6/lib" />
       <root url="file:///opt/flutter/.pub-cache/hosted/pub.dartlang.org/facebook_app_events-0.16.0/lib" />
       <root url="file:///opt/flutter/.pub-cache/hosted/pub.dartlang.org/fake_async-1.3.0/lib" />
+      <root url="file:///opt/flutter/.pub-cache/hosted/pub.dartlang.org/ffi-2.0.1/lib" />
       <root url="file:///opt/flutter/.pub-cache/hosted/pub.dartlang.org/file-6.1.2/lib" />
       <root url="file:///opt/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_analytics-9.3.0/lib" />
       <root url="file:///opt/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_analytics_platform_interface-3.3.0/lib" />
@@ -792,9 +891,11 @@
       <root url="file:///opt/flutter/.pub-cache/hosted/pub.dartlang.org/graphs-2.1.0/lib" />
       <root url="file:///opt/flutter/.pub-cache/hosted/pub.dartlang.org/hive-2.2.3/lib" />
       <root url="file:///opt/flutter/.pub-cache/hosted/pub.dartlang.org/html-0.15.0/lib" />
+      <root url="file:///opt/flutter/.pub-cache/hosted/pub.dartlang.org/http-0.13.5/lib" />
       <root url="file:///opt/flutter/.pub-cache/hosted/pub.dartlang.org/http_multi_server-3.2.1/lib" />
       <root url="file:///opt/flutter/.pub-cache/hosted/pub.dartlang.org/http_parser-4.0.1/lib" />
       <root url="file:///opt/flutter/.pub-cache/hosted/pub.dartlang.org/hydrated_bloc-8.1.0/lib" />
+      <root url="file:///opt/flutter/.pub-cache/hosted/pub.dartlang.org/intl-0.17.0/lib" />
       <root url="file:///opt/flutter/.pub-cache/hosted/pub.dartlang.org/io-1.0.3/lib" />
       <root url="file:///opt/flutter/.pub-cache/hosted/pub.dartlang.org/js-0.6.4/lib" />
       <root url="file:///opt/flutter/.pub-cache/hosted/pub.dartlang.org/json_annotation-4.6.0/lib" />
@@ -810,6 +911,12 @@
       <root url="file:///opt/flutter/.pub-cache/hosted/pub.dartlang.org/mixpanel_flutter-1.6.0/lib" />
       <root url="file:///opt/flutter/.pub-cache/hosted/pub.dartlang.org/node_preamble-2.0.1/lib" />
       <root url="file:///opt/flutter/.pub-cache/hosted/pub.dartlang.org/package_config-2.1.0/lib" />
+      <root url="file:///opt/flutter/.pub-cache/hosted/pub.dartlang.org/package_info_plus-1.4.3/lib" />
+      <root url="file:///opt/flutter/.pub-cache/hosted/pub.dartlang.org/package_info_plus_linux-1.0.5/lib" />
+      <root url="file:///opt/flutter/.pub-cache/hosted/pub.dartlang.org/package_info_plus_macos-1.3.0/lib" />
+      <root url="file:///opt/flutter/.pub-cache/hosted/pub.dartlang.org/package_info_plus_platform_interface-1.0.2/lib" />
+      <root url="file:///opt/flutter/.pub-cache/hosted/pub.dartlang.org/package_info_plus_web-1.0.5/lib" />
+      <root url="file:///opt/flutter/.pub-cache/hosted/pub.dartlang.org/package_info_plus_windows-2.0.0/lib" />
       <root url="file:///opt/flutter/.pub-cache/hosted/pub.dartlang.org/path-1.8.1/lib" />
       <root url="file:///opt/flutter/.pub-cache/hosted/pub.dartlang.org/path-1.8.2/lib" />
       <root url="file:///opt/flutter/.pub-cache/hosted/pub.dartlang.org/plugin_platform_interface-2.1.2/lib" />
@@ -817,6 +924,8 @@
       <root url="file:///opt/flutter/.pub-cache/hosted/pub.dartlang.org/pub_semver-2.1.1/lib" />
       <root url="file:///opt/flutter/.pub-cache/hosted/pub.dartlang.org/pubspec_parse-1.2.0/lib" />
       <root url="file:///opt/flutter/.pub-cache/hosted/pub.dartlang.org/quiver-3.1.0/lib" />
+      <root url="file:///opt/flutter/.pub-cache/hosted/pub.dartlang.org/sentry-6.9.0/lib" />
+      <root url="file:///opt/flutter/.pub-cache/hosted/pub.dartlang.org/sentry_flutter-6.9.0/lib" />
       <root url="file:///opt/flutter/.pub-cache/hosted/pub.dartlang.org/shelf-1.3.2/lib" />
       <root url="file:///opt/flutter/.pub-cache/hosted/pub.dartlang.org/shelf_packages_handler-3.0.1/lib" />
       <root url="file:///opt/flutter/.pub-cache/hosted/pub.dartlang.org/shelf_static-1.1.1/lib" />
@@ -843,14 +952,17 @@
       <root url="file:///opt/flutter/.pub-cache/hosted/pub.dartlang.org/typed_data-1.3.1/lib" />
       <root url="file:///opt/flutter/.pub-cache/hosted/pub.dartlang.org/universal_html-2.0.8/lib" />
       <root url="file:///opt/flutter/.pub-cache/hosted/pub.dartlang.org/universal_io-2.0.4/lib" />
+      <root url="file:///opt/flutter/.pub-cache/hosted/pub.dartlang.org/uuid-3.0.6/lib" />
       <root url="file:///opt/flutter/.pub-cache/hosted/pub.dartlang.org/vector_math-2.1.2/lib" />
       <root url="file:///opt/flutter/.pub-cache/hosted/pub.dartlang.org/vm_service-9.3.0/lib" />
       <root url="file:///opt/flutter/.pub-cache/hosted/pub.dartlang.org/watcher-1.0.1/lib" />
       <root url="file:///opt/flutter/.pub-cache/hosted/pub.dartlang.org/web_socket_channel-2.2.0/lib" />
       <root url="file:///opt/flutter/.pub-cache/hosted/pub.dartlang.org/webkit_inspection_protocol-1.1.0/lib" />
+      <root url="file:///opt/flutter/.pub-cache/hosted/pub.dartlang.org/win32-2.7.0/lib" />
       <root url="file:///opt/flutter/.pub-cache/hosted/pub.dartlang.org/yaml-3.1.1/lib" />
       <root url="file:///opt/flutter/bin/cache/pkg/sky_engine/lib" />
       <root url="file:///opt/flutter/packages/flutter/lib" />
+      <root url="file:///opt/flutter/packages/flutter_localizations/lib" />
       <root url="file:///opt/flutter/packages/flutter_test/lib" />
       <root url="file:///opt/flutter/packages/flutter_web_plugins/lib" />
     </CLASSES>
