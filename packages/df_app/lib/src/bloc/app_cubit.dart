@@ -4,13 +4,13 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 
 part 'app_cubit.freezed.dart';
-
-part '../app_cubit.g.dart';
+part 'app_cubit.g.dart';
 
 enum AppEnvironment { live, sandbox }
 
 @freezed
 class AppState with _$AppState {
+  // AppState should *only* contain fields that require MaterialApp re-building
   const factory AppState({
     @Default(true) bool firstRun,
     @Default(AppEnvironment.live) AppEnvironment environment,
@@ -18,18 +18,32 @@ class AppState with _$AppState {
     @Default(Brightness.light) Brightness brightness,
   }) = _AppState;
 
+
   factory AppState.fromJson(Map<String, dynamic> json) =>
       _$AppStateFromJson(json);
 }
 
 class AppCubit extends HydratedCubit<AppState> {
-  AppCubit() : super(AppState());
+  static AppCubit get instance => _instance;
+  static final AppCubit _instance = AppCubit._internal();
+  AppCubit._internal() : super(AppState()) {}
+
+  void firstRunDone() => emit(state.copyWith(firstRun: false));
 
   void toggleBrightness() => emit(
         state.copyWith(
-            brightness: state.brightness == Brightness.light
-                ? Brightness.dark
-                : Brightness.light),
+          brightness: state.brightness == Brightness.light
+              ? Brightness.dark
+              : Brightness.light,
+        ),
+      );
+
+  void toggleEnvironment() => emit(
+        state.copyWith(
+          environment: state.environment == AppEnvironment.live
+              ? AppEnvironment.sandbox
+              : AppEnvironment.live,
+        ),
       );
 
   @override

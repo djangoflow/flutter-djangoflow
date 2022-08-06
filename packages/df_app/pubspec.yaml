@@ -19,11 +19,13 @@ dependencies:
   auto_route: ^4.2.1
   firebase_analytics: ^9.1.12
   firebase_core: ^1.19.1
+  flutter_bloc: ^8.0.1
   firebase_messaging: ^11.4.4
   facebook_app_events: ^0.16.0
   mixpanel_flutter: ^1.5.1
   app_tracking_transparency: ^2.0.2+4
   sentry_flutter: ^6.9.0
+  path_provider: ^2.0.11
 
 dev_dependencies:
   flutter_test:

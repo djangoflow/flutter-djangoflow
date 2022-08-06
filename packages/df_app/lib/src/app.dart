@@ -5,14 +5,17 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/material.dart' as material;
-import 'package:hydrated_bloc/hydrated_bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:hydrated_bloc/hydrated_bloc.dart';
+import 'package:path_provider/path_provider.dart';
 import 'package:sentry_flutter/sentry_flutter.dart';
 
 import 'analytics/analytics_repository.dart';
-import 'router/parser.dart';
+import 'analytics/route_observer.dart';
 import 'bloc/app_cubit.dart';
+import 'bloc/bloc_exception_observer.dart';
+import 'router/parser.dart';
 
 typedef RemoteMessageCallback = Function(
     BuildContext context, StackRouter router, RemoteMessage? message);
@@ -20,7 +23,10 @@ typedef RemoteMessageCallback = Function(
 typedef AppLifecycleCallback = Function(
     BuildContext context, StackRouter router, AppLifecycleState state);
 
-typedef AppEventCallback = Function(BuildContext context, StackRouter router);
+typedef AppStateCallback = Function(
+    BuildContext context, StackRouter router, AppState state);
+typedef AppStateBuilder = Function(
+    BuildContext context, Widget? widget, AppState state);
 
 class App extends StatefulWidget {
   final RootStackRouter router;
@@ -28,27 +34,37 @@ class App extends StatefulWidget {
   final List<NavigatorObserver> navigatorObservers;
   final bool includePrefixMatches;
 
-  final AppEventCallback? onFirstRun;
-  final AppEventCallback? onInit;
+  final AppStateCallback? onFirstRun;
+  final AppStateCallback? onInit;
 
   final String title;
-  final ThemeData? fallbackTheme;
+  final ThemeData brightTheme;
+  final ThemeData? darkTheme;
 
   final RemoteMessageCallback? onMessage;
   final RemoteMessageCallback? onNotificationTap;
 
+  final AppStateBuilder? builder;
+
+  final List<BlocProvider> providers;
+  final GlobalKey<ScaffoldMessengerState>? scaffoldMessengerKey;
+
   const App({
-    Key? key,
-    this.onFirstRun,
-    this.initialRoutes,
     required this.router,
     required this.title,
+    required this.brightTheme,
+    Key? key,
+    this.builder,
+    this.darkTheme,
     this.includePrefixMatches = true,
-    this.fallbackTheme,
+    this.initialRoutes,
     this.navigatorObservers = const [],
+    this.onFirstRun,
+    this.onInit,
     this.onMessage,
     this.onNotificationTap,
-    this.onInit,
+    this.providers = const [],
+    this.scaffoldMessengerKey,
   }) : super(key: key);
 
   @override
@@ -56,7 +72,6 @@ class App extends StatefulWidget {
 
   static Future<void> runGuarded({
     required App app,
-    required BlocObserver blocObserver,
     required Function(Object exception, StackTrace? stackTrace) onException,
     Function? onInit,
     required String sentryDSN,
@@ -99,15 +114,16 @@ class App extends StatefulWidget {
                 ? HydratedStorage.webStorageDirectory
                 : await getTemporaryDirectory(),
           );
-          BlocOverrides.runZoned(
+          HydratedBlocOverrides.runZoned(
             () => runApp(app),
-            blocObserver: blocObserver,
+            blocObserver: BlocExceptionObserver(onException: onException),
           );
         },
         (exception, stackTrace) async {
           debugPrint('>>> $exception, $stackTrace');
 
           onException(exception, stackTrace);
+
           if (!kDebugMode) {
             await Sentry.captureException(exception, stackTrace: stackTrace);
           }
@@ -134,54 +150,42 @@ class _AppState extends State<App> {
   Widget build(BuildContext context) => MultiBlocProvider(
         providers: [
           BlocProvider<AppCubit>.value(value: AppCubit.instance),
-          BlocProvider<UserCubit>.value(value: UserCubit.instance),
+          ...widget.providers
         ],
         child: BlocBuilder<AppCubit, AppState>(
           bloc: AppCubit.instance,
-          builder: (context, appState) => BlocListener<UserCubit, User?>(
-            listenWhen: (prev, next) => next?.id != prev?.id,
-            listener: _userCubitListener,
-            child: MaterialApp.router(
-              debugShowCheckedModeBanner: false,
-              scaffoldMessengerKey: AppSnackbar.scaffoldMessengerKey,
-              title: widget.title,
-              routeInformationParser: RouteParser(
-                widget.router.matcher,
-                includePrefixMatches: widget.includePrefixMatches,
-              ),
-              theme: appState.theme ?? widget.fallbackTheme,
-              routerDelegate: widget.router.delegate(
-                initialRoutes: widget.initialRoutes,
-                navigatorObservers: () => [
-                  AppRouteObserver(),
-                ],
-              ),
-              builder: (context, widget) => ResponsiveAppWrapper(
-                child: appState is AppStarted &&
-                        appState.environment == AppEnvironment.sandbox
-                    ? material.Banner(
-                        location: BannerLocation.topStart,
-                        message: 'sandbox',
-                        color: Colors.orange,
-                        child: widget,
-                      )
-                    : widget!,
-              ),
-              supportedLocales: const [
-                Locale('en', ''),
-              ],
-              locale: appState.locale,
-              localizationsDelegates: const [
-                GlobalMaterialLocalizations.delegate,
-                GlobalWidgetsLocalizations.delegate,
-                GlobalCupertinoLocalizations.delegate,
+          builder: (context, state) => MaterialApp.router(
+            debugShowCheckedModeBanner: false,
+            scaffoldMessengerKey: widget.scaffoldMessengerKey,
+            title: widget.title,
+            routeInformationParser: RouteParser(
+              widget.router.matcher,
+              includePrefixMatches: widget.includePrefixMatches,
+            ),
+            theme: state.brightness == Brightness.light
+                ? widget.brightTheme
+                : widget.darkTheme ?? widget.brightTheme,
+            routerDelegate: widget.router.delegate(
+              initialRoutes: widget.initialRoutes,
+              navigatorObservers: () => [
+                AnalyticsRouteObserver(),
               ],
             ),
+            builder: (context, child) => widget.builder != null
+                ? widget.builder!(context, child, state)
+                : child,
+            supportedLocales: const [
+              Locale('en', ''),
+            ],
+            locale: Locale(state.locale, ''),
+            localizationsDelegates: const [
+              GlobalMaterialLocalizations.delegate,
+              GlobalWidgetsLocalizations.delegate,
+              GlobalCupertinoLocalizations.delegate,
+            ],
           ),
         ),
       );
-
-  void _onMessageReceived(RemoteMessage message) => widget.onMessage?.call();
 
   Future<void> _setupInteractedNotification() async {
     RemoteMessage? initialMessage =
@@ -192,7 +196,10 @@ class _AppState extends State<App> {
   }
 
   void _handleNotificationTap(RemoteMessage? message) =>
-      widget.onNotificationTap?.call(message);
+      widget.onNotificationTap?.call(context, widget.router, message);
+
+  void _onMessageReceived(RemoteMessage message) =>
+      widget.onMessage?.call(context, widget.router, message);
 
   @override
   void dispose() {
