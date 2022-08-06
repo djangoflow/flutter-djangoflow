@@ -12,7 +12,7 @@ import 'package:path_provider/path_provider.dart';
 import 'package:sentry_flutter/sentry_flutter.dart';
 
 import 'analytics/app_analytics.dart';
-import 'analytics/route_observer.dart';
+import 'analytics/analytics_route_observer.dart';
 import 'bloc/app_cubit.dart';
 import 'bloc/bloc_exception_observer.dart';
 import 'router/parser.dart';
