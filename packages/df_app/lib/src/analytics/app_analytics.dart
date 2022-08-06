@@ -189,7 +189,8 @@ class AppAnalytics {
         name,
         // TODO(saiful): why was this needed?
         properties: Map.fromEntries(
-            extraParams.entries.where((element) => element.value != null)),
+          extraParams.entries.where((element) => element.value != null),
+        ),
       );
     }
   }
