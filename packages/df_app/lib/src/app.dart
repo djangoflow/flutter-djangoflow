@@ -48,6 +48,7 @@ class App extends StatefulWidget {
 
   final List<BlocProvider> providers;
   final GlobalKey<ScaffoldMessengerState>? scaffoldMessengerKey;
+  final AppLifecycleCallback? onAppLifecycleStateChange;
 
   const App({
     required this.router,
@@ -65,6 +66,7 @@ class App extends StatefulWidget {
     this.onNotificationTap,
     this.providers = const [],
     this.scaffoldMessengerKey,
+    this.onAppLifecycleStateChange,
   }) : super(key: key);
 
   @override
@@ -74,7 +76,7 @@ class App extends StatefulWidget {
     required App app,
     required Function(Object exception, StackTrace? stackTrace) onException,
     Function? onInit,
-    required String sentryDSN,
+    String? sentryDSN,
   }) async =>
       runZonedGuarded(
         () async {
@@ -82,7 +84,7 @@ class App extends StatefulWidget {
 
           await Firebase.initializeApp();
 
-          if (!kDebugMode) {
+          if (!kDebugMode && sentryDSN != null) {
             await SentryFlutter.init(
               (options) => options.dsn = sentryDSN,
             );
@@ -131,7 +133,7 @@ class App extends StatefulWidget {
       );
 }
 
-class _AppState extends State<App> {
+class _AppState extends State<App> with WidgetsBindingObserver {
   StreamSubscription<RemoteMessage>? _messagingSubscription;
   StreamSubscription<RemoteMessage>? _appOpenMessageSubscription;
 
@@ -144,6 +146,7 @@ class _AppState extends State<App> {
       AnalyticsRepository.instance.initATT();
     });
     super.initState();
+    WidgetsBinding.instance.addObserver(this);
   }
 
   @override
@@ -200,6 +203,10 @@ class _AppState extends State<App> {
 
   void _onMessageReceived(RemoteMessage message) =>
       widget.onMessage?.call(context, widget.router, message);
+
+  @override
+  didChangeAppLifecycleState(AppLifecycleState state) =>
+      widget.onAppLifecycleStateChange?.call(context, widget.router, state);
 
   @override
   void dispose() {
