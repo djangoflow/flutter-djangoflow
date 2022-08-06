@@ -9,6 +9,9 @@
       <excludeFolder url="file://$MODULE_DIR$/packages/df_app/build" />
       <excludeFolder url="file://$MODULE_DIR$/packages/df_app/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/packages/df_app/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/openapi/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/openapi/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/openapi/build" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

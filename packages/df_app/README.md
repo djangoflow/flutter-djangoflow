@@ -18,6 +18,7 @@ What you get out of the box:
 
 ## Getting started
 
+
 ```dart
 
 class MyAnalyticsEvents extends BasicAnalyticsEvents {
@@ -28,7 +29,7 @@ Future<void> main() async => App.run(
   sentryDSN: kSentryDSN,
   onInit: () async {
     await AnalyticsRepository.init(
-      events: AnalyticsEvents()
+      events: AnalyticsEvents(),
       defaultParameters: {}
     );
     if (kIsWeb) {
