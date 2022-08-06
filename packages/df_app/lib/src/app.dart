@@ -11,7 +11,7 @@ import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:sentry_flutter/sentry_flutter.dart';
 
-import 'analytics/analytics_repository.dart';
+import 'analytics/app_analytics.dart';
 import 'analytics/route_observer.dart';
 import 'bloc/app_cubit.dart';
 import 'bloc/bloc_exception_observer.dart';
@@ -117,6 +117,7 @@ class App extends StatefulWidget {
           HydratedBlocOverrides.runZoned(
             () => runApp(app),
             blocObserver: BlocExceptionObserver(onException: onException),
+            storage: storage
           );
         },
         (exception, stackTrace) async {
@@ -141,7 +142,7 @@ class _AppState extends State<App> with WidgetsBindingObserver {
         FirebaseMessaging.onMessage.listen(_onMessageReceived);
     _setupInteractedNotification();
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-      AnalyticsRepository.instance.initATT();
+      AppAnalytics.instance.initATT();
     });
     super.initState();
     WidgetsBinding.instance.addObserver(this);

@@ -1,10 +1,10 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
-import 'analytics_repository.dart';
+import 'app_analytics.dart';
 
 class AnalyticsRouteObserver extends AutoRouterObserver {
-  final _analyticsRepository = AnalyticsRepository.instance;
+  final _analyticsRepository = AppAnalytics.instance;
 
   @override
   void didInitTabRoute(TabPageRoute route, TabPageRoute? previousRoute) {

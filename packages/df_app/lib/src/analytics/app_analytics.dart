@@ -16,11 +16,11 @@ class AnalyticsEvents {
   static String get screenView => 'screen_view';
 }
 
-class AnalyticsRepository {
-  static AnalyticsRepository get instance => _instance;
-  static final AnalyticsRepository _instance = AnalyticsRepository._internal();
+class AppAnalytics {
+  static AppAnalytics get instance => _instance;
+  static final AppAnalytics _instance = AppAnalytics._internal();
 
-  AnalyticsRepository._internal();
+  AppAnalytics._internal();
 
   late Map<String, Object?> _defaultParams = {};
   late AnalyticsEvents _events;
@@ -28,7 +28,7 @@ class AnalyticsRepository {
 
   // TODO(saiful): all functions have to check we are intialized
 
-  Future<AnalyticsRepository> init({
+  Future<AppAnalytics> init({
     String? mixPanelToken,
     bool disable = kDebugMode,
     Map<String, Object?> defaultParams = const {},
