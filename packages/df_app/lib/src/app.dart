@@ -82,8 +82,6 @@ class App extends StatefulWidget {
         () async {
           WidgetsFlutterBinding.ensureInitialized();
 
-          await Firebase.initializeApp();
-
           if (!kDebugMode && sentryDSN != null) {
             await SentryFlutter.init(
               (options) => options.dsn = sentryDSN,
