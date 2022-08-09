@@ -26,7 +26,7 @@ typedef AppLifecycleCallback = Function(
 typedef AppStateCallback = Function(
     BuildContext context, StackRouter router, AppState state);
 typedef AppStateBuilder = Function(
-    BuildContext context, Widget? widget, AppState state);
+    BuildContext context, Widget? widget, AppState state, StackRouter router);
 
 class App extends StatefulWidget {
   final RootStackRouter router;
@@ -174,7 +174,7 @@ class _AppState extends State<App> with WidgetsBindingObserver {
               ],
             ),
             builder: (context, child) => widget.builder != null
-                ? widget.builder!(context, child, state)
+                ? widget.builder!(context, child, state, widget.router)
                 : child,
             supportedLocales: const [
               Locale('en', ''),
