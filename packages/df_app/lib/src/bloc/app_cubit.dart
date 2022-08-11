@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
+import 'package:package_info_plus/package_info_plus.dart';
 
 part 'app_cubit.freezed.dart';
 part 'app_cubit.g.dart';
@@ -18,7 +19,6 @@ class AppState with _$AppState {
     @Default(Brightness.light) Brightness brightness,
   }) = _AppState;
 
-
   factory AppState.fromJson(Map<String, dynamic> json) =>
       _$AppStateFromJson(json);
 }
@@ -26,7 +26,7 @@ class AppState with _$AppState {
 class AppCubit extends HydratedCubit<AppState> {
   static AppCubit get instance => _instance;
   static final AppCubit _instance = AppCubit._internal();
-  late  PackageInfo packageInfo;
+  late PackageInfo packageInfo;
 
   AppCubit._internal() : super(AppState()) {
     _init();
