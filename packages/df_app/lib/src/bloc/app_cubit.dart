@@ -26,7 +26,15 @@ class AppState with _$AppState {
 class AppCubit extends HydratedCubit<AppState> {
   static AppCubit get instance => _instance;
   static final AppCubit _instance = AppCubit._internal();
-  AppCubit._internal() : super(AppState()) {}
+  late  PackageInfo packageInfo;
+
+  AppCubit._internal() : super(AppState()) {
+    _init();
+  }
+
+  Future<void> _init() async {
+    packageInfo = await PackageInfo.fromPlatform();
+  }
 
   void firstRunDone() => emit(state.copyWith(firstRun: false));
 

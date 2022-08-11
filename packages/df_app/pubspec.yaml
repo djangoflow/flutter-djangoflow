@@ -13,19 +13,20 @@ dependencies:
   flutter_localizations:
     sdk: flutter
 
+  app_tracking_transparency: ^2.0.2+4
+  auto_route: ^4.2.1
+  facebook_app_events: ^0.16.0
+  firebase_analytics: ^9.1.12
+  firebase_core: ^1.19.1
+  firebase_messaging: ^11.4.4
+  flutter_bloc: ^8.0.1
   freezed_annotation: ^2.1.0
   hydrated_bloc: ^8.1.0
   json_annotation: ^4.6.0
-  auto_route: ^4.2.1
-  firebase_analytics: ^9.1.12
-  firebase_core: ^1.19.1
-  flutter_bloc: ^8.0.1
-  firebase_messaging: ^11.4.4
-  facebook_app_events: ^0.16.0
   mixpanel_flutter: ^1.5.1
-  app_tracking_transparency: ^2.0.2+4
-  sentry_flutter: ^6.9.0
+  package_info_plus: ^1.4.3+1
   path_provider: ^2.0.11
+  sentry_flutter: ^6.9.0
 
 dev_dependencies:
   flutter_test:
