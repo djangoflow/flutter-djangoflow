@@ -1,6 +1,6 @@
 // import 'package:flutter_test/flutter_test.dart';
 //
-// import 'package:df_app/df_app.dart';
+// import 'package:df_app/djangoflow_app.dart';
 //
 // void main() {
 //   test('adds one to input values', () {

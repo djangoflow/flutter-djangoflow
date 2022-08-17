@@ -95,7 +95,7 @@ class AppAnalytics {
     }
   }
 
-  Map<String, String> _userPropertiesCache = {};
+  final Map<String, String> _userPropertiesCache = {};
 
   Future<void> setUserProperties({
     String? id,
