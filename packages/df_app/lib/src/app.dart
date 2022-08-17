@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:auto_route/auto_route.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -114,11 +113,9 @@ class App extends StatefulWidget {
                 ? HydratedStorage.webStorageDirectory
                 : await getTemporaryDirectory(),
           );
-          HydratedBlocOverrides.runZoned(
-            () => runApp(app),
-            blocObserver: BlocExceptionObserver(onException: onException),
-            storage: storage
-          );
+          HydratedBlocOverrides.runZoned(() => runApp(app),
+              blocObserver: BlocExceptionObserver(onException: onException),
+              storage: storage);
         },
         (exception, stackTrace) async {
           debugPrint('>>> $exception, $stackTrace');

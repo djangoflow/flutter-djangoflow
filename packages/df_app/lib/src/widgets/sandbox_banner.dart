@@ -6,13 +6,13 @@ class SandboxBanner extends StatelessWidget {
   final String message;
   final Color color;
 
-  SandboxBanner({
+  const SandboxBanner({
     Key? key,
     required this.child,
     required this.isSandbox,
     this.color = Colors.orange,
     this.message = 'sandbox',
-  });
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) => isSandbox

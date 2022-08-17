@@ -28,7 +28,7 @@ class AppCubit extends HydratedCubit<AppState> {
   static final AppCubit _instance = AppCubit._internal();
   late PackageInfo packageInfo;
 
-  AppCubit._internal() : super(AppState()) {
+  AppCubit._internal() : super(const AppState()) {
     _init();
   }
 
