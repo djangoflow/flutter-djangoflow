@@ -1,3 +1,3 @@
-## 0.0.1
+## 1.0.0
 
-- With basic release we've added `App` widget to add structure that will setup the initial app run. Along with global error handling with Sentry setup. It also support firebase.
+- Initial release
