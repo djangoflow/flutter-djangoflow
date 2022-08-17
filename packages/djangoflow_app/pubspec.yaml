@@ -1,4 +1,4 @@
-name: df_app
+name: djangoflow_app
 description: Djangoflow app with firebase support.
 version: 1.0.0
 homepage: https://github.com/djangoflow/flutter-djangoflow/packages/df_app
