@@ -83,7 +83,9 @@ class App extends StatefulWidget {
 
           if (!kDebugMode && sentryDSN != null) {
             await SentryFlutter.init(
-              (options) => options.dsn = sentryDSN,
+              (options) => options
+                ..dsn = sentryDSN
+                ..release = AppCubit.instance.packageInfo.version,
             );
           }
 
