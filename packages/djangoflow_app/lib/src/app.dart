@@ -81,9 +81,11 @@ class App extends StatefulWidget {
       runZonedGuarded(
         () async {
           WidgetsFlutterBinding.ensureInitialized();
+          final packageInfo = await PackageInfo.fromPlatform();
+
+          AppCubit.packageInfo = packageInfo;
 
           if (!kDebugMode && sentryDSN != null) {
-            final packageInfo = await PackageInfo.fromPlatform();
             await SentryFlutter.init(
               (options) => options
                 ..dsn = sentryDSN
