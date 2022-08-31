@@ -1,6 +1,6 @@
 name: djangoflow_app
 description: Djangoflow app with firebase support.
-version: 1.0.1
+version: 1.0.2
 homepage: https://github.com/djangoflow/flutter-djangoflow/
 
 environment:
