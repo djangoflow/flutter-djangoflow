@@ -89,7 +89,7 @@ class App extends StatefulWidget {
             await SentryFlutter.init(
               (options) => options
                 ..dsn = sentryDSN
-                ..release = packageInfo.version,
+                ..release = '${packageInfo.version}+${packageInfo.buildNumber}',
             );
           }
 

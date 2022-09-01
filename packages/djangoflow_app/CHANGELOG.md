@@ -1,3 +1,6 @@
+## 1.0.5 -  Sep 2022
+- sentry release to include the build number
+
 ## 1.0.4 -  Sep 2022
 - added onStart callback
 
