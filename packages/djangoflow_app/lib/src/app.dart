@@ -76,6 +76,7 @@ class App extends StatefulWidget {
     required App app,
     required Function(Object exception, StackTrace? stackTrace) onException,
     Function? onInit,
+    Function? afterInit,
     String? sentryDSN,
   }) async =>
       runZonedGuarded(
@@ -119,6 +120,7 @@ class App extends StatefulWidget {
                 ? HydratedStorage.webStorageDirectory
                 : await getTemporaryDirectory(),
           );
+          await afterInit?.call();
           HydratedBlocOverrides.runZoned(() => runApp(app),
               blocObserver: BlocExceptionObserver(onException: onException),
               storage: storage);
