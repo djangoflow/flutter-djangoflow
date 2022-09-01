@@ -1,5 +1,5 @@
-## 1.0.3 - 1 Sep 2022
-- added afterInit callback
+## 1.0.4 -  Sep 2022
+- added onStart callback
 
 ## 1.0.2 - 31 Aug 2022
 

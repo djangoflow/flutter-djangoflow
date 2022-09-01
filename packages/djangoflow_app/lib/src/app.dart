@@ -35,7 +35,7 @@ class App extends StatefulWidget {
   final bool includePrefixMatches;
 
   final AppStateCallback? onFirstRun;
-  final AppStateCallback? onInit;
+  final AppStateCallback? onStart;
 
   final String title;
   final ThemeData brightTheme;
@@ -61,7 +61,7 @@ class App extends StatefulWidget {
     this.initialRoutes,
     this.navigatorObservers = const [],
     this.onFirstRun,
-    this.onInit,
+    this.onStart,
     this.onMessage,
     this.onNotificationTap,
     this.providers = const [],
@@ -76,7 +76,6 @@ class App extends StatefulWidget {
     required App app,
     required Function(Object exception, StackTrace? stackTrace) onException,
     Function? onInit,
-    Function? afterInit,
     String? sentryDSN,
   }) async =>
       runZonedGuarded(
@@ -120,7 +119,6 @@ class App extends StatefulWidget {
                 ? HydratedStorage.webStorageDirectory
                 : await getTemporaryDirectory(),
           );
-          await afterInit?.call();
           HydratedBlocOverrides.runZoned(() => runApp(app),
               blocObserver: BlocExceptionObserver(onException: onException),
               storage: storage);
@@ -151,6 +149,7 @@ class _AppState extends State<App> with WidgetsBindingObserver {
     });
     super.initState();
     WidgetsBinding.instance.addObserver(this);
+    widget.onStart?.call(context, widget.router, AppCubit.instance.state);
   }
 
   @override
