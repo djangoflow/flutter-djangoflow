@@ -29,7 +29,7 @@ typedef AppStateBuilder = Function(
     BuildContext context, Widget? widget, AppState state);
 
 class App extends StatefulWidget {
-  final RootStackRouter router;
+  final RootStackRouter Function() routerBuilder;
   final List<PageRouteInfo>? initialRoutes;
   final List<NavigatorObserver> navigatorObservers;
   final bool includePrefixMatches;
@@ -51,7 +51,7 @@ class App extends StatefulWidget {
   final AppLifecycleCallback? onAppLifecycleStateChange;
 
   const App({
-    required this.router,
+    required this.routerBuilder,
     required this.title,
     required this.brightTheme,
     Key? key,
@@ -138,7 +138,7 @@ class App extends StatefulWidget {
 class _AppState extends State<App> with WidgetsBindingObserver {
   StreamSubscription<RemoteMessage>? _messagingSubscription;
   StreamSubscription<RemoteMessage>? _appOpenMessageSubscription;
-
+  late RootStackRouter _router;
   @override
   void initState() {
     _messagingSubscription =
@@ -149,7 +149,8 @@ class _AppState extends State<App> with WidgetsBindingObserver {
     });
     super.initState();
     WidgetsBinding.instance.addObserver(this);
-    widget.onStart?.call(context, widget.router, AppCubit.instance.state);
+    _router = widget.routerBuilder();
+    widget.onStart?.call(context, _router, AppCubit.instance.state);
   }
 
   @override
@@ -165,13 +166,13 @@ class _AppState extends State<App> with WidgetsBindingObserver {
             scaffoldMessengerKey: widget.scaffoldMessengerKey,
             title: widget.title,
             routeInformationParser: RouteParser(
-              widget.router.matcher,
+              _router.matcher,
               includePrefixMatches: widget.includePrefixMatches,
             ),
             theme: state.brightness == Brightness.light
                 ? widget.brightTheme
                 : widget.darkTheme ?? widget.brightTheme,
-            routerDelegate: widget.router.delegate(
+            routerDelegate: _router.delegate(
               initialRoutes: widget.initialRoutes,
               navigatorObservers: () => [
                 AnalyticsRouteObserver(),
@@ -202,14 +203,14 @@ class _AppState extends State<App> with WidgetsBindingObserver {
   }
 
   void _handleNotificationTap(RemoteMessage? message) =>
-      widget.onNotificationTap?.call(context, widget.router, message);
+      widget.onNotificationTap?.call(context, _router, message);
 
   void _onMessageReceived(RemoteMessage message) =>
-      widget.onMessage?.call(context, widget.router, message);
+      widget.onMessage?.call(context, _router, message);
 
   @override
   didChangeAppLifecycleState(AppLifecycleState state) =>
-      widget.onAppLifecycleStateChange?.call(context, widget.router, state);
+      widget.onAppLifecycleStateChange?.call(context, _router, state);
 
   @override
   void dispose() {

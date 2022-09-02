@@ -1,3 +1,9 @@
+## 2.0.2 -  2 Sep 2022
+- replace router with routerBuilder
+- 
+## 2.0.0 -  2 Sep 2022
+- dependencies upgrade
+
 ## 1.0.5 -  Sep 2022
 - sentry release to include the build number
 

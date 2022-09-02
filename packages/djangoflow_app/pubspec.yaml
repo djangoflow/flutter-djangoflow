@@ -1,6 +1,6 @@
 name: djangoflow_app
 description: Djangoflow app with firebase support.
-version: 1.0.5
+version: 2.0.2
 homepage: https://github.com/djangoflow/flutter-djangoflow/
 
 environment:
@@ -14,11 +14,11 @@ dependencies:
     sdk: flutter
 
   app_tracking_transparency: ^2.0.2+4
-  auto_route: ^4.2.1
-  facebook_app_events: ^0.16.0
+  auto_route: ^5.0.1
+  facebook_app_events: ^0.17.0
   firebase_analytics: ^9.3.1
   firebase_core: ^1.20.1
-  firebase_messaging: ^12.0.2
+  firebase_messaging: ^13.0.0
   flutter_bloc: ^8.0.1
   freezed_annotation: ^2.1.0
   hydrated_bloc: ^8.1.0
@@ -31,7 +31,6 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
   build_runner: ^2.1.11
   flutter_lints: ^2.0.0
   freezed: ^2.1.0+1
