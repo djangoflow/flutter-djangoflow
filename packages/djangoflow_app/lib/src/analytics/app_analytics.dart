@@ -24,33 +24,40 @@ class AppAnalytics {
 
   late Map<String, Object?> _defaultParams = {};
   late AnalyticsEvents _events;
-  late bool _disable;
+  // TODO need to refactor this, and put it outside of AppAnalytics
+  late bool _disableFirebase;
+  late bool _disableMixepanel;
+  late bool _disableFacebook;
 
   // TODO(saiful): all functions have to check we are intialized
 
   Future<AppAnalytics> init({
     String? mixPanelToken,
-    bool disable = kDebugMode,
+    bool disableFirebase = kDebugMode,
+    bool disableMixpanel = kDebugMode,
+    bool disableFacebook = kDebugMode,
     Map<String, Object?> defaultParams = const {},
     AnalyticsEvents events = const AnalyticsEvents(),
   }) async {
     _events = events;
     _defaultParams = defaultParams;
-    _disable = disable;
+    _disableFirebase = disableFirebase;
+    _disableFacebook = disableFacebook;
+    _disableMixepanel = disableMixpanel;
 
-    if (!_disable) {
+    if (!_disableMixepanel) {
       mixpanel = mixPanelToken != null
           ? await Mixpanel.init(
               mixPanelToken,
               optOutTrackingDefault: false,
             )
           : null;
-      if (!kIsWeb) {
-        facebookAppEvent = FacebookAppEvents();
-      }
     }
-    toggleFireBaseAnalyticsCollection(!_disable);
-    showMixPanelDevLogs(kDebugMode);
+    if (!_disableFacebook && !kIsWeb) {
+      facebookAppEvent = FacebookAppEvents();
+    }
+    toggleFireBaseAnalyticsCollection(!_disableFirebase);
+    showMixPanelDevLogs(kDebugMode && !_disableMixepanel);
 
     return _instance;
   }
@@ -183,7 +190,7 @@ class AppAnalytics {
     String name, {
     required Map<String, Object?> extraParams,
   }) {
-    if (!_disable) {
+    if (!_disableMixepanel) {
       // mixPanel has no method to enable/disable collection
       mixpanel?.track(
         name,

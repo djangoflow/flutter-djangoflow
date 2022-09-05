@@ -1,16 +1,25 @@
-## 2.0.3 -  2 Sep 2022
+## 2.0.4 - 5 Sep 2022
+
+- replaced `disable` with `disableFacebook`, `disableFirebase` and `disableMixpanel`
+
+## 2.0.3 - 2 Sep 2022
+
 - added router to the builder
 
-## 2.0.2 -  2 Sep 2022
+## 2.0.2 - 2 Sep 2022
+
 - replace router with routerBuilder
 
-## 2.0.0 -  2 Sep 2022
+## 2.0.0 - 2 Sep 2022
+
 - dependencies upgrade
 
-## 1.0.5 -  Sep 2022
+## 1.0.5 - Sep 2022
+
 - sentry release to include the build number
 
-## 1.0.4 -  Sep 2022
+## 1.0.4 - Sep 2022
+
 - added onStart callback
 
 ## 1.0.2 - 31 Aug 2022
