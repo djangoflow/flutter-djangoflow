@@ -25,8 +25,8 @@ typedef AppLifecycleCallback = Function(
 
 typedef AppStateCallback = Function(
     BuildContext context, StackRouter router, AppState state);
-typedef AppStateBuilder = Function(
-    BuildContext context, Widget? widget, AppState state, RootStackRouter router);
+typedef AppStateBuilder = Function(BuildContext context, Widget? widget,
+    AppState state, RootStackRouter router);
 
 class App extends StatefulWidget {
   final RootStackRouter Function() routerBuilder;

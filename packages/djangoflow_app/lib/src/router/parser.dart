@@ -8,8 +8,8 @@ class RouteParser extends DefaultRouteParser {
 
   @override
   Future<UrlState> parseRouteInformation(
-      RouteInformation routeInformation,
-      ) async {
+    RouteInformation routeInformation,
+  ) async {
     debugPrint('deeplink> ${routeInformation.location}');
 
     // Remove "/#" from native deep links
@@ -17,9 +17,9 @@ class RouteParser extends DefaultRouteParser {
       kIsWeb
           ? routeInformation
           : RouteInformation(
-        location: routeInformation.location?.replaceFirst('/#', ''),
-        state: routeInformation.state,
-      ),
+              location: routeInformation.location?.replaceFirst('/#', ''),
+              state: routeInformation.state,
+            ),
     );
   }
 }
