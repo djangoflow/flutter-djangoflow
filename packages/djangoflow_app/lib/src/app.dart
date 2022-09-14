@@ -176,6 +176,7 @@ class _AppState extends State<App> with WidgetsBindingObserver {
               initialRoutes: widget.initialRoutes,
               navigatorObservers: () => [
                 AnalyticsRouteObserver(),
+                ...widget.navigatorObservers,
               ],
             ),
             builder: (context, child) => widget.builder != null
