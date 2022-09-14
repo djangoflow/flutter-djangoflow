@@ -1,3 +1,7 @@
+## 2.0.6 - 14 Sep 2022
+
+- Added `AutoRouteObserver()` by default in the router `navigatorObservers` list as needed for listening to route changes from specific screens.
+
 ## 2.0.5 - 14 Sep 2022
 
 - Fixed `navigatorObservers` not working when provided with `App` widget
