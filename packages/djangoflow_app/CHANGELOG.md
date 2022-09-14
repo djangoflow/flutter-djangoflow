@@ -1,3 +1,7 @@
+## 2.0.5 - 14 Sep 2022
+
+- Fixed `navigatorObservers` not working when provided with `App` widget
+
 ## 2.0.4 - 5 Sep 2022
 
 - replaced `disable` with `disableFacebook`, `disableFirebase` and `disableMixpanel`
