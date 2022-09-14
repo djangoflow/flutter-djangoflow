@@ -175,6 +175,7 @@ class _AppState extends State<App> with WidgetsBindingObserver {
             routerDelegate: _router.delegate(
               initialRoutes: widget.initialRoutes,
               navigatorObservers: () => [
+                AutoRouteObserver(),
                 AnalyticsRouteObserver(),
                 ...widget.navigatorObservers,
               ],
