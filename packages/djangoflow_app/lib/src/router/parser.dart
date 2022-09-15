@@ -3,7 +3,13 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class RouteParser extends DefaultRouteParser {
-  RouteParser(matcher, {bool includePrefixMatches = true})
+  static String? defaultLocationRewriter(String? location) =>
+      kIsWeb ? location?.replaceFirst('/#', '') : location;
+
+  final String? Function(String? location)? locationRewriter;
+
+  RouteParser(matcher,
+      {bool includePrefixMatches = true, this.locationRewriter})
       : super(matcher, includePrefixMatches: includePrefixMatches);
 
   @override
@@ -14,12 +20,11 @@ class RouteParser extends DefaultRouteParser {
 
     // Remove "/#" from native deep links
     return super.parseRouteInformation(
-      kIsWeb
-          ? routeInformation
-          : RouteInformation(
-              location: routeInformation.location?.replaceFirst('/#', ''),
-              state: routeInformation.state,
-            ),
+      RouteInformation(
+        location: locationRewriter?.call(routeInformation.location) ??
+            defaultLocationRewriter(routeInformation.location),
+        state: routeInformation.state,
+      ),
     );
   }
 }

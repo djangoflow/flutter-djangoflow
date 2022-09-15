@@ -11,8 +11,8 @@ import 'package:package_info_plus/package_info_plus.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:sentry_flutter/sentry_flutter.dart';
 
-import 'analytics/app_analytics.dart';
 import 'analytics/analytics_route_observer.dart';
+import 'analytics/app_analytics.dart';
 import 'bloc/app_cubit.dart';
 import 'bloc/bloc_exception_observer.dart';
 import 'router/parser.dart';
@@ -49,7 +49,7 @@ class App extends StatefulWidget {
   final List<BlocProvider> providers;
   final GlobalKey<ScaffoldMessengerState>? scaffoldMessengerKey;
   final AppLifecycleCallback? onAppLifecycleStateChange;
-  final RouteInformationParser<Object>? routeInformationParser;
+  final String? Function(String? location)? routeLocationRewriter;
 
   const App({
     required this.routerBuilder,
@@ -68,7 +68,7 @@ class App extends StatefulWidget {
     this.providers = const [],
     this.scaffoldMessengerKey,
     this.onAppLifecycleStateChange,
-    this.routeInformationParser,
+    this.routeLocationRewriter,
   }) : super(key: key);
 
   @override
@@ -168,11 +168,9 @@ class _AppState extends State<App> with WidgetsBindingObserver {
             debugShowCheckedModeBanner: false,
             scaffoldMessengerKey: widget.scaffoldMessengerKey,
             title: widget.title,
-            routeInformationParser: widget.routeInformationParser ??
-                RouteParser(
-                  _router.matcher,
-                  includePrefixMatches: widget.includePrefixMatches,
-                ),
+            routeInformationParser: RouteParser(_router.matcher,
+                includePrefixMatches: widget.includePrefixMatches,
+                locationRewriter: widget.routeLocationRewriter),
             theme: state.brightness == Brightness.light
                 ? widget.brightTheme
                 : widget.darkTheme ?? widget.brightTheme,

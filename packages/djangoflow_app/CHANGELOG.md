@@ -1,6 +1,6 @@
-## 2.0.7 - 15 Sep 2022
+## 2.0.8 - 15 Sep 2022
 
-- added routerInformationParser argument to app to allow override default
+- added routeLocationRewriter argument to app to allow override default
 
 ## 2.0.6 - 14 Sep 2022
 
