@@ -1,3 +1,7 @@
+## 2.0.7 - 15 Sep 2022
+
+- added routerInformationParser argument to app to allow override default
+
 ## 2.0.6 - 14 Sep 2022
 
 - Added `AutoRouteObserver()` by default in the router `navigatorObservers` list as needed for listening to route changes from specific screens.

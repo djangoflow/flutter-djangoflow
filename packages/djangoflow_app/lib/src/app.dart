@@ -49,6 +49,7 @@ class App extends StatefulWidget {
   final List<BlocProvider> providers;
   final GlobalKey<ScaffoldMessengerState>? scaffoldMessengerKey;
   final AppLifecycleCallback? onAppLifecycleStateChange;
+  final RouteInformationParser<Object>? routeInformationParser;
 
   const App({
     required this.routerBuilder,
@@ -67,6 +68,7 @@ class App extends StatefulWidget {
     this.providers = const [],
     this.scaffoldMessengerKey,
     this.onAppLifecycleStateChange,
+    this.routeInformationParser,
   }) : super(key: key);
 
   @override
@@ -139,6 +141,7 @@ class _AppState extends State<App> with WidgetsBindingObserver {
   StreamSubscription<RemoteMessage>? _messagingSubscription;
   StreamSubscription<RemoteMessage>? _appOpenMessageSubscription;
   late RootStackRouter _router;
+
   @override
   void initState() {
     _messagingSubscription =
@@ -165,10 +168,11 @@ class _AppState extends State<App> with WidgetsBindingObserver {
             debugShowCheckedModeBanner: false,
             scaffoldMessengerKey: widget.scaffoldMessengerKey,
             title: widget.title,
-            routeInformationParser: RouteParser(
-              _router.matcher,
-              includePrefixMatches: widget.includePrefixMatches,
-            ),
+            routeInformationParser: widget.routeInformationParser ??
+                RouteParser(
+                  _router.matcher,
+                  includePrefixMatches: widget.includePrefixMatches,
+                ),
             theme: state.brightness == Brightness.light
                 ? widget.brightTheme
                 : widget.darkTheme ?? widget.brightTheme,
