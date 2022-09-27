@@ -17,6 +17,10 @@ What you get out of the box:
 
 ## Getting started
 
+[Add djangoflow_app](https://pub.dev/packages/djangoflow_app/install) to your app's dependency and start to use it.
+
+## Usage
+
 The minimal setup with djangoflow_app should look like this.
 
 ```dart
