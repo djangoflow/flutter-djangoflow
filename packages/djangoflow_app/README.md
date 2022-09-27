@@ -7,7 +7,6 @@ What you get out of the box:
 - a safe way to run your material app
 - exception handling
 - sentry setup
-- 
 - analytics - firebase, facebook and mixpanel with screen events logging
 - auto_route setup
 - sandbox and live environments and switching between them
@@ -18,58 +17,44 @@ What you get out of the box:
 
 ## Getting started
 
+The minimal setup with djangoflow_app should look like this.
 
 ```dart
-
-class MyAnalyticsEvents extends BasicAnalyticsEvents {
-  
-}
-
-Future<void> main() async => App.run(
-  sentryDSN: kSentryDSN,
-  onInit: () async {
-    await AnalyticsRepository.init(
-      events: AnalyticsEvents(),
-      defaultParameters: {}
-    );
-    if (kIsWeb) {
-      await FacebookAuth.i.webInitialize(
-        appId: facebookAppId,
-        cookie: true,
-        xfbml: true,
-        version: 'v13.0',
+// Sample Router from auto_route
+final _appRouter = AppRouter();
+void main() {
+  App.runGuarded(
+    // Pass the app widget here
+    app: App(
+      title: 'Router App',
+      brightTheme: ThemeData.light(),
+      darkTheme: ThemeData.dark(),
+      routerBuilder: () => _appRouter,
+      initialRoutes: [HomeTabRoute()],
+      builder: (context, widget, state, router) => BlocProvider(
+        create: (context) => CounterCubit(),
+        child: widget,
+      ),
+    ),
+    onInit: () async {
+      // Initialize firebase
+      await Firebase.initializeApp(
+        options: DefaultFirebaseOptions.currentPlatform,
       );
-    }
-  },
-    
-  onMessage(context, RemoteMessage message){}
-  onNotificationTap(context, RemoteMessage message){}
-    title: 'GetEase Client',
-    router: AppRouter(authGuard: AuthGuard(), firstRunGuard: FirstRunGuard()),
-    initialRoutes: kIsWeb
-        ? null
-        : [
-      const HomeTabRouter(),
-      if (!kIsWeb) SplashRoute(backgroundColor: AppColors.white),
-    ],
-    fallbackTheme: AppTheme.light,
-    builder: (context, widget) => FirebaseMessageListener(
-      child: ResponsiveBuilder(
-child: SandboxBannerBuilder(
-      child: AuthCubitListener(
-child: widget,
-)
-)
-) SandboxBanner.builder()
-);
+      // Initialize analytics
+      await AppAnalytics.instance.init(
+        disableFacebook: true,
+        disableMixpanel: true,
+        disableFirebase: true,
+      );
+    },
+    onException: (exception, stackTrace) {
+      print('Caught Exceptions $exception');
+    },
+  );
+}
 ```
 
-## Usage
+## Documentation
 
-
-```dart
-FirebaseNotificationsListener(
-  onMessage(context, remoteMessage)
-  onRemoteNotifcationTap(context, remoteMessage)
-)
-```
+[djangoflow_app documentation](https://pub.dev/documentation/djangoflow_app/latest/df_app/df_app-library.html)
