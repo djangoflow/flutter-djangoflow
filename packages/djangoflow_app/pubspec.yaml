@@ -16,9 +16,6 @@ dependencies:
   app_tracking_transparency: ^2.0.2+4
   auto_route: ^5.0.1
   facebook_app_events: ^0.17.0
-  firebase_analytics: ^9.3.1
-  firebase_core: ^1.20.1
-  firebase_messaging: ^13.0.0
   flutter_bloc: ^8.0.1
   freezed_annotation: ^2.1.0
   hydrated_bloc: ^8.1.0

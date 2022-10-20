@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:auto_route/auto_route.dart';
-import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -11,14 +10,9 @@ import 'package:package_info_plus/package_info_plus.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:sentry_flutter/sentry_flutter.dart';
 
-import 'analytics/analytics_route_observer.dart';
-import 'analytics/app_analytics.dart';
 import 'bloc/app_cubit.dart';
 import 'bloc/bloc_exception_observer.dart';
 import 'router/parser.dart';
-
-typedef RemoteMessageCallback = Function(
-    BuildContext context, StackRouter router, RemoteMessage? message);
 
 typedef AppLifecycleCallback = Function(
     BuildContext context, StackRouter router, AppLifecycleState state);
@@ -41,9 +35,6 @@ class App extends StatefulWidget {
   final ThemeData brightTheme;
   final ThemeData? darkTheme;
 
-  final RemoteMessageCallback? onMessage;
-  final RemoteMessageCallback? onNotificationTap;
-
   final AppStateBuilder? builder;
 
   final List<BlocProvider> providers;
@@ -63,8 +54,6 @@ class App extends StatefulWidget {
     this.navigatorObservers = const [],
     this.onFirstRun,
     this.onStart,
-    this.onMessage,
-    this.onNotificationTap,
     this.providers = const [],
     this.scaffoldMessengerKey,
     this.onAppLifecycleStateChange,
@@ -138,18 +127,10 @@ class App extends StatefulWidget {
 }
 
 class _AppState extends State<App> with WidgetsBindingObserver {
-  StreamSubscription<RemoteMessage>? _messagingSubscription;
-  StreamSubscription<RemoteMessage>? _appOpenMessageSubscription;
   late RootStackRouter _router;
 
   @override
   void initState() {
-    _messagingSubscription =
-        FirebaseMessaging.onMessage.listen(_onMessageReceived);
-    _setupInteractedNotification();
-    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-      AppAnalytics.instance.initATT();
-    });
     super.initState();
     WidgetsBinding.instance.addObserver(this);
     _router = widget.routerBuilder();
@@ -178,7 +159,6 @@ class _AppState extends State<App> with WidgetsBindingObserver {
               initialRoutes: widget.initialRoutes,
               navigatorObservers: () => [
                 AutoRouteObserver(),
-                AnalyticsRouteObserver(),
                 ...widget.navigatorObservers,
               ],
             ),
@@ -198,28 +178,12 @@ class _AppState extends State<App> with WidgetsBindingObserver {
         ),
       );
 
-  Future<void> _setupInteractedNotification() async {
-    RemoteMessage? initialMessage =
-        await FirebaseMessaging.instance.getInitialMessage();
-    _handleNotificationTap(initialMessage);
-    _appOpenMessageSubscription =
-        FirebaseMessaging.onMessageOpenedApp.listen(_handleNotificationTap);
-  }
-
-  void _handleNotificationTap(RemoteMessage? message) =>
-      widget.onNotificationTap?.call(context, _router, message);
-
-  void _onMessageReceived(RemoteMessage message) =>
-      widget.onMessage?.call(context, _router, message);
-
   @override
   didChangeAppLifecycleState(AppLifecycleState state) =>
       widget.onAppLifecycleStateChange?.call(context, _router, state);
 
   @override
   void dispose() {
-    _messagingSubscription?.cancel();
-    _appOpenMessageSubscription?.cancel();
     super.dispose();
   }
 }
