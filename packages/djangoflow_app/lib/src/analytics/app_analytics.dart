@@ -50,6 +50,7 @@ class AppAnalytics {
           ? await Mixpanel.init(
               mixPanelToken,
               optOutTrackingDefault: false,
+              trackAutomaticEvents: true,
             )
           : null;
     }
