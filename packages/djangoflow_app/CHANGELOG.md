@@ -1,3 +1,7 @@
+## 2.1.0 - 26 Oct 2022
+
+- Updated depdencies to latest
+
 ## 2.0.8 - 15 Sep 2022
 
 - added routeLocationRewriter argument to app to allow override default
