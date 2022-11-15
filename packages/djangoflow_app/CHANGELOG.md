@@ -1,3 +1,7 @@
+## 2.1.1 - 15 Nov 2022
+
+- Updated flutter_sentry to latest
+
 ## 2.1.0 - 26 Oct 2022
 
 - Updated depdencies to latest
