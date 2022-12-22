@@ -1,3 +1,7 @@
+## 2.1.2 - 22 Dec 2022
+
+- Implemented `updateDefaultParams` method for `Analytics`
+
 ## 2.1.1 - 15 Nov 2022
 
 - Updated flutter_sentry to latest
