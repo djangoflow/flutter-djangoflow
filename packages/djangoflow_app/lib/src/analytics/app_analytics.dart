@@ -73,6 +73,10 @@ class AppAnalytics {
     await firebaseAnalytics.setAnalyticsCollectionEnabled(isCollecting);
   }
 
+  void updateDefaultParams(Map<String, Object?> updatedDefaultParams) {
+    _defaultParams = updatedDefaultParams;
+  }
+
   Future<void> initATT() async {
     if (!kIsWeb) {
       final isEnabled = await _checkTrackingPermission();
