@@ -1,3 +1,7 @@
+## 2.2.0 - 27 Dec 2022
+
+- Commented references of Firebase Messaging in favour of a new package (df_fcm)
+
 ## 2.1.2 - 22 Dec 2022
 
 - Implemented `updateDefaultParams` method for `Analytics`
