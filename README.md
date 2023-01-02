@@ -3,7 +3,7 @@
 Flutter modules for DjangoFlow
 
 - **djangoflow_app** - A production ready setup for a djangoflow flutter app that will boostrap `App` widget and handle errors.
-- **djangoflow_analytics** - This WIP module's idea is to utilize https://github.com/surfstudio/flutter-analytics package for flutter and create modular implementation of analytics module for firebase, facebook and mixpanel which we can re-reuse throughout different projects. This package will supply instance `AnalyticService` globally. For each of the analytics module there should be Action, `ActionPerformer`, `AnalyticsService` that we can use/add with the `DefaultAnalyticService` from `flutter-analytics` package in a unified way. Example:
+- **djangoflow_analytics** - This WIP module's idea is to utilize https://github.com/surfstudio/flutter-analytics package for flutter and create modular implementation of analytics module for firebase, facebook and mixpanel which we can re-reuse throughout different projects. This package will supply instance `AnalyticService` globally. For each of the analytics module there should be Action, `ActionPerformer`, `AnalyticsService` that we can use/add with the `DefaultAnalyticService` from `flutter-analytics` package in a unified way. Also this should decouple `djangoflow_app` from analytics related dependency Example:
 
   ```Dart
   late AnalyticService _analyticsService;
