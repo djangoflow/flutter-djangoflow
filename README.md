@@ -26,3 +26,4 @@ Flutter modules for DjangoFlow
 - **djangoflow_auth** - A WIP complimentary module for https://github.com/djangoflow/django-df-auth ()
 - **djangoflow_fcm_handler** - A WIP module to utilize `firebase_messaging` and handle cases to provide options to interact with Firebase notifications, requesting notification permission and FCMTokens.
 - **djangoflow_common_utils** - A WIP module to handle common utility methods like picking up image, handling in app navigation from notification or launching url etc.
+- **djangoflow_common_widgets** - A WIP module for common widgets like UserAvatar, ImagePickerWidget, AppVersion, Settings page related widgets etc
