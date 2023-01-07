@@ -23,11 +23,9 @@ class AppState with _$AppState {
 }
 
 class AppCubit extends HydratedCubit<AppState> {
-  static AppCubit get instance => _instance;
-  static final AppCubit _instance = AppCubit._internal();
-  static PackageInfo? packageInfo;
+  AppCubit() : super(const AppState());
 
-  AppCubit._internal() : super(const AppState());
+  static PackageInfo? packageInfo;
 
   void firstRunDone() => emit(state.copyWith(firstRun: false));
 

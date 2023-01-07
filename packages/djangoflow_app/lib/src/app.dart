@@ -121,9 +121,9 @@ class App extends StatefulWidget {
                 ? HydratedStorage.webStorageDirectory
                 : await getTemporaryDirectory(),
           );
-          HydratedBlocOverrides.runZoned(() => runApp(app),
-              blocObserver: BlocExceptionObserver(onException: onException),
-              storage: storage);
+          Bloc.observer = BlocExceptionObserver(onException: onException);
+          HydratedBloc.storage = storage;
+          runApp(app);
         },
         (exception, stackTrace) async {
           debugPrint('>>> $exception, $stackTrace');
@@ -153,17 +153,17 @@ class _AppState extends State<App> with WidgetsBindingObserver {
     super.initState();
     WidgetsBinding.instance.addObserver(this);
     _router = widget.routerBuilder();
-    widget.onStart?.call(context, _router, AppCubit.instance.state);
+    widget.onStart?.call(context, _router, AppCubit().state);
   }
 
   @override
   Widget build(BuildContext context) => MultiBlocProvider(
         providers: [
-          BlocProvider<AppCubit>.value(value: AppCubit.instance),
+          BlocProvider<AppCubit>.value(value: AppCubit()),
           ...widget.providers
         ],
         child: BlocBuilder<AppCubit, AppState>(
-          bloc: AppCubit.instance,
+          bloc: AppCubit(),
           builder: (context, state) => MaterialApp.router(
             debugShowCheckedModeBanner: false,
             scaffoldMessengerKey: widget.scaffoldMessengerKey,
