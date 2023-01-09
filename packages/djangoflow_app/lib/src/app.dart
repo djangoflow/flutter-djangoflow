@@ -141,6 +141,7 @@ class _AppState extends State<App> with WidgetsBindingObserver {
   StreamSubscription<RemoteMessage>? _messagingSubscription;
   StreamSubscription<RemoteMessage>? _appOpenMessageSubscription;
   late RootStackRouter _router;
+  AppCubit cubit = AppCubit();
 
   @override
   void initState() {
@@ -153,17 +154,17 @@ class _AppState extends State<App> with WidgetsBindingObserver {
     super.initState();
     WidgetsBinding.instance.addObserver(this);
     _router = widget.routerBuilder();
-    widget.onStart?.call(context, _router, AppCubit().state);
+    widget.onStart?.call(context, _router, context.watch<AppCubit>().state);
   }
 
   @override
   Widget build(BuildContext context) => MultiBlocProvider(
         providers: [
-          BlocProvider<AppCubit>.value(value: AppCubit()),
+          BlocProvider<AppCubit>.value(value: cubit),
           ...widget.providers
         ],
         child: BlocBuilder<AppCubit, AppState>(
-          bloc: AppCubit(),
+          bloc: cubit,
           builder: (context, state) => MaterialApp.router(
             debugShowCheckedModeBanner: false,
             scaffoldMessengerKey: widget.scaffoldMessengerKey,

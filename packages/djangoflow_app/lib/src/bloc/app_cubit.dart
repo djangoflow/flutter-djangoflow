@@ -45,6 +45,12 @@ class AppCubit extends HydratedCubit<AppState> {
         ),
       );
 
+  void toggleLocale(String locale) => emit(
+        state.copyWith(
+          locale: locale,
+        ),
+      );
+
   @override
   AppState? fromJson(Map<String, dynamic> json) => AppState.fromJson(json);
 
