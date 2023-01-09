@@ -8,7 +8,7 @@ import '../helpers/hydrated_bloc.dart';
 var fakeAppState = const AppState(
     firstRun: false,
     environment: AppEnvironment.sandbox,
-    locale: 'en',
+    locale: 'es',
     brightness: Brightness.dark);
 
 void main() {
@@ -75,6 +75,23 @@ void main() {
       build: () => appCubit,
       seed: () => fakeAppState.copyWith(environment: AppEnvironment.live),
       act: (cubit) => cubit.toggleEnvironment(),
+      expect: () => [fakeAppState],
+    );
+
+    blocTest<AppCubit, AppState>(
+      'Cubit emits Default locale == en',
+      build: () => appCubit,
+      act: (cubit) => cubit.toggleLocale('en'),
+      expect: () => [
+        const AppState(locale: 'en'),
+      ],
+    );
+
+    blocTest<AppCubit, AppState>(
+      'Cubit emits new locale if the value passed is not en',
+      build: () => appCubit,
+      seed: () => fakeAppState.copyWith(locale: 'en'),
+      act: (cubit) => cubit.toggleLocale('es'),
       expect: () => [fakeAppState],
     );
   });
