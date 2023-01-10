@@ -16,7 +16,7 @@ void main() {
 
   late AppCubit appCubit;
 
-  setUp(() => appCubit = AppCubit());
+  setUp(() => appCubit = AppCubit.getNewInstance());
 
   group('Test cases for AppCubit methods', () {
     blocTest<AppCubit, AppState>(
@@ -81,7 +81,7 @@ void main() {
     blocTest<AppCubit, AppState>(
       'Cubit emits Default locale == en',
       build: () => appCubit,
-      act: (cubit) => cubit.toggleLocale('en'),
+      act: (cubit) => cubit.changeLocale('en'),
       expect: () => [
         const AppState(locale: 'en'),
       ],
@@ -91,7 +91,7 @@ void main() {
       'Cubit emits new locale if the value passed is not en',
       build: () => appCubit,
       seed: () => fakeAppState.copyWith(locale: 'en'),
-      act: (cubit) => cubit.toggleLocale('es'),
+      act: (cubit) => cubit.changeLocale('es'),
       expect: () => [fakeAppState],
     );
   });

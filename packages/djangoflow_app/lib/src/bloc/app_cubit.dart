@@ -23,9 +23,14 @@ class AppState with _$AppState {
 }
 
 class AppCubit extends HydratedCubit<AppState> {
-  AppCubit() : super(const AppState());
-
+  static AppCubit get instance => _instance;
+  static final AppCubit _instance = AppCubit._internal();
   static PackageInfo? packageInfo;
+
+  @visibleForTesting
+  static AppCubit getNewInstance() => AppCubit._internal();
+
+  AppCubit._internal() : super(const AppState());
 
   void firstRunDone() => emit(state.copyWith(firstRun: false));
 
@@ -45,7 +50,7 @@ class AppCubit extends HydratedCubit<AppState> {
         ),
       );
 
-  void toggleLocale(String locale) => emit(
+  void changeLocale(String locale) => emit(
         state.copyWith(
           locale: locale,
         ),
