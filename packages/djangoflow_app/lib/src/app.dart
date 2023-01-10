@@ -121,9 +121,9 @@ class App extends StatefulWidget {
                 ? HydratedStorage.webStorageDirectory
                 : await getTemporaryDirectory(),
           );
-          HydratedBlocOverrides.runZoned(() => runApp(app),
-              blocObserver: BlocExceptionObserver(onException: onException),
-              storage: storage);
+          Bloc.observer = BlocExceptionObserver(onException: onException);
+          HydratedBloc.storage = storage;
+          runApp(app);
         },
         (exception, stackTrace) async {
           debugPrint('>>> $exception, $stackTrace');

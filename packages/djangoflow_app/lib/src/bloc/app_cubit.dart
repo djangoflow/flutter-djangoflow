@@ -27,6 +27,9 @@ class AppCubit extends HydratedCubit<AppState> {
   static final AppCubit _instance = AppCubit._internal();
   static PackageInfo? packageInfo;
 
+  @visibleForTesting
+  static AppCubit getNewInstance() => AppCubit._internal();
+
   AppCubit._internal() : super(const AppState());
 
   void firstRunDone() => emit(state.copyWith(firstRun: false));
@@ -44,6 +47,12 @@ class AppCubit extends HydratedCubit<AppState> {
           environment: state.environment == AppEnvironment.live
               ? AppEnvironment.sandbox
               : AppEnvironment.live,
+        ),
+      );
+
+  void changeLocale(String locale) => emit(
+        state.copyWith(
+          locale: locale,
         ),
       );
 
