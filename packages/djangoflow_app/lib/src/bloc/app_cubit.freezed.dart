@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'app_cubit.dart';
 
@@ -23,7 +23,7 @@ mixin _$AppState {
   bool get firstRun => throw _privateConstructorUsedError;
   AppEnvironment get environment => throw _privateConstructorUsedError;
   String get locale => throw _privateConstructorUsedError;
-  Brightness get brightness => throw _privateConstructorUsedError;
+  ThemeMode get themeMode => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -34,47 +34,51 @@ mixin _$AppState {
 /// @nodoc
 abstract class $AppStateCopyWith<$Res> {
   factory $AppStateCopyWith(AppState value, $Res Function(AppState) then) =
-      _$AppStateCopyWithImpl<$Res>;
+      _$AppStateCopyWithImpl<$Res, AppState>;
+  @useResult
   $Res call(
       {bool firstRun,
       AppEnvironment environment,
       String locale,
-      Brightness brightness});
+      ThemeMode themeMode});
 }
 
 /// @nodoc
-class _$AppStateCopyWithImpl<$Res> implements $AppStateCopyWith<$Res> {
+class _$AppStateCopyWithImpl<$Res, $Val extends AppState>
+    implements $AppStateCopyWith<$Res> {
   _$AppStateCopyWithImpl(this._value, this._then);
 
-  final AppState _value;
   // ignore: unused_field
-  final $Res Function(AppState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? firstRun = freezed,
-    Object? environment = freezed,
-    Object? locale = freezed,
-    Object? brightness = freezed,
+    Object? firstRun = null,
+    Object? environment = null,
+    Object? locale = null,
+    Object? themeMode = null,
   }) {
     return _then(_value.copyWith(
-      firstRun: firstRun == freezed
+      firstRun: null == firstRun
           ? _value.firstRun
           : firstRun // ignore: cast_nullable_to_non_nullable
               as bool,
-      environment: environment == freezed
+      environment: null == environment
           ? _value.environment
           : environment // ignore: cast_nullable_to_non_nullable
               as AppEnvironment,
-      locale: locale == freezed
+      locale: null == locale
           ? _value.locale
           : locale // ignore: cast_nullable_to_non_nullable
               as String,
-      brightness: brightness == freezed
-          ? _value.brightness
-          : brightness // ignore: cast_nullable_to_non_nullable
-              as Brightness,
-    ));
+      themeMode: null == themeMode
+          ? _value.themeMode
+          : themeMode // ignore: cast_nullable_to_non_nullable
+              as ThemeMode,
+    ) as $Val);
   }
 }
 
@@ -84,47 +88,47 @@ abstract class _$$_AppStateCopyWith<$Res> implements $AppStateCopyWith<$Res> {
           _$_AppState value, $Res Function(_$_AppState) then) =
       __$$_AppStateCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {bool firstRun,
       AppEnvironment environment,
       String locale,
-      Brightness brightness});
+      ThemeMode themeMode});
 }
 
 /// @nodoc
-class __$$_AppStateCopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res>
+class __$$_AppStateCopyWithImpl<$Res>
+    extends _$AppStateCopyWithImpl<$Res, _$_AppState>
     implements _$$_AppStateCopyWith<$Res> {
   __$$_AppStateCopyWithImpl(
       _$_AppState _value, $Res Function(_$_AppState) _then)
-      : super(_value, (v) => _then(v as _$_AppState));
+      : super(_value, _then);
 
-  @override
-  _$_AppState get _value => super._value as _$_AppState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? firstRun = freezed,
-    Object? environment = freezed,
-    Object? locale = freezed,
-    Object? brightness = freezed,
+    Object? firstRun = null,
+    Object? environment = null,
+    Object? locale = null,
+    Object? themeMode = null,
   }) {
     return _then(_$_AppState(
-      firstRun: firstRun == freezed
+      firstRun: null == firstRun
           ? _value.firstRun
           : firstRun // ignore: cast_nullable_to_non_nullable
               as bool,
-      environment: environment == freezed
+      environment: null == environment
           ? _value.environment
           : environment // ignore: cast_nullable_to_non_nullable
               as AppEnvironment,
-      locale: locale == freezed
+      locale: null == locale
           ? _value.locale
           : locale // ignore: cast_nullable_to_non_nullable
               as String,
-      brightness: brightness == freezed
-          ? _value.brightness
-          : brightness // ignore: cast_nullable_to_non_nullable
-              as Brightness,
+      themeMode: null == themeMode
+          ? _value.themeMode
+          : themeMode // ignore: cast_nullable_to_non_nullable
+              as ThemeMode,
     ));
   }
 }
@@ -136,7 +140,7 @@ class _$_AppState with DiagnosticableTreeMixin implements _AppState {
       {this.firstRun = true,
       this.environment = AppEnvironment.live,
       this.locale = 'en',
-      this.brightness = Brightness.light});
+      this.themeMode = ThemeMode.light});
 
   factory _$_AppState.fromJson(Map<String, dynamic> json) =>
       _$$_AppStateFromJson(json);
@@ -152,11 +156,11 @@ class _$_AppState with DiagnosticableTreeMixin implements _AppState {
   final String locale;
   @override
   @JsonKey()
-  final Brightness brightness;
+  final ThemeMode themeMode;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'AppState(firstRun: $firstRun, environment: $environment, locale: $locale, brightness: $brightness)';
+    return 'AppState(firstRun: $firstRun, environment: $environment, locale: $locale, themeMode: $themeMode)';
   }
 
   @override
@@ -167,7 +171,7 @@ class _$_AppState with DiagnosticableTreeMixin implements _AppState {
       ..add(DiagnosticsProperty('firstRun', firstRun))
       ..add(DiagnosticsProperty('environment', environment))
       ..add(DiagnosticsProperty('locale', locale))
-      ..add(DiagnosticsProperty('brightness', brightness));
+      ..add(DiagnosticsProperty('themeMode', themeMode));
   }
 
   @override
@@ -175,25 +179,23 @@ class _$_AppState with DiagnosticableTreeMixin implements _AppState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_AppState &&
-            const DeepCollectionEquality().equals(other.firstRun, firstRun) &&
-            const DeepCollectionEquality()
-                .equals(other.environment, environment) &&
-            const DeepCollectionEquality().equals(other.locale, locale) &&
-            const DeepCollectionEquality()
-                .equals(other.brightness, brightness));
+            (identical(other.firstRun, firstRun) ||
+                other.firstRun == firstRun) &&
+            (identical(other.environment, environment) ||
+                other.environment == environment) &&
+            (identical(other.locale, locale) || other.locale == locale) &&
+            (identical(other.themeMode, themeMode) ||
+                other.themeMode == themeMode));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(firstRun),
-      const DeepCollectionEquality().hash(environment),
-      const DeepCollectionEquality().hash(locale),
-      const DeepCollectionEquality().hash(brightness));
+  int get hashCode =>
+      Object.hash(runtimeType, firstRun, environment, locale, themeMode);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_AppStateCopyWith<_$_AppState> get copyWith =>
       __$$_AppStateCopyWithImpl<_$_AppState>(this, _$identity);
 
@@ -210,7 +212,7 @@ abstract class _AppState implements AppState {
       {final bool firstRun,
       final AppEnvironment environment,
       final String locale,
-      final Brightness brightness}) = _$_AppState;
+      final ThemeMode themeMode}) = _$_AppState;
 
   factory _AppState.fromJson(Map<String, dynamic> json) = _$_AppState.fromJson;
 
@@ -221,7 +223,7 @@ abstract class _AppState implements AppState {
   @override
   String get locale;
   @override
-  Brightness get brightness;
+  ThemeMode get themeMode;
   @override
   @JsonKey(ignore: true)
   _$$_AppStateCopyWith<_$_AppState> get copyWith =>

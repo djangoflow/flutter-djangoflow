@@ -12,9 +12,8 @@ _$_AppState _$$_AppStateFromJson(Map<String, dynamic> json) => _$_AppState(
           $enumDecodeNullable(_$AppEnvironmentEnumMap, json['environment']) ??
               AppEnvironment.live,
       locale: json['locale'] as String? ?? 'en',
-      brightness:
-          $enumDecodeNullable(_$BrightnessEnumMap, json['brightness']) ??
-              Brightness.light,
+      themeMode: $enumDecodeNullable(_$ThemeModeEnumMap, json['themeMode']) ??
+          ThemeMode.light,
     );
 
 Map<String, dynamic> _$$_AppStateToJson(_$_AppState instance) =>
@@ -22,7 +21,7 @@ Map<String, dynamic> _$$_AppStateToJson(_$_AppState instance) =>
       'firstRun': instance.firstRun,
       'environment': _$AppEnvironmentEnumMap[instance.environment]!,
       'locale': instance.locale,
-      'brightness': _$BrightnessEnumMap[instance.brightness]!,
+      'themeMode': _$ThemeModeEnumMap[instance.themeMode]!,
     };
 
 const _$AppEnvironmentEnumMap = {
@@ -30,7 +29,8 @@ const _$AppEnvironmentEnumMap = {
   AppEnvironment.sandbox: 'sandbox',
 };
 
-const _$BrightnessEnumMap = {
-  Brightness.dark: 'dark',
-  Brightness.light: 'light',
+const _$ThemeModeEnumMap = {
+  ThemeMode.system: 'system',
+  ThemeMode.light: 'light',
+  ThemeMode.dark: 'dark',
 };

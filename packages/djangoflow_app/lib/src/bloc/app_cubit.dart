@@ -1,4 +1,5 @@
 import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:package_info_plus/package_info_plus.dart';
@@ -15,7 +16,7 @@ class AppState with _$AppState {
     @Default(true) bool firstRun,
     @Default(AppEnvironment.live) AppEnvironment environment,
     @Default('en') String locale,
-    @Default(Brightness.light) Brightness brightness,
+    @Default(ThemeMode.light) ThemeMode themeMode,
   }) = _AppState;
 
   factory AppState.fromJson(Map<String, dynamic> json) =>
@@ -26,16 +27,17 @@ class AppCubit extends HydratedCubit<AppState> {
   static AppCubit get instance => _instance;
   static final AppCubit _instance = AppCubit._internal();
   static PackageInfo? packageInfo;
+  // TODO use a initialState method to pass custom initial state for the constructor _internal
+  // static AppState? _initialState;
+  // static set initialState(AppState? appState) => _initialState = appState;
 
   AppCubit._internal() : super(const AppState());
 
   void firstRunDone() => emit(state.copyWith(firstRun: false));
 
-  void toggleBrightness() => emit(
+  void updateThemeMode(ThemeMode themeMode) => emit(
         state.copyWith(
-          brightness: state.brightness == Brightness.light
-              ? Brightness.dark
-              : Brightness.light,
+          themeMode: themeMode,
         ),
       );
 
@@ -44,6 +46,12 @@ class AppCubit extends HydratedCubit<AppState> {
           environment: state.environment == AppEnvironment.live
               ? AppEnvironment.sandbox
               : AppEnvironment.live,
+        ),
+      );
+
+  void updateLocale(String locale) => emit(
+        state.copyWith(
+          locale: locale,
         ),
       );
 
