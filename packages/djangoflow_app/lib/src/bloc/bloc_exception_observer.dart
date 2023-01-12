@@ -1,6 +1,5 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:sentry_flutter/sentry_flutter.dart';
 
 class BlocExceptionObserver extends BlocObserver {
   final Function(Object exception, StackTrace? stackTrace) onException;
@@ -31,9 +30,6 @@ class BlocExceptionObserver extends BlocObserver {
 
     onException(error, stackTrace);
 
-    if (!kDebugMode) {
-      Sentry.captureException(error, stackTrace: stackTrace);
-    }
     super.onError(bloc, error, stackTrace);
   }
 }
