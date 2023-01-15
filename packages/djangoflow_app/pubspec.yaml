@@ -1,5 +1,5 @@
 name: djangoflow_app
-description: Djagoflow app with firebase support.
+description: A simple, opinionated, and minimal Flutter application structure for quick start and easy maintenance.
 version: 3.0.0-dev
 homepage: https://github.com/djangoflow/flutter-djangoflow/
 
