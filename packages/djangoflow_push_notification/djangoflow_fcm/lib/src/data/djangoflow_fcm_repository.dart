@@ -12,7 +12,7 @@ class DjangoflowFCMRepository {
   Future<RemoteMessage?> getIntialRemoteMessage() =>
       FirebaseMessaging.instance.getInitialMessage();
 
-  Stream<RemoteMessage> getBackgroundRemoteMessageStream() =>
+  Stream<RemoteMessage> getBackgroundRemoteMessageTappedStream() =>
       FirebaseMessaging.onMessageOpenedApp;
 
   Future<NotificationSettings> requestNotificationPermission() =>
