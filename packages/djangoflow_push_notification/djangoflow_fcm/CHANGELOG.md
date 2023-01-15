@@ -1,3 +1,3 @@
-## 0.0.1
+## [0.0.1] - 15 Jan
 
-* TODO: Describe initial release.
+- Implemented DjangoflowFCMBloc, Repository and BlocListeners(for Token and RemoteMessage updates)
