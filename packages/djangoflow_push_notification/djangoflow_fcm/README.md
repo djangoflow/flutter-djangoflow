@@ -1,39 +1,82 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# djangoflow_fcm
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
+A Dart package that provides a simple and easy-to-use solution for handling Firebase Cloud Messaging (FCM) functionality in a Flutter app.
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
+## Installation
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+Add `djangoflow_fcm` as a dependency in your pubspec.yaml file:
 
-## Features
-
-TODO: List what your package can do. Maybe include images, gifs, or videos.
-
-## Getting started
-
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+```yaml
+dependencies:
+  djangoflow_fcm: <latest version>
+```
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+The package contains a `DjangoflowFCMBloc` that handles FCM functionality, a `DjangoflowFCMRepository` that communicates with the Firebase messaging service, and specialized `BlocListener` classes that can be used to listen for updates to the FCM token and message.
 
 ```dart
-const like = 'sample';
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider<DjangoflowFCMBloc>(
+          create: (context) => DjangoflowFCMBloc(
+            DjangoflowFCMRepository(),
+          ),
+        ),
+      ],
+      child: MaterialApp(
+        home: Scaffold(
+          body: DjangoflowFCMBlocMessageListener(
+            listener: (context, state) {
+              // Do something with the received message
+            },
+            child: DjangoflowFCMBlocTokenListener(
+              listener: (context, state) {
+                // Do something with the received token
+              },
+              child: MyHomePage(),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
 ```
 
-## Additional information
+In the example above, `DjangoflowFCMBloc` is wrapped in a `BlocProvider` and provided to the entire app using `MultiBlocProvider`. The package also includes DjangoflowFCMBlocMessageListener and DjangoflowFCMBlocTokenListener which are used to listen for updates to the FCM message and token, respectively. You can use these classes to handle the received message and token.
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+## Additional Information
+
+`DjangoflowFCMBloc` contains the following events:
+
+- `DjangoflowFCMTokenRequested`
+- `DjangoflowFCMIntialMessageRequested`
+- `DjangoflowFCMOnTokenReceived`
+- `DjangoflowFCMOnMessageReceived`
+
+`DjangoflowFCMRepository` provides the following methods:
+
+- `getForegroundRemoteMessageStream()`
+- `getIntialRemoteMessage()`
+- `getBackgroundRemoteMessageTappedStream()`
+- `requestNotificationPermission()`
+- `getToken()`
+- `getTokenUpdateStream()`
+- `deleteToken()`
+- `isSupported()`
+
+You can use these events and methods to customize the package as per your requirement.
+
+## Contributions
+
+This package is open for contributions and suggestions. If you find any bug or have any suggestion please open an issue or pull request.
+
+## License
+
+This package is provided under the MIT License.
+
+Thank you for using djangoflow_fcm!
