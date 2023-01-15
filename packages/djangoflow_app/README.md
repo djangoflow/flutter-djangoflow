@@ -1,64 +1,60 @@
-## Features
+# djangoflow_app
 
-This is a very opinionated setup of a production grade flutter app.
-
-What you get out of the box:
-
-- a safe way to run your material app
-- exception handling
-- sentry setup
-- analytics - firebase, facebook and mixpanel with screen events logging
-- auto_route setup
-- sandbox and live environments and switching between them
-- switching of app theme
-- switching op app locale
-- firebase message handling
-- app lifecycle handling
+A simple, opinionated, and minimal Flutter application structure for quick start and easy maintenance.
 
 ## Getting started
 
-[Add djangoflow_app](https://pub.dev/packages/djangoflow_app/install) to your app's dependency and start to use it.
+Add `djangoflow_app` as a dependency in your pubspec.yaml file.
 
-## Usage
-
-The minimal setup with djangoflow_app should look like this.
-
-```dart
-// Sample Router from auto_route
-final _appRouter = AppRouter();
-void main() {
-  App.runGuarded(
-    // Pass the app widget here
-    app: App(
-      title: 'Router App',
-      brightTheme: ThemeData.light(),
-      darkTheme: ThemeData.dark(),
-      routerBuilder: () => _appRouter,
-      initialRoutes: [HomeTabRoute()],
-      builder: (context, widget, state, router) => BlocProvider(
-        create: (context) => CounterCubit(),
-        child: widget,
-      ),
-    ),
-    onInit: () async {
-      // Initialize firebase
-      await Firebase.initializeApp(
-        options: DefaultFirebaseOptions.currentPlatform,
-      );
-      // Initialize analytics
-      await AppAnalytics.instance.init(
-        disableFacebook: true,
-        disableMixpanel: true,
-        disableFirebase: true,
-      );
-    },
-    onException: (exception, stackTrace) {
-      print('Caught Exceptions $exception');
-    },
-  );
-}
+```yaml
+dependencies:
+  djangoflow_app: <latest version>
 ```
 
-## Documentation
+Import `djangoflow_app` and use it to create your root StatelessWidget.
 
-[djangoflow_app documentation](https://pub.dev/documentation/djangoflow_app/latest/df_app/df_app-library.html)
+```dart
+import 'package:djangoflow_app/djangoflow_app.dart';
+
+void main() => DjangoflowAppRunner.run(
+      onException: (exception, stackTrace) {
+        // Your custom exception handling
+      },
+      rootWidgetBuilder: (appBuilder) async {
+        return MaterialApp(
+          title: 'Djangoflow App',
+          theme: ThemeData(
+            primarySwatch: Colors.blue,
+          ),
+          home: appBuilder(AppBuilder(
+            repositoryProviders: [
+              // Your repository providers
+            ],
+            providers: [
+              // Your BLoC providers
+            ],
+            listeners: [
+              // Your BLoC listeners
+            ],
+            builder: (context) => YourRootWidget(),
+          )),
+        );
+      },
+    );
+```
+
+## Features
+
+`AppBuilder`: A custom `StatelessWidget` that allows you to provide global `BlocProvider`, `BlocListener`, `RepositoryProvider`, and callbacks for initState and dispose in a single place.
+
+`AppCubitBuilder`, `AppCubitConsumer`, and `AppCubitListener`: A set of custom `BlocBuilder`, `BlocConsumer`, and `BlocListener` that allows you to listen to the AppCubit state changes.
+
+`DjangoflowAppRunner`: A custom runApp that allows you to handle exceptions globally and sets up the `HydratedBloc` storage and `BlocObserver` for the entire application.
+
+`DjangoflowAppSnackbar`: A simple `SnackBar` manager that allows you to show different types of `SnackBar` (info, error, in-app notification) globally with a single instance.
+
+`SandboxBanner`: A simple Banner that allows you to show a banner on the top-start corner of the screen with a custom message and color. It's useful to indicate the current environment (e.g., sandbox, production).
+
+## Note
+
+`DjangoflowAppSnackbar` uses `ScaffoldMessenger`. `DjangoflowAppSnackbar`'s global key needs to be provided to `MaterialApp`'s `scaffoldMessengerKey`.
