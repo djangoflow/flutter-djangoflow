@@ -1,39 +1,86 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# djangoflow_error_reporter
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
+Djangoflow Error Reporter is a library that provides an easy and flexible way to handle errors in your flutter application. It allows you to add multiple error reporters and provides a singleton for managing them all. It also provides basic functionality for initializing, reporting and updating user information.
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
+## Installation
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+Add the package to your pubspec.yaml file:
 
-## Features
+```yaml
+dependencies:
+  djangoflow_error_reporter: <latest_version>
+```
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
-
-## Getting started
-
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+Then run `flutter pub get` to install the package.
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+### Initializing
+
+To initialize the error reporter, you can use the `initialize` method of the `DjangoflowErrorReporter` class. This method takes in two optional strings, `env` and `release`.
 
 ```dart
-const like = 'sample';
+DjangoflowErrorReporter.instance.initialize(env: 'production', release: '1.0.0+1');
 ```
 
-## Additional information
+### Reporting errors
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+To report an error, you can use the `report` method of the `DjangoflowErrorReporter` class. This method takes in an exception object and an optional stackTrace object.
+
+```dart
+try {
+  // some code that throws an exception
+} catch (e, s) {
+  DjangoflowErrorReporter.instance.report(e, s);
+}
+```
+
+### Updating user information
+
+To update the user information, you can use the `updateUserInformation` method of the `DjangoflowErrorReporter` class. This method takes in three optional strings, `id`, `email`, and `name`.
+
+```dart
+DjangoflowErrorReporter.instance.updateUserInformation(id: '123', email: 'user@example.com', name: 'John Doe');
+```
+
+### Adding error reporters
+
+To add error reporters to the `DjangoflowErrorReporter` class, you can use the addAll method. This method takes in a list of `ErrorReporter` objects.
+
+```dart
+final errorReporter1 = CustomErrorReporter();
+final errorReporter2 = AnotherCustomErrorReporter();
+final errorReporters = [errorReporter1, errorReporter2];
+DjangoflowErrorReporter.instance.addAll(errorReporters);
+```
+
+## Example
+
+```dart
+import 'package:djangoflow_error_reporter/djangoflow_error_reporter.dart';
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    DjangoflowErrorReporter.instance
+        .initialize(env: 'production', release: '1.0.0+1');
+
+    return MaterialApp(
+      home: Scaffold(
+        body: Center(
+          child: RaisedButton(
+            onPressed: () {
+              try {
+                throw Exception('Something went wrong');
+              } catch (e, s) {
+                DjangoflowErrorReporter.instance.report(e, s);
+              }
+            },
+            child: Text('Throw Exception'),
+          ),
+        ),
+      ),
+    );
+  }
+}
+```
