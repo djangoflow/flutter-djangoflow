@@ -1,5 +1,5 @@
 name: djangoflow_sentry_reporter
-description: A new Flutter package project.
+description: A library that allows you to report errors to `Sentry` using the `djangoflow_error_reporter` pacakge.
 version: 0.0.1
 homepage: https://github.com/djangoflow/flutter-djangoflow/
 
