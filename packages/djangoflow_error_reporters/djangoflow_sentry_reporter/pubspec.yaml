@@ -13,6 +13,7 @@ dependencies:
     sdk: flutter
   djangoflow_error_reporter:
     path: "../djangoflow_error_reporter"
+  sentry_flutter: ^6.18.2
 
 dev_dependencies:
   flutter_test:
