@@ -1,39 +1,87 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# djangoflow_sentry_reporter
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
+Djangoflow Sentry Reporter is a library that allows you to report errors to `Sentry` using the `DjangoflowErrorReporter` class. It is built on top of the `sentry_flutter` package and provides a simple and easy to use class for reporting errors to Sentry.
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
+## Installation
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+Add the package to your pubspec.yaml file:
 
-## Features
+```yaml
+dependencies:
+djangoflow_sentry_reporter: <latest_version>
+djangoflow_error_reporter: <latest_version> // Add this to use with DjangoflowErrorReporter
+sentry_flutter: ^0.1.0 // Add this if you need other features from Sentry
+```
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
-
-## Getting started
-
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+Then run `flutter pub get` to install the package.
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+To use the `DjangoflowSentryReporter` class, you need to create an instance of it by passing your Sentry DSN as a constructor argument.
 
 ```dart
-const like = 'sample';
+final sentryReporter = DjangoflowSentryReporter("https://your_dsn_key@sentry.io/project_id");
 ```
 
-## Additional information
+Then you can add the `DjangoflowSentryReporter` class to the `DjangoflowErrorReporter` class
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+```dart
+DjangoflowErrorReporter.instance.addAll([sentryReporter]);
+```
+
+Finally, you can report errors to `Sentry` by using the `DjangoflowErrorReporter.instance.report(e, s)` method
+
+```dart
+try {
+// some code that throws an exception
+} catch (e, s) {
+  DjangoflowErrorReporter.instance.report(e, s); // this will send error through Sentry
+}
+```
+
+### Initializing
+
+You can also initialize the `DjangoflowSentryReporter` instance by passing env and release values to `DjangoflowErrorReporter.instance`
+
+```dart
+DjangoflowErrorReporter.instance.initialize(env: 'production', release: '1.0.0');
+```
+
+### Updating user information
+
+You can update the user information by passing `id`, `email` and `name` values to `DjangoflowErrorReporter.instance`
+
+```dart
+DjangoflowErrorReporter.instance.updateUserInformation(id: '123', email: 'user@example.com', name: 'John Doe');
+```
+
+## Example
+
+```dart
+import 'package:djangoflow_sentry_reporter/djangoflow_sentry_reporter.dart';
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    final sentryReporter = DjangoflowSentryReporter("https://your_dsn_key@sentry.io/project_id");
+    DjangoflowErrorReporter.instance.addAll([sentryReporter]);
+    DjangoflowErrorReporter.instance.initialize(env: 'production', release: '1.0.0');
+    return MaterialApp(
+      home: Scaffold(
+        body: Center(
+          child: RaisedButton(
+            onPressed: () {
+              try {
+                throw Exception('Something went wrong');
+              } catch (e, s) {
+                DjangoflowErrorReporter.instance.report(e, s);
+              }
+            },
+            child: Text('Throw Exception'),
+          ),
+        ),
+      ),
+    );
+  }
+}
+```
