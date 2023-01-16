@@ -1,3 +1,4 @@
-## 0.0.1
+## [0.0.1] - Jan 16 2023
 
-* TODO: Describe initial release.
+- Provides basic functionality for initializing, reporting and updating user information
+- Provides `ErrorReporter` and `DjangoflowErrorReporter` classes for handling errors
