@@ -9,3 +9,6 @@ Flutter modules for DjangoFlow
   - `djangoflow_app_links`: Concrete implementation of `djangoflow_deep_link_interface` using `app_links` package.
 - `djangoflow_push_notification`: Libraries to handle push notification from different push notification services.
   - `djangoflow_fcm`: A Dart package that provides a simple and easy-to-use solution for handling Firebase Cloud Messaging (FCM) functionality in a Flutter app.
+- `djangoflow_error_reporters`: Libraries to provide interface and concrete implementation for error reporting.
+  - `djangoflow_error_reporter` : Djangoflow Error Reporter is a library that provides an easy and flexible way to handle errors in your flutter application.
+  - `djangoflow_sentry_reporter` : Djangoflow Sentry Reporter is a library that allows you to report errors to `Sentry` using the `djangoflow_error_reporter` package.
