@@ -4,15 +4,21 @@ import 'package:flutter/foundation.dart';
 class DjangoflowAnalytics extends AnalyticService<AnalyticAction> {
   static DjangoflowAnalytics get instance => _instance;
   static final DjangoflowAnalytics _instance = DjangoflowAnalytics._internal();
-
+  late final bool? _hasInitialized;
   DjangoflowAnalytics._internal() : super();
+
+  void init() {
+    _hasInitialized = true;
+  }
 
   final _performers = <AnalyticActionPerformer<AnalyticAction>>{};
 
   @override
   void performAction(AnalyticAction action) {
-    _getPerformersByAction(action)
-        .forEach((performer) => performer.perform(action));
+    if (_hasInitialized == true) {
+      _getPerformersByAction(action)
+          .forEach((performer) => performer.perform(action));
+    }
   }
 
   /// Add [performer] to the service.
