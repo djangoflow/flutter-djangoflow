@@ -31,9 +31,15 @@ class FirebaseUserPropertyUpdater
 
   @override
   void perform(FirebaseUserProperty action) {
-    _firebaseAnalytics.setUserProperty(
-      name: _userPropertyCutter.cutName(action.key),
-      value: _userPropertyCutter.cutValue(action.value),
-    );
+    if (action.key == 'id') {
+      _firebaseAnalytics.setUserId(id: action.value);
+    } else {
+      _firebaseAnalytics.setUserProperty(
+        name: _userPropertyCutter.cutName(action.key),
+        value: action.value != null
+            ? _userPropertyCutter.cutValue(action.value!)
+            : action.value,
+      );
+    }
   }
 }
