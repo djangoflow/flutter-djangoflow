@@ -23,8 +23,8 @@ import 'firebase_updatable_user_property.dart';
 class FirebaseUpdatableUserPropertyUpdater
     implements AnalyticActionPerformer<FirebaseUpdatableUserProperty> {
   final FirebaseAnalytics _firebaseAnalytics;
-  final FirebaseUpdatableUserPropertyCutter _userPropertyCutter =
-      FirebaseUpdatableUserPropertyCutter();
+  final FirebaseUserPropertyCutter _userPropertyCutter =
+      FirebaseUserPropertyCutter();
 
   FirebaseUpdatableUserPropertyUpdater(this._firebaseAnalytics);
   @override
