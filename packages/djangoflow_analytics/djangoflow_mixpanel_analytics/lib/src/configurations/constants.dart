@@ -1,7 +1,5 @@
-const kMaxEventKeyLength = 40;
-const kMaxEventValueLength = 100;
+const kMaxEventKeyLength = 255;
+const kMaxEventValueLength = 255;
 
-const kMaxSetUserPropertyKeyLength = 24;
-const kMaxSetUserPropertyValueLength = 36;
-
-const kUserIdKey = 'user_id';
+const kMaxSetUserPropertyKeyLength = 255;
+const kMaxSetUserPropertyValueLength = 255;
