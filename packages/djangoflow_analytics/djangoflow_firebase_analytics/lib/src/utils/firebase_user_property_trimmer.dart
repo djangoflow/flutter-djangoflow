@@ -2,7 +2,7 @@ import 'package:djangoflow_analytics/djangoflow_analytics.dart';
 
 import '../configurations/constants.dart';
 
-class FirebaseUserUpdatePropertyCutter extends UserPropertyTrimmer {
+class FirebaseUpdatableUserPropertyCutter extends UserPropertyTrimmer {
   @override
   String trimName(String name) => name.length <= kMaxSetUserPropertyKeyLength
       ? name
