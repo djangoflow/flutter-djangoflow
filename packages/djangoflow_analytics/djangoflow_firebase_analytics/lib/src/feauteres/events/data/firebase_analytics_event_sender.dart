@@ -1,13 +1,13 @@
 import 'package:analytics/analytics.dart';
 
 import 'package:djangoflow_firebase_analytics/src/feauteres/events/data/firebase_analytics_event.dart';
-import 'package:djangoflow_firebase_analytics/src/utils/fireabase_event_cutter.dart';
+import 'package:djangoflow_firebase_analytics/src/utils/fireabase_event_trimmer.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
 
 class FirebaseAnalyticEventSender
     implements AnalyticActionPerformer<FirebaseAnalyticsEvent> {
   final FirebaseAnalytics _firebaseAnalytics;
-  final FirebaseEventCutter _eventCutter = FirebaseEventCutter();
+  final FirebaseEventTrimmer _eventTrimmer = FirebaseEventTrimmer();
 
   FirebaseAnalyticEventSender(this._firebaseAnalytics);
 
@@ -16,10 +16,10 @@ class FirebaseAnalyticEventSender
 
   @override
   void perform(FirebaseAnalyticsEvent action) {
-    final params =
-        _eventCutter.cutMapParams(action.params as Map<String, Object>);
+    final notNullParams = _eventTrimmer.trimNullValueMapParams(action.params);
+    final params = _eventTrimmer.trimMapParams(notNullParams);
     _firebaseAnalytics.logEvent(
-      name: _eventCutter.cutName(action.key),
+      name: _eventTrimmer.trimName(action.key),
       parameters: params,
     );
   }

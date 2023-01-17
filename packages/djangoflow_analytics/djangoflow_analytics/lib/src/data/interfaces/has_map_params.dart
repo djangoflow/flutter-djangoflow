@@ -1,3 +1,3 @@
 abstract class HasMapParams {
-  Map<String, dynamic> get params;
+  Map<String, Object?> get params;
 }

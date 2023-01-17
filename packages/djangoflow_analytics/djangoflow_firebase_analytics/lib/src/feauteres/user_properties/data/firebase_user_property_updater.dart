@@ -15,7 +15,7 @@
 import 'package:analytics/core/analytic_action.dart';
 import 'package:analytics/core/analytic_action_performer.dart';
 import 'package:djangoflow_firebase_analytics/src/configurations/constants.dart';
-import 'package:djangoflow_firebase_analytics/src/utils/firebase_user_property_cutter.dart';
+import 'package:djangoflow_firebase_analytics/src/utils/firebase_user_property_trimmer.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
 
 import 'firebase_user_property.dart';
@@ -36,9 +36,9 @@ class FirebaseUserPropertyUpdater
       _firebaseAnalytics.setUserId(id: action.value);
     } else {
       _firebaseAnalytics.setUserProperty(
-        name: _userPropertyCutter.cutName(action.key),
+        name: _userPropertyCutter.trimName(action.key),
         value: action.value != null
-            ? _userPropertyCutter.cutValue(action.value!)
+            ? _userPropertyCutter.trimValue(action.value!)
             : action.value,
       );
     }
