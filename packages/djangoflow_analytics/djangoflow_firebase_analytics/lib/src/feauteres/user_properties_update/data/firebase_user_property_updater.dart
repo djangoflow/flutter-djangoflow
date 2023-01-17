@@ -33,7 +33,7 @@ class FirebaseUserPropertyUpdater
 
   @override
   void perform(FirebaseUpdatableUserProperty action) {
-    if (action.key == kIdKey) {
+    if (action.key == kUserIdKey) {
       _firebaseAnalytics.setUserId(id: action.value);
     } else {
       _firebaseAnalytics.setUserProperty(

@@ -19,7 +19,7 @@ class FirebaseUserPropertyRemover
 
   @override
   void perform(FirebaseRemovableUserProperty action) {
-    if (action.key == kIdKey) {
+    if (action.key == kUserIdKey) {
       _firebaseAnalytics.setUserId(id: null);
     } else {
       _firebaseAnalytics.setUserProperty(

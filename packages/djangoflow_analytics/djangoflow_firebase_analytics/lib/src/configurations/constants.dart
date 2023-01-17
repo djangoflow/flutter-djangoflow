@@ -4,4 +4,4 @@ const kMaxEventValueLength = 100;
 const kMaxSetUserPropertyKeyLength = 24;
 const kMaxSetUserPropertyValueLength = 36;
 
-const kIdKey = 'id';
+const kUserIdKey = 'user_id';
