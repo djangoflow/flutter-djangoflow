@@ -18,20 +18,20 @@ import 'package:djangoflow_firebase_analytics/src/configurations/constants.dart'
 import 'package:djangoflow_firebase_analytics/src/utils/firebase_user_property_trimmer.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
 
-import 'firebase_user_property.dart';
+import 'firebase_user_update_property.dart';
 
-class FirebaseUserPropertyUpdater
-    implements AnalyticActionPerformer<FirebaseUserProperty> {
+class FirebaseUserUpdatePropertyUpdater
+    implements AnalyticActionPerformer<FirebaseUserUpdateProperty> {
   final FirebaseAnalytics _firebaseAnalytics;
-  final FirebaseUserPropertyCutter _userPropertyCutter =
-      FirebaseUserPropertyCutter();
+  final FirebaseUserUpdatePropertyCutter _userPropertyCutter =
+      FirebaseUserUpdatePropertyCutter();
 
-  FirebaseUserPropertyUpdater(this._firebaseAnalytics);
+  FirebaseUserUpdatePropertyUpdater(this._firebaseAnalytics);
   @override
-  bool canHandle(AnalyticAction action) => action is FirebaseUserProperty;
+  bool canHandle(AnalyticAction action) => action is FirebaseUserUpdateProperty;
 
   @override
-  void perform(FirebaseUserProperty action) {
+  void perform(FirebaseUserUpdateProperty action) {
     if (action.key == kIdKey) {
       _firebaseAnalytics.setUserId(id: action.value);
     } else {
