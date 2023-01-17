@@ -11,6 +11,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  analytics: ^1.0.2
   djangoflow_analytics:
     path: "/Users/saifulislam/Development/apexlabs/djangoflow/flutter-djangoflow/packages/djangoflow_analytics/djangoflow_analytics"
   firebase_analytics: ^10.1.0
