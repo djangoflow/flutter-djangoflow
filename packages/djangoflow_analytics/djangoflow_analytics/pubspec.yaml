@@ -4,12 +4,13 @@ version: 0.0.1
 homepage:
 
 environment:
-  sdk: '>=2.18.6 <3.0.0'
+  sdk: ">=2.18.6 <3.0.0"
   flutter: ">=1.17.0"
 
 dependencies:
   flutter:
     sdk: flutter
+  analytics: ^1.0.2
 
 dev_dependencies:
   flutter_test:
