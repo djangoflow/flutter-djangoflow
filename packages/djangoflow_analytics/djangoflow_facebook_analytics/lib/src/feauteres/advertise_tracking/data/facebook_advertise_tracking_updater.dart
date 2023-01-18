@@ -3,11 +3,11 @@ import 'package:facebook_app_events/facebook_app_events.dart';
 
 import 'facebook_advertise_tracking_event.dart';
 
-class FacebookAdvertiseTrackingEventSender
+class FacebookAdvertiseTrackingUpdater
     implements AnalyticActionPerformer<FacebookAdvertiseTrackingEvent> {
   final FacebookAppEvents _facebookAppEvents;
 
-  FacebookAdvertiseTrackingEventSender(this._facebookAppEvents);
+  FacebookAdvertiseTrackingUpdater(this._facebookAppEvents);
 
   @override
   bool canHandle(AnalyticAction action) =>
