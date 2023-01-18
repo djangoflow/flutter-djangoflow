@@ -34,6 +34,22 @@ You will need to initialize the library and add the `FirebaseAnalyticEventSender
 
 You can then use the `DjangoflowAnalytics.instance.performAction` method to send data to Firebase Analytics.
 
+```dart
+final firebaseAnalyticsEventSender =
+          FirebaseAnalyticEventSender(firebaseAnalytics);
+final firebaseUserPropertyUpdateder =
+    FirebaseUserPropertyUpdater(firebaseAnalytics);
+final firebaseUserPropertyRemover =
+    FirebaseUserPropertyRemover(firebaseAnalytics);
+
+DjangoflowAnalytics.instance.init();
+DjangoflowAnalytics.instance.addAllActionPerformers([
+    firebaseAnalyticsEventSender,
+    firebaseUserPropertyUpdateder,
+    firebaseUserPropertyRemover,
+]);
+```
+
 Please find more details regarding it on `djangoflow_analytics` [package](https://pub.dev/packages/djangoflow_analytics).
 
 ## Contribution
