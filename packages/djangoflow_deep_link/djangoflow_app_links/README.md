@@ -31,15 +31,15 @@ linkStream.listen((link) => print(link));
 
 This class provides the implementation for the abstract methods defined in `DjangoflowDeepLinkRepositoryBase<Uri>` so that the class can be used to create a cubit that can handle app links.
 
-To use the `DjangoflowAppLinksCubit`, you first need to create an instance of it with a concrete repository and initial state:
+To use the `AppLinksCubit`, you first need to create an instance of it with a concrete repository and initial state:
 
 ```dart
-final djangoflowAppLinksRepository = DjangoflowAppLinksRepository();
-// Provide the DjangoflowAppLinksCubit
-BlocProvider<DjangoflowAppLinksCubit>(
-    create: (context) => DjangoflowAppLinksCubit(
+final appLinksRepository = AppLinksRepository();
+// Provide the AppLinksCubit
+BlocProvider<AppLinksCubit>(
+    create: (context) => AppLinksCubit(
         null,
-        djangoflowAppLinksRepository,
+        appLinksRepository,
     )..startListening(), // this will start listening to the upcoming deep links
 ),
 // Listen to Uri changes

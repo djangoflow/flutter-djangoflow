@@ -10,7 +10,7 @@ Add the package to your pubspec.yaml file:
 dependencies:
 djangoflow_sentry_reporter: <latest_version>
 djangoflow_error_reporter: <latest_version> // Add this to use with DjangoflowErrorReporter
-sentry_flutter: ^0.1.0 // Add this if you need other features from Sentry
+sentry_flutter: <latest_version> // Add this if you need other features from Sentry
 ```
 
 Then run `flutter pub get` to install the package.
