@@ -1,39 +1,107 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# djangoflow_analytics
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
+`djangoflow_analytics` is a library for tracking analytics with multiple Analytics providers in Flutter applications. It is built on top of [analytics](https://pub.dev/packages/analytics/) package.
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
+## Installation
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+To use this library in your project, add the following dependency to your pubspec.yaml file:
 
-## Features
+```yaml
+dependencies:
+  djangoflow_analytics: <latest_version>
+  analytics: <latest_version>
+```
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
-
-## Getting started
-
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+Then run `flutter pub get` to install it.
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+### Initialization
+
+Before sending any data, the library must be initialized by calling the init method on the `DjangoflowAnalytics` class. It comes in handy if you want to disable sending analytics in specific cases like `development` environment.
 
 ```dart
-const like = 'sample';
+DjangoflowAnalytics.instance.init();
 ```
 
-## Additional information
+### Adding Performers
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+To handle the data that is sent, you can create a class by exnteding `AnalyticActionPerformer` and add them to the `DjangoflowAnalytics` class.
+
+```dart
+abstract class CustomAnalyticsAction implements AnalyticAction, HasKey, HasMapParams {}
+
+class CustomLoginEvent extends CustomAnalyticsAction {
+  final String? method;
+
+  CustomLoginEvent({this.method});
+  @override
+  String get key => 'login';
+
+  @override
+  Map<String, Object?> get params => {
+        'method': method,
+      };
+}
+
+
+class CustomAnalyticActionPerformer extends AnalyticsActionPerformer<CustomAnalyticsAction>{
+    ...
+}
+
+final performer = CustomAnalyticActionPerformer<CustomAnalyticAction>(); // could be firebase, facebook etc.
+DjangoflowAnalytics.instance.addAllActionPerformers([performer]);
+```
+
+### Sending Data
+
+To send data, you can create an instance of AnalyticAction and pass it to the `performAction` method on the DjangoflowAnalytics class. It will internally look for suitable `ActionPerformer` for the `AnalyticsAction` and send the data.
+
+```Dart
+DjangoflowAnalytics.instance.performAction(CustomLoginEvent(method:'email'));
+```
+
+### Event Trimmer
+
+It also provide a way to trim events by implementing `EventTrimmer` interface which has 4 methods, `trimName`, `trimValue`, `trimNullValueMapParams` and `trimMapParams`.
+
+### User property trimmer
+
+It also provide a way to trim user property by implementing `UserPropertyTrimmer` interface which has 2 methods, `trimName` and `trimValue`.
+
+## Example
+
+```dart
+import 'package:djangoflow_analytics/djangoflow_analytics.dart';
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    DjangoflowAnalytics.instance.init();
+    final performer = CustomAnalyticActionPerformer<CustomAnalyticAction>();
+    DjangoflowAnalytics.instance
+        .addAllActionPerformers([performer]);
+    return MaterialApp(
+      home: Scaffold(
+        body: Center(
+          child: RaisedButton(
+            child: Text("Email Sign-in"),
+            onPressed: () {
+              DjangoflowAnalytics.instance
+                  .performAction(DjangoflowAnalytics.instance.performAction(CustomLoginEvent(method:'email')););
+            },
+          ),
+        ),
+      ),
+    );
+  }
+}
+```
+
+## Note
+
+This library is still under development and may be subject to breaking changes.
+
+## Contributions
+
+We would love to have your contributions. Please feel free to open an issue or pull request.
