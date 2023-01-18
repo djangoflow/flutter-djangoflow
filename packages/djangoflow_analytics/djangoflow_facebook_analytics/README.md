@@ -1,39 +1,44 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# djangoflow_facebook_analytics
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
-
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
-
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+djangoflow_facebook_analytics is a library built on top of the `analytics` and `facebook_app_events` packages for Flutter. It provides an easy and organized way to implement Facebook Analytics for your Flutter apps.
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+- Advertise Tracking: Enabling or disabling advertiser tracking for your app.
+- Events: Logging Facebook App events with parameters and value to sum.
+- User Properties Removal: Removing user ID and all user data.
+- User Properties Update: Updating user properties such as email, first name, last name, user ID.
 
-## Getting started
+## Note
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+Please make sure you have set up the facebook app events related configuration for Android and iOS. Follow this [link](https://pub.dev/packages/facebook_app_events#setting-things-up)
+
+This package only works on iOS and Android.
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+To use this library, you will need to add the following dependencies to your pubspec.yaml file:
 
-```dart
-const like = 'sample';
+```yaml
+dependencies:
+djangoflow_facebook_analytics: <latest_version>
+djangoflow_analytics: <latest_version>
+facebook_app_events: <latest_version>
 ```
 
-## Additional information
+After that run `flutter pub get` to install them.
+You can then import the library and use it in your code:
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+```dart
+import 'package:djangoflow_facebook_analytics/djangoflow_facebook_analytics.dart';
+```
+
+You will need to initialize the library and add the `FacebookAdvertiseTrackingUpdater`, `FacebookAnalyticEventSender`, `FacebookUserPropertyRemover` and `FacebookUserPropertyUpdater` to the `DjangoflowAnalytics` instance from `djangoflow_analytics` package.
+
+You can then use the `DjangoflowAnalytics.instance.performAction` method to send data to Facebook Analytics.
+
+Please find more details regarding it on `djangoflow_analytics` package.
+
+## Contribution
+
+We would love to have your help in making Djangoflow Facebook Analytics better. If you are interested in contributing to the project, please check out the contribution guidelines.
