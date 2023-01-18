@@ -1,3 +1,7 @@
+## [0.0.2] - 18 Jan 2023
+
+- Updated documentation
+
 ## [0.0.1] - 18 Jan 2023
 
 This release contains following features:
