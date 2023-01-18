@@ -12,8 +12,7 @@ dependencies:
   flutter:
     sdk: flutter
   analytics: ^1.0.2
-  djangoflow_analytics:
-    path: "/Users/saifulislam/Development/apexlabs/djangoflow/flutter-djangoflow/packages/djangoflow_analytics/djangoflow_analytics"
+  djangoflow_analytics: ^0.0.1
   mixpanel_flutter: ^2.0.0
 
 dev_dependencies:
