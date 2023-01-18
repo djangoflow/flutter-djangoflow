@@ -24,6 +24,7 @@ class FacebookAnalyticEventSender
     _facebookAppEvents.logEvent(
       name: _eventTrimmer.trimName(action.key),
       parameters: params,
+      valueToSum: action.valueToSum,
     );
   }
 }
