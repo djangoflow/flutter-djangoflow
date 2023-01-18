@@ -1,3 +1,7 @@
-## 0.0.1
+## [0.0.1] - 18 Jan 2023
 
-* TODO: Describe initial release.
+This release contains following features:
+
+- Events: Tracking Mixpanel analytics events with parameters.
+- User Properties Removal: Removing user ID and all user related super properties.
+- User Properties Update: Updating user super properties such as email, first name, last name, user ID.

@@ -1,39 +1,62 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
-
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
-
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
-
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+djangoflow_mixpanel_analytics is a library built on top of the `analytics` and `mixpanel_flutter` packages for Flutter. It provides an easy and organized way to implement Mixpanel Analytics for your Flutter apps.
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+- Events: Tracking Mixpanel analytics events with parameters.
+- User Properties Removal: Removing user ID and all user related super properties.
+- User Properties Update: Updating user super properties such as email, first name, last name, user ID.
 
-## Getting started
+## Note
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+Please make sure to follow the guides by `mixpanel_flutter` [see the documentation](https://pub.dev/packages/mixpanel_flutter#1-install-mixpanel)
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+To use this library, you will need to add the following dependencies to your pubspec.yaml file:
 
-```dart
-const like = 'sample';
+```yaml
+dependencies:
+djangoflow_mixpanel_analytics: <latest_version>
+djangoflow_analytics: <latest_version>
+mixpanel_flutter: <latest_version>
 ```
 
-## Additional information
+After that run `flutter pub get` to install them.
+You can then import the library and use it in your code:
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+```dart
+import 'package:djangoflow_mixpanel_analytics/djangoflow_mixpanel_analytics.dart';
+```
+
+You will need to initialize the library and add the `MixpanelAnalyticEventSender`, `MixpanelUserPropertyRemover` and `MixpanelUserPropertyUpdater` `ActionPeferomer`s to the `DjangoflowAnalytics` instance from `djangoflow_analytics` package.
+
+You can then use the `DjangoflowAnalytics.instance.performAction` method to send data to Mixpanel Analytics.
+
+```dart
+final mixpanel = await Mixpanel.init(
+    [MIXPANEL_TOKEN],
+    optOutTrackingDefault: false,
+    trackAutomaticEvents: true,
+);
+final mixpanelAnalyticsEventSender =
+          MixpanelAnalyticEventSender(mixpanel);
+final mixpanelUserPropertyUpdateder =
+    MixpanelUserPropertyUpdater(mixpanel);
+final mixpanelUserPropertyRemover = MixpanelUserPropertyRemover(mixpanel);
+
+DjangoflowAnalytics.instance.init();
+DjangoflowAnalytics.instance.addAllActionPerformers([
+
+    mixpanelAnalyticsEventSender,
+    mixpanelUserPropertyUpdateder,
+    mixpanelUserPropertyRemover,
+
+]);
+```
+
+Please find more details regarding it on `djangoflow_analytics` [package](https://pub.dev/packages/djangoflow_analytics).
+
+## Contribution
+
+We would love to have your help in making Djangoflow Mixpanel Analytics better. If you are interested in contributing to the project, please check out the contribution guidelines.
+r this package might be useful for them.
