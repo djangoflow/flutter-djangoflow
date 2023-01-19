@@ -1,6 +1,5 @@
 import 'package:bloc_test/bloc_test.dart';
 import 'package:djangoflow_deep_link_interface/djangoflow_deep_link_interface.dart';
-import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:test/test.dart';
 
@@ -13,7 +12,6 @@ class TestDjangoflowDeepLinkCubit<String>
       : super(null, repository);
 }
 
-@GenerateNiceMocks([MockSpec<DjangoflowDeepLinkCubitBase<String>>()])
 void main() {
   late MockDjangoflowDeepLinkRepositoryBase repository;
 
@@ -42,7 +40,7 @@ void main() {
     },
   );
   blocTest<TestDjangoflowDeepLinkCubit<String>, String?>(
-    'startListening() correctly subscribes to the repository stream',
+    'correctly subscribes to the repository stream',
     build: () => TestDjangoflowDeepLinkCubit(repository),
     verify: (cubit) => verify(repository.getLinkStream().listen(any)),
   );
