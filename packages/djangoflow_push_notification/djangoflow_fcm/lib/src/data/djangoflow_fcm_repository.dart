@@ -1,6 +1,7 @@
 import 'package:firebase_messaging/firebase_messaging.dart';
 
 class DjangoflowFCMRepository {
+  // TODO pass it from constrcutor to make it easily testable
   final _messaging = FirebaseMessaging.instance;
   final String? vapidKey;
 
