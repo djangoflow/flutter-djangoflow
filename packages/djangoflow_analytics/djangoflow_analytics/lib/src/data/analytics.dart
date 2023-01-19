@@ -13,6 +13,8 @@ class DjangoflowAnalytics extends AnalyticService<AnalyticAction> {
 
   final _performers = <AnalyticActionPerformer<AnalyticAction>>{};
 
+  // TODO add getters for performers
+
   @override
   void performAction(AnalyticAction action) {
     if (_hasInitialized == true) {
