@@ -5,6 +5,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 
+import '../../helpers/notification_settings.dart';
 @GenerateNiceMocks([MockSpec<DjangoflowFCMRepository>()])
 import 'djangoflow_fcm_bloc_test.mocks.dart';
 
@@ -40,19 +41,7 @@ void main() {
       build: () {
         when(repository.isSupported()).thenAnswer((_) => Future.value(true));
         when(repository.requestNotificationPermission())
-            .thenAnswer((_) => Future.value(const NotificationSettings(
-                  alert: AppleNotificationSetting.enabled,
-                  badge: AppleNotificationSetting.enabled,
-                  sound: AppleNotificationSetting.enabled,
-                  announcement: AppleNotificationSetting.enabled,
-                  authorizationStatus: AuthorizationStatus.authorized,
-                  carPlay: AppleNotificationSetting.enabled,
-                  criticalAlert: AppleNotificationSetting.enabled,
-                  lockScreen: AppleNotificationSetting.enabled,
-                  notificationCenter: AppleNotificationSetting.enabled,
-                  showPreviews: AppleShowPreviewSetting.always,
-                  timeSensitive: AppleNotificationSetting.enabled,
-                )));
+            .thenAnswer((_) => Future.value(testNotificationSettings));
         when(repository.getToken()).thenAnswer((_) => Future.value(token));
         return DjangoflowFCMBloc(repository);
       },
