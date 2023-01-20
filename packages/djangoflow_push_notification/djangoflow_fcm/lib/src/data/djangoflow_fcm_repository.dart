@@ -1,11 +1,10 @@
 import 'package:firebase_messaging/firebase_messaging.dart';
 
 class DjangoflowFCMRepository {
-  // TODO pass it from constrcutor to make it easily testable
-  final _messaging = FirebaseMessaging.instance;
+  final FirebaseMessaging _messaging;
   final String? vapidKey;
 
-  DjangoflowFCMRepository({this.vapidKey});
+  DjangoflowFCMRepository(this._messaging, {this.vapidKey});
 
   Stream<RemoteMessage> getForegroundRemoteMessageStream() =>
       FirebaseMessaging.onMessage;

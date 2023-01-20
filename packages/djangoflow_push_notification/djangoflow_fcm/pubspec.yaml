@@ -1,6 +1,6 @@
 name: djangoflow_fcm
 description: A Djangoflow Flutter project to handle notifications using firebase_messaging
-version: 0.0.1
+version: 0.0.2
 homepage: https://github.com/djangoflow/flutter-djangoflow/
 
 environment:
