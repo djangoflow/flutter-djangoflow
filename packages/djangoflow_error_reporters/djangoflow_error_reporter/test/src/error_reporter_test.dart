@@ -4,7 +4,6 @@ import 'package:flutter_test/flutter_test.dart';
 class TestErrorReporter extends ErrorReporter {
   bool _initialized = false;
   Object? _reportedException;
-  StackTrace? _reportedStackTrace;
   String? _reportedId;
   String? _reportedEmail;
   String? _reportedName;
@@ -17,7 +16,6 @@ class TestErrorReporter extends ErrorReporter {
   @override
   Future<void> report(Object exception, StackTrace? stackTrace) async {
     _reportedException = exception;
-    _reportedStackTrace = stackTrace;
   }
 
   @override
