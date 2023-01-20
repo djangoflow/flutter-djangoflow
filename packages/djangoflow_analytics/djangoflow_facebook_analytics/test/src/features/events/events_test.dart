@@ -1,9 +1,7 @@
 import 'package:djangoflow_facebook_analytics/djangoflow_facebook_analytics.dart';
 import 'package:djangoflow_facebook_analytics/src/configurations/constants.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:facebook_app_events/facebook_app_events.dart';
 import 'package:mockito/mockito.dart';
-import 'package:mockito/annotations.dart';
 
 import '../../../helpers/test_string_generator.dart';
 import '../advertise_tracking/facebook_advertise_tracking_updater_test.mocks.dart';
