@@ -15,7 +15,7 @@ class TestFirebaseUserProperty implements AnalyticAction {
 
 void main() {
   final testStringGen = TestStringGenerator();
-  group('FacebookEventTrimmer', () {
+  group('FirebaseEventTrimmer', () {
     test(
         'should not trim the key and value if they follow correct configuration',
         () {
