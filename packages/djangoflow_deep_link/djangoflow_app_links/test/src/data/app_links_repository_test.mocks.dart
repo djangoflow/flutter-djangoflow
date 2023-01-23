@@ -25,9 +25,9 @@ import 'package:mockito/mockito.dart' as _i1;
 class MockAppLinksRepository extends _i1.Mock
     implements _i2.AppLinksRepository {
   @override
-  _i3.Future<Uri?> getIntialLink() => (super.noSuchMethod(
+  _i3.Future<Uri?> getInitialLink() => (super.noSuchMethod(
         Invocation.method(
-          #getIntialLink,
+          #getInitialLink,
           [],
         ),
         returnValue: _i3.Future<Uri?>.value(),

@@ -11,14 +11,14 @@ void main() {
 
   setUp(() {
     mockAppLinksRepository = MockAppLinksRepository();
-    when(mockAppLinksRepository.getIntialLink())
+    when(mockAppLinksRepository.getInitialLink())
         .thenAnswer((_) async => Future<Uri?>.value(null));
     when(mockAppLinksRepository.getLinkStream())
         .thenAnswer((_) => const Stream.empty());
   });
 
-  test('getIntialLink() returns URI correctly', () {
-    expectLater(mockAppLinksRepository.getIntialLink(), isA<Future<Uri?>>());
+  test('getInitialLink() returns URI correctly', () {
+    expectLater(mockAppLinksRepository.getInitialLink(), isA<Future<Uri?>>());
   });
 
   test('getLinkStream() returns a stream', () {
