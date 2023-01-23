@@ -1,3 +1,8 @@
+## [1.1.2] - 23 Jan 2023
+
+- Fixed typo `Intial` to `Initial` in places
+- Updated dependencies
+
 ## [1.1.1] - 23 Jan 2023
 
 - Updated dependencies
