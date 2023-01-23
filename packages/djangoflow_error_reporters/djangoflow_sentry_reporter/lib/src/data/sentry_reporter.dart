@@ -3,8 +3,6 @@ import 'package:sentry_flutter/sentry_flutter.dart';
 
 class DjangoflowSentryReporter extends ErrorReporter {
   final String sentryDSN;
-  // TODO remove this
-  late SentryClient client;
 
   DjangoflowSentryReporter(this.sentryDSN);
 
