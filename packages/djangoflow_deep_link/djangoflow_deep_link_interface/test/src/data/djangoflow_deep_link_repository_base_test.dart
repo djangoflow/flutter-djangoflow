@@ -1,8 +1,8 @@
 import 'dart:async';
 import 'package:djangoflow_deep_link_interface/djangoflow_deep_link_interface.dart';
+import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
-import 'package:test/test.dart';
 
 @GenerateNiceMocks([MockSpec<DjangoflowDeepLinkRepositoryBase<String>>()])
 import 'djangoflow_deep_link_repository_base_test.mocks.dart';

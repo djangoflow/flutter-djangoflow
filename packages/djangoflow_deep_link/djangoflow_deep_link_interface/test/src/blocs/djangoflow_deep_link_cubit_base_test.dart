@@ -1,7 +1,7 @@
 import 'package:bloc_test/bloc_test.dart';
 import 'package:djangoflow_deep_link_interface/djangoflow_deep_link_interface.dart';
 import 'package:mockito/mockito.dart';
-import 'package:test/test.dart';
+import 'package:flutter_test/flutter_test.dart';
 
 import '../data/djangoflow_deep_link_repository_base_test.mocks.dart';
 
