@@ -1,3 +1,8 @@
+## [0.0.3] - 23 Jan 2023
+
+- Updated dependencies
+- Added unit tests
+
 ## [0.0.2] - 18 Jan 2023
 
 - Updated documentation

@@ -5,7 +5,7 @@ class AppLinksRepository extends DjangoflowDeepLinkRepositoryBase<Uri> {
   final _appLinks = AppLinks();
 
   @override
-  Future<Uri?> getIntialLink() => _appLinks.getInitialAppLink();
+  Future<Uri?> getInitialLink() => _appLinks.getInitialAppLink();
 
   @override
   Stream<Uri> getLinkStream() => _appLinks.uriLinkStream;

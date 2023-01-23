@@ -1,3 +1,13 @@
+## [1.1.2] - 23 Jan 2023
+
+- Fixed typo `Intial` to `Initial` in places
+- Updated dependencies
+
+## [1.1.1] - 23 Jan 2023
+
+- Updated dependencies
+- Add unit tests
+
 ## [1.1.0] - 13 Jan 2023
 
 - `DjangoflowAppLinksCubit` to `AppLinksCubit`

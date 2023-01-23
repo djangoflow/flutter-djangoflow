@@ -16,4 +16,4 @@ class DjangoflowFCMOnTokenReceived extends DjangoflowFCMEvent {
   DjangoflowFCMOnTokenReceived(this.token);
 }
 
-class DjangoflowFCMIntialMessageRequested extends DjangoflowFCMEvent {}
+class DjangoflowFCMInitialMessageRequested extends DjangoflowFCMEvent {}

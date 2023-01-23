@@ -1,3 +1,8 @@
+## [0.0.2] - 23 Jan 2023
+
+- Updated dependencies
+- Add unit tests
+
 ## [0.0.1] - 18 Jan 2023
 
 This release contains following features:

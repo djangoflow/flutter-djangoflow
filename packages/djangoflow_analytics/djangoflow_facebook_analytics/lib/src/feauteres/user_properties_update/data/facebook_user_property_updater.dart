@@ -15,8 +15,8 @@ import 'facebook_updatable_user_property.dart';
 class FacebookUserPropertyUpdater
     implements AnalyticActionPerformer<FacebookUpdatableUserProperty> {
   final FacebookAppEvents _facebookAppEvents;
-  final FacebookUserPropertyCutter _userPropertyCutter =
-      FacebookUserPropertyCutter();
+  final FacebookUserPropertyTrimmer _userPropertyCutter =
+      FacebookUserPropertyTrimmer();
 
   FacebookUserPropertyUpdater(this._facebookAppEvents);
   @override

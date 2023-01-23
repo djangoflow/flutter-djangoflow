@@ -1,16 +1,16 @@
 import 'package:firebase_messaging/firebase_messaging.dart';
 
 class DjangoflowFCMRepository {
-  final _messaging = FirebaseMessaging.instance;
+  final FirebaseMessaging _messaging;
   final String? vapidKey;
 
-  DjangoflowFCMRepository({this.vapidKey});
+  DjangoflowFCMRepository(this._messaging, {this.vapidKey});
 
   Stream<RemoteMessage> getForegroundRemoteMessageStream() =>
       FirebaseMessaging.onMessage;
 
-  Future<RemoteMessage?> getIntialRemoteMessage() =>
-      FirebaseMessaging.instance.getInitialMessage();
+  Future<RemoteMessage?> getInitialRemoteMessage() =>
+      _messaging.getInitialMessage();
 
   Stream<RemoteMessage> getBackgroundRemoteMessageTappedStream() =>
       FirebaseMessaging.onMessageOpenedApp;

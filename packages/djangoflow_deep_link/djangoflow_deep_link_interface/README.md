@@ -6,7 +6,7 @@ This package provides interface to implement handling deep-link in flutter appli
 
 It provides two main interfaces
 
-- `DjangoflowDeepLinkRepositoryBase` : This is an abstract class for a repository of deep links in a DjangoFlow application. The class is generic and takes a type parameter "T" which represents the type of the deep links. The class has two methods, `getLinkStream()` which returns a stream of deep links of type T and `getIntialLink()` which returns a future that resolves to an initial deep link of type T or null if it doesn't exist. Classes that extend this abstract class are expected to provide the implementation for these methods.
+- `DjangoflowDeepLinkRepositoryBase` : This is an abstract class for a repository of deep links in a DjangoFlow application. The class is generic and takes a type parameter "T" which represents the type of the deep links. The class has two methods, `getLinkStream()` which returns a stream of deep links of type T and `getInitialLink()` which returns a future that resolves to an initial deep link of type T or null if it doesn't exist. Classes that extend this abstract class are expected to provide the implementation for these methods.
 
 - `DjangoflowDeepLinkCubitBase` : This is an abstract class for a Cubit (a state management architecture for Flutter) that handles deep links. The class is generic and takes a type parameter "T" which represents the type of the deep links. The class extends the Cubit class and takes the initial state as a parameter in its constructor. It also takes a field repository of type `DjangoflowDeepLinkRepositoryBase<T>` which is an abstract class for the repository of deep links.
   The class has two methods:
