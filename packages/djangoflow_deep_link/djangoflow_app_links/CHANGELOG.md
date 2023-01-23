@@ -1,3 +1,8 @@
+## [1.1.1] - 23 Jan 2023
+
+- Updated dependencies
+- Add unit tests
+
 ## [1.1.0] - 13 Jan 2023
 
 - `DjangoflowAppLinksCubit` to `AppLinksCubit`

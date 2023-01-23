@@ -15,8 +15,7 @@ void main() {
   late TestAppLinksCubit testAppLinksCubit;
   setUp(() {
     mockAppLinksRepository = MockAppLinksRepository();
-    testAppLinksCubit = TestAppLinksCubit(mockAppLinksRepository)
-      ..startListening();
+    testAppLinksCubit = TestAppLinksCubit(mockAppLinksRepository);
   });
 
   test('AppLinksCubit() returns a cubit', () {
@@ -29,7 +28,7 @@ void main() {
 
   blocTest<TestAppLinksCubit, Uri?>(
     'emit() correctly updates the state',
-    build: () => TestAppLinksCubit(mockAppLinksRepository)..startListening(),
+    build: () => TestAppLinksCubit(mockAppLinksRepository),
     act: (cubit) {
       cubit.emit(Uri());
     },
@@ -38,7 +37,7 @@ void main() {
 
   blocTest<TestAppLinksCubit, Uri?>(
     'close() correctly closes bloc',
-    build: () => TestAppLinksCubit(mockAppLinksRepository)..startListening(),
+    build: () => TestAppLinksCubit(mockAppLinksRepository),
     act: (cubit) {
       cubit.close();
       cubit.emit(Uri());
@@ -49,7 +48,7 @@ void main() {
   );
   blocTest<TestAppLinksCubit, Uri?>(
     'correctly subscribes to the repository stream',
-    build: () => TestAppLinksCubit(mockAppLinksRepository)..startListening(),
+    build: () => TestAppLinksCubit(mockAppLinksRepository),
     verify: (cubit) =>
         verify(mockAppLinksRepository.getLinkStream().listen(any)),
   );
