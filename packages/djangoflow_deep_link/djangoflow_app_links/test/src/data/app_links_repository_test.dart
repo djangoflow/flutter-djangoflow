@@ -1,7 +1,7 @@
 import 'package:djangoflow_app_links/djangoflow_app_links.dart';
+import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:mockito/annotations.dart';
-import 'package:test/test.dart';
 
 @GenerateNiceMocks([MockSpec<AppLinksRepository>()])
 import 'app_links_repository_test.mocks.dart';

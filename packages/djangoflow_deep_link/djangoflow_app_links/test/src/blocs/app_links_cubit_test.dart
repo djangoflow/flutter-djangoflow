@@ -1,8 +1,7 @@
 import 'package:djangoflow_app_links/src/blocs/app_links_cubit.dart';
 import 'package:mockito/mockito.dart';
-import 'package:test/test.dart';
 import 'package:bloc_test/bloc_test.dart';
-
+import 'package:flutter_test/flutter_test.dart';
 import '../data/app_links_repository_test.mocks.dart';
 
 class TestAppLinksCubit extends AppLinksCubit {
