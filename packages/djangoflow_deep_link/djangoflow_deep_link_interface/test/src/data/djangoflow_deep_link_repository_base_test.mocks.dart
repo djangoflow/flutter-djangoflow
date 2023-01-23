@@ -35,9 +35,9 @@ class MockDjangoflowDeepLinkRepositoryBase extends _i1.Mock
         returnValueForMissingStub: _i3.Stream<String>.empty(),
       ) as _i3.Stream<String>);
   @override
-  _i3.Future<String?> getIntialLink() => (super.noSuchMethod(
+  _i3.Future<String?> getInitialLink() => (super.noSuchMethod(
         Invocation.method(
-          #getIntialLink,
+          #getInitialLink,
           [],
         ),
         returnValue: _i3.Future<String?>.value(),

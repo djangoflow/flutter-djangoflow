@@ -19,11 +19,11 @@ void main() {
   });
 
   test('getInitialLink() returns a future', () {
-    expect(repository.getIntialLink(), isA<Future<String?>>());
+    expect(repository.getInitialLink(), isA<Future<String?>>());
   });
 
   test('getInitialLink() returns the expected value', () async {
-    final initialLink = await repository.getIntialLink();
+    final initialLink = await repository.getInitialLink();
     expect(initialLink, isNull);
   });
 
