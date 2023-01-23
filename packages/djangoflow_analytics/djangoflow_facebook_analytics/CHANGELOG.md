@@ -1,3 +1,7 @@
+## [0.0.3] - 23 Jan
+
+- Aded unit-tests
+
 ## [0.0.2] - 18 Jan 2023
 
 - Updated documentation
