@@ -43,6 +43,7 @@ class DjangoflowFCMBloc extends Bloc<DjangoflowFCMEvent, DjangoflowFCMState> {
       emit(
         state.copyWith(
           token: event.token,
+          notificationAuthorizationStatus: AuthorizationStatus.authorized,
         ),
       );
 
@@ -53,7 +54,6 @@ class DjangoflowFCMBloc extends Bloc<DjangoflowFCMEvent, DjangoflowFCMState> {
       final permission = await repository.requestNotificationPermission();
       if (permission.authorizationStatus == AuthorizationStatus.authorized) {
         final token = await repository.getToken();
-        // TODO return authorizationStatus
         add(DjangoflowFCMOnTokenReceived(token));
       } else {
         emit(
