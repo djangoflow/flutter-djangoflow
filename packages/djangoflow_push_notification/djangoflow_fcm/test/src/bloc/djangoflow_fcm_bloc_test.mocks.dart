@@ -47,10 +47,10 @@ class MockDjangoflowFCMRepository extends _i1.Mock
         returnValueForMissingStub: _i4.Stream<_i2.RemoteMessage>.empty(),
       ) as _i4.Stream<_i2.RemoteMessage>);
   @override
-  _i4.Future<_i2.RemoteMessage?> getIntialRemoteMessage() =>
+  _i4.Future<_i2.RemoteMessage?> getInitialRemoteMessage() =>
       (super.noSuchMethod(
         Invocation.method(
-          #getIntialRemoteMessage,
+          #getInitialRemoteMessage,
           [],
         ),
         returnValue: _i4.Future<_i2.RemoteMessage?>.value(),

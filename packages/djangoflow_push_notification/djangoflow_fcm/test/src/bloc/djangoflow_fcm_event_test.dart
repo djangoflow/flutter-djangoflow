@@ -21,9 +21,9 @@ void main() {
       expect(event.token, token);
     });
 
-    test('DjangoflowFCMIntialMessageRequested', () {
-      final event = DjangoflowFCMIntialMessageRequested();
-      expect(event, isA<DjangoflowFCMIntialMessageRequested>());
+    test('DjangoflowFCMInitialMessageRequested', () {
+      final event = DjangoflowFCMInitialMessageRequested();
+      expect(event, isA<DjangoflowFCMInitialMessageRequested>());
     });
   });
 }

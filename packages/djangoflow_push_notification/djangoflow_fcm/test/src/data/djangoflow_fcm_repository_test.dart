@@ -26,11 +26,11 @@ void main() {
     });
 
     test(
-        'getIntialRemoteMessage calls FirebaseMessaging.instance.getInitialMessage',
+        'getInitialRemoteMessage calls FirebaseMessaging.instance.getInitialMessage',
         () async {
       when(mockMessaging.getInitialMessage())
           .thenAnswer((_) => Future.value(const RemoteMessage()));
-      final result = await repository.getIntialRemoteMessage();
+      final result = await repository.getInitialRemoteMessage();
       expect(result, isA<RemoteMessage>());
     });
 

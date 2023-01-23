@@ -17,7 +17,7 @@ class DjangoflowFCMBloc extends Bloc<DjangoflowFCMEvent, DjangoflowFCMState> {
     on<DjangoflowFCMOnMessageReceived>(_onMessageReceived);
     on<DjangoflowFCMOnTokenReceived>(_onTokenReceived);
     on<DjangoflowFCMTokenRequested>(_getToken);
-    on<DjangoflowFCMIntialMessageRequested>(_getIntiailMessage);
+    on<DjangoflowFCMInitialMessageRequested>(_getIntiailMessage);
 
     _foregroundRemoteMessageSubscription =
         repository.getForegroundRemoteMessageStream().listen(_onMessage);
@@ -65,9 +65,9 @@ class DjangoflowFCMBloc extends Bloc<DjangoflowFCMEvent, DjangoflowFCMState> {
     }
   }
 
-  Future<void> _getIntiailMessage(DjangoflowFCMIntialMessageRequested event,
+  Future<void> _getIntiailMessage(DjangoflowFCMInitialMessageRequested event,
       Emitter<DjangoflowFCMState> emit) async {
-    final initialMessage = await repository.getIntialRemoteMessage();
+    final initialMessage = await repository.getInitialRemoteMessage();
     if (initialMessage != null) {
       add(DjangoflowFCMOnMessageReceived(initialMessage));
     }

@@ -54,14 +54,14 @@ In the example above, `DjangoflowFCMBloc` is wrapped in a `BlocProvider` and pro
 `DjangoflowFCMBloc` contains the following events:
 
 - `DjangoflowFCMTokenRequested`
-- `DjangoflowFCMIntialMessageRequested`
+- `DjangoflowFCMInitialMessageRequested`
 - `DjangoflowFCMOnTokenReceived`
 - `DjangoflowFCMOnMessageReceived`
 
 `DjangoflowFCMRepository` provides the following methods:
 
 - `getForegroundRemoteMessageStream()`
-- `getIntialRemoteMessage()`
+- `getInitialRemoteMessage()`
 - `getBackgroundRemoteMessageTappedStream()`
 - `requestNotificationPermission()`
 - `getToken()`
