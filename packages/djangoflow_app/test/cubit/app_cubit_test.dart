@@ -9,7 +9,7 @@ var fakeAppState = const AppState(
     firstRun: false,
     environment: AppEnvironment.sandbox,
     locale: 'es',
-    brightness: Brightness.dark);
+    themeMode: ThemeMode.dark);
 
 void main() {
   initHydratedStorage();
@@ -43,21 +43,21 @@ void main() {
     );
 
     blocTest<AppCubit, AppState>(
-      'Cubit emits Brightness.dark when the initial value is Brightness.light',
+      'Cubit emits ThemeMode.light',
       build: () => appCubit,
-      act: (cubit) => cubit.toggleBrightness(),
+      act: (cubit) => cubit.updateThemeMode(ThemeMode.light),
       expect: () => [
         const AppState(
-          brightness: Brightness.dark,
+          themeMode: ThemeMode.light,
         ),
       ],
     );
 
     blocTest<AppCubit, AppState>(
-      'Cubit emits Brightness.light when the initial value is Brightness.dark',
+      'Cubit emits ThemeMode.dark',
       build: () => appCubit,
-      seed: () => fakeAppState.copyWith(brightness: Brightness.light),
-      act: (cubit) => cubit.toggleBrightness(),
+      seed: () => fakeAppState.copyWith(themeMode: ThemeMode.light),
+      act: (cubit) => cubit.updateThemeMode(ThemeMode.dark),
       expect: () => [fakeAppState],
     );
 
@@ -81,7 +81,7 @@ void main() {
     blocTest<AppCubit, AppState>(
       'Cubit emits Default locale == en',
       build: () => appCubit,
-      act: (cubit) => cubit.changeLocale('en'),
+      act: (cubit) => cubit.updateLocale('en'),
       expect: () => [
         const AppState(locale: 'en'),
       ],
@@ -91,7 +91,7 @@ void main() {
       'Cubit emits new locale if the value passed is not en',
       build: () => appCubit,
       seed: () => fakeAppState.copyWith(locale: 'en'),
-      act: (cubit) => cubit.changeLocale('es'),
+      act: (cubit) => cubit.updateLocale('es'),
       expect: () => [fakeAppState],
     );
   });

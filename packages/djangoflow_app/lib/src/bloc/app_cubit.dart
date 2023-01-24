@@ -30,7 +30,8 @@ class AppCubit extends HydratedCubit<AppState> {
   // TODO use a initialState method to pass custom initial state for the constructor _internal
   // static AppState? _initialState;
   // static set initialState(AppState? appState) => _initialState = appState;
-
+  @visibleForTesting
+  static AppCubit getNewInstance() => AppCubit._internal();
   AppCubit._internal() : super(const AppState());
 
   void firstRunDone() => emit(state.copyWith(firstRun: false));
