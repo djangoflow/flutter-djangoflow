@@ -1,3 +1,12 @@
+## 3.0.0 - 25 Jan 2023
+
+_BREAKING CHANGES_
+
+- Removed `AppAnalytics`, `App` widgets
+- Removed `auto_route`, `sentry_flutter`, `app_tracking_transparency`, `facebook_app_events`, `firebase_analytics`, `mixpanel_flutter` dependencies and decoupled their features.
+- Introduced `AppBuilder`, `AppCubitBuilder`, `DjangoflowAppRunner`, `DjangoflowAppSnackbar`, widgets.
+- Optional listeners
+
 ## 3.0.0-dev - 15 Jan 2023
 
 _BREAKING CHANGES_

@@ -7,7 +7,7 @@ class AppBuilder extends StatelessWidget {
   const AppBuilder({
     super.key,
     required this.providers,
-    required this.listeners,
+    this.listeners,
     required this.builder,
     required this.repositoryProviders,
     this.onInitState,
@@ -18,7 +18,7 @@ class AppBuilder extends StatelessWidget {
   final List<BlocProvider> providers;
 
   /// Global listeners
-  final List<BlocListener> listeners;
+  final List<BlocListener>? listeners;
   // Global repository providers
   final List<RepositoryProvider> repositoryProviders;
 
@@ -37,10 +37,12 @@ class AppBuilder extends StatelessWidget {
           child: _AppBuilderStateProvider(
             onInitState: onInitState,
             onDispose: onDispose,
-            builder: (context) => MultiBlocListener(
-              listeners: listeners,
-              child: builder(context),
-            ),
+            builder: (context) => listeners == null
+                ? builder(context)
+                : MultiBlocListener(
+                    listeners: listeners!,
+                    child: builder(context),
+                  ),
           ),
         ),
       );
