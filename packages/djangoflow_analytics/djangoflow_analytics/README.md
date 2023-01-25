@@ -88,7 +88,7 @@ class MyApp extends StatelessWidget {
             child: Text("Email Sign-in"),
             onPressed: () {
               DjangoflowAnalytics.instance
-                  .performAction(DjangoflowAnalytics.instance.performAction(CustomLoginEvent(method:'email')););
+                  .performAction(CustomLoginEvent(method:'email'));
             },
           ),
         ),
