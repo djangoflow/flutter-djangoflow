@@ -7,7 +7,7 @@ class DjangoflowSentryReporter extends ErrorReporter {
   DjangoflowSentryReporter(this.sentryDSN);
 
   @override
-  Future<void> initialize(String? env, String? release) async =>
+  Future<void> initialize({String? env, String? release}) async =>
       await SentryFlutter.init(
         (options) => options
           ..dsn = sentryDSN
@@ -16,13 +16,14 @@ class DjangoflowSentryReporter extends ErrorReporter {
       );
 
   @override
-  Future<void> report(Object exception, StackTrace? stackTrace) async {
+  Future<void> report(
+      {required Object exception, StackTrace? stackTrace}) async {
     await Sentry.captureException(exception, stackTrace: stackTrace);
   }
 
   @override
   Future<void> updateUserInformation(
-          String? id, String? email, String? name) async =>
+          {String? id, String? email, String? name}) async =>
       await Sentry.configureScope(
         (config) => config
           ..setUser(

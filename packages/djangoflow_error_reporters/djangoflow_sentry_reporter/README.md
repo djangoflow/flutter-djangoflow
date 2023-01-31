@@ -35,8 +35,16 @@ Finally, you can report errors to `Sentry` by using the `DjangoflowErrorReporter
 try {
 // some code that throws an exception
 } catch (e, s) {
-  DjangoflowErrorReporter.instance.report(e, s); // this will send error through Sentry
+  DjangoflowErrorReporter.instance.report(exception:e, stackTrace:s); // this will send error through Sentry
 }
+```
+
+### Enabling error reporting
+
+To enable the `SentryErrorReporter`, you can use the `enableErrorReporting` method of `DjangoflowErrorReporter.instance`. Disabled by default.
+
+```dart
+DjangoflowErrorReporter.instance.enableErrorReporting();
 ```
 
 ### Initializing
@@ -64,6 +72,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final sentryReporter = DjangoflowSentryReporter("https://your_dsn_key@sentry.io/project_id");
+    DjangoflowErrorReporter.instance.enableErrorReporting();
     DjangoflowErrorReporter.instance.addAll([sentryReporter]);
     DjangoflowErrorReporter.instance.initialize(env: 'production', release: '1.0.0');
     return MaterialApp(
@@ -74,7 +83,7 @@ class MyApp extends StatelessWidget {
               try {
                 throw Exception('Something went wrong');
               } catch (e, s) {
-                DjangoflowErrorReporter.instance.report(e, s);
+                DjangoflowErrorReporter.instance.report(exception:e, stackTrace:s);
               }
             },
             child: Text('Throw Exception'),
