@@ -15,9 +15,17 @@ Then run `flutter pub get` to install the package.
 
 ## Usage
 
+### Enabling error reporting
+
+To enable the error reporter, you can use the `enableErrorReporting` method of `DjangoflowErrorReporter.instance`. Disabled by default.
+
+```dart
+DjangoflowErrorReporter.instance.enableErrorReporting();
+```
+
 ### Initializing
 
-To initialize the error reporter, you can use the `initialize` method of the `DjangoflowErrorReporter` class. This method takes in two optional strings, `env` and `release`.
+To initialize the error reporter, you can use the `initialize` method of the `DjangoflowErrorReporter` class. This method takes in two optional strings, `env` and `release`. This will initialize/re-initialize with new env and release values.
 
 ```dart
 DjangoflowErrorReporter.instance.initialize(env: 'production', release: '1.0.0+1');
@@ -31,7 +39,7 @@ To report an error, you can use the `report` method of the `DjangoflowErrorRepor
 try {
   // some code that throws an exception
 } catch (e, s) {
-  DjangoflowErrorReporter.instance.report(e, s);
+  DjangoflowErrorReporter.instance.report(exception: e, stackTrace: s);
 }
 ```
 
@@ -73,7 +81,7 @@ class MyApp extends StatelessWidget {
               try {
                 throw Exception('Something went wrong');
               } catch (e, s) {
-                DjangoflowErrorReporter.instance.report(e, s);
+                DjangoflowErrorReporter.instance.report(exception: e, stackTrace: s);
               }
             },
             child: Text('Throw Exception'),

@@ -9,6 +9,17 @@ class DjangoflowErrorReporter extends ErrorReporter {
 
   DjangoflowErrorReporter._internal() : super();
 
+  bool? _enabled = false;
+
+  /// Disabled by default, use this to enable error reporting
+  void enableErrorReporting() {
+    _enabled = true;
+  }
+
+  void disableErrorReporting() {
+    _enabled = true;
+  }
+
   final _errorReporters = <ErrorReporter>[];
 
   void addAll(List<ErrorReporter> errorReporters) {
@@ -16,24 +27,34 @@ class DjangoflowErrorReporter extends ErrorReporter {
   }
 
   @override
-  Future<void> initialize(String? env, String? release) async {
-    for (final errorReporter in _errorReporters) {
-      errorReporter.initialize(env, release);
+  Future<void> initialize({String? env, String? release}) async {
+    if (_enabled == true) {
+      for (final errorReporter in _errorReporters) {
+        errorReporter.initialize(env: env, release: release);
+      }
     }
   }
 
   @override
-  Future<void> report(Object exception, StackTrace? stackTrace) async {
-    for (final errorReporter in _errorReporters) {
-      errorReporter.report(exception, stackTrace);
+  Future<void> report(
+      {required Object exception, StackTrace? stackTrace}) async {
+    if (_enabled == true) {
+      for (final errorReporter in _errorReporters) {
+        errorReporter.report(
+          exception: exception,
+          stackTrace: stackTrace,
+        );
+      }
     }
   }
 
   @override
   Future<void> updateUserInformation(
-      String? id, String? email, String? name) async {
-    for (final errorReporter in _errorReporters) {
-      errorReporter.updateUserInformation(id, email, name);
+      {String? id, String? email, String? name}) async {
+    if (_enabled == true) {
+      for (final errorReporter in _errorReporters) {
+        errorReporter.updateUserInformation(id: id, email: email, name: name);
+      }
     }
   }
 }

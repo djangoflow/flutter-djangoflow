@@ -9,18 +9,19 @@ class TestErrorReporter extends ErrorReporter {
   String? _reportedName;
 
   @override
-  Future<void> initialize(String? env, String? release) async {
+  Future<void> initialize({String? env, String? release}) async {
     _initialized = true;
   }
 
   @override
-  Future<void> report(Object exception, StackTrace? stackTrace) async {
+  Future<void> report(
+      {required Object exception, StackTrace? stackTrace}) async {
     _reportedException = exception;
   }
 
   @override
   Future<void> updateUserInformation(
-      String? id, String? email, String? name) async {
+      {String? id, String? email, String? name}) async {
     _reportedId = id;
     _reportedEmail = email;
     _reportedName = name;
@@ -32,8 +33,9 @@ void main() {
     test('should initialize error reporters', () async {
       final errorReporter = TestErrorReporter();
       final djangoflowErrorReporter = DjangoflowErrorReporter.instance;
+      djangoflowErrorReporter.enableErrorReporting();
       djangoflowErrorReporter.addAll([errorReporter]);
-      await djangoflowErrorReporter.initialize('test', '1.0.0');
+      await djangoflowErrorReporter.initialize(env: 'test', release: '1.0.0');
       expect(errorReporter._initialized, isTrue);
     });
 
@@ -42,7 +44,8 @@ void main() {
       final djangoflowErrorReporter = DjangoflowErrorReporter.instance;
       djangoflowErrorReporter.addAll([errorReporter]);
       final exception = Exception('test exception');
-      await djangoflowErrorReporter.report(exception, null);
+      await djangoflowErrorReporter.report(
+          exception: exception, stackTrace: null);
       expect(errorReporter._reportedException, exception);
     });
 
@@ -51,7 +54,7 @@ void main() {
       final djangoflowErrorReporter = DjangoflowErrorReporter.instance;
       djangoflowErrorReporter.addAll([errorReporter]);
       await djangoflowErrorReporter.updateUserInformation(
-          '123', 'user@example.com', 'User');
+          id: '123', email: 'user@example.com', name: 'User');
       expect(errorReporter._reportedId, '123');
       expect(errorReporter._reportedEmail, 'user@example.com');
       expect(errorReporter._reportedName, 'User');

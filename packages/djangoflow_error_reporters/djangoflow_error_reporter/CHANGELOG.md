@@ -1,3 +1,8 @@
+## [0.0.3] - Jan 31 2023
+
+- Use named parameters for methods.
+- Add `enableErrorReporting` and `disableErrorReporting` functionality.
+
 ## [0.0.2] - Jan 23 2023
 
 - Added unit tests
