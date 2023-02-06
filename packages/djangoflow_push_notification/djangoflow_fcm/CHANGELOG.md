@@ -1,3 +1,7 @@
+## [0.0.4] - 23 Jan 2023
+
+- Support if notification tap opened app from terminated/background state via `remoteMessageOpenedApp` field.
+
 ## [0.0.3] - 23 Jan 2023
 
 - Fixed returning `authorizationStatus` with token
