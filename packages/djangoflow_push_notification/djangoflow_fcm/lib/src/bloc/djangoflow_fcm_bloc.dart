@@ -23,7 +23,12 @@ class DjangoflowFCMBloc extends Bloc<DjangoflowFCMEvent, DjangoflowFCMState> {
         repository.getForegroundRemoteMessageStream().listen(_onMessage);
 
     _backroundRemoteMessageTappedSubscription =
-        repository.getBackgroundRemoteMessageTappedStream().listen(_onMessage);
+        repository.getBackgroundRemoteMessageTappedStream().listen(
+              (event) => _onMessage(
+                event,
+                remoteMessageOpenedApp: true,
+              ),
+            );
   }
 
   late StreamSubscription<RemoteMessage> _foregroundRemoteMessageSubscription;
@@ -35,6 +40,7 @@ class DjangoflowFCMBloc extends Bloc<DjangoflowFCMEvent, DjangoflowFCMState> {
       emit(
         state.copyWith(
           remoteMessage: event.remoteMessage,
+          remoteMessageOpenedApp: event.remoteMessageOpenedApp,
         ),
       );
 
@@ -69,12 +75,19 @@ class DjangoflowFCMBloc extends Bloc<DjangoflowFCMEvent, DjangoflowFCMState> {
       Emitter<DjangoflowFCMState> emit) async {
     final initialMessage = await repository.getInitialRemoteMessage();
     if (initialMessage != null) {
-      add(DjangoflowFCMOnMessageReceived(initialMessage));
+      add(DjangoflowFCMOnMessageReceived(
+        initialMessage,
+        remoteMessageOpenedApp: true,
+      ));
     }
   }
 
-  void _onMessage(RemoteMessage remoteMessage) =>
-      add(DjangoflowFCMOnMessageReceived(remoteMessage));
+  void _onMessage(RemoteMessage remoteMessage,
+          {bool? remoteMessageOpenedApp}) =>
+      add(DjangoflowFCMOnMessageReceived(
+        remoteMessage,
+        remoteMessageOpenedApp: remoteMessageOpenedApp,
+      ));
 
   @override
   Future<void> close() async {

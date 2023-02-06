@@ -4,8 +4,9 @@ abstract class DjangoflowFCMEvent {}
 
 class DjangoflowFCMOnMessageReceived extends DjangoflowFCMEvent {
   final RemoteMessage remoteMessage;
-
-  DjangoflowFCMOnMessageReceived(this.remoteMessage);
+  final bool? remoteMessageOpenedApp;
+  DjangoflowFCMOnMessageReceived(this.remoteMessage,
+      {this.remoteMessageOpenedApp});
 }
 
 class DjangoflowFCMTokenRequested extends DjangoflowFCMEvent {}

@@ -20,6 +20,7 @@ mixin _$DjangoflowFCMState {
   String? get token => throw _privateConstructorUsedError;
   AuthorizationStatus? get notificationAuthorizationStatus =>
       throw _privateConstructorUsedError;
+  bool? get remoteMessageOpenedApp => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $DjangoflowFCMStateCopyWith<DjangoflowFCMState> get copyWith =>
@@ -35,7 +36,8 @@ abstract class $DjangoflowFCMStateCopyWith<$Res> {
   $Res call(
       {RemoteMessage? remoteMessage,
       String? token,
-      AuthorizationStatus? notificationAuthorizationStatus});
+      AuthorizationStatus? notificationAuthorizationStatus,
+      bool? remoteMessageOpenedApp});
 }
 
 /// @nodoc
@@ -54,6 +56,7 @@ class _$DjangoflowFCMStateCopyWithImpl<$Res, $Val extends DjangoflowFCMState>
     Object? remoteMessage = freezed,
     Object? token = freezed,
     Object? notificationAuthorizationStatus = freezed,
+    Object? remoteMessageOpenedApp = freezed,
   }) {
     return _then(_value.copyWith(
       remoteMessage: freezed == remoteMessage
@@ -69,6 +72,10 @@ class _$DjangoflowFCMStateCopyWithImpl<$Res, $Val extends DjangoflowFCMState>
           ? _value.notificationAuthorizationStatus
           : notificationAuthorizationStatus // ignore: cast_nullable_to_non_nullable
               as AuthorizationStatus?,
+      remoteMessageOpenedApp: freezed == remoteMessageOpenedApp
+          ? _value.remoteMessageOpenedApp
+          : remoteMessageOpenedApp // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ) as $Val);
   }
 }
@@ -84,7 +91,8 @@ abstract class _$$_DjangoflowFCMStateCopyWith<$Res>
   $Res call(
       {RemoteMessage? remoteMessage,
       String? token,
-      AuthorizationStatus? notificationAuthorizationStatus});
+      AuthorizationStatus? notificationAuthorizationStatus,
+      bool? remoteMessageOpenedApp});
 }
 
 /// @nodoc
@@ -101,6 +109,7 @@ class __$$_DjangoflowFCMStateCopyWithImpl<$Res>
     Object? remoteMessage = freezed,
     Object? token = freezed,
     Object? notificationAuthorizationStatus = freezed,
+    Object? remoteMessageOpenedApp = freezed,
   }) {
     return _then(_$_DjangoflowFCMState(
       remoteMessage: freezed == remoteMessage
@@ -116,6 +125,10 @@ class __$$_DjangoflowFCMStateCopyWithImpl<$Res>
           ? _value.notificationAuthorizationStatus
           : notificationAuthorizationStatus // ignore: cast_nullable_to_non_nullable
               as AuthorizationStatus?,
+      remoteMessageOpenedApp: freezed == remoteMessageOpenedApp
+          ? _value.remoteMessageOpenedApp
+          : remoteMessageOpenedApp // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ));
   }
 }
@@ -124,7 +137,10 @@ class __$$_DjangoflowFCMStateCopyWithImpl<$Res>
 
 class _$_DjangoflowFCMState implements _DjangoflowFCMState {
   const _$_DjangoflowFCMState(
-      {this.remoteMessage, this.token, this.notificationAuthorizationStatus});
+      {this.remoteMessage,
+      this.token,
+      this.notificationAuthorizationStatus,
+      this.remoteMessageOpenedApp});
 
   @override
   final RemoteMessage? remoteMessage;
@@ -132,10 +148,12 @@ class _$_DjangoflowFCMState implements _DjangoflowFCMState {
   final String? token;
   @override
   final AuthorizationStatus? notificationAuthorizationStatus;
+  @override
+  final bool? remoteMessageOpenedApp;
 
   @override
   String toString() {
-    return 'DjangoflowFCMState(remoteMessage: $remoteMessage, token: $token, notificationAuthorizationStatus: $notificationAuthorizationStatus)';
+    return 'DjangoflowFCMState(remoteMessage: $remoteMessage, token: $token, notificationAuthorizationStatus: $notificationAuthorizationStatus, remoteMessageOpenedApp: $remoteMessageOpenedApp)';
   }
 
   @override
@@ -149,12 +167,14 @@ class _$_DjangoflowFCMState implements _DjangoflowFCMState {
             (identical(other.notificationAuthorizationStatus,
                     notificationAuthorizationStatus) ||
                 other.notificationAuthorizationStatus ==
-                    notificationAuthorizationStatus));
+                    notificationAuthorizationStatus) &&
+            (identical(other.remoteMessageOpenedApp, remoteMessageOpenedApp) ||
+                other.remoteMessageOpenedApp == remoteMessageOpenedApp));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, remoteMessage, token, notificationAuthorizationStatus);
+  int get hashCode => Object.hash(runtimeType, remoteMessage, token,
+      notificationAuthorizationStatus, remoteMessageOpenedApp);
 
   @JsonKey(ignore: true)
   @override
@@ -166,10 +186,10 @@ class _$_DjangoflowFCMState implements _DjangoflowFCMState {
 
 abstract class _DjangoflowFCMState implements DjangoflowFCMState {
   const factory _DjangoflowFCMState(
-          {final RemoteMessage? remoteMessage,
-          final String? token,
-          final AuthorizationStatus? notificationAuthorizationStatus}) =
-      _$_DjangoflowFCMState;
+      {final RemoteMessage? remoteMessage,
+      final String? token,
+      final AuthorizationStatus? notificationAuthorizationStatus,
+      final bool? remoteMessageOpenedApp}) = _$_DjangoflowFCMState;
 
   @override
   RemoteMessage? get remoteMessage;
@@ -177,6 +197,8 @@ abstract class _DjangoflowFCMState implements DjangoflowFCMState {
   String? get token;
   @override
   AuthorizationStatus? get notificationAuthorizationStatus;
+  @override
+  bool? get remoteMessageOpenedApp;
   @override
   @JsonKey(ignore: true)
   _$$_DjangoflowFCMStateCopyWith<_$_DjangoflowFCMState> get copyWith =>

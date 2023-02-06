@@ -12,5 +12,6 @@ class DjangoflowFCMState with _$DjangoflowFCMState {
     RemoteMessage? remoteMessage,
     String? token,
     AuthorizationStatus? notificationAuthorizationStatus,
+    bool? remoteMessageOpenedApp,
   }) = _DjangoflowFCMState;
 }
