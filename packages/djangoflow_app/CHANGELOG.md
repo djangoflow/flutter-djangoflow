@@ -1,3 +1,7 @@
+## 3.0.1 - 10 Feb 2023
+
+- Add setting intial state for AppCubit via `AppCubit.intialState = AppState()`
+
 ## 3.0.0 - 25 Jan 2023
 
 _BREAKING CHANGES_
