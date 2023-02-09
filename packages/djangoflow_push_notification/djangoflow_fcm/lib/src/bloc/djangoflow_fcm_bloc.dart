@@ -18,6 +18,7 @@ class DjangoflowFCMBloc extends Bloc<DjangoflowFCMEvent, DjangoflowFCMState> {
     on<DjangoflowFCMOnTokenReceived>(_onTokenReceived);
     on<DjangoflowFCMTokenRequested>(_getToken);
     on<DjangoflowFCMInitialMessageRequested>(_getIntiailMessage);
+    on<DjangoflowFCMDeletePushToken>(_deletePushToken);
 
     _foregroundRemoteMessageSubscription =
         repository.getForegroundRemoteMessageStream().listen(_onMessage);
@@ -88,6 +89,21 @@ class DjangoflowFCMBloc extends Bloc<DjangoflowFCMEvent, DjangoflowFCMState> {
         remoteMessage,
         remoteMessageOpenedApp: remoteMessageOpenedApp,
       ));
+
+  Future<void> _deletePushToken(DjangoflowFCMDeletePushToken event,
+      Emitter<DjangoflowFCMState> emit) async {
+    if (await repository.isSupported()) {
+      final permission = await repository.requestNotificationPermission();
+      if (permission.authorizationStatus == AuthorizationStatus.authorized) {
+        await repository.deleteToken();
+        emit(
+          state.copyWith(
+            token: null,
+          ),
+        );
+      }
+    }
+  }
 
   @override
   Future<void> close() async {

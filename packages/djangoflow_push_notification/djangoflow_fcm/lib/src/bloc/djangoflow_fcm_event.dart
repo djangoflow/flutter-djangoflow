@@ -18,3 +18,5 @@ class DjangoflowFCMOnTokenReceived extends DjangoflowFCMEvent {
 }
 
 class DjangoflowFCMInitialMessageRequested extends DjangoflowFCMEvent {}
+
+class DjangoflowFCMDeletePushToken extends DjangoflowFCMEvent {}
