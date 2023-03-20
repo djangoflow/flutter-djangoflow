@@ -9,7 +9,7 @@ class AppBuilder extends StatelessWidget {
     required this.providers,
     this.listeners,
     required this.builder,
-    required this.repositoryProviders,
+    this.repositoryProviders,
     this.onInitState,
     this.onDispose,
   });
@@ -20,7 +20,7 @@ class AppBuilder extends StatelessWidget {
   /// Global listeners
   final List<BlocListener>? listeners;
   // Global repository providers
-  final List<RepositoryProvider> repositoryProviders;
+  final List<RepositoryProvider>? repositoryProviders;
 
   final AppBuilderStateCallBack? onInitState;
   final AppBuilderStateCallBack? onDispose;
@@ -29,23 +29,31 @@ class AppBuilder extends StatelessWidget {
   final WidgetBuilder builder;
 
   @override
-  Widget build(BuildContext context) => MultiRepositoryProvider(
-        providers: repositoryProviders,
-        child: MultiBlocProvider(
-          providers: providers,
-          // to provide current context where initState/dispose can access the providers.
-          child: _AppBuilderStateProvider(
-            onInitState: onInitState,
-            onDispose: onDispose,
-            builder: (context) => listeners == null
-                ? builder(context)
-                : MultiBlocListener(
-                    listeners: listeners!,
-                    child: builder(context),
-                  ),
-          ),
-        ),
+  Widget build(BuildContext context) {
+    final child = MultiBlocProvider(
+      providers: providers,
+      // to provide current context where initState/dispose can access the providers.
+      child: _AppBuilderStateProvider(
+        onInitState: onInitState,
+        onDispose: onDispose,
+        builder: (context) => listeners == null
+            ? builder(context)
+            : MultiBlocListener(
+                listeners: listeners!,
+                child: builder(context),
+              ),
+      ),
+    );
+
+    if (repositoryProviders == null) {
+      return child;
+    } else {
+      return MultiRepositoryProvider(
+        providers: repositoryProviders!,
+        child: child,
       );
+    }
+  }
 }
 
 class _AppBuilderStateProvider extends StatefulWidget {
