@@ -1,3 +1,8 @@
+## 3.1.0 - 20 March 2023
+
+- Update dependencies
+- Make `repositoryProviders` nullable
+
 ## 3.0.1 - 10 Feb 2023
 
 - Add setting intial state for AppCubit via `AppCubit.intialState = AppState()`
