@@ -9,6 +9,7 @@ class AppCubitConsumer extends BlocConsumer<AppCubit, AppState> {
     required super.builder,
     required super.listener,
   }) : super(
+          bloc: AppCubit.instance,
           buildWhen: buildWhen ?? (previous, current) => previous != current,
           listenWhen: listenWhen ?? (previous, current) => previous != current,
         );

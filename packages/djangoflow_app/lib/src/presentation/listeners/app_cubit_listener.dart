@@ -8,6 +8,7 @@ class AppCubitListener extends BlocListener<AppCubit, AppState> {
     required super.listener,
     BlocListenerCondition<AppState>? listenWhen,
   }) : super(
+          bloc: AppCubit.instance,
           listenWhen: listenWhen ?? (prev, current) => prev != current,
         );
 }

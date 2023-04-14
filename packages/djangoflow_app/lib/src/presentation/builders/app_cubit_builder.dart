@@ -7,6 +7,7 @@ class AppCubitBuilder extends BlocBuilder<AppCubit, AppState> {
     required super.builder,
     BlocBuilderCondition<AppState>? buildWhen,
   }) : super(
+          bloc: AppCubit.instance,
           buildWhen: buildWhen ?? (previous, current) => previous != current,
         );
 }
