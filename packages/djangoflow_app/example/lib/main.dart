@@ -24,15 +24,16 @@ void main() => DjangoflowAppRunner.run(
             return MaterialApp(
               title: 'Djangoflow App',
               debugShowCheckedModeBanner: false,
-              theme: ThemeData(
-                primarySwatch: Colors.blue,
-              ),
+              theme: ThemeData.light(),
+              darkTheme: ThemeData.dark(),
+              themeMode: state.themeMode,
+              locale: Locale(state.locale),
               scaffoldMessengerKey: DjangoflowAppSnackbar.scaffoldMessengerKey,
               home: appBuilder(
                 AppBuilder(
-                  repositoryProviders: [
-                    // Your repository providers
-                  ],
+                  // Your repository providers
+                  repositoryProviders: const [],
+
                   providers: [
                     // Your BLoC providers
 
@@ -40,9 +41,10 @@ void main() => DjangoflowAppRunner.run(
                     // In a more complex app, making CounterCubit scoped to the CounterPage would be recommended.
                     BlocProvider<CounterCubit>(create: (_) => CounterCubit()),
                   ],
-                  listeners: [
-                    // Your BLoC listeners
-                  ],
+                  // Your BLoC listeners
+                  listeners: const [],
+                  
+                  onInitState: (_) => AppCubit.instance.firstRunDone(),
                   builder: (_) => const CounterPage(),
                 ),
               ),

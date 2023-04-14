@@ -1,3 +1,4 @@
+import 'package:djangoflow_app/djangoflow_app.dart';
 import 'package:example/bloc/counter_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -8,11 +9,21 @@ class CounterPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: const <Widget>[CounterText()],
-        ),
+      body: AppCubitBuilder(
+        buildWhen: (previous, current) =>
+            previous.environment != current.environment,
+        builder: (context, state) {
+          final env = state.environment;
+          return SandboxBanner(
+            isSandbox: env == AppEnvironment.sandbox,
+            child: Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: const <Widget>[CounterText()],
+              ),
+            ),
+          );
+        },
       ),
       floatingActionButton: Column(
         mainAxisAlignment: MainAxisAlignment.end,
@@ -27,8 +38,30 @@ class CounterPage extends StatelessWidget {
             onPressed: context.read<CounterCubit>().decrement,
             child: const Icon(Icons.remove),
           ),
+          const SizedBox(height: 32),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              FloatingActionButton(
+                onPressed: toogleLightOrDark,
+                child: const Icon(Icons.color_lens),
+              ),
+              const SizedBox(width: 8),
+              FloatingActionButton(
+                onPressed: AppCubit.instance.toggleEnvironment,
+                child: const Icon(Icons.change_circle),
+              ),
+            ],
+          ),
         ],
       ),
+    );
+  }
+
+  void toogleLightOrDark() {
+    final mode = AppCubit.instance.state.themeMode;
+    AppCubit.instance.updateThemeMode(
+      mode == ThemeMode.dark ? ThemeMode.light : ThemeMode.dark,
     );
   }
 }
