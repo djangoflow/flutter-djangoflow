@@ -30,6 +30,8 @@ class AppBuilder extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    
+  // to provide current context where initState/dispose can access the providers.
     Widget widget = _AppBuilderStateProvider(
       onInitState: onInitState,
       onDispose: onDispose,
