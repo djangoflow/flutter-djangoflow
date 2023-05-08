@@ -1,0 +1,25 @@
+From 7bb81af9129255eb0c6be25fc3052a3fe84d1ad8 Mon Sep 17 00:00:00 2001
+From: saiful_apx <saiful@apexive.com>
+Date: Mon, 8 May 2023 20:17:01 +0600
+Subject: [PATCH] use const constructor for User
+
+---
+ .../djangoflow_chat/packages/openapi/lib/src/model/user.dart    | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/packages/djangoflow_chat/packages/openapi/lib/src/model/user.dart b/packages/djangoflow_chat/packages/openapi/lib/src/model/user.dart
+index e96fe7a..06b3f49 100644
+--- a/packages/djangoflow_chat/packages/openapi/lib/src/model/user.dart
++++ b/packages/djangoflow_chat/packages/openapi/lib/src/model/user.dart
+@@ -16,7 +16,7 @@ part 'user.g.dart';
+ )
+ class User {
+   /// Returns a new [User] instance.
+-  User({
++  const User({
+ 
+      this.id,
+ 
+-- 
+2.37.1 (Apple Git-137.1)
+
