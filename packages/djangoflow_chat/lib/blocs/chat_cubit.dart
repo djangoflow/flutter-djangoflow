@@ -2,7 +2,9 @@ import 'package:bloc/bloc.dart';
 import 'package:collection/collection.dart';
 import 'package:dio/dio.dart';
 import 'package:djangoflow_chat/constants.dart';
+import 'package:djangoflow_chat/utils/extensions/message_extension.dart';
 import 'package:djangoflow_chat/utils/extensions/room_user_extension.dart';
+import 'package:djangoflow_chat/utils/extensions/string_extensions.dart';
 import 'package:openapi/openapi.dart';
 
 import 'chat_state.dart';
@@ -58,21 +60,14 @@ class ChatCubit extends Cubit<ChatState> {
       ),
     );
 
-    final seenIds = messages
-        .where(
-            (e) => e.roomId == roomId && e.isSeenByMe == false && e.id != null)
-        .map((e) => e.id as String)
-        .toList(growable: false);
+    final seenIds = messages.unseenMessageIds;
 
     final reactionIds = <String>[];
     for (final reactionMessage in messages) {
       if (reactionMessage.reactions != null &&
           reactionMessage.reactions!.isNotEmpty) {
         reactionIds.addAll(
-          reactionMessage.reactions!
-              .map((e) => (e.isSeenByMe == false && e.id != null) ? e.id : null)
-              .whereType<String>()
-              .toList(growable: false),
+          reactionMessage.reactions!.unseenMessageIds,
         );
       }
     }
@@ -105,6 +100,7 @@ class ChatCubit extends Cubit<ChatState> {
     );
   }
 
+  /// Add a [RoomUser] to `roomUsers`
   void addRoomUser(RoomUser user) {
     final roomUsers = Map<String, RoomUser>.from(state.roomUsers);
     roomUsers[user.id ?? '__anonymous__'] = user;
@@ -123,6 +119,7 @@ class ChatCubit extends Cubit<ChatState> {
           ?.toUser() ??
       anonymousUser;
 
+  /// Add a [Message] to `messages`, additionally marks it as seen as well
   void addMessage(Message message) {
     final i = state.messages.indexWhere((e) => e.id == message.id);
 
@@ -134,21 +131,18 @@ class ChatCubit extends Cubit<ChatState> {
       messages.insert(i, message);
       emit(state.copyWith(messages: messages));
     }
-    // Mark message as seen
+    // Mark message and reactions as seen
     if (message.roomId != null &&
         message.id != null &&
         message.isSeenByMe != true) {
       markMessageAsSeen(messageIds: [message.id!], roomId: message.roomId!);
-      message.reactions?.forEach(
-        (reaction) {
-          if (reaction.roomId != null &&
-              reaction.id != null &&
-              reaction.isSeenByMe != true) {
-            markMessageAsSeen(
-                messageIds: [reaction.id!], roomId: reaction.roomId!);
-          }
-        },
-      );
+      final unseenReactionIds = message.reactions?.unseenMessageIds;
+      if (unseenReactionIds.isNotNullOrEmpty) {
+        markMessageAsSeen(
+          messageIds: unseenReactionIds!,
+          roomId: message.roomId!,
+        );
+      }
     }
   }
 
