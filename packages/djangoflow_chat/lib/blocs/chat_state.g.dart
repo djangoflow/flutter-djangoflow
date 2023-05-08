@@ -11,7 +11,7 @@ _$_ChatState _$$_ChatStateFromJson(Map<String, dynamic> json) => _$_ChatState(
       room: json['room'] == null
           ? null
           : Room.fromJson(json['room'] as Map<String, dynamic>),
-      users: (json['users'] as Map<String, dynamic>?)?.map(
+      roomUsers: (json['roomUsers'] as Map<String, dynamic>?)?.map(
             (k, e) => MapEntry(k, RoomUser.fromJson(e as Map<String, dynamic>)),
           ) ??
           const <String, RoomUser>{},
@@ -30,7 +30,7 @@ Map<String, dynamic> _$$_ChatStateToJson(_$_ChatState instance) =>
     <String, dynamic>{
       'roomId': instance.roomId,
       'room': instance.room,
-      'users': instance.users,
+      'roomUsers': instance.roomUsers,
       'messages': instance.messages,
       'me': instance.me,
       'loading': instance.loading,

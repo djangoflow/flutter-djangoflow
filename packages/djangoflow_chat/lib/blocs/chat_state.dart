@@ -10,7 +10,7 @@ class ChatState with _$ChatState {
   const factory ChatState({
     required String roomId,
     Room? room,
-    @Default(<String, RoomUser>{}) Map<String, RoomUser> users,
+    @Default(<String, RoomUser>{}) Map<String, RoomUser> roomUsers,
     @Default(<Message>[]) List<Message> messages,
     @Default(anonymousUser) User me,
     @Default(false) bool loading,

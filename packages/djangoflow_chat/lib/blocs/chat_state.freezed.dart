@@ -22,7 +22,7 @@ ChatState _$ChatStateFromJson(Map<String, dynamic> json) {
 mixin _$ChatState {
   String get roomId => throw _privateConstructorUsedError;
   Room? get room => throw _privateConstructorUsedError;
-  Map<String, RoomUser> get users => throw _privateConstructorUsedError;
+  Map<String, RoomUser> get roomUsers => throw _privateConstructorUsedError;
   List<Message> get messages => throw _privateConstructorUsedError;
   User get me => throw _privateConstructorUsedError;
   bool get loading => throw _privateConstructorUsedError;
@@ -42,7 +42,7 @@ abstract class $ChatStateCopyWith<$Res> {
   $Res call(
       {String roomId,
       Room? room,
-      Map<String, RoomUser> users,
+      Map<String, RoomUser> roomUsers,
       List<Message> messages,
       User me,
       bool loading,
@@ -64,7 +64,7 @@ class _$ChatStateCopyWithImpl<$Res, $Val extends ChatState>
   $Res call({
     Object? roomId = null,
     Object? room = freezed,
-    Object? users = null,
+    Object? roomUsers = null,
     Object? messages = null,
     Object? me = null,
     Object? loading = null,
@@ -79,9 +79,9 @@ class _$ChatStateCopyWithImpl<$Res, $Val extends ChatState>
           ? _value.room
           : room // ignore: cast_nullable_to_non_nullable
               as Room?,
-      users: null == users
-          ? _value.users
-          : users // ignore: cast_nullable_to_non_nullable
+      roomUsers: null == roomUsers
+          ? _value.roomUsers
+          : roomUsers // ignore: cast_nullable_to_non_nullable
               as Map<String, RoomUser>,
       messages: null == messages
           ? _value.messages
@@ -113,7 +113,7 @@ abstract class _$$_ChatStateCopyWith<$Res> implements $ChatStateCopyWith<$Res> {
   $Res call(
       {String roomId,
       Room? room,
-      Map<String, RoomUser> users,
+      Map<String, RoomUser> roomUsers,
       List<Message> messages,
       User me,
       bool loading,
@@ -133,7 +133,7 @@ class __$$_ChatStateCopyWithImpl<$Res>
   $Res call({
     Object? roomId = null,
     Object? room = freezed,
-    Object? users = null,
+    Object? roomUsers = null,
     Object? messages = null,
     Object? me = null,
     Object? loading = null,
@@ -148,9 +148,9 @@ class __$$_ChatStateCopyWithImpl<$Res>
           ? _value.room
           : room // ignore: cast_nullable_to_non_nullable
               as Room?,
-      users: null == users
-          ? _value._users
-          : users // ignore: cast_nullable_to_non_nullable
+      roomUsers: null == roomUsers
+          ? _value._roomUsers
+          : roomUsers // ignore: cast_nullable_to_non_nullable
               as Map<String, RoomUser>,
       messages: null == messages
           ? _value._messages
@@ -178,12 +178,12 @@ class _$_ChatState implements _ChatState {
   const _$_ChatState(
       {required this.roomId,
       this.room,
-      final Map<String, RoomUser> users = const <String, RoomUser>{},
+      final Map<String, RoomUser> roomUsers = const <String, RoomUser>{},
       final List<Message> messages = const <Message>[],
       this.me = anonymousUser,
       this.loading = false,
       this.uploadingImage = false})
-      : _users = users,
+      : _roomUsers = roomUsers,
         _messages = messages;
 
   factory _$_ChatState.fromJson(Map<String, dynamic> json) =>
@@ -193,13 +193,13 @@ class _$_ChatState implements _ChatState {
   final String roomId;
   @override
   final Room? room;
-  final Map<String, RoomUser> _users;
+  final Map<String, RoomUser> _roomUsers;
   @override
   @JsonKey()
-  Map<String, RoomUser> get users {
-    if (_users is EqualUnmodifiableMapView) return _users;
+  Map<String, RoomUser> get roomUsers {
+    if (_roomUsers is EqualUnmodifiableMapView) return _roomUsers;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableMapView(_users);
+    return EqualUnmodifiableMapView(_roomUsers);
   }
 
   final List<Message> _messages;
@@ -223,7 +223,7 @@ class _$_ChatState implements _ChatState {
 
   @override
   String toString() {
-    return 'ChatState(roomId: $roomId, room: $room, users: $users, messages: $messages, me: $me, loading: $loading, uploadingImage: $uploadingImage)';
+    return 'ChatState(roomId: $roomId, room: $room, roomUsers: $roomUsers, messages: $messages, me: $me, loading: $loading, uploadingImage: $uploadingImage)';
   }
 
   @override
@@ -233,7 +233,8 @@ class _$_ChatState implements _ChatState {
             other is _$_ChatState &&
             (identical(other.roomId, roomId) || other.roomId == roomId) &&
             (identical(other.room, room) || other.room == room) &&
-            const DeepCollectionEquality().equals(other._users, _users) &&
+            const DeepCollectionEquality()
+                .equals(other._roomUsers, _roomUsers) &&
             const DeepCollectionEquality().equals(other._messages, _messages) &&
             (identical(other.me, me) || other.me == me) &&
             (identical(other.loading, loading) || other.loading == loading) &&
@@ -247,7 +248,7 @@ class _$_ChatState implements _ChatState {
       runtimeType,
       roomId,
       room,
-      const DeepCollectionEquality().hash(_users),
+      const DeepCollectionEquality().hash(_roomUsers),
       const DeepCollectionEquality().hash(_messages),
       me,
       loading,
@@ -271,7 +272,7 @@ abstract class _ChatState implements ChatState {
   const factory _ChatState(
       {required final String roomId,
       final Room? room,
-      final Map<String, RoomUser> users,
+      final Map<String, RoomUser> roomUsers,
       final List<Message> messages,
       final User me,
       final bool loading,
@@ -285,7 +286,7 @@ abstract class _ChatState implements ChatState {
   @override
   Room? get room;
   @override
-  Map<String, RoomUser> get users;
+  Map<String, RoomUser> get roomUsers;
   @override
   List<Message> get messages;
   @override
