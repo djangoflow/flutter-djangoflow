@@ -1,3 +1,3 @@
 library djangoflow_chat;
 
-// TODO implement the package
+export 'blocs/chat_cubit.dart';
