@@ -16,7 +16,7 @@ part 'user.g.dart';
 )
 class User {
   /// Returns a new [User] instance.
-  User({
+  const User({
 
      this.id,
 
