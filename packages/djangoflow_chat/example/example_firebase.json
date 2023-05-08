@@ -1,0 +1,55 @@
+{
+    "hosting": [{
+            "target": "chat-dev",
+            "public": "packages/chat/build/web",
+            "ignore": [
+                "firebase.json",
+                "**/.*",
+                "**/node_modules/**"
+            ],
+            "appAssociation": "NONE",
+            "headers": [{
+                "source": "/.well-known/apple-app-site-association",
+                "headers": [{
+                    "key": "Content-Type",
+                    "value": "application/json"
+                }]
+            }],
+            "rewrites": [{
+                    "source": "/.well-known/apple-app-site-association",
+                    "destination": "/.well-known/apple-app-site-association"
+                },
+                {
+                    "source": "**",
+                    "destination": "/index.html"
+                }
+            ]
+        },
+        {
+            "target": "chat-prod",
+            "public": "packages/chat/build/web",
+            "ignore": [
+                "firebase.json",
+                "**/.*",
+                "**/node_modules/**"
+            ],
+            "appAssociation": "NONE",
+            "headers": [{
+                "source": "/.well-known/apple-app-site-association",
+                "headers": [{
+                    "key": "Content-Type",
+                    "value": "application/json"
+                }]
+            }],
+            "rewrites": [{
+                    "source": "/.well-known/apple-app-site-association",
+                    "destination": "/.well-known/apple-app-site-association"
+                },
+                {
+                    "source": "**",
+                    "destination": "/index.html"
+                }
+            ]
+        }
+    ]
+}
