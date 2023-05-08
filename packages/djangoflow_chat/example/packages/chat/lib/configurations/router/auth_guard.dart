@@ -30,7 +30,7 @@ class AuthGuard extends AutoRedirectGuard {
     if (await canNavigate(resolver.route)) {
       resolver.next();
     } else {
-      redirect(const LoginRouter(), resolver: resolver);
+      redirect(const LoginRoute(), resolver: resolver);
     }
   }
 

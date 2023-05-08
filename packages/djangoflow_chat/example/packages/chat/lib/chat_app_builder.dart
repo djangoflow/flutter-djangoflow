@@ -65,10 +65,6 @@ class ChatAppBuilder extends AppBuilder {
               // Upon logout all the routes will be pushed and
               // HomeRoute will be pushed so and then the AuthGuard will
               // Redirect to the loginRoute
-              appRouter.pushAndPopUntil(
-                const HomeRoute(),
-                predicate: (route) => false,
-              );
             },
             child: AppCubitConsumer(
               listenWhen: (previous, current) =>
@@ -80,8 +76,9 @@ class ChatAppBuilder extends AppBuilder {
                   await authCubit.logout();
                 }
 
-                // TODO setup base url for env
-                // ApiRepository.instance.updateBaseUrl(isSandbox? sandBoxBaseurl: liveBaseUrl)
+                final isSandbox = state.environment == AppEnvironment.sandbox;
+                ApiRepository.instance.updateBaseUrl(
+                    isSandbox ? kSandboxBasePath : kLiveBasePath);
                 // setup environment for error reporters
                 // ErrorReporter.instance.updateEnv(describeEnum(state));
               },

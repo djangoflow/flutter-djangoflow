@@ -1,9 +1,11 @@
 import 'dart:async';
 
+import 'package:chat/utils/utils.dart';
 import 'package:dio/dio.dart';
 import 'package:djangoflow_app/djangoflow_app.dart';
 import 'package:djangoflow_app_links/djangoflow_app_links.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
 
 import 'chat_app_builder.dart';
 import 'configurations/configurations.dart';
@@ -32,6 +34,10 @@ Future<void> main() async {
 
       // TODO Error reporting [djangoflow_error_reporter]
       // TODO Analytics setup [djangoflow_analytics]
+      AppCubit.initialState = AppState(
+        themeMode: ThemeMode.dark,
+        environment: AppDomain.preferredEnvironment,
+      );
 
       String? initialDeepLink;
       final appLinksRepository = AppLinksRepository();

@@ -13,7 +13,6 @@ class HomePage extends StatelessWidget with AutoRouteWrapper {
   @override
   Widget build(BuildContext context) => AutoTabsRouter(
         routes: const [
-          BooksRouterRoute(),
           ProfileRouterRoute(),
         ],
         builder: (context, child, animation) {

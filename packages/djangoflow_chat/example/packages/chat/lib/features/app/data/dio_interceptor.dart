@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:chat/features/authentication/authentication.dart';
+import 'package:collection/collection.dart';
 import 'package:dio/dio.dart';
 import 'package:djangoflow_app/djangoflow_app.dart';
 import 'package:flutter/foundation.dart';
@@ -58,15 +59,17 @@ class DioInterceptor extends Interceptor {
               ),
             );
           } else {
-            for (final e in response?.data['errors']) {
-              if (e['message'] is String) {
-                errors.add(
-                  Error(
-                    message: e['message'],
-                    code: e['code'],
-                    field: e['field'],
-                  ),
-                );
+            if (response != null && response.data['errors'] != null) {
+              for (final e in response.data['errors']) {
+                if (e['message'] is String) {
+                  errors.add(
+                    Error(
+                      message: e['message'],
+                      code: e['code'],
+                      field: e['field'],
+                    ),
+                  );
+                }
               }
             }
           }
@@ -75,7 +78,7 @@ class DioInterceptor extends Interceptor {
           );
 
           updatedError = updatedError.copyWith(
-            message: errors.first.message,
+            message: errors.firstOrNull?.message,
             response: Response<ErrorResponse>(
               data: data,
               headers: response?.headers,
@@ -98,10 +101,12 @@ class DioInterceptor extends Interceptor {
         updatedError.type == DioErrorType.sendTimeout) {
       updatedError = updatedError.copyWith(
           message: 'Server connection timed out - check your connection');
-    } else if (updatedError.type == DioErrorType.connectionError ||
-        (!kIsWeb &&
-            updatedError.type == DioErrorType.unknown &&
-            updatedError.error is SocketException)) {
+    } else if (updatedError.type == DioErrorType.connectionError) {
+      updatedError = updatedError.copyWith(
+          message: 'Failed to connect to server - check your connection');
+    } else if ((!kIsWeb &&
+        updatedError.type == DioErrorType.unknown &&
+        updatedError.error is SocketException)) {
       updatedError = updatedError.copyWith(message: 'You seem to be offline');
     }
     handler.next(updatedError);

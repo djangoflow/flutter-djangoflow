@@ -1,7 +1,9 @@
 import 'package:chat/configurations/configurations.dart';
 import 'package:chat/features/authentication/authentication.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:progress_builder/progress_builder.dart';
 import 'package:reactive_forms/reactive_forms.dart';
 
 /// A page with email and password fields to login
@@ -18,7 +20,7 @@ class LoginPage extends StatelessWidget {
         'password': FormControl<String>(
           validators: [
             Validators.required,
-            Validators.minLength(6),
+            Validators.minLength(4),
           ],
         ),
       });
@@ -33,57 +35,91 @@ class LoginPage extends StatelessWidget {
         title: const Text('Login'),
       ),
       body: AutofillGroup(
-        child: ReactiveFormBuilder(
-            form: () => _form,
-            builder: (context, form, child) => ListView(
-                  children: [
-                    Text(
-                      'Welcome to DFChat',
-                      style: textTheme.headlineMedium,
+        child: DefaultActionController(
+          child: ReactiveFormBuilder(
+              form: () => _form,
+              builder: (context, form, child) => ListView(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: kPadding * 2,
+                      vertical: kPadding * 3,
                     ),
-                    const SizedBox(
-                      height: kPadding * 2,
-                    ),
-                    Text(
-                      'Please login to continue',
-                      style: Theme.of(context).textTheme.headlineSmall,
-                    ),
-                    const SizedBox(
-                      height: kPadding * 2,
-                    ),
-                    ReactiveTextField(
-                      formControlName: 'email',
-                      autofillHints: const [AutofillHints.email],
-                    ),
-                    const SizedBox(
-                      height: kPadding * 2,
-                    ),
-                    ReactiveTextField(
-                      formControlName: 'password',
-                      obscureText: true,
-                      autofillHints: const [AutofillHints.password],
-                    ),
-                    const SizedBox(
-                      height: kPadding * 2,
-                    ),
-                    ReactiveFormConsumer(
-                      builder: (context, form, child) => ElevatedButton(
-                        onPressed: form.valid
-                            ? () {
-                                context
-                                    .read<AuthCubit>()
-                                    .loginWithEmailPassword(
-                                      email: form.value['email'] as String,
-                                      password:
-                                          form.value['password'] as String,
-                                    );
-                              }
-                            : null,
-                        child: const Text('Login'),
+                    children: [
+                      Text(
+                        'Welcome to DFChat',
+                        style: textTheme.headlineMedium,
                       ),
-                    ),
-                  ],
-                )),
+                      const SizedBox(
+                        height: kPadding * 2,
+                      ),
+                      Text(
+                        'Please login to continue',
+                        style: Theme.of(context).textTheme.bodyMedium,
+                      ),
+                      const SizedBox(
+                        height: kPadding * 2,
+                      ),
+                      ReactiveTextField(
+                        formControlName: 'email',
+                        decoration: const InputDecoration(
+                          labelText: 'Email',
+                          hintText: 'Enter your email',
+                        ),
+                        autofillHints: const [AutofillHints.email],
+                        textInputAction: TextInputAction.next,
+                        keyboardType: TextInputType.emailAddress,
+                        onSubmitted: (_) => form.focus('password'),
+                      ),
+                      const SizedBox(
+                        height: kPadding * 2,
+                      ),
+                      ReactiveTextField(
+                        formControlName: 'password',
+                        decoration: const InputDecoration(
+                          labelText: 'Password',
+                          hintText: 'Enter your password',
+                        ),
+                        obscureText: true,
+                        autofillHints: const [
+                          AutofillHints.password,
+                        ],
+                        textInputAction: TextInputAction.done,
+                        keyboardType: TextInputType.visiblePassword,
+                        onSubmitted: (control) => DefaultActionController.of(
+                          context,
+                        )?.add(ActionType.start),
+                      ),
+                      const SizedBox(
+                        height: kPadding * 2,
+                      ),
+                      ReactiveFormConsumer(
+                        builder: (context, form, _) => LinearProgressBuilder(
+                          action: (_) async {
+                            final router = context.router.root;
+                            final guardInProgress =
+                                router.activeGuardObserver.guardInProgress;
+                            final email = form.value['email'] as String?;
+                            final password = form.value['password'] as String?;
+                            if (email != null && password != null) {
+                              await context
+                                  .read<AuthCubit>()
+                                  .loginWithEmailPassword(
+                                    email: email,
+                                    password: password,
+                                  );
+                            }
+                            if (!guardInProgress) {
+                              await router.replace(const HomeRoute());
+                            }
+                          },
+                          builder: (_, action, __) => ElevatedButton(
+                            onPressed: form.valid ? action : null,
+                            child: const Text('Login'),
+                          ),
+                        ),
+                      ),
+                    ],
+                  )),
+        ),
       ),
     );
   }
