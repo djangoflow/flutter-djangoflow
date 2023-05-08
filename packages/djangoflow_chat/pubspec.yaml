@@ -10,7 +10,7 @@ environment:
 
 dependencies:
   openapi:
-    path: ./openapi
+    path: ./packages/openapi
   bloc: ^8.1.1
   flutter:
     sdk: flutter
