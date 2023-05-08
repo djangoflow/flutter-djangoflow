@@ -1,6 +1,6 @@
 import 'package:openapi/openapi.dart';
 
-extension ReactionListToMapExtension on List<Message> {
+extension MessageListExtension on List<Message> {
   Map<String, int> toReactionsMapWithCount() {
     var map = <String, int>{};
     forEach((element) {
@@ -13,4 +13,9 @@ extension ReactionListToMapExtension on List<Message> {
 
     return map;
   }
+
+  List<String> get unseenMessageIds =>
+      where((message) => message.isSeenByMe != true && message.id != null)
+          .map((e) => e.id!)
+          .toList(growable: false);
 }
