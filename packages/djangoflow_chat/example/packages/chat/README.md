@@ -2,6 +2,8 @@
 
 A flutter application demonstrating integration of djangoflow_chat and [django-df-chat](https://github.com/djangoflow/django-df-chat)
 
+This example uses [flutter_chat_ui](https://pub.dev/packages/flutter_chat_ui) as the Chat UIKIT, but `djangoflow_chat` can be integrated with other flutter chat related UIKITs as well.
+
 ## BEFORE RUNNING THE APP TODO
 
 - [x] Install and run local backend server for [django-df-chat](https://github.com/djangoflow/django-df-chat), please follow steps in [README](https://github.com/djangoflow/django-df-chat#readme). **It is very important to [create superusers](https://github.com/djangoflow/django-df-chat#readme) to login via the email, password in this example app.**
