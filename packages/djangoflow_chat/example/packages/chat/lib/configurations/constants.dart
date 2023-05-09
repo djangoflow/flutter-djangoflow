@@ -2,7 +2,7 @@ import 'package:flutter_chat_types/flutter_chat_types.dart' as types;
 
 // Global APP - specific constants
 const kSentryDSN = '';
-const kAppLogoSvgPath = 'assets/app_logo/logo.svg';
+const kAppLogoPath = 'assets/app_logo/logo.png';
 const kVapidKey = '';
 const kLiveBasePath = r'https://api.djangoflow.com';
 const kSandboxBasePath = r'http://127.0.0.1:8000';

@@ -7,3 +7,4 @@ export 'presentation/builders/app_responsive_layout_builder.dart';
 export 'presentation/listeners/app_lifecycle_listener.dart';
 export 'presentation/place_holder_text.dart';
 export 'presentation/list_header.dart';
+export 'presentation/app_logo.dart';

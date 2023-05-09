@@ -1,6 +1,7 @@
 import 'dart:math';
 import 'package:chat/configurations/router/router.gr.dart';
 import 'package:auto_route/auto_route.dart';
+import 'package:chat/features/app/app.dart';
 import 'package:flutter/material.dart';
 
 class SplashPage extends StatefulWidget {
@@ -31,7 +32,7 @@ class _SplashPageState extends State<SplashPage> {
 
     return Scaffold(
       body: Center(
-        child: FlutterLogo(
+        child: AppLogo(
           size: side,
         ),
       ),
