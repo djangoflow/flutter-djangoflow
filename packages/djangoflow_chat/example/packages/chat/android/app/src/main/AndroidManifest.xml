@@ -2,7 +2,7 @@
     package="com.djangoflow.chat.dfchat">
     <uses-permission android:name="android.permission.INTERNET"/>
    <application
-        android:label="Djangoflow Chat"
+        android:label="DFChat"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher"
 		android:roundIcon="@mipmap/ic_launcher_round">

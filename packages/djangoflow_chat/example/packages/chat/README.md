@@ -1,4 +1,4 @@
-# Djangoflow Chat
+# DFChat
 
 A flutter application demonstrating integration of djangoflow_chat and [https://github.com/djangoflow/django-df-chat](django-df-chat)
 
@@ -8,7 +8,6 @@ A flutter application demonstrating integration of djangoflow_chat and [https://
 - [ ] Generate api_repository,freezed, json_serializable, auto_route etc files `cd packages/chat && flutter pub run build_runner build --delete-conflicting-outputs` (you must regenerate this whenever openapi changes)
 - [ ] Follow TODO comments for [auth_cubit.dart](packages/chat/lib/features/authentication/blocs/auth_cubit.dart)
 - [ ] Configure firebase using `flutterfire configure` in `packages/chat` directory. More info: https://pub.dev/packages/flutterfire_cli
-      
 
 ## Other TODO
 
@@ -186,4 +185,4 @@ Now we have enabled deep linking for Android platform. Remember, we're using `we
 
 - If you face `Integrity check failed: java.security.NoSuchAlgorithmException: Algorithm HmacPBESHA256 not available` Error during Android release builds follow this [Solution](https://stackoverflow.com/questions/67631927/error-building-aab-flutter-android-integrity-check-failed-java-security-n)
 - Need add about local_notification android icon using `keep.xml` file following the [example](https://github.com/MaikuB/flutter_local_notifications/tree/master/flutter_local_notifications/example/) project
-- For iOS local_notification configuration please check if `Google-service.info` file is present and linked properly. Can be checked from Xcode. If appears properly on Xcode then linked properly, if not then need to add/link. backgroundHandler should be a top level method, add it as early possible in the `main` method. Follow [this](https://firebase.google.com/docs/cloud-messaging/flutter/client) to ensure all the steps are done correctly 
+- For iOS local_notification configuration please check if `Google-service.info` file is present and linked properly. Can be checked from Xcode. If appears properly on Xcode then linked properly, if not then need to add/link. backgroundHandler should be a top level method, add it as early possible in the `main` method. Follow [this](https://firebase.google.com/docs/cloud-messaging/flutter/client) to ensure all the steps are done correctly

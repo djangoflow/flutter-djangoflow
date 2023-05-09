@@ -1,6 +1,6 @@
 {
-    "name": "Djangoflow Chat",
-    "short_name": "Djangoflow Chat",
+    "name": "DFChat",
+    "short_name": "DFChat",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
