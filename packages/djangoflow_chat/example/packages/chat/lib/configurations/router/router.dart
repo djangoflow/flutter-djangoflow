@@ -1,6 +1,8 @@
 import 'package:chat/configurations/router/auth_guard.dart';
 import 'package:chat/features/app/app.dart';
 import 'package:chat/features/authentication/presentation/pages/login_page.dart';
+import 'package:chat/features/chat/presentation/pages/chat_messages_page.dart';
+import 'package:chat/features/chat/presentation/pages/chat_rooms_page.dart';
 import 'package:chat/features/profile/profile.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
@@ -15,19 +17,6 @@ export 'router.gr.dart';
   replaceInRouteName: 'Page,Route',
   deferredLoading: true,
   routes: <AutoRoute>[
-    RedirectRoute(path: '/', redirectTo: '/home'),
-    AutoRoute(
-      page: HomePage,
-      path: '/home',
-      guards: [AuthGuard],
-      children: [
-        AutoRoute(
-          path: 'profile',
-          page: ProfileRouterPage,
-          children: profileRoutes,
-        ),
-      ],
-    ),
     AutoRoute(
       path: '/splash',
       page: SplashPage,
@@ -36,6 +25,26 @@ export 'router.gr.dart';
       path: '/login',
       page: LoginPage,
     ),
+    AutoRoute(
+      page: HomePage,
+      path: '/',
+      guards: [AuthGuard],
+      children: [
+        AutoRoute(
+          path: 'chats',
+          page: ChatRoomsPage,
+          meta: {
+            'showBottomNav': true,
+          },
+        ),
+        AutoRoute(
+          path: 'profile',
+          page: ProfileRouterPage,
+          children: profileRoutes,
+        ),
+      ],
+    ),
+    AutoRoute(path: '/chats/:roomId', page: ChatMessagesListPage),
     // Or redirect to home
     AutoRoute(path: '*', page: UnknownRoutePage),
   ],
