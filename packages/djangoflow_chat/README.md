@@ -6,6 +6,10 @@ The djangoflow_chat package provides a set of classes and methods for building r
 
 [openapi-generator-cli](https://github.com/OpenAPITools/openapi-generator-cli) is a very powerful tool that allows us to generate client libraries(api calling methods) following Repository pattern, documentation, tests etc for `Dart` language from the OpenApi/Swagger spec file. A good can be this article on how to generate OpenApi client library from OpenApi/Swagger specification [Article Link](https://medium.com/@rtlsilva/generating-dart-rest-api-client-libraries-using-openapi-generator-9b3dc517e68c)
 
+[django-df-chat](https://github.com/djangoflow/django-df-chat) is a Django app that provides chat functionality for web and mobile applications. It offers a set of REST APIs that allow users to create chat rooms, send messages, and manage users. The app is built with Django Channels and offers real-time communication capabilities using WebSockets. The package is highly configurable, and users can customize it according to their needs. The package also offers support for media files, message reactions, and message threading.
+
+By combining the power of [django-df-chat](https://github.com/djangoflow/django-df-chat) and [openapi-generator-cli](https://github.com/OpenAPITools/openapi-generator-cli) we have built flutter package to have chat functionality in flutter apps within minutes.
+
 ## Installation
 
 **Before we can install this package**, we need to make sure that we have already generated `openapi` package for our flutter project using [django-df-chat](https://github.com/djangoflow/django-df-chat). This custom chat backend provides all the necessary APIs for this Flutter package to work. It is very quick and easy process to install [django-df-chat](https://github.com/djangoflow/django-df-chat) and run it locally. Please follow the [README](https://github.com/djangoflow/django-df-chat#readme) for running the [django-df-chat](https://github.com/djangoflow/django-df-chat) Backend locally.
@@ -75,4 +79,4 @@ The djangoflow_chat package also includes some extension methods to make working
 
 ## Example
 
-An example app is included in the `example` directory of the package. You can run it with the following steps:
+An example app is included in the [example](./example/) directory of the package. You can run it with the following steps:
