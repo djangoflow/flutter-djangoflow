@@ -1,5 +1,7 @@
 import 'package:chat/configurations/router/router.dart';
+import 'package:chat/features/app/app.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:upgrader/upgrader.dart';
 
 class HomePage extends StatelessWidget with AutoRouteWrapper {
@@ -7,12 +9,19 @@ class HomePage extends StatelessWidget with AutoRouteWrapper {
 
   @override
   Widget wrappedRoute(BuildContext context) => UpgradeAlert(
-        child: this,
+        child: BlocProvider<ChatRoomsListBloc>(
+          create: (context) => ChatRoomsListBloc()
+            ..load(
+              const ChatRoomsListFilter(),
+            ),
+          child: this,
+        ),
       );
 
   @override
   Widget build(BuildContext context) => AutoTabsRouter(
         routes: const [
+          ChatRoomsRoute(),
           ProfileRouterRoute(),
         ],
         builder: (context, child, animation) {
@@ -37,11 +46,13 @@ class HomePage extends StatelessWidget with AutoRouteWrapper {
 
   List<BottomNavigationBarItem> get items => const [
         BottomNavigationBarItem(
-          icon: Icon(Icons.book),
-          label: 'Books',
+          icon: Icon(Icons.chat_bubble_outline),
+          activeIcon: Icon(Icons.chat_bubble),
+          label: 'Chats',
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.person),
+          icon: Icon(Icons.person_outline),
+          activeIcon: Icon(Icons.person),
           label: 'Profile',
         ),
       ];
