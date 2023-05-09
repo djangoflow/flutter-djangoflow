@@ -11,7 +11,6 @@ hostname=${1-https://api.djangoflow.com}
 ${OPENAPI_GENERATOR:-openapi-generator} generate -g dart-dio -p browserClient=false -p nullableFields=true \
   -p serializationLibrary=json_serializable \
     -i ${hostname}/api/${API_VERSION}/schema -o ${TARGET_DIR} \
-  && patch packages/openapi/lib/src/model/user.dart -i patches/0001-use-const-constructor-for-User.patch \
   && cd ${TARGET_DIR} \
   && grep -rl 'includeIfNull: truefalse' lib  | xargs sed -i '' 's/includeIfNull: truefalse/includeIfNull: true/g' \
   && flutter pub get \
