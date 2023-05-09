@@ -4,7 +4,7 @@ A flutter application demonstrating integration of djangoflow_chat and [django-d
 
 ## BEFORE RUNNING THE APP TODO
 
-- [x] Install and run local backend server for [django-df-chat](https://github.com/djangoflow/django-df-chat), please follow steps in [README](https://github.com/djangoflow/django-df-chat#readme)
+- [x] Install and run local backend server for [django-df-chat](https://github.com/djangoflow/django-df-chat), please follow steps in [README](https://github.com/djangoflow/django-df-chat#readme). **It is very important to [create superusers](https://github.com/djangoflow/django-df-chat#readme) to login via the email, password in this example app.**
 - [x] Generate OpenAPI client repository from local server by using the following command `sh ./tools/generate-openapi.sh -l` and this will create a `openapi` package in [openapi package](../openapi/) directory. Add `openapi` package in `pubspec.yaml`, Also make sure you've added `openapi` package in `dependency_overrides:` section to override it. (Note: You must re-generate this everytime schema/endpoint changes from backend/server)
 - [x] Generate api_repository,freezed, json_serializable, auto_route etc files `cd packages/chat && flutter pub run build_runner build --delete-conflicting-outputs` (you must regenerate this whenever openapi changes)
 - [x] Follow TODO comments for [auth_cubit.dart](packages/chat/lib/features/authentication/blocs/auth_cubit.dart)
