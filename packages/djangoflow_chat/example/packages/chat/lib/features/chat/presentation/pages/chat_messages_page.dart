@@ -1,6 +1,5 @@
 import 'package:chat/configurations/configurations.dart';
 import 'package:chat/features/app/data/api_repository/api_repository.dart';
-import 'package:chat/utils/extensions/message_extensions.dart';
 import 'package:chat/utils/utils.dart';
 import 'package:djangoflow_chat/djangoflow_chat.dart';
 import 'package:djangoflow_chat/models/anonymous_user.dart';
