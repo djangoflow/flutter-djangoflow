@@ -7,6 +7,7 @@ import 'package:djangoflow_chat/utils/extensions/room_user_extension.dart';
 import 'package:djangoflow_chat/utils/extensions/string_extensions.dart';
 import 'package:openapi/openapi.dart';
 
+import '../../models/anonymous_user.dart';
 import 'chat_state.dart';
 export 'chat_state.dart';
 
@@ -117,7 +118,7 @@ class ChatCubit extends Cubit<ChatState> {
           .firstWhereOrNull(
               (roomUser) => roomUser.isMe == true && roomUser.isActive == true)
           ?.toUser() ??
-      anonymousUser;
+      AnynomousUser();
 
   /// Add a [Message] to `messages`, additionally marks it as seen as well
   void addMessage(Message message) {

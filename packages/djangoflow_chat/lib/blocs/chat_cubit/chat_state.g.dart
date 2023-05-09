@@ -20,7 +20,7 @@ _$_ChatState _$$_ChatStateFromJson(Map<String, dynamic> json) => _$_ChatState(
               .toList() ??
           const <Message>[],
       me: json['me'] == null
-          ? anonymousUser
+          ? const AnynomousUser()
           : User.fromJson(json['me'] as Map<String, dynamic>),
       loading: json['loading'] as bool? ?? false,
       uploadingImage: json['uploadingImage'] as bool? ?? false,

@@ -180,7 +180,7 @@ class _$_ChatState implements _ChatState {
       this.room,
       final Map<String, RoomUser> roomUsers = const <String, RoomUser>{},
       final List<Message> messages = const <Message>[],
-      this.me = anonymousUser,
+      this.me = const AnynomousUser(),
       this.loading = false,
       this.uploadingImage = false})
       : _roomUsers = roomUsers,
