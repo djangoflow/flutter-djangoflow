@@ -35,7 +35,7 @@ class ChatRoomsPage extends StatelessWidget {
             child: Text('Failed to load chat rooms'),
           ),
           loadingBuilder: (_, __) => const Center(
-            child: CircularProgressIndicator(),
+            child: ListTileShimmer(),
           ),
           itemBuilder: (context, state, index, chatRoom) => ListTile(
             title: Text(chatRoom.title),

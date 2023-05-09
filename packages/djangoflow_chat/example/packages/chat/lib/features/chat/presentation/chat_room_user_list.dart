@@ -70,7 +70,7 @@ class ChatRoomsUserList extends StatelessWidget {
             ),
           ),
           emptyBuilder: (context, _) => Container(),
-          loadingBuilder: (context, _) => const CircularProgressIndicator(),
+          loadingBuilder: (context, _) => const ListTileShimmer(),
         ),
       );
 }

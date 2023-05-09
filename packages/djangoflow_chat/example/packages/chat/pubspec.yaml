@@ -46,6 +46,7 @@ dependencies:
   reactive_forms: ^14.1.0
   responsive_framework: ^0.2.0
   upgrader: ^6.2.0
+  shimmer: ^2.0.0
 
 dev_dependencies:
   flutter_test:
