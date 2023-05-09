@@ -67,6 +67,12 @@ class LoginPage extends StatelessWidget {
                         textInputAction: TextInputAction.next,
                         keyboardType: TextInputType.emailAddress,
                         onSubmitted: (_) => form.focus('password'),
+                        validationMessages: {
+                          ValidationMessage.required: (_) =>
+                              'Email must not be empty',
+                          ValidationMessage.email: (_) =>
+                              'Email value must be a valid email',
+                        },
                       ),
                       const SizedBox(
                         height: kPadding * 2,
@@ -86,6 +92,12 @@ class LoginPage extends StatelessWidget {
                         onSubmitted: (control) => DefaultActionController.of(
                           context,
                         )?.add(ActionType.start),
+                        validationMessages: {
+                          ValidationMessage.required: (_) =>
+                              'Password must not be empty',
+                          ValidationMessage.minLength: (_) =>
+                              'Password must be at least 4 characters',
+                        },
                       ),
                       const SizedBox(
                         height: kPadding * 2,
