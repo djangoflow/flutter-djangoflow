@@ -10,3 +10,4 @@ export 'presentation/list_header.dart';
 export 'presentation/app_logo.dart';
 export 'presentation/shimmer/app_shimmer.dart';
 export 'presentation/shimmer/list_tile_shimmer.dart';
+export 'presentation/zoom_in_animated_container.dart';
