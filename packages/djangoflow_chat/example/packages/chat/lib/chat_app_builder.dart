@@ -18,18 +18,10 @@ class ChatAppBuilder extends AppBuilder {
     required AppLinksRepository appLinksRepository,
     final String? initialDeepLink,
   }) : super(
-          onInitState: (context) {
-            final env = context.read<AppCubit>().state.environment;
-
-            // TODO check if came from initial RemoteMessage
-
-            // TODO update baseUrl based on state
-          },
           repositoryProviders: [
             RepositoryProvider<AppLinksRepository>.value(
               value: appLinksRepository,
             ),
-            // provide more reporsitories like DjangoflowFCMRepository etc
           ],
           providers: [
             BlocProvider<AppCubit>(
@@ -45,26 +37,11 @@ class ChatAppBuilder extends AppBuilder {
               ),
               lazy: false,
             ),
-            // TODO FCMBloc, RemoteConfigBloc etc can go here
           ],
-          // listeners: [
-          // TODO DjangoflowFCMBlocTokenListener, DjangoflowFCMBlocMessageListener
-          // ],
           builder: (context) => LoginListenerWrapper(
             initialUser: context.read<AuthCubit>().state.user,
             onLogin: (context, user) {
-              // TODO get and save fcm token
-              // use DjangoflowFCMBloc to get token
-              // TODO update analytics user related properties
-              // TODO update ErrorReporters user properties
-            },
-            onLogout: (context) {
-              // TODO remove Analytics user properties
-              // TODO remove ErrorReporoters user properties
-
-              // Upon logout all the routes will be pushed and
-              // HomeRoute will be pushed so and then the AuthGuard will
-              // Redirect to the loginRoute
+              context.read<AuthCubit>().reload();
             },
             child: AppCubitConsumer(
               listenWhen: (previous, current) =>
