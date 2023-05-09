@@ -1,6 +1,7 @@
 import 'package:chat/configurations/router/router.dart';
 import 'package:chat/configurations/theme/size_constants.dart';
 import 'package:chat/features/authentication/authentication.dart';
+import 'package:chat/utils/utils.dart';
 import 'package:djangoflow_app/djangoflow_app.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -20,7 +21,8 @@ class ProfilePage extends StatelessWidget {
       body: ListView(
         padding: const EdgeInsets.all(kPadding * 2),
         children: [
-          Text('Hi ${user?.firstName ?? 'Anynomus user'}'),
+          Text(
+              'Hi ${user?.firstName.isNotNullOrEmpty == true ? user!.firstName : 'Anynomus user'}'),
           const SizedBox(
             height: kPadding * 2,
           ),
