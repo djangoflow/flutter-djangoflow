@@ -14,14 +14,15 @@ export 'chat_state.dart';
 class ChatCubit extends Cubit<ChatState> {
   final ChatApi _chatApi;
   final int defaultChatPageSize;
+  final String roomId;
 
   ChatCubit(
     this._chatApi, {
-    required String roomId,
+    required this.roomId,
     this.defaultChatPageSize = kDefaultPageSize,
   }) : super(ChatState(roomId: roomId));
 
-  Future<void> loadData(String roomId) async {
+  Future<void> loadData() async {
     startLoading();
     final room = (await _chatApi.chatRoomsRetrieve(id: roomId)).data;
     final result = await _chatApi.chatRoomsUsersList(roomPk: roomId);

@@ -24,7 +24,7 @@ mixin _$ChatState {
   Room? get room => throw _privateConstructorUsedError;
   Map<String, RoomUser> get roomUsers => throw _privateConstructorUsedError;
   List<Message> get messages => throw _privateConstructorUsedError;
-  User get me => throw _privateConstructorUsedError;
+  User? get me => throw _privateConstructorUsedError;
   bool get loading => throw _privateConstructorUsedError;
   bool get uploadingImage => throw _privateConstructorUsedError;
 
@@ -44,7 +44,7 @@ abstract class $ChatStateCopyWith<$Res> {
       Room? room,
       Map<String, RoomUser> roomUsers,
       List<Message> messages,
-      User me,
+      User? me,
       bool loading,
       bool uploadingImage});
 }
@@ -66,7 +66,7 @@ class _$ChatStateCopyWithImpl<$Res, $Val extends ChatState>
     Object? room = freezed,
     Object? roomUsers = null,
     Object? messages = null,
-    Object? me = null,
+    Object? me = freezed,
     Object? loading = null,
     Object? uploadingImage = null,
   }) {
@@ -87,10 +87,10 @@ class _$ChatStateCopyWithImpl<$Res, $Val extends ChatState>
           ? _value.messages
           : messages // ignore: cast_nullable_to_non_nullable
               as List<Message>,
-      me: null == me
+      me: freezed == me
           ? _value.me
           : me // ignore: cast_nullable_to_non_nullable
-              as User,
+              as User?,
       loading: null == loading
           ? _value.loading
           : loading // ignore: cast_nullable_to_non_nullable
@@ -115,7 +115,7 @@ abstract class _$$_ChatStateCopyWith<$Res> implements $ChatStateCopyWith<$Res> {
       Room? room,
       Map<String, RoomUser> roomUsers,
       List<Message> messages,
-      User me,
+      User? me,
       bool loading,
       bool uploadingImage});
 }
@@ -135,7 +135,7 @@ class __$$_ChatStateCopyWithImpl<$Res>
     Object? room = freezed,
     Object? roomUsers = null,
     Object? messages = null,
-    Object? me = null,
+    Object? me = freezed,
     Object? loading = null,
     Object? uploadingImage = null,
   }) {
@@ -156,10 +156,10 @@ class __$$_ChatStateCopyWithImpl<$Res>
           ? _value._messages
           : messages // ignore: cast_nullable_to_non_nullable
               as List<Message>,
-      me: null == me
+      me: freezed == me
           ? _value.me
           : me // ignore: cast_nullable_to_non_nullable
-              as User,
+              as User?,
       loading: null == loading
           ? _value.loading
           : loading // ignore: cast_nullable_to_non_nullable
@@ -180,7 +180,7 @@ class _$_ChatState implements _ChatState {
       this.room,
       final Map<String, RoomUser> roomUsers = const <String, RoomUser>{},
       final List<Message> messages = const <Message>[],
-      this.me = const AnynomousUser(),
+      this.me,
       this.loading = false,
       this.uploadingImage = false})
       : _roomUsers = roomUsers,
@@ -212,8 +212,7 @@ class _$_ChatState implements _ChatState {
   }
 
   @override
-  @JsonKey()
-  final User me;
+  final User? me;
   @override
   @JsonKey()
   final bool loading;
@@ -274,7 +273,7 @@ abstract class _ChatState implements ChatState {
       final Room? room,
       final Map<String, RoomUser> roomUsers,
       final List<Message> messages,
-      final User me,
+      final User? me,
       final bool loading,
       final bool uploadingImage}) = _$_ChatState;
 
@@ -290,7 +289,7 @@ abstract class _ChatState implements ChatState {
   @override
   List<Message> get messages;
   @override
-  User get me;
+  User? get me;
   @override
   bool get loading;
   @override

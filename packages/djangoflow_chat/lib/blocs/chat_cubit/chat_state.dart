@@ -1,5 +1,3 @@
-import 'package:djangoflow_chat/constants.dart';
-import 'package:djangoflow_chat/models/anonymous_user.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:openapi/openapi.dart';
 
@@ -13,7 +11,7 @@ class ChatState with _$ChatState {
     Room? room,
     @Default(<String, RoomUser>{}) Map<String, RoomUser> roomUsers,
     @Default(<Message>[]) List<Message> messages,
-    @Default(AnynomousUser()) User me,
+    User? me,
     @Default(false) bool loading,
     @Default(false) bool uploadingImage,
   }) = _ChatState;
