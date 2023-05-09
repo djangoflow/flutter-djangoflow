@@ -3,10 +3,11 @@ icons_launcher:
   platforms:
     android:
       enable: true
-      adaptive_background_color: ""
+      adaptive_background_color: "#000000"
       adaptive_foreground_image: "assets/app_logo/logo.png"
-      adaptive_round_image: "assets/app_logo/logo_round.png"
+      adaptive_round_image: "assets/app_logo/logo.png"
     ios:
       enable: true
     web:
       enable: true
+      favicon_path: "assets/app_logo/favicon.png"
