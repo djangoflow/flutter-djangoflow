@@ -1,7 +1,7 @@
 # dfchat-flutter
 
 DFChat demonstrates quick integration of chat functionality using [https://github.com/djangoflow/django-df-chat](django-df-chat)
-Please check the [chat](./packages/chat/README.md) application run the example.
+Please check the [chat application's README](./packages/chat/README.md) to run the example.
 
 ### Initialize git
 
