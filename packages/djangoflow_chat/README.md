@@ -10,20 +10,18 @@ The djangoflow_chat package provides a set of classes and methods for building r
 
 **Before we can install this package**, we need to make sure that we have already generated `openapi` package for our flutter project using [django-df-chat](https://github.com/djangoflow/django-df-chat). This custom chat backend provides all the necessary APIs for this Flutter package to work. It is very quick and easy process to install [django-df-chat](https://github.com/djangoflow/django-df-chat) and run it locally. Please follow the [README](https://github.com/djangoflow/django-df-chat#readme) for running the [django-df-chat](https://github.com/djangoflow/django-df-chat) Backend locally.
 
-Add djangoflow_chat to your pubspec.yaml file:
+- Add djangoflow_chat to your pubspec.yaml file:
 
 ```yaml
-Copy code
-
 dependencies:
 djangoflow_chat: <version_number>
-...
+---
 dependency_overrides:
   openapi:
     path: PATH_TO_YOUR_GENERATED_OPENAPI
-
-Run flutter pub get to install the package.
 ```
+
+- Run `flutter pub get` to install the package.
 
 ## Usage
 
