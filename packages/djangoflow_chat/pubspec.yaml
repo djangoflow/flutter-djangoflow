@@ -9,15 +9,16 @@ environment:
   flutter: ">=1.17.0"
 
 dependencies:
+  flutter:
+    sdk: flutter
   openapi:
     path: ./packages/openapi
   bloc: ^8.1.1
-  flutter:
-    sdk: flutter
+  collection: ^1.17.0
+  dio: ^5.1.1
   flutter_bloc: ^8.1.2
   freezed_annotation: ^2.1.0
-  dio: ^5.1.1
-  collection: ^1.17.0
+  web_socket_channel: ^2.4.0
 
 dev_dependencies:
   flutter_test:
