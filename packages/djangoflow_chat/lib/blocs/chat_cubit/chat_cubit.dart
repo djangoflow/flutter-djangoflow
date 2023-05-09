@@ -75,7 +75,7 @@ class ChatCubit extends Cubit<ChatState> {
     }
 
     if (seenIds.isNotEmpty || reactionIds.isNotEmpty) {
-      markMessageAsSeen(
+      markMessagesAsSeen(
           roomId: roomId, messageIds: [...seenIds, ...reactionIds]);
     }
   }
@@ -137,10 +137,10 @@ class ChatCubit extends Cubit<ChatState> {
     if (message.roomId != null &&
         message.id != null &&
         message.isSeenByMe != true) {
-      markMessageAsSeen(messageIds: [message.id!], roomId: message.roomId!);
+      markMessagesAsSeen(messageIds: [message.id!], roomId: message.roomId!);
       final unseenReactionIds = message.reactions?.unseenMessageIds;
       if (unseenReactionIds.isNotNullOrEmpty) {
-        markMessageAsSeen(
+        markMessagesAsSeen(
           messageIds: unseenReactionIds!,
           roomId: message.roomId!,
         );
@@ -148,7 +148,7 @@ class ChatCubit extends Cubit<ChatState> {
     }
   }
 
-  Future<MessageSeen?> markMessageAsSeen({
+  Future<MessageSeen?> markMessagesAsSeen({
     required String roomId,
     required List<String> messageIds,
   }) async {
