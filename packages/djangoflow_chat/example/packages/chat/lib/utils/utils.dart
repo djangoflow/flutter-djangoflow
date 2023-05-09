@@ -5,3 +5,4 @@ export 'extensions/string_extensions.dart';
 export 'extensions/user_extensions.dart';
 export 'extensions/room_user_extensions.dart';
 export 'extensions/message_extensions.dart';
+export 'extensions/date_time_extensions.dart';
