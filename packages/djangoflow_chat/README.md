@@ -12,7 +12,7 @@ By combining the power of [django-df-chat](https://github.com/djangoflow/django-
 
 ## Installation
 
-**Before we can install this package**, we need to make sure that we have already generated `openapi` package for our flutter project using [django-df-chat](https://github.com/djangoflow/django-df-chat). This custom chat backend provides all the necessary APIs for this Flutter package to work. It is very quick and easy process to install [django-df-chat](https://github.com/djangoflow/django-df-chat) and run it locally. Please follow the [README](https://github.com/djangoflow/django-df-chat#readme) for running the [django-df-chat](https://github.com/djangoflow/django-df-chat) Backend locally.
+**Before we can install this package**, we need to make sure that we have already generated `openapi` package for our flutter project using [django-df-chat](https://github.com/djangoflow/django-df-chat). This custom chat backend provides all the necessary APIs for this Flutter package to work. It is very quick and easy process to install [django-df-chat](https://github.com/djangoflow/django-df-chat) and run it locally. Please follow the [README](https://github.com/djangoflow/django-df-chat#readme) for running the [django-df-chat](https://github.com/djangoflow/django-df-chat) Backend locally. Please check our example's [README](./example/packages/chat/README.md) to learn about generating `openapi` package.
 
 - Add djangoflow_chat to your pubspec.yaml file:
 
