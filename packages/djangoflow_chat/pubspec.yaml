@@ -2,7 +2,6 @@ name: djangoflow_chat
 description: A new Flutter package project.
 version: 0.0.1
 homepage:
-publish_to: none
 
 environment:
   sdk: ">=2.19.6 <3.0.0"
@@ -11,9 +10,6 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  openapi:
-    # one problem is that publishable packages can't have local path dependencies, need to fix it
-    path: ./packages/openapi
   bloc: ^8.1.1
   collection: ^1.17.0
   dio: ^5.1.1
@@ -28,6 +24,9 @@ dev_dependencies:
   flutter_lints: ^2.0.0
   freezed: ^2.1.0+1
   json_serializable: ^6.3.1
+  openapi:
+    # one problem is that publishable packages can't have local path dependencies, need to fix it
+    path: ./packages/openapi
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
