@@ -2,18 +2,23 @@ import 'package:bloc/bloc.dart';
 import 'package:collection/collection.dart';
 import 'package:dio/dio.dart';
 import 'package:djangoflow_chat/constants.dart';
+import 'package:djangoflow_chat/models/anonymous_user.dart';
 import 'package:djangoflow_chat/utils/extensions/message_extension.dart';
 import 'package:djangoflow_chat/utils/extensions/room_user_extension.dart';
 import 'package:djangoflow_chat/utils/extensions/string_extensions.dart';
 import 'package:openapi/openapi.dart';
 
-import '../../models/anonymous_user.dart';
 import 'chat_state.dart';
 export 'chat_state.dart';
 
 class ChatCubit extends Cubit<ChatState> {
+  /// The [ChatApi] instance
   final ChatApi _chatApi;
+
+  /// The default page size for pagination
   final int defaultChatPageSize;
+
+  /// The [Room] id
   final String roomId;
 
   ChatCubit(
@@ -22,6 +27,8 @@ class ChatCubit extends Cubit<ChatState> {
     this.defaultChatPageSize = kDefaultPageSize,
   }) : super(ChatState(roomId: roomId));
 
+  /// Loads the [Room], [RoomUser]s and [Message] as well, this needs to be called at the start of the chat
+  /// to load the initial data
   Future<void> loadData() async {
     startLoading();
     final room = (await _chatApi.chatRoomsRetrieve(id: roomId)).data;
@@ -44,6 +51,7 @@ class ChatCubit extends Cubit<ChatState> {
     loadMoreMessages(roomId: roomId, reload: true);
   }
 
+  /// Load messages, automatically load more messages for pagination
   Future<void> loadMoreMessages(
       {required String roomId, bool reload = false}) async {
     final messages = ((await _chatApi.chatRoomsMessagesList(
@@ -80,6 +88,7 @@ class ChatCubit extends Cubit<ChatState> {
     }
   }
 
+  /// Send text message
   Future<Message?> sendTextMessage(
       {required String roomId, required String text}) async {
     final result = (await _chatApi.chatRoomsMessagesCreate(
@@ -93,6 +102,7 @@ class ChatCubit extends Cubit<ChatState> {
     return result;
   }
 
+  /// Send image message
   Future<void> uploadImageToMessage(
       {required String roomId, required MultipartFile image}) async {
     // upload image
@@ -114,6 +124,7 @@ class ChatCubit extends Cubit<ChatState> {
     );
   }
 
+  /// Returns the current user
   User _getMe(Map<String, RoomUser> roomUsers) =>
       roomUsers.values
           .firstWhereOrNull(
@@ -121,7 +132,7 @@ class ChatCubit extends Cubit<ChatState> {
           ?.toUser() ??
       AnynomousUser();
 
-  /// Add a [Message] to `messages`, additionally marks it as seen as well
+  /// Add a [Message] to `messages`
   void addMessage(Message message) {
     final i = state.messages.indexWhere((e) => e.id == message.id);
 
@@ -148,6 +159,7 @@ class ChatCubit extends Cubit<ChatState> {
     }
   }
 
+  /// Mark messages as seen, need to provide a [roomId] and a list of [messageIds]
   Future<MessageSeen?> markMessagesAsSeen({
     required String roomId,
     required List<String> messageIds,
@@ -161,9 +173,18 @@ class ChatCubit extends Cubit<ChatState> {
     return result;
   }
 
+  /// React to a message with a [reactionBody]
+  /// Currently one user can react once, so if the user already reacted to a message
+  /// the reaction will be removed instead
+  /// If the user did not react to the message yet, the reaction will be added
   Future<void> reactToAMessage({
+    /// The reaction body, e.g. 'like emoji'
     required String reactionBody,
+
+    /// The message id to react to
     required String messageId,
+
+    /// The reaction metadata, e.g. `{ 'like emoji': 1 }`
     required Map<String, int> reactionMetadata,
   }) async {
     if (reactionMetadata.containsKey(reactionBody)) {
@@ -196,6 +217,7 @@ class ChatCubit extends Cubit<ChatState> {
     }
   }
 
+  /// Private method to add a reaction to a message
   Future<void> _addReaction(
       {required String messageId, required String reactionBody}) async {
     await _chatApi.chatRoomsMessagesCreate(
@@ -208,6 +230,7 @@ class ChatCubit extends Cubit<ChatState> {
     );
   }
 
+  /// Private method to remove a reaction from a message
   Future<void> _removeReaction({required String messageId}) async {
     await _chatApi.chatRoomsMessagesDestroy(
       roomPk: state.roomId,
@@ -215,11 +238,15 @@ class ChatCubit extends Cubit<ChatState> {
     );
   }
 
+  /// Dispatches loading state, helpful for displaying loading indicator
   void startLoading() => emit(state.copyWith(loading: true));
 
+  /// Dispatches loading state, helpful for displaying loading indicator
   void stopLoading() => emit(state.copyWith(loading: false));
 
+  /// Dispatches loading state for image upload, helpful for displaying loading indicator
   void startImageUploading() => emit(state.copyWith(uploadingImage: true));
 
+  /// Dispatches loading state for image upload, helpful for displaying loading indicator
   void stopImageUploading() => emit(state.copyWith(uploadingImage: false));
 }

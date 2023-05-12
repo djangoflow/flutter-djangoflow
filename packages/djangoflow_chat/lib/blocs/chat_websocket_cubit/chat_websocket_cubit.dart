@@ -27,7 +27,10 @@ class ChatWebsocketCubit extends Cubit<ChatWebsocketState> with CubitMaybeEmit {
   /// The id of the chat room.
   final String roomId;
 
+  /// The websocket channel's subscription.
   StreamSubscription? _subscription;
+
+  /// The websocket channel.
   WebSocketChannel? _channel;
 
   ChatWebsocketCubit(this._baseUrl, this._token, {required this.roomId})
