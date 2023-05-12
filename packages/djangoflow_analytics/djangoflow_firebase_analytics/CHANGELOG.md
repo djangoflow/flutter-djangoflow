@@ -1,3 +1,8 @@
+## [0.1.0] - 21 May 2023
+
+- Updated dependencies
+- Updated sdk constraint to ">=2.18.6 <4.0.0"
+
 ## [0.0.3] - 23 Jan 2023
 
 - Updated dependencies
