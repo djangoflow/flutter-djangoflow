@@ -6,6 +6,7 @@ import 'package:djangoflow_chat/models/anonymous_user.dart';
 import 'package:djangoflow_chat/utils/extensions/message_extension.dart';
 import 'package:djangoflow_chat/utils/extensions/room_user_extension.dart';
 import 'package:djangoflow_chat/utils/extensions/string_extensions.dart';
+// ignore: depend_on_referenced_packages
 import 'package:openapi/openapi.dart';
 
 import 'chat_state.dart';

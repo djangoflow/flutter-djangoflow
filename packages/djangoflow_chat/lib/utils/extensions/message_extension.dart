@@ -1,3 +1,4 @@
+// ignore: depend_on_referenced_packages
 import 'package:openapi/openapi.dart';
 
 extension MessageListExtension on List<Message> {

@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+// ignore: depend_on_referenced_packages
 import 'package:openapi/openapi.dart';
 
 part 'chat_state.freezed.dart';
