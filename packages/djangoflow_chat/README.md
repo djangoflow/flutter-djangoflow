@@ -63,4 +63,4 @@ The djangoflow_chat package also includes some extension methods to make working
 
 ## Example
 
-An example app is included in the [example](https://github.com/djangoflow/djangoflow-examples/tree/main/simple_chat/frontend-flutter) directory of the package.
+An example app is included in the [example](https://github.com/djangoflow/djangoflow-examples/tree/main/simple_chat/frontend-flutter)
