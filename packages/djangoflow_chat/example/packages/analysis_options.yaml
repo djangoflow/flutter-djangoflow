@@ -1,8 +1,0 @@
-# This file provies analysis options for top level overview
-# specially when we're viewing from multiple package perspective.
-analyzer:
-  exclude:
-    - "**/*.g.dart"
-    - "**/*.gr.dart"
-    - "**/*.freezed.dart"
-    - "openapi/**"

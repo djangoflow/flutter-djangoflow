@@ -1,2 +1,0 @@
-json_key_file(ENV['FASTLANE_JSON_KEY_FILE']) # Path to the json secret file - Follow https://docs.fastlane.tools/actions/supply/#setup to get one
-package_name("com.djangoflow.chat.dfchat") # e.g. com.krausefx.app
