@@ -1,4 +1,4 @@
-# DjangoFlow Chat
+# DjangoFlow Chat(djangoflow_chat)
 
 ## Abstract
 
@@ -34,10 +34,9 @@ dependency_overrides:
 The ChatCubit class provides a set of methods for interacting with a chat room.
 
 ```dart
-Copy code
 final chatCubit = ChatCubit(
-chatApi,
-roomId: '1',
+  chatApi,
+  roomId: '1',
 );
 ```
 
