@@ -1,7 +1,7 @@
 name: djangoflow_chat
 description: A new Flutter package project.
 version: 0.0.1
-homepage:
+homepage: https://github.com/djangoflow/flutter-djangoflow/
 
 environment:
   sdk: ">=2.19.6 <3.0.0"
