@@ -12,7 +12,7 @@ By combining the power of [django-df-chat](https://github.com/djangoflow/django-
 
 ## Installation
 
-**Before we can install this package**, we need to make sure that we have already generated `openapi` package for our flutter project using [django-df-chat](https://github.com/djangoflow/django-df-chat). This custom chat backend provides all the necessary APIs for this Flutter package to work. It is very quick and easy process to install [django-df-chat](https://github.com/djangoflow/django-df-chat) and run it locally. Please follow the [README](https://github.com/djangoflow/django-df-chat#readme) for running the [django-df-chat](https://github.com/djangoflow/django-df-chat) Backend locally. Please check our example's [README](./example/packages/chat/README.md) to learn about generating `openapi` package.
+**Before we can install this package**, we need to make sure that we have already generated `openapi` package for our flutter project using [django-df-chat](https://github.com/djangoflow/django-df-chat). This custom chat backend provides all the necessary APIs for this Flutter package to work. It is very quick and easy process to install the example app for [django-df-chat](https://github.com/djangoflow/django-df-chat) and run it locally. Please follow the [README](https://github.com/djangoflow/djangoflow-examples/tree/main/simple_chat/backend-django#readme) for running the [django-df-chat](https://github.com/djangoflow/django-df-chat) Backend locally. Please check our example's [README](https://github.com/djangoflow/djangoflow-examples/tree/main/simple_chat/frontend-flutter/packages/chat/README.md) to learn about generating `openapi` package.
 
 - Add djangoflow_chat to your pubspec.yaml file:
 
@@ -50,22 +50,6 @@ roomId: '1',
 - `markMessagesAsSeen()`: marks a message as seen.
 - `reactToAMessage()`: adds a reaction to a message.
 
-### ChatWebsocketCubit
-
-The ChatWebsocketCubit class manages a websocket connection to a chat room.
-
-```dart
-Copy code
-final chatWebsocketCubit = ChatWebsocketCubit(
-'ws://localhost:8000/',
-'token',
-roomId: '1',
-);
-```
-
-- `connect()`: connects to the chat room.
-- `disconnect()`: disconnects from the chat room.
-
 ## Extensions
 
 The djangoflow_chat package also includes some extension methods to make working with chat data easier.
@@ -79,4 +63,4 @@ The djangoflow_chat package also includes some extension methods to make working
 
 ## Example
 
-An example app is included in the [example](./example/) directory of the package. You can run it with the following steps:
+An example app is included in the [example](https://github.com/djangoflow/djangoflow-examples/tree/main/simple_chat/frontend-flutter) directory of the package.
