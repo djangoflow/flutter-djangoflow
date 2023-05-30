@@ -39,3 +39,8 @@ pubspec.lock
 
 # Mac
 .DS_Store
+# Do not check-in built files
+**/*.g.dart
+**/*.freezed.dart
+**/*.gr.dart
+pubspec_overrides.yaml
