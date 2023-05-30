@@ -16,5 +16,6 @@ jobs:
         with:
           dryRunOnly: true
           skipTests: true
+          dartVersion: 2.19.6
           credentialJson: ${{ secrets.CREDENTIAL_JSON }}
           relativePath: packages/djangoflow_openapi
