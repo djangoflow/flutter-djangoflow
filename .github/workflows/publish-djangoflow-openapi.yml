@@ -7,15 +7,14 @@ on:
     paths:
       - "packages/djangoflow_openapi/CHANGELOG.md"
 jobs:
-  test_djangoflow_openapi:
+  publish_djangoflow_openapi:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - name: "Test run"
         uses: k-paxian/dart-package-publisher@master
         with:
-          dryRunOnly: true
           skipTests: true
-          dartVersion: 2.19.6
+          force: true
           credentialJson: ${{ secrets.CREDENTIAL_JSON }}
           relativePath: packages/djangoflow_openapi
