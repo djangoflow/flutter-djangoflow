@@ -15,6 +15,9 @@ import 'package:djangoflow_openapi/src/model/message_image.dart';
 import 'package:djangoflow_openapi/src/model/message_request.dart';
 import 'package:djangoflow_openapi/src/model/message_seen.dart';
 import 'package:djangoflow_openapi/src/model/message_seen_request.dart';
+import 'package:djangoflow_openapi/src/model/paginated_message_image_list.dart';
+import 'package:djangoflow_openapi/src/model/paginated_message_list.dart';
+import 'package:djangoflow_openapi/src/model/paginated_room_list.dart';
 import 'package:djangoflow_openapi/src/model/patched_message_request.dart';
 import 'package:djangoflow_openapi/src/model/patched_room_request.dart';
 import 'package:djangoflow_openapi/src/model/room.dart';
@@ -23,18 +26,17 @@ import 'package:djangoflow_openapi/src/model/room_user.dart';
 import 'package:djangoflow_openapi/src/model/user_name.dart';
 
 class ChatApi {
-
   final Dio _dio;
 
   const ChatApi(this._dio);
 
   /// chatImagesCreate
-  /// 
+  ///
   ///
   /// Parameters:
-  /// * [image] 
-  /// * [messageId] 
-  /// * [roomId] 
+  /// * [image]
+  /// * [messageId]
+  /// * [roomId]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -44,7 +46,7 @@ class ChatApi {
   ///
   /// Returns a [Future] containing a [Response] with a [MessageImage] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<MessageImage>> chatImagesCreate({ 
+  Future<Response<MessageImage>> chatImagesCreate({
     required MultipartFile image,
     String? messageId,
     String? roomId,
@@ -64,6 +66,12 @@ class ChatApi {
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
+            'type': 'apiKey',
+            'name': 'cookieAuth',
+            'keyName': 'sessionid',
+            'where': '',
+          },
+          {
             'type': 'http',
             'scheme': 'bearer',
             'name': 'jwtAuth',
@@ -77,11 +85,9 @@ class ChatApi {
 
     dynamic _bodyData;
 
-    try {
-
-    } catch(error, stackTrace) {
+    try {} catch (error, stackTrace) {
       throw DioError(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -103,8 +109,11 @@ class ChatApi {
     MessageImage? _responseData;
 
     try {
-final rawData = _response.data;
-_responseData = rawData == null ? null : deserialize<MessageImage, MessageImage>(rawData, 'MessageImage', growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<MessageImage, MessageImage>(rawData, 'MessageImage',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -128,7 +137,7 @@ _responseData = rawData == null ? null : deserialize<MessageImage, MessageImage>
   }
 
   /// chatImagesDestroy
-  /// 
+  ///
   ///
   /// Parameters:
   /// * [id] - A unique integer value identifying this message image.
@@ -139,9 +148,9 @@ _responseData = rawData == null ? null : deserialize<MessageImage, MessageImage>
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future]
+  /// Returns a [Future] containing a [Response] with a [Object] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<void>> chatImagesDestroy({ 
+  Future<Response<Object>> chatImagesDestroy({
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -150,7 +159,8 @@ _responseData = rawData == null ? null : deserialize<MessageImage, MessageImage>
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/v1/chat/images/{id}/'.replaceAll('{' r'id' '}', id.toString());
+    final _path =
+        r'/api/v1/chat/images/{id}/'.replaceAll('{' r'id' '}', id.toString());
     final _options = Options(
       method: r'DELETE',
       headers: <String, dynamic>{
@@ -158,6 +168,12 @@ _responseData = rawData == null ? null : deserialize<MessageImage, MessageImage>
       },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
+          {
+            'type': 'apiKey',
+            'name': 'cookieAuth',
+            'keyName': 'sessionid',
+            'where': '',
+          },
           {
             'type': 'http',
             'scheme': 'bearer',
@@ -177,13 +193,41 @@ _responseData = rawData == null ? null : deserialize<MessageImage, MessageImage>
       onReceiveProgress: onReceiveProgress,
     );
 
-    return _response;
+    Object? _responseData;
+
+    try {
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<Object, Object>(rawData, 'Object', growable: true);
+    } catch (error, stackTrace) {
+      throw DioError(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioErrorType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<Object>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
   }
 
   /// chatImagesList
-  /// 
+  ///
   ///
   /// Parameters:
+  /// * [limit] - Number of results to return per page.
+  /// * [offset] - The initial index from which to return the results.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -191,9 +235,11 @@ _responseData = rawData == null ? null : deserialize<MessageImage, MessageImage>
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [List<MessageImage>] as data
+  /// Returns a [Future] containing a [Response] with a [PaginatedMessageImageList] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<List<MessageImage>>> chatImagesList({ 
+  Future<Response<PaginatedMessageImageList>> chatImagesList({
+    int? limit,
+    int? offset,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -210,6 +256,12 @@ _responseData = rawData == null ? null : deserialize<MessageImage, MessageImage>
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
+            'type': 'apiKey',
+            'name': 'cookieAuth',
+            'keyName': 'sessionid',
+            'where': '',
+          },
+          {
             'type': 'http',
             'scheme': 'bearer',
             'name': 'jwtAuth',
@@ -220,19 +272,29 @@ _responseData = rawData == null ? null : deserialize<MessageImage, MessageImage>
       validateStatus: validateStatus,
     );
 
+    final _queryParameters = <String, dynamic>{
+      if (limit != null) r'limit': limit,
+      if (offset != null) r'offset': offset,
+    };
+
     final _response = await _dio.request<Object>(
       _path,
       options: _options,
+      queryParameters: _queryParameters,
       cancelToken: cancelToken,
       onSendProgress: onSendProgress,
       onReceiveProgress: onReceiveProgress,
     );
 
-    List<MessageImage>? _responseData;
+    PaginatedMessageImageList? _responseData;
 
     try {
-final rawData = _response.data;
-_responseData = rawData == null ? null : deserialize<List<MessageImage>, MessageImage>(rawData, 'List<MessageImage>', growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<PaginatedMessageImageList, PaginatedMessageImageList>(
+              rawData, 'PaginatedMessageImageList',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -243,7 +305,7 @@ _responseData = rawData == null ? null : deserialize<List<MessageImage>, Message
       );
     }
 
-    return Response<List<MessageImage>>(
+    return Response<PaginatedMessageImageList>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -256,13 +318,13 @@ _responseData = rawData == null ? null : deserialize<List<MessageImage>, Message
   }
 
   /// chatImagesPartialUpdate
-  /// 
+  ///
   ///
   /// Parameters:
   /// * [id] - A unique integer value identifying this message image.
-  /// * [messageId] 
-  /// * [roomId] 
-  /// * [image] 
+  /// * [messageId]
+  /// * [roomId]
+  /// * [image]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -272,7 +334,7 @@ _responseData = rawData == null ? null : deserialize<List<MessageImage>, Message
   ///
   /// Returns a [Future] containing a [Response] with a [MessageImage] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<MessageImage>> chatImagesPartialUpdate({ 
+  Future<Response<MessageImage>> chatImagesPartialUpdate({
     required String id,
     String? messageId,
     String? roomId,
@@ -284,7 +346,8 @@ _responseData = rawData == null ? null : deserialize<List<MessageImage>, Message
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/v1/chat/images/{id}/'.replaceAll('{' r'id' '}', id.toString());
+    final _path =
+        r'/api/v1/chat/images/{id}/'.replaceAll('{' r'id' '}', id.toString());
     final _options = Options(
       method: r'PATCH',
       headers: <String, dynamic>{
@@ -292,6 +355,12 @@ _responseData = rawData == null ? null : deserialize<List<MessageImage>, Message
       },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
+          {
+            'type': 'apiKey',
+            'name': 'cookieAuth',
+            'keyName': 'sessionid',
+            'where': '',
+          },
           {
             'type': 'http',
             'scheme': 'bearer',
@@ -306,11 +375,9 @@ _responseData = rawData == null ? null : deserialize<List<MessageImage>, Message
 
     dynamic _bodyData;
 
-    try {
-
-    } catch(error, stackTrace) {
+    try {} catch (error, stackTrace) {
       throw DioError(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -332,8 +399,11 @@ _responseData = rawData == null ? null : deserialize<List<MessageImage>, Message
     MessageImage? _responseData;
 
     try {
-final rawData = _response.data;
-_responseData = rawData == null ? null : deserialize<MessageImage, MessageImage>(rawData, 'MessageImage', growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<MessageImage, MessageImage>(rawData, 'MessageImage',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -357,7 +427,7 @@ _responseData = rawData == null ? null : deserialize<MessageImage, MessageImage>
   }
 
   /// chatImagesRetrieve
-  /// 
+  ///
   ///
   /// Parameters:
   /// * [id] - A unique integer value identifying this message image.
@@ -370,7 +440,7 @@ _responseData = rawData == null ? null : deserialize<MessageImage, MessageImage>
   ///
   /// Returns a [Future] containing a [Response] with a [MessageImage] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<MessageImage>> chatImagesRetrieve({ 
+  Future<Response<MessageImage>> chatImagesRetrieve({
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -379,7 +449,8 @@ _responseData = rawData == null ? null : deserialize<MessageImage, MessageImage>
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/v1/chat/images/{id}/'.replaceAll('{' r'id' '}', id.toString());
+    final _path =
+        r'/api/v1/chat/images/{id}/'.replaceAll('{' r'id' '}', id.toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -387,6 +458,12 @@ _responseData = rawData == null ? null : deserialize<MessageImage, MessageImage>
       },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
+          {
+            'type': 'apiKey',
+            'name': 'cookieAuth',
+            'keyName': 'sessionid',
+            'where': '',
+          },
           {
             'type': 'http',
             'scheme': 'bearer',
@@ -409,8 +486,11 @@ _responseData = rawData == null ? null : deserialize<MessageImage, MessageImage>
     MessageImage? _responseData;
 
     try {
-final rawData = _response.data;
-_responseData = rawData == null ? null : deserialize<MessageImage, MessageImage>(rawData, 'MessageImage', growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<MessageImage, MessageImage>(rawData, 'MessageImage',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -434,13 +514,13 @@ _responseData = rawData == null ? null : deserialize<MessageImage, MessageImage>
   }
 
   /// chatImagesUpdate
-  /// 
+  ///
   ///
   /// Parameters:
   /// * [id] - A unique integer value identifying this message image.
-  /// * [image] 
-  /// * [messageId] 
-  /// * [roomId] 
+  /// * [image]
+  /// * [messageId]
+  /// * [roomId]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -450,7 +530,7 @@ _responseData = rawData == null ? null : deserialize<MessageImage, MessageImage>
   ///
   /// Returns a [Future] containing a [Response] with a [MessageImage] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<MessageImage>> chatImagesUpdate({ 
+  Future<Response<MessageImage>> chatImagesUpdate({
     required String id,
     required MultipartFile image,
     String? messageId,
@@ -462,7 +542,8 @@ _responseData = rawData == null ? null : deserialize<MessageImage, MessageImage>
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/v1/chat/images/{id}/'.replaceAll('{' r'id' '}', id.toString());
+    final _path =
+        r'/api/v1/chat/images/{id}/'.replaceAll('{' r'id' '}', id.toString());
     final _options = Options(
       method: r'PUT',
       headers: <String, dynamic>{
@@ -470,6 +551,12 @@ _responseData = rawData == null ? null : deserialize<MessageImage, MessageImage>
       },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
+          {
+            'type': 'apiKey',
+            'name': 'cookieAuth',
+            'keyName': 'sessionid',
+            'where': '',
+          },
           {
             'type': 'http',
             'scheme': 'bearer',
@@ -484,11 +571,9 @@ _responseData = rawData == null ? null : deserialize<MessageImage, MessageImage>
 
     dynamic _bodyData;
 
-    try {
-
-    } catch(error, stackTrace) {
+    try {} catch (error, stackTrace) {
       throw DioError(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -510,8 +595,11 @@ _responseData = rawData == null ? null : deserialize<MessageImage, MessageImage>
     MessageImage? _responseData;
 
     try {
-final rawData = _response.data;
-_responseData = rawData == null ? null : deserialize<MessageImage, MessageImage>(rawData, 'MessageImage', growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<MessageImage, MessageImage>(rawData, 'MessageImage',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -535,10 +623,10 @@ _responseData = rawData == null ? null : deserialize<MessageImage, MessageImage>
   }
 
   /// chatRoomsCreate
-  /// 
+  ///
   ///
   /// Parameters:
-  /// * [roomRequest] 
+  /// * [roomRequest]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -548,7 +636,7 @@ _responseData = rawData == null ? null : deserialize<MessageImage, MessageImage>
   ///
   /// Returns a [Future] containing a [Response] with a [Room] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<Room>> chatRoomsCreate({ 
+  Future<Response<Room>> chatRoomsCreate({
     required RoomRequest roomRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -566,6 +654,12 @@ _responseData = rawData == null ? null : deserialize<MessageImage, MessageImage>
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
+            'type': 'apiKey',
+            'name': 'cookieAuth',
+            'keyName': 'sessionid',
+            'where': '',
+          },
+          {
             'type': 'http',
             'scheme': 'bearer',
             'name': 'jwtAuth',
@@ -580,10 +674,10 @@ _responseData = rawData == null ? null : deserialize<MessageImage, MessageImage>
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(roomRequest);
-    } catch(error, stackTrace) {
+      _bodyData = jsonEncode(roomRequest);
+    } catch (error, stackTrace) {
       throw DioError(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -605,8 +699,10 @@ _bodyData=jsonEncode(roomRequest);
     Room? _responseData;
 
     try {
-final rawData = _response.data;
-_responseData = rawData == null ? null : deserialize<Room, Room>(rawData, 'Room', growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<Room, Room>(rawData, 'Room', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -630,7 +726,7 @@ _responseData = rawData == null ? null : deserialize<Room, Room>(rawData, 'Room'
   }
 
   /// chatRoomsDestroy
-  /// 
+  ///
   ///
   /// Parameters:
   /// * [id] - A unique integer value identifying this room.
@@ -641,9 +737,9 @@ _responseData = rawData == null ? null : deserialize<Room, Room>(rawData, 'Room'
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future]
+  /// Returns a [Future] containing a [Response] with a [Object] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<void>> chatRoomsDestroy({ 
+  Future<Response<Object>> chatRoomsDestroy({
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -652,7 +748,8 @@ _responseData = rawData == null ? null : deserialize<Room, Room>(rawData, 'Room'
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/v1/chat/rooms/{id}/'.replaceAll('{' r'id' '}', id.toString());
+    final _path =
+        r'/api/v1/chat/rooms/{id}/'.replaceAll('{' r'id' '}', id.toString());
     final _options = Options(
       method: r'DELETE',
       headers: <String, dynamic>{
@@ -660,6 +757,12 @@ _responseData = rawData == null ? null : deserialize<Room, Room>(rawData, 'Room'
       },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
+          {
+            'type': 'apiKey',
+            'name': 'cookieAuth',
+            'keyName': 'sessionid',
+            'where': '',
+          },
           {
             'type': 'http',
             'scheme': 'bearer',
@@ -679,13 +782,41 @@ _responseData = rawData == null ? null : deserialize<Room, Room>(rawData, 'Room'
       onReceiveProgress: onReceiveProgress,
     );
 
-    return _response;
+    Object? _responseData;
+
+    try {
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<Object, Object>(rawData, 'Object', growable: true);
+    } catch (error, stackTrace) {
+      throw DioError(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioErrorType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<Object>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
   }
 
   /// chatRoomsList
-  /// 
+  ///
   ///
   /// Parameters:
+  /// * [limit] - Number of results to return per page.
+  /// * [offset] - The initial index from which to return the results.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -693,9 +824,11 @@ _responseData = rawData == null ? null : deserialize<Room, Room>(rawData, 'Room'
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [List<Room>] as data
+  /// Returns a [Future] containing a [Response] with a [PaginatedRoomList] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<List<Room>>> chatRoomsList({ 
+  Future<Response<PaginatedRoomList>> chatRoomsList({
+    int? limit,
+    int? offset,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -712,6 +845,12 @@ _responseData = rawData == null ? null : deserialize<Room, Room>(rawData, 'Room'
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
+            'type': 'apiKey',
+            'name': 'cookieAuth',
+            'keyName': 'sessionid',
+            'where': '',
+          },
+          {
             'type': 'http',
             'scheme': 'bearer',
             'name': 'jwtAuth',
@@ -722,19 +861,29 @@ _responseData = rawData == null ? null : deserialize<Room, Room>(rawData, 'Room'
       validateStatus: validateStatus,
     );
 
+    final _queryParameters = <String, dynamic>{
+      if (limit != null) r'limit': limit,
+      if (offset != null) r'offset': offset,
+    };
+
     final _response = await _dio.request<Object>(
       _path,
       options: _options,
+      queryParameters: _queryParameters,
       cancelToken: cancelToken,
       onSendProgress: onSendProgress,
       onReceiveProgress: onReceiveProgress,
     );
 
-    List<Room>? _responseData;
+    PaginatedRoomList? _responseData;
 
     try {
-final rawData = _response.data;
-_responseData = rawData == null ? null : deserialize<List<Room>, Room>(rawData, 'List<Room>', growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<PaginatedRoomList, PaginatedRoomList>(
+              rawData, 'PaginatedRoomList',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -745,7 +894,7 @@ _responseData = rawData == null ? null : deserialize<List<Room>, Room>(rawData, 
       );
     }
 
-    return Response<List<Room>>(
+    return Response<PaginatedRoomList>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -758,11 +907,11 @@ _responseData = rawData == null ? null : deserialize<List<Room>, Room>(rawData, 
   }
 
   /// chatRoomsMessagesCreate
-  /// 
+  ///
   ///
   /// Parameters:
-  /// * [roomPk] 
-  /// * [messageRequest] 
+  /// * [roomPk]
+  /// * [messageRequest]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -772,7 +921,7 @@ _responseData = rawData == null ? null : deserialize<List<Room>, Room>(rawData, 
   ///
   /// Returns a [Future] containing a [Response] with a [Message] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<Message>> chatRoomsMessagesCreate({ 
+  Future<Response<Message>> chatRoomsMessagesCreate({
     required String roomPk,
     MessageRequest? messageRequest,
     CancelToken? cancelToken,
@@ -782,7 +931,8 @@ _responseData = rawData == null ? null : deserialize<List<Room>, Room>(rawData, 
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/v1/chat/rooms/{room_pk}/messages/'.replaceAll('{' r'room_pk' '}', roomPk.toString());
+    final _path = r'/api/v1/chat/rooms/{room_pk}/messages/'
+        .replaceAll('{' r'room_pk' '}', roomPk.toString());
     final _options = Options(
       method: r'POST',
       headers: <String, dynamic>{
@@ -790,6 +940,12 @@ _responseData = rawData == null ? null : deserialize<List<Room>, Room>(rawData, 
       },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
+          {
+            'type': 'apiKey',
+            'name': 'cookieAuth',
+            'keyName': 'sessionid',
+            'where': '',
+          },
           {
             'type': 'http',
             'scheme': 'bearer',
@@ -805,10 +961,10 @@ _responseData = rawData == null ? null : deserialize<List<Room>, Room>(rawData, 
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(messageRequest);
-    } catch(error, stackTrace) {
+      _bodyData = jsonEncode(messageRequest);
+    } catch (error, stackTrace) {
       throw DioError(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -830,8 +986,10 @@ _bodyData=jsonEncode(messageRequest);
     Message? _responseData;
 
     try {
-final rawData = _response.data;
-_responseData = rawData == null ? null : deserialize<Message, Message>(rawData, 'Message', growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<Message, Message>(rawData, 'Message', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -855,11 +1013,11 @@ _responseData = rawData == null ? null : deserialize<Message, Message>(rawData, 
   }
 
   /// chatRoomsMessagesDestroy
-  /// 
+  ///
   ///
   /// Parameters:
   /// * [id] - A unique integer value identifying this message.
-  /// * [roomPk] 
+  /// * [roomPk]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -869,7 +1027,7 @@ _responseData = rawData == null ? null : deserialize<Message, Message>(rawData, 
   ///
   /// Returns a [Future]
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<void>> chatRoomsMessagesDestroy({ 
+  Future<Response<void>> chatRoomsMessagesDestroy({
     required String id,
     required String roomPk,
     CancelToken? cancelToken,
@@ -879,7 +1037,9 @@ _responseData = rawData == null ? null : deserialize<Message, Message>(rawData, 
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/v1/chat/rooms/{room_pk}/messages/{id}/'.replaceAll('{' r'id' '}', id.toString()).replaceAll('{' r'room_pk' '}', roomPk.toString());
+    final _path = r'/api/v1/chat/rooms/{room_pk}/messages/{id}/'
+        .replaceAll('{' r'id' '}', id.toString())
+        .replaceAll('{' r'room_pk' '}', roomPk.toString());
     final _options = Options(
       method: r'DELETE',
       headers: <String, dynamic>{
@@ -887,6 +1047,12 @@ _responseData = rawData == null ? null : deserialize<Message, Message>(rawData, 
       },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
+          {
+            'type': 'apiKey',
+            'name': 'cookieAuth',
+            'keyName': 'sessionid',
+            'where': '',
+          },
           {
             'type': 'http',
             'scheme': 'bearer',
@@ -910,10 +1076,12 @@ _responseData = rawData == null ? null : deserialize<Message, Message>(rawData, 
   }
 
   /// chatRoomsMessagesList
-  /// 
+  ///
   ///
   /// Parameters:
-  /// * [roomPk] 
+  /// * [roomPk]
+  /// * [limit] - Number of results to return per page.
+  /// * [offset] - The initial index from which to return the results.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -921,10 +1089,12 @@ _responseData = rawData == null ? null : deserialize<Message, Message>(rawData, 
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [List<Message>] as data
+  /// Returns a [Future] containing a [Response] with a [PaginatedMessageList] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<List<Message>>> chatRoomsMessagesList({ 
+  Future<Response<PaginatedMessageList>> chatRoomsMessagesList({
     required String roomPk,
+    int? limit,
+    int? offset,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -932,7 +1102,8 @@ _responseData = rawData == null ? null : deserialize<Message, Message>(rawData, 
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/v1/chat/rooms/{room_pk}/messages/'.replaceAll('{' r'room_pk' '}', roomPk.toString());
+    final _path = r'/api/v1/chat/rooms/{room_pk}/messages/'
+        .replaceAll('{' r'room_pk' '}', roomPk.toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -940,6 +1111,12 @@ _responseData = rawData == null ? null : deserialize<Message, Message>(rawData, 
       },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
+          {
+            'type': 'apiKey',
+            'name': 'cookieAuth',
+            'keyName': 'sessionid',
+            'where': '',
+          },
           {
             'type': 'http',
             'scheme': 'bearer',
@@ -951,19 +1128,29 @@ _responseData = rawData == null ? null : deserialize<Message, Message>(rawData, 
       validateStatus: validateStatus,
     );
 
+    final _queryParameters = <String, dynamic>{
+      if (limit != null) r'limit': limit,
+      if (offset != null) r'offset': offset,
+    };
+
     final _response = await _dio.request<Object>(
       _path,
       options: _options,
+      queryParameters: _queryParameters,
       cancelToken: cancelToken,
       onSendProgress: onSendProgress,
       onReceiveProgress: onReceiveProgress,
     );
 
-    List<Message>? _responseData;
+    PaginatedMessageList? _responseData;
 
     try {
-final rawData = _response.data;
-_responseData = rawData == null ? null : deserialize<List<Message>, Message>(rawData, 'List<Message>', growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<PaginatedMessageList, PaginatedMessageList>(
+              rawData, 'PaginatedMessageList',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -974,7 +1161,7 @@ _responseData = rawData == null ? null : deserialize<List<Message>, Message>(raw
       );
     }
 
-    return Response<List<Message>>(
+    return Response<PaginatedMessageList>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -987,12 +1174,12 @@ _responseData = rawData == null ? null : deserialize<List<Message>, Message>(raw
   }
 
   /// chatRoomsMessagesPartialUpdate
-  /// 
+  ///
   ///
   /// Parameters:
   /// * [id] - A unique integer value identifying this message.
-  /// * [roomPk] 
-  /// * [patchedMessageRequest] 
+  /// * [roomPk]
+  /// * [patchedMessageRequest]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -1002,7 +1189,7 @@ _responseData = rawData == null ? null : deserialize<List<Message>, Message>(raw
   ///
   /// Returns a [Future] containing a [Response] with a [Message] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<Message>> chatRoomsMessagesPartialUpdate({ 
+  Future<Response<Message>> chatRoomsMessagesPartialUpdate({
     required String id,
     required String roomPk,
     PatchedMessageRequest? patchedMessageRequest,
@@ -1013,7 +1200,9 @@ _responseData = rawData == null ? null : deserialize<List<Message>, Message>(raw
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/v1/chat/rooms/{room_pk}/messages/{id}/'.replaceAll('{' r'id' '}', id.toString()).replaceAll('{' r'room_pk' '}', roomPk.toString());
+    final _path = r'/api/v1/chat/rooms/{room_pk}/messages/{id}/'
+        .replaceAll('{' r'id' '}', id.toString())
+        .replaceAll('{' r'room_pk' '}', roomPk.toString());
     final _options = Options(
       method: r'PATCH',
       headers: <String, dynamic>{
@@ -1021,6 +1210,12 @@ _responseData = rawData == null ? null : deserialize<List<Message>, Message>(raw
       },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
+          {
+            'type': 'apiKey',
+            'name': 'cookieAuth',
+            'keyName': 'sessionid',
+            'where': '',
+          },
           {
             'type': 'http',
             'scheme': 'bearer',
@@ -1036,10 +1231,10 @@ _responseData = rawData == null ? null : deserialize<List<Message>, Message>(raw
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(patchedMessageRequest);
-    } catch(error, stackTrace) {
+      _bodyData = jsonEncode(patchedMessageRequest);
+    } catch (error, stackTrace) {
       throw DioError(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -1061,8 +1256,10 @@ _bodyData=jsonEncode(patchedMessageRequest);
     Message? _responseData;
 
     try {
-final rawData = _response.data;
-_responseData = rawData == null ? null : deserialize<Message, Message>(rawData, 'Message', growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<Message, Message>(rawData, 'Message', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -1086,11 +1283,11 @@ _responseData = rawData == null ? null : deserialize<Message, Message>(rawData, 
   }
 
   /// chatRoomsMessagesRetrieve
-  /// 
+  ///
   ///
   /// Parameters:
   /// * [id] - A unique integer value identifying this message.
-  /// * [roomPk] 
+  /// * [roomPk]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -1100,7 +1297,7 @@ _responseData = rawData == null ? null : deserialize<Message, Message>(rawData, 
   ///
   /// Returns a [Future] containing a [Response] with a [Message] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<Message>> chatRoomsMessagesRetrieve({ 
+  Future<Response<Message>> chatRoomsMessagesRetrieve({
     required String id,
     required String roomPk,
     CancelToken? cancelToken,
@@ -1110,7 +1307,9 @@ _responseData = rawData == null ? null : deserialize<Message, Message>(rawData, 
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/v1/chat/rooms/{room_pk}/messages/{id}/'.replaceAll('{' r'id' '}', id.toString()).replaceAll('{' r'room_pk' '}', roomPk.toString());
+    final _path = r'/api/v1/chat/rooms/{room_pk}/messages/{id}/'
+        .replaceAll('{' r'id' '}', id.toString())
+        .replaceAll('{' r'room_pk' '}', roomPk.toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -1118,6 +1317,12 @@ _responseData = rawData == null ? null : deserialize<Message, Message>(rawData, 
       },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
+          {
+            'type': 'apiKey',
+            'name': 'cookieAuth',
+            'keyName': 'sessionid',
+            'where': '',
+          },
           {
             'type': 'http',
             'scheme': 'bearer',
@@ -1140,8 +1345,10 @@ _responseData = rawData == null ? null : deserialize<Message, Message>(rawData, 
     Message? _responseData;
 
     try {
-final rawData = _response.data;
-_responseData = rawData == null ? null : deserialize<Message, Message>(rawData, 'Message', growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<Message, Message>(rawData, 'Message', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -1165,11 +1372,11 @@ _responseData = rawData == null ? null : deserialize<Message, Message>(rawData, 
   }
 
   /// chatRoomsMessagesSeenCreate
-  /// 
+  ///
   ///
   /// Parameters:
-  /// * [roomPk] 
-  /// * [messageSeenRequest] 
+  /// * [roomPk]
+  /// * [messageSeenRequest]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -1179,7 +1386,7 @@ _responseData = rawData == null ? null : deserialize<Message, Message>(rawData, 
   ///
   /// Returns a [Future] containing a [Response] with a [MessageSeen] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<MessageSeen>> chatRoomsMessagesSeenCreate({ 
+  Future<Response<MessageSeen>> chatRoomsMessagesSeenCreate({
     required String roomPk,
     required MessageSeenRequest messageSeenRequest,
     CancelToken? cancelToken,
@@ -1189,7 +1396,8 @@ _responseData = rawData == null ? null : deserialize<Message, Message>(rawData, 
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/v1/chat/rooms/{room_pk}/messages/seen/'.replaceAll('{' r'room_pk' '}', roomPk.toString());
+    final _path = r'/api/v1/chat/rooms/{room_pk}/messages/seen/'
+        .replaceAll('{' r'room_pk' '}', roomPk.toString());
     final _options = Options(
       method: r'POST',
       headers: <String, dynamic>{
@@ -1197,6 +1405,12 @@ _responseData = rawData == null ? null : deserialize<Message, Message>(rawData, 
       },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
+          {
+            'type': 'apiKey',
+            'name': 'cookieAuth',
+            'keyName': 'sessionid',
+            'where': '',
+          },
           {
             'type': 'http',
             'scheme': 'bearer',
@@ -1212,10 +1426,10 @@ _responseData = rawData == null ? null : deserialize<Message, Message>(rawData, 
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(messageSeenRequest);
-    } catch(error, stackTrace) {
+      _bodyData = jsonEncode(messageSeenRequest);
+    } catch (error, stackTrace) {
       throw DioError(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -1237,8 +1451,11 @@ _bodyData=jsonEncode(messageSeenRequest);
     MessageSeen? _responseData;
 
     try {
-final rawData = _response.data;
-_responseData = rawData == null ? null : deserialize<MessageSeen, MessageSeen>(rawData, 'MessageSeen', growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<MessageSeen, MessageSeen>(rawData, 'MessageSeen',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -1262,12 +1479,12 @@ _responseData = rawData == null ? null : deserialize<MessageSeen, MessageSeen>(r
   }
 
   /// chatRoomsMessagesUpdate
-  /// 
+  ///
   ///
   /// Parameters:
   /// * [id] - A unique integer value identifying this message.
-  /// * [roomPk] 
-  /// * [messageRequest] 
+  /// * [roomPk]
+  /// * [messageRequest]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -1277,7 +1494,7 @@ _responseData = rawData == null ? null : deserialize<MessageSeen, MessageSeen>(r
   ///
   /// Returns a [Future] containing a [Response] with a [Message] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<Message>> chatRoomsMessagesUpdate({ 
+  Future<Response<Message>> chatRoomsMessagesUpdate({
     required String id,
     required String roomPk,
     MessageRequest? messageRequest,
@@ -1288,7 +1505,9 @@ _responseData = rawData == null ? null : deserialize<MessageSeen, MessageSeen>(r
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/v1/chat/rooms/{room_pk}/messages/{id}/'.replaceAll('{' r'id' '}', id.toString()).replaceAll('{' r'room_pk' '}', roomPk.toString());
+    final _path = r'/api/v1/chat/rooms/{room_pk}/messages/{id}/'
+        .replaceAll('{' r'id' '}', id.toString())
+        .replaceAll('{' r'room_pk' '}', roomPk.toString());
     final _options = Options(
       method: r'PUT',
       headers: <String, dynamic>{
@@ -1296,6 +1515,12 @@ _responseData = rawData == null ? null : deserialize<MessageSeen, MessageSeen>(r
       },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
+          {
+            'type': 'apiKey',
+            'name': 'cookieAuth',
+            'keyName': 'sessionid',
+            'where': '',
+          },
           {
             'type': 'http',
             'scheme': 'bearer',
@@ -1311,10 +1536,10 @@ _responseData = rawData == null ? null : deserialize<MessageSeen, MessageSeen>(r
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(messageRequest);
-    } catch(error, stackTrace) {
+      _bodyData = jsonEncode(messageRequest);
+    } catch (error, stackTrace) {
       throw DioError(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -1336,8 +1561,10 @@ _bodyData=jsonEncode(messageRequest);
     Message? _responseData;
 
     try {
-final rawData = _response.data;
-_responseData = rawData == null ? null : deserialize<Message, Message>(rawData, 'Message', growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<Message, Message>(rawData, 'Message', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -1361,7 +1588,7 @@ _responseData = rawData == null ? null : deserialize<Message, Message>(rawData, 
   }
 
   /// chatRoomsMuteCreate
-  /// 
+  ///
   ///
   /// Parameters:
   /// * [id] - A unique integer value identifying this room.
@@ -1374,7 +1601,7 @@ _responseData = rawData == null ? null : deserialize<Message, Message>(rawData, 
   ///
   /// Returns a [Future]
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<void>> chatRoomsMuteCreate({ 
+  Future<Response<void>> chatRoomsMuteCreate({
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -1383,7 +1610,8 @@ _responseData = rawData == null ? null : deserialize<Message, Message>(rawData, 
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/v1/chat/rooms/{id}/mute/'.replaceAll('{' r'id' '}', id.toString());
+    final _path = r'/api/v1/chat/rooms/{id}/mute/'
+        .replaceAll('{' r'id' '}', id.toString());
     final _options = Options(
       method: r'POST',
       headers: <String, dynamic>{
@@ -1391,6 +1619,12 @@ _responseData = rawData == null ? null : deserialize<Message, Message>(rawData, 
       },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
+          {
+            'type': 'apiKey',
+            'name': 'cookieAuth',
+            'keyName': 'sessionid',
+            'where': '',
+          },
           {
             'type': 'http',
             'scheme': 'bearer',
@@ -1414,11 +1648,11 @@ _responseData = rawData == null ? null : deserialize<Message, Message>(rawData, 
   }
 
   /// chatRoomsPartialUpdate
-  /// 
+  ///
   ///
   /// Parameters:
   /// * [id] - A unique integer value identifying this room.
-  /// * [patchedRoomRequest] 
+  /// * [patchedRoomRequest]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -1428,7 +1662,7 @@ _responseData = rawData == null ? null : deserialize<Message, Message>(rawData, 
   ///
   /// Returns a [Future] containing a [Response] with a [Room] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<Room>> chatRoomsPartialUpdate({ 
+  Future<Response<Room>> chatRoomsPartialUpdate({
     required String id,
     PatchedRoomRequest? patchedRoomRequest,
     CancelToken? cancelToken,
@@ -1438,7 +1672,8 @@ _responseData = rawData == null ? null : deserialize<Message, Message>(rawData, 
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/v1/chat/rooms/{id}/'.replaceAll('{' r'id' '}', id.toString());
+    final _path =
+        r'/api/v1/chat/rooms/{id}/'.replaceAll('{' r'id' '}', id.toString());
     final _options = Options(
       method: r'PATCH',
       headers: <String, dynamic>{
@@ -1446,6 +1681,12 @@ _responseData = rawData == null ? null : deserialize<Message, Message>(rawData, 
       },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
+          {
+            'type': 'apiKey',
+            'name': 'cookieAuth',
+            'keyName': 'sessionid',
+            'where': '',
+          },
           {
             'type': 'http',
             'scheme': 'bearer',
@@ -1461,10 +1702,10 @@ _responseData = rawData == null ? null : deserialize<Message, Message>(rawData, 
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(patchedRoomRequest);
-    } catch(error, stackTrace) {
+      _bodyData = jsonEncode(patchedRoomRequest);
+    } catch (error, stackTrace) {
       throw DioError(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -1486,8 +1727,10 @@ _bodyData=jsonEncode(patchedRoomRequest);
     Room? _responseData;
 
     try {
-final rawData = _response.data;
-_responseData = rawData == null ? null : deserialize<Room, Room>(rawData, 'Room', growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<Room, Room>(rawData, 'Room', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -1511,7 +1754,7 @@ _responseData = rawData == null ? null : deserialize<Room, Room>(rawData, 'Room'
   }
 
   /// chatRoomsRetrieve
-  /// 
+  ///
   ///
   /// Parameters:
   /// * [id] - A unique integer value identifying this room.
@@ -1524,7 +1767,7 @@ _responseData = rawData == null ? null : deserialize<Room, Room>(rawData, 'Room'
   ///
   /// Returns a [Future] containing a [Response] with a [Room] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<Room>> chatRoomsRetrieve({ 
+  Future<Response<Room>> chatRoomsRetrieve({
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -1533,7 +1776,8 @@ _responseData = rawData == null ? null : deserialize<Room, Room>(rawData, 'Room'
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/v1/chat/rooms/{id}/'.replaceAll('{' r'id' '}', id.toString());
+    final _path =
+        r'/api/v1/chat/rooms/{id}/'.replaceAll('{' r'id' '}', id.toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -1541,6 +1785,12 @@ _responseData = rawData == null ? null : deserialize<Room, Room>(rawData, 'Room'
       },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
+          {
+            'type': 'apiKey',
+            'name': 'cookieAuth',
+            'keyName': 'sessionid',
+            'where': '',
+          },
           {
             'type': 'http',
             'scheme': 'bearer',
@@ -1563,8 +1813,10 @@ _responseData = rawData == null ? null : deserialize<Room, Room>(rawData, 'Room'
     Room? _responseData;
 
     try {
-final rawData = _response.data;
-_responseData = rawData == null ? null : deserialize<Room, Room>(rawData, 'Room', growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<Room, Room>(rawData, 'Room', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -1588,7 +1840,7 @@ _responseData = rawData == null ? null : deserialize<Room, Room>(rawData, 'Room'
   }
 
   /// chatRoomsUnmuteCreate
-  /// 
+  ///
   ///
   /// Parameters:
   /// * [id] - A unique integer value identifying this room.
@@ -1601,7 +1853,7 @@ _responseData = rawData == null ? null : deserialize<Room, Room>(rawData, 'Room'
   ///
   /// Returns a [Future]
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<void>> chatRoomsUnmuteCreate({ 
+  Future<Response<void>> chatRoomsUnmuteCreate({
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -1610,7 +1862,8 @@ _responseData = rawData == null ? null : deserialize<Room, Room>(rawData, 'Room'
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/v1/chat/rooms/{id}/unmute/'.replaceAll('{' r'id' '}', id.toString());
+    final _path = r'/api/v1/chat/rooms/{id}/unmute/'
+        .replaceAll('{' r'id' '}', id.toString());
     final _options = Options(
       method: r'POST',
       headers: <String, dynamic>{
@@ -1618,6 +1871,12 @@ _responseData = rawData == null ? null : deserialize<Room, Room>(rawData, 'Room'
       },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
+          {
+            'type': 'apiKey',
+            'name': 'cookieAuth',
+            'keyName': 'sessionid',
+            'where': '',
+          },
           {
             'type': 'http',
             'scheme': 'bearer',
@@ -1641,11 +1900,11 @@ _responseData = rawData == null ? null : deserialize<Room, Room>(rawData, 'Room'
   }
 
   /// chatRoomsUpdate
-  /// 
+  ///
   ///
   /// Parameters:
   /// * [id] - A unique integer value identifying this room.
-  /// * [roomRequest] 
+  /// * [roomRequest]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -1655,7 +1914,7 @@ _responseData = rawData == null ? null : deserialize<Room, Room>(rawData, 'Room'
   ///
   /// Returns a [Future] containing a [Response] with a [Room] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<Room>> chatRoomsUpdate({ 
+  Future<Response<Room>> chatRoomsUpdate({
     required String id,
     required RoomRequest roomRequest,
     CancelToken? cancelToken,
@@ -1665,7 +1924,8 @@ _responseData = rawData == null ? null : deserialize<Room, Room>(rawData, 'Room'
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/v1/chat/rooms/{id}/'.replaceAll('{' r'id' '}', id.toString());
+    final _path =
+        r'/api/v1/chat/rooms/{id}/'.replaceAll('{' r'id' '}', id.toString());
     final _options = Options(
       method: r'PUT',
       headers: <String, dynamic>{
@@ -1673,6 +1933,12 @@ _responseData = rawData == null ? null : deserialize<Room, Room>(rawData, 'Room'
       },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
+          {
+            'type': 'apiKey',
+            'name': 'cookieAuth',
+            'keyName': 'sessionid',
+            'where': '',
+          },
           {
             'type': 'http',
             'scheme': 'bearer',
@@ -1688,10 +1954,10 @@ _responseData = rawData == null ? null : deserialize<Room, Room>(rawData, 'Room'
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(roomRequest);
-    } catch(error, stackTrace) {
+      _bodyData = jsonEncode(roomRequest);
+    } catch (error, stackTrace) {
       throw DioError(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -1713,8 +1979,10 @@ _bodyData=jsonEncode(roomRequest);
     Room? _responseData;
 
     try {
-final rawData = _response.data;
-_responseData = rawData == null ? null : deserialize<Room, Room>(rawData, 'Room', growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<Room, Room>(rawData, 'Room', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -1738,10 +2006,10 @@ _responseData = rawData == null ? null : deserialize<Room, Room>(rawData, 'Room'
   }
 
   /// chatRoomsUsersCreate
-  /// 
+  ///
   ///
   /// Parameters:
-  /// * [roomPk] 
+  /// * [roomPk]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -1751,7 +2019,7 @@ _responseData = rawData == null ? null : deserialize<Room, Room>(rawData, 'Room'
   ///
   /// Returns a [Future] containing a [Response] with a [RoomUser] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<RoomUser>> chatRoomsUsersCreate({ 
+  Future<Response<RoomUser>> chatRoomsUsersCreate({
     required String roomPk,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -1760,7 +2028,8 @@ _responseData = rawData == null ? null : deserialize<Room, Room>(rawData, 'Room'
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/v1/chat/rooms/{room_pk}/users/'.replaceAll('{' r'room_pk' '}', roomPk.toString());
+    final _path = r'/api/v1/chat/rooms/{room_pk}/users/'
+        .replaceAll('{' r'room_pk' '}', roomPk.toString());
     final _options = Options(
       method: r'POST',
       headers: <String, dynamic>{
@@ -1768,6 +2037,12 @@ _responseData = rawData == null ? null : deserialize<Room, Room>(rawData, 'Room'
       },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
+          {
+            'type': 'apiKey',
+            'name': 'cookieAuth',
+            'keyName': 'sessionid',
+            'where': '',
+          },
           {
             'type': 'http',
             'scheme': 'bearer',
@@ -1790,8 +2065,11 @@ _responseData = rawData == null ? null : deserialize<Room, Room>(rawData, 'Room'
     RoomUser? _responseData;
 
     try {
-final rawData = _response.data;
-_responseData = rawData == null ? null : deserialize<RoomUser, RoomUser>(rawData, 'RoomUser', growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<RoomUser, RoomUser>(rawData, 'RoomUser',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -1815,11 +2093,11 @@ _responseData = rawData == null ? null : deserialize<RoomUser, RoomUser>(rawData
   }
 
   /// chatRoomsUsersDestroy
-  /// 
+  ///
   ///
   /// Parameters:
   /// * [id] - A unique integer value identifying this room user.
-  /// * [roomPk] 
+  /// * [roomPk]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -1827,9 +2105,9 @@ _responseData = rawData == null ? null : deserialize<RoomUser, RoomUser>(rawData
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future]
+  /// Returns a [Future] containing a [Response] with a [Object] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<void>> chatRoomsUsersDestroy({ 
+  Future<Response<Object>> chatRoomsUsersDestroy({
     required String id,
     required String roomPk,
     CancelToken? cancelToken,
@@ -1839,7 +2117,9 @@ _responseData = rawData == null ? null : deserialize<RoomUser, RoomUser>(rawData
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/v1/chat/rooms/{room_pk}/users/{id}/'.replaceAll('{' r'id' '}', id.toString()).replaceAll('{' r'room_pk' '}', roomPk.toString());
+    final _path = r'/api/v1/chat/rooms/{room_pk}/users/{id}/'
+        .replaceAll('{' r'id' '}', id.toString())
+        .replaceAll('{' r'room_pk' '}', roomPk.toString());
     final _options = Options(
       method: r'DELETE',
       headers: <String, dynamic>{
@@ -1847,6 +2127,12 @@ _responseData = rawData == null ? null : deserialize<RoomUser, RoomUser>(rawData
       },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
+          {
+            'type': 'apiKey',
+            'name': 'cookieAuth',
+            'keyName': 'sessionid',
+            'where': '',
+          },
           {
             'type': 'http',
             'scheme': 'bearer',
@@ -1866,14 +2152,40 @@ _responseData = rawData == null ? null : deserialize<RoomUser, RoomUser>(rawData
       onReceiveProgress: onReceiveProgress,
     );
 
-    return _response;
+    Object? _responseData;
+
+    try {
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<Object, Object>(rawData, 'Object', growable: true);
+    } catch (error, stackTrace) {
+      throw DioError(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioErrorType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<Object>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
   }
 
   /// chatRoomsUsersList
-  /// 
+  ///
   ///
   /// Parameters:
-  /// * [roomPk] 
+  /// * [roomPk]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -1883,7 +2195,7 @@ _responseData = rawData == null ? null : deserialize<RoomUser, RoomUser>(rawData
   ///
   /// Returns a [Future] containing a [Response] with a [List<RoomUser>] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<List<RoomUser>>> chatRoomsUsersList({ 
+  Future<Response<List<RoomUser>>> chatRoomsUsersList({
     required String roomPk,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -1892,7 +2204,8 @@ _responseData = rawData == null ? null : deserialize<RoomUser, RoomUser>(rawData
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/v1/chat/rooms/{room_pk}/users/'.replaceAll('{' r'room_pk' '}', roomPk.toString());
+    final _path = r'/api/v1/chat/rooms/{room_pk}/users/'
+        .replaceAll('{' r'room_pk' '}', roomPk.toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -1900,6 +2213,12 @@ _responseData = rawData == null ? null : deserialize<RoomUser, RoomUser>(rawData
       },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
+          {
+            'type': 'apiKey',
+            'name': 'cookieAuth',
+            'keyName': 'sessionid',
+            'where': '',
+          },
           {
             'type': 'http',
             'scheme': 'bearer',
@@ -1922,8 +2241,11 @@ _responseData = rawData == null ? null : deserialize<RoomUser, RoomUser>(rawData
     List<RoomUser>? _responseData;
 
     try {
-final rawData = _response.data;
-_responseData = rawData == null ? null : deserialize<List<RoomUser>, RoomUser>(rawData, 'List<RoomUser>', growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<List<RoomUser>, RoomUser>(rawData, 'List<RoomUser>',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -1947,10 +2269,10 @@ _responseData = rawData == null ? null : deserialize<List<RoomUser>, RoomUser>(r
   }
 
   /// chatRoomsUsersNamesList
-  /// 
+  ///
   ///
   /// Parameters:
-  /// * [roomPk] 
+  /// * [roomPk]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -1960,7 +2282,7 @@ _responseData = rawData == null ? null : deserialize<List<RoomUser>, RoomUser>(r
   ///
   /// Returns a [Future] containing a [Response] with a [List<UserName>] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<List<UserName>>> chatRoomsUsersNamesList({ 
+  Future<Response<List<UserName>>> chatRoomsUsersNamesList({
     required String roomPk,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -1969,7 +2291,8 @@ _responseData = rawData == null ? null : deserialize<List<RoomUser>, RoomUser>(r
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/v1/chat/rooms/{room_pk}/users/names/'.replaceAll('{' r'room_pk' '}', roomPk.toString());
+    final _path = r'/api/v1/chat/rooms/{room_pk}/users/names/'
+        .replaceAll('{' r'room_pk' '}', roomPk.toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -1977,6 +2300,12 @@ _responseData = rawData == null ? null : deserialize<List<RoomUser>, RoomUser>(r
       },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
+          {
+            'type': 'apiKey',
+            'name': 'cookieAuth',
+            'keyName': 'sessionid',
+            'where': '',
+          },
           {
             'type': 'http',
             'scheme': 'bearer',
@@ -1999,8 +2328,11 @@ _responseData = rawData == null ? null : deserialize<List<RoomUser>, RoomUser>(r
     List<UserName>? _responseData;
 
     try {
-final rawData = _response.data;
-_responseData = rawData == null ? null : deserialize<List<UserName>, UserName>(rawData, 'List<UserName>', growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<List<UserName>, UserName>(rawData, 'List<UserName>',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -2024,11 +2356,11 @@ _responseData = rawData == null ? null : deserialize<List<UserName>, UserName>(r
   }
 
   /// chatRoomsUsersPartialUpdate
-  /// 
+  ///
   ///
   /// Parameters:
   /// * [id] - A unique integer value identifying this room user.
-  /// * [roomPk] 
+  /// * [roomPk]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -2038,7 +2370,7 @@ _responseData = rawData == null ? null : deserialize<List<UserName>, UserName>(r
   ///
   /// Returns a [Future] containing a [Response] with a [RoomUser] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<RoomUser>> chatRoomsUsersPartialUpdate({ 
+  Future<Response<RoomUser>> chatRoomsUsersPartialUpdate({
     required String id,
     required String roomPk,
     CancelToken? cancelToken,
@@ -2048,7 +2380,9 @@ _responseData = rawData == null ? null : deserialize<List<UserName>, UserName>(r
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/v1/chat/rooms/{room_pk}/users/{id}/'.replaceAll('{' r'id' '}', id.toString()).replaceAll('{' r'room_pk' '}', roomPk.toString());
+    final _path = r'/api/v1/chat/rooms/{room_pk}/users/{id}/'
+        .replaceAll('{' r'id' '}', id.toString())
+        .replaceAll('{' r'room_pk' '}', roomPk.toString());
     final _options = Options(
       method: r'PATCH',
       headers: <String, dynamic>{
@@ -2056,6 +2390,12 @@ _responseData = rawData == null ? null : deserialize<List<UserName>, UserName>(r
       },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
+          {
+            'type': 'apiKey',
+            'name': 'cookieAuth',
+            'keyName': 'sessionid',
+            'where': '',
+          },
           {
             'type': 'http',
             'scheme': 'bearer',
@@ -2078,8 +2418,11 @@ _responseData = rawData == null ? null : deserialize<List<UserName>, UserName>(r
     RoomUser? _responseData;
 
     try {
-final rawData = _response.data;
-_responseData = rawData == null ? null : deserialize<RoomUser, RoomUser>(rawData, 'RoomUser', growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<RoomUser, RoomUser>(rawData, 'RoomUser',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -2103,11 +2446,11 @@ _responseData = rawData == null ? null : deserialize<RoomUser, RoomUser>(rawData
   }
 
   /// chatRoomsUsersRetrieve
-  /// 
+  ///
   ///
   /// Parameters:
   /// * [id] - A unique integer value identifying this room user.
-  /// * [roomPk] 
+  /// * [roomPk]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -2117,7 +2460,7 @@ _responseData = rawData == null ? null : deserialize<RoomUser, RoomUser>(rawData
   ///
   /// Returns a [Future] containing a [Response] with a [RoomUser] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<RoomUser>> chatRoomsUsersRetrieve({ 
+  Future<Response<RoomUser>> chatRoomsUsersRetrieve({
     required String id,
     required String roomPk,
     CancelToken? cancelToken,
@@ -2127,7 +2470,9 @@ _responseData = rawData == null ? null : deserialize<RoomUser, RoomUser>(rawData
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/v1/chat/rooms/{room_pk}/users/{id}/'.replaceAll('{' r'id' '}', id.toString()).replaceAll('{' r'room_pk' '}', roomPk.toString());
+    final _path = r'/api/v1/chat/rooms/{room_pk}/users/{id}/'
+        .replaceAll('{' r'id' '}', id.toString())
+        .replaceAll('{' r'room_pk' '}', roomPk.toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -2135,6 +2480,12 @@ _responseData = rawData == null ? null : deserialize<RoomUser, RoomUser>(rawData
       },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
+          {
+            'type': 'apiKey',
+            'name': 'cookieAuth',
+            'keyName': 'sessionid',
+            'where': '',
+          },
           {
             'type': 'http',
             'scheme': 'bearer',
@@ -2157,8 +2508,11 @@ _responseData = rawData == null ? null : deserialize<RoomUser, RoomUser>(rawData
     RoomUser? _responseData;
 
     try {
-final rawData = _response.data;
-_responseData = rawData == null ? null : deserialize<RoomUser, RoomUser>(rawData, 'RoomUser', growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<RoomUser, RoomUser>(rawData, 'RoomUser',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -2182,11 +2536,11 @@ _responseData = rawData == null ? null : deserialize<RoomUser, RoomUser>(rawData
   }
 
   /// chatRoomsUsersUpdate
-  /// 
+  ///
   ///
   /// Parameters:
   /// * [id] - A unique integer value identifying this room user.
-  /// * [roomPk] 
+  /// * [roomPk]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -2196,7 +2550,7 @@ _responseData = rawData == null ? null : deserialize<RoomUser, RoomUser>(rawData
   ///
   /// Returns a [Future] containing a [Response] with a [RoomUser] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<RoomUser>> chatRoomsUsersUpdate({ 
+  Future<Response<RoomUser>> chatRoomsUsersUpdate({
     required String id,
     required String roomPk,
     CancelToken? cancelToken,
@@ -2206,7 +2560,9 @@ _responseData = rawData == null ? null : deserialize<RoomUser, RoomUser>(rawData
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/v1/chat/rooms/{room_pk}/users/{id}/'.replaceAll('{' r'id' '}', id.toString()).replaceAll('{' r'room_pk' '}', roomPk.toString());
+    final _path = r'/api/v1/chat/rooms/{room_pk}/users/{id}/'
+        .replaceAll('{' r'id' '}', id.toString())
+        .replaceAll('{' r'room_pk' '}', roomPk.toString());
     final _options = Options(
       method: r'PUT',
       headers: <String, dynamic>{
@@ -2214,6 +2570,12 @@ _responseData = rawData == null ? null : deserialize<RoomUser, RoomUser>(rawData
       },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
+          {
+            'type': 'apiKey',
+            'name': 'cookieAuth',
+            'keyName': 'sessionid',
+            'where': '',
+          },
           {
             'type': 'http',
             'scheme': 'bearer',
@@ -2236,8 +2598,11 @@ _responseData = rawData == null ? null : deserialize<RoomUser, RoomUser>(rawData
     RoomUser? _responseData;
 
     try {
-final rawData = _response.data;
-_responseData = rawData == null ? null : deserialize<RoomUser, RoomUser>(rawData, 'RoomUser', growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<RoomUser, RoomUser>(rawData, 'RoomUser',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -2259,5 +2624,4 @@ _responseData = rawData == null ? null : deserialize<RoomUser, RoomUser>(rawData
       extra: _response.extra,
     );
   }
-
 }

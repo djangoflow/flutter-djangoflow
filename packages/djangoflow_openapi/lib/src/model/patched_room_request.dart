@@ -81,7 +81,7 @@ class PatchedRoomRequest {
   )
 
 
-  final List<int>? users;
+  final List<String>? users;
 
 
 

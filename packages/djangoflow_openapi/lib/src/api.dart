@@ -7,20 +7,19 @@ import 'package:djangoflow_openapi/src/auth/api_key_auth.dart';
 import 'package:djangoflow_openapi/src/auth/basic_auth.dart';
 import 'package:djangoflow_openapi/src/auth/bearer_auth.dart';
 import 'package:djangoflow_openapi/src/auth/oauth.dart';
+import 'package:djangoflow_openapi/src/api/accounts_api.dart';
 import 'package:djangoflow_openapi/src/api/auth_api.dart';
 import 'package:djangoflow_openapi/src/api/chat_api.dart';
-import 'package:djangoflow_openapi/src/api/notifications_api.dart';
 
-class DjangoflowOpenapi {
+class Openapi {
   static const String basePath = r'http://localhost';
 
   final Dio dio;
-  DjangoflowOpenapi({
+  Openapi({
     Dio? dio,
     String? basePathOverride,
     List<Interceptor>? interceptors,
-  })  : 
-        this.dio = dio ??
+  }) : this.dio = dio ??
             Dio(BaseOptions(
               baseUrl: basePathOverride ?? basePath,
               connectTimeout: const Duration(milliseconds: 5000),
@@ -40,26 +39,43 @@ class DjangoflowOpenapi {
 
   void setOAuthToken(String name, String token) {
     if (this.dio.interceptors.any((i) => i is OAuthInterceptor)) {
-      (this.dio.interceptors.firstWhere((i) => i is OAuthInterceptor) as OAuthInterceptor).tokens[name] = token;
+      (this.dio.interceptors.firstWhere((i) => i is OAuthInterceptor)
+              as OAuthInterceptor)
+          .tokens[name] = token;
     }
   }
 
   void setBearerAuth(String name, String token) {
     if (this.dio.interceptors.any((i) => i is BearerAuthInterceptor)) {
-      (this.dio.interceptors.firstWhere((i) => i is BearerAuthInterceptor) as BearerAuthInterceptor).tokens[name] = token;
+      (this.dio.interceptors.firstWhere((i) => i is BearerAuthInterceptor)
+              as BearerAuthInterceptor)
+          .tokens[name] = token;
     }
   }
 
   void setBasicAuth(String name, String username, String password) {
     if (this.dio.interceptors.any((i) => i is BasicAuthInterceptor)) {
-      (this.dio.interceptors.firstWhere((i) => i is BasicAuthInterceptor) as BasicAuthInterceptor).authInfo[name] = BasicAuthInfo(username, password);
+      (this.dio.interceptors.firstWhere((i) => i is BasicAuthInterceptor)
+              as BasicAuthInterceptor)
+          .authInfo[name] = BasicAuthInfo(username, password);
     }
   }
 
   void setApiKey(String name, String apiKey) {
     if (this.dio.interceptors.any((i) => i is ApiKeyAuthInterceptor)) {
-      (this.dio.interceptors.firstWhere((element) => element is ApiKeyAuthInterceptor) as ApiKeyAuthInterceptor).apiKeys[name] = apiKey;
+      (this
+                  .dio
+                  .interceptors
+                  .firstWhere((element) => element is ApiKeyAuthInterceptor)
+              as ApiKeyAuthInterceptor)
+          .apiKeys[name] = apiKey;
     }
+  }
+
+  /// Get AccountsApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  AccountsApi getAccountsApi() {
+    return AccountsApi(dio);
   }
 
   /// Get AuthApi instance, base route and serializer can be overridden by a given but be careful,
@@ -72,11 +88,5 @@ class DjangoflowOpenapi {
   /// by doing that all interceptors will not be executed
   ChatApi getChatApi() {
     return ChatApi(dio);
-  }
-
-  /// Get NotificationsApi instance, base route and serializer can be overridden by a given but be careful,
-  /// by doing that all interceptors will not be executed
-  NotificationsApi getNotificationsApi() {
-    return NotificationsApi(dio);
   }
 }

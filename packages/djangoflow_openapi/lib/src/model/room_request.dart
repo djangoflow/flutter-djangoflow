@@ -81,7 +81,7 @@ class RoomRequest {
   )
 
 
-  final List<int>? users;
+  final List<String>? users;
 
 
 

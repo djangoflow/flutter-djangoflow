@@ -1,57 +1,64 @@
-# djangoflow_openapi.api.ChatApi
+# openapi.api.ChatApi
 
 ## Load the API package
+
 ```dart
 import 'package:djangoflow_openapi/api.dart';
 ```
 
-All URIs are relative to *http://localhost*
+All URIs are relative to _http://localhost_
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**chatImagesCreate**](ChatApi.md#chatimagescreate) | **POST** /api/v1/chat/images/ | 
-[**chatImagesDestroy**](ChatApi.md#chatimagesdestroy) | **DELETE** /api/v1/chat/images/{id}/ | 
-[**chatImagesList**](ChatApi.md#chatimageslist) | **GET** /api/v1/chat/images/ | 
-[**chatImagesPartialUpdate**](ChatApi.md#chatimagespartialupdate) | **PATCH** /api/v1/chat/images/{id}/ | 
-[**chatImagesRetrieve**](ChatApi.md#chatimagesretrieve) | **GET** /api/v1/chat/images/{id}/ | 
-[**chatImagesUpdate**](ChatApi.md#chatimagesupdate) | **PUT** /api/v1/chat/images/{id}/ | 
-[**chatRoomsCreate**](ChatApi.md#chatroomscreate) | **POST** /api/v1/chat/rooms/ | 
-[**chatRoomsDestroy**](ChatApi.md#chatroomsdestroy) | **DELETE** /api/v1/chat/rooms/{id}/ | 
-[**chatRoomsList**](ChatApi.md#chatroomslist) | **GET** /api/v1/chat/rooms/ | 
-[**chatRoomsMessagesCreate**](ChatApi.md#chatroomsmessagescreate) | **POST** /api/v1/chat/rooms/{room_pk}/messages/ | 
-[**chatRoomsMessagesDestroy**](ChatApi.md#chatroomsmessagesdestroy) | **DELETE** /api/v1/chat/rooms/{room_pk}/messages/{id}/ | 
-[**chatRoomsMessagesList**](ChatApi.md#chatroomsmessageslist) | **GET** /api/v1/chat/rooms/{room_pk}/messages/ | 
-[**chatRoomsMessagesPartialUpdate**](ChatApi.md#chatroomsmessagespartialupdate) | **PATCH** /api/v1/chat/rooms/{room_pk}/messages/{id}/ | 
-[**chatRoomsMessagesRetrieve**](ChatApi.md#chatroomsmessagesretrieve) | **GET** /api/v1/chat/rooms/{room_pk}/messages/{id}/ | 
-[**chatRoomsMessagesSeenCreate**](ChatApi.md#chatroomsmessagesseencreate) | **POST** /api/v1/chat/rooms/{room_pk}/messages/seen/ | 
-[**chatRoomsMessagesUpdate**](ChatApi.md#chatroomsmessagesupdate) | **PUT** /api/v1/chat/rooms/{room_pk}/messages/{id}/ | 
-[**chatRoomsMuteCreate**](ChatApi.md#chatroomsmutecreate) | **POST** /api/v1/chat/rooms/{id}/mute/ | 
-[**chatRoomsPartialUpdate**](ChatApi.md#chatroomspartialupdate) | **PATCH** /api/v1/chat/rooms/{id}/ | 
-[**chatRoomsRetrieve**](ChatApi.md#chatroomsretrieve) | **GET** /api/v1/chat/rooms/{id}/ | 
-[**chatRoomsUnmuteCreate**](ChatApi.md#chatroomsunmutecreate) | **POST** /api/v1/chat/rooms/{id}/unmute/ | 
-[**chatRoomsUpdate**](ChatApi.md#chatroomsupdate) | **PUT** /api/v1/chat/rooms/{id}/ | 
-[**chatRoomsUsersCreate**](ChatApi.md#chatroomsuserscreate) | **POST** /api/v1/chat/rooms/{room_pk}/users/ | 
-[**chatRoomsUsersDestroy**](ChatApi.md#chatroomsusersdestroy) | **DELETE** /api/v1/chat/rooms/{room_pk}/users/{id}/ | 
-[**chatRoomsUsersList**](ChatApi.md#chatroomsuserslist) | **GET** /api/v1/chat/rooms/{room_pk}/users/ | 
-[**chatRoomsUsersNamesList**](ChatApi.md#chatroomsusersnameslist) | **GET** /api/v1/chat/rooms/{room_pk}/users/names/ | 
-[**chatRoomsUsersPartialUpdate**](ChatApi.md#chatroomsuserspartialupdate) | **PATCH** /api/v1/chat/rooms/{room_pk}/users/{id}/ | 
-[**chatRoomsUsersRetrieve**](ChatApi.md#chatroomsusersretrieve) | **GET** /api/v1/chat/rooms/{room_pk}/users/{id}/ | 
-[**chatRoomsUsersUpdate**](ChatApi.md#chatroomsusersupdate) | **PUT** /api/v1/chat/rooms/{room_pk}/users/{id}/ | 
-
+| Method                                                                          | HTTP request                                           | Description |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------ | ----------- |
+| [**chatImagesCreate**](ChatApi.md#chatimagescreate)                             | **POST** /api/v1/chat/images/                          |
+| [**chatImagesDestroy**](ChatApi.md#chatimagesdestroy)                           | **DELETE** /api/v1/chat/images/{id}/                   |
+| [**chatImagesList**](ChatApi.md#chatimageslist)                                 | **GET** /api/v1/chat/images/                           |
+| [**chatImagesPartialUpdate**](ChatApi.md#chatimagespartialupdate)               | **PATCH** /api/v1/chat/images/{id}/                    |
+| [**chatImagesRetrieve**](ChatApi.md#chatimagesretrieve)                         | **GET** /api/v1/chat/images/{id}/                      |
+| [**chatImagesUpdate**](ChatApi.md#chatimagesupdate)                             | **PUT** /api/v1/chat/images/{id}/                      |
+| [**chatRoomsCreate**](ChatApi.md#chatroomscreate)                               | **POST** /api/v1/chat/rooms/                           |
+| [**chatRoomsDestroy**](ChatApi.md#chatroomsdestroy)                             | **DELETE** /api/v1/chat/rooms/{id}/                    |
+| [**chatRoomsList**](ChatApi.md#chatroomslist)                                   | **GET** /api/v1/chat/rooms/                            |
+| [**chatRoomsMessagesCreate**](ChatApi.md#chatroomsmessagescreate)               | **POST** /api/v1/chat/rooms/{room_pk}/messages/        |
+| [**chatRoomsMessagesDestroy**](ChatApi.md#chatroomsmessagesdestroy)             | **DELETE** /api/v1/chat/rooms/{room_pk}/messages/{id}/ |
+| [**chatRoomsMessagesList**](ChatApi.md#chatroomsmessageslist)                   | **GET** /api/v1/chat/rooms/{room_pk}/messages/         |
+| [**chatRoomsMessagesPartialUpdate**](ChatApi.md#chatroomsmessagespartialupdate) | **PATCH** /api/v1/chat/rooms/{room_pk}/messages/{id}/  |
+| [**chatRoomsMessagesRetrieve**](ChatApi.md#chatroomsmessagesretrieve)           | **GET** /api/v1/chat/rooms/{room_pk}/messages/{id}/    |
+| [**chatRoomsMessagesSeenCreate**](ChatApi.md#chatroomsmessagesseencreate)       | **POST** /api/v1/chat/rooms/{room_pk}/messages/seen/   |
+| [**chatRoomsMessagesUpdate**](ChatApi.md#chatroomsmessagesupdate)               | **PUT** /api/v1/chat/rooms/{room_pk}/messages/{id}/    |
+| [**chatRoomsMuteCreate**](ChatApi.md#chatroomsmutecreate)                       | **POST** /api/v1/chat/rooms/{id}/mute/                 |
+| [**chatRoomsPartialUpdate**](ChatApi.md#chatroomspartialupdate)                 | **PATCH** /api/v1/chat/rooms/{id}/                     |
+| [**chatRoomsRetrieve**](ChatApi.md#chatroomsretrieve)                           | **GET** /api/v1/chat/rooms/{id}/                       |
+| [**chatRoomsUnmuteCreate**](ChatApi.md#chatroomsunmutecreate)                   | **POST** /api/v1/chat/rooms/{id}/unmute/               |
+| [**chatRoomsUpdate**](ChatApi.md#chatroomsupdate)                               | **PUT** /api/v1/chat/rooms/{id}/                       |
+| [**chatRoomsUsersCreate**](ChatApi.md#chatroomsuserscreate)                     | **POST** /api/v1/chat/rooms/{room_pk}/users/           |
+| [**chatRoomsUsersDestroy**](ChatApi.md#chatroomsusersdestroy)                   | **DELETE** /api/v1/chat/rooms/{room_pk}/users/{id}/    |
+| [**chatRoomsUsersList**](ChatApi.md#chatroomsuserslist)                         | **GET** /api/v1/chat/rooms/{room_pk}/users/            |
+| [**chatRoomsUsersNamesList**](ChatApi.md#chatroomsusersnameslist)               | **GET** /api/v1/chat/rooms/{room_pk}/users/names/      |
+| [**chatRoomsUsersPartialUpdate**](ChatApi.md#chatroomsuserspartialupdate)       | **PATCH** /api/v1/chat/rooms/{room_pk}/users/{id}/     |
+| [**chatRoomsUsersRetrieve**](ChatApi.md#chatroomsusersretrieve)                 | **GET** /api/v1/chat/rooms/{room_pk}/users/{id}/       |
+| [**chatRoomsUsersUpdate**](ChatApi.md#chatroomsusersupdate)                     | **PUT** /api/v1/chat/rooms/{room_pk}/users/{id}/       |
 
 # **chatImagesCreate**
+
 > MessageImage chatImagesCreate(image, messageId, roomId)
 
-
-
 ### Example
+
 ```dart
 import 'package:djangoflow_openapi/api.dart';
+// TODO Configure API key authorization: cookieAuth
+//defaultApiClient.getAuthentication<ApiKeyAuth>('cookieAuth').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('cookieAuth').apiKeyPrefix = 'Bearer';
+// TODO Configure HTTP basic authorization: jwtAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
-final api = DjangoflowOpenapi().getChatApi();
-final MultipartFile image = BINARY_DATA_HERE; // MultipartFile | 
-final String messageId = messageId_example; // String | 
-final String roomId = roomId_example; // String | 
+final api = Openapi().getChatApi();
+final MultipartFile image = BINARY_DATA_HERE; // MultipartFile |
+final String messageId = messageId_example; // String |
+final String roomId = roomId_example; // String |
 
 try {
     final response = api.chatImagesCreate(image, messageId, roomId);
@@ -63,11 +70,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **image** | **MultipartFile**|  | 
- **messageId** | **String**|  | [optional] 
- **roomId** | **String**|  | [optional] 
+| Name          | Type              | Description | Notes      |
+| ------------- | ----------------- | ----------- | ---------- |
+| **image**     | **MultipartFile** |             |
+| **messageId** | **String**        |             | [optional] |
+| **roomId**    | **String**        |             | [optional] |
 
 ### Return type
 
@@ -75,29 +82,37 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[jwtAuth](../README.md#jwtAuth)
+[cookieAuth](../README.md#cookieAuth), [jwtAuth](../README.md#jwtAuth)
 
 ### HTTP request headers
 
- - **Content-Type**: multipart/form-data
- - **Accept**: application/json
+- **Content-Type**: multipart/form-data
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **chatImagesDestroy**
-> chatImagesDestroy(id)
 
-
+> Object chatImagesDestroy(id)
 
 ### Example
+
 ```dart
 import 'package:djangoflow_openapi/api.dart';
+// TODO Configure API key authorization: cookieAuth
+//defaultApiClient.getAuthentication<ApiKeyAuth>('cookieAuth').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('cookieAuth').apiKeyPrefix = 'Bearer';
+// TODO Configure HTTP basic authorization: jwtAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
-final api = DjangoflowOpenapi().getChatApi();
+final api = Openapi().getChatApi();
 final String id = id_example; // String | A unique integer value identifying this message image.
 
 try {
-    api.chatImagesDestroy(id);
+    final response = api.chatImagesDestroy(id);
+    print(response);
 } catch on DioError (e) {
     print('Exception when calling ChatApi->chatImagesDestroy: $e\n');
 }
@@ -105,38 +120,47 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **String**| A unique integer value identifying this message image. | 
+| Name   | Type       | Description                                            | Notes |
+| ------ | ---------- | ------------------------------------------------------ | ----- |
+| **id** | **String** | A unique integer value identifying this message image. |
 
 ### Return type
 
-void (empty response body)
+**Object**
 
 ### Authorization
 
-[jwtAuth](../README.md#jwtAuth)
+[cookieAuth](../README.md#cookieAuth), [jwtAuth](../README.md#jwtAuth)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **chatImagesList**
-> List<MessageImage> chatImagesList()
 
-
+> PaginatedMessageImageList chatImagesList(limit, offset)
 
 ### Example
+
 ```dart
 import 'package:djangoflow_openapi/api.dart';
+// TODO Configure API key authorization: cookieAuth
+//defaultApiClient.getAuthentication<ApiKeyAuth>('cookieAuth').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('cookieAuth').apiKeyPrefix = 'Bearer';
+// TODO Configure HTTP basic authorization: jwtAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
-final api = DjangoflowOpenapi().getChatApi();
+final api = Openapi().getChatApi();
+final int limit = 56; // int | Number of results to return per page.
+final int offset = 56; // int | The initial index from which to return the results.
 
 try {
-    final response = api.chatImagesList();
+    final response = api.chatImagesList(limit, offset);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling ChatApi->chatImagesList: $e\n');
@@ -144,37 +168,48 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+| Name       | Type    | Description                                         | Notes      |
+| ---------- | ------- | --------------------------------------------------- | ---------- |
+| **limit**  | **int** | Number of results to return per page.               | [optional] |
+| **offset** | **int** | The initial index from which to return the results. | [optional] |
 
 ### Return type
 
-[**List&lt;MessageImage&gt;**](MessageImage.md)
+[**PaginatedMessageImageList**](PaginatedMessageImageList.md)
 
 ### Authorization
 
-[jwtAuth](../README.md#jwtAuth)
+[cookieAuth](../README.md#cookieAuth), [jwtAuth](../README.md#jwtAuth)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **chatImagesPartialUpdate**
+
 > MessageImage chatImagesPartialUpdate(id, messageId, roomId, image)
 
-
-
 ### Example
+
 ```dart
 import 'package:djangoflow_openapi/api.dart';
+// TODO Configure API key authorization: cookieAuth
+//defaultApiClient.getAuthentication<ApiKeyAuth>('cookieAuth').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('cookieAuth').apiKeyPrefix = 'Bearer';
+// TODO Configure HTTP basic authorization: jwtAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
-final api = DjangoflowOpenapi().getChatApi();
+final api = Openapi().getChatApi();
 final String id = id_example; // String | A unique integer value identifying this message image.
-final String messageId = messageId_example; // String | 
-final String roomId = roomId_example; // String | 
-final MultipartFile image = BINARY_DATA_HERE; // MultipartFile | 
+final String messageId = messageId_example; // String |
+final String roomId = roomId_example; // String |
+final MultipartFile image = BINARY_DATA_HERE; // MultipartFile |
 
 try {
     final response = api.chatImagesPartialUpdate(id, messageId, roomId, image);
@@ -186,12 +221,12 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **String**| A unique integer value identifying this message image. | 
- **messageId** | **String**|  | [optional] 
- **roomId** | **String**|  | [optional] 
- **image** | **MultipartFile**|  | [optional] 
+| Name          | Type              | Description                                            | Notes      |
+| ------------- | ----------------- | ------------------------------------------------------ | ---------- |
+| **id**        | **String**        | A unique integer value identifying this message image. |
+| **messageId** | **String**        |                                                        | [optional] |
+| **roomId**    | **String**        |                                                        | [optional] |
+| **image**     | **MultipartFile** |                                                        | [optional] |
 
 ### Return type
 
@@ -199,25 +234,32 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[jwtAuth](../README.md#jwtAuth)
+[cookieAuth](../README.md#cookieAuth), [jwtAuth](../README.md#jwtAuth)
 
 ### HTTP request headers
 
- - **Content-Type**: multipart/form-data
- - **Accept**: application/json
+- **Content-Type**: multipart/form-data
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **chatImagesRetrieve**
+
 > MessageImage chatImagesRetrieve(id)
 
-
-
 ### Example
+
 ```dart
 import 'package:djangoflow_openapi/api.dart';
+// TODO Configure API key authorization: cookieAuth
+//defaultApiClient.getAuthentication<ApiKeyAuth>('cookieAuth').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('cookieAuth').apiKeyPrefix = 'Bearer';
+// TODO Configure HTTP basic authorization: jwtAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
-final api = DjangoflowOpenapi().getChatApi();
+final api = Openapi().getChatApi();
 final String id = id_example; // String | A unique integer value identifying this message image.
 
 try {
@@ -230,9 +272,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **String**| A unique integer value identifying this message image. | 
+| Name   | Type       | Description                                            | Notes |
+| ------ | ---------- | ------------------------------------------------------ | ----- |
+| **id** | **String** | A unique integer value identifying this message image. |
 
 ### Return type
 
@@ -240,29 +282,36 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[jwtAuth](../README.md#jwtAuth)
+[cookieAuth](../README.md#cookieAuth), [jwtAuth](../README.md#jwtAuth)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **chatImagesUpdate**
+
 > MessageImage chatImagesUpdate(id, image, messageId, roomId)
 
-
-
 ### Example
+
 ```dart
 import 'package:djangoflow_openapi/api.dart';
+// TODO Configure API key authorization: cookieAuth
+//defaultApiClient.getAuthentication<ApiKeyAuth>('cookieAuth').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('cookieAuth').apiKeyPrefix = 'Bearer';
+// TODO Configure HTTP basic authorization: jwtAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
-final api = DjangoflowOpenapi().getChatApi();
+final api = Openapi().getChatApi();
 final String id = id_example; // String | A unique integer value identifying this message image.
-final MultipartFile image = BINARY_DATA_HERE; // MultipartFile | 
-final String messageId = messageId_example; // String | 
-final String roomId = roomId_example; // String | 
+final MultipartFile image = BINARY_DATA_HERE; // MultipartFile |
+final String messageId = messageId_example; // String |
+final String roomId = roomId_example; // String |
 
 try {
     final response = api.chatImagesUpdate(id, image, messageId, roomId);
@@ -274,12 +323,12 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **String**| A unique integer value identifying this message image. | 
- **image** | **MultipartFile**|  | 
- **messageId** | **String**|  | [optional] 
- **roomId** | **String**|  | [optional] 
+| Name          | Type              | Description                                            | Notes      |
+| ------------- | ----------------- | ------------------------------------------------------ | ---------- |
+| **id**        | **String**        | A unique integer value identifying this message image. |
+| **image**     | **MultipartFile** |                                                        |
+| **messageId** | **String**        |                                                        | [optional] |
+| **roomId**    | **String**        |                                                        | [optional] |
 
 ### Return type
 
@@ -287,26 +336,33 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[jwtAuth](../README.md#jwtAuth)
+[cookieAuth](../README.md#cookieAuth), [jwtAuth](../README.md#jwtAuth)
 
 ### HTTP request headers
 
- - **Content-Type**: multipart/form-data
- - **Accept**: application/json
+- **Content-Type**: multipart/form-data
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **chatRoomsCreate**
+
 > Room chatRoomsCreate(roomRequest)
 
-
-
 ### Example
+
 ```dart
 import 'package:djangoflow_openapi/api.dart';
+// TODO Configure API key authorization: cookieAuth
+//defaultApiClient.getAuthentication<ApiKeyAuth>('cookieAuth').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('cookieAuth').apiKeyPrefix = 'Bearer';
+// TODO Configure HTTP basic authorization: jwtAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
-final api = DjangoflowOpenapi().getChatApi();
-final RoomRequest roomRequest = ; // RoomRequest | 
+final api = Openapi().getChatApi();
+final RoomRequest roomRequest = ; // RoomRequest |
 
 try {
     final response = api.chatRoomsCreate(roomRequest);
@@ -318,9 +374,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **roomRequest** | [**RoomRequest**](RoomRequest.md)|  | 
+| Name            | Type                              | Description | Notes |
+| --------------- | --------------------------------- | ----------- | ----- |
+| **roomRequest** | [**RoomRequest**](RoomRequest.md) |             |
 
 ### Return type
 
@@ -328,29 +384,37 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[jwtAuth](../README.md#jwtAuth)
+[cookieAuth](../README.md#cookieAuth), [jwtAuth](../README.md#jwtAuth)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
- - **Accept**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **chatRoomsDestroy**
-> chatRoomsDestroy(id)
 
-
+> Object chatRoomsDestroy(id)
 
 ### Example
+
 ```dart
 import 'package:djangoflow_openapi/api.dart';
+// TODO Configure API key authorization: cookieAuth
+//defaultApiClient.getAuthentication<ApiKeyAuth>('cookieAuth').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('cookieAuth').apiKeyPrefix = 'Bearer';
+// TODO Configure HTTP basic authorization: jwtAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
-final api = DjangoflowOpenapi().getChatApi();
+final api = Openapi().getChatApi();
 final String id = id_example; // String | A unique integer value identifying this room.
 
 try {
-    api.chatRoomsDestroy(id);
+    final response = api.chatRoomsDestroy(id);
+    print(response);
 } catch on DioError (e) {
     print('Exception when calling ChatApi->chatRoomsDestroy: $e\n');
 }
@@ -358,38 +422,47 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **String**| A unique integer value identifying this room. | 
+| Name   | Type       | Description                                   | Notes |
+| ------ | ---------- | --------------------------------------------- | ----- |
+| **id** | **String** | A unique integer value identifying this room. |
 
 ### Return type
 
-void (empty response body)
+**Object**
 
 ### Authorization
 
-[jwtAuth](../README.md#jwtAuth)
+[cookieAuth](../README.md#cookieAuth), [jwtAuth](../README.md#jwtAuth)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **chatRoomsList**
-> List<Room> chatRoomsList()
 
-
+> PaginatedRoomList chatRoomsList(limit, offset)
 
 ### Example
+
 ```dart
 import 'package:djangoflow_openapi/api.dart';
+// TODO Configure API key authorization: cookieAuth
+//defaultApiClient.getAuthentication<ApiKeyAuth>('cookieAuth').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('cookieAuth').apiKeyPrefix = 'Bearer';
+// TODO Configure HTTP basic authorization: jwtAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
-final api = DjangoflowOpenapi().getChatApi();
+final api = Openapi().getChatApi();
+final int limit = 56; // int | Number of results to return per page.
+final int offset = 56; // int | The initial index from which to return the results.
 
 try {
-    final response = api.chatRoomsList();
+    final response = api.chatRoomsList(limit, offset);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling ChatApi->chatRoomsList: $e\n');
@@ -397,35 +470,46 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+| Name       | Type    | Description                                         | Notes      |
+| ---------- | ------- | --------------------------------------------------- | ---------- |
+| **limit**  | **int** | Number of results to return per page.               | [optional] |
+| **offset** | **int** | The initial index from which to return the results. | [optional] |
 
 ### Return type
 
-[**List&lt;Room&gt;**](Room.md)
+[**PaginatedRoomList**](PaginatedRoomList.md)
 
 ### Authorization
 
-[jwtAuth](../README.md#jwtAuth)
+[cookieAuth](../README.md#cookieAuth), [jwtAuth](../README.md#jwtAuth)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **chatRoomsMessagesCreate**
+
 > Message chatRoomsMessagesCreate(roomPk, messageRequest)
 
-
-
 ### Example
+
 ```dart
 import 'package:djangoflow_openapi/api.dart';
+// TODO Configure API key authorization: cookieAuth
+//defaultApiClient.getAuthentication<ApiKeyAuth>('cookieAuth').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('cookieAuth').apiKeyPrefix = 'Bearer';
+// TODO Configure HTTP basic authorization: jwtAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
-final api = DjangoflowOpenapi().getChatApi();
-final String roomPk = roomPk_example; // String | 
-final MessageRequest messageRequest = ; // MessageRequest | 
+final api = Openapi().getChatApi();
+final String roomPk = roomPk_example; // String |
+final MessageRequest messageRequest = ; // MessageRequest |
 
 try {
     final response = api.chatRoomsMessagesCreate(roomPk, messageRequest);
@@ -437,10 +521,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **roomPk** | **String**|  | 
- **messageRequest** | [**MessageRequest**](MessageRequest.md)|  | [optional] 
+| Name               | Type                                    | Description | Notes      |
+| ------------------ | --------------------------------------- | ----------- | ---------- |
+| **roomPk**         | **String**                              |             |
+| **messageRequest** | [**MessageRequest**](MessageRequest.md) |             | [optional] |
 
 ### Return type
 
@@ -448,27 +532,34 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[jwtAuth](../README.md#jwtAuth)
+[cookieAuth](../README.md#cookieAuth), [jwtAuth](../README.md#jwtAuth)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
- - **Accept**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **chatRoomsMessagesDestroy**
+
 > chatRoomsMessagesDestroy(id, roomPk)
 
-
-
 ### Example
+
 ```dart
 import 'package:djangoflow_openapi/api.dart';
+// TODO Configure API key authorization: cookieAuth
+//defaultApiClient.getAuthentication<ApiKeyAuth>('cookieAuth').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('cookieAuth').apiKeyPrefix = 'Bearer';
+// TODO Configure HTTP basic authorization: jwtAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
-final api = DjangoflowOpenapi().getChatApi();
+final api = Openapi().getChatApi();
 final String id = id_example; // String | A unique integer value identifying this message.
-final String roomPk = roomPk_example; // String | 
+final String roomPk = roomPk_example; // String |
 
 try {
     api.chatRoomsMessagesDestroy(id, roomPk);
@@ -479,10 +570,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **String**| A unique integer value identifying this message. | 
- **roomPk** | **String**|  | 
+| Name       | Type       | Description                                      | Notes |
+| ---------- | ---------- | ------------------------------------------------ | ----- |
+| **id**     | **String** | A unique integer value identifying this message. |
+| **roomPk** | **String** |                                                  |
 
 ### Return type
 
@@ -490,29 +581,38 @@ void (empty response body)
 
 ### Authorization
 
-[jwtAuth](../README.md#jwtAuth)
+[cookieAuth](../README.md#cookieAuth), [jwtAuth](../README.md#jwtAuth)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **chatRoomsMessagesList**
-> List<Message> chatRoomsMessagesList(roomPk)
 
-
+> PaginatedMessageList chatRoomsMessagesList(roomPk, limit, offset)
 
 ### Example
+
 ```dart
 import 'package:djangoflow_openapi/api.dart';
+// TODO Configure API key authorization: cookieAuth
+//defaultApiClient.getAuthentication<ApiKeyAuth>('cookieAuth').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('cookieAuth').apiKeyPrefix = 'Bearer';
+// TODO Configure HTTP basic authorization: jwtAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
-final api = DjangoflowOpenapi().getChatApi();
-final String roomPk = roomPk_example; // String | 
+final api = Openapi().getChatApi();
+final String roomPk = roomPk_example; // String |
+final int limit = 56; // int | Number of results to return per page.
+final int offset = 56; // int | The initial index from which to return the results.
 
 try {
-    final response = api.chatRoomsMessagesList(roomPk);
+    final response = api.chatRoomsMessagesList(roomPk, limit, offset);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling ChatApi->chatRoomsMessagesList: $e\n');
@@ -521,38 +621,47 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **roomPk** | **String**|  | 
+| Name       | Type       | Description                                         | Notes      |
+| ---------- | ---------- | --------------------------------------------------- | ---------- |
+| **roomPk** | **String** |                                                     |
+| **limit**  | **int**    | Number of results to return per page.               | [optional] |
+| **offset** | **int**    | The initial index from which to return the results. | [optional] |
 
 ### Return type
 
-[**List&lt;Message&gt;**](Message.md)
+[**PaginatedMessageList**](PaginatedMessageList.md)
 
 ### Authorization
 
-[jwtAuth](../README.md#jwtAuth)
+[cookieAuth](../README.md#cookieAuth), [jwtAuth](../README.md#jwtAuth)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **chatRoomsMessagesPartialUpdate**
+
 > Message chatRoomsMessagesPartialUpdate(id, roomPk, patchedMessageRequest)
 
-
-
 ### Example
+
 ```dart
 import 'package:djangoflow_openapi/api.dart';
+// TODO Configure API key authorization: cookieAuth
+//defaultApiClient.getAuthentication<ApiKeyAuth>('cookieAuth').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('cookieAuth').apiKeyPrefix = 'Bearer';
+// TODO Configure HTTP basic authorization: jwtAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
-final api = DjangoflowOpenapi().getChatApi();
+final api = Openapi().getChatApi();
 final String id = id_example; // String | A unique integer value identifying this message.
-final String roomPk = roomPk_example; // String | 
-final PatchedMessageRequest patchedMessageRequest = ; // PatchedMessageRequest | 
+final String roomPk = roomPk_example; // String |
+final PatchedMessageRequest patchedMessageRequest = ; // PatchedMessageRequest |
 
 try {
     final response = api.chatRoomsMessagesPartialUpdate(id, roomPk, patchedMessageRequest);
@@ -564,11 +673,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **String**| A unique integer value identifying this message. | 
- **roomPk** | **String**|  | 
- **patchedMessageRequest** | [**PatchedMessageRequest**](PatchedMessageRequest.md)|  | [optional] 
+| Name                      | Type                                                  | Description                                      | Notes      |
+| ------------------------- | ----------------------------------------------------- | ------------------------------------------------ | ---------- |
+| **id**                    | **String**                                            | A unique integer value identifying this message. |
+| **roomPk**                | **String**                                            |                                                  |
+| **patchedMessageRequest** | [**PatchedMessageRequest**](PatchedMessageRequest.md) |                                                  | [optional] |
 
 ### Return type
 
@@ -576,27 +685,34 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[jwtAuth](../README.md#jwtAuth)
+[cookieAuth](../README.md#cookieAuth), [jwtAuth](../README.md#jwtAuth)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
- - **Accept**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **chatRoomsMessagesRetrieve**
+
 > Message chatRoomsMessagesRetrieve(id, roomPk)
 
-
-
 ### Example
+
 ```dart
 import 'package:djangoflow_openapi/api.dart';
+// TODO Configure API key authorization: cookieAuth
+//defaultApiClient.getAuthentication<ApiKeyAuth>('cookieAuth').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('cookieAuth').apiKeyPrefix = 'Bearer';
+// TODO Configure HTTP basic authorization: jwtAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
-final api = DjangoflowOpenapi().getChatApi();
+final api = Openapi().getChatApi();
 final String id = id_example; // String | A unique integer value identifying this message.
-final String roomPk = roomPk_example; // String | 
+final String roomPk = roomPk_example; // String |
 
 try {
     final response = api.chatRoomsMessagesRetrieve(id, roomPk);
@@ -608,10 +724,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **String**| A unique integer value identifying this message. | 
- **roomPk** | **String**|  | 
+| Name       | Type       | Description                                      | Notes |
+| ---------- | ---------- | ------------------------------------------------ | ----- |
+| **id**     | **String** | A unique integer value identifying this message. |
+| **roomPk** | **String** |                                                  |
 
 ### Return type
 
@@ -619,27 +735,34 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[jwtAuth](../README.md#jwtAuth)
+[cookieAuth](../README.md#cookieAuth), [jwtAuth](../README.md#jwtAuth)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **chatRoomsMessagesSeenCreate**
+
 > MessageSeen chatRoomsMessagesSeenCreate(roomPk, messageSeenRequest)
 
-
-
 ### Example
+
 ```dart
 import 'package:djangoflow_openapi/api.dart';
+// TODO Configure API key authorization: cookieAuth
+//defaultApiClient.getAuthentication<ApiKeyAuth>('cookieAuth').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('cookieAuth').apiKeyPrefix = 'Bearer';
+// TODO Configure HTTP basic authorization: jwtAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
-final api = DjangoflowOpenapi().getChatApi();
-final String roomPk = roomPk_example; // String | 
-final MessageSeenRequest messageSeenRequest = ; // MessageSeenRequest | 
+final api = Openapi().getChatApi();
+final String roomPk = roomPk_example; // String |
+final MessageSeenRequest messageSeenRequest = ; // MessageSeenRequest |
 
 try {
     final response = api.chatRoomsMessagesSeenCreate(roomPk, messageSeenRequest);
@@ -651,10 +774,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **roomPk** | **String**|  | 
- **messageSeenRequest** | [**MessageSeenRequest**](MessageSeenRequest.md)|  | 
+| Name                   | Type                                            | Description | Notes |
+| ---------------------- | ----------------------------------------------- | ----------- | ----- |
+| **roomPk**             | **String**                                      |             |
+| **messageSeenRequest** | [**MessageSeenRequest**](MessageSeenRequest.md) |             |
 
 ### Return type
 
@@ -662,28 +785,35 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[jwtAuth](../README.md#jwtAuth)
+[cookieAuth](../README.md#cookieAuth), [jwtAuth](../README.md#jwtAuth)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
- - **Accept**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **chatRoomsMessagesUpdate**
+
 > Message chatRoomsMessagesUpdate(id, roomPk, messageRequest)
 
-
-
 ### Example
+
 ```dart
 import 'package:djangoflow_openapi/api.dart';
+// TODO Configure API key authorization: cookieAuth
+//defaultApiClient.getAuthentication<ApiKeyAuth>('cookieAuth').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('cookieAuth').apiKeyPrefix = 'Bearer';
+// TODO Configure HTTP basic authorization: jwtAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
-final api = DjangoflowOpenapi().getChatApi();
+final api = Openapi().getChatApi();
 final String id = id_example; // String | A unique integer value identifying this message.
-final String roomPk = roomPk_example; // String | 
-final MessageRequest messageRequest = ; // MessageRequest | 
+final String roomPk = roomPk_example; // String |
+final MessageRequest messageRequest = ; // MessageRequest |
 
 try {
     final response = api.chatRoomsMessagesUpdate(id, roomPk, messageRequest);
@@ -695,11 +825,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **String**| A unique integer value identifying this message. | 
- **roomPk** | **String**|  | 
- **messageRequest** | [**MessageRequest**](MessageRequest.md)|  | [optional] 
+| Name               | Type                                    | Description                                      | Notes      |
+| ------------------ | --------------------------------------- | ------------------------------------------------ | ---------- |
+| **id**             | **String**                              | A unique integer value identifying this message. |
+| **roomPk**         | **String**                              |                                                  |
+| **messageRequest** | [**MessageRequest**](MessageRequest.md) |                                                  | [optional] |
 
 ### Return type
 
@@ -707,25 +837,32 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[jwtAuth](../README.md#jwtAuth)
+[cookieAuth](../README.md#cookieAuth), [jwtAuth](../README.md#jwtAuth)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
- - **Accept**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **chatRoomsMuteCreate**
+
 > chatRoomsMuteCreate(id)
 
-
-
 ### Example
+
 ```dart
 import 'package:djangoflow_openapi/api.dart';
+// TODO Configure API key authorization: cookieAuth
+//defaultApiClient.getAuthentication<ApiKeyAuth>('cookieAuth').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('cookieAuth').apiKeyPrefix = 'Bearer';
+// TODO Configure HTTP basic authorization: jwtAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
-final api = DjangoflowOpenapi().getChatApi();
+final api = Openapi().getChatApi();
 final String id = id_example; // String | A unique integer value identifying this room.
 
 try {
@@ -737,9 +874,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **String**| A unique integer value identifying this room. | 
+| Name   | Type       | Description                                   | Notes |
+| ------ | ---------- | --------------------------------------------- | ----- |
+| **id** | **String** | A unique integer value identifying this room. |
 
 ### Return type
 
@@ -747,27 +884,34 @@ void (empty response body)
 
 ### Authorization
 
-[jwtAuth](../README.md#jwtAuth)
+[cookieAuth](../README.md#cookieAuth), [jwtAuth](../README.md#jwtAuth)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **chatRoomsPartialUpdate**
+
 > Room chatRoomsPartialUpdate(id, patchedRoomRequest)
 
-
-
 ### Example
+
 ```dart
 import 'package:djangoflow_openapi/api.dart';
+// TODO Configure API key authorization: cookieAuth
+//defaultApiClient.getAuthentication<ApiKeyAuth>('cookieAuth').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('cookieAuth').apiKeyPrefix = 'Bearer';
+// TODO Configure HTTP basic authorization: jwtAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
-final api = DjangoflowOpenapi().getChatApi();
+final api = Openapi().getChatApi();
 final String id = id_example; // String | A unique integer value identifying this room.
-final PatchedRoomRequest patchedRoomRequest = ; // PatchedRoomRequest | 
+final PatchedRoomRequest patchedRoomRequest = ; // PatchedRoomRequest |
 
 try {
     final response = api.chatRoomsPartialUpdate(id, patchedRoomRequest);
@@ -779,10 +923,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **String**| A unique integer value identifying this room. | 
- **patchedRoomRequest** | [**PatchedRoomRequest**](PatchedRoomRequest.md)|  | [optional] 
+| Name                   | Type                                            | Description                                   | Notes      |
+| ---------------------- | ----------------------------------------------- | --------------------------------------------- | ---------- |
+| **id**                 | **String**                                      | A unique integer value identifying this room. |
+| **patchedRoomRequest** | [**PatchedRoomRequest**](PatchedRoomRequest.md) |                                               | [optional] |
 
 ### Return type
 
@@ -790,25 +934,32 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[jwtAuth](../README.md#jwtAuth)
+[cookieAuth](../README.md#cookieAuth), [jwtAuth](../README.md#jwtAuth)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
- - **Accept**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **chatRoomsRetrieve**
+
 > Room chatRoomsRetrieve(id)
 
-
-
 ### Example
+
 ```dart
 import 'package:djangoflow_openapi/api.dart';
+// TODO Configure API key authorization: cookieAuth
+//defaultApiClient.getAuthentication<ApiKeyAuth>('cookieAuth').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('cookieAuth').apiKeyPrefix = 'Bearer';
+// TODO Configure HTTP basic authorization: jwtAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
-final api = DjangoflowOpenapi().getChatApi();
+final api = Openapi().getChatApi();
 final String id = id_example; // String | A unique integer value identifying this room.
 
 try {
@@ -821,9 +972,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **String**| A unique integer value identifying this room. | 
+| Name   | Type       | Description                                   | Notes |
+| ------ | ---------- | --------------------------------------------- | ----- |
+| **id** | **String** | A unique integer value identifying this room. |
 
 ### Return type
 
@@ -831,25 +982,32 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[jwtAuth](../README.md#jwtAuth)
+[cookieAuth](../README.md#cookieAuth), [jwtAuth](../README.md#jwtAuth)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **chatRoomsUnmuteCreate**
+
 > chatRoomsUnmuteCreate(id)
 
-
-
 ### Example
+
 ```dart
 import 'package:djangoflow_openapi/api.dart';
+// TODO Configure API key authorization: cookieAuth
+//defaultApiClient.getAuthentication<ApiKeyAuth>('cookieAuth').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('cookieAuth').apiKeyPrefix = 'Bearer';
+// TODO Configure HTTP basic authorization: jwtAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
-final api = DjangoflowOpenapi().getChatApi();
+final api = Openapi().getChatApi();
 final String id = id_example; // String | A unique integer value identifying this room.
 
 try {
@@ -861,9 +1019,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **String**| A unique integer value identifying this room. | 
+| Name   | Type       | Description                                   | Notes |
+| ------ | ---------- | --------------------------------------------- | ----- |
+| **id** | **String** | A unique integer value identifying this room. |
 
 ### Return type
 
@@ -871,27 +1029,34 @@ void (empty response body)
 
 ### Authorization
 
-[jwtAuth](../README.md#jwtAuth)
+[cookieAuth](../README.md#cookieAuth), [jwtAuth](../README.md#jwtAuth)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **chatRoomsUpdate**
+
 > Room chatRoomsUpdate(id, roomRequest)
 
-
-
 ### Example
+
 ```dart
 import 'package:djangoflow_openapi/api.dart';
+// TODO Configure API key authorization: cookieAuth
+//defaultApiClient.getAuthentication<ApiKeyAuth>('cookieAuth').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('cookieAuth').apiKeyPrefix = 'Bearer';
+// TODO Configure HTTP basic authorization: jwtAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
-final api = DjangoflowOpenapi().getChatApi();
+final api = Openapi().getChatApi();
 final String id = id_example; // String | A unique integer value identifying this room.
-final RoomRequest roomRequest = ; // RoomRequest | 
+final RoomRequest roomRequest = ; // RoomRequest |
 
 try {
     final response = api.chatRoomsUpdate(id, roomRequest);
@@ -903,10 +1068,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **String**| A unique integer value identifying this room. | 
- **roomRequest** | [**RoomRequest**](RoomRequest.md)|  | 
+| Name            | Type                              | Description                                   | Notes |
+| --------------- | --------------------------------- | --------------------------------------------- | ----- |
+| **id**          | **String**                        | A unique integer value identifying this room. |
+| **roomRequest** | [**RoomRequest**](RoomRequest.md) |                                               |
 
 ### Return type
 
@@ -914,26 +1079,33 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[jwtAuth](../README.md#jwtAuth)
+[cookieAuth](../README.md#cookieAuth), [jwtAuth](../README.md#jwtAuth)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
- - **Accept**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **chatRoomsUsersCreate**
+
 > RoomUser chatRoomsUsersCreate(roomPk)
 
-
-
 ### Example
+
 ```dart
 import 'package:djangoflow_openapi/api.dart';
+// TODO Configure API key authorization: cookieAuth
+//defaultApiClient.getAuthentication<ApiKeyAuth>('cookieAuth').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('cookieAuth').apiKeyPrefix = 'Bearer';
+// TODO Configure HTTP basic authorization: jwtAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
-final api = DjangoflowOpenapi().getChatApi();
-final String roomPk = roomPk_example; // String | 
+final api = Openapi().getChatApi();
+final String roomPk = roomPk_example; // String |
 
 try {
     final response = api.chatRoomsUsersCreate(roomPk);
@@ -945,9 +1117,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **roomPk** | **String**|  | 
+| Name       | Type       | Description | Notes |
+| ---------- | ---------- | ----------- | ----- |
+| **roomPk** | **String** |             |
 
 ### Return type
 
@@ -955,30 +1127,38 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[jwtAuth](../README.md#jwtAuth)
+[cookieAuth](../README.md#cookieAuth), [jwtAuth](../README.md#jwtAuth)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **chatRoomsUsersDestroy**
-> chatRoomsUsersDestroy(id, roomPk)
 
-
+> Object chatRoomsUsersDestroy(id, roomPk)
 
 ### Example
+
 ```dart
 import 'package:djangoflow_openapi/api.dart';
+// TODO Configure API key authorization: cookieAuth
+//defaultApiClient.getAuthentication<ApiKeyAuth>('cookieAuth').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('cookieAuth').apiKeyPrefix = 'Bearer';
+// TODO Configure HTTP basic authorization: jwtAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
-final api = DjangoflowOpenapi().getChatApi();
+final api = Openapi().getChatApi();
 final String id = id_example; // String | A unique integer value identifying this room user.
-final String roomPk = roomPk_example; // String | 
+final String roomPk = roomPk_example; // String |
 
 try {
-    api.chatRoomsUsersDestroy(id, roomPk);
+    final response = api.chatRoomsUsersDestroy(id, roomPk);
+    print(response);
 } catch on DioError (e) {
     print('Exception when calling ChatApi->chatRoomsUsersDestroy: $e\n');
 }
@@ -986,37 +1166,44 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **String**| A unique integer value identifying this room user. | 
- **roomPk** | **String**|  | 
+| Name       | Type       | Description                                        | Notes |
+| ---------- | ---------- | -------------------------------------------------- | ----- |
+| **id**     | **String** | A unique integer value identifying this room user. |
+| **roomPk** | **String** |                                                    |
 
 ### Return type
 
-void (empty response body)
+**Object**
 
 ### Authorization
 
-[jwtAuth](../README.md#jwtAuth)
+[cookieAuth](../README.md#cookieAuth), [jwtAuth](../README.md#jwtAuth)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **chatRoomsUsersList**
+
 > List<RoomUser> chatRoomsUsersList(roomPk)
 
-
-
 ### Example
+
 ```dart
 import 'package:djangoflow_openapi/api.dart';
+// TODO Configure API key authorization: cookieAuth
+//defaultApiClient.getAuthentication<ApiKeyAuth>('cookieAuth').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('cookieAuth').apiKeyPrefix = 'Bearer';
+// TODO Configure HTTP basic authorization: jwtAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
-final api = DjangoflowOpenapi().getChatApi();
-final String roomPk = roomPk_example; // String | 
+final api = Openapi().getChatApi();
+final String roomPk = roomPk_example; // String |
 
 try {
     final response = api.chatRoomsUsersList(roomPk);
@@ -1028,9 +1215,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **roomPk** | **String**|  | 
+| Name       | Type       | Description | Notes |
+| ---------- | ---------- | ----------- | ----- |
+| **roomPk** | **String** |             |
 
 ### Return type
 
@@ -1038,26 +1225,33 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[jwtAuth](../README.md#jwtAuth)
+[cookieAuth](../README.md#cookieAuth), [jwtAuth](../README.md#jwtAuth)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **chatRoomsUsersNamesList**
+
 > List<UserName> chatRoomsUsersNamesList(roomPk)
 
-
-
 ### Example
+
 ```dart
 import 'package:djangoflow_openapi/api.dart';
+// TODO Configure API key authorization: cookieAuth
+//defaultApiClient.getAuthentication<ApiKeyAuth>('cookieAuth').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('cookieAuth').apiKeyPrefix = 'Bearer';
+// TODO Configure HTTP basic authorization: jwtAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
-final api = DjangoflowOpenapi().getChatApi();
-final String roomPk = roomPk_example; // String | 
+final api = Openapi().getChatApi();
+final String roomPk = roomPk_example; // String |
 
 try {
     final response = api.chatRoomsUsersNamesList(roomPk);
@@ -1069,9 +1263,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **roomPk** | **String**|  | 
+| Name       | Type       | Description | Notes |
+| ---------- | ---------- | ----------- | ----- |
+| **roomPk** | **String** |             |
 
 ### Return type
 
@@ -1079,27 +1273,34 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[jwtAuth](../README.md#jwtAuth)
+[cookieAuth](../README.md#cookieAuth), [jwtAuth](../README.md#jwtAuth)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **chatRoomsUsersPartialUpdate**
+
 > RoomUser chatRoomsUsersPartialUpdate(id, roomPk)
 
-
-
 ### Example
+
 ```dart
 import 'package:djangoflow_openapi/api.dart';
+// TODO Configure API key authorization: cookieAuth
+//defaultApiClient.getAuthentication<ApiKeyAuth>('cookieAuth').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('cookieAuth').apiKeyPrefix = 'Bearer';
+// TODO Configure HTTP basic authorization: jwtAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
-final api = DjangoflowOpenapi().getChatApi();
+final api = Openapi().getChatApi();
 final String id = id_example; // String | A unique integer value identifying this room user.
-final String roomPk = roomPk_example; // String | 
+final String roomPk = roomPk_example; // String |
 
 try {
     final response = api.chatRoomsUsersPartialUpdate(id, roomPk);
@@ -1111,10 +1312,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **String**| A unique integer value identifying this room user. | 
- **roomPk** | **String**|  | 
+| Name       | Type       | Description                                        | Notes |
+| ---------- | ---------- | -------------------------------------------------- | ----- |
+| **id**     | **String** | A unique integer value identifying this room user. |
+| **roomPk** | **String** |                                                    |
 
 ### Return type
 
@@ -1122,27 +1323,34 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[jwtAuth](../README.md#jwtAuth)
+[cookieAuth](../README.md#cookieAuth), [jwtAuth](../README.md#jwtAuth)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **chatRoomsUsersRetrieve**
+
 > RoomUser chatRoomsUsersRetrieve(id, roomPk)
 
-
-
 ### Example
+
 ```dart
 import 'package:djangoflow_openapi/api.dart';
+// TODO Configure API key authorization: cookieAuth
+//defaultApiClient.getAuthentication<ApiKeyAuth>('cookieAuth').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('cookieAuth').apiKeyPrefix = 'Bearer';
+// TODO Configure HTTP basic authorization: jwtAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
-final api = DjangoflowOpenapi().getChatApi();
+final api = Openapi().getChatApi();
 final String id = id_example; // String | A unique integer value identifying this room user.
-final String roomPk = roomPk_example; // String | 
+final String roomPk = roomPk_example; // String |
 
 try {
     final response = api.chatRoomsUsersRetrieve(id, roomPk);
@@ -1154,10 +1362,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **String**| A unique integer value identifying this room user. | 
- **roomPk** | **String**|  | 
+| Name       | Type       | Description                                        | Notes |
+| ---------- | ---------- | -------------------------------------------------- | ----- |
+| **id**     | **String** | A unique integer value identifying this room user. |
+| **roomPk** | **String** |                                                    |
 
 ### Return type
 
@@ -1165,27 +1373,34 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[jwtAuth](../README.md#jwtAuth)
+[cookieAuth](../README.md#cookieAuth), [jwtAuth](../README.md#jwtAuth)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **chatRoomsUsersUpdate**
+
 > RoomUser chatRoomsUsersUpdate(id, roomPk)
 
-
-
 ### Example
+
 ```dart
 import 'package:djangoflow_openapi/api.dart';
+// TODO Configure API key authorization: cookieAuth
+//defaultApiClient.getAuthentication<ApiKeyAuth>('cookieAuth').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('cookieAuth').apiKeyPrefix = 'Bearer';
+// TODO Configure HTTP basic authorization: jwtAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
-final api = DjangoflowOpenapi().getChatApi();
+final api = Openapi().getChatApi();
 final String id = id_example; // String | A unique integer value identifying this room user.
-final String roomPk = roomPk_example; // String | 
+final String roomPk = roomPk_example; // String |
 
 try {
     final response = api.chatRoomsUsersUpdate(id, roomPk);
@@ -1197,10 +1412,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **String**| A unique integer value identifying this room user. | 
- **roomPk** | **String**|  | 
+| Name       | Type       | Description                                        | Notes |
+| ---------- | ---------- | -------------------------------------------------- | ----- |
+| **id**     | **String** | A unique integer value identifying this room user. |
+| **roomPk** | **String** |                                                    |
 
 ### Return type
 
@@ -1208,12 +1423,11 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[jwtAuth](../README.md#jwtAuth)
+[cookieAuth](../README.md#cookieAuth), [jwtAuth](../README.md#jwtAuth)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-

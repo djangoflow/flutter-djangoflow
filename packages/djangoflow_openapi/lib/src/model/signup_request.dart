@@ -22,7 +22,9 @@ class SignupRequest {
 
      this.lastName,
 
-     this.username,
+     this.email,
+
+     this.phoneNumber,
 
      this.otp,
 
@@ -55,13 +57,25 @@ class SignupRequest {
 
   @JsonKey(
     
-    name: r'username',
+    name: r'email',
     required: false,
     includeIfNull: false
   )
 
 
-  final String? username;
+  final String? email;
+
+
+
+  @JsonKey(
+    
+    name: r'phone_number',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final String? phoneNumber;
 
 
 
@@ -93,7 +107,8 @@ class SignupRequest {
   bool operator ==(Object other) => identical(this, other) || other is SignupRequest &&
      other.firstName == firstName &&
      other.lastName == lastName &&
-     other.username == username &&
+     other.email == email &&
+     other.phoneNumber == phoneNumber &&
      other.otp == otp &&
      other.password == password;
 
@@ -101,7 +116,8 @@ class SignupRequest {
   int get hashCode =>
     firstName.hashCode +
     lastName.hashCode +
-    username.hashCode +
+    email.hashCode +
+    phoneNumber.hashCode +
     otp.hashCode +
     password.hashCode;
 

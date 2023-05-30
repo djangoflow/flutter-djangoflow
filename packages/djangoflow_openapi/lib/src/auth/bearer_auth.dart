@@ -13,7 +13,8 @@ class BearerAuthInterceptor extends AuthInterceptor {
     RequestOptions options,
     RequestInterceptorHandler handler,
   ) {
-    final authInfo = getAuthInfo(options, (secure) => secure['type'] == 'http' && secure['scheme'] == 'bearer');
+    final authInfo = getAuthInfo(options,
+        (secure) => secure['type'] == 'http' && secure['scheme'] == 'bearer');
     for (final info in authInfo) {
       final token = tokens[info['name']];
       if (token != null) {
