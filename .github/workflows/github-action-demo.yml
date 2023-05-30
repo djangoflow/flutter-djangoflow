@@ -7,7 +7,7 @@ on:
     paths:
       - "packages/djangoflow_openapi/CHANGELOG.md"
 jobs:
-  test_mapper:
+  test_djangoflow_openapi:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
