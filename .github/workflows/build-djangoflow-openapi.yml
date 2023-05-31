@@ -1,0 +1,17 @@
+name: Build djangoflow_openapi using build-runner
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "packages/djangoflow_openapi/pubspec.yaml"
+
+# Publish using custom workflow
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Test
+        run: echo "I am here"
