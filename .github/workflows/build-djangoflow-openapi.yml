@@ -30,5 +30,6 @@ jobs:
           git add .
           git commit --allow-empty -m "generate OpenAPI Client code"
           git push origin main
-          git tag djangoflow_openapi-${{steps.read-version.outputs.version-number}}
-          git push origin djangoflow_openapi-${{steps.read-version.outputs.version-number}}
+        # Need to PAT for pushing tag to trigger publish workflow
+        # git tag djangoflow_openapi-${{steps.read-version.outputs.version-number}}
+        # git push origin djangoflow_openapi-${{steps.read-version.outputs.version-number}}
