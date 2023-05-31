@@ -1,0 +1,35 @@
+name: Build djangoflow_openapi using build-runner
+run-name: Building djangoflow_openapi using build-runner
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "packages/djangoflow_openapi/pubspec.yaml"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - id: read-version
+        uses: NiklasLehnfeld/flutter-version-number-action@main
+        with:
+          file-path: packages/djangoflow_openapi/pubspec.yaml
+      - uses: dart-lang/setup-dart@v1
+      - name: Install dependencies
+        run: dart pub get
+        working-directory: packages/djangoflow_openapi/
+      - run: dart pub run build_runner build --delete-conflicting-outputs
+        working-directory: packages/djangoflow_openapi/
+      - name: Commit generated code and create tag
+        run: |
+          git config --global user.email "saiful@apexive.com"
+          git config --global user.name "adar2378"
+          git add .
+          git commit --allow-empty -m "generate OpenAPI Client code"
+          git push origin main
+        # Need to PAT for pushing tag to trigger publish workflow
+        # git tag djangoflow_openapi-${{steps.read-version.outputs.version-number}}
+        # git push origin djangoflow_openapi-${{steps.read-version.outputs.version-number}}
