@@ -34,7 +34,6 @@ jobs:
           git push origin djangoflow_openapi-${{steps.read-version.outputs.version-number}}
   # will remove later when secrets with PAT updated
   publish:
-    needs: build
     permissions:
       id-token: write # This is required for authentication using OIDC
     runs-on: ubuntu-latest
