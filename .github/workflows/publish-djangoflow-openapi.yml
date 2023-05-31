@@ -1,0 +1,26 @@
+name: Publish djangoflow_openapi to pub.dev
+run-name: ${{ github.actor }} is publishing djangoflow_openapi on pub.dev 🚀
+
+on:
+  push:
+    tags:
+      # must align with the tag-pattern configured on pub.dev
+      - "djangoflow_openapi-[0-9]+.[0-9]+.[0-9]+*" # tag-pattern on pub.dev: 'djangoflow_openapi-{version}'
+
+# Publish using custom workflow
+jobs:
+  publish:
+    permissions:
+      id-token: write # This is required for authentication using OIDC
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: dart-lang/setup-dart@v1
+      - name: Install dependencies
+        run: dart pub get
+        working-directory: packages/djangoflow_openapi/
+      - run: dart pub run build_runner build --delete-conflicting-outputs
+        working-directory: packages/djangoflow_openapi/
+      - name: Publish
+        run: dart pub publish --force
+        working-directory: packages/djangoflow_openapi/
