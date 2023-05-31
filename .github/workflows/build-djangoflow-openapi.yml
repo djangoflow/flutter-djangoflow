@@ -28,7 +28,7 @@ jobs:
           git config --global user.email "openapi-bot@djangoflow.com"
           git config --global user.name "OpenAPI Bot"
           git add .
-          git commit -m "generate OpenAPI Client code"
+          git commit add -allow-empty -m "generate OpenAPI Client code"
           git push origin main
           git tag djangoflow_openapi-${{ steps.read-version.outputs.version-number }}
           git push origin djangoflow_openapi-${{ steps.read-version.outputs.version-number }}
