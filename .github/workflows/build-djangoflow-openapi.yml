@@ -25,10 +25,10 @@ jobs:
         working-directory: packages/djangoflow_openapi/
       - name: Commit generated code and create tag
         run: |
-          git config --global user.email "openapi-bot@djangoflow.com"
-          git config --global user.name "OpenAPI Bot"
+          git config --global user.email "saiful@apexive.com"
+          git config --global user.name "adar2378"
           git add .
           git commit add -allow-empty -m "generate OpenAPI Client code"
           git push origin main
-          git tag djangoflow_openapi-${{ steps.read-version.outputs.version-number }}
-          git push origin djangoflow_openapi-${{ steps.read-version.outputs.version-number }}
+          git tag djangoflow_openapi-${{steps.read-version.outputs.version-number}}
+          git push origin djangoflow_openapi-${{steps.read-version.outputs.version-number}}
