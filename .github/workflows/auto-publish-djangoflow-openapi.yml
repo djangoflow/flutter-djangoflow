@@ -21,10 +21,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: dart-lang/setup-dart@v1
-        with:
-          working-directory: packages/djangoflow_openapi/
       - name: Install dependencies
         run: dart pub get
+        working-directory: packages/djangoflow_openapi/
       - run: dart pub run build_runner build --delete-conflicting-outputs
+        working-directory: packages/djangoflow_openapi/
       - name: Publish
         run: dart pub publish --force
+        working-directory: packages/djangoflow_openapi/
