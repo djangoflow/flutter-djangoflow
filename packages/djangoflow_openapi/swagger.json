@@ -2615,14 +2615,7 @@
                         "readOnly": true
                     },
                     "is_me": {
-                        "oneOf": [
-                            {
-                                "type": "boolean"
-                            },
-                            {
-                                "type": "integer"
-                            }
-                        ],
+                        "type": "boolean",
                         "nullable": true,
                         "readOnly": true
                     },

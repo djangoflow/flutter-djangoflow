@@ -3,7 +3,6 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:djangoflow_openapi/src/model/message_is_me.dart';
 import 'package:djangoflow_openapi/src/model/message_image.dart';
 import 'package:json_annotation/json_annotation.dart';
 
@@ -101,7 +100,7 @@ class Message {
   )
 
 
-  final MessageIsMe? isMe;
+  final bool? isMe;
 
 
 

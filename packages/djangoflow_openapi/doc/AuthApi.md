@@ -32,6 +32,9 @@ Method | HTTP request | Description
 ### Example
 ```dart
 import 'package:djangoflow_openapi/api.dart';
+// TODO Configure HTTP basic authorization: jwtAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = DjangoflowOpenapi().getAuthApi();
 final ChangeRequest changeRequest = ; // ChangeRequest | 
@@ -73,6 +76,9 @@ Name | Type | Description  | Notes
 ### Example
 ```dart
 import 'package:djangoflow_openapi/api.dart';
+// TODO Configure HTTP basic authorization: jwtAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = DjangoflowOpenapi().getAuthApi();
 final ConnectRequest connectRequest = ; // ConnectRequest | 
@@ -114,6 +120,9 @@ Name | Type | Description  | Notes
 ### Example
 ```dart
 import 'package:djangoflow_openapi/api.dart';
+// TODO Configure HTTP basic authorization: jwtAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = DjangoflowOpenapi().getAuthApi();
 final InviteRequest inviteRequest = ; // InviteRequest | 
@@ -155,6 +164,9 @@ Name | Type | Description  | Notes
 ### Example
 ```dart
 import 'package:djangoflow_openapi/api.dart';
+// TODO Configure HTTP basic authorization: jwtAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = DjangoflowOpenapi().getAuthApi();
 final OTPObtainRequest oTPObtainRequest = ; // OTPObtainRequest | 
@@ -195,6 +207,9 @@ void (empty response body)
 ### Example
 ```dart
 import 'package:djangoflow_openapi/api.dart';
+// TODO Configure HTTP basic authorization: jwtAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = DjangoflowOpenapi().getAuthApi();
 final SetPasswordRequest setPasswordRequest = ; // SetPasswordRequest | 
@@ -235,6 +250,9 @@ void (empty response body)
 ### Example
 ```dart
 import 'package:djangoflow_openapi/api.dart';
+// TODO Configure HTTP basic authorization: jwtAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = DjangoflowOpenapi().getAuthApi();
 final SignupRequest signupRequest = ; // SignupRequest | 
@@ -276,6 +294,9 @@ Name | Type | Description  | Notes
 ### Example
 ```dart
 import 'package:djangoflow_openapi/api.dart';
+// TODO Configure HTTP basic authorization: jwtAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = DjangoflowOpenapi().getAuthApi();
 final SocialTokenObtainRequest socialTokenObtainRequest = ; // SocialTokenObtainRequest | 
@@ -317,6 +338,9 @@ Name | Type | Description  | Notes
 ### Example
 ```dart
 import 'package:djangoflow_openapi/api.dart';
+// TODO Configure HTTP basic authorization: jwtAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = DjangoflowOpenapi().getAuthApi();
 final SocialTokenObtainRequest socialTokenObtainRequest = ; // SocialTokenObtainRequest | 
@@ -358,6 +382,9 @@ Name | Type | Description  | Notes
 ### Example
 ```dart
 import 'package:djangoflow_openapi/api.dart';
+// TODO Configure HTTP basic authorization: jwtAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = DjangoflowOpenapi().getAuthApi();
 final TokenBlacklistRequest tokenBlacklistRequest = ; // TokenBlacklistRequest | 
@@ -399,6 +426,9 @@ Name | Type | Description  | Notes
 ### Example
 ```dart
 import 'package:djangoflow_openapi/api.dart';
+// TODO Configure HTTP basic authorization: jwtAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = DjangoflowOpenapi().getAuthApi();
 final TokenObtainRequest tokenObtainRequest = ; // TokenObtainRequest | 
@@ -440,6 +470,9 @@ Name | Type | Description  | Notes
 ### Example
 ```dart
 import 'package:djangoflow_openapi/api.dart';
+// TODO Configure HTTP basic authorization: jwtAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = DjangoflowOpenapi().getAuthApi();
 final TokenRefreshRequest tokenRefreshRequest = ; // TokenRefreshRequest | 
@@ -481,6 +514,9 @@ Name | Type | Description  | Notes
 ### Example
 ```dart
 import 'package:djangoflow_openapi/api.dart';
+// TODO Configure HTTP basic authorization: jwtAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = DjangoflowOpenapi().getAuthApi();
 final TokenVerifyRequest tokenVerifyRequest = ; // TokenVerifyRequest | 
@@ -522,6 +558,9 @@ Name | Type | Description  | Notes
 ### Example
 ```dart
 import 'package:djangoflow_openapi/api.dart';
+// TODO Configure HTTP basic authorization: jwtAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = DjangoflowOpenapi().getAuthApi();
 final UnlinkRequest unlinkRequest = ; // UnlinkRequest | 

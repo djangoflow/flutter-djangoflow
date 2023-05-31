@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **created** | [**DateTime**](DateTime.md) |  | [optional] 
 **modified** | [**DateTime**](DateTime.md) |  | [optional] 
 **roomUserId** | **String** |  | [optional] 
-**isMe** | [**MessageIsMe**](MessageIsMe.md) |  | [optional] 
+**isMe** | **bool** |  | [optional] 
 **isSeenByMe** | **bool** |  | [optional] 
 **roomId** | **String** |  | [optional] 
 **images** | [**List&lt;MessageImage&gt;**](MessageImage.md) |  | [optional] 

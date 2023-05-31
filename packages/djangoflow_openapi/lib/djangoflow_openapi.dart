@@ -22,7 +22,6 @@ export 'package:djangoflow_openapi/src/model/invite.dart';
 export 'package:djangoflow_openapi/src/model/invite_request.dart';
 export 'package:djangoflow_openapi/src/model/message.dart';
 export 'package:djangoflow_openapi/src/model/message_image.dart';
-export 'package:djangoflow_openapi/src/model/message_is_me.dart';
 export 'package:djangoflow_openapi/src/model/message_request.dart';
 export 'package:djangoflow_openapi/src/model/message_seen.dart';
 export 'package:djangoflow_openapi/src/model/message_seen_request.dart';

@@ -47,6 +47,9 @@ Method | HTTP request | Description
 ### Example
 ```dart
 import 'package:djangoflow_openapi/api.dart';
+// TODO Configure HTTP basic authorization: jwtAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = DjangoflowOpenapi().getChatApi();
 final MultipartFile image = BINARY_DATA_HERE; // MultipartFile | 
@@ -92,6 +95,9 @@ Name | Type | Description  | Notes
 ### Example
 ```dart
 import 'package:djangoflow_openapi/api.dart';
+// TODO Configure HTTP basic authorization: jwtAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = DjangoflowOpenapi().getChatApi();
 final String id = id_example; // String | A unique integer value identifying this message image.
@@ -132,6 +138,9 @@ void (empty response body)
 ### Example
 ```dart
 import 'package:djangoflow_openapi/api.dart';
+// TODO Configure HTTP basic authorization: jwtAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = DjangoflowOpenapi().getChatApi();
 
@@ -169,6 +178,9 @@ This endpoint does not need any parameter.
 ### Example
 ```dart
 import 'package:djangoflow_openapi/api.dart';
+// TODO Configure HTTP basic authorization: jwtAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = DjangoflowOpenapi().getChatApi();
 final String id = id_example; // String | A unique integer value identifying this message image.
@@ -216,6 +228,9 @@ Name | Type | Description  | Notes
 ### Example
 ```dart
 import 'package:djangoflow_openapi/api.dart';
+// TODO Configure HTTP basic authorization: jwtAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = DjangoflowOpenapi().getChatApi();
 final String id = id_example; // String | A unique integer value identifying this message image.
@@ -257,6 +272,9 @@ Name | Type | Description  | Notes
 ### Example
 ```dart
 import 'package:djangoflow_openapi/api.dart';
+// TODO Configure HTTP basic authorization: jwtAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = DjangoflowOpenapi().getChatApi();
 final String id = id_example; // String | A unique integer value identifying this message image.
@@ -304,6 +322,9 @@ Name | Type | Description  | Notes
 ### Example
 ```dart
 import 'package:djangoflow_openapi/api.dart';
+// TODO Configure HTTP basic authorization: jwtAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = DjangoflowOpenapi().getChatApi();
 final RoomRequest roomRequest = ; // RoomRequest | 
@@ -345,6 +366,9 @@ Name | Type | Description  | Notes
 ### Example
 ```dart
 import 'package:djangoflow_openapi/api.dart';
+// TODO Configure HTTP basic authorization: jwtAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = DjangoflowOpenapi().getChatApi();
 final String id = id_example; // String | A unique integer value identifying this room.
@@ -385,6 +409,9 @@ void (empty response body)
 ### Example
 ```dart
 import 'package:djangoflow_openapi/api.dart';
+// TODO Configure HTTP basic authorization: jwtAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = DjangoflowOpenapi().getChatApi();
 
@@ -422,6 +449,9 @@ This endpoint does not need any parameter.
 ### Example
 ```dart
 import 'package:djangoflow_openapi/api.dart';
+// TODO Configure HTTP basic authorization: jwtAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = DjangoflowOpenapi().getChatApi();
 final String roomPk = roomPk_example; // String | 
@@ -465,6 +495,9 @@ Name | Type | Description  | Notes
 ### Example
 ```dart
 import 'package:djangoflow_openapi/api.dart';
+// TODO Configure HTTP basic authorization: jwtAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = DjangoflowOpenapi().getChatApi();
 final String id = id_example; // String | A unique integer value identifying this message.
@@ -507,6 +540,9 @@ void (empty response body)
 ### Example
 ```dart
 import 'package:djangoflow_openapi/api.dart';
+// TODO Configure HTTP basic authorization: jwtAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = DjangoflowOpenapi().getChatApi();
 final String roomPk = roomPk_example; // String | 
@@ -548,6 +584,9 @@ Name | Type | Description  | Notes
 ### Example
 ```dart
 import 'package:djangoflow_openapi/api.dart';
+// TODO Configure HTTP basic authorization: jwtAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = DjangoflowOpenapi().getChatApi();
 final String id = id_example; // String | A unique integer value identifying this message.
@@ -593,6 +632,9 @@ Name | Type | Description  | Notes
 ### Example
 ```dart
 import 'package:djangoflow_openapi/api.dart';
+// TODO Configure HTTP basic authorization: jwtAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = DjangoflowOpenapi().getChatApi();
 final String id = id_example; // String | A unique integer value identifying this message.
@@ -636,6 +678,9 @@ Name | Type | Description  | Notes
 ### Example
 ```dart
 import 'package:djangoflow_openapi/api.dart';
+// TODO Configure HTTP basic authorization: jwtAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = DjangoflowOpenapi().getChatApi();
 final String roomPk = roomPk_example; // String | 
@@ -679,6 +724,9 @@ Name | Type | Description  | Notes
 ### Example
 ```dart
 import 'package:djangoflow_openapi/api.dart';
+// TODO Configure HTTP basic authorization: jwtAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = DjangoflowOpenapi().getChatApi();
 final String id = id_example; // String | A unique integer value identifying this message.
@@ -724,6 +772,9 @@ Name | Type | Description  | Notes
 ### Example
 ```dart
 import 'package:djangoflow_openapi/api.dart';
+// TODO Configure HTTP basic authorization: jwtAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = DjangoflowOpenapi().getChatApi();
 final String id = id_example; // String | A unique integer value identifying this room.
@@ -764,6 +815,9 @@ void (empty response body)
 ### Example
 ```dart
 import 'package:djangoflow_openapi/api.dart';
+// TODO Configure HTTP basic authorization: jwtAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = DjangoflowOpenapi().getChatApi();
 final String id = id_example; // String | A unique integer value identifying this room.
@@ -807,6 +861,9 @@ Name | Type | Description  | Notes
 ### Example
 ```dart
 import 'package:djangoflow_openapi/api.dart';
+// TODO Configure HTTP basic authorization: jwtAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = DjangoflowOpenapi().getChatApi();
 final String id = id_example; // String | A unique integer value identifying this room.
@@ -848,6 +905,9 @@ Name | Type | Description  | Notes
 ### Example
 ```dart
 import 'package:djangoflow_openapi/api.dart';
+// TODO Configure HTTP basic authorization: jwtAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = DjangoflowOpenapi().getChatApi();
 final String id = id_example; // String | A unique integer value identifying this room.
@@ -888,6 +948,9 @@ void (empty response body)
 ### Example
 ```dart
 import 'package:djangoflow_openapi/api.dart';
+// TODO Configure HTTP basic authorization: jwtAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = DjangoflowOpenapi().getChatApi();
 final String id = id_example; // String | A unique integer value identifying this room.
@@ -931,6 +994,9 @@ Name | Type | Description  | Notes
 ### Example
 ```dart
 import 'package:djangoflow_openapi/api.dart';
+// TODO Configure HTTP basic authorization: jwtAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = DjangoflowOpenapi().getChatApi();
 final String roomPk = roomPk_example; // String | 
@@ -972,6 +1038,9 @@ Name | Type | Description  | Notes
 ### Example
 ```dart
 import 'package:djangoflow_openapi/api.dart';
+// TODO Configure HTTP basic authorization: jwtAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = DjangoflowOpenapi().getChatApi();
 final String id = id_example; // String | A unique integer value identifying this room user.
@@ -1014,6 +1083,9 @@ void (empty response body)
 ### Example
 ```dart
 import 'package:djangoflow_openapi/api.dart';
+// TODO Configure HTTP basic authorization: jwtAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = DjangoflowOpenapi().getChatApi();
 final String roomPk = roomPk_example; // String | 
@@ -1055,6 +1127,9 @@ Name | Type | Description  | Notes
 ### Example
 ```dart
 import 'package:djangoflow_openapi/api.dart';
+// TODO Configure HTTP basic authorization: jwtAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = DjangoflowOpenapi().getChatApi();
 final String roomPk = roomPk_example; // String | 
@@ -1096,6 +1171,9 @@ Name | Type | Description  | Notes
 ### Example
 ```dart
 import 'package:djangoflow_openapi/api.dart';
+// TODO Configure HTTP basic authorization: jwtAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = DjangoflowOpenapi().getChatApi();
 final String id = id_example; // String | A unique integer value identifying this room user.
@@ -1139,6 +1217,9 @@ Name | Type | Description  | Notes
 ### Example
 ```dart
 import 'package:djangoflow_openapi/api.dart';
+// TODO Configure HTTP basic authorization: jwtAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = DjangoflowOpenapi().getChatApi();
 final String id = id_example; // String | A unique integer value identifying this room user.
@@ -1182,6 +1263,9 @@ Name | Type | Description  | Notes
 ### Example
 ```dart
 import 'package:djangoflow_openapi/api.dart';
+// TODO Configure HTTP basic authorization: jwtAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = DjangoflowOpenapi().getChatApi();
 final String id = id_example; // String | A unique integer value identifying this room user.

@@ -26,6 +26,9 @@ Method | HTTP request | Description
 ### Example
 ```dart
 import 'package:djangoflow_openapi/api.dart';
+// TODO Configure HTTP basic authorization: jwtAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = DjangoflowOpenapi().getNotificationsApi();
 
@@ -63,6 +66,9 @@ This endpoint does not need any parameter.
 ### Example
 ```dart
 import 'package:djangoflow_openapi/api.dart';
+// TODO Configure HTTP basic authorization: jwtAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = DjangoflowOpenapi().getNotificationsApi();
 final UserDeviceRequest userDeviceRequest = ; // UserDeviceRequest | 
@@ -104,6 +110,9 @@ Name | Type | Description  | Notes
 ### Example
 ```dart
 import 'package:djangoflow_openapi/api.dart';
+// TODO Configure HTTP basic authorization: jwtAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = DjangoflowOpenapi().getNotificationsApi();
 final String registrationId = registrationId_example; // String | 
@@ -144,6 +153,9 @@ void (empty response body)
 ### Example
 ```dart
 import 'package:djangoflow_openapi/api.dart';
+// TODO Configure HTTP basic authorization: jwtAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = DjangoflowOpenapi().getNotificationsApi();
 
@@ -181,6 +193,9 @@ This endpoint does not need any parameter.
 ### Example
 ```dart
 import 'package:djangoflow_openapi/api.dart';
+// TODO Configure HTTP basic authorization: jwtAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = DjangoflowOpenapi().getNotificationsApi();
 final String registrationId = registrationId_example; // String | 
@@ -224,6 +239,9 @@ Name | Type | Description  | Notes
 ### Example
 ```dart
 import 'package:djangoflow_openapi/api.dart';
+// TODO Configure HTTP basic authorization: jwtAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = DjangoflowOpenapi().getNotificationsApi();
 final String registrationId = registrationId_example; // String | 
@@ -265,6 +283,9 @@ Name | Type | Description  | Notes
 ### Example
 ```dart
 import 'package:djangoflow_openapi/api.dart';
+// TODO Configure HTTP basic authorization: jwtAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = DjangoflowOpenapi().getNotificationsApi();
 final String registrationId = registrationId_example; // String | 
