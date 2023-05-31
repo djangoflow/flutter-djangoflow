@@ -27,7 +27,7 @@ void main() {
       // TODO
     });
 
-    // MessageIsMe isMe
+    // bool isMe
     test('to test the property `isMe`', () async {
       // TODO
     });
