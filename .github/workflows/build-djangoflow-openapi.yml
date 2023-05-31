@@ -32,19 +32,3 @@ jobs:
           git push origin main
           git tag djangoflow_openapi-${{steps.read-version.outputs.version-number}}
           git push origin djangoflow_openapi-${{steps.read-version.outputs.version-number}}
-  # will remove later when secrets with PAT updated
-  publish:
-    permissions:
-      id-token: write # This is required for authentication using OIDC
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: dart-lang/setup-dart@v1
-      - name: Install dependencies
-        run: dart pub get
-        working-directory: packages/djangoflow_openapi/
-      - run: dart pub run build_runner build --delete-conflicting-outputs
-        working-directory: packages/djangoflow_openapi/
-      - name: Publish
-        run: dart pub publish --force
-        working-directory: packages/djangoflow_openapi/
