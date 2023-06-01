@@ -57,13 +57,11 @@ class ChatCubit extends Cubit<ChatState> {
       {required String roomId, bool reload = false}) async {
     final messages = ((await _chatApi.chatRoomsMessagesList(
           roomPk: roomId,
-          // TODO Check these
-          // limit: defaultChatPageSize,
-          // offset: reload ? 0 : state.messages.length,
+          limit: defaultChatPageSize,
+          offset: reload ? 0 : state.messages.length,
         ))
             .data
-        // ?.results
-        ??
+            ?.results ??
         []);
     final chatMessages = messages;
 
