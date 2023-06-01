@@ -1,6 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-// ignore: depend_on_referenced_packages
-import 'package:openapi/openapi.dart';
+import 'package:djangoflow_openapi/djangoflow_openapi.dart';
 
 part 'chat_state.freezed.dart';
 part 'chat_state.g.dart';
@@ -12,7 +11,7 @@ class ChatState with _$ChatState {
     Room? room,
     @Default(<String, RoomUser>{}) Map<String, RoomUser> roomUsers,
     @Default(<Message>[]) List<Message> messages,
-    User? me,
+    RoomUser? me,
     @Default(false) bool loading,
     @Default(false) bool uploadingImage,
   }) = _ChatState;

@@ -7,7 +7,7 @@ import 'package:djangoflow_chat/utils/extensions/message_extension.dart';
 import 'package:djangoflow_chat/utils/extensions/room_user_extension.dart';
 import 'package:djangoflow_chat/utils/extensions/string_extensions.dart';
 // ignore: depend_on_referenced_packages
-import 'package:openapi/openapi.dart';
+import 'package:djangoflow_openapi/djangoflow_openapi.dart';
 
 import 'chat_state.dart';
 export 'chat_state.dart';
@@ -56,11 +56,14 @@ class ChatCubit extends Cubit<ChatState> {
   Future<void> loadMoreMessages(
       {required String roomId, bool reload = false}) async {
     final messages = ((await _chatApi.chatRoomsMessagesList(
-                roomPk: roomId,
-                limit: defaultChatPageSize,
-                offset: reload ? 0 : state.messages.length))
+          roomPk: roomId,
+          // TODO Check these
+          // limit: defaultChatPageSize,
+          // offset: reload ? 0 : state.messages.length,
+        ))
             .data
-            ?.results ??
+        // ?.results
+        ??
         []);
     final chatMessages = messages;
 
@@ -120,17 +123,15 @@ class ChatCubit extends Cubit<ChatState> {
     emit(
       state.copyWith(
         roomUsers: roomUsers,
-        me: user.isMe == true ? user.toUser() : _getMe(roomUsers),
+        me: user.isMe == true ? user : _getMe(roomUsers),
       ),
     );
   }
 
   /// Returns the current user
-  User _getMe(Map<String, RoomUser> roomUsers) =>
-      roomUsers.values
-          .firstWhereOrNull(
-              (roomUser) => roomUser.isMe == true && roomUser.isActive == true)
-          ?.toUser() ??
+  RoomUser _getMe(Map<String, RoomUser> roomUsers) =>
+      roomUsers.values.firstWhereOrNull(
+          (roomUser) => roomUser.isMe == true && roomUser.isActive == true) ??
       AnynomousUser();
 
   /// Add a [Message] to `messages`

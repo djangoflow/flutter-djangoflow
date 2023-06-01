@@ -1,5 +1,4 @@
-// ignore: depend_on_referenced_packages
-import 'package:openapi/openapi.dart';
+import 'package:djangoflow_openapi/djangoflow_openapi.dart';
 
 extension MessageListExtension on List<Message> {
   /// Returns a map of reactions with count in a [Message.reactions] list

@@ -1,7 +1,6 @@
-// ignore: depend_on_referenced_packages
-import 'package:openapi/openapi.dart';
+import 'package:djangoflow_openapi/djangoflow_openapi.dart';
 
-/// The [User] class represents a user in the chat system as Anonymous
-class AnynomousUser extends User {
+/// The [RoomUser] class represents a user in the chat system as Anonymous
+class AnynomousUser extends RoomUser {
   AnynomousUser() : super(id: '__anonymous__');
 }
