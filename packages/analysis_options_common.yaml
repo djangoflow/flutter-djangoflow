@@ -11,7 +11,7 @@ analyzer:
     - '**/*.g.dart'
     - '**/*.gr.dart'
     - '**/*.freezed.dart'
-    - 'packages/openapi/**'
+    - 'packages/djangoflow_openapi/**'
   plugins:
     - dart_code_metrics
 
