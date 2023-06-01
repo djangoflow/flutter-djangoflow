@@ -12,6 +12,10 @@ import 'package:djangoflow_openapi/src/model/message_request.dart';
 import 'package:djangoflow_openapi/src/model/message_seen.dart';
 import 'package:djangoflow_openapi/src/model/message_seen_request.dart';
 import 'package:djangoflow_openapi/src/model/otp_obtain_request.dart';
+import 'package:djangoflow_openapi/src/model/paginated_message_image_list.dart';
+import 'package:djangoflow_openapi/src/model/paginated_message_list.dart';
+import 'package:djangoflow_openapi/src/model/paginated_room_list.dart';
+import 'package:djangoflow_openapi/src/model/paginated_user_device_list.dart';
 import 'package:djangoflow_openapi/src/model/patched_message_request.dart';
 import 'package:djangoflow_openapi/src/model/patched_room_request.dart';
 import 'package:djangoflow_openapi/src/model/patched_user_device_request.dart';
@@ -81,6 +85,14 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           return MessageSeenRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'OTPObtainRequest':
           return OTPObtainRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'PaginatedMessageImageList':
+          return PaginatedMessageImageList.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'PaginatedMessageList':
+          return PaginatedMessageList.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'PaginatedRoomList':
+          return PaginatedRoomList.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'PaginatedUserDeviceList':
+          return PaginatedUserDeviceList.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'PatchedMessageRequest':
           return PatchedMessageRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'PatchedRoomRequest':

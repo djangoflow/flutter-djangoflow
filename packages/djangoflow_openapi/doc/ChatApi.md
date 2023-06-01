@@ -131,7 +131,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **chatImagesList**
-> List<MessageImage> chatImagesList()
+> PaginatedMessageImageList chatImagesList(limit, offset)
 
 
 
@@ -143,9 +143,11 @@ import 'package:djangoflow_openapi/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = DjangoflowOpenapi().getChatApi();
+final int limit = 56; // int | Number of results to return per page.
+final int offset = 56; // int | The initial index from which to return the results.
 
 try {
-    final response = api.chatImagesList();
+    final response = api.chatImagesList(limit, offset);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling ChatApi->chatImagesList: $e\n');
@@ -153,11 +155,15 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **limit** | **int**| Number of results to return per page. | [optional] 
+ **offset** | **int**| The initial index from which to return the results. | [optional] 
 
 ### Return type
 
-[**List&lt;MessageImage&gt;**](MessageImage.md)
+[**PaginatedMessageImageList**](PaginatedMessageImageList.md)
 
 ### Authorization
 
@@ -402,7 +408,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **chatRoomsList**
-> List<Room> chatRoomsList()
+> PaginatedRoomList chatRoomsList(limit, offset)
 
 
 
@@ -414,9 +420,11 @@ import 'package:djangoflow_openapi/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = DjangoflowOpenapi().getChatApi();
+final int limit = 56; // int | Number of results to return per page.
+final int offset = 56; // int | The initial index from which to return the results.
 
 try {
-    final response = api.chatRoomsList();
+    final response = api.chatRoomsList(limit, offset);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling ChatApi->chatRoomsList: $e\n');
@@ -424,11 +432,15 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **limit** | **int**| Number of results to return per page. | [optional] 
+ **offset** | **int**| The initial index from which to return the results. | [optional] 
 
 ### Return type
 
-[**List&lt;Room&gt;**](Room.md)
+[**PaginatedRoomList**](PaginatedRoomList.md)
 
 ### Authorization
 
@@ -533,7 +545,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **chatRoomsMessagesList**
-> List<Message> chatRoomsMessagesList(roomPk)
+> PaginatedMessageList chatRoomsMessagesList(roomPk, limit, offset)
 
 
 
@@ -546,9 +558,11 @@ import 'package:djangoflow_openapi/api.dart';
 
 final api = DjangoflowOpenapi().getChatApi();
 final String roomPk = roomPk_example; // String | 
+final int limit = 56; // int | Number of results to return per page.
+final int offset = 56; // int | The initial index from which to return the results.
 
 try {
-    final response = api.chatRoomsMessagesList(roomPk);
+    final response = api.chatRoomsMessagesList(roomPk, limit, offset);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling ChatApi->chatRoomsMessagesList: $e\n');
@@ -560,10 +574,12 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **roomPk** | **String**|  | 
+ **limit** | **int**| Number of results to return per page. | [optional] 
+ **offset** | **int**| The initial index from which to return the results. | [optional] 
 
 ### Return type
 
-[**List&lt;Message&gt;**](Message.md)
+[**PaginatedMessageList**](PaginatedMessageList.md)
 
 ### Authorization
 

@@ -10,6 +10,7 @@ import 'package:djangoflow_openapi/src/deserialize.dart';
 import 'package:dio/dio.dart';
 
 import 'package:djangoflow_openapi/src/model/error_response.dart';
+import 'package:djangoflow_openapi/src/model/paginated_user_device_list.dart';
 import 'package:djangoflow_openapi/src/model/patched_user_device_request.dart';
 import 'package:djangoflow_openapi/src/model/push_action_category.dart';
 import 'package:djangoflow_openapi/src/model/user_device.dart';
@@ -248,6 +249,8 @@ _responseData = rawData == null ? null : deserialize<UserDevice, UserDevice>(raw
   /// 
   ///
   /// Parameters:
+  /// * [limit] - Number of results to return per page.
+  /// * [offset] - The initial index from which to return the results.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -255,9 +258,11 @@ _responseData = rawData == null ? null : deserialize<UserDevice, UserDevice>(raw
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [List<UserDevice>] as data
+  /// Returns a [Future] containing a [Response] with a [PaginatedUserDeviceList] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<List<UserDevice>>> notificationsDevicesList({ 
+  Future<Response<PaginatedUserDeviceList>> notificationsDevicesList({ 
+    int? limit,
+    int? offset,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -284,19 +289,25 @@ _responseData = rawData == null ? null : deserialize<UserDevice, UserDevice>(raw
       validateStatus: validateStatus,
     );
 
+    final _queryParameters = <String, dynamic>{
+      if (limit != null) r'limit': limit,
+      if (offset != null) r'offset': offset,
+    };
+
     final _response = await _dio.request<Object>(
       _path,
       options: _options,
+      queryParameters: _queryParameters,
       cancelToken: cancelToken,
       onSendProgress: onSendProgress,
       onReceiveProgress: onReceiveProgress,
     );
 
-    List<UserDevice>? _responseData;
+    PaginatedUserDeviceList? _responseData;
 
     try {
 final rawData = _response.data;
-_responseData = rawData == null ? null : deserialize<List<UserDevice>, UserDevice>(rawData, 'List<UserDevice>', growable: true);
+_responseData = rawData == null ? null : deserialize<PaginatedUserDeviceList, PaginatedUserDeviceList>(rawData, 'PaginatedUserDeviceList', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -307,7 +318,7 @@ _responseData = rawData == null ? null : deserialize<List<UserDevice>, UserDevic
       );
     }
 
-    return Response<List<UserDevice>>(
+    return Response<PaginatedUserDeviceList>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

@@ -13,6 +13,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.PAT_SAIFUL }}
       - id: read-version
         uses: NiklasLehnfeld/flutter-version-number-action@main
         with:
@@ -29,7 +31,6 @@ jobs:
           git config --global user.name "adar2378"
           git add .
           git commit --allow-empty -m "generate OpenAPI Client code"
-          git push origin main
-        # Need to PAT for pushing tag to trigger publish workflow
-        # git tag djangoflow_openapi-${{steps.read-version.outputs.version-number}}
-        # git push origin djangoflow_openapi-${{steps.read-version.outputs.version-number}}
+          git push origin main  
+          git tag djangoflow_openapi-${{steps.read-version.outputs.version-number}}
+          git push origin djangoflow_openapi-${{steps.read-version.outputs.version-number}}

@@ -15,6 +15,9 @@ import 'package:djangoflow_openapi/src/model/message_image.dart';
 import 'package:djangoflow_openapi/src/model/message_request.dart';
 import 'package:djangoflow_openapi/src/model/message_seen.dart';
 import 'package:djangoflow_openapi/src/model/message_seen_request.dart';
+import 'package:djangoflow_openapi/src/model/paginated_message_image_list.dart';
+import 'package:djangoflow_openapi/src/model/paginated_message_list.dart';
+import 'package:djangoflow_openapi/src/model/paginated_room_list.dart';
 import 'package:djangoflow_openapi/src/model/patched_message_request.dart';
 import 'package:djangoflow_openapi/src/model/patched_room_request.dart';
 import 'package:djangoflow_openapi/src/model/room.dart';
@@ -184,6 +187,8 @@ _responseData = rawData == null ? null : deserialize<MessageImage, MessageImage>
   /// 
   ///
   /// Parameters:
+  /// * [limit] - Number of results to return per page.
+  /// * [offset] - The initial index from which to return the results.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -191,9 +196,11 @@ _responseData = rawData == null ? null : deserialize<MessageImage, MessageImage>
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [List<MessageImage>] as data
+  /// Returns a [Future] containing a [Response] with a [PaginatedMessageImageList] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<List<MessageImage>>> chatImagesList({ 
+  Future<Response<PaginatedMessageImageList>> chatImagesList({ 
+    int? limit,
+    int? offset,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -220,19 +227,25 @@ _responseData = rawData == null ? null : deserialize<MessageImage, MessageImage>
       validateStatus: validateStatus,
     );
 
+    final _queryParameters = <String, dynamic>{
+      if (limit != null) r'limit': limit,
+      if (offset != null) r'offset': offset,
+    };
+
     final _response = await _dio.request<Object>(
       _path,
       options: _options,
+      queryParameters: _queryParameters,
       cancelToken: cancelToken,
       onSendProgress: onSendProgress,
       onReceiveProgress: onReceiveProgress,
     );
 
-    List<MessageImage>? _responseData;
+    PaginatedMessageImageList? _responseData;
 
     try {
 final rawData = _response.data;
-_responseData = rawData == null ? null : deserialize<List<MessageImage>, MessageImage>(rawData, 'List<MessageImage>', growable: true);
+_responseData = rawData == null ? null : deserialize<PaginatedMessageImageList, PaginatedMessageImageList>(rawData, 'PaginatedMessageImageList', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -243,7 +256,7 @@ _responseData = rawData == null ? null : deserialize<List<MessageImage>, Message
       );
     }
 
-    return Response<List<MessageImage>>(
+    return Response<PaginatedMessageImageList>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -686,6 +699,8 @@ _responseData = rawData == null ? null : deserialize<Room, Room>(rawData, 'Room'
   /// 
   ///
   /// Parameters:
+  /// * [limit] - Number of results to return per page.
+  /// * [offset] - The initial index from which to return the results.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -693,9 +708,11 @@ _responseData = rawData == null ? null : deserialize<Room, Room>(rawData, 'Room'
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [List<Room>] as data
+  /// Returns a [Future] containing a [Response] with a [PaginatedRoomList] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<List<Room>>> chatRoomsList({ 
+  Future<Response<PaginatedRoomList>> chatRoomsList({ 
+    int? limit,
+    int? offset,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -722,19 +739,25 @@ _responseData = rawData == null ? null : deserialize<Room, Room>(rawData, 'Room'
       validateStatus: validateStatus,
     );
 
+    final _queryParameters = <String, dynamic>{
+      if (limit != null) r'limit': limit,
+      if (offset != null) r'offset': offset,
+    };
+
     final _response = await _dio.request<Object>(
       _path,
       options: _options,
+      queryParameters: _queryParameters,
       cancelToken: cancelToken,
       onSendProgress: onSendProgress,
       onReceiveProgress: onReceiveProgress,
     );
 
-    List<Room>? _responseData;
+    PaginatedRoomList? _responseData;
 
     try {
 final rawData = _response.data;
-_responseData = rawData == null ? null : deserialize<List<Room>, Room>(rawData, 'List<Room>', growable: true);
+_responseData = rawData == null ? null : deserialize<PaginatedRoomList, PaginatedRoomList>(rawData, 'PaginatedRoomList', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -745,7 +768,7 @@ _responseData = rawData == null ? null : deserialize<List<Room>, Room>(rawData, 
       );
     }
 
-    return Response<List<Room>>(
+    return Response<PaginatedRoomList>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -914,6 +937,8 @@ _responseData = rawData == null ? null : deserialize<Message, Message>(rawData, 
   ///
   /// Parameters:
   /// * [roomPk] 
+  /// * [limit] - Number of results to return per page.
+  /// * [offset] - The initial index from which to return the results.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -921,10 +946,12 @@ _responseData = rawData == null ? null : deserialize<Message, Message>(rawData, 
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [List<Message>] as data
+  /// Returns a [Future] containing a [Response] with a [PaginatedMessageList] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<List<Message>>> chatRoomsMessagesList({ 
+  Future<Response<PaginatedMessageList>> chatRoomsMessagesList({ 
     required String roomPk,
+    int? limit,
+    int? offset,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -951,19 +978,25 @@ _responseData = rawData == null ? null : deserialize<Message, Message>(rawData, 
       validateStatus: validateStatus,
     );
 
+    final _queryParameters = <String, dynamic>{
+      if (limit != null) r'limit': limit,
+      if (offset != null) r'offset': offset,
+    };
+
     final _response = await _dio.request<Object>(
       _path,
       options: _options,
+      queryParameters: _queryParameters,
       cancelToken: cancelToken,
       onSendProgress: onSendProgress,
       onReceiveProgress: onReceiveProgress,
     );
 
-    List<Message>? _responseData;
+    PaginatedMessageList? _responseData;
 
     try {
 final rawData = _response.data;
-_responseData = rawData == null ? null : deserialize<List<Message>, Message>(rawData, 'List<Message>', growable: true);
+_responseData = rawData == null ? null : deserialize<PaginatedMessageList, PaginatedMessageList>(rawData, 'PaginatedMessageList', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -974,7 +1007,7 @@ _responseData = rawData == null ? null : deserialize<List<Message>, Message>(raw
       );
     }
 
-    return Response<List<Message>>(
+    return Response<PaginatedMessageList>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
