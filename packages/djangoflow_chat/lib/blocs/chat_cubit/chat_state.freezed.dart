@@ -24,7 +24,7 @@ mixin _$ChatState {
   Room? get room => throw _privateConstructorUsedError;
   Map<String, RoomUser> get roomUsers => throw _privateConstructorUsedError;
   List<Message> get messages => throw _privateConstructorUsedError;
-  User? get me => throw _privateConstructorUsedError;
+  RoomUser? get me => throw _privateConstructorUsedError;
   bool get loading => throw _privateConstructorUsedError;
   bool get uploadingImage => throw _privateConstructorUsedError;
 
@@ -44,7 +44,7 @@ abstract class $ChatStateCopyWith<$Res> {
       Room? room,
       Map<String, RoomUser> roomUsers,
       List<Message> messages,
-      User? me,
+      RoomUser? me,
       bool loading,
       bool uploadingImage});
 }
@@ -90,7 +90,7 @@ class _$ChatStateCopyWithImpl<$Res, $Val extends ChatState>
       me: freezed == me
           ? _value.me
           : me // ignore: cast_nullable_to_non_nullable
-              as User?,
+              as RoomUser?,
       loading: null == loading
           ? _value.loading
           : loading // ignore: cast_nullable_to_non_nullable
@@ -115,7 +115,7 @@ abstract class _$$_ChatStateCopyWith<$Res> implements $ChatStateCopyWith<$Res> {
       Room? room,
       Map<String, RoomUser> roomUsers,
       List<Message> messages,
-      User? me,
+      RoomUser? me,
       bool loading,
       bool uploadingImage});
 }
@@ -159,7 +159,7 @@ class __$$_ChatStateCopyWithImpl<$Res>
       me: freezed == me
           ? _value.me
           : me // ignore: cast_nullable_to_non_nullable
-              as User?,
+              as RoomUser?,
       loading: null == loading
           ? _value.loading
           : loading // ignore: cast_nullable_to_non_nullable
@@ -212,7 +212,7 @@ class _$_ChatState implements _ChatState {
   }
 
   @override
-  final User? me;
+  final RoomUser? me;
   @override
   @JsonKey()
   final bool loading;
@@ -273,7 +273,7 @@ abstract class _ChatState implements ChatState {
       final Room? room,
       final Map<String, RoomUser> roomUsers,
       final List<Message> messages,
-      final User? me,
+      final RoomUser? me,
       final bool loading,
       final bool uploadingImage}) = _$_ChatState;
 
@@ -289,7 +289,7 @@ abstract class _ChatState implements ChatState {
   @override
   List<Message> get messages;
   @override
-  User? get me;
+  RoomUser? get me;
   @override
   bool get loading;
   @override

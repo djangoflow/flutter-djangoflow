@@ -21,7 +21,7 @@ _$_ChatState _$$_ChatStateFromJson(Map<String, dynamic> json) => _$_ChatState(
           const <Message>[],
       me: json['me'] == null
           ? null
-          : User.fromJson(json['me'] as Map<String, dynamic>),
+          : RoomUser.fromJson(json['me'] as Map<String, dynamic>),
       loading: json['loading'] as bool? ?? false,
       uploadingImage: json['uploadingImage'] as bool? ?? false,
     );
