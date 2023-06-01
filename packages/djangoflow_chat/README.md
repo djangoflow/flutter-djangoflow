@@ -2,7 +2,7 @@
 
 ## Abstract
 
-The djangoflow_chat package provides a set of classes and methods for building real-time chat applications in Flutter using [django-df-chat](https://github.com/djangoflow/django-df-chat) and by generating `openapi` package via [openapi-generator-cli](https://github.com/OpenAPITools/openapi-generator-cli).
+The djangoflow_chat package provides a set of classes and methods for building real-time chat applications in Flutter using [django-df-chat](https://github.com/djangoflow/django-df-chat) and by generating `djangoflow_openapi` package via [openapi-generator-cli](https://github.com/OpenAPITools/openapi-generator-cli).
 
 [openapi-generator-cli](https://github.com/OpenAPITools/openapi-generator-cli) is a very powerful tool that allows us to generate client libraries(api calling methods) following Repository pattern, documentation, tests etc for `Dart` language from the OpenApi/Swagger spec file. A good can be this article on how to generate OpenApi client library from OpenApi/Swagger specification [Article Link](https://medium.com/@rtlsilva/generating-dart-rest-api-client-libraries-using-openapi-generator-9b3dc517e68c)
 
@@ -55,7 +55,6 @@ The djangoflow_chat package also includes some extension methods to make working
 
 - `toReactionsMapWithCount()`: returns a map of reaction strings to their respective counts in a list of Message objects.
 - `get unseenMessageIds`: returns a list of message IDs for any messages in the list that have not been seen by the current user.
-- `toUser()`: converts a RoomUser object to a User object.
 - `nullify()`: returns null if the string is either null or empty. If the string has a non-empty value, the method returns the original string.
 - `isNullOrEmpty()`: returns a boolean value indicating whether the string or list is either null or empty.
 - `isNotNullOrEmpty()`: returns a boolean value indicating whether the string or list is not null and has at least one element.
