@@ -17,7 +17,7 @@ void main() {
       // TODO
     });
 
-    //Future<List<MessageImage>> chatImagesList() async
+    //Future<PaginatedMessageImageList> chatImagesList({ int limit, int offset }) async
     test('test chatImagesList', () async {
       // TODO
     });
@@ -47,7 +47,7 @@ void main() {
       // TODO
     });
 
-    //Future<List<Room>> chatRoomsList() async
+    //Future<PaginatedRoomList> chatRoomsList({ int limit, int offset }) async
     test('test chatRoomsList', () async {
       // TODO
     });
@@ -62,7 +62,7 @@ void main() {
       // TODO
     });
 
-    //Future<List<Message>> chatRoomsMessagesList(String roomPk) async
+    //Future<PaginatedMessageList> chatRoomsMessagesList(String roomPk, { int limit, int offset }) async
     test('test chatRoomsMessagesList', () async {
       // TODO
     });

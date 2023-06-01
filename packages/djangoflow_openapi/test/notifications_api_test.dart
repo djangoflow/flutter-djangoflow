@@ -22,7 +22,7 @@ void main() {
       // TODO
     });
 
-    //Future<List<UserDevice>> notificationsDevicesList() async
+    //Future<PaginatedUserDeviceList> notificationsDevicesList({ int limit, int offset }) async
     test('test notificationsDevicesList', () async {
       // TODO
     });

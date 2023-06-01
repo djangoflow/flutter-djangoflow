@@ -709,6 +709,26 @@
         "/api/v1/chat/images/": {
             "get": {
                 "operationId": "chat_images_list",
+                "parameters": [
+                    {
+                        "name": "limit",
+                        "required": false,
+                        "in": "query",
+                        "description": "Number of results to return per page.",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "offset",
+                        "required": false,
+                        "in": "query",
+                        "description": "The initial index from which to return the results.",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
                 "tags": [
                     "chat"
                 ],
@@ -732,10 +752,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "type": "array",
-                                    "items": {
-                                        "$ref": "#/components/schemas/MessageImage"
-                                    }
+                                    "$ref": "#/components/schemas/PaginatedMessageImageList"
                                 }
                             }
                         },
@@ -980,6 +997,26 @@
         "/api/v1/chat/rooms/": {
             "get": {
                 "operationId": "chat_rooms_list",
+                "parameters": [
+                    {
+                        "name": "limit",
+                        "required": false,
+                        "in": "query",
+                        "description": "Number of results to return per page.",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "offset",
+                        "required": false,
+                        "in": "query",
+                        "description": "The initial index from which to return the results.",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
                 "tags": [
                     "chat"
                 ],
@@ -1003,10 +1040,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "type": "array",
-                                    "items": {
-                                        "$ref": "#/components/schemas/Room"
-                                    }
+                                    "$ref": "#/components/schemas/PaginatedRoomList"
                                 }
                             }
                         },
@@ -1361,6 +1395,24 @@
                 "operationId": "chat_rooms_messages_list",
                 "parameters": [
                     {
+                        "name": "limit",
+                        "required": false,
+                        "in": "query",
+                        "description": "Number of results to return per page.",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "offset",
+                        "required": false,
+                        "in": "query",
+                        "description": "The initial index from which to return the results.",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
                         "in": "path",
                         "name": "room_pk",
                         "schema": {
@@ -1392,10 +1444,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "type": "array",
-                                    "items": {
-                                        "$ref": "#/components/schemas/Message"
-                                    }
+                                    "$ref": "#/components/schemas/PaginatedMessageList"
                                 }
                             }
                         },
@@ -2146,6 +2195,26 @@
         "/api/v1/notifications/devices/": {
             "get": {
                 "operationId": "notifications_devices_list",
+                "parameters": [
+                    {
+                        "name": "limit",
+                        "required": false,
+                        "in": "query",
+                        "description": "Number of results to return per page.",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "offset",
+                        "required": false,
+                        "in": "query",
+                        "description": "The initial index from which to return the results.",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
                 "tags": [
                     "notifications"
                 ],
@@ -2169,10 +2238,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "type": "array",
-                                    "items": {
-                                        "$ref": "#/components/schemas/UserDevice"
-                                    }
+                                    "$ref": "#/components/schemas/PaginatedUserDeviceList"
                                 }
                             }
                         },
@@ -2774,6 +2840,114 @@
                         "type": "string",
                         "writeOnly": true,
                         "minLength": 1
+                    }
+                }
+            },
+            "PaginatedMessageImageList": {
+                "type": "object",
+                "properties": {
+                    "count": {
+                        "type": "integer",
+                        "example": 123
+                    },
+                    "next": {
+                        "type": "string",
+                        "nullable": true,
+                        "format": "uri",
+                        "example": "http://api.example.org/accounts/?offset=400&limit=100"
+                    },
+                    "previous": {
+                        "type": "string",
+                        "nullable": true,
+                        "format": "uri",
+                        "example": "http://api.example.org/accounts/?offset=200&limit=100"
+                    },
+                    "results": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/MessageImage"
+                        }
+                    }
+                }
+            },
+            "PaginatedMessageList": {
+                "type": "object",
+                "properties": {
+                    "count": {
+                        "type": "integer",
+                        "example": 123
+                    },
+                    "next": {
+                        "type": "string",
+                        "nullable": true,
+                        "format": "uri",
+                        "example": "http://api.example.org/accounts/?offset=400&limit=100"
+                    },
+                    "previous": {
+                        "type": "string",
+                        "nullable": true,
+                        "format": "uri",
+                        "example": "http://api.example.org/accounts/?offset=200&limit=100"
+                    },
+                    "results": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Message"
+                        }
+                    }
+                }
+            },
+            "PaginatedRoomList": {
+                "type": "object",
+                "properties": {
+                    "count": {
+                        "type": "integer",
+                        "example": 123
+                    },
+                    "next": {
+                        "type": "string",
+                        "nullable": true,
+                        "format": "uri",
+                        "example": "http://api.example.org/accounts/?offset=400&limit=100"
+                    },
+                    "previous": {
+                        "type": "string",
+                        "nullable": true,
+                        "format": "uri",
+                        "example": "http://api.example.org/accounts/?offset=200&limit=100"
+                    },
+                    "results": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Room"
+                        }
+                    }
+                }
+            },
+            "PaginatedUserDeviceList": {
+                "type": "object",
+                "properties": {
+                    "count": {
+                        "type": "integer",
+                        "example": 123
+                    },
+                    "next": {
+                        "type": "string",
+                        "nullable": true,
+                        "format": "uri",
+                        "example": "http://api.example.org/accounts/?offset=400&limit=100"
+                    },
+                    "previous": {
+                        "type": "string",
+                        "nullable": true,
+                        "format": "uri",
+                        "example": "http://api.example.org/accounts/?offset=200&limit=100"
+                    },
+                    "results": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/UserDevice"
+                        }
                     }
                 }
             },

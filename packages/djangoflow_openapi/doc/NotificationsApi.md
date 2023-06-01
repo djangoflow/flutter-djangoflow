@@ -146,7 +146,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **notificationsDevicesList**
-> List<UserDevice> notificationsDevicesList()
+> PaginatedUserDeviceList notificationsDevicesList(limit, offset)
 
 
 
@@ -158,9 +158,11 @@ import 'package:djangoflow_openapi/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = DjangoflowOpenapi().getNotificationsApi();
+final int limit = 56; // int | Number of results to return per page.
+final int offset = 56; // int | The initial index from which to return the results.
 
 try {
-    final response = api.notificationsDevicesList();
+    final response = api.notificationsDevicesList(limit, offset);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling NotificationsApi->notificationsDevicesList: $e\n');
@@ -168,11 +170,15 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **limit** | **int**| Number of results to return per page. | [optional] 
+ **offset** | **int**| The initial index from which to return the results. | [optional] 
 
 ### Return type
 
-[**List&lt;UserDevice&gt;**](UserDevice.md)
+[**PaginatedUserDeviceList**](PaginatedUserDeviceList.md)
 
 ### Authorization
 
