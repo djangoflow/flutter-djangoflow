@@ -1,0 +1,24 @@
+name: example
+description: An example app for Django Flow Sentry Reporter.
+
+publish_to: 'none' 
+version: 1.0.0+1
+
+environment:
+  sdk: '>=2.19.6 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  djangoflow_sentry_reporter: 
+    path: ..
+  djangoflow_error_reporter: ^0.0.3
+  sentry_flutter: ^6.18.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints:
+flutter:
+  uses-material-design: true
