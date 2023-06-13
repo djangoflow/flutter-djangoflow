@@ -1,3 +1,7 @@
+## [0.0.4] - 14 June
+
+- Updated dependencies
+
 ## [0.0.3] - 23 Jan
 
 - Aded unit-tests
