@@ -1,3 +1,7 @@
+## [0.1.0] - 15 June 2023
+
+- Update dependencies
+
 ## [0.0.3] - 23 Jan 2023
 
 - Updated dependencies of `djangoflow_error_reporter: ^0.0.3` and made changes accordingly to update methods with named parameters.
