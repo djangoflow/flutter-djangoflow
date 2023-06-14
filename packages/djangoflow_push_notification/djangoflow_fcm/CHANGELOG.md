@@ -1,3 +1,7 @@
+## [0.1.0] - 15 June 2023
+
+- Updated dependencies and tests
+
 ## [0.0.5] - 9 Feb 2023
 
 - Add `DjangoflowFCMDeletePushToken` event in order delete push token from device.
