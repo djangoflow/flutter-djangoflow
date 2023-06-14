@@ -21,6 +21,7 @@ void main() {
 
     const expectedTokenState = DjangoflowFCMState(
       token: token,
+      notificationAuthorizationStatus: AuthorizationStatus.authorized,
     );
 
     blocTest(
