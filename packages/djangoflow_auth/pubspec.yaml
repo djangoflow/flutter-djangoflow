@@ -19,6 +19,7 @@ dependencies:
   google_sign_in: ^6.1.4
   hydrated_bloc: ^9.1.2
   sign_in_with_apple: ^5.0.0
+  universal_html: ^2.2.3
 
 dev_dependencies:
   flutter_test:
