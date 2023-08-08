@@ -15,6 +15,12 @@ sealed class AuthState with _$AuthState {
 
   bool get isAuthenticated => this is _Authenticated;
 
+  String? get token => map(
+        initial: (_) => null,
+        authenticated: (state) => state.token,
+        unauthenticated: (_) => null,
+      );
+
   bool get isUnauthenticated => this is _Unauthenticated;
 
   bool get isInitial => this is _Initial;
