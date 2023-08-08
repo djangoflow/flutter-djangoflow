@@ -10,14 +10,12 @@ import 'auth_state.dart';
 export 'auth_state.dart';
 
 class AuthCubit extends HydratedCubit<AuthState> {
-  final List<SocialLogin> socialLoginProviders;
-  AuthApi authApi;
+  AuthApi? authApi;
 
-  AuthCubit({
-    required this.authApi,
-    this.socialLoginProviders = const <SocialLogin>[],
-    required AuthState initialState,
-  }) : super(initialState);
+  static AuthCubit get instance => _instance;
+  static final AuthCubit _instance = AuthCubit._internal();
+  AuthCubit._internal() : super(const AuthState.initial());
+  List<SocialLogin> socialLogins = [];
 
   @override
   AuthState? fromJson(Map<String, dynamic> json) => AuthState.fromJson(json);
@@ -26,7 +24,7 @@ class AuthCubit extends HydratedCubit<AuthState> {
   Map<String, dynamic>? toJson(AuthState state) => state.toJson();
 
   Future<R?> loginWithSocial<R>(ProviderEnum providerEnum) async {
-    final provider = socialLoginProviders.firstWhereOrNull(
+    final provider = socialLogins.firstWhereOrNull(
       (element) => element.provider == providerEnum,
     );
     if (provider == null) {
@@ -38,7 +36,7 @@ class AuthCubit extends HydratedCubit<AuthState> {
   }
 
   Future<void> logoutWithSocial(ProviderEnum providerEnum) async {
-    final provider = socialLoginProviders.firstWhereOrNull(
+    final provider = socialLogins.firstWhereOrNull(
       (element) => element.provider == providerEnum,
     );
     if (provider == null) {
@@ -49,7 +47,7 @@ class AuthCubit extends HydratedCubit<AuthState> {
   }
 
   Future<void> logout() async {
-    for (final provider in socialLoginProviders) {
+    for (final provider in socialLogins) {
       await provider.logout();
     }
     emit(
@@ -62,7 +60,7 @@ class AuthCubit extends HydratedCubit<AuthState> {
     required String firstName,
     required String lastName,
   }) async {
-    await authApi.authSignupCreate(
+    await authApi?.authSignupCreate(
       signupRequest: SignupRequest(
         email: email,
         firstName: firstName,
@@ -74,22 +72,22 @@ class AuthCubit extends HydratedCubit<AuthState> {
   }
 
   Future<void> requestOTP({required String email}) async =>
-      (await authApi.authOtpCreate(
+      (await authApi?.authOtpCreate(
         oTPObtainRequest: OTPObtainRequest(email: email),
       ))
-          .data;
+          ?.data;
 
   Future<void> loginWithEmailOTP({
     required String email,
     required String otp,
   }) async {
-    final tokenResult = (await authApi.authTokenCreate(
+    final tokenResult = (await authApi?.authTokenCreate(
       tokenObtainRequest: TokenObtainRequest(
         email: email,
         otp: otp,
       ),
     ))
-        .data;
+        ?.data;
     final token = tokenResult?.token;
 
     await _loginUsingToken(token);
@@ -116,9 +114,9 @@ class AuthCubit extends HydratedCubit<AuthState> {
 
   Future<void> loginWithSocialProvider(
       {required SocialTokenObtainRequest socialTokenObtainRequest}) async {
-    final result = (await authApi.authSocialCreate(
+    final result = (await authApi?.authSocialCreate(
             socialTokenObtainRequest: socialTokenObtainRequest))
-        .data;
+        ?.data;
     if (result!.token != null) {
       _loginUsingToken(result.token!);
     } else {
