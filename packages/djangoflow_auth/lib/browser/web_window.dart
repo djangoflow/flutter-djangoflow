@@ -1,5 +1,6 @@
 import 'dart:async';
 // ignore: avoid_web_libraries_in_flutter
+// TODO try with dart:html instead
 import 'package:universal_html/html.dart' as html;
 import 'dart:math' as math;
 
@@ -83,7 +84,8 @@ class WebWindow {
       subscription = html.window.onMessage.listen((event) {
         onMessage?.call(event, () {
           skipEvent = true;
-          window.close();
+          // it might be actually null
+          window?.close();
         });
       });
     }
@@ -94,8 +96,8 @@ class WebWindow {
     }
   }
 
-  Future<void> waitForClose(html.WindowBase window) async {
-    while (window.closed != null && !window.closed!) {
+  Future<void> waitForClose(html.WindowBase? window) async {
+    while (window?.closed != null && !window!.closed!) {
       await Future<void>.delayed(const Duration(milliseconds: 200));
     }
   }
