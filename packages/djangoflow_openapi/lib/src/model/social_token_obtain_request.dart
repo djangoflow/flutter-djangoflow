@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:djangoflow_openapi/src/model/provider_enum.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'social_token_obtain_request.g.dart';
@@ -71,7 +72,7 @@ class SocialTokenObtainRequest {
   )
 
 
-  final bool provider;
+  final ProviderEnum provider;
 
 
 

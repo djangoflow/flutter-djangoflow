@@ -2535,7 +2535,7 @@
                         "type": "string",
                         "minLength": 1
                     },
-                    "username": {
+                    "email": {
                         "type": "string",
                         "writeOnly": true
                     },
@@ -2573,7 +2573,7 @@
                         "type": "string",
                         "minLength": 1
                     },
-                    "username": {
+                    "email": {
                         "type": "string",
                         "writeOnly": true
                     },
@@ -2643,7 +2643,7 @@
                         "type": "string",
                         "minLength": 1
                     },
-                    "username": {
+                    "email": {
                         "type": "string",
                         "writeOnly": true
                     },
@@ -2827,7 +2827,7 @@
             "OTPObtainRequest": {
                 "type": "object",
                 "properties": {
-                    "username": {
+                    "email": {
                         "type": "string",
                         "writeOnly": true
                     },
@@ -3043,8 +3043,14 @@
                 }
             },
             "ProviderEnum": {
-                "enum": [],
-                "type": "boolean"
+                "enum": [
+                    "google-oauth2",
+                    "facebook",
+                    "apple-id",
+                    "discord"
+                ],
+                "type": "string",
+                "description": "* `google-oauth2` - google-oauth2\n* `facebook` - facebook\n* `apple-id` - apple-id\n* `discord` - discord"
             },
             "PushAction": {
                 "type": "object",
@@ -3230,7 +3236,7 @@
             "SetPasswordRequest": {
                 "type": "object",
                 "properties": {
-                    "username": {
+                    "email": {
                         "type": "string",
                         "writeOnly": true
                     },
@@ -3268,7 +3274,7 @@
                         "type": "string",
                         "minLength": 1
                     },
-                    "username": {
+                    "email": {
                         "type": "string",
                         "writeOnly": true
                     },
@@ -3301,12 +3307,7 @@
                         "minLength": 1
                     },
                     "provider": {
-                        "allOf": [
-                            {
-                                "$ref": "#/components/schemas/ProviderEnum"
-                            }
-                        ],
-                        "description": ""
+                        "$ref": "#/components/schemas/ProviderEnum"
                     }
                 },
                 "required": [
@@ -3338,7 +3339,7 @@
             "TokenObtainRequest": {
                 "type": "object",
                 "properties": {
-                    "username": {
+                    "email": {
                         "type": "string",
                         "writeOnly": true
                     },
@@ -3411,7 +3412,7 @@
                         "type": "string",
                         "minLength": 1
                     },
-                    "username": {
+                    "email": {
                         "type": "string",
                         "writeOnly": true
                     },

@@ -22,7 +22,7 @@ void main() {
       // TODO
     });
 
-    // bool provider
+    // ProviderEnum provider
     test('to test the property `provider`', () async {
       // TODO
     });

@@ -18,7 +18,7 @@ class SetPasswordRequest {
   /// Returns a new [SetPasswordRequest] instance.
   SetPasswordRequest({
 
-     this.username,
+     this.email,
 
      this.otp,
 
@@ -27,13 +27,13 @@ class SetPasswordRequest {
 
   @JsonKey(
     
-    name: r'username',
+    name: r'email',
     required: false,
     includeIfNull: false
   )
 
 
-  final String? username;
+  final String? email;
 
 
 
@@ -63,13 +63,13 @@ class SetPasswordRequest {
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is SetPasswordRequest &&
-     other.username == username &&
+     other.email == email &&
      other.otp == otp &&
      other.password == password;
 
   @override
   int get hashCode =>
-    username.hashCode +
+    email.hashCode +
     otp.hashCode +
     password.hashCode;
 

@@ -26,6 +26,7 @@ doc/PaginatedUserDeviceList.md
 doc/PatchedMessageRequest.md
 doc/PatchedRoomRequest.md
 doc/PatchedUserDeviceRequest.md
+doc/ProviderEnum.md
 doc/PushAction.md
 doc/PushActionCategory.md
 doc/Room.md
@@ -78,6 +79,7 @@ lib/src/model/paginated_user_device_list.dart
 lib/src/model/patched_message_request.dart
 lib/src/model/patched_room_request.dart
 lib/src/model/patched_user_device_request.dart
+lib/src/model/provider_enum.dart
 lib/src/model/push_action.dart
 lib/src/model/push_action_category.dart
 lib/src/model/room.dart
@@ -123,6 +125,7 @@ test/paginated_user_device_list_test.dart
 test/patched_message_request_test.dart
 test/patched_room_request_test.dart
 test/patched_user_device_request_test.dart
+test/provider_enum_test.dart
 test/push_action_category_test.dart
 test/push_action_test.dart
 test/room_request_test.dart

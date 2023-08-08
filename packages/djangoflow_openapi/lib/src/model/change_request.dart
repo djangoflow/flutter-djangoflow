@@ -22,7 +22,7 @@ class ChangeRequest {
 
      this.lastName,
 
-     this.username,
+     this.email,
 
      this.otp,
 
@@ -55,13 +55,13 @@ class ChangeRequest {
 
   @JsonKey(
     
-    name: r'username',
+    name: r'email',
     required: false,
     includeIfNull: false
   )
 
 
-  final String? username;
+  final String? email;
 
 
 
@@ -93,7 +93,7 @@ class ChangeRequest {
   bool operator ==(Object other) => identical(this, other) || other is ChangeRequest &&
      other.firstName == firstName &&
      other.lastName == lastName &&
-     other.username == username &&
+     other.email == email &&
      other.otp == otp &&
      other.password == password;
 
@@ -101,7 +101,7 @@ class ChangeRequest {
   int get hashCode =>
     firstName.hashCode +
     lastName.hashCode +
-    username.hashCode +
+    email.hashCode +
     otp.hashCode +
     password.hashCode;
 

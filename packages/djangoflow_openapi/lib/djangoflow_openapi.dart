@@ -33,6 +33,7 @@ export 'package:djangoflow_openapi/src/model/paginated_user_device_list.dart';
 export 'package:djangoflow_openapi/src/model/patched_message_request.dart';
 export 'package:djangoflow_openapi/src/model/patched_room_request.dart';
 export 'package:djangoflow_openapi/src/model/patched_user_device_request.dart';
+export 'package:djangoflow_openapi/src/model/provider_enum.dart';
 export 'package:djangoflow_openapi/src/model/push_action.dart';
 export 'package:djangoflow_openapi/src/model/push_action_category.dart';
 export 'package:djangoflow_openapi/src/model/room.dart';

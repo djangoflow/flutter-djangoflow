@@ -99,6 +99,9 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           return PatchedRoomRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'PatchedUserDeviceRequest':
           return PatchedUserDeviceRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'ProviderEnum':
+          
+          
         case 'PushAction':
           return PushAction.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'PushActionCategory':
