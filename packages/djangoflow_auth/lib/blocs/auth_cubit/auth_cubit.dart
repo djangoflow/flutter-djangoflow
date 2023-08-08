@@ -59,39 +59,43 @@ class AuthCubit extends HydratedCubit<AuthState> {
     required String email,
     required String firstName,
     required String lastName,
-  }) async {
-    await authApi?.authSignupCreate(
-      signupRequest: SignupRequest(
-        email: email,
-        firstName: firstName,
-        lastName: lastName,
-      ),
-    );
+  }) async =>
+      _authApiChecker(() async {
+        await authApi?.authSignupCreate(
+          signupRequest: SignupRequest(
+            email: email,
+            firstName: firstName,
+            lastName: lastName,
+          ),
+        );
 
-    await requestOTP(email: email);
-  }
+        await requestOTP(email: email);
+      });
 
-  Future<void> requestOTP({required String email}) async =>
-      (await authApi?.authOtpCreate(
-        oTPObtainRequest: OTPObtainRequest(email: email),
-      ))
-          ?.data;
+  Future<void> requestOTP({required String email}) async => _authApiChecker(
+        () async => (
+          await authApi?.authOtpCreate(
+            oTPObtainRequest: OTPObtainRequest(email: email),
+          ),
+        ),
+      );
 
   Future<void> loginWithEmailOTP({
     required String email,
     required String otp,
-  }) async {
-    final tokenResult = (await authApi?.authTokenCreate(
-      tokenObtainRequest: TokenObtainRequest(
-        email: email,
-        otp: otp,
-      ),
-    ))
-        ?.data;
-    final token = tokenResult?.token;
+  }) async =>
+      _authApiChecker(() async {
+        final tokenResult = (await authApi?.authTokenCreate(
+          tokenObtainRequest: TokenObtainRequest(
+            email: email,
+            otp: otp,
+          ),
+        ))
+            ?.data;
+        final token = tokenResult?.token;
 
-    await _loginUsingToken(token);
-  }
+        await _loginUsingToken(token);
+      });
 
   Future<void> _loginUsingToken(String? token) async {
     if (token != null) {
@@ -113,14 +117,22 @@ class AuthCubit extends HydratedCubit<AuthState> {
   }
 
   Future<void> loginWithSocialProvider(
-      {required SocialTokenObtainRequest socialTokenObtainRequest}) async {
-    final result = (await authApi?.authSocialCreate(
-            socialTokenObtainRequest: socialTokenObtainRequest))
-        ?.data;
-    if (result!.token != null) {
-      _loginUsingToken(result.token!);
-    } else {
-      throw Exception('Could not retrieve token for social login');
+          {required SocialTokenObtainRequest socialTokenObtainRequest}) async =>
+      _authApiChecker(() async {
+        final result = (await authApi?.authSocialCreate(
+                socialTokenObtainRequest: socialTokenObtainRequest))
+            ?.data;
+        if (result?.token != null) {
+          _loginUsingToken(result!.token!);
+        } else {
+          throw Exception('Could not retrieve token for social login');
+        }
+      });
+
+  Future<void> _authApiChecker(Function function) async {
+    if (authApi == null) {
+      throw Exception('AuthApi is not initialized');
     }
+    await function();
   }
 }
