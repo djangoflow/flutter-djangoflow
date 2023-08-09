@@ -23,7 +23,8 @@ class AuthCubit extends HydratedCubit<AuthState> {
   @override
   Map<String, dynamic>? toJson(AuthState state) => state.toJson();
 
-  Future<R?> loginWithSocial<R>(ProviderEnum providerEnum) async {
+  Future<R?> authenticateWithSocialProvider<R>(
+      ProviderEnum providerEnum) async {
     final provider = socialLogins.firstWhereOrNull(
       (element) => element.provider == providerEnum,
     );
