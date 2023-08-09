@@ -45,6 +45,12 @@ dependencies:
 dependency_overrides:
   djangoflow_openapi:
     path: PATH_TO_YOUR_GENERATED_OPENAPI
+  # Due to oauth2_client does not support http: ^1.0.0
+  # Can be removed one https://github.com/teranetsrl/oauth2_client/pull/168 merged
+  oauth2_client:
+    git:
+      url: https://github.com/jheld/oauth2_client.git
+      ref: master
 ```
 
 Run `flutter pub get` to fetch the package.
