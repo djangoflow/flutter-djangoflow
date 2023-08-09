@@ -16,6 +16,7 @@ _$_OAuth2Configuration _$$_OAuth2ConfigurationFromJson(
       codeChallenge: json['code_challenge'] as String?,
       codeChallengeMethod: json['code_challenge_method'] as String?,
       responseType: json['response_type'] as String?,
+      customUriScheme: json['customUriScheme'] as String?,
     );
 
 Map<String, dynamic> _$$_OAuth2ConfigurationToJson(
@@ -36,5 +37,6 @@ Map<String, dynamic> _$$_OAuth2ConfigurationToJson(
   writeNotNull('code_challenge', instance.codeChallenge);
   writeNotNull('code_challenge_method', instance.codeChallengeMethod);
   writeNotNull('response_type', instance.responseType);
+  val['customUriScheme'] = instance.customUriScheme;
   return val;
 }

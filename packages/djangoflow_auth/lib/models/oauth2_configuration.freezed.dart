@@ -33,6 +33,7 @@ mixin _$OAuth2Configuration {
   String? get codeChallengeMethod => throw _privateConstructorUsedError;
   @JsonKey(name: 'response_type', includeIfNull: false)
   String? get responseType => throw _privateConstructorUsedError;
+  String? get customUriScheme => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -59,7 +60,8 @@ abstract class $OAuth2ConfigurationCopyWith<$Res> {
       @JsonKey(name: 'code_challenge_method', includeIfNull: false)
           String? codeChallengeMethod,
       @JsonKey(name: 'response_type', includeIfNull: false)
-          String? responseType});
+          String? responseType,
+      String? customUriScheme});
 }
 
 /// @nodoc
@@ -82,6 +84,7 @@ class _$OAuth2ConfigurationCopyWithImpl<$Res, $Val extends OAuth2Configuration>
     Object? codeChallenge = freezed,
     Object? codeChallengeMethod = freezed,
     Object? responseType = freezed,
+    Object? customUriScheme = freezed,
   }) {
     return _then(_value.copyWith(
       clientId: null == clientId
@@ -112,6 +115,10 @@ class _$OAuth2ConfigurationCopyWithImpl<$Res, $Val extends OAuth2Configuration>
           ? _value.responseType
           : responseType // ignore: cast_nullable_to_non_nullable
               as String?,
+      customUriScheme: freezed == customUriScheme
+          ? _value.customUriScheme
+          : customUriScheme // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 }
@@ -137,7 +144,8 @@ abstract class _$$_OAuth2ConfigurationCopyWith<$Res>
       @JsonKey(name: 'code_challenge_method', includeIfNull: false)
           String? codeChallengeMethod,
       @JsonKey(name: 'response_type', includeIfNull: false)
-          String? responseType});
+          String? responseType,
+      String? customUriScheme});
 }
 
 /// @nodoc
@@ -158,6 +166,7 @@ class __$$_OAuth2ConfigurationCopyWithImpl<$Res>
     Object? codeChallenge = freezed,
     Object? codeChallengeMethod = freezed,
     Object? responseType = freezed,
+    Object? customUriScheme = freezed,
   }) {
     return _then(_$_OAuth2Configuration(
       clientId: null == clientId
@@ -188,6 +197,10 @@ class __$$_OAuth2ConfigurationCopyWithImpl<$Res>
           ? _value.responseType
           : responseType // ignore: cast_nullable_to_non_nullable
               as String?,
+      customUriScheme: freezed == customUriScheme
+          ? _value.customUriScheme
+          : customUriScheme // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -208,7 +221,8 @@ class _$_OAuth2Configuration extends _OAuth2Configuration {
       @JsonKey(name: 'code_challenge_method', includeIfNull: false)
           this.codeChallengeMethod,
       @JsonKey(name: 'response_type', includeIfNull: false)
-          this.responseType})
+          this.responseType,
+      this.customUriScheme})
       : super._();
 
   factory _$_OAuth2Configuration.fromJson(Map<String, dynamic> json) =>
@@ -234,10 +248,12 @@ class _$_OAuth2Configuration extends _OAuth2Configuration {
   @override
   @JsonKey(name: 'response_type', includeIfNull: false)
   final String? responseType;
+  @override
+  final String? customUriScheme;
 
   @override
   String toString() {
-    return 'OAuth2Configuration(clientId: $clientId, redirectUri: $redirectUri, scope: $scope, state: $state, codeChallenge: $codeChallenge, codeChallengeMethod: $codeChallengeMethod, responseType: $responseType)';
+    return 'OAuth2Configuration(clientId: $clientId, redirectUri: $redirectUri, scope: $scope, state: $state, codeChallenge: $codeChallenge, codeChallengeMethod: $codeChallengeMethod, responseType: $responseType, customUriScheme: $customUriScheme)';
   }
 
   @override
@@ -256,13 +272,15 @@ class _$_OAuth2Configuration extends _OAuth2Configuration {
             (identical(other.codeChallengeMethod, codeChallengeMethod) ||
                 other.codeChallengeMethod == codeChallengeMethod) &&
             (identical(other.responseType, responseType) ||
-                other.responseType == responseType));
+                other.responseType == responseType) &&
+            (identical(other.customUriScheme, customUriScheme) ||
+                other.customUriScheme == customUriScheme));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, clientId, redirectUri, scope,
-      state, codeChallenge, codeChallengeMethod, responseType);
+      state, codeChallenge, codeChallengeMethod, responseType, customUriScheme);
 
   @JsonKey(ignore: true)
   @override
@@ -293,7 +311,8 @@ abstract class _OAuth2Configuration extends OAuth2Configuration {
       @JsonKey(name: 'code_challenge_method', includeIfNull: false)
           final String? codeChallengeMethod,
       @JsonKey(name: 'response_type', includeIfNull: false)
-          final String? responseType}) = _$_OAuth2Configuration;
+          final String? responseType,
+      final String? customUriScheme}) = _$_OAuth2Configuration;
   const _OAuth2Configuration._() : super._();
 
   factory _OAuth2Configuration.fromJson(Map<String, dynamic> json) =
@@ -319,6 +338,8 @@ abstract class _OAuth2Configuration extends OAuth2Configuration {
   @override
   @JsonKey(name: 'response_type', includeIfNull: false)
   String? get responseType;
+  @override
+  String? get customUriScheme;
   @override
   @JsonKey(ignore: true)
   _$$_OAuth2ConfigurationCopyWith<_$_OAuth2Configuration> get copyWith =>

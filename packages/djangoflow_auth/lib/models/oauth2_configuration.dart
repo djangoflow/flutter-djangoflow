@@ -18,6 +18,9 @@ class OAuth2Configuration with _$OAuth2Configuration {
     @JsonKey(name: 'code_challenge_method', includeIfNull: false)
     String? codeChallengeMethod,
     @JsonKey(name: 'response_type', includeIfNull: false) String? responseType,
+
+    /// Needed for mobile platforms
+    String? customUriScheme,
   }) = _OAuth2Configuration;
 
   factory OAuth2Configuration.fromJson(Map<String, dynamic> json) =>
