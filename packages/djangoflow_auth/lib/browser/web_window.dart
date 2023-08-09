@@ -84,7 +84,8 @@ class WebWindow {
       subscription = html.window.onMessage.listen((event) {
         onMessage?.call(event, () {
           skipEvent = true;
-          // it might be actually null
+          // it might be actually null, need to implement with dart:html and not universal_html
+          // ignore: invalid_null_aware_operator
           window?.close();
         });
       });
