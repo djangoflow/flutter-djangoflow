@@ -1,6 +1,7 @@
 import 'package:djangoflow_auth/djangoflow_auth.dart';
 import 'package:djangoflow_openapi/djangoflow_openapi.dart';
 import 'package:flutter/foundation.dart';
+import 'package:oauth2_client/oauth2_client.dart';
 
 class DiscordSocialLoginProvider extends SocialLogin<String> {
   OAuth2Configuration _oAuth2Configuration;
@@ -45,8 +46,23 @@ class DiscordSocialLoginProvider extends SocialLogin<String> {
 
       return code;
     } else {
-      throw UnimplementedError(
-          'DiscordSocialLoginProvider is not implemented for non-web platforms');
+      if (_oAuth2Configuration.customUriScheme == null) {
+        throw Exception('customUriScheme is required for non-web platforms');
+      }
+      final discordOAuth2Client = DiscordOAuth2Client(
+        customUriScheme: _oAuth2Configuration.customUriScheme!,
+        redirectUri: _oAuth2Configuration.redirectUri,
+      );
+
+      final accessTokenResponse =
+          await discordOAuth2Client.getTokenWithImplicitGrantFlow(
+        clientId: _oAuth2Configuration.clientId,
+        customParams: params,
+        enableState: _oAuth2Configuration.state != null,
+        scopes: _oAuth2Configuration.scope.split(' '),
+      );
+
+      return accessTokenResponse.accessToken;
     }
   }
 
@@ -55,4 +71,17 @@ class DiscordSocialLoginProvider extends SocialLogin<String> {
 
   @override
   ProviderEnum get provider => ProviderEnum.discord;
+}
+
+class DiscordOAuth2Client extends OAuth2Client {
+  DiscordOAuth2Client(
+      {required String redirectUri, required String customUriScheme})
+      : super(
+          authorizeUrl:
+              'https://discord.com/oauth2/authorize', //Your service's authorization url
+          tokenUrl:
+              'https://discord.com/api/oauth2/token', //Your service access token url
+          redirectUri: redirectUri,
+          customUriScheme: customUriScheme,
+        );
 }
