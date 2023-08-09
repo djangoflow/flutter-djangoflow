@@ -1,5 +1,5 @@
 name: djangoflow_auth
-description: A new Flutter package project.
+description: djangoflow_auth is a Flutter package that provides authentication functionalities compatible with DjangoFlow API.
 version: 0.0.1
 homepage: https://github.com/djangoflow/flutter-djangoflow/
 
