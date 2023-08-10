@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:collection/collection.dart';
 import 'package:djangoflow_auth/exceptions/login_provider_not_found_exception.dart';
 import 'package:djangoflow_auth/interfaces/social_login.dart';
+import 'package:djangoflow_auth/models/social_login_type/social_login_type.dart';
 import 'package:djangoflow_openapi/djangoflow_openapi.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 
@@ -24,31 +25,36 @@ class AuthCubit extends HydratedCubit<AuthState> {
   @override
   Map<String, dynamic>? toJson(AuthState state) => state.toJson();
 
-  Future<R?> authenticateWithSocialProvider<R>(
-      ProviderEnum providerEnum) async {
-    final provider = socialLogins.firstWhereOrNull(
-      (element) => element.provider == providerEnum,
-    );
+  Future<R?> authenticateWithSocialProvider<R>(SocialLoginType type) async {
+    final provider = _firstWhereSocialLogin(type);
     if (provider == null) {
-      throw LoginProviderNotFoundException(
-          'Social Provider ${providerEnum.name} was not found');
+      throw _loginProviderNotFoundException(type);
     }
 
     final response = (await provider.login()) as R?;
     return response;
   }
 
-  Future<void> logoutWithSocialProvider(ProviderEnum providerEnum) async {
-    final provider = socialLogins.firstWhereOrNull(
-      (element) => element.provider == providerEnum,
-    );
-    if (provider == null) {
-      throw LoginProviderNotFoundException(
-          'Social Provider ${providerEnum.name} was not found');
+  Future<void> logoutWithSocialProvider(SocialLoginType type) async {
+    final socialLogin = _firstWhereSocialLogin(type);
+    if (socialLogin == null) {
+      throw _loginProviderNotFoundException(type);
     }
 
-    await provider.logout();
+    await socialLogin.logout();
   }
+
+  SocialLogin<dynamic>? _firstWhereSocialLogin(SocialLoginType type) =>
+      socialLogins.firstWhereOrNull(
+        (element) => element.type == type,
+      );
+
+  LoginProviderNotFoundException _loginProviderNotFoundException(
+          SocialLoginType type,
+          {String? message}) =>
+      LoginProviderNotFoundException(
+        message ?? 'Social Provider ${type.provider.name} was not found',
+      );
 
   Future<void> logout() async {
     for (final provider in socialLogins) {

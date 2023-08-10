@@ -33,6 +33,8 @@ mixin _$OAuth2Configuration {
   String? get codeChallengeMethod => throw _privateConstructorUsedError;
   @JsonKey(name: 'response_type', includeIfNull: false)
   String? get responseType => throw _privateConstructorUsedError;
+
+  /// Needed for mobile platforms
   String? get customUriScheme => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -248,6 +250,8 @@ class _$_OAuth2Configuration extends _OAuth2Configuration {
   @override
   @JsonKey(name: 'response_type', includeIfNull: false)
   final String? responseType;
+
+  /// Needed for mobile platforms
   @override
   final String? customUriScheme;
 
@@ -339,6 +343,8 @@ abstract class _OAuth2Configuration extends OAuth2Configuration {
   @JsonKey(name: 'response_type', includeIfNull: false)
   String? get responseType;
   @override
+
+  /// Needed for mobile platforms
   String? get customUriScheme;
   @override
   @JsonKey(ignore: true)
