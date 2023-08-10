@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:collection/collection.dart';
+import 'package:djangoflow_auth/exceptions/login_provider_not_found_exception.dart';
 import 'package:djangoflow_auth/interfaces/social_login.dart';
 import 'package:djangoflow_openapi/djangoflow_openapi.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
@@ -29,19 +30,21 @@ class AuthCubit extends HydratedCubit<AuthState> {
       (element) => element.provider == providerEnum,
     );
     if (provider == null) {
-      throw Exception('SocialLoginProvider not found ${providerEnum.name}');
+      throw LoginProviderNotFoundException(
+          'Social Provider ${providerEnum.name} was not found');
     }
 
     final response = (await provider.login()) as R?;
     return response;
   }
 
-  Future<void> logoutWithSocial(ProviderEnum providerEnum) async {
+  Future<void> logoutWithSocialProvider(ProviderEnum providerEnum) async {
     final provider = socialLogins.firstWhereOrNull(
       (element) => element.provider == providerEnum,
     );
     if (provider == null) {
-      throw Exception('Provider not found ${providerEnum.name}');
+      throw LoginProviderNotFoundException(
+          'Social Provider ${providerEnum.name} was not found');
     }
 
     await provider.logout();
