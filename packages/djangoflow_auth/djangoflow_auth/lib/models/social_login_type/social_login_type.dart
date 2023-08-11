@@ -15,9 +15,10 @@ class SocialLoginType with _$SocialLoginType {
   factory SocialLoginType.fromJson(Map<String, dynamic> json) =>
       _$SocialLoginTypeFromJson(json);
 
+  /// Automatically assigns a new id to the [SocialLoginType].
   factory SocialLoginType.fromProvider(ProviderEnum provider) =>
       SocialLoginType(
         provider: provider,
-        id: Uuid().v1(),
+        id: const Uuid().v1(),
       );
 }
