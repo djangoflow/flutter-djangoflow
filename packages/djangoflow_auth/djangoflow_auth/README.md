@@ -1,27 +1,39 @@
-# DjangoFlow Auth Flutter Package
+<h1 align="center">🌟 DjangoFlow Auth Flutter Package 🌟</h1>
 
-[![GitHub](https://img.shields.io/badge/GitHub-Repository-blue.svg)](https://github.com/djangoflow/flutter-djangoflow/)
-[![Pub](https://img.shields.io/pub/v/djangoflow_auth.svg)](https://pub.dev/packages/djangoflow_auth)
+<p align="center">
+  <a href="https://github.com/djangoflow/flutter-djangoflow/">
+    <img alt="GitHub Repository" src="https://img.shields.io/badge/GitHub-Repository-blue.svg">
+  </a>
+  <a href="https://pub.dev/packages/djangoflow_auth">
+    <img alt="Pub Package" src="https://img.shields.io/pub/v/djangoflow_auth.svg">
+  </a>
+</p>
 
-`djangoflow_auth` is a Flutter package that provides authentication functionalities compatible with [django-df-auth](https://github.com/djangoflow/django-df-auth). It integrates with various authentication providers, supports otp login/signup, making it easier to handle user authentication in your Flutter app. And yes batteries included!
+<p align="center">
+  <b>djangoflow_auth</b> is your ultimate Flutter authentication companion! Seamlessly integrate authentication functionalities compatible with <a href="https://github.com/djangoflow/django-df-auth">django-df-auth</a>. Supports multiple providers, OTP login/signup, and more, making user authentication a breeze for your Flutter app. Yes, it's ready out of the box! 🔒
+</p>
 
-_NOTE_: This package depends on [djangoflow_openapi](https://pub.dev/packages/djangoflow_openapi) for models and API methods. Please ensure that you are using djangoflow framework for development. To support django backend with djangoflow authentication system please follow [django-df-auth](https://github.com/djangoflow/django-df-auth#readme). More information with a locally generated `djangoflow_openapi` and a running backend server complete example is coming soon.
+<p align="center">
+  <b>NOTE:</b> This package relies on <a href="https://pub.dev/packages/djangoflow_openapi">djangoflow_openapi</a> for models and API methods. Make sure you're using the DjangoFlow framework for development. For Django backend with DjangoFlow authentication, follow the <a href="https://github.com/djangoflow/django-df-auth#readme">django-df-auth</a> README. A comprehensive example with a locally generated <b>djangoflow_openapi</b> and a running backend server is coming soon. Stay tuned! 🚀
+</p>
 
-Stay tuned for a comprehensive example that demonstrates how to implement authentication using the `djangoflow_auth` package alongside a locally generated `djangoflow_openapi` and a running backend server.
+<p align="center">
+  <i>Stay tuned for a comprehensive example that demonstrates how to implement authentication using the <b>djangoflow_auth</b> package alongside a locally generated <b>djangoflow_openapi</b> and a running backend server.</i>
+</p>
 
-We'll provide step-by-step instructions, code snippets, and explanations to guide you through the process of integrating Djangoflow Framework-based login into your Flutter app using the `djangoflow_auth` package.
+<p align="center">
+  <i>We'll provide step-by-step instructions, code snippets, and explanations to guide you through the process of integrating Djangoflow Framework-based login into your Flutter app using the <b>djangoflow_auth</b> package. Keep an eye out for updates and the upcoming example!</i>
+</p>
 
-Keep an eye out for updates and the upcoming example!
+<h2 align="center">🚀 Features 🚀</h2>
 
-## Features
+- Seamless integration with <a href="https://github.com/djangoflow/django-df-auth">django-df-auth</a>.
+- Support for multiple authentication providers, including Google, Facebook, Apple Sign-In, Discord, and more.
+- Built on top of popular and well-maintained Flutter packages like <code>bloc</code>, <code>dio</code>, and <code>hydrated_bloc</code>, etc.
+- Supports OTP, magic link, Google, Facebook, Apple, Discord for Flutter web and mobile platforms out of the box.
+- Supports OAuth2 web support with <code>WebWindow</code> popup.
 
-- Seamless integration with [django-df-auth](https://github.com/djangoflow/django-df-auth).
-- Support for multiple authentication providers, including Facebook, Google, Apple Sign-In, Discord, and more.
-- Built on top of popular and well-maintained Flutter packages like `bloc`, `dio`, and `hydrated_bloc` etc.
-- Supprts OTP, magic link, google, facebook, apple, discord for Flutter web and mobile platforms out of the box
-- Supports OAuth2 web support with `WebWindow` popup,
-
-## Table of Contents
+<h2 align="center">📑 Table of Contents 📑</h2>
 
 - [Installation](#installation)
 - [Social Login Configuration](#social-login-configuration)
@@ -35,7 +47,7 @@ Keep an eye out for updates and the upcoming example!
 - [Contributions and Issues](#contributions-and-issues)
 - [License](#license)
 
-## Installation
+<h2 align="center">📦 Installation 📦</h2>
 
 Add the `djangoflow_auth` package to your `pubspec.yaml` file:
 
@@ -46,8 +58,6 @@ dependencies:
 dependency_overrides:
   djangoflow_openapi:
     path: PATH_TO_YOUR_GENERATED_OPENAPI
-  # Due to oauth2_client does not support http: ^1.0.0
-  # Can be removed one https://github.com/teranetsrl/oauth2_client/pull/168 merged
   oauth2_client:
     git:
       url: https://github.com/jheld/oauth2_client.git
@@ -56,23 +66,24 @@ dependency_overrides:
 
 Run `flutter pub get` to fetch the package.
 
-## Social Login Configuration
+<h2 align="center">🔧 Social Login Configuration 🔧</h2>
+This package has built-in support for the following social logins:
 
-There are built-in support social logins for:
+- Google: djangoflow_auth_google
+- Facebook: djangoflow_auth_facebook
+- Apple: djangoflow_auth_apple
+- Discord: djangoflow_auth_discord
+- Twitter: Coming soon...
 
-- google: [djangoflow_auth_google](https://pub.dev/packages/djangoflow_auth_google)
-- facebook: [djangoflow_auth_facebook](https://pub.dev/packages/djangoflow_auth_facebook)
-- apple: [djangoflow_auth_apple](https://pub.dev/packages/djangoflow_auth_apple)
-- discord: [djangoflow_auth_discord](https://pub.dev/packages/djangoflow_auth_discord)
-
-if you want to create your own `SocialLogin` then you can also do it by extending `SocialLogin` class.
-Example from `djangoflow_auth_google` package's implementation:
+If you want to create your custom `SocialLogin`, you can extend the `SocialLogin` class. Here's an example from the `djangoflow_auth_google` package's implementation:
 
 ```dart
 class GoogleSocialLogin extends SocialLogin<GoogleSignInAccount> {
   final GoogleSignIn googleSignIn;
-  // `type` is required to filter and get correct SocialLoginType
-  GoogleSocialLogin({required this.googleSignIn, required super.type});
+
+  GoogleSocialLogin({required this.googleSignIn})
+      : super(type: SocialLoginType.fromProvider(ProviderEnum.googleOauth2));
+
   @override
   Future<GoogleSignInAccount?> login() async {
     final result = await googleSignIn.signIn();
@@ -88,7 +99,7 @@ class GoogleSocialLogin extends SocialLogin<GoogleSignInAccount> {
 }
 ```
 
-## Usage
+<h2 align="center">💡 Usage 💡</h2>
 
 ### Setting up AuthCubit
 
@@ -226,14 +237,14 @@ if (result == null) {
 }
 ```
 
-## Example
+<h2 align="center">🌟 Example 🌟</h2>
 
 Coming soon...
 
-## Contributions and Issues
+<h2 align="center">👏 Contributions and Issues 👏</h2>
 
 Contributions, bug reports, and feature requests are welcome! Feel free to submit a pull request or open an issue on the [GitHub repository](https://github.com/djangoflow/flutter-djangoflow/).
 
-## License
+<h2 align="center">📄 License 📄</h2>
 
 This package is distributed under the [MIT License](/LICENSE).
