@@ -1,3 +1,7 @@
+## 0.0.2
+
+- Updated README with updated djangoflow logo
+
 ## 0.0.1 - Initial Release 🚀
 
 - Added the `FacebookSocialLogin` class for seamless Facebook authentication.
