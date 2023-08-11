@@ -1,3 +1,7 @@
+## 0.0.3
+
+- Updated README with updated djangoflow logo
+
 ## 0.0.2
 
 - Updated README to fix URLs
