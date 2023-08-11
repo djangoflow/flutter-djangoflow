@@ -1,5 +1,5 @@
 name: djangoflow_auth_google
-description: A new Flutter package project.
+description: `djangoflow_auth_google` is the Google authentication provider for djangoflow_auth package
 version: 0.0.1
 homepage: https://github.com/djangoflow/flutter-djangoflow/
 
