@@ -1,4 +1,7 @@
-<h1 align="center">🌟 DjangoFlow Auth Flutter Package 🌟</h1>
+<div align="center">
+  <img src="https://user-images.githubusercontent.com/116165418/238683908-ddaa2265-af04-4915-8f02-bae1bce43291.png" alt="DjangoFlow Auth Google Package Logo" width="200">
+  <h1 align="center">🌟 DjangoFlow Auth Flutter Package 🌟</h1>
+</div>
 
 <p align="center">
   <a href="https://github.com/djangoflow/flutter-djangoflow/">
