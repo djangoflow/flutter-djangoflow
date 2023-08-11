@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 import 'google_sign_in_button.dart';
-import 'gsi_button_config_wrapper/gsi_button_config_wrapper.dart';
 
 class GoogleSignInWebButton extends StatefulWidget {
   const GoogleSignInWebButton({
