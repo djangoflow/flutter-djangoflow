@@ -93,7 +93,7 @@ An example of using <code>djangoflow_auth_apple</code> in a Flutter app is comin
 
 ## Contributions and Issues
 
-Contributions, bug reports, and feature requests are welcome! Feel free to submit a pull request or open an issue on the <a href="https://github.com/djangoflow/djangoflow_auth_apple/">GitHub repository</a>.
+Contributions, bug reports, and feature requests are welcome! Feel free to submit a pull request or open an issue on the <a href="https://github.com/djangoflow/flutter-djangoflow/">GitHub repository</a>.
 
 ## License
 
