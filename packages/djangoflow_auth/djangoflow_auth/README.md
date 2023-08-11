@@ -3,9 +3,9 @@
 [![GitHub](https://img.shields.io/badge/GitHub-Repository-blue.svg)](https://github.com/djangoflow/flutter-djangoflow/)
 [![Pub](https://img.shields.io/pub/v/djangoflow_auth.svg)](https://pub.dev/packages/djangoflow_auth)
 
-`djangoflow_auth` is a Flutter package that provides authentication functionalities compatible with [django-df-auth](https://github.com/djangoflow/django-df-auth). It integrates with various authentication providers, supports otp login/signup, making it easier to handle user authentication in your Flutter app.
+`djangoflow_auth` is a Flutter package that provides authentication functionalities compatible with [django-df-auth](https://github.com/djangoflow/django-df-auth). It integrates with various authentication providers, supports otp login/signup, making it easier to handle user authentication in your Flutter app. And yes batteries included!
 
-_NOTE_: This package depends on [https://pub.dev/packages/djangoflow_openapi](djangoflow_openapi) for models and API methods. Please ensure that you are using djangoflow framework for development. To support django backend with djangoflow authentication system please follow [django-df-auth](https://github.com/djangoflow/django-df-auth#readme). More information with a locally generated `djangoflow_openapi` and a running backend server complete example is coming soon.
+_NOTE_: This package depends on [djangoflow_openapi](https://pub.dev/packages/djangoflow_openapi) for models and API methods. Please ensure that you are using djangoflow framework for development. To support django backend with djangoflow authentication system please follow [django-df-auth](https://github.com/djangoflow/django-df-auth#readme). More information with a locally generated `djangoflow_openapi` and a running backend server complete example is coming soon.
 
 Stay tuned for a comprehensive example that demonstrates how to implement authentication using the `djangoflow_auth` package alongside a locally generated `djangoflow_openapi` and a running backend server.
 
@@ -19,6 +19,7 @@ Keep an eye out for updates and the upcoming example!
 - Support for multiple authentication providers, including Facebook, Google, Apple Sign-In, Discord, and more.
 - Built on top of popular and well-maintained Flutter packages like `bloc`, `dio`, and `hydrated_bloc` etc.
 - Supprts OTP, magic link, google, facebook, apple, discord for Flutter web and mobile platforms out of the box
+- Supports OAuth2 web support with `WebWindow` popup,
 
 ## Table of Contents
 
@@ -57,14 +58,35 @@ Run `flutter pub get` to fetch the package.
 
 ## Social Login Configuration
 
-To enable social logins in your Flutter app using the `djangoflow_auth` package, you'll need to configure the necessary providers. This package supports the following social login providers:
+There are built-in support social logins for:
 
-- [google_sign_in](https://pub.dev/packages/google_sign_in) for Google login
-- [flutter_facebook_auth](https://pub.dev/packages/flutter_facebook_auth) for Facebook login
-- [sign_in_with_apple](https://pub.dev/packages/sign_in_with_apple) for Apple login
-- [oauth2_client](https://pub.dev/packages/oauth2_client) for Discord login
+- google: [djangoflow_auth_google](https://pub.dev/packages/djangoflow_auth_google)
+- facebook: [djangoflow_auth_facebook](https://pub.dev/packages/djangoflow_auth_facebook)
+- apple: [djangoflow_auth_apple](https://pub.dev/packages/djangoflow_auth_apple)
+- discord: [djangoflow_auth_discord](https://pub.dev/packages/djangoflow_auth_discord)
 
-Please follow their READMEs to configure platform specific configurations.
+if you want to create your own `SocialLogin` then you can also do it by extending `SocialLogin` class.
+Example from `djangoflow_auth_google` package's implementation:
+
+```dart
+class GoogleSocialLogin extends SocialLogin<GoogleSignInAccount> {
+  final GoogleSignIn googleSignIn;
+  // `type` is required to filter and get correct SocialLoginType
+  GoogleSocialLogin({required this.googleSignIn, required super.type});
+  @override
+  Future<GoogleSignInAccount?> login() async {
+    final result = await googleSignIn.signIn();
+    return result;
+  }
+
+  @override
+  Future<void> logout() async {
+    if (await googleSignIn.isSignedIn()) {
+      await googleSignIn.disconnect();
+    }
+  }
+}
+```
 
 ## Usage
 
@@ -74,6 +96,7 @@ Please follow their READMEs to configure platform specific configurations.
     ```dart
     import 'package:flutter_bloc/flutter_bloc.dart';
     import 'package:djangoflow_auth/djangoflow_auth.dart';
+    import 'package:djangoflow_auth_google/djangoflow_auth.dart_google';
     import 'package:google_sign_in/google_sign_in.dart';
     ```
     - Initialize `AuthCubit` and provide social login providers via `BlocProvider`
@@ -85,10 +108,15 @@ Please follow their READMEs to configure platform specific configurations.
                 ..authApi = {Your AuthApi, comes from djangoflow_openapi}
                 ..socialLogins = [
                 GoogleSocialLogin(
-                    googleSignIn: GoogleSignIn(
-                        scopes: ['email'],
+                    type: SocialLoginType.fromProvider(
+                      ProviderEnum.googleOauth2,
                     ),
-                ),
+                    googleSignIn: GoogleSignIn(
+                      scopes: [
+                        'email',
+                      ],
+                    ),
+                  ),
                 // Add other social login providers
                 ],
             child: MyApp(),
@@ -144,12 +172,32 @@ try {
 
 Let's say we are going to login via google, inside your app, initiate social login using `AuthCubit` methods
 
-```dart
-final authCubit = context.read<AuthCubit>();
-final providerEnum = ProviderEnum.googleOauth2;
-// To authenticate using google
-final result = await authCubit.authenticateWithSocialProvider<GoogleSignInAccount>(providerEnum);
-```
+- Add the `djangoflow_auth_google` package to your `pubspec.yaml` file:
+
+  ```yaml
+  dependencies:
+    djangoflow_auth_google: <latest_version>
+    google_sign_in: <latest_version>
+  ```
+
+  and run `flutter pub get`
+
+- Then when you need to authenticate with Google sign in,
+
+  ```dart
+  final authCubit = context.read<AuthCubit>();
+  final socialLogin =
+      authCubit.socialLogins.getSocialLoginByProvider(
+    ProviderEnum.googleOauth2,
+  );
+
+  // Authenticate with Google
+  final result =
+      await authCubit.authenticateWithSocialProvider<
+          GoogleSignInAccount>(
+    socialLogin.type,
+  );
+  ```
 
 ### Handling Social Login Results
 
@@ -157,24 +205,24 @@ Based on the login result, retrieve the access token and use it to log in with t
 
 ```dart
 if (result == null) {
-    throw Exception('Google Sign In failed');
+  throw Exception('Google Sign In failed');
 } else {
-    final googleSignInAuthentication =
-    await result.authentication;
-    final accessToken =
-    googleSignInAuthentication.accessToken;
+  final googleSignInAuthentication =
+      await result.authentication;
+  final accessToken =
+      googleSignInAuthentication.accessToken;
 
-    if (accessToken == null) {
-        throw Exception(
-            'Google Sign In failed - no token');
-    }
-    await authCubit.loginWithSocialProvider(
-        socialTokenObtainRequest:
-            SocialTokenObtainRequest(
-        provider: providerEnum,
-        accessToken: accessToken,
-        ),
-    );
+  if (accessToken == null) {
+    throw Exception(
+        'Google Sign In failed - no token');
+  }
+  await authCubit.loginWithSocialProvider(
+    socialTokenObtainRequest:
+        SocialTokenObtainRequest(
+      provider: socialLogin.type.provider,
+      accessToken: accessToken,
+    ),
+  );
 }
 ```
 
