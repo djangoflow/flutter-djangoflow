@@ -1,0 +1,29 @@
+name: djangoflow_auth_google
+description: djangoflow_auth_google is the Google authentication provider for djangoflow_auth package
+version: 0.0.1
+homepage: https://github.com/djangoflow/flutter-djangoflow/
+
+environment:
+  sdk: ">=3.0.6 <4.0.0"
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  djangoflow_auth: ^0.1.0
+  djangoflow_openapi: ^0.0.15
+  freezed_annotation: ^2.4.1
+  google_sign_in: ^6.1.4
+  google_sign_in_platform_interface: ^2.4.1
+  google_sign_in_web: ^0.12.0+2
+  json_annotation: ^4.8.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+  build_runner: ^2.4.6
+  freezed: ^2.4.2
+  json_serializable: ^6.7.1
+
+flutter:
