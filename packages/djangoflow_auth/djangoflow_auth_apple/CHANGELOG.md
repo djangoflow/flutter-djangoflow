@@ -1,3 +1,7 @@
+## 0.0.2
+
+- Updated README to fix URLs
+
 ## 0.0.1 - Initial Release 🚀
 
 - Added the `AppleSocialLogin` class for seamless Apple authentication.
