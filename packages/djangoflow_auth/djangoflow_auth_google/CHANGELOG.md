@@ -1,3 +1,11 @@
-## 0.0.1
+## 0.0.1 - Initial Release
 
-* TODO: Describe initial release.
+- Initial release of the `djangoflow_auth_google` package.
+- Provides `GoogleSocialLogin` class for seamless Google authentication integration.
+- Supports Google Sign-In for both web and mobile platforms.
+- Customizable Google Sign-In button for mobile platforms.
+- Customizable configuration options using `GSIButtonConfigWrapper`.
+- Provides `GoogleSignInWebButton` for web platforms with automatic user authorization detection.
+- Includes examples and usage details in the README.
+- Contributions and issues are welcome on the [GitHub repository](https://github.com/djangoflow/djangoflow_auth_google/).
+- Distributed under the [MIT License](/LICENSE).

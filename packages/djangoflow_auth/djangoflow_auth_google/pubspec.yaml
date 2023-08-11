@@ -1,7 +1,7 @@
 name: djangoflow_auth_google
 description: A new Flutter package project.
 version: 0.0.1
-homepage:
+homepage: https://github.com/djangoflow/flutter-djangoflow/
 
 environment:
   sdk: ">=3.0.6 <4.0.0"
@@ -10,8 +10,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  djangoflow_auth:
-    path: /Users/saifulislam/Development/apexlabs/djangoflow/flutter-djangoflow/packages/djangoflow_auth/djangoflow_auth
+  djangoflow_auth: ^0.1.0
   djangoflow_openapi: ^0.0.15
   freezed_annotation: ^2.4.1
   google_sign_in: ^6.1.4
