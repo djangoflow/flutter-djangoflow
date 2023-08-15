@@ -17,15 +17,7 @@
 </p>
 
 <p align="center">
-  <b>NOTE:</b> This package relies on <a href="https://pub.dev/packages/djangoflow_openapi">djangoflow_openapi</a> for models and API methods. Make sure you're using the DjangoFlow framework for development. For Django backend with DjangoFlow authentication, follow the <a href="https://github.com/djangoflow/django-df-auth#readme">django-df-auth</a> README. Checkout our [Example](https://github.com/djangoflow/djangoflow-examples/tree/main/simple_auth)! 🚀
-</p>
-
-<p align="center">
-  <i>Stay tuned for a comprehensive example that demonstrates how to implement authentication using the <b>djangoflow_auth</b> package alongside a locally generated <b>djangoflow_openapi</b> and a running backend server.</i>
-</p>
-
-<p align="center">
-  <i>We'll provide step-by-step instructions, code snippets, and explanations to guide you through the process of integrating Djangoflow Framework-based login into your Flutter app using the <b>djangoflow_auth</b> package. Keep an eye out for updates and the upcoming example!</i>
+  <b>NOTE:</b> This package relies on <a href="https://pub.dev/packages/djangoflow_openapi">djangoflow_openapi</a> for models and API methods. Make sure you're using the DjangoFlow framework for development. For Django backend with DjangoFlow authentication, follow the <a href="https://github.com/djangoflow/django-df-auth#readme">django-df-auth</a> README. Checkout our <a href="https://github.com/djangoflow/djangoflow-examples/tree/main/simple_auth">Example</a> 🚀
 </p>
 
 <h2 align="center">🚀 Features 🚀</h2>
