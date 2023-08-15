@@ -1,6 +1,7 @@
 ## 0.2.0
 
 - Updated `djangoflow_openapi` depdendency
+- **Breaking Changes** Changed `ProviderEnum` to `SocialTokenObtainProviderEnum`
 
 ## 0.1.1
 
