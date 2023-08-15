@@ -4,7 +4,7 @@ import 'package:djangoflow_openapi/djangoflow_openapi.dart';
 import 'package:collection/collection.dart';
 
 extension SocialLoginListExtensions on List<SocialLogin> {
-  SocialLogin getSocialLoginByProvider(ProviderEnum provider) {
+  SocialLogin getSocialLoginByProvider(SocialTokenObtainProviderEnum provider) {
     final socialLogin = firstWhereOrNull(
       (element) => element.type.provider == provider,
     );
