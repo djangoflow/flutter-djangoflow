@@ -56,7 +56,7 @@ Add the `djangoflow_auth` package to your `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  djangoflow_auth: ^0.0.1
+  djangoflow_auth: <lastest_version>
 
 dependency_overrides:
   djangoflow_openapi:

@@ -1,3 +1,7 @@
+## 0.1.1
+
+- Added example URL
+
 ## 0.1.0
 
 - Removed implementations of SocialLogin support from djangoflow_auth, but they are now in djangoflow_auth_google, djangoflow_auth_facebook, djangoflow_auth_apple, djangoflow_auth_discord.
