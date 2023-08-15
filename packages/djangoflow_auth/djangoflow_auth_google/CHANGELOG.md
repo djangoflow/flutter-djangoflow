@@ -1,3 +1,7 @@
+## 0.0.2
+
+- Added example URL
+
 ## 0.0.1 - Initial Release
 
 - Initial release of the `djangoflow_auth_google` package.
