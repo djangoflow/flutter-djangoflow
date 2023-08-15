@@ -17,7 +17,7 @@
 </p>
 
 <p align="center">
-  <b>NOTE:</b> This package relies on <a href="https://pub.dev/packages/djangoflow_openapi">djangoflow_openapi</a> for models and API methods. Make sure you're using the DjangoFlow framework for development. For Django backend with DjangoFlow authentication, follow the <a href="https://github.com/djangoflow/django-df-auth#readme">django-df-auth</a> README. A comprehensive example with a locally generated <b>djangoflow_openapi</b> and a running backend server is coming soon. Stay tuned! 🚀
+  <b>NOTE:</b> This package relies on <a href="https://pub.dev/packages/djangoflow_openapi">djangoflow_openapi</a> for models and API methods. Make sure you're using the DjangoFlow framework for development. For Django backend with DjangoFlow authentication, follow the <a href="https://github.com/djangoflow/django-df-auth#readme">django-df-auth</a> README. Checkout our [Example](https://github.com/djangoflow/djangoflow-examples/tree/main/simple_auth)! 🚀
 </p>
 
 <p align="center">
@@ -242,7 +242,7 @@ if (result == null) {
 
 <h2 align="center">🌟 Example 🌟</h2>
 
-Coming soon...
+[Example](https://github.com/djangoflow/djangoflow-examples/tree/main/simple_auth)
 
 <h2 align="center">👏 Contributions and Issues 👏</h2>
 

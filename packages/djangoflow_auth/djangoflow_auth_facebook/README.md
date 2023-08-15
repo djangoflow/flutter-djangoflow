@@ -87,7 +87,7 @@ Read more here for detailed example on how to use it with `djangoflow_auth` this
 
 ## Example
 
-An example of using <code>djangoflow_auth_facebook</code> in a Flutter app is coming soon! Stay tuned for a comprehensive usage guide.
+[Example](https://github.com/djangoflow/djangoflow-examples/tree/main/simple_auth)
 
 ## Contributions and Issues
 

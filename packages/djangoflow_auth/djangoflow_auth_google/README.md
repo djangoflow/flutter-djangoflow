@@ -127,7 +127,7 @@ GoogleSignInWebButton(
 ```
 
 <h2>🌟 Example 🌟</h2>
-Full example is coming soon...
+[Example](https://github.com/djangoflow/djangoflow-examples/tree/main/simple_auth)
 
 <h2>👏 Contributions and Issues 👏</h2>
 Contributions, bug reports, and feature requests are welcome! Feel free to submit a pull request or open an issue on the <a href="https://github.com/djangoflow/flutter-djangoflow">GitHub_repository</a>

@@ -107,7 +107,7 @@ Read more here for a detailed example on how to use it with `djangoflow_auth`: h
 
 <h2 align="left">🌟 Example 🌟</h2>
 
-An example of using <code>djangoflow_auth_discord</code> in a Flutter app is coming soon! Stay tuned for a comprehensive usage guide.
+[Example](https://github.com/djangoflow/djangoflow-examples/tree/main/simple_auth)
 
 <h2 align="left">👏 Contributions and Issues 👏</h2>
 
