@@ -1,3 +1,7 @@
+## 0.0.3
+
+- Update depdendencies
+
 ## 0.0.2
 
 - Added example URL
