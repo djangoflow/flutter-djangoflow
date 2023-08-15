@@ -1,3 +1,8 @@
+## 0.0.5
+
+- Updated dependencies
+- Updated README
+
 ## 0.0.4
 
 - Added example URL
