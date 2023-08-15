@@ -34,7 +34,7 @@ Add the `djangoflow_auth_facebook` package to your <code>pubspec.yaml</code> fil
 
 ```yaml
 dependencies:
-  djangoflow_auth_facebook: ^0.0.1
+  djangoflow_auth_facebook: <latest_version>
   flutter_facebook_auth: <latest_version> # Check for the latest version
 ```
 
