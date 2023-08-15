@@ -86,7 +86,7 @@ final discordLogin = DiscordSocialLoginProvider(
     state: 'OPTIONAL_STATE',
     scope: 'SCOPE_STRING',
   ),
-  type: SocialLoginType.fromProvider(ProviderEnum.discord),
+  type: SocialLoginType.fromProvider(SocialTokenObtainProviderEnum.discord),
 );
 ```
 

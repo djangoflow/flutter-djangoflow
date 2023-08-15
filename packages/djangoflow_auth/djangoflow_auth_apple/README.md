@@ -66,7 +66,7 @@ final appleLogin = AppleSocialLogin(
   webAuthenticationOptions: WebAuthenticationOptions(
     // Specify your web authentication options
   ),
-  type: SocialLoginType.fromProvider(ProviderEnum.apple),
+  type: SocialLoginType.fromProvider(SocialTokenObtainProviderEnum.apple),
 );
 ```
 
