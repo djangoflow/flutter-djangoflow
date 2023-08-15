@@ -11,7 +11,7 @@ dependencies:
   flutter:
     sdk: flutter
   djangoflow_auth: ^0.1.1
-  djangoflow_openapi: ^0.0.15
+  djangoflow_openapi: ^0.0.16
   flutter_facebook_auth: ^6.0.1
 
 dev_dependencies:

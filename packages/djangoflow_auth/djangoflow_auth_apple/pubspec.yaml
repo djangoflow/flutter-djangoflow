@@ -11,7 +11,7 @@ dependencies:
   flutter:
     sdk: flutter
   djangoflow_auth: ^0.1.1
-  djangoflow_openapi: ^0.0.15
+  djangoflow_openapi: ^0.0.16
   sign_in_with_apple: ^5.0.0
 
 dev_dependencies:
