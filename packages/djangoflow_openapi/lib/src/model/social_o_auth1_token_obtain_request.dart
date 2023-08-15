@@ -3,10 +3,9 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:djangoflow_openapi/src/model/social_token_obtain_provider_enum.dart';
 import 'package:json_annotation/json_annotation.dart';
 
-part 'social_token_obtain_request.g.dart';
+part 'social_o_auth1_token_obtain_request.g.dart';
 
 
 @JsonSerializable(
@@ -15,9 +14,9 @@ part 'social_token_obtain_request.g.dart';
   disallowUnrecognizedKeys: false,
   explicitToJson: true,
 )
-class SocialTokenObtainRequest {
-  /// Returns a new [SocialTokenObtainRequest] instance.
-  SocialTokenObtainRequest({
+class SocialOAuth1TokenObtainRequest {
+  /// Returns a new [SocialOAuth1TokenObtainRequest] instance.
+  SocialOAuth1TokenObtainRequest({
 
      this.firstName,
 
@@ -25,7 +24,9 @@ class SocialTokenObtainRequest {
 
     required  this.provider,
 
-    required  this.accessToken,
+    required  this.oauthToken,
+
+    required  this.oauthTokenSecret,
   });
 
   @JsonKey(
@@ -60,39 +61,53 @@ class SocialTokenObtainRequest {
   )
 
 
-  final SocialTokenObtainProviderEnum provider;
+  final bool provider;
 
 
 
   @JsonKey(
     
-    name: r'access_token',
+    name: r'oauth_token',
     required: true,
     includeIfNull: false
   )
 
 
-  final String accessToken;
+  final String oauthToken;
+
+
+
+  @JsonKey(
+    
+    name: r'oauth_token_secret',
+    required: true,
+    includeIfNull: false
+  )
+
+
+  final String oauthTokenSecret;
 
 
 
   @override
-  bool operator ==(Object other) => identical(this, other) || other is SocialTokenObtainRequest &&
+  bool operator ==(Object other) => identical(this, other) || other is SocialOAuth1TokenObtainRequest &&
      other.firstName == firstName &&
      other.lastName == lastName &&
      other.provider == provider &&
-     other.accessToken == accessToken;
+     other.oauthToken == oauthToken &&
+     other.oauthTokenSecret == oauthTokenSecret;
 
   @override
   int get hashCode =>
     firstName.hashCode +
     lastName.hashCode +
     provider.hashCode +
-    accessToken.hashCode;
+    oauthToken.hashCode +
+    oauthTokenSecret.hashCode;
 
-  factory SocialTokenObtainRequest.fromJson(Map<String, dynamic> json) => _$SocialTokenObtainRequestFromJson(json);
+  factory SocialOAuth1TokenObtainRequest.fromJson(Map<String, dynamic> json) => _$SocialOAuth1TokenObtainRequestFromJson(json);
 
-  Map<String, dynamic> toJson() => _$SocialTokenObtainRequestToJson(this);
+  Map<String, dynamic> toJson() => _$SocialOAuth1TokenObtainRequestToJson(this);
 
   @override
   String toString() {

@@ -17,6 +17,8 @@ Method | HTTP request | Description
 [**authSignupCreate**](AuthApi.md#authsignupcreate) | **POST** /api/v1/auth/signup/ | 
 [**authSocialConnectCreate**](AuthApi.md#authsocialconnectcreate) | **POST** /api/v1/auth/social/connect/ | 
 [**authSocialCreate**](AuthApi.md#authsocialcreate) | **POST** /api/v1/auth/social/ | 
+[**authSocialOauth1ConnectCreate**](AuthApi.md#authsocialoauth1connectcreate) | **POST** /api/v1/auth/social/oauth1/connect/ | 
+[**authSocialOauth1Create**](AuthApi.md#authsocialoauth1create) | **POST** /api/v1/auth/social/oauth1/ | 
 [**authTokenBlacklistCreate**](AuthApi.md#authtokenblacklistcreate) | **POST** /api/v1/auth/token/blacklist/ | 
 [**authTokenCreate**](AuthApi.md#authtokencreate) | **POST** /api/v1/auth/token/ | 
 [**authTokenRefreshCreate**](AuthApi.md#authtokenrefreshcreate) | **POST** /api/v1/auth/token/refresh/ | 
@@ -358,6 +360,94 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **socialTokenObtainRequest** | [**SocialTokenObtainRequest**](SocialTokenObtainRequest.md)|  | 
+
+### Return type
+
+[**Token**](Token.md)
+
+### Authorization
+
+[jwtAuth](../README.md#jwtAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **authSocialOauth1ConnectCreate**
+> Token authSocialOauth1ConnectCreate(socialOAuth1TokenObtainRequest)
+
+
+
+### Example
+```dart
+import 'package:djangoflow_openapi/api.dart';
+// TODO Configure HTTP basic authorization: jwtAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
+
+final api = DjangoflowOpenapi().getAuthApi();
+final SocialOAuth1TokenObtainRequest socialOAuth1TokenObtainRequest = ; // SocialOAuth1TokenObtainRequest | 
+
+try {
+    final response = api.authSocialOauth1ConnectCreate(socialOAuth1TokenObtainRequest);
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling AuthApi->authSocialOauth1ConnectCreate: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **socialOAuth1TokenObtainRequest** | [**SocialOAuth1TokenObtainRequest**](SocialOAuth1TokenObtainRequest.md)|  | 
+
+### Return type
+
+[**Token**](Token.md)
+
+### Authorization
+
+[jwtAuth](../README.md#jwtAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **authSocialOauth1Create**
+> Token authSocialOauth1Create(socialOAuth1TokenObtainRequest)
+
+
+
+### Example
+```dart
+import 'package:djangoflow_openapi/api.dart';
+// TODO Configure HTTP basic authorization: jwtAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
+
+final api = DjangoflowOpenapi().getAuthApi();
+final SocialOAuth1TokenObtainRequest socialOAuth1TokenObtainRequest = ; // SocialOAuth1TokenObtainRequest | 
+
+try {
+    final response = api.authSocialOauth1Create(socialOAuth1TokenObtainRequest);
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling AuthApi->authSocialOauth1Create: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **socialOAuth1TokenObtainRequest** | [**SocialOAuth1TokenObtainRequest**](SocialOAuth1TokenObtainRequest.md)|  | 
 
 ### Return type
 

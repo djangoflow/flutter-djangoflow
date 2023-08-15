@@ -27,6 +27,7 @@ import 'package:djangoflow_openapi/src/model/room_user.dart';
 import 'package:djangoflow_openapi/src/model/set_password_request.dart';
 import 'package:djangoflow_openapi/src/model/signup.dart';
 import 'package:djangoflow_openapi/src/model/signup_request.dart';
+import 'package:djangoflow_openapi/src/model/social_o_auth1_token_obtain_request.dart';
 import 'package:djangoflow_openapi/src/model/social_token_obtain_request.dart';
 import 'package:djangoflow_openapi/src/model/token.dart';
 import 'package:djangoflow_openapi/src/model/token_blacklist_request.dart';
@@ -99,9 +100,6 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           return PatchedRoomRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'PatchedUserDeviceRequest':
           return PatchedUserDeviceRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
-        case 'ProviderEnum':
-          
-          
         case 'PushAction':
           return PushAction.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'PushActionCategory':
@@ -118,6 +116,11 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           return Signup.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'SignupRequest':
           return SignupRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'SocialOAuth1TokenObtainRequest':
+          return SocialOAuth1TokenObtainRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'SocialTokenObtainProviderEnum':
+          
+          
         case 'SocialTokenObtainRequest':
           return SocialTokenObtainRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'Token':
