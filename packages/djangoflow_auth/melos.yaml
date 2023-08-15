@@ -1,0 +1,27 @@
+name: djangoflow_auth
+repository: https://github.com/djangoflow/flutter-djangoflow
+
+packages:
+  - djangoflow_auth
+  - djangoflow_auth_google
+  - djangoflow_auth_facebook
+  - djangoflow_auth_apple
+  - djangoflow_auth_discord
+
+command:
+  version:
+    # Generate commit links in package changelogs.
+    # linkToCommits: true
+    # # Only allow versioning to happen on main branch.
+    branch: main
+    # Additionally build a changelog at the root of the workspace.
+    # workspaceChangelog: true
+
+  bootstrap:
+    # It seems so that running "pub get" in parallel has some issues (like
+    # https://github.com/dart-lang/pub/issues/3404). Disabling this feature
+    # makes the CI much more stable.
+    runPubGetInParallel: false
+    usePubspecOverrides: true
+
+scripts:

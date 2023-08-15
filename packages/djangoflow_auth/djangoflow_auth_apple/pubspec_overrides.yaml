@@ -1,0 +1,4 @@
+# melos_managed_dependency_overrides: djangoflow_auth
+dependency_overrides:
+  djangoflow_auth:
+    path: ../djangoflow_auth
