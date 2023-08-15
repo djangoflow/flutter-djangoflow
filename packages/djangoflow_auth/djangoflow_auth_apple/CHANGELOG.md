@@ -1,3 +1,7 @@
+## 0.0.4
+
+- Added example URL
+
 ## 0.0.3
 
 - Updated README with updated djangoflow logo
