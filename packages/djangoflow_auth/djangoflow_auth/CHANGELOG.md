@@ -1,6 +1,6 @@
 ## 0.2.0
 
-- Update `djangoflow_openapi` depdendency
+- Updated `djangoflow_openapi` depdendency
 
 ## 0.1.1
 
