@@ -1,4 +1,4 @@
-# djangoflow_openapi.model.ProviderEnum
+# djangoflow_openapi.model.SocialTokenObtainProviderEnum
 
 ## Load the model package
 ```dart

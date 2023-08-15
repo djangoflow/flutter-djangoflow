@@ -429,6 +429,116 @@
                 }
             }
         },
+        "/api/v1/auth/social/oauth1/": {
+            "post": {
+                "operationId": "auth_social_oauth1_create",
+                "tags": [
+                    "auth"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/SocialOAuth1TokenObtainRequest"
+                            }
+                        },
+                        "application/x-www-form-urlencoded": {
+                            "schema": {
+                                "$ref": "#/components/schemas/SocialOAuth1TokenObtainRequest"
+                            }
+                        },
+                        "multipart/form-data": {
+                            "schema": {
+                                "$ref": "#/components/schemas/SocialOAuth1TokenObtainRequest"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "security": [
+                    {
+                        "jwtAuth": []
+                    }
+                ],
+                "responses": {
+                    "400": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        },
+                        "description": ""
+                    },
+                    "201": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Token"
+                                }
+                            }
+                        },
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/api/v1/auth/social/oauth1/connect/": {
+            "post": {
+                "operationId": "auth_social_oauth1_connect_create",
+                "tags": [
+                    "auth"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/SocialOAuth1TokenObtainRequest"
+                            }
+                        },
+                        "application/x-www-form-urlencoded": {
+                            "schema": {
+                                "$ref": "#/components/schemas/SocialOAuth1TokenObtainRequest"
+                            }
+                        },
+                        "multipart/form-data": {
+                            "schema": {
+                                "$ref": "#/components/schemas/SocialOAuth1TokenObtainRequest"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "security": [
+                    {
+                        "jwtAuth": []
+                    }
+                ],
+                "responses": {
+                    "400": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        },
+                        "description": ""
+                    },
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Token"
+                                }
+                            }
+                        },
+                        "description": ""
+                    }
+                }
+            }
+        },
         "/api/v1/auth/token/": {
             "post": {
                 "operationId": "auth_token_create",
@@ -3042,16 +3152,6 @@
                     }
                 }
             },
-            "ProviderEnum": {
-                "enum": [
-                    "google-oauth2",
-                    "facebook",
-                    "apple-id",
-                    "discord"
-                ],
-                "type": "string",
-                "description": "* `google-oauth2` - google-oauth2\n* `facebook` - facebook\n* `apple-id` - apple-id\n* `discord` - discord"
-            },
             "PushAction": {
                 "type": "object",
                 "properties": {
@@ -3290,8 +3390,13 @@
                     }
                 }
             },
-            "SocialTokenObtainRequest": {
+            "SocialOAuth1TokenObtainProviderEnum": {
+                "enum": [],
+                "type": "boolean"
+            },
+            "SocialOAuth1TokenObtainRequest": {
                 "type": "object",
+                "description": "Serializer for obtaining social tokens for OAuth1.",
                 "properties": {
                     "first_name": {
                         "type": "string",
@@ -3301,13 +3406,57 @@
                         "type": "string",
                         "minLength": 1
                     },
-                    "access_token": {
+                    "provider": {
+                        "allOf": [
+                            {
+                                "$ref": "#/components/schemas/SocialOAuth1TokenObtainProviderEnum"
+                            }
+                        ],
+                        "description": ""
+                    },
+                    "oauth_token": {
                         "type": "string",
                         "writeOnly": true,
                         "minLength": 1
                     },
+                    "oauth_token_secret": {
+                        "type": "string",
+                        "writeOnly": true,
+                        "minLength": 1
+                    }
+                },
+                "required": [
+                    "oauth_token",
+                    "oauth_token_secret",
+                    "provider"
+                ]
+            },
+            "SocialTokenObtainProviderEnum": {
+                "enum": [
+                    "google-oauth2"
+                ],
+                "type": "string",
+                "description": "* `google-oauth2` - google-oauth2"
+            },
+            "SocialTokenObtainRequest": {
+                "type": "object",
+                "description": "Serializer for obtaining social tokens for OAuth2.",
+                "properties": {
+                    "first_name": {
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "last_name": {
+                        "type": "string",
+                        "minLength": 1
+                    },
                     "provider": {
-                        "$ref": "#/components/schemas/ProviderEnum"
+                        "$ref": "#/components/schemas/SocialTokenObtainProviderEnum"
+                    },
+                    "access_token": {
+                        "type": "string",
+                        "writeOnly": true,
+                        "minLength": 1
                     }
                 },
                 "required": [

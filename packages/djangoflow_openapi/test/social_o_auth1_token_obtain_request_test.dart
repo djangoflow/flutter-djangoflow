@@ -1,12 +1,12 @@
 import 'package:test/test.dart';
 import 'package:djangoflow_openapi/djangoflow_openapi.dart';
 
-// tests for SocialTokenObtainRequest
+// tests for SocialOAuth1TokenObtainRequest
 void main() {
-  final SocialTokenObtainRequest? instance = /* SocialTokenObtainRequest(...) */ null;
+  final SocialOAuth1TokenObtainRequest? instance = /* SocialOAuth1TokenObtainRequest(...) */ null;
   // TODO add properties to the entity
 
-  group(SocialTokenObtainRequest, () {
+  group(SocialOAuth1TokenObtainRequest, () {
     // String firstName
     test('to test the property `firstName`', () async {
       // TODO
@@ -17,13 +17,18 @@ void main() {
       // TODO
     });
 
-    // SocialTokenObtainProviderEnum provider
+    // bool provider
     test('to test the property `provider`', () async {
       // TODO
     });
 
-    // String accessToken
-    test('to test the property `accessToken`', () async {
+    // String oauthToken
+    test('to test the property `oauthToken`', () async {
+      // TODO
+    });
+
+    // String oauthTokenSecret
+    test('to test the property `oauthTokenSecret`', () async {
       // TODO
     });
 

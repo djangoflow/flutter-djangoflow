@@ -47,6 +47,16 @@ void main() {
       // TODO
     });
 
+    //Future<Token> authSocialOauth1ConnectCreate(SocialOAuth1TokenObtainRequest socialOAuth1TokenObtainRequest) async
+    test('test authSocialOauth1ConnectCreate', () async {
+      // TODO
+    });
+
+    //Future<Token> authSocialOauth1Create(SocialOAuth1TokenObtainRequest socialOAuth1TokenObtainRequest) async
+    test('test authSocialOauth1Create', () async {
+      // TODO
+    });
+
     //Future<Token> authTokenBlacklistCreate(TokenBlacklistRequest tokenBlacklistRequest) async
     test('test authTokenBlacklistCreate', () async {
       // TODO
