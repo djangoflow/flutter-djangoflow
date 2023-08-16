@@ -111,6 +111,19 @@ If you're facing issues with notification icons not being found in release mode 
 
 Check out the example provided in the [`example`](example) directory for a practical implementation of the package.
 
+<div align="center">
+  <div style="display: flex; justify-content: center; align-items: end;">
+    <div style="text-align: center; margin-right: 20px;">
+      <img src="demo/local_notification_android.gif" alt="Android Notification" width="300" />
+      <p><strong>Android Notification</strong></p>
+    </div>
+    <div style="text-align: center;">
+      <img src="demo/local_notification_ios.gif" alt="iOS Notification" width="300" />
+      <p><strong>iOS Notification</strong></p>
+    </div>
+  </div>
+</div>
+
 <h2 id="contributions">👏 Contributions and Issues</h2>
 
 Contributions, bug reports, and feature requests are welcome! Feel free to submit a pull request or open an issue on the [GitHub repository](https://github.com/djangoflow/flutter-djangoflow/).
