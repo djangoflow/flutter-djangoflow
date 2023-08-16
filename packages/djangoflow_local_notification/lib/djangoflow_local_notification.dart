@@ -1,0 +1,1 @@
+library djangoflow_local_notification;
