@@ -20,12 +20,14 @@ class ActionCategoryCubit extends HydratedCubit<ActionCategoryState>
       hasError: false,
     ));
     try {
-      final actionCategories =
-          (await notificationsApi?.notificationsActionCategoriesList())?.data;
-      emit(state.copyWith(
-        isLoading: false,
-        actionCategories: actionCategories ?? <PushActionCategory>[],
-      ));
+      await _notificationsApiChecker(() async {
+        final actionCategories =
+            (await notificationsApi?.notificationsActionCategoriesList())?.data;
+        emit(state.copyWith(
+          isLoading: false,
+          actionCategories: actionCategories ?? <PushActionCategory>[],
+        ));
+      });
     } catch (e) {
       emit(state.copyWith(
         isLoading: false,
@@ -33,6 +35,13 @@ class ActionCategoryCubit extends HydratedCubit<ActionCategoryState>
       ));
       rethrow;
     }
+  }
+
+  Future<void> _notificationsApiChecker(Function function) async {
+    if (notificationsApi == null) {
+      throw Exception('NotificationsApi is not initialized');
+    }
+    await function();
   }
 
   @override
