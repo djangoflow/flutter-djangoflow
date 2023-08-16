@@ -12,7 +12,6 @@ dependencies:
   collection: ^1.17.1
   dio: ^5.3.2
   djangoflow_openapi: ^0.0.16
-  firebase_messaging: ^14.6.5
   flutter:
     sdk: flutter
   flutter_bloc: ^8.1.3
