@@ -16,6 +16,7 @@ class NotificationDataPayload with _$NotificationDataPayload {
     String? dismissed,
     String? multiline,
     String? image,
+    Map<String, dynamic>? payload,
   }) = _NotificationDataPayload;
 
   factory NotificationDataPayload.fromJson(Map<String, dynamic> json) =>

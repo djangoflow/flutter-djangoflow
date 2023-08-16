@@ -31,6 +31,7 @@ mixin _$NotificationDataPayload {
   String? get dismissed => throw _privateConstructorUsedError;
   String? get multiline => throw _privateConstructorUsedError;
   String? get image => throw _privateConstructorUsedError;
+  Map<String, dynamic>? get payload => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -54,7 +55,8 @@ abstract class $NotificationDataPayloadCopyWith<$Res> {
       String? url,
       String? dismissed,
       String? multiline,
-      String? image});
+      String? image,
+      Map<String, dynamic>? payload});
 }
 
 /// @nodoc
@@ -81,6 +83,7 @@ class _$NotificationDataPayloadCopyWithImpl<$Res,
     Object? dismissed = freezed,
     Object? multiline = freezed,
     Object? image = freezed,
+    Object? payload = freezed,
   }) {
     return _then(_value.copyWith(
       notificationId: freezed == notificationId
@@ -123,6 +126,10 @@ class _$NotificationDataPayloadCopyWithImpl<$Res,
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
               as String?,
+      payload: freezed == payload
+          ? _value.payload
+          : payload // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
     ) as $Val);
   }
 }
@@ -145,7 +152,8 @@ abstract class _$$_NotificationDataPayloadCopyWith<$Res>
       String? url,
       String? dismissed,
       String? multiline,
-      String? image});
+      String? image,
+      Map<String, dynamic>? payload});
 }
 
 /// @nodoc
@@ -170,6 +178,7 @@ class __$$_NotificationDataPayloadCopyWithImpl<$Res>
     Object? dismissed = freezed,
     Object? multiline = freezed,
     Object? image = freezed,
+    Object? payload = freezed,
   }) {
     return _then(_$_NotificationDataPayload(
       notificationId: freezed == notificationId
@@ -212,6 +221,10 @@ class __$$_NotificationDataPayloadCopyWithImpl<$Res>
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
               as String?,
+      payload: freezed == payload
+          ? _value._payload
+          : payload // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
     ));
   }
 }
@@ -229,7 +242,9 @@ class _$_NotificationDataPayload implements _NotificationDataPayload {
       this.url,
       this.dismissed,
       this.multiline,
-      this.image});
+      this.image,
+      final Map<String, dynamic>? payload})
+      : _payload = payload;
 
   factory _$_NotificationDataPayload.fromJson(Map<String, dynamic> json) =>
       _$$_NotificationDataPayloadFromJson(json);
@@ -254,10 +269,19 @@ class _$_NotificationDataPayload implements _NotificationDataPayload {
   final String? multiline;
   @override
   final String? image;
+  final Map<String, dynamic>? _payload;
+  @override
+  Map<String, dynamic>? get payload {
+    final value = _payload;
+    if (value == null) return null;
+    if (_payload is EqualUnmodifiableMapView) return _payload;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
 
   @override
   String toString() {
-    return 'NotificationDataPayload(notificationId: $notificationId, id: $id, title: $title, actionCategoryId: $actionCategoryId, body: $body, actions: $actions, url: $url, dismissed: $dismissed, multiline: $multiline, image: $image)';
+    return 'NotificationDataPayload(notificationId: $notificationId, id: $id, title: $title, actionCategoryId: $actionCategoryId, body: $body, actions: $actions, url: $url, dismissed: $dismissed, multiline: $multiline, image: $image, payload: $payload)';
   }
 
   @override
@@ -278,13 +302,25 @@ class _$_NotificationDataPayload implements _NotificationDataPayload {
                 other.dismissed == dismissed) &&
             (identical(other.multiline, multiline) ||
                 other.multiline == multiline) &&
-            (identical(other.image, image) || other.image == image));
+            (identical(other.image, image) || other.image == image) &&
+            const DeepCollectionEquality().equals(other._payload, _payload));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, notificationId, id, title,
-      actionCategoryId, body, actions, url, dismissed, multiline, image);
+  int get hashCode => Object.hash(
+      runtimeType,
+      notificationId,
+      id,
+      title,
+      actionCategoryId,
+      body,
+      actions,
+      url,
+      dismissed,
+      multiline,
+      image,
+      const DeepCollectionEquality().hash(_payload));
 
   @JsonKey(ignore: true)
   @override
@@ -313,7 +349,8 @@ abstract class _NotificationDataPayload implements NotificationDataPayload {
       final String? url,
       final String? dismissed,
       final String? multiline,
-      final String? image}) = _$_NotificationDataPayload;
+      final String? image,
+      final Map<String, dynamic>? payload}) = _$_NotificationDataPayload;
 
   factory _NotificationDataPayload.fromJson(Map<String, dynamic> json) =
       _$_NotificationDataPayload.fromJson;
@@ -338,6 +375,8 @@ abstract class _NotificationDataPayload implements NotificationDataPayload {
   String? get multiline;
   @override
   String? get image;
+  @override
+  Map<String, dynamic>? get payload;
   @override
   @JsonKey(ignore: true)
   _$$_NotificationDataPayloadCopyWith<_$_NotificationDataPayload>

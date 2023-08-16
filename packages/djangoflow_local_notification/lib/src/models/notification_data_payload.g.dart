@@ -19,6 +19,7 @@ _$_NotificationDataPayload _$$_NotificationDataPayloadFromJson(
       dismissed: json['dismissed'] as String?,
       multiline: json['multiline'] as String?,
       image: json['image'] as String?,
+      payload: json['payload'] as Map<String, dynamic>?,
     );
 
 Map<String, dynamic> _$$_NotificationDataPayloadToJson(
@@ -34,6 +35,7 @@ Map<String, dynamic> _$$_NotificationDataPayloadToJson(
       'dismissed': instance.dismissed,
       'multiline': instance.multiline,
       'image': instance.image,
+      'payload': instance.payload,
     };
 
 _$_NotificationPayloadAction _$$_NotificationPayloadActionFromJson(
