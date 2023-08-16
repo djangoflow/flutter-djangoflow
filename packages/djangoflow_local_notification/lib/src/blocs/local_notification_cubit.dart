@@ -65,7 +65,9 @@ class LocalNotificationCubit extends Cubit<LocalNotificationState>
     String? payload,
   }) async {
     final notificationDetails = await notificationDetailsBuilder();
-
+    if (notificationInitializer?.flutterLocalNotificationsPlugin == null) {
+      throw Exception('NotificationInitializer is not initialized');
+    }
     await notificationInitializer?.flutterLocalNotificationsPlugin?.show(
       id,
       title,
