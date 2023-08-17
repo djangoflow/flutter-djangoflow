@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:convert';
 
 import 'package:djangoflow_websocket/interfaces/djangoflow_websocket_cubit_base.dart';
+import 'package:djangoflow_websocket/json_parsing_exception.dart';
 import 'package:djangoflow_websocket/utils/mixins/cubit_maybe_emit_mixin.dart';
 import 'package:flutter/widgets.dart';
 
@@ -105,10 +106,4 @@ class DjangoflowWebsocketCubit extends DjangoflowWebsocketCubitBase
     disconnect();
     return super.close();
   }
-}
-
-/// Exception class to catch json parsing errors
-class JsonParsingException implements Exception {
-  final String? stackTrace;
-  JsonParsingException(this.stackTrace);
 }
