@@ -12,5 +12,5 @@ class DjangoflowWebsocketConfig with _$DjangoflowWebsocketConfig {
     @Default('server closed connection') String serverClosedConnectionMessage,
     @Default(Duration(milliseconds: 5000)) Duration wSReconnectDelay,
     @Default(Duration(milliseconds: 100)) Duration wSCheckConnectionDelay,
-  }) = _DjangoflowWebsocketState;
+  }) = _DjangoflowWebsocketConfig;
 }
