@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
+import 'package:djangoflow_websocket/src/models/djangoflow_websocket_config.dart';
 
-import '../models/djangoflow_websocket_config.dart';
 import 'djangoflow_websocket_state.dart';
 export 'djangoflow_websocket_state.dart';
 

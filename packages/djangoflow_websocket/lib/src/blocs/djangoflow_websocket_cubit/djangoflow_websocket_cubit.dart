@@ -1,11 +1,10 @@
 import 'dart:async';
 import 'dart:convert';
 
-import 'package:djangoflow_websocket/interfaces/djangoflow_websocket_cubit_base.dart';
-import 'package:djangoflow_websocket/json_parsing_exception.dart';
-import 'package:djangoflow_websocket/utils/mixins/cubit_maybe_emit_mixin.dart';
+import 'package:djangoflow_websocket/src/json_parsing_exception.dart';
+import 'package:djangoflow_websocket/src/utils/mixins/cubit_maybe_emit_mixin.dart';
 import 'package:flutter/widgets.dart';
-
+import 'package:djangoflow_websocket/src/interfaces/djangoflow_websocket_cubit_base.dart';
 import 'package:web_socket_channel/web_socket_channel.dart';
 import 'package:web_socket_channel/status.dart' as status;
 
