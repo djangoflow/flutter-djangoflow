@@ -1,37 +1,30 @@
 import 'dart:async';
 import 'dart:convert';
 
-import 'package:djangoflow_websocket/utils/mixins/cubit_maybe_emit_mixin.dart';
+import 'package:djangoflow_websocket/src/json_parsing_exception.dart';
+import 'package:djangoflow_websocket/src/utils/mixins/cubit_maybe_emit_mixin.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-
+import 'package:djangoflow_websocket/src/interfaces/djangoflow_websocket_cubit_base.dart';
 import 'package:web_socket_channel/web_socket_channel.dart';
 import 'package:web_socket_channel/status.dart' as status;
 
-import 'djangoflow_websocket_state.dart';
-export 'djangoflow_websocket_state.dart';
-
-const _connectingMessage = 'Connecting....';
-const _reConnectingMessage = 'Re-connecting....';
-const _failedToSubscribeMessage = 'failed to subscribe';
-const _connectionErrorMessage = 'connection error';
-const _serverClosedConnectionMessage = 'server closed connection';
-const _wSReconnectDelay = Duration(milliseconds: 5000);
-const _wSCheckConnectionDelay = Duration(milliseconds: 100);
-
-/// DjangoflowWebsocketCubit is a Cubit which manages a websocket connection to a server.
+/// DjangoflowWebsocketCubit is a Cubit which manages a websocket connection to a server using [WebSocketChannel].
 /// and emits [DjangoflowWebsocketState]s. It also handles automatic reconnection.
-class DjangoflowWebsocketCubit extends Cubit<DjangoflowWebsocketState>
+class DjangoflowWebsocketCubit extends DjangoflowWebsocketCubitBase
     with CubitMaybeEmit {
   StreamSubscription? _subscription;
   WebSocketChannel? _channel;
 
-  DjangoflowWebsocketCubit() : super(const DjangoflowWebsocketState());
+  DjangoflowWebsocketCubit({required super.config})
+      : super(
+          const DjangoflowWebsocketState(),
+        );
 
   /// Connect to a websocket server
+  @override
   void connectToUri(Uri uri) {
     emit(state.copyWith(
-      connectionStateMessage: _connectingMessage,
+      connectionStateMessage: config.connectingMessage,
     ));
     _connect(uri);
   }
@@ -42,24 +35,24 @@ class DjangoflowWebsocketCubit extends Cubit<DjangoflowWebsocketState>
 
       if (_channel != null) {
         _subscription = _channel!.stream.listen(
-          _onMessageReceived,
+          onMessageReceived,
           onDone: () {
-            Future.delayed(_wSCheckConnectionDelay, () {
+            Future.delayed(config.wSCheckConnectionDelay, () {
               if (_channel == null) {
                 return;
               }
-              _reconnect(uri, _serverClosedConnectionMessage);
+              _reconnect(uri, config.serverClosedConnectionMessage);
             });
           },
           onError: (err, stackTrace) =>
-              _reconnect(uri, _connectionErrorMessage),
+              _reconnect(uri, config.connectionErrorMessage),
           cancelOnError: true,
         );
         emit(state.copyWith(
           connectionStateMessage: null,
         ));
       } else {
-        _reconnect(uri, _failedToSubscribeMessage);
+        _reconnect(uri, config.failedToSubscribeMessage);
       }
     } catch (e) {
       _reconnect(uri, e);
@@ -70,14 +63,20 @@ class DjangoflowWebsocketCubit extends Cubit<DjangoflowWebsocketState>
     emit(state.copyWith(
       connectionStateMessage: 'Error: ${message?.toString() ?? ""}, will retry',
     ));
-    await Future.delayed(_wSReconnectDelay);
+    await Future.delayed(config.wSReconnectDelay);
     emit(state.copyWith(
-      connectionStateMessage: _reConnectingMessage,
+      connectionStateMessage: config.reConnectingMessage,
     ));
     _connect(uri);
   }
 
-  void _onMessageReceived(dynamic message) {
+  @override
+  void sendMessage(dynamic message) {
+    _channel?.sink.add(message);
+  }
+
+  @override
+  void onMessageReceived(dynamic message) {
     try {
       final data = jsonDecode(message);
       emit(
@@ -92,8 +91,9 @@ class DjangoflowWebsocketCubit extends Cubit<DjangoflowWebsocketState>
   }
 
   /// Disconnect from the websocket server
-  void disconnect() {
-    _channel?.sink.close(status.normalClosure);
+  @override
+  void disconnect({int? closeCode, String? closeReason}) {
+    _channel?.sink.close(closeCode ?? status.normalClosure, closeReason);
     _subscription?.cancel();
 
     _subscription = null;
@@ -105,10 +105,4 @@ class DjangoflowWebsocketCubit extends Cubit<DjangoflowWebsocketState>
     disconnect();
     return super.close();
   }
-}
-
-/// Exception class to catch json parsing errors
-class JsonParsingException implements Exception {
-  final String? stackTrace;
-  JsonParsingException(this.stackTrace);
 }

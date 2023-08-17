@@ -21,7 +21,10 @@ DjangoflowWebsocketState _$DjangoflowWebsocketStateFromJson(
 
 /// @nodoc
 mixin _$DjangoflowWebsocketState {
+  /// The last message received from the server
   Map<String, dynamic>? get message => throw _privateConstructorUsedError;
+
+  /// Connection state message
   String? get connectionStateMessage => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -119,7 +122,10 @@ class _$_DjangoflowWebsocketState implements _DjangoflowWebsocketState {
   factory _$_DjangoflowWebsocketState.fromJson(Map<String, dynamic> json) =>
       _$$_DjangoflowWebsocketStateFromJson(json);
 
+  /// The last message received from the server
   final Map<String, dynamic>? _message;
+
+  /// The last message received from the server
   @override
   Map<String, dynamic>? get message {
     final value = _message;
@@ -129,6 +135,7 @@ class _$_DjangoflowWebsocketState implements _DjangoflowWebsocketState {
     return EqualUnmodifiableMapView(value);
   }
 
+  /// Connection state message
   @override
   final String? connectionStateMessage;
 
@@ -176,8 +183,12 @@ abstract class _DjangoflowWebsocketState implements DjangoflowWebsocketState {
       _$_DjangoflowWebsocketState.fromJson;
 
   @override
+
+  /// The last message received from the server
   Map<String, dynamic>? get message;
   @override
+
+  /// Connection state message
   String? get connectionStateMessage;
   @override
   @JsonKey(ignore: true)

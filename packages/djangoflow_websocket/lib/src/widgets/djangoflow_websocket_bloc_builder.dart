@@ -1,10 +1,10 @@
-import 'package:djangoflow_websocket/blocs/djangoflow_websocket_cubit/djangoflow_websocket_cubit.dart';
+import 'package:djangoflow_websocket/src/interfaces/djangoflow_websocket_cubit_base.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 /// [DjangoflowWebsocketBlocBuilder] is basically a [BlocBuilder<DjangoflowWebsocketCubit, DjangoflowWebsocketState>] widget
 /// that makes it easier to use.
-class DjangoflowWebsocketBlocBuilder
-    extends BlocBuilder<DjangoflowWebsocketCubit, DjangoflowWebsocketState> {
+class DjangoflowWebsocketBlocBuilder<C extends DjangoflowWebsocketCubitBase>
+    extends BlocBuilder<C, DjangoflowWebsocketState> {
   const DjangoflowWebsocketBlocBuilder({
     super.key,
     required super.builder,

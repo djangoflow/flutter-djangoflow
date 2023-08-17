@@ -1,3 +1,10 @@
+## 0.1.0
+
+- Updated Dart SDK constraints for dart 3
+- Added `DjangoflowWebsocketCubitBase` interface and now `DjangoflowWebsocketCubit` extends from it. And multiple cubit can be created for different `Uri` or websocket clients.
+- Added `DjangoflowWebsocketConfig` for more flexibility
+- Restrucutered file organization
+
 ## 0.0.1
 
 We are excited to announce the initial release of djangoflow_websocket!

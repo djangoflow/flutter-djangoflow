@@ -6,7 +6,7 @@ The DjangoflowWebsocketBlocListener class, extending BlocListener, simplifies li
 
 ## Description
 
-The project aims to provide a seamless integration of WebSocket functionality in a Flutter application using the `DjangoflowWebsocketCubit` class. It allows connecting to a WebSocket server, subscribing to messages, handling reconnections, and managing the WebSocket state.
+The project aims to provide a seamless integration of WebSocket functionality in a Flutter application using the `DjangoflowWebsocketCubit` class. It allows re/connecting to a WebSocket server, subscribing to messages, handling reconnections, and managing the WebSocket state. Under the hood it extends `DjangoflowWebsocketCubitBase` and `websocket_channel`.
 
 ## Installation
 
@@ -86,7 +86,7 @@ import 'package:djangoflow_websocket/blocs/djangoflow_websocket_cubit/djangoflow
   websocketCubit.disconnect();
   ```
 
-## API Reference
+**Note** `DjangoflowWebsocketCubitBase` can be extended to create more customizable Cubits to manage websocket connections.
 
 ### DjangoflowWebsocketCubit
 
@@ -94,9 +94,13 @@ import 'package:djangoflow_websocket/blocs/djangoflow_websocket_cubit/djangoflow
 
 Connects to a WebSocket server at the specified uri. Emits connection state messages using the DjangoflowWebsocketState class.
 
-#### **disconnect()**
+#### **disconnect({int? closeCode, String? closeReason})**
 
 Disconnects from the WebSocket server. Closes the channel sink and cancels the subscription.
+
+### **sendMessage**
+
+Send message to the WebSocket server.
 
 #### **DjangoflowWebsocketState**
 
@@ -104,7 +108,7 @@ An immutable class that represents the state of the WebSocket connection. Includ
 
 #### **DjangoflowWebsocketBlocListener**
 
-A widget that listens to state changes from the DjangoflowWebsocketCubit and executes a callback when a new message is received. It extends BlocListener<DjangoflowWebsocketCubit, DjangoflowWebsocketState>.
+A widget that listens to state changes from the DjangoflowWebsocketCubit and executes a callback when a new message is received.
 
 ## Contributing
 
