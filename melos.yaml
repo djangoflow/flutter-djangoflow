@@ -1,0 +1,22 @@
+name: djangoflow
+repository: https://github.com/djangoflow/flutter-djangoflow
+
+packages:
+  - packages/*
+  - packages/*/*
+  - packages/*/*/*
+
+command:
+  version:
+    linkToCommits: true
+    workspaceChangelog: true
+    
+  bootstrap:
+    runPubGetInParallel: false
+
+scripts:
+  format:
+    run: |
+      dart format .
+    description: |
+      Formats the code of all packages (Dart).
