@@ -15,6 +15,27 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`djangoflow_auth_discord` - `v0.0.4+2`](#djangoflow_auth_discord---v0042)
+
+---
+
+#### `djangoflow_auth_discord` - `v0.0.4+2`
+
+ - **REFACTOR**(discord_auth): add `http` as a dependancy. ([df5a3aea](https://github.com/djangoflow/flutter-djangoflow/commit/df5a3aea4abe2e277b1ae6442599bd63f7abbae1))
+
+
+## 2023-08-20
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`djangoflow_auth` - `v0.2.0+1`](#djangoflow_auth---v0201)
  - [`djangoflow_local_notification` - `v0.0.2`](#djangoflow_local_notification---v002)
  - [`djangoflow_websocket` - `v0.1.0+1`](#djangoflow_websocket---v0101)

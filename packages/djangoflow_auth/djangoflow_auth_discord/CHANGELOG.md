@@ -1,3 +1,7 @@
+## 0.0.4+2
+
+ - **REFACTOR**(discord_auth): add `http` as a dependancy. ([df5a3aea](https://github.com/djangoflow/flutter-djangoflow/commit/df5a3aea4abe2e277b1ae6442599bd63f7abbae1))
+
 ## 0.0.4+1
 
  - Update a dependency to the latest release.

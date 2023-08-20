@@ -1,6 +1,6 @@
 name: djangoflow_auth_discord
 description: djangoflow_auth_discord brings the power of Discord authentication to your Flutter app!
-version: 0.0.4+1
+version: 0.0.4+2
 homepage: https://github.com/djangoflow/flutter-djangoflow/
 
 environment:
