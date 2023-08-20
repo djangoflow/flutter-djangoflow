@@ -1,9 +1,9 @@
 import 'dart:convert';
 
 import 'package:collection/collection.dart';
-import 'package:djangoflow_auth/exceptions/login_provider_not_found_exception.dart';
-import 'package:djangoflow_auth/interfaces/social_login.dart';
-import 'package:djangoflow_auth/models/social_login_type/social_login_type.dart';
+import 'package:djangoflow_auth/src/exceptions/login_provider_not_found_exception.dart';
+import 'package:djangoflow_auth/src/interfaces/social_login.dart';
+import 'package:djangoflow_auth/src/models/social_login_type/social_login_type.dart';
 import 'package:djangoflow_openapi/djangoflow_openapi.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 

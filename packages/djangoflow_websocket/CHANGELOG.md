@@ -1,3 +1,12 @@
+## 0.1.0+1
+
+ - **REFACTOR**(websocket): move all files under src folder. ([837c697d](https://github.com/djangoflow/flutter-djangoflow/commit/837c697de1a055eab1e49307692ef4330de4e3d9))
+ - **REFACTOR**(websocket): delete .iml file. ([f41470d0](https://github.com/djangoflow/flutter-djangoflow/commit/f41470d0380e8aefb24cdd6fde32bfc8d13e052c))
+ - **REFACTOR**(websocket): add interface and config to make it more flexible. ([3589b916](https://github.com/djangoflow/flutter-djangoflow/commit/3589b916752c511aa29c8e4eedf353d43a81c99c))
+ - **FIX**(websocket): fix wrong generated constructor name. ([931e10fb](https://github.com/djangoflow/flutter-djangoflow/commit/931e10fb40971711d69be91ba761217a4a0079bc))
+ - **DOCS**(websocket): update CHANGELOG. ([f47278cc](https://github.com/djangoflow/flutter-djangoflow/commit/f47278cced0e8b84d2d17fdb94b78043aafb10cb))
+ - **DOCS**(websocket): update README. ([a47975b5](https://github.com/djangoflow/flutter-djangoflow/commit/a47975b5927501bf4eddfb6fdf8c1c8f60e6e879))
+
 ## 0.1.0
 
 - Updated Dart SDK constraints for dart 3

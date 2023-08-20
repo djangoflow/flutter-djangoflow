@@ -1,4 +1,4 @@
-import 'package:djangoflow_auth/models/social_login_type/social_login_type.dart';
+import 'package:djangoflow_auth/src/models/social_login_type/social_login_type.dart';
 
 /// The interface for the social login providers
 /// The [R] is the type of the response

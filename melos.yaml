@@ -1,0 +1,27 @@
+name: djangoflow
+repository: https://github.com/djangoflow/flutter-djangoflow
+
+packages:
+  - packages/*
+  - packages/*/*
+  - packages/*/*/*
+
+command:
+  version:
+    linkToCommits: true
+    workspaceChangelog: true
+    
+  bootstrap:
+    runPubGetInParallel: false
+    hooks:
+      post: dart pub run build_runner build
+
+scripts:
+  format:
+    run: |
+      dart format .
+    description: |
+      Formats the code of all packages (Dart).
+  generate:dart:
+    exec: dart run build_runner build --delete-conflicting-outputs
+    description: Generate build_runner files

@@ -1,5 +1,5 @@
-import 'package:djangoflow_auth/exceptions/login_provider_not_found_exception.dart';
-import 'package:djangoflow_auth/interfaces/social_login.dart';
+import 'package:djangoflow_auth/src/exceptions/login_provider_not_found_exception.dart';
+import 'package:djangoflow_auth/src/interfaces/social_login.dart';
 import 'package:djangoflow_openapi/djangoflow_openapi.dart';
 import 'package:collection/collection.dart';
 

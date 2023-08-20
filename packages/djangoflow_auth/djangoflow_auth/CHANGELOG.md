@@ -1,3 +1,8 @@
+## 0.2.0+1
+
+ - **REFACTOR**(auth): re-structure files for better organization. ([62e836aa](https://github.com/djangoflow/flutter-djangoflow/commit/62e836aab7645edd34062646eca9917e4260917b))
+ - **DOCS**(auth): update README. ([6a9e75a5](https://github.com/djangoflow/flutter-djangoflow/commit/6a9e75a5c74535f5bf0db22996f2657f73b127a4))
+
 ## 0.2.0
 
 - Updated `djangoflow_openapi` depdendency
