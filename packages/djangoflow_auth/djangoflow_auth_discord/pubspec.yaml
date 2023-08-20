@@ -13,6 +13,7 @@ dependencies:
   djangoflow_auth: ^0.2.0+1
   djangoflow_openapi: ^0.0.16
   oauth2_client: ^3.2.1
+  http: ^1.1.0
 
 dev_dependencies:
   flutter_test:
