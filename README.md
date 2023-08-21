@@ -81,6 +81,8 @@ Libraries to provide an interface and concrete implementation for sending analyt
 - `refactor`: Refactors the code.
 - `test`: Adds or updates tests.
 - `chore`: Routine tasks, maintenance etc.
+- `revert `: A change that reverts a previous commit.
+- `perf`: A change that improves performance.
 
 Example commit messages:
 
