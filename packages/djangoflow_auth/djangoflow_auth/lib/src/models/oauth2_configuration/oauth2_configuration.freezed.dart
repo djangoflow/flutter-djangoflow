@@ -50,19 +50,16 @@ abstract class $OAuth2ConfigurationCopyWith<$Res> {
       _$OAuth2ConfigurationCopyWithImpl<$Res, OAuth2Configuration>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'client_id')
-          String clientId,
-      @JsonKey(name: 'redirect_uri')
-          String redirectUri,
+      {@JsonKey(name: 'client_id') String clientId,
+      @JsonKey(name: 'redirect_uri') String redirectUri,
       String scope,
-      @JsonKey(name: 'state', includeIfNull: false)
-          String? state,
+      @JsonKey(name: 'state', includeIfNull: false) String? state,
       @JsonKey(name: 'code_challenge', includeIfNull: false)
-          String? codeChallenge,
+      String? codeChallenge,
       @JsonKey(name: 'code_challenge_method', includeIfNull: false)
-          String? codeChallengeMethod,
+      String? codeChallengeMethod,
       @JsonKey(name: 'response_type', includeIfNull: false)
-          String? responseType,
+      String? responseType,
       String? customUriScheme});
 }
 
@@ -134,19 +131,16 @@ abstract class _$$_OAuth2ConfigurationCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'client_id')
-          String clientId,
-      @JsonKey(name: 'redirect_uri')
-          String redirectUri,
+      {@JsonKey(name: 'client_id') String clientId,
+      @JsonKey(name: 'redirect_uri') String redirectUri,
       String scope,
-      @JsonKey(name: 'state', includeIfNull: false)
-          String? state,
+      @JsonKey(name: 'state', includeIfNull: false) String? state,
       @JsonKey(name: 'code_challenge', includeIfNull: false)
-          String? codeChallenge,
+      String? codeChallenge,
       @JsonKey(name: 'code_challenge_method', includeIfNull: false)
-          String? codeChallengeMethod,
+      String? codeChallengeMethod,
       @JsonKey(name: 'response_type', includeIfNull: false)
-          String? responseType,
+      String? responseType,
       String? customUriScheme});
 }
 
@@ -211,19 +205,14 @@ class __$$_OAuth2ConfigurationCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_OAuth2Configuration extends _OAuth2Configuration {
   const _$_OAuth2Configuration(
-      {@JsonKey(name: 'client_id')
-          required this.clientId,
-      @JsonKey(name: 'redirect_uri')
-          required this.redirectUri,
+      {@JsonKey(name: 'client_id') required this.clientId,
+      @JsonKey(name: 'redirect_uri') required this.redirectUri,
       required this.scope,
-      @JsonKey(name: 'state', includeIfNull: false)
-          this.state,
-      @JsonKey(name: 'code_challenge', includeIfNull: false)
-          this.codeChallenge,
+      @JsonKey(name: 'state', includeIfNull: false) this.state,
+      @JsonKey(name: 'code_challenge', includeIfNull: false) this.codeChallenge,
       @JsonKey(name: 'code_challenge_method', includeIfNull: false)
-          this.codeChallengeMethod,
-      @JsonKey(name: 'response_type', includeIfNull: false)
-          this.responseType,
+      this.codeChallengeMethod,
+      @JsonKey(name: 'response_type', includeIfNull: false) this.responseType,
       this.customUriScheme})
       : super._();
 
@@ -303,19 +292,16 @@ class _$_OAuth2Configuration extends _OAuth2Configuration {
 
 abstract class _OAuth2Configuration extends OAuth2Configuration {
   const factory _OAuth2Configuration(
-      {@JsonKey(name: 'client_id')
-          required final String clientId,
-      @JsonKey(name: 'redirect_uri')
-          required final String redirectUri,
+      {@JsonKey(name: 'client_id') required final String clientId,
+      @JsonKey(name: 'redirect_uri') required final String redirectUri,
       required final String scope,
-      @JsonKey(name: 'state', includeIfNull: false)
-          final String? state,
+      @JsonKey(name: 'state', includeIfNull: false) final String? state,
       @JsonKey(name: 'code_challenge', includeIfNull: false)
-          final String? codeChallenge,
+      final String? codeChallenge,
       @JsonKey(name: 'code_challenge_method', includeIfNull: false)
-          final String? codeChallengeMethod,
+      final String? codeChallengeMethod,
       @JsonKey(name: 'response_type', includeIfNull: false)
-          final String? responseType,
+      final String? responseType,
       final String? customUriScheme}) = _$_OAuth2Configuration;
   const _OAuth2Configuration._() : super._();
 
