@@ -54,3 +54,47 @@ Libraries to provide an interface and concrete implementation for sending analyt
 - **[djangoflow_facebook_analytics](https://github.com/djangoflow/flutter-djangoflow/tree/main/packages/djangoflow_analytics/djangoflow_facebook_analytics)**: Implement Facebook Analytics in your Flutter apps.
 - **[djangoflow_firebase_analytics](https://github.com/djangoflow/flutter-djangoflow/tree/main/packages/djangoflow_analytics/djangoflow_firebase_analytics)**: Implement Firebase Analytics in your Flutter apps.
 - **[djangoflow_mixpanel_analytics](https://github.com/djangoflow/flutter-djangoflow/tree/main/packages/djangoflow_analytics/djangoflow_mixpanel_analytics)**: Implement Mixpanel Analytics in your Flutter apps.
+
+## Contribution Guideline
+
+1. Fork the repository and create a new branch for your changes.
+2. Make your changes and commit them using the following commit message format:
+
+```
+<type>(<scope>): <description>
+
+[optional body]
+
+[optional footer]
+```
+
+3. Push your changes to your branch and open a pull request.
+
+## Melos Commit Patterns
+
+[Melos](https://pub.dev/packages/melos) uses the following commit patterns to manage the versioning of your monorepo:
+
+- `feat`: Introduces a new feature.
+- `fix`: Fixes a bug.
+- `docs`: Updates the documentation.
+- `style`: Improves the code style.
+- `refactor`: Refactors the code.
+- `test`: Code style changes (no functionality changes).
+- `chore`: Routine tasks, maintenance etc.
+
+Example commit messages:
+
+```
+feat(auth): add user registration
+fix(auth, ui): resolve layout issue on smaller screens
+docs(analytics): update contribution guidelines
+```
+
+When you commit changes to the repository following these types of commit patterns, Melos will automatically generate changelogs and bump the version of the affected packages.
+
+Here are some additional tips for contributing to your monorepo:
+
+- Make sure your changes are well-tested.
+- Use descriptive commit messages.
+- Follow the coding style of the project.
+- Be respectful and polite in your interactions with other contributors.
