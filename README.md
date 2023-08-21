@@ -77,9 +77,9 @@ Libraries to provide an interface and concrete implementation for sending analyt
 - `feat`: Introduces a new feature.
 - `fix`: Fixes a bug.
 - `docs`: Updates the documentation.
-- `style`: Improves the code style.
+- `style`: Code style changes (no functionality changes).
 - `refactor`: Refactors the code.
-- `test`: Code style changes (no functionality changes).
+- `test`: Adds or updates tests.
 - `chore`: Routine tasks, maintenance etc.
 
 Example commit messages:
