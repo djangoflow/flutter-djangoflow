@@ -10,18 +10,42 @@ command:
   version:
     linkToCommits: true
     workspaceChangelog: true
+    branch: main
+    updateGitTagRefs: true
     
   bootstrap:
     runPubGetInParallel: false
     hooks:
-      post: dart pub run build_runner build
+      post: melos run generate:dart
 
 scripts:
+  flutter-upgrade:
+    description: |
+      Upgrades all packages (Flutter).
+    run: flutter pub upgrade
+    exec:
+      concurrency: 1
+    packageFilters:
+      scope: "*djangoflow*"
+      ignore: 
+        - "*example*"
+      flutter: true
+      
+      
   format:
     run: |
       dart format .
     description: |
       Formats the code of all packages (Dart).
   generate:dart:
-    exec: dart run build_runner build --delete-conflicting-outputs
+    run: dart run build_runner build --delete-conflicting-outputs
+    exec:
+      concurrency: 1
+      failFast: true
     description: Generate build_runner files
+    packageFilters:
+      dependsOn: 'build_runner'
+      flutter: true
+      scope: "*djangoflow*"
+      ignore:
+        - "*/example/*"
