@@ -1,3 +1,7 @@
+## 0.0.2+1
+
+ - **FIX**(local_notification): fix build_runner not running. ([3aca6480](https://github.com/djangoflow/flutter-djangoflow/commit/3aca6480c211afacc38327c57586aaf633fc3159))
+
 ## 0.0.2
 
  - **REFACTOR**(local_notification): remove firebase_messaging dependency. ([4a4aef9c](https://github.com/djangoflow/flutter-djangoflow/commit/4a4aef9c13922441eb8ab262dc33b43823a07e11))

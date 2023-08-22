@@ -3,6 +3,45 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2023-08-23
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`djangoflow_auth` - `v0.2.1`](#djangoflow_auth---v021)
+ - [`djangoflow_local_notification` - `v0.0.2+1`](#djangoflow_local_notification---v0021)
+ - [`djangoflow_auth_discord` - `v0.0.4+3`](#djangoflow_auth_discord---v0043)
+ - [`djangoflow_auth_apple` - `v0.0.5+2`](#djangoflow_auth_apple---v0052)
+ - [`djangoflow_auth_google` - `v0.0.3+2`](#djangoflow_auth_google---v0032)
+ - [`djangoflow_auth_facebook` - `v0.0.4+2`](#djangoflow_auth_facebook---v0042)
+
+Packages with dependency updates only:
+
+> Packages listed below depend on other packages in this workspace that have had changes. Their versions have been incremented to bump the minimum dependency versions of the packages they depend upon in this project.
+
+ - `djangoflow_auth_discord` - `v0.0.4+3`
+ - `djangoflow_auth_apple` - `v0.0.5+2`
+ - `djangoflow_auth_google` - `v0.0.3+2`
+ - `djangoflow_auth_facebook` - `v0.0.4+2`
+
+---
+
+#### `djangoflow_auth` - `v0.2.1`
+
+ - **FEAT**(auth): add JwtAuthInterceptor. ([6378e6e5](https://github.com/djangoflow/flutter-djangoflow/commit/6378e6e59f8e8bece327c91b5316d4c9cf0510b0))
+
+#### `djangoflow_local_notification` - `v0.0.2+1`
+
+ - **FIX**(local_notification): fix build_runner not running. ([3aca6480](https://github.com/djangoflow/flutter-djangoflow/commit/3aca6480c211afacc38327c57586aaf633fc3159))
+
+
 ## 2023-08-20
 
 ### Changes

@@ -1,3 +1,7 @@
+## 0.2.1
+
+ - **FEAT**(auth): add JwtAuthInterceptor. ([6378e6e5](https://github.com/djangoflow/flutter-djangoflow/commit/6378e6e59f8e8bece327c91b5316d4c9cf0510b0))
+
 ## 0.2.0+1
 
  - **REFACTOR**(auth): re-structure files for better organization. ([62e836aa](https://github.com/djangoflow/flutter-djangoflow/commit/62e836aab7645edd34062646eca9917e4260917b))
