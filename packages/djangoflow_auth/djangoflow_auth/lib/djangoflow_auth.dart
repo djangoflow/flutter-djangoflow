@@ -7,3 +7,4 @@ export 'src/models/social_login_type/social_login_type.dart';
 export 'src/browser/web_window.dart';
 export 'src/extensions/social_login_extensions.dart';
 export 'src/exceptions/login_provider_not_found_exception.dart';
+export 'src/interceptors/jwt_auth_interceptor.dart';
