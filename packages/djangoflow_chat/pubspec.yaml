@@ -13,6 +13,7 @@ dependencies:
   bloc: ^8.1.1
   collection: ^1.17.0
   dio: ^5.1.1
+  djangoflow_bloc_extensions: ^0.0.1
   djangoflow_openapi: ^0.0.14
   flutter_bloc: ^8.1.2
   freezed_annotation: ^2.1.0

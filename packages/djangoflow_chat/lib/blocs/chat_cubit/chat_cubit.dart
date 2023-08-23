@@ -1,6 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:collection/collection.dart';
 import 'package:dio/dio.dart';
+import 'package:djangoflow_bloc_extensions/djangoflow_bloc_extensions.dart';
 import 'package:djangoflow_chat/constants.dart';
 import 'package:djangoflow_chat/models/anonymous_user.dart';
 import 'package:djangoflow_chat/utils/extensions/message_extension.dart';
@@ -10,7 +11,7 @@ import 'package:djangoflow_openapi/djangoflow_openapi.dart';
 import 'chat_state.dart';
 export 'chat_state.dart';
 
-class ChatCubit extends Cubit<ChatState> {
+class ChatCubit extends Cubit<ChatState> with SafeEmitMixin<ChatState> {
   /// The [ChatApi] instance
   final ChatApi _chatApi;
 
