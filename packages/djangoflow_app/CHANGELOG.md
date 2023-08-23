@@ -1,3 +1,7 @@
+## 3.3.0
+
+ - **FEAT**(app): add AppHeaderInterceptor. ([0351c250](https://github.com/djangoflow/flutter-djangoflow/commit/0351c250c1d532beeed3986745d326e5222c07cf))
+
 ## 3.2.0 - 14 June 2023
 
 - Updated dependencies

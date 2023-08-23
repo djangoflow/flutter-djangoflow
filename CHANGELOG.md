@@ -15,6 +15,27 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`djangoflow_app` - `v3.3.0`](#djangoflow_app---v330)
+
+---
+
+#### `djangoflow_app` - `v3.3.0`
+
+ - **FEAT**(app): add AppHeaderInterceptor. ([0351c250](https://github.com/djangoflow/flutter-djangoflow/commit/0351c250c1d532beeed3986745d326e5222c07cf))
+
+
+## 2023-08-23
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`djangoflow_bloc_extensions` - `v0.0.2+1`](#djangoflow_bloc_extensions---v0021)
  - [`djangoflow_local_notification` - `v0.0.2+3`](#djangoflow_local_notification---v0023)
  - [`djangoflow_chat` - `v0.0.1+2`](#djangoflow_chat---v0012)
