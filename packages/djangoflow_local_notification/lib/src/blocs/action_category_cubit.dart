@@ -1,4 +1,4 @@
-import 'package:djangoflow_local_notification/src/utils/mixins/cubit_maybe_emit_mixin.dart';
+import 'package:djangoflow_bloc_extensions/djangoflow_bloc_extensions.dart';
 import 'package:djangoflow_openapi/djangoflow_openapi.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 
@@ -6,7 +6,7 @@ import 'action_category_state.dart';
 export 'action_category_state.dart';
 
 class ActionCategoryCubit extends HydratedCubit<ActionCategoryState>
-    with CubitMaybeEmit {
+    with SafeEmitMixin {
   static ActionCategoryCubit get instance => _instance;
   static final ActionCategoryCubit _instance = ActionCategoryCubit._internal();
 

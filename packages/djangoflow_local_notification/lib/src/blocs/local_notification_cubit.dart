@@ -1,5 +1,5 @@
+import 'package:djangoflow_bloc_extensions/djangoflow_bloc_extensions.dart';
 import 'package:djangoflow_local_notification/src/local_notification_initializer.dart';
-import 'package:djangoflow_local_notification/src/utils/mixins/cubit_maybe_emit_mixin.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:djangoflow_openapi/djangoflow_openapi.dart';
@@ -11,7 +11,7 @@ typedef PresentableNotificationCallBack = Future<NotificationDetails?>
     Function();
 
 class LocalNotificationCubit extends Cubit<LocalNotificationState>
-    with CubitMaybeEmit {
+    with SafeEmitMixin<LocalNotificationState> {
   static LocalNotificationCubit get instance => _instance;
   static final LocalNotificationCubit _instance =
       LocalNotificationCubit._internal();
