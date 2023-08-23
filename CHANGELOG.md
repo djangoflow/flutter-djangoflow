@@ -15,6 +15,38 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`djangoflow_bloc_extensions` - `v0.0.2+1`](#djangoflow_bloc_extensions---v0021)
+ - [`djangoflow_local_notification` - `v0.0.2+3`](#djangoflow_local_notification---v0023)
+ - [`djangoflow_chat` - `v0.0.1+2`](#djangoflow_chat---v0012)
+ - [`djangoflow_websocket` - `v0.1.0+3`](#djangoflow_websocket---v0103)
+
+Packages with dependency updates only:
+
+> Packages listed below depend on other packages in this workspace that have had changes. Their versions have been incremented to bump the minimum dependency versions of the packages they depend upon in this project.
+
+ - `djangoflow_local_notification` - `v0.0.2+3`
+ - `djangoflow_chat` - `v0.0.1+2`
+ - `djangoflow_websocket` - `v0.1.0+3`
+
+---
+
+#### `djangoflow_bloc_extensions` - `v0.0.2+1`
+
+ - **DOCS**(bloc_extensions): update README. ([9bb0a9ac](https://github.com/djangoflow/flutter-djangoflow/commit/9bb0a9ace35603e0fe3c8862af1b59da315b4fe4))
+
+
+## 2023-08-23
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`djangoflow_bloc_extensions` - `v0.0.2`](#djangoflow_bloc_extensions---v002)
  - [`djangoflow_chat` - `v0.0.1+1`](#djangoflow_chat---v0011)
  - [`djangoflow_local_notification` - `v0.0.2+2`](#djangoflow_local_notification---v0022)

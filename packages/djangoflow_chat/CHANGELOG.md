@@ -1,3 +1,7 @@
+## 0.0.1+2
+
+ - Update a dependency to the latest release.
+
 ## 0.0.1+1
 
  - **REFACTOR**(chat): remove CubitMaybeEmit in favor of SafeEmitMixin. ([c577f5ac](https://github.com/djangoflow/flutter-djangoflow/commit/c577f5ac0bd41c7390d7f3710e0e638eb3653019))

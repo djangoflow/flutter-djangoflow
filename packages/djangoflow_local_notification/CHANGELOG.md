@@ -1,3 +1,7 @@
+## 0.0.2+3
+
+ - Update a dependency to the latest release.
+
 ## 0.0.2+2
 
  - **REFACTOR**(local_notification): remove CubitMaybeEmit in favor of SafeEmitMixin. ([049bbf53](https://github.com/djangoflow/flutter-djangoflow/commit/049bbf5372da0be59041ceb19747c3ac312ddd96))

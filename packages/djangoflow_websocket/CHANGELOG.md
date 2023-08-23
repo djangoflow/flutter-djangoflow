@@ -1,3 +1,7 @@
+## 0.1.0+3
+
+ - Update a dependency to the latest release.
+
 ## 0.1.0+2
 
  - **REFACTOR**(websocket): remove CubitMaybeEmit in favor of SafeEmitMixin. ([289b5e8b](https://github.com/djangoflow/flutter-djangoflow/commit/289b5e8b30034757f9fd1e71a6985c8c0146d0db))
