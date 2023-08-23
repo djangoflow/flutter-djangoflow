@@ -30,6 +30,7 @@ flutter pub get
 
 ### SafeEmitMixin
 
+Are you having seeing errors like `Bad state: Cannot emit new states after calling close` due to https://github.com/felangel/bloc/issues/3069? Then `SafeEmitMixin` can help you.
 The `SafeEmitMixin` is a mixin that enforces that the `emit` method can only be called safely when the BLoC is not closed. To use this mixin, follow these steps:
 
 1. Import the necessary libraries:
