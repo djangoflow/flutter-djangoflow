@@ -19,7 +19,7 @@ command:
       post: melos run generate:dart
 
 scripts:
-  flutter-upgrade:
+  flutter:upgrade:
     description: |
       Upgrades all packages (Flutter).
     run: flutter pub upgrade
@@ -29,6 +29,20 @@ scripts:
       scope: "*djangoflow*"
       ignore: 
         - "*example*"
+        - "*djangoflow_openapi*"
+      flutter: true
+  
+  flutter:upgrade:major:
+    description: |
+      Upgrades all packages with major versions (Flutter).
+    run: flutter pub upgrade --major-versions
+    exec:
+      concurrency: 1
+    packageFilters:
+      scope: "*djangoflow*"
+      ignore: 
+        - "*example*"
+        - "*djangoflow_openapi*"
       flutter: true
       
       
