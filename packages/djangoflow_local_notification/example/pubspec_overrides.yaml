@@ -1,6 +1,0 @@
-# melos_managed_dependency_overrides: djangoflow_local_notification,djangoflow_openapi
-dependency_overrides:
-  djangoflow_local_notification:
-    path: ..
-  djangoflow_openapi:
-    path: ../../djangoflow_openapi

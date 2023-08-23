@@ -1,4 +1,0 @@
-# melos_managed_dependency_overrides: djangoflow_deep_link_interface
-dependency_overrides:
-  djangoflow_deep_link_interface:
-    path: ../djangoflow_deep_link_interface

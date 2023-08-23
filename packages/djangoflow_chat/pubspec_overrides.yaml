@@ -1,4 +1,0 @@
-# melos_managed_dependency_overrides: djangoflow_openapi
-dependency_overrides:
-  djangoflow_openapi:
-    path: ../djangoflow_openapi

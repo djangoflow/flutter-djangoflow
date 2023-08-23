@@ -1,4 +1,0 @@
-# melos_managed_dependency_overrides: djangoflow_analytics
-dependency_overrides:
-  djangoflow_analytics:
-    path: ../djangoflow_analytics
