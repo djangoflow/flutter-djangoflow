@@ -1,3 +1,7 @@
+## 0.0.2+2
+
+ - **REFACTOR**(local_notification): remove CubitMaybeEmit in favor of SafeEmitMixin. ([049bbf53](https://github.com/djangoflow/flutter-djangoflow/commit/049bbf5372da0be59041ceb19747c3ac312ddd96))
+
 ## 0.0.2+1
 
  - **FIX**(local_notification): fix build_runner not running. ([3aca6480](https://github.com/djangoflow/flutter-djangoflow/commit/3aca6480c211afacc38327c57586aaf633fc3159))

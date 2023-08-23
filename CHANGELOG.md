@@ -15,6 +15,42 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`djangoflow_bloc_extensions` - `v0.0.2`](#djangoflow_bloc_extensions---v002)
+ - [`djangoflow_chat` - `v0.0.1+1`](#djangoflow_chat---v0011)
+ - [`djangoflow_local_notification` - `v0.0.2+2`](#djangoflow_local_notification---v0022)
+ - [`djangoflow_websocket` - `v0.1.0+2`](#djangoflow_websocket---v0102)
+
+---
+
+#### `djangoflow_bloc_extensions` - `v0.0.2`
+
+ - **FEAT**: add djangoflow_bloc_extensions package. ([354025cb](https://github.com/djangoflow/flutter-djangoflow/commit/354025cbb6698583d99e568147c9cb6d34a532e7))
+
+#### `djangoflow_chat` - `v0.0.1+1`
+
+ - **REFACTOR**(chat): remove CubitMaybeEmit in favor of SafeEmitMixin. ([c577f5ac](https://github.com/djangoflow/flutter-djangoflow/commit/c577f5ac0bd41c7390d7f3710e0e638eb3653019))
+
+#### `djangoflow_local_notification` - `v0.0.2+2`
+
+ - **REFACTOR**(local_notification): remove CubitMaybeEmit in favor of SafeEmitMixin. ([049bbf53](https://github.com/djangoflow/flutter-djangoflow/commit/049bbf5372da0be59041ceb19747c3ac312ddd96))
+
+#### `djangoflow_websocket` - `v0.1.0+2`
+
+ - **REFACTOR**(websocket): remove CubitMaybeEmit in favor of SafeEmitMixin. ([289b5e8b](https://github.com/djangoflow/flutter-djangoflow/commit/289b5e8b30034757f9fd1e71a6985c8c0146d0db))
+
+
+## 2023-08-23
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`djangoflow_auth` - `v0.2.1`](#djangoflow_auth---v021)
  - [`djangoflow_local_notification` - `v0.0.2+1`](#djangoflow_local_notification---v0021)
  - [`djangoflow_auth_discord` - `v0.0.4+3`](#djangoflow_auth_discord---v0043)

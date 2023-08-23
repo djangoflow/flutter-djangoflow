@@ -1,3 +1,7 @@
+## 0.1.0+2
+
+ - **REFACTOR**(websocket): remove CubitMaybeEmit in favor of SafeEmitMixin. ([289b5e8b](https://github.com/djangoflow/flutter-djangoflow/commit/289b5e8b30034757f9fd1e71a6985c8c0146d0db))
+
 ## 0.1.0+1
 
  - **REFACTOR**(websocket): move all files under src folder. ([837c697d](https://github.com/djangoflow/flutter-djangoflow/commit/837c697de1a055eab1e49307692ef4330de4e3d9))
