@@ -33,10 +33,15 @@ scripts:
       
       
   format:
-    run: |
-      dart format .
-    description: |
-      Formats the code of all packages (Dart).
+    run: dart format .
+    description: Formats the code of all packages (Dart).
+    exec: 
+      concurrency: 1
+      failFast: true
+    packageFilters:
+      ignore: 
+        - "*djangoflow_openapi*"
+
   generate:dart:
     run: dart run build_runner build --delete-conflicting-outputs
     exec:
