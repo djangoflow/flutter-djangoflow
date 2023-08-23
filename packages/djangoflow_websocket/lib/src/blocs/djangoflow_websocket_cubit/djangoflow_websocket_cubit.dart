@@ -1,8 +1,8 @@
 import 'dart:async';
 import 'dart:convert';
 
+import 'package:djangoflow_bloc_extensions/djangoflow_bloc_extensions.dart';
 import 'package:djangoflow_websocket/src/json_parsing_exception.dart';
-import 'package:djangoflow_websocket/src/utils/mixins/cubit_maybe_emit_mixin.dart';
 import 'package:flutter/widgets.dart';
 import 'package:djangoflow_websocket/src/interfaces/djangoflow_websocket_cubit_base.dart';
 import 'package:web_socket_channel/web_socket_channel.dart';
@@ -11,7 +11,7 @@ import 'package:web_socket_channel/status.dart' as status;
 /// DjangoflowWebsocketCubit is a Cubit which manages a websocket connection to a server using [WebSocketChannel].
 /// and emits [DjangoflowWebsocketState]s. It also handles automatic reconnection.
 class DjangoflowWebsocketCubit extends DjangoflowWebsocketCubitBase
-    with CubitMaybeEmit {
+    with SafeEmitMixin {
   StreamSubscription? _subscription;
   WebSocketChannel? _channel;
 
