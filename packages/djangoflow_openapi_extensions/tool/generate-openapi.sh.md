@@ -13,7 +13,7 @@ This script automates the process of generating an OpenAPI client packaged as `d
 You can directly execute the script using the following `curl | sh` command:
 
 ```bash
-curl -sSL https://raw.githubusercontent.com/djangoflow/djangoflow-examples/main/tools/generate-openapi.sh | sh -s [hostname] [API_VERSION]
+curl -sSL https://raw.githubusercontent.com/djangoflow/flutter-djangoflow/main/packages/djangoflow_openapi_extensions/tool/generate-openapi.sh | sh -s [hostname] [API_VERSION]
 ```
 
 Replace `[hostname]` with the base URL for the OpenAPI schema. If not provided, the script will default to `http://127.0.0.1:8000`. Replace `[API_VERSION]` with the version of the API. If not provided, it defaults to `v1`.
@@ -23,13 +23,13 @@ Replace `[hostname]` with the base URL for the OpenAPI schema. If not provided, 
 To generate the OpenAPI client using a specific hostname and API version:
 
 ```bash
-curl -sSL https://raw.githubusercontent.com/djangoflow/flutter-djangoflow/main/packages/djangoflow_openapi_extensions/tools/generate-openapi.sh | sh -s http://api.example.com:8000 v2
+curl -sSL https://raw.githubusercontent.com/djangoflow/flutter-djangoflow/main/packages/djangoflow_openapi_extensions/tool/generate-openapi.sh | sh -s http://api.example.com:8000 v2
 ```
 
 To use the default hostname and API version:
 
 ```bash
-curl -sSL https://raw.githubusercontent.com/djangoflow/flutter-djangoflow/main/packages/djangoflow_openapi_extensions/tools/generate-openapi.sh | sh
+curl -sSL https://raw.githubusercontent.com/djangoflow/flutter-djangoflow/main/packages/djangoflow_openapi_extensions/tool/generate-openapi.sh | sh
 ```
 
 ## Notes
