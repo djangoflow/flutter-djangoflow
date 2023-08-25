@@ -1,3 +1,7 @@
+## 3.4.0
+
+ - **FEAT**: add dismissAll method. ([baaeb826](https://github.com/djangoflow/flutter-djangoflow/commit/baaeb826abd2f1dd685e083a4a4570808d5b4b40))
+
 ## 3.3.0
 
  - **FEAT**(app): add AppHeaderInterceptor. ([0351c250](https://github.com/djangoflow/flutter-djangoflow/commit/0351c250c1d532beeed3986745d326e5222c07cf))

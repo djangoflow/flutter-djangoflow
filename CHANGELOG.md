@@ -15,6 +15,27 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`djangoflow_app` - `v3.4.0`](#djangoflow_app---v340)
+
+---
+
+#### `djangoflow_app` - `v3.4.0`
+
+ - **FEAT**: add dismissAll method. ([baaeb826](https://github.com/djangoflow/flutter-djangoflow/commit/baaeb826abd2f1dd685e083a4a4570808d5b4b40))
+
+
+## 2023-08-25
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`djangoflow_openapi_extensions` - `v0.0.3`](#djangoflow_openapi_extensions---v003)
 
 ---
