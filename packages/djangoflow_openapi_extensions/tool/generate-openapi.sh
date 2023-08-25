@@ -1,4 +1,6 @@
 #!/bin/bash
+# `sleep 1` is used to make sure the packages are installed and no race condition, 
+# otherwise throws (OS Error: No such file or directory, errno = 2)
 export TARGET_DIR=$(pwd)/packages/djangoflow_openapi
 export DART_POST_PROCESS_FILE="/usr/local/bin/dartfmt -w"
 cd "$(dirname "${BASH_SOURCE[0]}")"/.. || exit
@@ -13,5 +15,6 @@ ${OPENAPI_GENERATOR:-openapi-generator} generate -g dart-dio -p browserClient=fa
   -i "${HOST_NAME}/api/${API_VERSION}/schema" -o "${TARGET_DIR}" \
   && cd "${TARGET_DIR}" \
   && grep -rl 'includeIfNull: truefalse' lib  | xargs sed -i '' 's/includeIfNull: truefalse/includeIfNull: true/g' \
-  && flutter pub get \
+  && dart pub get \
+  && sleep 1 \
   && dart run build_runner build --delete-conflicting-outputs
