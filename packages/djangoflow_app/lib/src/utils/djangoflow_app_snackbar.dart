@@ -96,4 +96,8 @@ class DjangoflowAppSnackbar {
   static void dismiss() {
     scaffoldMessengerKey.currentState?.removeCurrentSnackBar();
   }
+
+  static void dismissAll() {
+    scaffoldMessengerKey.currentState?.clearSnackBars();
+  }
 }
