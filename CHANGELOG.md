@@ -15,6 +15,29 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`djangoflow_openapi_extensions` - `v0.0.3`](#djangoflow_openapi_extensions---v003)
+
+---
+
+#### `djangoflow_openapi_extensions` - `v0.0.3`
+
+ - **FIX**: fix build_runner not running from the script properly. ([06a4e2a8](https://github.com/djangoflow/flutter-djangoflow/commit/06a4e2a86372af6208b0a0bb851a94948af17141))
+ - **FEAT**: add generate-openapi-copywith.sh script. ([82208f54](https://github.com/djangoflow/flutter-djangoflow/commit/82208f54031d9916d71b2a06b612c43396eca249))
+ - **DOCS**: update example url in generate-openapi.sh.md file. ([04e3256d](https://github.com/djangoflow/flutter-djangoflow/commit/04e3256da8a57fc2debd5fbbd3e5159ac6f3f830))
+
+
+## 2023-08-25
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`djangoflow_openapi_extensions` - `v0.0.2`](#djangoflow_openapi_extensions---v002)
 
 ---
