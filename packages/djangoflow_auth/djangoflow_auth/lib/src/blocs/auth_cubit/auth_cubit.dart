@@ -78,7 +78,7 @@ class AuthCubit extends HydratedCubit<AuthState> {
             ?.data;
 
         return result;
-      }) as UserSignup?;
+      }) as Future<UserSignup?>;
 
   /// Request OTP for verification.
   Future<void> requestOTP({required OTPObtainRequest otpObtainRequest}) async =>
