@@ -65,22 +65,18 @@ class AuthCubit extends HydratedCubit<AuthState> {
     );
   }
 
-  Future<void> registrationWithEmail({
-    required String email,
-    required String firstName,
-    required String lastName,
+  /// Register or invite user to the system
+  Future<UserSignup?> registerOrInviteUser({
+    required UserSignupRequest userSignupRequest,
   }) async =>
       _authApiChecker(() async {
-        await authApi?.authSignupCreate(
-          signupRequest: SignupRequest(
-            email: email,
-            firstName: firstName,
-            lastName: lastName,
-          ),
-        );
+        final result = (await authApi?.authUserCreate(
+          userSignupRequest: userSignupRequest,
+        ))
+            ?.data;
 
-        await requestOTP(email: email);
-      });
+        return result;
+      }) as UserSignup?;
 
   Future<void> requestOTP({required String email}) async => _authApiChecker(
         () async => (
@@ -139,10 +135,10 @@ class AuthCubit extends HydratedCubit<AuthState> {
         }
       });
 
-  Future<void> _authApiChecker(Function function) async {
+  Future<dynamic> _authApiChecker(Function function) async {
     if (authApi == null) {
       throw Exception('AuthApi is not initialized');
     }
-    await function();
+    return await function();
   }
 }
