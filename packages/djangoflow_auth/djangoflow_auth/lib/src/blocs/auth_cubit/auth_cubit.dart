@@ -92,7 +92,7 @@ class AuthCubit extends HydratedCubit<AuthState> {
 
   /// Authenticates the user based on provided credentials (e.g., username+password or email+OTP etc)
   /// and logs them in by obtaining and processing a JWT token.
-  Future<void> credentialToTokenLogin({
+  Future<void> obtainTokenAndLogin({
     required TokenObtainRequest tokenObtainRequest,
   }) async =>
       _authApiChecker(() async {
@@ -121,7 +121,7 @@ class AuthCubit extends HydratedCubit<AuthState> {
           .decode(base64.decode(const Base64Codec().normalize(magiclink)))
           .split('/');
 
-      await credentialToTokenLogin(
+      await obtainTokenAndLogin(
         tokenObtainRequest: TokenObtainRequest(
           email: credentials[0],
           otp: credentials[1],
