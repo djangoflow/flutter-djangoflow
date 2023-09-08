@@ -8,17 +8,16 @@ part of 'social_login_type.dart';
 
 _$_SocialLoginType _$$_SocialLoginTypeFromJson(Map<String, dynamic> json) =>
     _$_SocialLoginType(
-      provider:
-          $enumDecode(_$SocialTokenObtainProviderEnumEnumMap, json['provider']),
+      provider: $enumDecode(_$ProviderEnumEnumMap, json['provider']),
       id: json['id'] as String,
     );
 
 Map<String, dynamic> _$$_SocialLoginTypeToJson(_$_SocialLoginType instance) =>
     <String, dynamic>{
-      'provider': _$SocialTokenObtainProviderEnumEnumMap[instance.provider]!,
+      'provider': _$ProviderEnumEnumMap[instance.provider]!,
       'id': instance.id,
     };
 
-const _$SocialTokenObtainProviderEnumEnumMap = {
-  SocialTokenObtainProviderEnum.googleOauth2: 'google-oauth2',
+const _$ProviderEnumEnumMap = {
+  ProviderEnum.googleOauth2: 'google-oauth2',
 };

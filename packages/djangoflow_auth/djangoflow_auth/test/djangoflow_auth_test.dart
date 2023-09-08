@@ -30,7 +30,7 @@ void main() {
       await expectLater(
         cubit.authenticateWithSocialProvider<String>(const SocialLoginType(
           id: 'Google',
-          provider: SocialTokenObtainProviderEnum.googleOauth2,
+          provider: ProviderEnum.googleOauth2,
         )),
         throwsA(
           isA<LoginProviderNotFoundException>(),
@@ -44,7 +44,7 @@ void main() {
         SocialLoginMock(
           type: const SocialLoginType(
             id: 'Google',
-            provider: SocialTokenObtainProviderEnum.googleOauth2,
+            provider: ProviderEnum.googleOauth2,
           ),
         ),
       ];

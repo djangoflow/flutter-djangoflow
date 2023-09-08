@@ -8,7 +8,7 @@ part 'social_login_type.g.dart';
 @freezed
 class SocialLoginType with _$SocialLoginType {
   const factory SocialLoginType({
-    required SocialTokenObtainProviderEnum provider,
+    required ProviderEnum provider,
     required String id,
   }) = _SocialLoginType;
 
@@ -16,8 +16,7 @@ class SocialLoginType with _$SocialLoginType {
       _$SocialLoginTypeFromJson(json);
 
   /// Automatically assigns a new id to the [SocialLoginType].
-  factory SocialLoginType.fromProvider(
-          SocialTokenObtainProviderEnum provider) =>
+  factory SocialLoginType.fromProvider(ProviderEnum provider) =>
       SocialLoginType(
         provider: provider,
         id: const Uuid().v1(),

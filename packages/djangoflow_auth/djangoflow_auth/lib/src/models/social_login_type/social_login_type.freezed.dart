@@ -20,8 +20,7 @@ SocialLoginType _$SocialLoginTypeFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$SocialLoginType {
-  SocialTokenObtainProviderEnum get provider =>
-      throw _privateConstructorUsedError;
+  ProviderEnum get provider => throw _privateConstructorUsedError;
   String get id => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -36,7 +35,7 @@ abstract class $SocialLoginTypeCopyWith<$Res> {
           SocialLoginType value, $Res Function(SocialLoginType) then) =
       _$SocialLoginTypeCopyWithImpl<$Res, SocialLoginType>;
   @useResult
-  $Res call({SocialTokenObtainProviderEnum provider, String id});
+  $Res call({ProviderEnum provider, String id});
 }
 
 /// @nodoc
@@ -59,7 +58,7 @@ class _$SocialLoginTypeCopyWithImpl<$Res, $Val extends SocialLoginType>
       provider: null == provider
           ? _value.provider
           : provider // ignore: cast_nullable_to_non_nullable
-              as SocialTokenObtainProviderEnum,
+              as ProviderEnum,
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -76,7 +75,7 @@ abstract class _$$_SocialLoginTypeCopyWith<$Res>
       __$$_SocialLoginTypeCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({SocialTokenObtainProviderEnum provider, String id});
+  $Res call({ProviderEnum provider, String id});
 }
 
 /// @nodoc
@@ -97,7 +96,7 @@ class __$$_SocialLoginTypeCopyWithImpl<$Res>
       provider: null == provider
           ? _value.provider
           : provider // ignore: cast_nullable_to_non_nullable
-              as SocialTokenObtainProviderEnum,
+              as ProviderEnum,
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -115,7 +114,7 @@ class _$_SocialLoginType implements _SocialLoginType {
       _$$_SocialLoginTypeFromJson(json);
 
   @override
-  final SocialTokenObtainProviderEnum provider;
+  final ProviderEnum provider;
   @override
   final String id;
 
@@ -154,14 +153,14 @@ class _$_SocialLoginType implements _SocialLoginType {
 
 abstract class _SocialLoginType implements SocialLoginType {
   const factory _SocialLoginType(
-      {required final SocialTokenObtainProviderEnum provider,
+      {required final ProviderEnum provider,
       required final String id}) = _$_SocialLoginType;
 
   factory _SocialLoginType.fromJson(Map<String, dynamic> json) =
       _$_SocialLoginType.fromJson;
 
   @override
-  SocialTokenObtainProviderEnum get provider;
+  ProviderEnum get provider;
   @override
   String get id;
   @override
