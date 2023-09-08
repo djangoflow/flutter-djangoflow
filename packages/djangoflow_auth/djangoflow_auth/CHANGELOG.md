@@ -1,3 +1,7 @@
+## 0.2.1+2
+
+ - **FIX**: wrong return type for `UserSignup`. ([4fef0941](https://github.com/djangoflow/flutter-djangoflow/commit/4fef094108fb76d0876208e4222b9cf046266080))
+
 ## 0.2.1+1
 
  - **REFACTOR**: update `SocialTokenObtainProviderEnum provider` to `ProviderEnum`. ([f6685e40](https://github.com/djangoflow/flutter-djangoflow/commit/f6685e4084e49f011c58884dcb5f98a0055ac998))
