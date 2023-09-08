@@ -77,7 +77,7 @@ class GoogleSocialLogin extends SocialLogin<GoogleSignInAccount> {
   final GoogleSignIn googleSignIn;
 
   GoogleSocialLogin({required this.googleSignIn})
-      : super(type: SocialLoginType.fromProvider(SocialTokenObtainProviderEnum.googleOauth2));
+      : super(type: SocialLoginType.fromProvider(ProviderEnum.googleOauth2));
 
   @override
   Future<GoogleSignInAccount?> login() async {
@@ -115,7 +115,7 @@ class GoogleSocialLogin extends SocialLogin<GoogleSignInAccount> {
                 ..socialLogins = [
                 GoogleSocialLogin(
                     type: SocialLoginType.fromProvider(
-                      SocialTokenObtainProviderEnum.googleOauth2,
+                      ProviderEnum.googleOauth2,
                     ),
                     googleSignIn: GoogleSignIn(
                       scopes: [
@@ -194,7 +194,7 @@ Let's say we are going to login via google, inside your app, initiate social log
   final authCubit = context.read<AuthCubit>();
   final socialLogin =
       authCubit.socialLogins.getSocialLoginByProvider(
-    SocialTokenObtainProviderEnum.googleOauth2,
+    ProviderEnum.googleOauth2,
   );
 
   // Authenticate with Google
