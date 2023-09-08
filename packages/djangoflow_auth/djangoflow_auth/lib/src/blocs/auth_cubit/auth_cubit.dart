@@ -71,14 +71,14 @@ class AuthCubit extends HydratedCubit<AuthState> {
   Future<UserSignup?> registerOrInviteUser({
     required UserSignupRequest userSignupRequest,
   }) async =>
-      _authApiChecker(() async {
+      _authApiChecker<UserSignup?>(() async {
         final result = (await authApi?.authUserCreate(
           userSignupRequest: userSignupRequest,
         ))
             ?.data;
 
         return result;
-      }) as Future<UserSignup?>;
+      });
 
   /// Request OTP for verification.
   Future<void> requestOTP({required OTPObtainRequest otpObtainRequest}) async =>
@@ -144,7 +144,7 @@ class AuthCubit extends HydratedCubit<AuthState> {
         }
       });
 
-  Future<dynamic> _authApiChecker(Function function) async {
+  Future<T> _authApiChecker<T>(Future<T> Function() function) async {
     if (authApi == null) {
       throw Exception('AuthApi is not initialized');
     }
