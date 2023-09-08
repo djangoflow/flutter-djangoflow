@@ -3,6 +3,52 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2023-09-08
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`djangoflow_auth` - `v0.2.1+1`](#djangoflow_auth---v0211)
+ - [`djangoflow_auth_apple` - `v0.0.5+3`](#djangoflow_auth_apple---v0053)
+ - [`djangoflow_auth_discord` - `v0.0.4+4`](#djangoflow_auth_discord---v0044)
+ - [`djangoflow_auth_facebook` - `v0.0.4+3`](#djangoflow_auth_facebook---v0043)
+ - [`djangoflow_auth_google` - `v0.0.3+3`](#djangoflow_auth_google---v0033)
+
+---
+
+#### `djangoflow_auth` - `v0.2.1+1`
+
+ - **REFACTOR**: update `SocialTokenObtainProviderEnum provider` to `ProviderEnum`. ([f6685e40](https://github.com/djangoflow/flutter-djangoflow/commit/f6685e4084e49f011c58884dcb5f98a0055ac998))
+ - **REFACTOR**: rename `loginWithOTP` to `loginWithOTP`. ([b7aa9dd3](https://github.com/djangoflow/flutter-djangoflow/commit/b7aa9dd30ec26760ba8d0345862cbe43f2cb2a32))
+ - **REFACTOR**: requestOtp now takes `OTPObtainRequest` instead of only email. ([bbe91299](https://github.com/djangoflow/flutter-djangoflow/commit/bbe912990654f9368cc7a129aeb27b5016f89e5e))
+ - **REFACTOR**: renamed `registrationWithEmail` to `registerOrInviteUser`. ([746a1c3d](https://github.com/djangoflow/flutter-djangoflow/commit/746a1c3dfd81580be3f9e377a3d967b6770b0a48))
+ - **DOCS**: update `SocialTokenObtainProviderEnum provider` to `ProviderEnum`. ([0c231686](https://github.com/djangoflow/flutter-djangoflow/commit/0c231686b9fe86d9676f35597c1c467ada575350))
+ - **DOCS**: update method documentation. ([0988879c](https://github.com/djangoflow/flutter-djangoflow/commit/0988879c01ca028bb275c891c74639f0aa2401a2))
+
+#### `djangoflow_auth_apple` - `v0.0.5+3`
+
+ - **DOCS**: update `SocialTokenObtainProviderEnum provider` to `ProviderEnum`. ([04fd4a30](https://github.com/djangoflow/flutter-djangoflow/commit/04fd4a30108808ec2b83de040df76e2bc0bd03fd))
+
+#### `djangoflow_auth_discord` - `v0.0.4+4`
+
+ - **DOCS**: update `SocialTokenObtainProviderEnum provider` to `ProviderEnum`. ([04fd4a30](https://github.com/djangoflow/flutter-djangoflow/commit/04fd4a30108808ec2b83de040df76e2bc0bd03fd))
+
+#### `djangoflow_auth_facebook` - `v0.0.4+3`
+
+ - **DOCS**: update `SocialTokenObtainProviderEnum provider` to `ProviderEnum`. ([04fd4a30](https://github.com/djangoflow/flutter-djangoflow/commit/04fd4a30108808ec2b83de040df76e2bc0bd03fd))
+
+#### `djangoflow_auth_google` - `v0.0.3+3`
+
+ - **DOCS**: update `SocialTokenObtainProviderEnum provider` to `ProviderEnum`. ([04fd4a30](https://github.com/djangoflow/flutter-djangoflow/commit/04fd4a30108808ec2b83de040df76e2bc0bd03fd))
+
+
 ## 2023-08-25
 
 ### Changes

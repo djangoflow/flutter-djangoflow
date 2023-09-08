@@ -1,3 +1,12 @@
+## 0.2.1+1
+
+ - **REFACTOR**: update `SocialTokenObtainProviderEnum provider` to `ProviderEnum`. ([f6685e40](https://github.com/djangoflow/flutter-djangoflow/commit/f6685e4084e49f011c58884dcb5f98a0055ac998))
+ - **REFACTOR**: rename `loginWithOTP` to `loginWithOTP`. ([b7aa9dd3](https://github.com/djangoflow/flutter-djangoflow/commit/b7aa9dd30ec26760ba8d0345862cbe43f2cb2a32))
+ - **REFACTOR**: requestOtp now takes `OTPObtainRequest` instead of only email. ([bbe91299](https://github.com/djangoflow/flutter-djangoflow/commit/bbe912990654f9368cc7a129aeb27b5016f89e5e))
+ - **REFACTOR**: renamed `registrationWithEmail` to `registerOrInviteUser`. ([746a1c3d](https://github.com/djangoflow/flutter-djangoflow/commit/746a1c3dfd81580be3f9e377a3d967b6770b0a48))
+ - **DOCS**: update `SocialTokenObtainProviderEnum provider` to `ProviderEnum`. ([0c231686](https://github.com/djangoflow/flutter-djangoflow/commit/0c231686b9fe86d9676f35597c1c467ada575350))
+ - **DOCS**: update method documentation. ([0988879c](https://github.com/djangoflow/flutter-djangoflow/commit/0988879c01ca028bb275c891c74639f0aa2401a2))
+
 ## 0.2.1
 
  - **FEAT**(auth): add JwtAuthInterceptor. ([6378e6e5](https://github.com/djangoflow/flutter-djangoflow/commit/6378e6e59f8e8bece327c91b5316d4c9cf0510b0))

@@ -1,3 +1,7 @@
+## 0.0.3+3
+
+ - **DOCS**: update `SocialTokenObtainProviderEnum provider` to `ProviderEnum`. ([04fd4a30](https://github.com/djangoflow/flutter-djangoflow/commit/04fd4a30108808ec2b83de040df76e2bc0bd03fd))
+
 ## 0.0.3+2
 
  - Update a dependency to the latest release.
