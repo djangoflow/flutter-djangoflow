@@ -1,3 +1,7 @@
+## 0.2.1+5
+
+ - **REFACTOR**: rename credentailToTokenLogin to obtainTokenAndLogin. ([98911fd1](https://github.com/djangoflow/flutter-djangoflow/commit/98911fd10a9ff0c5244ce08386869f3685f4d531))
+
 ## 0.2.1+4
 
  - **REFACTOR**: rename loginWithOTP to credentialToTokenLogin for clarity. ([5d83770a](https://github.com/djangoflow/flutter-djangoflow/commit/5d83770a27847a5abb77439fac4d210391d23616))

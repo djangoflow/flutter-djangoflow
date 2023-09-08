@@ -15,6 +15,40 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`djangoflow_auth` - `v0.2.1+5`](#djangoflow_auth---v0215)
+ - [`djangoflow_auth_discord` - `v0.0.4+8`](#djangoflow_auth_discord---v0048)
+ - [`djangoflow_auth_apple` - `v0.0.5+7`](#djangoflow_auth_apple---v0057)
+ - [`djangoflow_auth_google` - `v0.0.3+7`](#djangoflow_auth_google---v0037)
+ - [`djangoflow_auth_facebook` - `v0.0.4+7`](#djangoflow_auth_facebook---v0047)
+
+Packages with dependency updates only:
+
+> Packages listed below depend on other packages in this workspace that have had changes. Their versions have been incremented to bump the minimum dependency versions of the packages they depend upon in this project.
+
+ - `djangoflow_auth_discord` - `v0.0.4+8`
+ - `djangoflow_auth_apple` - `v0.0.5+7`
+ - `djangoflow_auth_google` - `v0.0.3+7`
+ - `djangoflow_auth_facebook` - `v0.0.4+7`
+
+---
+
+#### `djangoflow_auth` - `v0.2.1+5`
+
+ - **REFACTOR**: rename credentailToTokenLogin to obtainTokenAndLogin. ([98911fd1](https://github.com/djangoflow/flutter-djangoflow/commit/98911fd10a9ff0c5244ce08386869f3685f4d531))
+
+
+## 2023-09-09
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`djangoflow_auth` - `v0.2.1+4`](#djangoflow_auth---v0214)
  - [`djangoflow_auth_discord` - `v0.0.4+7`](#djangoflow_auth_discord---v0047)
  - [`djangoflow_auth_facebook` - `v0.0.4+6`](#djangoflow_auth_facebook---v0046)
