@@ -25,6 +25,7 @@ class AuthCubit extends HydratedCubit<AuthState> {
   @override
   Map<String, dynamic>? toJson(AuthState state) => state.toJson();
 
+  /// Authenticate user with social provider
   Future<R?> authenticateWithSocialProvider<R>(SocialLoginType type) async {
     final provider = _firstWhereSocialLogin(type);
     if (provider == null) {
@@ -56,6 +57,7 @@ class AuthCubit extends HydratedCubit<AuthState> {
         message ?? 'Social Provider ${type.provider.name} was not found',
       );
 
+  /// Logout user, also removes token from storage and logs out user from social logins
   Future<void> logout() async {
     for (final provider in socialLogins) {
       await provider.logout();
