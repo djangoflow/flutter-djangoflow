@@ -13,12 +13,17 @@ import 'package:djangoflow_openapi/src/model/error_response.dart';
 import 'package:djangoflow_openapi/src/model/otp_device.dart';
 import 'package:djangoflow_openapi/src/model/otp_device_confirm_request.dart';
 import 'package:djangoflow_openapi/src/model/otp_device_request.dart';
+import 'package:djangoflow_openapi/src/model/otp_obtain.dart';
+import 'package:djangoflow_openapi/src/model/otp_obtain_request.dart';
 import 'package:djangoflow_openapi/src/model/paginated_otp_device_list.dart';
 import 'package:djangoflow_openapi/src/model/social_token_obtain_request.dart';
 import 'package:djangoflow_openapi/src/model/token.dart';
 import 'package:djangoflow_openapi/src/model/token_blacklist_request.dart';
+import 'package:djangoflow_openapi/src/model/token_obtain_request.dart';
 import 'package:djangoflow_openapi/src/model/token_refresh_request.dart';
 import 'package:djangoflow_openapi/src/model/token_verify_request.dart';
+import 'package:djangoflow_openapi/src/model/user_signup.dart';
+import 'package:djangoflow_openapi/src/model/user_signup_request.dart';
 
 class AuthApi {
 
@@ -30,6 +35,7 @@ class AuthApi {
   /// 
   ///
   /// Parameters:
+  /// * [oTPObtainRequest] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -37,9 +43,10 @@ class AuthApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future]
+  /// Returns a [Future] containing a [Response] with a [OTPObtain] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<void>> authOtpCreate({ 
+  Future<Response<OTPObtain>> authOtpCreate({ 
+    OTPObtainRequest? oTPObtainRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -63,18 +70,60 @@ class AuthApi {
         ],
         ...?extra,
       },
+      contentType: 'application/json',
       validateStatus: validateStatus,
     );
 
+    dynamic _bodyData;
+
+    try {
+_bodyData=jsonEncode(oTPObtainRequest);
+    } catch(error, stackTrace) {
+      throw DioError(
+         requestOptions: _options.compose(
+          _dio.options,
+          _path,
+        ),
+        type: DioErrorType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
     final _response = await _dio.request<Object>(
       _path,
+      data: _bodyData,
       options: _options,
       cancelToken: cancelToken,
       onSendProgress: onSendProgress,
       onReceiveProgress: onReceiveProgress,
     );
 
-    return _response;
+    OTPObtain? _responseData;
+
+    try {
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<OTPObtain, OTPObtain>(rawData, 'OTPObtain', growable: true);
+    } catch (error, stackTrace) {
+      throw DioError(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioErrorType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<OTPObtain>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
   }
 
   /// authOtpDeviceConfirmCreate
@@ -749,6 +798,7 @@ _responseData = rawData == null ? null : deserialize<Token, Token>(rawData, 'Tok
   /// 
   ///
   /// Parameters:
+  /// * [tokenObtainRequest] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -759,6 +809,7 @@ _responseData = rawData == null ? null : deserialize<Token, Token>(rawData, 'Tok
   /// Returns a [Future] containing a [Response] with a [Token] as data
   /// Throws [DioError] if API call or serialization fails
   Future<Response<Token>> authTokenCreate({ 
+    TokenObtainRequest? tokenObtainRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -782,11 +833,29 @@ _responseData = rawData == null ? null : deserialize<Token, Token>(rawData, 'Tok
         ],
         ...?extra,
       },
+      contentType: 'application/json',
       validateStatus: validateStatus,
     );
 
+    dynamic _bodyData;
+
+    try {
+_bodyData=jsonEncode(tokenObtainRequest);
+    } catch(error, stackTrace) {
+      throw DioError(
+         requestOptions: _options.compose(
+          _dio.options,
+          _path,
+        ),
+        type: DioErrorType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
     final _response = await _dio.request<Object>(
       _path,
+      data: _bodyData,
       options: _options,
       cancelToken: cancelToken,
       onSendProgress: onSendProgress,
@@ -1014,6 +1083,7 @@ _responseData = rawData == null ? null : deserialize<Token, Token>(rawData, 'Tok
   /// 
   ///
   /// Parameters:
+  /// * [userSignupRequest] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -1021,9 +1091,10 @@ _responseData = rawData == null ? null : deserialize<Token, Token>(rawData, 'Tok
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future]
+  /// Returns a [Future] containing a [Response] with a [UserSignup] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<void>> authUserCreate({ 
+  Future<Response<UserSignup>> authUserCreate({ 
+    required UserSignupRequest userSignupRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -1047,18 +1118,60 @@ _responseData = rawData == null ? null : deserialize<Token, Token>(rawData, 'Tok
         ],
         ...?extra,
       },
+      contentType: 'application/json',
       validateStatus: validateStatus,
     );
 
+    dynamic _bodyData;
+
+    try {
+_bodyData=jsonEncode(userSignupRequest);
+    } catch(error, stackTrace) {
+      throw DioError(
+         requestOptions: _options.compose(
+          _dio.options,
+          _path,
+        ),
+        type: DioErrorType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
     final _response = await _dio.request<Object>(
       _path,
+      data: _bodyData,
       options: _options,
       cancelToken: cancelToken,
       onSendProgress: onSendProgress,
       onReceiveProgress: onReceiveProgress,
     );
 
-    return _response;
+    UserSignup? _responseData;
+
+    try {
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<UserSignup, UserSignup>(rawData, 'UserSignup', growable: true);
+    } catch (error, stackTrace) {
+      throw DioError(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioErrorType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<UserSignup>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
   }
 
 }

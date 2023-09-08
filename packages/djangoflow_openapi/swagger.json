@@ -12,6 +12,25 @@
                 "tags": [
                     "auth"
                 ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/OTPObtainRequest"
+                            }
+                        },
+                        "application/x-www-form-urlencoded": {
+                            "schema": {
+                                "$ref": "#/components/schemas/OTPObtainRequest"
+                            }
+                        },
+                        "multipart/form-data": {
+                            "schema": {
+                                "$ref": "#/components/schemas/OTPObtainRequest"
+                            }
+                        }
+                    }
+                },
                 "security": [
                     {
                         "jwtAuth": []
@@ -30,7 +49,14 @@
                         "description": ""
                     },
                     "201": {
-                        "description": "No response body"
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OTPObtain"
+                                }
+                            }
+                        },
+                        "description": ""
                     }
                 }
             }
@@ -398,6 +424,25 @@
                 "tags": [
                     "auth"
                 ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/TokenObtainRequest"
+                            }
+                        },
+                        "application/x-www-form-urlencoded": {
+                            "schema": {
+                                "$ref": "#/components/schemas/TokenObtainRequest"
+                            }
+                        },
+                        "multipart/form-data": {
+                            "schema": {
+                                "$ref": "#/components/schemas/TokenObtainRequest"
+                            }
+                        }
+                    }
+                },
                 "security": [
                     {
                         "jwtAuth": []
@@ -602,6 +647,26 @@
                 "tags": [
                     "auth"
                 ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UserSignupRequest"
+                            }
+                        },
+                        "application/x-www-form-urlencoded": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UserSignupRequest"
+                            }
+                        },
+                        "multipart/form-data": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UserSignupRequest"
+                            }
+                        }
+                    },
+                    "required": true
+                },
                 "security": [
                     {
                         "jwtAuth": []
@@ -620,7 +685,14 @@
                         "description": ""
                     },
                     "201": {
-                        "description": "No response body"
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/UserSignup"
+                                }
+                            }
+                        },
+                        "description": ""
                     }
                 }
             }
@@ -2693,6 +2765,30 @@
                 "type": "string",
                 "description": "* `email` - email\n* `totp` - totp\n* `sms` - sms"
             },
+            "OTPObtain": {
+                "type": "object",
+                "properties": {
+                    "email": {
+                        "type": "string",
+                        "format": "email"
+                    },
+                    "otp": {
+                        "type": "string"
+                    }
+                }
+            },
+            "OTPObtainRequest": {
+                "type": "object",
+                "properties": {
+                    "email": {
+                        "type": "string",
+                        "format": "email"
+                    },
+                    "otp": {
+                        "type": "string"
+                    }
+                }
+            },
             "PaginatedMessageImageList": {
                 "type": "object",
                 "properties": {
@@ -3117,6 +3213,10 @@
                     },
                     "provider": {
                         "$ref": "#/components/schemas/ProviderEnum"
+                    },
+                    "otp": {
+                        "type": "string",
+                        "writeOnly": true
                     }
                 },
                 "required": [
@@ -3145,6 +3245,20 @@
                 "required": [
                     "refresh"
                 ]
+            },
+            "TokenObtainRequest": {
+                "type": "object",
+                "properties": {
+                    "otp": {
+                        "type": "string",
+                        "writeOnly": true
+                    },
+                    "email": {
+                        "type": "string",
+                        "format": "email",
+                        "writeOnly": true
+                    }
+                }
             },
             "TokenRefreshRequest": {
                 "type": "object",
@@ -3271,6 +3385,31 @@
                         "readOnly": true
                     }
                 }
+            },
+            "UserSignup": {
+                "type": "object",
+                "properties": {
+                    "email": {
+                        "type": "string",
+                        "format": "email"
+                    }
+                },
+                "required": [
+                    "email"
+                ]
+            },
+            "UserSignupRequest": {
+                "type": "object",
+                "properties": {
+                    "email": {
+                        "type": "string",
+                        "format": "email",
+                        "minLength": 1
+                    }
+                },
+                "required": [
+                    "email"
+                ]
             }
         },
         "securitySchemes": {

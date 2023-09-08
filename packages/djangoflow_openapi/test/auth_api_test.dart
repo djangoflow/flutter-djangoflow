@@ -7,7 +7,7 @@ void main() {
   final instance = DjangoflowOpenapi().getAuthApi();
 
   group(AuthApi, () {
-    //Future authOtpCreate() async
+    //Future<OTPObtain> authOtpCreate({ OTPObtainRequest oTPObtainRequest }) async
     test('test authOtpCreate', () async {
       // TODO
     });
@@ -52,7 +52,7 @@ void main() {
       // TODO
     });
 
-    //Future<Token> authTokenCreate() async
+    //Future<Token> authTokenCreate({ TokenObtainRequest tokenObtainRequest }) async
     test('test authTokenCreate', () async {
       // TODO
     });
@@ -67,7 +67,7 @@ void main() {
       // TODO
     });
 
-    //Future authUserCreate() async
+    //Future<UserSignup> authUserCreate(UserSignupRequest userSignupRequest) async
     test('test authUserCreate', () async {
       // TODO
     });

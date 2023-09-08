@@ -8,6 +8,8 @@ import 'package:djangoflow_openapi/src/model/message_seen_request.dart';
 import 'package:djangoflow_openapi/src/model/otp_device.dart';
 import 'package:djangoflow_openapi/src/model/otp_device_confirm_request.dart';
 import 'package:djangoflow_openapi/src/model/otp_device_request.dart';
+import 'package:djangoflow_openapi/src/model/otp_obtain.dart';
+import 'package:djangoflow_openapi/src/model/otp_obtain_request.dart';
 import 'package:djangoflow_openapi/src/model/paginated_message_image_list.dart';
 import 'package:djangoflow_openapi/src/model/paginated_message_list.dart';
 import 'package:djangoflow_openapi/src/model/paginated_otp_device_list.dart';
@@ -24,11 +26,14 @@ import 'package:djangoflow_openapi/src/model/room_user.dart';
 import 'package:djangoflow_openapi/src/model/social_token_obtain_request.dart';
 import 'package:djangoflow_openapi/src/model/token.dart';
 import 'package:djangoflow_openapi/src/model/token_blacklist_request.dart';
+import 'package:djangoflow_openapi/src/model/token_obtain_request.dart';
 import 'package:djangoflow_openapi/src/model/token_refresh_request.dart';
 import 'package:djangoflow_openapi/src/model/token_verify_request.dart';
 import 'package:djangoflow_openapi/src/model/user_device.dart';
 import 'package:djangoflow_openapi/src/model/user_device_request.dart';
 import 'package:djangoflow_openapi/src/model/user_name.dart';
+import 'package:djangoflow_openapi/src/model/user_signup.dart';
+import 'package:djangoflow_openapi/src/model/user_signup_request.dart';
 
 final _regList = RegExp(r'^List<(.*)>$');
 final _regSet = RegExp(r'^Set<(.*)>$');
@@ -71,6 +76,10 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
         case 'OTPDeviceTypeEnum':
           
           
+        case 'OTPObtain':
+          return OTPObtain.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'OTPObtainRequest':
+          return OTPObtainRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'PaginatedMessageImageList':
           return PaginatedMessageImageList.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'PaginatedMessageList':
@@ -106,6 +115,8 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           return Token.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'TokenBlacklistRequest':
           return TokenBlacklistRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'TokenObtainRequest':
+          return TokenObtainRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'TokenRefreshRequest':
           return TokenRefreshRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'TokenVerifyRequest':
@@ -119,6 +130,10 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           
         case 'UserName':
           return UserName.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'UserSignup':
+          return UserSignup.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'UserSignupRequest':
+          return UserSignupRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
         default:
           RegExpMatch? match;
 

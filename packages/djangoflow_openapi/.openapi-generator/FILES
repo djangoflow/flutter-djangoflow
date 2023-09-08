@@ -16,6 +16,8 @@ doc/OTPDevice.md
 doc/OTPDeviceConfirmRequest.md
 doc/OTPDeviceRequest.md
 doc/OTPDeviceTypeEnum.md
+doc/OTPObtain.md
+doc/OTPObtainRequest.md
 doc/PaginatedMessageImageList.md
 doc/PaginatedMessageList.md
 doc/PaginatedOTPDeviceList.md
@@ -33,12 +35,15 @@ doc/RoomUser.md
 doc/SocialTokenObtainRequest.md
 doc/Token.md
 doc/TokenBlacklistRequest.md
+doc/TokenObtainRequest.md
 doc/TokenRefreshRequest.md
 doc/TokenVerifyRequest.md
 doc/UserDevice.md
 doc/UserDeviceRequest.md
 doc/UserDeviceTypeEnum.md
 doc/UserName.md
+doc/UserSignup.md
+doc/UserSignupRequest.md
 lib/djangoflow_openapi.dart
 lib/src/api.dart
 lib/src/api/auth_api.dart
@@ -61,6 +66,8 @@ lib/src/model/otp_device.dart
 lib/src/model/otp_device_confirm_request.dart
 lib/src/model/otp_device_request.dart
 lib/src/model/otp_device_type_enum.dart
+lib/src/model/otp_obtain.dart
+lib/src/model/otp_obtain_request.dart
 lib/src/model/paginated_message_image_list.dart
 lib/src/model/paginated_message_list.dart
 lib/src/model/paginated_otp_device_list.dart
@@ -78,12 +85,15 @@ lib/src/model/room_user.dart
 lib/src/model/social_token_obtain_request.dart
 lib/src/model/token.dart
 lib/src/model/token_blacklist_request.dart
+lib/src/model/token_obtain_request.dart
 lib/src/model/token_refresh_request.dart
 lib/src/model/token_verify_request.dart
 lib/src/model/user_device.dart
 lib/src/model/user_device_request.dart
 lib/src/model/user_device_type_enum.dart
 lib/src/model/user_name.dart
+lib/src/model/user_signup.dart
+lib/src/model/user_signup_request.dart
 pubspec.yaml
 test/auth_api_test.dart
 test/chat_api_test.dart
@@ -99,6 +109,8 @@ test/otp_device_confirm_request_test.dart
 test/otp_device_request_test.dart
 test/otp_device_test.dart
 test/otp_device_type_enum_test.dart
+test/otp_obtain_request_test.dart
+test/otp_obtain_test.dart
 test/paginated_message_image_list_test.dart
 test/paginated_message_list_test.dart
 test/paginated_otp_device_list_test.dart
@@ -115,6 +127,7 @@ test/room_test.dart
 test/room_user_test.dart
 test/social_token_obtain_request_test.dart
 test/token_blacklist_request_test.dart
+test/token_obtain_request_test.dart
 test/token_refresh_request_test.dart
 test/token_test.dart
 test/token_verify_request_test.dart
@@ -122,3 +135,5 @@ test/user_device_request_test.dart
 test/user_device_test.dart
 test/user_device_type_enum_test.dart
 test/user_name_test.dart
+test/user_signup_request_test.dart
+test/user_signup_test.dart

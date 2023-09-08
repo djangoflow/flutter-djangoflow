@@ -25,7 +25,7 @@ Method | HTTP request | Description
 
 
 # **authOtpCreate**
-> authOtpCreate()
+> OTPObtain authOtpCreate(oTPObtainRequest)
 
 
 
@@ -37,20 +37,25 @@ import 'package:djangoflow_openapi/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = DjangoflowOpenapi().getAuthApi();
+final OTPObtainRequest oTPObtainRequest = ; // OTPObtainRequest | 
 
 try {
-    api.authOtpCreate();
+    final response = api.authOtpCreate(oTPObtainRequest);
+    print(response);
 } catch on DioError (e) {
     print('Exception when calling AuthApi->authOtpCreate: $e\n');
 }
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **oTPObtainRequest** | [**OTPObtainRequest**](OTPObtainRequest.md)|  | [optional] 
 
 ### Return type
 
-void (empty response body)
+[**OTPObtain**](OTPObtain.md)
 
 ### Authorization
 
@@ -58,7 +63,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -418,7 +423,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **authTokenCreate**
-> Token authTokenCreate()
+> Token authTokenCreate(tokenObtainRequest)
 
 
 
@@ -430,9 +435,10 @@ import 'package:djangoflow_openapi/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = DjangoflowOpenapi().getAuthApi();
+final TokenObtainRequest tokenObtainRequest = ; // TokenObtainRequest | 
 
 try {
-    final response = api.authTokenCreate();
+    final response = api.authTokenCreate(tokenObtainRequest);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling AuthApi->authTokenCreate: $e\n');
@@ -440,7 +446,10 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tokenObtainRequest** | [**TokenObtainRequest**](TokenObtainRequest.md)|  | [optional] 
 
 ### Return type
 
@@ -452,7 +461,7 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -546,7 +555,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **authUserCreate**
-> authUserCreate()
+> UserSignup authUserCreate(userSignupRequest)
 
 
 
@@ -558,20 +567,25 @@ import 'package:djangoflow_openapi/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = DjangoflowOpenapi().getAuthApi();
+final UserSignupRequest userSignupRequest = ; // UserSignupRequest | 
 
 try {
-    api.authUserCreate();
+    final response = api.authUserCreate(userSignupRequest);
+    print(response);
 } catch on DioError (e) {
     print('Exception when calling AuthApi->authUserCreate: $e\n');
 }
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **userSignupRequest** | [**UserSignupRequest**](UserSignupRequest.md)|  | 
 
 ### Return type
 
-void (empty response body)
+[**UserSignup**](UserSignup.md)
 
 ### Authorization
 
@@ -579,7 +593,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

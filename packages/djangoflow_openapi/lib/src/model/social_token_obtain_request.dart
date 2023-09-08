@@ -22,6 +22,8 @@ class SocialTokenObtainRequest {
     required  this.accessToken,
 
     required  this.provider,
+
+     this.otp,
   });
 
   @JsonKey(
@@ -48,15 +50,29 @@ class SocialTokenObtainRequest {
 
 
 
+  @JsonKey(
+    
+    name: r'otp',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final String? otp;
+
+
+
   @override
   bool operator ==(Object other) => identical(this, other) || other is SocialTokenObtainRequest &&
      other.accessToken == accessToken &&
-     other.provider == provider;
+     other.provider == provider &&
+     other.otp == otp;
 
   @override
   int get hashCode =>
     accessToken.hashCode +
-    provider.hashCode;
+    provider.hashCode +
+    otp.hashCode;
 
   factory SocialTokenObtainRequest.fromJson(Map<String, dynamic> json) => _$SocialTokenObtainRequestFromJson(json);
 
