@@ -29,7 +29,7 @@ void main() {
       // TODO
     });
 
-    // TypeEnum type
+    // UserDeviceTypeEnum type
     test('to test the property `type`', () async {
       // TODO
     });

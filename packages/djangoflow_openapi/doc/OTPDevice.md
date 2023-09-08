@@ -1,4 +1,4 @@
-# djangoflow_openapi.model.UserDevice
+# djangoflow_openapi.model.OTPDevice
 
 ## Load the model package
 ```dart
@@ -10,11 +10,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | [optional] 
 **name** | **String** |  | [optional] 
-**registrationId** | **String** |  | 
-**deviceId** | **String** | Unique device identifier | [optional] 
-**active** | **bool** | Inactive devices will not be sent notifications | [optional] [default to true]
-**dateCreated** | [**DateTime**](DateTime.md) |  | [optional] 
-**type** | [**UserDeviceTypeEnum**](UserDeviceTypeEnum.md) |  | 
+**type** | [**OTPDeviceTypeEnum**](OTPDeviceTypeEnum.md) |  | 
+**confirmed** | **bool** |  | [optional] 
+**key** | **String** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

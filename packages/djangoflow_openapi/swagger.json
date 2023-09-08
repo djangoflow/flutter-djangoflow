@@ -6,193 +6,12 @@
         "description": "DF Chat API (Django)"
     },
     "paths": {
-        "/api/v1/auth/change/": {
-            "post": {
-                "operationId": "auth_change_create",
-                "tags": [
-                    "auth"
-                ],
-                "requestBody": {
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/ChangeRequest"
-                            }
-                        },
-                        "application/x-www-form-urlencoded": {
-                            "schema": {
-                                "$ref": "#/components/schemas/ChangeRequest"
-                            }
-                        },
-                        "multipart/form-data": {
-                            "schema": {
-                                "$ref": "#/components/schemas/ChangeRequest"
-                            }
-                        }
-                    }
-                },
-                "security": [
-                    {
-                        "jwtAuth": []
-                    }
-                ],
-                "responses": {
-                    "400": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ErrorResponse"
-                                }
-                            }
-                        },
-                        "description": ""
-                    },
-                    "201": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Change"
-                                }
-                            }
-                        },
-                        "description": ""
-                    }
-                }
-            }
-        },
-        "/api/v1/auth/connect/": {
-            "post": {
-                "operationId": "auth_connect_create",
-                "tags": [
-                    "auth"
-                ],
-                "requestBody": {
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/ConnectRequest"
-                            }
-                        },
-                        "application/x-www-form-urlencoded": {
-                            "schema": {
-                                "$ref": "#/components/schemas/ConnectRequest"
-                            }
-                        },
-                        "multipart/form-data": {
-                            "schema": {
-                                "$ref": "#/components/schemas/ConnectRequest"
-                            }
-                        }
-                    }
-                },
-                "security": [
-                    {
-                        "jwtAuth": []
-                    }
-                ],
-                "responses": {
-                    "400": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ErrorResponse"
-                                }
-                            }
-                        },
-                        "description": ""
-                    },
-                    "201": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Connect"
-                                }
-                            }
-                        },
-                        "description": ""
-                    }
-                }
-            }
-        },
-        "/api/v1/auth/invite/": {
-            "post": {
-                "operationId": "auth_invite_create",
-                "tags": [
-                    "auth"
-                ],
-                "requestBody": {
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/InviteRequest"
-                            }
-                        },
-                        "application/x-www-form-urlencoded": {
-                            "schema": {
-                                "$ref": "#/components/schemas/InviteRequest"
-                            }
-                        },
-                        "multipart/form-data": {
-                            "schema": {
-                                "$ref": "#/components/schemas/InviteRequest"
-                            }
-                        }
-                    }
-                },
-                "security": [
-                    {
-                        "jwtAuth": []
-                    }
-                ],
-                "responses": {
-                    "400": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ErrorResponse"
-                                }
-                            }
-                        },
-                        "description": ""
-                    },
-                    "201": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Invite"
-                                }
-                            }
-                        },
-                        "description": ""
-                    }
-                }
-            }
-        },
         "/api/v1/auth/otp/": {
             "post": {
                 "operationId": "auth_otp_create",
                 "tags": [
                     "auth"
                 ],
-                "requestBody": {
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/OTPObtainRequest"
-                            }
-                        },
-                        "application/x-www-form-urlencoded": {
-                            "schema": {
-                                "$ref": "#/components/schemas/OTPObtainRequest"
-                            }
-                        },
-                        "multipart/form-data": {
-                            "schema": {
-                                "$ref": "#/components/schemas/OTPObtainRequest"
-                            }
-                        }
-                    }
-                },
                 "security": [
                     {
                         "jwtAuth": []
@@ -216,9 +35,62 @@
                 }
             }
         },
-        "/api/v1/auth/set-password/": {
+        "/api/v1/auth/otp-device/": {
+            "get": {
+                "operationId": "auth_otp_device_list",
+                "parameters": [
+                    {
+                        "name": "limit",
+                        "required": false,
+                        "in": "query",
+                        "description": "Number of results to return per page.",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "offset",
+                        "required": false,
+                        "in": "query",
+                        "description": "The initial index from which to return the results.",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "tags": [
+                    "auth"
+                ],
+                "security": [
+                    {
+                        "jwtAuth": []
+                    }
+                ],
+                "responses": {
+                    "400": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        },
+                        "description": ""
+                    },
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PaginatedOTPDeviceList"
+                                }
+                            }
+                        },
+                        "description": ""
+                    }
+                }
+            },
             "post": {
-                "operationId": "auth_set_password_create",
+                "operationId": "auth_otp_device_create",
                 "tags": [
                     "auth"
                 ],
@@ -226,26 +98,26 @@
                     "content": {
                         "application/json": {
                             "schema": {
-                                "$ref": "#/components/schemas/SetPasswordRequest"
+                                "$ref": "#/components/schemas/OTPDeviceRequest"
                             }
                         },
                         "application/x-www-form-urlencoded": {
                             "schema": {
-                                "$ref": "#/components/schemas/SetPasswordRequest"
+                                "$ref": "#/components/schemas/OTPDeviceRequest"
                             }
                         },
                         "multipart/form-data": {
                             "schema": {
-                                "$ref": "#/components/schemas/SetPasswordRequest"
+                                "$ref": "#/components/schemas/OTPDeviceRequest"
                             }
                         }
-                    }
+                    },
+                    "required": true
                 },
                 "security": [
                     {
                         "jwtAuth": []
-                    },
-                    {}
+                    }
                 ],
                 "responses": {
                     "400": {
@@ -259,14 +131,112 @@
                         "description": ""
                     },
                     "201": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OTPDevice"
+                                }
+                            }
+                        },
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/api/v1/auth/otp-device/{id}/": {
+            "get": {
+                "operationId": "auth_otp_device_retrieve",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "required": true
+                    }
+                ],
+                "tags": [
+                    "auth"
+                ],
+                "security": [
+                    {
+                        "jwtAuth": []
+                    }
+                ],
+                "responses": {
+                    "400": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        },
+                        "description": ""
+                    },
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OTPDevice"
+                                }
+                            }
+                        },
+                        "description": ""
+                    }
+                }
+            },
+            "delete": {
+                "operationId": "auth_otp_device_destroy",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "required": true
+                    }
+                ],
+                "tags": [
+                    "auth"
+                ],
+                "security": [
+                    {
+                        "jwtAuth": []
+                    }
+                ],
+                "responses": {
+                    "400": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        },
+                        "description": ""
+                    },
+                    "204": {
                         "description": "No response body"
                     }
                 }
             }
         },
-        "/api/v1/auth/signup/": {
+        "/api/v1/auth/otp-device/{id}/confirm/": {
             "post": {
-                "operationId": "auth_signup_create",
+                "operationId": "auth_otp_device_confirm_create",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "required": true
+                    }
+                ],
                 "tags": [
                     "auth"
                 ],
@@ -274,26 +244,26 @@
                     "content": {
                         "application/json": {
                             "schema": {
-                                "$ref": "#/components/schemas/SignupRequest"
+                                "$ref": "#/components/schemas/OTPDeviceConfirmRequest"
                             }
                         },
                         "application/x-www-form-urlencoded": {
                             "schema": {
-                                "$ref": "#/components/schemas/SignupRequest"
+                                "$ref": "#/components/schemas/OTPDeviceConfirmRequest"
                             }
                         },
                         "multipart/form-data": {
                             "schema": {
-                                "$ref": "#/components/schemas/SignupRequest"
+                                "$ref": "#/components/schemas/OTPDeviceConfirmRequest"
                             }
                         }
-                    }
+                    },
+                    "required": true
                 },
                 "security": [
                     {
                         "jwtAuth": []
-                    },
-                    {}
+                    }
                 ],
                 "responses": {
                     "400": {
@@ -306,15 +276,8 @@
                         },
                         "description": ""
                     },
-                    "201": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Signup"
-                                }
-                            }
-                        },
-                        "description": ""
+                    "200": {
+                        "description": "No response body"
                     }
                 }
             }
@@ -429,141 +392,12 @@
                 }
             }
         },
-        "/api/v1/auth/social/oauth1/": {
-            "post": {
-                "operationId": "auth_social_oauth1_create",
-                "tags": [
-                    "auth"
-                ],
-                "requestBody": {
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/SocialOAuth1TokenObtainRequest"
-                            }
-                        },
-                        "application/x-www-form-urlencoded": {
-                            "schema": {
-                                "$ref": "#/components/schemas/SocialOAuth1TokenObtainRequest"
-                            }
-                        },
-                        "multipart/form-data": {
-                            "schema": {
-                                "$ref": "#/components/schemas/SocialOAuth1TokenObtainRequest"
-                            }
-                        }
-                    },
-                    "required": true
-                },
-                "security": [
-                    {
-                        "jwtAuth": []
-                    }
-                ],
-                "responses": {
-                    "400": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ErrorResponse"
-                                }
-                            }
-                        },
-                        "description": ""
-                    },
-                    "201": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Token"
-                                }
-                            }
-                        },
-                        "description": ""
-                    }
-                }
-            }
-        },
-        "/api/v1/auth/social/oauth1/connect/": {
-            "post": {
-                "operationId": "auth_social_oauth1_connect_create",
-                "tags": [
-                    "auth"
-                ],
-                "requestBody": {
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/SocialOAuth1TokenObtainRequest"
-                            }
-                        },
-                        "application/x-www-form-urlencoded": {
-                            "schema": {
-                                "$ref": "#/components/schemas/SocialOAuth1TokenObtainRequest"
-                            }
-                        },
-                        "multipart/form-data": {
-                            "schema": {
-                                "$ref": "#/components/schemas/SocialOAuth1TokenObtainRequest"
-                            }
-                        }
-                    },
-                    "required": true
-                },
-                "security": [
-                    {
-                        "jwtAuth": []
-                    }
-                ],
-                "responses": {
-                    "400": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ErrorResponse"
-                                }
-                            }
-                        },
-                        "description": ""
-                    },
-                    "200": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Token"
-                                }
-                            }
-                        },
-                        "description": ""
-                    }
-                }
-            }
-        },
         "/api/v1/auth/token/": {
             "post": {
                 "operationId": "auth_token_create",
                 "tags": [
                     "auth"
                 ],
-                "requestBody": {
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/TokenObtainRequest"
-                            }
-                        },
-                        "application/x-www-form-urlencoded": {
-                            "schema": {
-                                "$ref": "#/components/schemas/TokenObtainRequest"
-                            }
-                        },
-                        "multipart/form-data": {
-                            "schema": {
-                                "$ref": "#/components/schemas/TokenObtainRequest"
-                            }
-                        }
-                    }
-                },
                 "security": [
                     {
                         "jwtAuth": []
@@ -762,35 +596,17 @@
                 }
             }
         },
-        "/api/v1/auth/unlink/": {
+        "/api/v1/auth/user/": {
             "post": {
-                "operationId": "auth_unlink_create",
+                "operationId": "auth_user_create",
                 "tags": [
                     "auth"
                 ],
-                "requestBody": {
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/UnlinkRequest"
-                            }
-                        },
-                        "application/x-www-form-urlencoded": {
-                            "schema": {
-                                "$ref": "#/components/schemas/UnlinkRequest"
-                            }
-                        },
-                        "multipart/form-data": {
-                            "schema": {
-                                "$ref": "#/components/schemas/UnlinkRequest"
-                            }
-                        }
-                    }
-                },
                 "security": [
                     {
                         "jwtAuth": []
-                    }
+                    },
+                    {}
                 ],
                 "responses": {
                     "400": {
@@ -804,14 +620,7 @@
                         "description": ""
                     },
                     "201": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Unlink"
-                                }
-                            }
-                        },
-                        "description": ""
+                        "description": "No response body"
                     }
                 }
             }
@@ -2623,82 +2432,6 @@
     },
     "components": {
         "schemas": {
-            "Change": {
-                "type": "object",
-                "properties": {
-                    "first_name": {
-                        "type": "string"
-                    },
-                    "last_name": {
-                        "type": "string"
-                    }
-                }
-            },
-            "ChangeRequest": {
-                "type": "object",
-                "properties": {
-                    "first_name": {
-                        "type": "string",
-                        "minLength": 1
-                    },
-                    "last_name": {
-                        "type": "string",
-                        "minLength": 1
-                    },
-                    "email": {
-                        "type": "string",
-                        "writeOnly": true
-                    },
-                    "otp": {
-                        "type": "string",
-                        "writeOnly": true,
-                        "minLength": 1
-                    },
-                    "password": {
-                        "type": "string",
-                        "writeOnly": true,
-                        "minLength": 1
-                    }
-                }
-            },
-            "Connect": {
-                "type": "object",
-                "properties": {
-                    "first_name": {
-                        "type": "string"
-                    },
-                    "last_name": {
-                        "type": "string"
-                    }
-                }
-            },
-            "ConnectRequest": {
-                "type": "object",
-                "properties": {
-                    "first_name": {
-                        "type": "string",
-                        "minLength": 1
-                    },
-                    "last_name": {
-                        "type": "string",
-                        "minLength": 1
-                    },
-                    "email": {
-                        "type": "string",
-                        "writeOnly": true
-                    },
-                    "otp": {
-                        "type": "string",
-                        "writeOnly": true,
-                        "minLength": 1
-                    },
-                    "password": {
-                        "type": "string",
-                        "writeOnly": true,
-                        "minLength": 1
-                    }
-                }
-            },
             "Error": {
                 "type": "object",
                 "properties": {
@@ -2730,44 +2463,6 @@
                 "required": [
                     "errors"
                 ]
-            },
-            "Invite": {
-                "type": "object",
-                "properties": {
-                    "first_name": {
-                        "type": "string"
-                    },
-                    "last_name": {
-                        "type": "string"
-                    }
-                }
-            },
-            "InviteRequest": {
-                "type": "object",
-                "properties": {
-                    "first_name": {
-                        "type": "string",
-                        "minLength": 1
-                    },
-                    "last_name": {
-                        "type": "string",
-                        "minLength": 1
-                    },
-                    "email": {
-                        "type": "string",
-                        "writeOnly": true
-                    },
-                    "otp": {
-                        "type": "string",
-                        "writeOnly": true,
-                        "minLength": 1
-                    },
-                    "password": {
-                        "type": "string",
-                        "writeOnly": true,
-                        "minLength": 1
-                    }
-                }
             },
             "Message": {
                 "type": "object",
@@ -2934,24 +2629,69 @@
                     "message_ids"
                 ]
             },
-            "OTPObtainRequest": {
+            "OTPDevice": {
                 "type": "object",
                 "properties": {
-                    "email": {
-                        "type": "string",
-                        "writeOnly": true
+                    "id": {
+                        "type": "integer",
+                        "readOnly": true
                     },
-                    "otp": {
-                        "type": "string",
-                        "writeOnly": true,
-                        "minLength": 1
+                    "name": {
+                        "type": "string"
                     },
-                    "password": {
+                    "type": {
+                        "$ref": "#/components/schemas/OTPDeviceTypeEnum"
+                    },
+                    "confirmed": {
+                        "type": "boolean",
+                        "readOnly": true
+                    },
+                    "key": {
+                        "type": "string",
+                        "nullable": true,
+                        "readOnly": true
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "OTPDeviceConfirmRequest": {
+                "type": "object",
+                "properties": {
+                    "code": {
                         "type": "string",
                         "writeOnly": true,
                         "minLength": 1
                     }
-                }
+                },
+                "required": [
+                    "code"
+                ]
+            },
+            "OTPDeviceRequest": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "type": {
+                        "$ref": "#/components/schemas/OTPDeviceTypeEnum"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "OTPDeviceTypeEnum": {
+                "enum": [
+                    "email",
+                    "totp",
+                    "sms"
+                ],
+                "type": "string",
+                "description": "* `email` - email\n* `totp` - totp\n* `sms` - sms"
             },
             "PaginatedMessageImageList": {
                 "type": "object",
@@ -3003,6 +2743,33 @@
                         "type": "array",
                         "items": {
                             "$ref": "#/components/schemas/Message"
+                        }
+                    }
+                }
+            },
+            "PaginatedOTPDeviceList": {
+                "type": "object",
+                "properties": {
+                    "count": {
+                        "type": "integer",
+                        "example": 123
+                    },
+                    "next": {
+                        "type": "string",
+                        "nullable": true,
+                        "format": "uri",
+                        "example": "http://api.example.org/accounts/?offset=400&limit=100"
+                    },
+                    "previous": {
+                        "type": "string",
+                        "nullable": true,
+                        "format": "uri",
+                        "example": "http://api.example.org/accounts/?offset=200&limit=100"
+                    },
+                    "results": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/OTPDevice"
                         }
                     }
                 }
@@ -3148,9 +2915,16 @@
                         "description": "Inactive devices will not be sent notifications"
                     },
                     "type": {
-                        "$ref": "#/components/schemas/TypeEnum"
+                        "$ref": "#/components/schemas/UserDeviceTypeEnum"
                     }
                 }
+            },
+            "ProviderEnum": {
+                "enum": [
+                    "google-oauth2"
+                ],
+                "type": "string",
+                "description": "* `google-oauth2` - google-oauth2"
             },
             "PushAction": {
                 "type": "object",
@@ -3333,130 +3107,16 @@
                     }
                 }
             },
-            "SetPasswordRequest": {
-                "type": "object",
-                "properties": {
-                    "email": {
-                        "type": "string",
-                        "writeOnly": true
-                    },
-                    "otp": {
-                        "type": "string",
-                        "writeOnly": true,
-                        "minLength": 1
-                    },
-                    "password": {
-                        "type": "string",
-                        "writeOnly": true,
-                        "minLength": 1
-                    }
-                }
-            },
-            "Signup": {
-                "type": "object",
-                "properties": {
-                    "first_name": {
-                        "type": "string"
-                    },
-                    "last_name": {
-                        "type": "string"
-                    }
-                }
-            },
-            "SignupRequest": {
-                "type": "object",
-                "properties": {
-                    "first_name": {
-                        "type": "string",
-                        "minLength": 1
-                    },
-                    "last_name": {
-                        "type": "string",
-                        "minLength": 1
-                    },
-                    "email": {
-                        "type": "string",
-                        "writeOnly": true
-                    },
-                    "otp": {
-                        "type": "string",
-                        "writeOnly": true,
-                        "minLength": 1
-                    },
-                    "password": {
-                        "type": "string",
-                        "writeOnly": true,
-                        "minLength": 1
-                    }
-                }
-            },
-            "SocialOAuth1TokenObtainProviderEnum": {
-                "enum": [],
-                "type": "boolean"
-            },
-            "SocialOAuth1TokenObtainRequest": {
-                "type": "object",
-                "description": "Serializer for obtaining social tokens for OAuth1.",
-                "properties": {
-                    "first_name": {
-                        "type": "string",
-                        "minLength": 1
-                    },
-                    "last_name": {
-                        "type": "string",
-                        "minLength": 1
-                    },
-                    "provider": {
-                        "allOf": [
-                            {
-                                "$ref": "#/components/schemas/SocialOAuth1TokenObtainProviderEnum"
-                            }
-                        ],
-                        "description": ""
-                    },
-                    "oauth_token": {
-                        "type": "string",
-                        "writeOnly": true,
-                        "minLength": 1
-                    },
-                    "oauth_token_secret": {
-                        "type": "string",
-                        "writeOnly": true,
-                        "minLength": 1
-                    }
-                },
-                "required": [
-                    "oauth_token",
-                    "oauth_token_secret",
-                    "provider"
-                ]
-            },
-            "SocialTokenObtainProviderEnum": {
-                "enum": [
-                    "google-oauth2"
-                ],
-                "type": "string",
-                "description": "* `google-oauth2` - google-oauth2"
-            },
             "SocialTokenObtainRequest": {
                 "type": "object",
-                "description": "Serializer for obtaining social tokens for OAuth2.",
                 "properties": {
-                    "first_name": {
-                        "type": "string",
-                        "minLength": 1
-                    },
-                    "last_name": {
-                        "type": "string",
-                        "minLength": 1
-                    },
-                    "provider": {
-                        "$ref": "#/components/schemas/SocialTokenObtainProviderEnum"
-                    },
                     "access_token": {
                         "type": "string",
                         "writeOnly": true,
                         "minLength": 1
+                    },
+                    "provider": {
+                        "$ref": "#/components/schemas/ProviderEnum"
                     }
                 },
                 "required": [
@@ -3478,31 +3138,13 @@
                 "properties": {
                     "refresh": {
                         "type": "string",
+                        "writeOnly": true,
                         "minLength": 1
                     }
                 },
                 "required": [
                     "refresh"
                 ]
-            },
-            "TokenObtainRequest": {
-                "type": "object",
-                "properties": {
-                    "email": {
-                        "type": "string",
-                        "writeOnly": true
-                    },
-                    "otp": {
-                        "type": "string",
-                        "writeOnly": true,
-                        "minLength": 1
-                    },
-                    "password": {
-                        "type": "string",
-                        "writeOnly": true,
-                        "minLength": 1
-                    }
-                }
             },
             "TokenRefreshRequest": {
                 "type": "object",
@@ -3529,53 +3171,6 @@
                 "required": [
                     "token"
                 ]
-            },
-            "TypeEnum": {
-                "enum": [
-                    "ios",
-                    "android",
-                    "web"
-                ],
-                "type": "string",
-                "description": "* `ios` - ios\n* `android` - android\n* `web` - web"
-            },
-            "Unlink": {
-                "type": "object",
-                "properties": {
-                    "first_name": {
-                        "type": "string"
-                    },
-                    "last_name": {
-                        "type": "string"
-                    }
-                }
-            },
-            "UnlinkRequest": {
-                "type": "object",
-                "properties": {
-                    "first_name": {
-                        "type": "string",
-                        "minLength": 1
-                    },
-                    "last_name": {
-                        "type": "string",
-                        "minLength": 1
-                    },
-                    "email": {
-                        "type": "string",
-                        "writeOnly": true
-                    },
-                    "otp": {
-                        "type": "string",
-                        "writeOnly": true,
-                        "minLength": 1
-                    },
-                    "password": {
-                        "type": "string",
-                        "writeOnly": true,
-                        "minLength": 1
-                    }
-                }
             },
             "UserDevice": {
                 "type": "object",
@@ -3613,7 +3208,7 @@
                         "title": "Creation date"
                     },
                     "type": {
-                        "$ref": "#/components/schemas/TypeEnum"
+                        "$ref": "#/components/schemas/UserDeviceTypeEnum"
                     }
                 },
                 "required": [
@@ -3647,13 +3242,22 @@
                         "description": "Inactive devices will not be sent notifications"
                     },
                     "type": {
-                        "$ref": "#/components/schemas/TypeEnum"
+                        "$ref": "#/components/schemas/UserDeviceTypeEnum"
                     }
                 },
                 "required": [
                     "registration_id",
                     "type"
                 ]
+            },
+            "UserDeviceTypeEnum": {
+                "enum": [
+                    "ios",
+                    "android",
+                    "web"
+                ],
+                "type": "string",
+                "description": "* `ios` - ios\n* `android` - android\n* `web` - web"
             },
             "UserName": {
                 "type": "object",

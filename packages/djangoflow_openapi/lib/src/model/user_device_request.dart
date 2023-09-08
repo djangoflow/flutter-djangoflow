@@ -3,7 +3,7 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:djangoflow_openapi/src/model/type_enum.dart';
+import 'package:djangoflow_openapi/src/model/user_device_type_enum.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'user_device_request.g.dart';
@@ -88,7 +88,7 @@ class UserDeviceRequest {
   )
 
 
-  final TypeEnum type;
+  final UserDeviceTypeEnum type;
 
 
 
