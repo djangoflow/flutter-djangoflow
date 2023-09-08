@@ -88,16 +88,13 @@ class AuthCubit extends HydratedCubit<AuthState> {
         ),
       );
 
-  Future<void> loginWithEmailOTP({
-    required String email,
-    required String otp,
+  /// Login user with OTP. otp should not be empty
+  Future<void> loginWithOTP({
+    required TokenObtainRequest tokenObtainRequest,
   }) async =>
       _authApiChecker(() async {
         final tokenResult = (await authApi?.authTokenCreate(
-          tokenObtainRequest: TokenObtainRequest(
-            email: email,
-            otp: otp,
-          ),
+          tokenObtainRequest: tokenObtainRequest,
         ))
             ?.data;
         final token = tokenResult?.token;
@@ -113,12 +110,20 @@ class AuthCubit extends HydratedCubit<AuthState> {
     }
   }
 
+  /// Login user with magic link. magiclink should not be empty
+  /// It supports only email at the moment.
   Future<void> loginWithMagicLink({required String magiclink}) async {
     try {
       final credentials = utf8
           .decode(base64.decode(const Base64Codec().normalize(magiclink)))
           .split('/');
-      await loginWithEmailOTP(email: credentials[0], otp: credentials[1]);
+
+      await loginWithOTP(
+        tokenObtainRequest: TokenObtainRequest(
+          email: credentials[0],
+          otp: credentials[1],
+        ),
+      );
     } catch (e) {
       rethrow;
     }
