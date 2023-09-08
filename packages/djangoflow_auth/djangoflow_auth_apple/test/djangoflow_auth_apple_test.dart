@@ -14,7 +14,7 @@ void main() {
       final appleSocialLogin = AppleSocialLogin(
         type: SocialLoginType(
           id: 'Apple',
-          provider: SocialTokenObtainProviderEnum.values.first,
+          provider: ProviderEnum.values.first,
         ),
         scopes: const [
           AppleIDAuthorizationScopes.email,

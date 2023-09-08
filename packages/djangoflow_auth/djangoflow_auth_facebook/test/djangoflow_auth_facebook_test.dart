@@ -75,7 +75,7 @@ void main() {
       final facebookSocialLogin = FacebookSocialLogin(
         type: SocialLoginType(
           id: 'Facebook',
-          provider: SocialTokenObtainProviderEnum.values.first,
+          provider: ProviderEnum.values.first,
         ),
       );
       final result = await facebookSocialLogin.login();
