@@ -15,6 +15,40 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`djangoflow_auth` - `v0.2.1+3`](#djangoflow_auth---v0213)
+ - [`djangoflow_auth_google` - `v0.0.3+5`](#djangoflow_auth_google---v0035)
+ - [`djangoflow_auth_apple` - `v0.0.5+5`](#djangoflow_auth_apple---v0055)
+ - [`djangoflow_auth_discord` - `v0.0.4+6`](#djangoflow_auth_discord---v0046)
+ - [`djangoflow_auth_facebook` - `v0.0.4+5`](#djangoflow_auth_facebook---v0045)
+
+Packages with dependency updates only:
+
+> Packages listed below depend on other packages in this workspace that have had changes. Their versions have been incremented to bump the minimum dependency versions of the packages they depend upon in this project.
+
+ - `djangoflow_auth_google` - `v0.0.3+5`
+ - `djangoflow_auth_apple` - `v0.0.5+5`
+ - `djangoflow_auth_discord` - `v0.0.4+6`
+ - `djangoflow_auth_facebook` - `v0.0.4+5`
+
+---
+
+#### `djangoflow_auth` - `v0.2.1+3`
+
+ - **FIX**: wrong return type for `UserSignup` via generic. ([e5174289](https://github.com/djangoflow/flutter-djangoflow/commit/e5174289317eca61a4541ea0fbf970397af36723))
+
+
+## 2023-09-08
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`djangoflow_auth` - `v0.2.1+2`](#djangoflow_auth---v0212)
  - [`djangoflow_auth_discord` - `v0.0.4+5`](#djangoflow_auth_discord---v0045)
  - [`djangoflow_auth_google` - `v0.0.3+4`](#djangoflow_auth_google---v0034)

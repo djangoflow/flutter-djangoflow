@@ -1,3 +1,7 @@
+## 0.2.1+3
+
+ - **FIX**: wrong return type for `UserSignup` via generic. ([e5174289](https://github.com/djangoflow/flutter-djangoflow/commit/e5174289317eca61a4541ea0fbf970397af36723))
+
 ## 0.2.1+2
 
  - **FIX**: wrong return type for `UserSignup`. ([4fef0941](https://github.com/djangoflow/flutter-djangoflow/commit/4fef094108fb76d0876208e4222b9cf046266080))
