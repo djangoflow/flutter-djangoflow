@@ -3,6 +3,40 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2023-09-09
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`djangoflow_auth` - `v0.2.1+4`](#djangoflow_auth---v0214)
+ - [`djangoflow_auth_discord` - `v0.0.4+7`](#djangoflow_auth_discord---v0047)
+ - [`djangoflow_auth_facebook` - `v0.0.4+6`](#djangoflow_auth_facebook---v0046)
+ - [`djangoflow_auth_apple` - `v0.0.5+6`](#djangoflow_auth_apple---v0056)
+ - [`djangoflow_auth_google` - `v0.0.3+6`](#djangoflow_auth_google---v0036)
+
+Packages with dependency updates only:
+
+> Packages listed below depend on other packages in this workspace that have had changes. Their versions have been incremented to bump the minimum dependency versions of the packages they depend upon in this project.
+
+ - `djangoflow_auth_discord` - `v0.0.4+7`
+ - `djangoflow_auth_facebook` - `v0.0.4+6`
+ - `djangoflow_auth_apple` - `v0.0.5+6`
+ - `djangoflow_auth_google` - `v0.0.3+6`
+
+---
+
+#### `djangoflow_auth` - `v0.2.1+4`
+
+ - **REFACTOR**: rename loginWithOTP to credentialToTokenLogin for clarity. ([5d83770a](https://github.com/djangoflow/flutter-djangoflow/commit/5d83770a27847a5abb77439fac4d210391d23616))
+
+
 ## 2023-09-08
 
 ### Changes

@@ -1,3 +1,7 @@
+## 0.2.1+4
+
+ - **REFACTOR**: rename loginWithOTP to credentialToTokenLogin for clarity. ([5d83770a](https://github.com/djangoflow/flutter-djangoflow/commit/5d83770a27847a5abb77439fac4d210391d23616))
+
 ## 0.2.1+3
 
  - **FIX**: wrong return type for `UserSignup` via generic. ([e5174289](https://github.com/djangoflow/flutter-djangoflow/commit/e5174289317eca61a4541ea0fbf970397af36723))
