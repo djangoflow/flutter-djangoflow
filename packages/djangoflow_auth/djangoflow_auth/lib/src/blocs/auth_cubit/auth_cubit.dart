@@ -78,10 +78,12 @@ class AuthCubit extends HydratedCubit<AuthState> {
         return result;
       }) as UserSignup?;
 
-  Future<void> requestOTP({required String email}) async => _authApiChecker(
+  /// Request OTP for verification.
+  Future<void> requestOTP({required OTPObtainRequest otpObtainRequest}) async =>
+      _authApiChecker(
         () async => (
           await authApi?.authOtpCreate(
-            oTPObtainRequest: OTPObtainRequest(email: email),
+            oTPObtainRequest: otpObtainRequest,
           ),
         ),
       );
