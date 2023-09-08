@@ -59,7 +59,7 @@ import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 final facebookLogin = FacebookSocialLogin(
   permissions: ['email', 'public_profile'],
   loginBehavior: LoginBehavior.nativeWithFallback,
-  type: SocialLoginType.fromProvider(SocialTokenObtainProviderEnum.facebook),
+  type: SocialLoginType.fromProvider(ProviderEnum.facebook),
 );
 ```
 

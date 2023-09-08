@@ -113,7 +113,7 @@ final googleSignIn = (context
     .read<AuthCubit>()
     .socialLogins
     .getSocialLoginByProvider(
-      SocialTokenObtainProviderEnum.googleOauth2,
+      ProviderEnum.googleOauth2,
     ) as GoogleSocialLogin)
 .googleSignIn
 
