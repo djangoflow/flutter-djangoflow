@@ -68,12 +68,12 @@ class AuthCubit extends HydratedCubit<AuthState> {
   }
 
   /// Register or invite user to the system
-  Future<UserSignup?> registerOrInviteUser({
-    required UserSignupRequest userSignupRequest,
+  Future<UserIdentity?> registerOrInviteUser({
+    required UserIdentityRequest userIdentityRequest,
   }) async =>
-      _authApiChecker<UserSignup?>(() async {
+      _authApiChecker<UserIdentity?>(() async {
         final result = (await authApi?.authUserCreate(
-          userSignupRequest: userSignupRequest,
+          userIdentityRequest: userIdentityRequest,
         ))
             ?.data;
 
