@@ -1,3 +1,4 @@
+import 'package:djangoflow_openapi/src/model/change_password_request.dart';
 import 'package:djangoflow_openapi/src/model/error.dart';
 import 'package:djangoflow_openapi/src/model/error_response.dart';
 import 'package:djangoflow_openapi/src/model/message.dart';
@@ -18,6 +19,7 @@ import 'package:djangoflow_openapi/src/model/paginated_user_device_list.dart';
 import 'package:djangoflow_openapi/src/model/patched_message_request.dart';
 import 'package:djangoflow_openapi/src/model/patched_room_request.dart';
 import 'package:djangoflow_openapi/src/model/patched_user_device_request.dart';
+import 'package:djangoflow_openapi/src/model/patched_user_identity_request.dart';
 import 'package:djangoflow_openapi/src/model/push_action.dart';
 import 'package:djangoflow_openapi/src/model/push_action_category.dart';
 import 'package:djangoflow_openapi/src/model/room.dart';
@@ -31,9 +33,9 @@ import 'package:djangoflow_openapi/src/model/token_refresh_request.dart';
 import 'package:djangoflow_openapi/src/model/token_verify_request.dart';
 import 'package:djangoflow_openapi/src/model/user_device.dart';
 import 'package:djangoflow_openapi/src/model/user_device_request.dart';
+import 'package:djangoflow_openapi/src/model/user_identity.dart';
+import 'package:djangoflow_openapi/src/model/user_identity_request.dart';
 import 'package:djangoflow_openapi/src/model/user_name.dart';
-import 'package:djangoflow_openapi/src/model/user_signup.dart';
-import 'package:djangoflow_openapi/src/model/user_signup_request.dart';
 
 final _regList = RegExp(r'^List<(.*)>$');
 final _regSet = RegExp(r'^Set<(.*)>$');
@@ -53,6 +55,8 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           return (valueString == 'true' || valueString == '1') as ReturnType;
         case 'double':
           return (value is double ? value : double.parse('$value')) as ReturnType;
+        case 'ChangePasswordRequest':
+          return ChangePasswordRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'Error':
           return Error.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'ErrorResponse':
@@ -96,6 +100,8 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           return PatchedRoomRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'PatchedUserDeviceRequest':
           return PatchedUserDeviceRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'PatchedUserIdentityRequest':
+          return PatchedUserIdentityRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'ProviderEnum':
           
           
@@ -128,12 +134,12 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
         case 'UserDeviceTypeEnum':
           
           
+        case 'UserIdentity':
+          return UserIdentity.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'UserIdentityRequest':
+          return UserIdentityRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'UserName':
           return UserName.fromJson(value as Map<String, dynamic>) as ReturnType;
-        case 'UserSignup':
-          return UserSignup.fromJson(value as Map<String, dynamic>) as ReturnType;
-        case 'UserSignupRequest':
-          return UserSignupRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
         default:
           RegExpMatch? match;
 

@@ -67,8 +67,23 @@ void main() {
       // TODO
     });
 
-    //Future<UserSignup> authUserCreate(UserSignupRequest userSignupRequest) async
+    //Future<UserIdentity> authUserCreate({ UserIdentityRequest userIdentityRequest }) async
     test('test authUserCreate', () async {
+      // TODO
+    });
+
+    //Future<UserIdentity> authUserPartialUpdate(String id, { PatchedUserIdentityRequest patchedUserIdentityRequest }) async
+    test('test authUserPartialUpdate', () async {
+      // TODO
+    });
+
+    //Future authUserSetPasswordCreate(String id, ChangePasswordRequest changePasswordRequest) async
+    test('test authUserSetPasswordCreate', () async {
+      // TODO
+    });
+
+    //Future<UserIdentity> authUserUpdate(String id, { UserIdentityRequest userIdentityRequest }) async
+    test('test authUserUpdate', () async {
       // TODO
     });
 

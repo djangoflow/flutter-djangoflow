@@ -22,6 +22,9 @@ Method | HTTP request | Description
 [**authTokenRefreshCreate**](AuthApi.md#authtokenrefreshcreate) | **POST** /api/v1/auth/token/refresh/ | 
 [**authTokenVerifyCreate**](AuthApi.md#authtokenverifycreate) | **POST** /api/v1/auth/token/verify/ | 
 [**authUserCreate**](AuthApi.md#authusercreate) | **POST** /api/v1/auth/user/ | 
+[**authUserPartialUpdate**](AuthApi.md#authuserpartialupdate) | **PATCH** /api/v1/auth/user/{id}/ | 
+[**authUserSetPasswordCreate**](AuthApi.md#authusersetpasswordcreate) | **POST** /api/v1/auth/user/{id}/set_password/ | 
+[**authUserUpdate**](AuthApi.md#authuserupdate) | **PUT** /api/v1/auth/user/{id}/ | 
 
 
 # **authOtpCreate**
@@ -555,7 +558,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **authUserCreate**
-> UserSignup authUserCreate(userSignupRequest)
+> UserIdentity authUserCreate(userIdentityRequest)
 
 
 
@@ -567,10 +570,10 @@ import 'package:djangoflow_openapi/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = DjangoflowOpenapi().getAuthApi();
-final UserSignupRequest userSignupRequest = ; // UserSignupRequest | 
+final UserIdentityRequest userIdentityRequest = ; // UserIdentityRequest | 
 
 try {
-    final response = api.authUserCreate(userSignupRequest);
+    final response = api.authUserCreate(userIdentityRequest);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling AuthApi->authUserCreate: $e\n');
@@ -581,11 +584,148 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userSignupRequest** | [**UserSignupRequest**](UserSignupRequest.md)|  | 
+ **userIdentityRequest** | [**UserIdentityRequest**](UserIdentityRequest.md)|  | [optional] 
 
 ### Return type
 
-[**UserSignup**](UserSignup.md)
+[**UserIdentity**](UserIdentity.md)
+
+### Authorization
+
+[jwtAuth](../README.md#jwtAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **authUserPartialUpdate**
+> UserIdentity authUserPartialUpdate(id, patchedUserIdentityRequest)
+
+
+
+### Example
+```dart
+import 'package:djangoflow_openapi/api.dart';
+// TODO Configure HTTP basic authorization: jwtAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
+
+final api = DjangoflowOpenapi().getAuthApi();
+final String id = id_example; // String | 
+final PatchedUserIdentityRequest patchedUserIdentityRequest = ; // PatchedUserIdentityRequest | 
+
+try {
+    final response = api.authUserPartialUpdate(id, patchedUserIdentityRequest);
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling AuthApi->authUserPartialUpdate: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**|  | 
+ **patchedUserIdentityRequest** | [**PatchedUserIdentityRequest**](PatchedUserIdentityRequest.md)|  | [optional] 
+
+### Return type
+
+[**UserIdentity**](UserIdentity.md)
+
+### Authorization
+
+[jwtAuth](../README.md#jwtAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **authUserSetPasswordCreate**
+> authUserSetPasswordCreate(id, changePasswordRequest)
+
+
+
+### Example
+```dart
+import 'package:djangoflow_openapi/api.dart';
+// TODO Configure HTTP basic authorization: jwtAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
+
+final api = DjangoflowOpenapi().getAuthApi();
+final String id = id_example; // String | 
+final ChangePasswordRequest changePasswordRequest = ; // ChangePasswordRequest | 
+
+try {
+    api.authUserSetPasswordCreate(id, changePasswordRequest);
+} catch on DioError (e) {
+    print('Exception when calling AuthApi->authUserSetPasswordCreate: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**|  | 
+ **changePasswordRequest** | [**ChangePasswordRequest**](ChangePasswordRequest.md)|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[jwtAuth](../README.md#jwtAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **authUserUpdate**
+> UserIdentity authUserUpdate(id, userIdentityRequest)
+
+
+
+### Example
+```dart
+import 'package:djangoflow_openapi/api.dart';
+// TODO Configure HTTP basic authorization: jwtAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
+
+final api = DjangoflowOpenapi().getAuthApi();
+final String id = id_example; // String | 
+final UserIdentityRequest userIdentityRequest = ; // UserIdentityRequest | 
+
+try {
+    final response = api.authUserUpdate(id, userIdentityRequest);
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling AuthApi->authUserUpdate: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**|  | 
+ **userIdentityRequest** | [**UserIdentityRequest**](UserIdentityRequest.md)|  | [optional] 
+
+### Return type
+
+[**UserIdentity**](UserIdentity.md)
 
 ### Authorization
 
