@@ -3,6 +3,40 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2023-09-11
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`djangoflow_auth` - `v0.2.1+6`](#djangoflow_auth---v0216)
+ - [`djangoflow_auth_google` - `v0.0.3+8`](#djangoflow_auth_google---v0038)
+ - [`djangoflow_auth_facebook` - `v0.0.4+8`](#djangoflow_auth_facebook---v0048)
+ - [`djangoflow_auth_discord` - `v0.0.4+9`](#djangoflow_auth_discord---v0049)
+ - [`djangoflow_auth_apple` - `v0.0.5+8`](#djangoflow_auth_apple---v0058)
+
+Packages with dependency updates only:
+
+> Packages listed below depend on other packages in this workspace that have had changes. Their versions have been incremented to bump the minimum dependency versions of the packages they depend upon in this project.
+
+ - `djangoflow_auth_google` - `v0.0.3+8`
+ - `djangoflow_auth_facebook` - `v0.0.4+8`
+ - `djangoflow_auth_discord` - `v0.0.4+9`
+ - `djangoflow_auth_apple` - `v0.0.5+8`
+
+---
+
+#### `djangoflow_auth` - `v0.2.1+6`
+
+ - **REFACTOR**: update registerOrInviteUser. ([6ef61571](https://github.com/djangoflow/flutter-djangoflow/commit/6ef615713270a224f9ceb778217d3b9114a91dc7))
+
+
 ## 2023-09-09
 
 ### Changes

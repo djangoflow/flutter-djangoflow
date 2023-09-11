@@ -1,3 +1,7 @@
+## 0.2.1+6
+
+ - **REFACTOR**: update registerOrInviteUser. ([6ef61571](https://github.com/djangoflow/flutter-djangoflow/commit/6ef615713270a224f9ceb778217d3b9114a91dc7))
+
 ## 0.2.1+5
 
  - **REFACTOR**: rename credentailToTokenLogin to obtainTokenAndLogin. ([98911fd1](https://github.com/djangoflow/flutter-djangoflow/commit/98911fd10a9ff0c5244ce08386869f3685f4d531))
