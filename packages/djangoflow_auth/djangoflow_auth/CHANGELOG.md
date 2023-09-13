@@ -1,3 +1,8 @@
+## 0.2.2
+
+ - **REFACTOR**: rename `authUserCreate` -> `authUsersCreate`. ([30c0e73a](https://github.com/djangoflow/flutter-djangoflow/commit/30c0e73ab80f666967abb1bb6efa234c1fe8a44b))
+ - **FEAT**: add `changePassword`. ([c75f2735](https://github.com/djangoflow/flutter-djangoflow/commit/c75f2735e82d64564200c9b8e3a8a03ce34cf803))
+
 ## 0.2.1+6
 
  - **REFACTOR**: update registerOrInviteUser. ([6ef61571](https://github.com/djangoflow/flutter-djangoflow/commit/6ef615713270a224f9ceb778217d3b9114a91dc7))

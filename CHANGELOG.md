@@ -3,6 +3,41 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2023-09-13
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`djangoflow_auth` - `v0.2.2`](#djangoflow_auth---v022)
+ - [`djangoflow_auth_google` - `v0.0.3+9`](#djangoflow_auth_google---v0039)
+ - [`djangoflow_auth_facebook` - `v0.0.4+9`](#djangoflow_auth_facebook---v0049)
+ - [`djangoflow_auth_apple` - `v0.0.5+9`](#djangoflow_auth_apple---v0059)
+ - [`djangoflow_auth_discord` - `v0.0.4+10`](#djangoflow_auth_discord---v00410)
+
+Packages with dependency updates only:
+
+> Packages listed below depend on other packages in this workspace that have had changes. Their versions have been incremented to bump the minimum dependency versions of the packages they depend upon in this project.
+
+ - `djangoflow_auth_google` - `v0.0.3+9`
+ - `djangoflow_auth_facebook` - `v0.0.4+9`
+ - `djangoflow_auth_apple` - `v0.0.5+9`
+ - `djangoflow_auth_discord` - `v0.0.4+10`
+
+---
+
+#### `djangoflow_auth` - `v0.2.2`
+
+ - **REFACTOR**: rename `authUserCreate` -> `authUsersCreate`. ([30c0e73a](https://github.com/djangoflow/flutter-djangoflow/commit/30c0e73ab80f666967abb1bb6efa234c1fe8a44b))
+ - **FEAT**: add `changePassword`. ([c75f2735](https://github.com/djangoflow/flutter-djangoflow/commit/c75f2735e82d64564200c9b8e3a8a03ce34cf803))
+
+
 ## 2023-09-11
 
 ### Changes
