@@ -145,6 +145,17 @@ class AuthCubit extends HydratedCubit<AuthState> {
         }
       });
 
+  Future<void> changePassword({
+    required String id,
+    required ChangePasswordRequest changePasswordRequest,
+  }) =>
+      _authApiChecker(() async {
+        await authApi?.authUsersSetPasswordCreate(
+          id: id,
+          changePasswordRequest: changePasswordRequest,
+        );
+      });
+
   Future<T> _authApiChecker<T>(Future<T> Function() function) async {
     if (authApi == null) {
       throw Exception('AuthApi is not initialized');
