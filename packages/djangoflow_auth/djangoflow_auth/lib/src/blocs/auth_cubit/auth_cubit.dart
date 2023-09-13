@@ -72,7 +72,7 @@ class AuthCubit extends HydratedCubit<AuthState> {
     required UserIdentityRequest userIdentityRequest,
   }) async =>
       _authApiChecker<UserIdentity?>(() async {
-        final result = (await authApi?.authUserCreate(
+        final result = (await authApi?.authUsersCreate(
           userIdentityRequest: userIdentityRequest,
         ))
             ?.data;
