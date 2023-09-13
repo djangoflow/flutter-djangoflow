@@ -27,7 +27,7 @@ class OTPDevice {
 
      this.confirmed,
 
-     this.key,
+     this.extraData,
   });
 
   @JsonKey(
@@ -80,13 +80,13 @@ class OTPDevice {
 
   @JsonKey(
     
-    name: r'key',
+    name: r'extra_data',
     required: false,
     includeIfNull: false
   )
 
 
-  final String? key;
+  final Map<String, String>? extraData;
 
 
 
@@ -96,7 +96,7 @@ class OTPDevice {
      other.name == name &&
      other.type == type &&
      other.confirmed == confirmed &&
-     other.key == key;
+     other.extraData == extraData;
 
   @override
   int get hashCode =>
@@ -104,7 +104,7 @@ class OTPDevice {
     name.hashCode +
     type.hashCode +
     confirmed.hashCode +
-    (key == null ? 0 : key.hashCode);
+    extraData.hashCode;
 
   factory OTPDevice.fromJson(Map<String, dynamic> json) => _$OTPDeviceFromJson(json);
 

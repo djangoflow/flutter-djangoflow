@@ -128,11 +128,12 @@ _responseData = rawData == null ? null : deserialize<OTPObtain, OTPObtain>(rawDa
     );
   }
 
-  /// authOtpDeviceConfirmCreate
+  /// authOtpDevicesConfirmCreate
   /// 
   ///
   /// Parameters:
   /// * [id] 
+  /// * [type] - OTP Device type
   /// * [oTPDeviceConfirmRequest] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
@@ -143,8 +144,9 @@ _responseData = rawData == null ? null : deserialize<OTPObtain, OTPObtain>(rawDa
   ///
   /// Returns a [Future]
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<void>> authOtpDeviceConfirmCreate({ 
+  Future<Response<void>> authOtpDevicesConfirmCreate({ 
     required String id,
+    required String type,
     required OTPDeviceConfirmRequest oTPDeviceConfirmRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -153,7 +155,7 @@ _responseData = rawData == null ? null : deserialize<OTPObtain, OTPObtain>(rawDa
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/v1/auth/otp-device/{id}/confirm/'.replaceAll('{' r'id' '}', id.toString());
+    final _path = r'/api/v1/auth/otp-devices/{id}/confirm/'.replaceAll('{' r'id' '}', id.toString());
     final _options = Options(
       method: r'POST',
       headers: <String, dynamic>{
@@ -173,6 +175,10 @@ _responseData = rawData == null ? null : deserialize<OTPObtain, OTPObtain>(rawDa
       validateStatus: validateStatus,
     );
 
+    final _queryParameters = <String, dynamic>{
+      r'type': type,
+    };
+
     dynamic _bodyData;
 
     try {
@@ -182,6 +188,7 @@ _bodyData=jsonEncode(oTPDeviceConfirmRequest);
          requestOptions: _options.compose(
           _dio.options,
           _path,
+          queryParameters: _queryParameters,
         ),
         type: DioErrorType.unknown,
         error: error,
@@ -193,6 +200,7 @@ _bodyData=jsonEncode(oTPDeviceConfirmRequest);
       _path,
       data: _bodyData,
       options: _options,
+      queryParameters: _queryParameters,
       cancelToken: cancelToken,
       onSendProgress: onSendProgress,
       onReceiveProgress: onReceiveProgress,
@@ -201,7 +209,7 @@ _bodyData=jsonEncode(oTPDeviceConfirmRequest);
     return _response;
   }
 
-  /// authOtpDeviceCreate
+  /// authOtpDevicesCreate
   /// 
   ///
   /// Parameters:
@@ -215,7 +223,7 @@ _bodyData=jsonEncode(oTPDeviceConfirmRequest);
   ///
   /// Returns a [Future] containing a [Response] with a [OTPDevice] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<OTPDevice>> authOtpDeviceCreate({ 
+  Future<Response<OTPDevice>> authOtpDevicesCreate({ 
     required OTPDeviceRequest oTPDeviceRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -224,7 +232,7 @@ _bodyData=jsonEncode(oTPDeviceConfirmRequest);
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/v1/auth/otp-device/';
+    final _path = r'/api/v1/auth/otp-devices/';
     final _options = Options(
       method: r'POST',
       headers: <String, dynamic>{
@@ -296,11 +304,12 @@ _responseData = rawData == null ? null : deserialize<OTPDevice, OTPDevice>(rawDa
     );
   }
 
-  /// authOtpDeviceDestroy
+  /// authOtpDevicesDestroy
   /// 
   ///
   /// Parameters:
   /// * [id] 
+  /// * [type] - OTP Device type
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -310,8 +319,9 @@ _responseData = rawData == null ? null : deserialize<OTPDevice, OTPDevice>(rawDa
   ///
   /// Returns a [Future]
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<void>> authOtpDeviceDestroy({ 
+  Future<Response<void>> authOtpDevicesDestroy({ 
     required String id,
+    required String type,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -319,7 +329,7 @@ _responseData = rawData == null ? null : deserialize<OTPDevice, OTPDevice>(rawDa
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/v1/auth/otp-device/{id}/'.replaceAll('{' r'id' '}', id.toString());
+    final _path = r'/api/v1/auth/otp-devices/{id}/'.replaceAll('{' r'id' '}', id.toString());
     final _options = Options(
       method: r'DELETE',
       headers: <String, dynamic>{
@@ -338,9 +348,14 @@ _responseData = rawData == null ? null : deserialize<OTPDevice, OTPDevice>(rawDa
       validateStatus: validateStatus,
     );
 
+    final _queryParameters = <String, dynamic>{
+      r'type': type,
+    };
+
     final _response = await _dio.request<Object>(
       _path,
       options: _options,
+      queryParameters: _queryParameters,
       cancelToken: cancelToken,
       onSendProgress: onSendProgress,
       onReceiveProgress: onReceiveProgress,
@@ -349,7 +364,7 @@ _responseData = rawData == null ? null : deserialize<OTPDevice, OTPDevice>(rawDa
     return _response;
   }
 
-  /// authOtpDeviceList
+  /// authOtpDevicesList
   /// 
   ///
   /// Parameters:
@@ -364,7 +379,7 @@ _responseData = rawData == null ? null : deserialize<OTPDevice, OTPDevice>(rawDa
   ///
   /// Returns a [Future] containing a [Response] with a [PaginatedOTPDeviceList] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<PaginatedOTPDeviceList>> authOtpDeviceList({ 
+  Future<Response<PaginatedOTPDeviceList>> authOtpDevicesList({ 
     int? limit,
     int? offset,
     CancelToken? cancelToken,
@@ -374,7 +389,7 @@ _responseData = rawData == null ? null : deserialize<OTPDevice, OTPDevice>(rawDa
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/v1/auth/otp-device/';
+    final _path = r'/api/v1/auth/otp-devices/';
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -434,11 +449,12 @@ _responseData = rawData == null ? null : deserialize<PaginatedOTPDeviceList, Pag
     );
   }
 
-  /// authOtpDeviceRetrieve
+  /// authOtpDevicesRetrieve
   /// 
   ///
   /// Parameters:
   /// * [id] 
+  /// * [type] - OTP Device type
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -448,8 +464,9 @@ _responseData = rawData == null ? null : deserialize<PaginatedOTPDeviceList, Pag
   ///
   /// Returns a [Future] containing a [Response] with a [OTPDevice] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<OTPDevice>> authOtpDeviceRetrieve({ 
+  Future<Response<OTPDevice>> authOtpDevicesRetrieve({ 
     required String id,
+    required String type,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -457,7 +474,7 @@ _responseData = rawData == null ? null : deserialize<PaginatedOTPDeviceList, Pag
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/v1/auth/otp-device/{id}/'.replaceAll('{' r'id' '}', id.toString());
+    final _path = r'/api/v1/auth/otp-devices/{id}/'.replaceAll('{' r'id' '}', id.toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -476,9 +493,14 @@ _responseData = rawData == null ? null : deserialize<PaginatedOTPDeviceList, Pag
       validateStatus: validateStatus,
     );
 
+    final _queryParameters = <String, dynamic>{
+      r'type': type,
+    };
+
     final _response = await _dio.request<Object>(
       _path,
       options: _options,
+      queryParameters: _queryParameters,
       cancelToken: cancelToken,
       onSendProgress: onSendProgress,
       onReceiveProgress: onReceiveProgress,
@@ -1081,7 +1103,7 @@ _responseData = rawData == null ? null : deserialize<Token, Token>(rawData, 'Tok
     );
   }
 
-  /// authUserCreate
+  /// authUsersCreate
   /// 
   ///
   /// Parameters:
@@ -1095,7 +1117,7 @@ _responseData = rawData == null ? null : deserialize<Token, Token>(rawData, 'Tok
   ///
   /// Returns a [Future] containing a [Response] with a [UserIdentity] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<UserIdentity>> authUserCreate({ 
+  Future<Response<UserIdentity>> authUsersCreate({ 
     UserIdentityRequest? userIdentityRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -1104,7 +1126,7 @@ _responseData = rawData == null ? null : deserialize<Token, Token>(rawData, 'Tok
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/v1/auth/user/';
+    final _path = r'/api/v1/auth/users/';
     final _options = Options(
       method: r'POST',
       headers: <String, dynamic>{
@@ -1176,7 +1198,7 @@ _responseData = rawData == null ? null : deserialize<UserIdentity, UserIdentity>
     );
   }
 
-  /// authUserPartialUpdate
+  /// authUsersPartialUpdate
   /// 
   ///
   /// Parameters:
@@ -1191,7 +1213,7 @@ _responseData = rawData == null ? null : deserialize<UserIdentity, UserIdentity>
   ///
   /// Returns a [Future] containing a [Response] with a [UserIdentity] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<UserIdentity>> authUserPartialUpdate({ 
+  Future<Response<UserIdentity>> authUsersPartialUpdate({ 
     required String id,
     PatchedUserIdentityRequest? patchedUserIdentityRequest,
     CancelToken? cancelToken,
@@ -1201,7 +1223,7 @@ _responseData = rawData == null ? null : deserialize<UserIdentity, UserIdentity>
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/v1/auth/user/{id}/'.replaceAll('{' r'id' '}', id.toString());
+    final _path = r'/api/v1/auth/users/{id}/'.replaceAll('{' r'id' '}', id.toString());
     final _options = Options(
       method: r'PATCH',
       headers: <String, dynamic>{
@@ -1273,7 +1295,84 @@ _responseData = rawData == null ? null : deserialize<UserIdentity, UserIdentity>
     );
   }
 
-  /// authUserSetPasswordCreate
+  /// authUsersRetrieve
+  /// 
+  ///
+  /// Parameters:
+  /// * [id] 
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [UserIdentity] as data
+  /// Throws [DioError] if API call or serialization fails
+  Future<Response<UserIdentity>> authUsersRetrieve({ 
+    required String id,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/api/v1/auth/users/{id}/'.replaceAll('{' r'id' '}', id.toString());
+    final _options = Options(
+      method: r'GET',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'http',
+            'scheme': 'bearer',
+            'name': 'jwtAuth',
+          },
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
+
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    UserIdentity? _responseData;
+
+    try {
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<UserIdentity, UserIdentity>(rawData, 'UserIdentity', growable: true);
+    } catch (error, stackTrace) {
+      throw DioError(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioErrorType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<UserIdentity>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
+  /// authUsersSetPasswordCreate
   /// 
   ///
   /// Parameters:
@@ -1288,7 +1387,7 @@ _responseData = rawData == null ? null : deserialize<UserIdentity, UserIdentity>
   ///
   /// Returns a [Future]
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<void>> authUserSetPasswordCreate({ 
+  Future<Response<void>> authUsersSetPasswordCreate({ 
     required String id,
     required ChangePasswordRequest changePasswordRequest,
     CancelToken? cancelToken,
@@ -1298,7 +1397,7 @@ _responseData = rawData == null ? null : deserialize<UserIdentity, UserIdentity>
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/v1/auth/user/{id}/set_password/'.replaceAll('{' r'id' '}', id.toString());
+    final _path = r'/api/v1/auth/users/{id}/set-password/'.replaceAll('{' r'id' '}', id.toString());
     final _options = Options(
       method: r'POST',
       headers: <String, dynamic>{
@@ -1344,103 +1443,6 @@ _bodyData=jsonEncode(changePasswordRequest);
     );
 
     return _response;
-  }
-
-  /// authUserUpdate
-  /// 
-  ///
-  /// Parameters:
-  /// * [id] 
-  /// * [userIdentityRequest] 
-  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
-  /// * [headers] - Can be used to add additional headers to the request
-  /// * [extras] - Can be used to add flags to the request
-  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
-  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
-  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
-  ///
-  /// Returns a [Future] containing a [Response] with a [UserIdentity] as data
-  /// Throws [DioError] if API call or serialization fails
-  Future<Response<UserIdentity>> authUserUpdate({ 
-    required String id,
-    UserIdentityRequest? userIdentityRequest,
-    CancelToken? cancelToken,
-    Map<String, dynamic>? headers,
-    Map<String, dynamic>? extra,
-    ValidateStatus? validateStatus,
-    ProgressCallback? onSendProgress,
-    ProgressCallback? onReceiveProgress,
-  }) async {
-    final _path = r'/api/v1/auth/user/{id}/'.replaceAll('{' r'id' '}', id.toString());
-    final _options = Options(
-      method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'jwtAuth',
-          },
-        ],
-        ...?extra,
-      },
-      contentType: 'application/json',
-      validateStatus: validateStatus,
-    );
-
-    dynamic _bodyData;
-
-    try {
-_bodyData=jsonEncode(userIdentityRequest);
-    } catch(error, stackTrace) {
-      throw DioError(
-         requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
-        type: DioErrorType.unknown,
-        error: error,
-        stackTrace: stackTrace,
-      );
-    }
-
-    final _response = await _dio.request<Object>(
-      _path,
-      data: _bodyData,
-      options: _options,
-      cancelToken: cancelToken,
-      onSendProgress: onSendProgress,
-      onReceiveProgress: onReceiveProgress,
-    );
-
-    UserIdentity? _responseData;
-
-    try {
-final rawData = _response.data;
-_responseData = rawData == null ? null : deserialize<UserIdentity, UserIdentity>(rawData, 'UserIdentity', growable: true);
-    } catch (error, stackTrace) {
-      throw DioError(
-        requestOptions: _response.requestOptions,
-        response: _response,
-        type: DioErrorType.unknown,
-        error: error,
-        stackTrace: stackTrace,
-      );
-    }
-
-    return Response<UserIdentity>(
-      data: _responseData,
-      headers: _response.headers,
-      isRedirect: _response.isRedirect,
-      requestOptions: _response.requestOptions,
-      redirects: _response.redirects,
-      statusCode: _response.statusCode,
-      statusMessage: _response.statusMessage,
-      extra: _response.extra,
-    );
   }
 
 }

@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **name** | **String** |  | [optional] 
 **type** | [**OTPDeviceTypeEnum**](OTPDeviceTypeEnum.md) |  | 
 **confirmed** | **bool** |  | [optional] 
-**key** | **String** |  | [optional] 
+**extraData** | **Map&lt;String, String&gt;** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

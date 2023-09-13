@@ -27,8 +27,8 @@ void main() {
       // TODO
     });
 
-    // String key
-    test('to test the property `key`', () async {
+    // Map<String, String> extraData
+    test('to test the property `extraData`', () async {
       // TODO
     });
 

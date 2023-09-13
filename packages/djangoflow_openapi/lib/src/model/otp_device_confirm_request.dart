@@ -18,28 +18,28 @@ class OTPDeviceConfirmRequest {
   /// Returns a new [OTPDeviceConfirmRequest] instance.
   OTPDeviceConfirmRequest({
 
-    required  this.code,
+    required  this.otp,
   });
 
   @JsonKey(
     
-    name: r'code',
+    name: r'otp',
     required: true,
     includeIfNull: false
   )
 
 
-  final String code;
+  final String otp;
 
 
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is OTPDeviceConfirmRequest &&
-     other.code == code;
+     other.otp == otp;
 
   @override
   int get hashCode =>
-    code.hashCode;
+    otp.hashCode;
 
   factory OTPDeviceConfirmRequest.fromJson(Map<String, dynamic> json) => _$OTPDeviceConfirmRequestFromJson(json);
 

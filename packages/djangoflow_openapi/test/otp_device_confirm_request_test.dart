@@ -7,8 +7,8 @@ void main() {
   // TODO add properties to the entity
 
   group(OTPDeviceConfirmRequest, () {
-    // String code
-    test('to test the property `code`', () async {
+    // String otp
+    test('to test the property `otp`', () async {
       // TODO
     });
 

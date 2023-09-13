@@ -61,9 +61,9 @@
                 }
             }
         },
-        "/api/v1/auth/otp-device/": {
+        "/api/v1/auth/otp-devices/": {
             "get": {
-                "operationId": "auth_otp_device_list",
+                "operationId": "auth_otp_devices_list",
                 "parameters": [
                     {
                         "name": "limit",
@@ -116,7 +116,7 @@
                 }
             },
             "post": {
-                "operationId": "auth_otp_device_create",
+                "operationId": "auth_otp_devices_create",
                 "tags": [
                     "auth"
                 ],
@@ -169,9 +169,9 @@
                 }
             }
         },
-        "/api/v1/auth/otp-device/{id}/": {
+        "/api/v1/auth/otp-devices/{id}/": {
             "get": {
-                "operationId": "auth_otp_device_retrieve",
+                "operationId": "auth_otp_devices_retrieve",
                 "parameters": [
                     {
                         "in": "path",
@@ -179,6 +179,15 @@
                         "schema": {
                             "type": "string"
                         },
+                        "required": true
+                    },
+                    {
+                        "in": "query",
+                        "name": "type",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "OTP Device type",
                         "required": true
                     }
                 ],
@@ -214,7 +223,7 @@
                 }
             },
             "delete": {
-                "operationId": "auth_otp_device_destroy",
+                "operationId": "auth_otp_devices_destroy",
                 "parameters": [
                     {
                         "in": "path",
@@ -222,6 +231,15 @@
                         "schema": {
                             "type": "string"
                         },
+                        "required": true
+                    },
+                    {
+                        "in": "query",
+                        "name": "type",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "OTP Device type",
                         "required": true
                     }
                 ],
@@ -250,9 +268,9 @@
                 }
             }
         },
-        "/api/v1/auth/otp-device/{id}/confirm/": {
+        "/api/v1/auth/otp-devices/{id}/confirm/": {
             "post": {
-                "operationId": "auth_otp_device_confirm_create",
+                "operationId": "auth_otp_devices_confirm_create",
                 "parameters": [
                     {
                         "in": "path",
@@ -260,6 +278,15 @@
                         "schema": {
                             "type": "string"
                         },
+                        "required": true
+                    },
+                    {
+                        "in": "query",
+                        "name": "type",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "OTP Device type",
                         "required": true
                     }
                 ],
@@ -641,9 +668,9 @@
                 }
             }
         },
-        "/api/v1/auth/user/": {
+        "/api/v1/auth/users/": {
             "post": {
-                "operationId": "auth_user_create",
+                "operationId": "auth_users_create",
                 "tags": [
                     "auth"
                 ],
@@ -669,8 +696,7 @@
                 "security": [
                     {
                         "jwtAuth": []
-                    },
-                    {}
+                    }
                 ],
                 "responses": {
                     "400": {
@@ -696,9 +722,9 @@
                 }
             }
         },
-        "/api/v1/auth/user/{id}/": {
-            "put": {
-                "operationId": "auth_user_update",
+        "/api/v1/auth/users/{id}/": {
+            "get": {
+                "operationId": "auth_users_retrieve",
                 "parameters": [
                     {
                         "in": "path",
@@ -712,30 +738,10 @@
                 "tags": [
                     "auth"
                 ],
-                "requestBody": {
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/UserIdentityRequest"
-                            }
-                        },
-                        "application/x-www-form-urlencoded": {
-                            "schema": {
-                                "$ref": "#/components/schemas/UserIdentityRequest"
-                            }
-                        },
-                        "multipart/form-data": {
-                            "schema": {
-                                "$ref": "#/components/schemas/UserIdentityRequest"
-                            }
-                        }
-                    }
-                },
                 "security": [
                     {
                         "jwtAuth": []
-                    },
-                    {}
+                    }
                 ],
                 "responses": {
                     "400": {
@@ -761,7 +767,7 @@
                 }
             },
             "patch": {
-                "operationId": "auth_user_partial_update",
+                "operationId": "auth_users_partial_update",
                 "parameters": [
                     {
                         "in": "path",
@@ -797,8 +803,7 @@
                 "security": [
                     {
                         "jwtAuth": []
-                    },
-                    {}
+                    }
                 ],
                 "responses": {
                     "400": {
@@ -824,9 +829,9 @@
                 }
             }
         },
-        "/api/v1/auth/user/{id}/set_password/": {
+        "/api/v1/auth/users/{id}/set-password/": {
             "post": {
-                "operationId": "auth_user_set_password_create",
+                "operationId": "auth_users_set_password_create",
                 "parameters": [
                     {
                         "in": "path",
@@ -863,8 +868,7 @@
                 "security": [
                     {
                         "jwtAuth": []
-                    },
-                    {}
+                    }
                 ],
                 "responses": {
                     "400": {
@@ -2923,9 +2927,11 @@
                         "type": "boolean",
                         "readOnly": true
                     },
-                    "key": {
-                        "type": "string",
-                        "nullable": true,
+                    "extra_data": {
+                        "type": "object",
+                        "additionalProperties": {
+                            "type": "string"
+                        },
                         "readOnly": true
                     }
                 },
@@ -2936,14 +2942,14 @@
             "OTPDeviceConfirmRequest": {
                 "type": "object",
                 "properties": {
-                    "code": {
+                    "otp": {
                         "type": "string",
                         "writeOnly": true,
                         "minLength": 1
                     }
                 },
                 "required": [
-                    "code"
+                    "otp"
                 ]
             },
             "OTPDeviceRequest": {

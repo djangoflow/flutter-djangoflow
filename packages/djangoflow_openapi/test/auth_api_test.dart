@@ -12,28 +12,28 @@ void main() {
       // TODO
     });
 
-    //Future authOtpDeviceConfirmCreate(String id, OTPDeviceConfirmRequest oTPDeviceConfirmRequest) async
-    test('test authOtpDeviceConfirmCreate', () async {
+    //Future authOtpDevicesConfirmCreate(String id, String type, OTPDeviceConfirmRequest oTPDeviceConfirmRequest) async
+    test('test authOtpDevicesConfirmCreate', () async {
       // TODO
     });
 
-    //Future<OTPDevice> authOtpDeviceCreate(OTPDeviceRequest oTPDeviceRequest) async
-    test('test authOtpDeviceCreate', () async {
+    //Future<OTPDevice> authOtpDevicesCreate(OTPDeviceRequest oTPDeviceRequest) async
+    test('test authOtpDevicesCreate', () async {
       // TODO
     });
 
-    //Future authOtpDeviceDestroy(String id) async
-    test('test authOtpDeviceDestroy', () async {
+    //Future authOtpDevicesDestroy(String id, String type) async
+    test('test authOtpDevicesDestroy', () async {
       // TODO
     });
 
-    //Future<PaginatedOTPDeviceList> authOtpDeviceList({ int limit, int offset }) async
-    test('test authOtpDeviceList', () async {
+    //Future<PaginatedOTPDeviceList> authOtpDevicesList({ int limit, int offset }) async
+    test('test authOtpDevicesList', () async {
       // TODO
     });
 
-    //Future<OTPDevice> authOtpDeviceRetrieve(String id) async
-    test('test authOtpDeviceRetrieve', () async {
+    //Future<OTPDevice> authOtpDevicesRetrieve(String id, String type) async
+    test('test authOtpDevicesRetrieve', () async {
       // TODO
     });
 
@@ -67,23 +67,23 @@ void main() {
       // TODO
     });
 
-    //Future<UserIdentity> authUserCreate({ UserIdentityRequest userIdentityRequest }) async
-    test('test authUserCreate', () async {
+    //Future<UserIdentity> authUsersCreate({ UserIdentityRequest userIdentityRequest }) async
+    test('test authUsersCreate', () async {
       // TODO
     });
 
-    //Future<UserIdentity> authUserPartialUpdate(String id, { PatchedUserIdentityRequest patchedUserIdentityRequest }) async
-    test('test authUserPartialUpdate', () async {
+    //Future<UserIdentity> authUsersPartialUpdate(String id, { PatchedUserIdentityRequest patchedUserIdentityRequest }) async
+    test('test authUsersPartialUpdate', () async {
       // TODO
     });
 
-    //Future authUserSetPasswordCreate(String id, ChangePasswordRequest changePasswordRequest) async
-    test('test authUserSetPasswordCreate', () async {
+    //Future<UserIdentity> authUsersRetrieve(String id) async
+    test('test authUsersRetrieve', () async {
       // TODO
     });
 
-    //Future<UserIdentity> authUserUpdate(String id, { UserIdentityRequest userIdentityRequest }) async
-    test('test authUserUpdate', () async {
+    //Future authUsersSetPasswordCreate(String id, ChangePasswordRequest changePasswordRequest) async
+    test('test authUsersSetPasswordCreate', () async {
       // TODO
     });
 
