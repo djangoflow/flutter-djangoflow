@@ -76,6 +76,11 @@ try {
 }
 ```
 
+## Additiona tools
+
+- `generate-openapi.sh`: [OpenAPI Client Generation Script](./tool/generate-openapi.sh.md)
+- `generate-openapi-copywith`: [Enabling CopyWith extension for Djangoflow OpenAPI client script](./tool/generate-openapi-copywith.sh.md)
+
 ## Contributing
 
 🙌 Contributions are welcome! Feel free to submit issues and pull requests to enhance this package.
