@@ -12,7 +12,7 @@ dependencies:
   collection: ^1.17.1
   dio: ^5.3.2
   djangoflow_bloc_extensions: ^0.0.2+1
-  djangoflow_openapi: ^0.0.22
+  djangoflow_openapi: ^0.0.21
   flutter:
     sdk: flutter
   flutter_bloc: ^8.1.3
