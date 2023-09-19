@@ -87,5 +87,15 @@ void main() {
       // TODO
     });
 
+    //Future<User2FA> authUsersTwoFaPartialUpdate(String id, { PatchedUser2FARequest patchedUser2FARequest }) async
+    test('test authUsersTwoFaPartialUpdate', () async {
+      // TODO
+    });
+
+    //Future<User2FA> authUsersTwoFaRetrieve(String id) async
+    test('test authUsersTwoFaRetrieve', () async {
+      // TODO
+    });
+
   });
 }

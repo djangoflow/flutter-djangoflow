@@ -18,6 +18,7 @@ import 'package:djangoflow_openapi/src/model/paginated_room_list.dart';
 import 'package:djangoflow_openapi/src/model/paginated_user_device_list.dart';
 import 'package:djangoflow_openapi/src/model/patched_message_request.dart';
 import 'package:djangoflow_openapi/src/model/patched_room_request.dart';
+import 'package:djangoflow_openapi/src/model/patched_user2_fa_request.dart';
 import 'package:djangoflow_openapi/src/model/patched_user_device_request.dart';
 import 'package:djangoflow_openapi/src/model/patched_user_identity_request.dart';
 import 'package:djangoflow_openapi/src/model/push_action.dart';
@@ -31,6 +32,7 @@ import 'package:djangoflow_openapi/src/model/token_blacklist_request.dart';
 import 'package:djangoflow_openapi/src/model/token_obtain_request.dart';
 import 'package:djangoflow_openapi/src/model/token_refresh_request.dart';
 import 'package:djangoflow_openapi/src/model/token_verify_request.dart';
+import 'package:djangoflow_openapi/src/model/user2_fa.dart';
 import 'package:djangoflow_openapi/src/model/user_device.dart';
 import 'package:djangoflow_openapi/src/model/user_device_request.dart';
 import 'package:djangoflow_openapi/src/model/user_identity.dart';
@@ -98,6 +100,8 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           return PatchedMessageRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'PatchedRoomRequest':
           return PatchedRoomRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'PatchedUser2FARequest':
+          return PatchedUser2FARequest.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'PatchedUserDeviceRequest':
           return PatchedUserDeviceRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'PatchedUserIdentityRequest':
@@ -127,6 +131,8 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           return TokenRefreshRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'TokenVerifyRequest':
           return TokenVerifyRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'User2FA':
+          return User2FA.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'UserDevice':
           return UserDevice.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'UserDeviceRequest':

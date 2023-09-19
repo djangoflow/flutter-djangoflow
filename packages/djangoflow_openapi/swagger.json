@@ -887,6 +887,113 @@
                 }
             }
         },
+        "/api/v1/auth/users/{id}/two-fa/": {
+            "get": {
+                "operationId": "auth_users_two_fa_retrieve",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "required": true
+                    }
+                ],
+                "tags": [
+                    "auth"
+                ],
+                "security": [
+                    {
+                        "jwtAuth": []
+                    }
+                ],
+                "responses": {
+                    "400": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        },
+                        "description": ""
+                    },
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/User2FA"
+                                }
+                            }
+                        },
+                        "description": ""
+                    }
+                }
+            },
+            "patch": {
+                "operationId": "auth_users_two_fa_partial_update",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "required": true
+                    }
+                ],
+                "tags": [
+                    "auth"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PatchedUser2FARequest"
+                            }
+                        },
+                        "application/x-www-form-urlencoded": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PatchedUser2FARequest"
+                            }
+                        },
+                        "multipart/form-data": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PatchedUser2FARequest"
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "jwtAuth": []
+                    }
+                ],
+                "responses": {
+                    "400": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        },
+                        "description": ""
+                    },
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/User2FA"
+                                }
+                            }
+                        },
+                        "description": ""
+                    }
+                }
+            }
+        },
         "/api/v1/chat/images/": {
             "get": {
                 "operationId": "chat_images_list",
@@ -3196,6 +3303,14 @@
                     }
                 }
             },
+            "PatchedUser2FARequest": {
+                "type": "object",
+                "properties": {
+                    "is_required": {
+                        "type": "boolean"
+                    }
+                }
+            },
             "PatchedUserDeviceRequest": {
                 "type": "object",
                 "properties": {
@@ -3515,6 +3630,14 @@
                 "required": [
                     "token"
                 ]
+            },
+            "User2FA": {
+                "type": "object",
+                "properties": {
+                    "is_required": {
+                        "type": "boolean"
+                    }
+                }
             },
             "UserDevice": {
                 "type": "object",

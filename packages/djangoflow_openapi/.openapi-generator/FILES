@@ -26,6 +26,7 @@ doc/PaginatedRoomList.md
 doc/PaginatedUserDeviceList.md
 doc/PatchedMessageRequest.md
 doc/PatchedRoomRequest.md
+doc/PatchedUser2FARequest.md
 doc/PatchedUserDeviceRequest.md
 doc/PatchedUserIdentityRequest.md
 doc/ProviderEnum.md
@@ -40,6 +41,7 @@ doc/TokenBlacklistRequest.md
 doc/TokenObtainRequest.md
 doc/TokenRefreshRequest.md
 doc/TokenVerifyRequest.md
+doc/User2FA.md
 doc/UserDevice.md
 doc/UserDeviceRequest.md
 doc/UserDeviceTypeEnum.md
@@ -78,6 +80,7 @@ lib/src/model/paginated_room_list.dart
 lib/src/model/paginated_user_device_list.dart
 lib/src/model/patched_message_request.dart
 lib/src/model/patched_room_request.dart
+lib/src/model/patched_user2_fa_request.dart
 lib/src/model/patched_user_device_request.dart
 lib/src/model/patched_user_identity_request.dart
 lib/src/model/provider_enum.dart
@@ -92,6 +95,7 @@ lib/src/model/token_blacklist_request.dart
 lib/src/model/token_obtain_request.dart
 lib/src/model/token_refresh_request.dart
 lib/src/model/token_verify_request.dart
+lib/src/model/user2_fa.dart
 lib/src/model/user_device.dart
 lib/src/model/user_device_request.dart
 lib/src/model/user_device_type_enum.dart
@@ -123,6 +127,7 @@ test/paginated_room_list_test.dart
 test/paginated_user_device_list_test.dart
 test/patched_message_request_test.dart
 test/patched_room_request_test.dart
+test/patched_user2_fa_request_test.dart
 test/patched_user_device_request_test.dart
 test/patched_user_identity_request_test.dart
 test/provider_enum_test.dart
@@ -137,6 +142,7 @@ test/token_obtain_request_test.dart
 test/token_refresh_request_test.dart
 test/token_test.dart
 test/token_verify_request_test.dart
+test/user2_fa_test.dart
 test/user_device_request_test.dart
 test/user_device_test.dart
 test/user_device_type_enum_test.dart

@@ -25,6 +25,8 @@ Method | HTTP request | Description
 [**authUsersPartialUpdate**](AuthApi.md#authuserspartialupdate) | **PATCH** /api/v1/auth/users/{id}/ | 
 [**authUsersRetrieve**](AuthApi.md#authusersretrieve) | **GET** /api/v1/auth/users/{id}/ | 
 [**authUsersSetPasswordCreate**](AuthApi.md#authuserssetpasswordcreate) | **POST** /api/v1/auth/users/{id}/set-password/ | 
+[**authUsersTwoFaPartialUpdate**](AuthApi.md#authuserstwofapartialupdate) | **PATCH** /api/v1/auth/users/{id}/two-fa/ | 
+[**authUsersTwoFaRetrieve**](AuthApi.md#authuserstwofaretrieve) | **GET** /api/v1/auth/users/{id}/two-fa/ | 
 
 
 # **authOtpCreate**
@@ -738,6 +740,96 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **authUsersTwoFaPartialUpdate**
+> User2FA authUsersTwoFaPartialUpdate(id, patchedUser2FARequest)
+
+
+
+### Example
+```dart
+import 'package:djangoflow_openapi/api.dart';
+// TODO Configure HTTP basic authorization: jwtAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
+
+final api = DjangoflowOpenapi().getAuthApi();
+final String id = id_example; // String | 
+final PatchedUser2FARequest patchedUser2FARequest = ; // PatchedUser2FARequest | 
+
+try {
+    final response = api.authUsersTwoFaPartialUpdate(id, patchedUser2FARequest);
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling AuthApi->authUsersTwoFaPartialUpdate: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**|  | 
+ **patchedUser2FARequest** | [**PatchedUser2FARequest**](PatchedUser2FARequest.md)|  | [optional] 
+
+### Return type
+
+[**User2FA**](User2FA.md)
+
+### Authorization
+
+[jwtAuth](../README.md#jwtAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **authUsersTwoFaRetrieve**
+> User2FA authUsersTwoFaRetrieve(id)
+
+
+
+### Example
+```dart
+import 'package:djangoflow_openapi/api.dart';
+// TODO Configure HTTP basic authorization: jwtAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
+
+final api = DjangoflowOpenapi().getAuthApi();
+final String id = id_example; // String | 
+
+try {
+    final response = api.authUsersTwoFaRetrieve(id);
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling AuthApi->authUsersTwoFaRetrieve: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**|  | 
+
+### Return type
+
+[**User2FA**](User2FA.md)
+
+### Authorization
+
+[jwtAuth](../README.md#jwtAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

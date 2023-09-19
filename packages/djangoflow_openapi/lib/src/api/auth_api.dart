@@ -17,6 +17,7 @@ import 'package:djangoflow_openapi/src/model/otp_device_request.dart';
 import 'package:djangoflow_openapi/src/model/otp_obtain.dart';
 import 'package:djangoflow_openapi/src/model/otp_obtain_request.dart';
 import 'package:djangoflow_openapi/src/model/paginated_otp_device_list.dart';
+import 'package:djangoflow_openapi/src/model/patched_user2_fa_request.dart';
 import 'package:djangoflow_openapi/src/model/patched_user_identity_request.dart';
 import 'package:djangoflow_openapi/src/model/social_token_obtain_request.dart';
 import 'package:djangoflow_openapi/src/model/token.dart';
@@ -24,6 +25,7 @@ import 'package:djangoflow_openapi/src/model/token_blacklist_request.dart';
 import 'package:djangoflow_openapi/src/model/token_obtain_request.dart';
 import 'package:djangoflow_openapi/src/model/token_refresh_request.dart';
 import 'package:djangoflow_openapi/src/model/token_verify_request.dart';
+import 'package:djangoflow_openapi/src/model/user2_fa.dart';
 import 'package:djangoflow_openapi/src/model/user_identity.dart';
 import 'package:djangoflow_openapi/src/model/user_identity_request.dart';
 
@@ -1443,6 +1445,180 @@ _bodyData=jsonEncode(changePasswordRequest);
     );
 
     return _response;
+  }
+
+  /// authUsersTwoFaPartialUpdate
+  /// 
+  ///
+  /// Parameters:
+  /// * [id] 
+  /// * [patchedUser2FARequest] 
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [User2FA] as data
+  /// Throws [DioError] if API call or serialization fails
+  Future<Response<User2FA>> authUsersTwoFaPartialUpdate({ 
+    required String id,
+    PatchedUser2FARequest? patchedUser2FARequest,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/api/v1/auth/users/{id}/two-fa/'.replaceAll('{' r'id' '}', id.toString());
+    final _options = Options(
+      method: r'PATCH',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'http',
+            'scheme': 'bearer',
+            'name': 'jwtAuth',
+          },
+        ],
+        ...?extra,
+      },
+      contentType: 'application/json',
+      validateStatus: validateStatus,
+    );
+
+    dynamic _bodyData;
+
+    try {
+_bodyData=jsonEncode(patchedUser2FARequest);
+    } catch(error, stackTrace) {
+      throw DioError(
+         requestOptions: _options.compose(
+          _dio.options,
+          _path,
+        ),
+        type: DioErrorType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    final _response = await _dio.request<Object>(
+      _path,
+      data: _bodyData,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    User2FA? _responseData;
+
+    try {
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<User2FA, User2FA>(rawData, 'User2FA', growable: true);
+    } catch (error, stackTrace) {
+      throw DioError(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioErrorType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<User2FA>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
+  /// authUsersTwoFaRetrieve
+  /// 
+  ///
+  /// Parameters:
+  /// * [id] 
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [User2FA] as data
+  /// Throws [DioError] if API call or serialization fails
+  Future<Response<User2FA>> authUsersTwoFaRetrieve({ 
+    required String id,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/api/v1/auth/users/{id}/two-fa/'.replaceAll('{' r'id' '}', id.toString());
+    final _options = Options(
+      method: r'GET',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'http',
+            'scheme': 'bearer',
+            'name': 'jwtAuth',
+          },
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
+
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    User2FA? _responseData;
+
+    try {
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<User2FA, User2FA>(rawData, 'User2FA', growable: true);
+    } catch (error, stackTrace) {
+      throw DioError(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioErrorType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<User2FA>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
   }
 
 }
