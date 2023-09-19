@@ -3,6 +3,58 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2023-09-19
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`djangoflow_auth` - `v0.2.2+1`](#djangoflow_auth---v0221)
+ - [`djangoflow_auth_apple` - `v0.0.5+10`](#djangoflow_auth_apple---v00510)
+ - [`djangoflow_auth_discord` - `v0.0.4+11`](#djangoflow_auth_discord---v00411)
+ - [`djangoflow_auth_facebook` - `v0.0.4+10`](#djangoflow_auth_facebook---v00410)
+ - [`djangoflow_auth_google` - `v0.0.3+10`](#djangoflow_auth_google---v00310)
+ - [`djangoflow_local_notification` - `v0.0.2+4`](#djangoflow_local_notification---v0024)
+ - [`djangoflow_openapi_extensions` - `v0.0.3+1`](#djangoflow_openapi_extensions---v0031)
+
+---
+
+#### `djangoflow_auth` - `v0.2.2+1`
+
+ - **REFACTOR**: update djangoflow_openapi dependency. ([b486077c](https://github.com/djangoflow/flutter-djangoflow/commit/b486077c80b763f3223ee9149872714b36738398))
+
+#### `djangoflow_auth_apple` - `v0.0.5+10`
+
+ - **REFACTOR**: update djangoflow_openapi dependency. ([b486077c](https://github.com/djangoflow/flutter-djangoflow/commit/b486077c80b763f3223ee9149872714b36738398))
+
+#### `djangoflow_auth_discord` - `v0.0.4+11`
+
+ - **REFACTOR**: update djangoflow_openapi dependency. ([b486077c](https://github.com/djangoflow/flutter-djangoflow/commit/b486077c80b763f3223ee9149872714b36738398))
+
+#### `djangoflow_auth_facebook` - `v0.0.4+10`
+
+ - **REFACTOR**: update djangoflow_openapi dependency. ([b486077c](https://github.com/djangoflow/flutter-djangoflow/commit/b486077c80b763f3223ee9149872714b36738398))
+
+#### `djangoflow_auth_google` - `v0.0.3+10`
+
+ - **REFACTOR**: update djangoflow_openapi dependency. ([b486077c](https://github.com/djangoflow/flutter-djangoflow/commit/b486077c80b763f3223ee9149872714b36738398))
+
+#### `djangoflow_local_notification` - `v0.0.2+4`
+
+ - **REFACTOR**: update djangoflow_openapi dependency. ([b486077c](https://github.com/djangoflow/flutter-djangoflow/commit/b486077c80b763f3223ee9149872714b36738398))
+
+#### `djangoflow_openapi_extensions` - `v0.0.3+1`
+
+ - **REFACTOR**: update djangoflow_openapi dependency. ([b486077c](https://github.com/djangoflow/flutter-djangoflow/commit/b486077c80b763f3223ee9149872714b36738398))
+ - **DOCS**: add scripts details. ([6da3809b](https://github.com/djangoflow/flutter-djangoflow/commit/6da3809b50a714c6f368ca182484e07787146436))
+
+
 ## 2023-09-13
 
 ### Changes

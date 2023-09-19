@@ -1,3 +1,8 @@
+## 0.0.3+1
+
+ - **REFACTOR**: update djangoflow_openapi dependency. ([b486077c](https://github.com/djangoflow/flutter-djangoflow/commit/b486077c80b763f3223ee9149872714b36738398))
+ - **DOCS**: add scripts details. ([6da3809b](https://github.com/djangoflow/flutter-djangoflow/commit/6da3809b50a714c6f368ca182484e07787146436))
+
 ## 0.0.3
 
  - **FIX**: fix build_runner not running from the script properly. ([06a4e2a8](https://github.com/djangoflow/flutter-djangoflow/commit/06a4e2a86372af6208b0a0bb851a94948af17141))

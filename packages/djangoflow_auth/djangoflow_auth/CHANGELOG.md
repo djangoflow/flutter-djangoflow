@@ -1,3 +1,7 @@
+## 0.2.2+1
+
+ - **REFACTOR**: update djangoflow_openapi dependency. ([b486077c](https://github.com/djangoflow/flutter-djangoflow/commit/b486077c80b763f3223ee9149872714b36738398))
+
 ## 0.2.2
 
  - **REFACTOR**: rename `authUserCreate` -> `authUsersCreate`. ([30c0e73a](https://github.com/djangoflow/flutter-djangoflow/commit/30c0e73ab80f666967abb1bb6efa234c1fe8a44b))
