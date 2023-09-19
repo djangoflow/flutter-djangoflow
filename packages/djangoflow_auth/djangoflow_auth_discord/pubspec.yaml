@@ -11,7 +11,7 @@ dependencies:
   flutter:
     sdk: flutter
   djangoflow_auth: ^0.2.2
-  djangoflow_openapi: ^0.0.21
+  djangoflow_openapi: ^0.0.22
   oauth2_client: ^3.2.1
   http: ^1.1.0
 
