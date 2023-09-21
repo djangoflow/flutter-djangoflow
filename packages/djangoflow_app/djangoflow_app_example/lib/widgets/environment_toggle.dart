@@ -19,7 +19,7 @@ class EnvironmentToggle extends StatelessWidget {
         builder: (context, state) => SwitchListTile.adaptive(
           applyCupertinoTheme: true,
           value: state.environment == AppEnvironment.live,
-          title: const Text('Is Live Environment?'),
+          title: const Text('Live Environment'),
           onChanged: (_) {
             context.read<AppCubit>().toggleEnvironment();
           },
