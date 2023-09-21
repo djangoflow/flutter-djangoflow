@@ -6,16 +6,7 @@ class EnvironmentToggle extends StatelessWidget {
   const EnvironmentToggle({super.key});
 
   @override
-  Widget build(BuildContext context) => AppCubitConsumer(
-        listenWhen: (previous, current) =>
-            previous.environment != current.environment &&
-            current.environment == AppEnvironment.live,
-        listener: (context, state) {
-          DjangoflowAppSnackbar.showInAppNotification(
-            title: 'Environment Changed',
-            body: 'App is in live environment now.',
-          );
-        },
+  Widget build(BuildContext context) => AppCubitBuilder(
         builder: (context, state) => SwitchListTile.adaptive(
           applyCupertinoTheme: true,
           value: state.environment == AppEnvironment.live,

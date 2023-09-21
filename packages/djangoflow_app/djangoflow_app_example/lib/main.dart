@@ -18,6 +18,19 @@ void main() {
         providers: [
           BlocProvider<AppCubit>(create: (context) => AppCubit.instance),
         ],
+        listeners: [
+          BlocListener<AppCubit, AppState>(
+            listenWhen: (previous, current) =>
+                previous.environment != current.environment &&
+                current.environment == AppEnvironment.live,
+            listener: (context, state) {
+              DjangoflowAppSnackbar.showInAppNotification(
+                title: 'Environment Changed',
+                body: 'App is in live environment now.',
+              );
+            },
+          ),
+        ],
         builder: (context) => const App(),
       ),
     ),
