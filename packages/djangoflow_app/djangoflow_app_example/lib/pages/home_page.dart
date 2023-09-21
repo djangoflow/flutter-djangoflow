@@ -1,9 +1,9 @@
-import 'package:djangoflow_app_example/toggle_theme_button.dart';
+import 'package:djangoflow_app_example/widgets/toggle_theme_button.dart';
 import 'package:flutter/material.dart';
 
-import 'app_exception.dart';
-import 'app_version.dart';
-import 'environment_toggle.dart';
+import '../utils/app_exception.dart';
+import '../widgets/app_version.dart';
+import '../widgets/environment_toggle.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});

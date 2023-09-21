@@ -2,7 +2,7 @@ import 'package:djangoflow_app/djangoflow_app.dart';
 import 'package:djangoflow_app_example/app.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'app_exception.dart';
+import 'utils/app_exception.dart';
 
 void main() {
   DjangoflowAppRunner.run(

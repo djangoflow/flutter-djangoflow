@@ -1,7 +1,7 @@
 import 'package:djangoflow_app/djangoflow_app.dart';
 import 'package:flutter/material.dart';
 
-import 'home_page.dart';
+import 'pages/home_page.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
