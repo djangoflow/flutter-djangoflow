@@ -2,9 +2,8 @@ name: djangoflow
 repository: https://github.com/djangoflow/flutter-djangoflow
 
 packages:
-  - packages/*
-  - packages/*/*
-  - packages/*/*/*
+  - packages/*djangoflow*
+  - packages/**/*djangoflow*
 
 command:
   version:
