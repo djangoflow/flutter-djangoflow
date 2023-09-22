@@ -5,10 +5,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 void main() {
   DjangoflowAppRunner.run(
     onException: (exception, stackTrace) {
-      final errorMessage = switch (exception) {
-        _AppException e => e.message,
-        _ => 'An error occurred',
-      };
+      String? errorMessage;
+      if (exception is _AppException) {
+        errorMessage = exception.message;
+      }
+      errorMessage ??= 'An error occurred';
+
       DjangoflowAppSnackbar.showError(errorMessage);
     },
     rootWidgetBuilder: (builder) => builder(
@@ -78,16 +80,14 @@ class _ToggleThemeModeButton extends StatelessWidget {
   Widget build(BuildContext context) => AppCubitBuilder(
         builder: (context, state) => IconButton(
           onPressed: () => context.read<AppCubit>().updateThemeMode(
-                switch (state.themeMode) {
-                  ThemeMode.dark => ThemeMode.light,
-                  _ => ThemeMode.dark,
-                },
+                state.themeMode == ThemeMode.dark
+                    ? ThemeMode.light
+                    : ThemeMode.dark,
               ),
           icon: Icon(
-            switch (state.themeMode) {
-              ThemeMode.dark => Icons.dark_mode,
-              _ => Icons.light_mode,
-            },
+            state.themeMode == ThemeMode.dark
+                ? Icons.light_mode
+                : Icons.dark_mode,
           ),
         ),
       );
