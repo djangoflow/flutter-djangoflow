@@ -1,3 +1,10 @@
+## 3.5.0
+
+ - chore: update djangoflow_app to 3.5.0
+
+ - **REFACTOR**: update sdk contraints for djangoflow_app. ([12df5e6e](https://github.com/djangoflow/flutter-djangoflow/commit/12df5e6e3decdc2e6099d79495b527311d0f2c0c))
+ - **REFACTOR**: add djangoflow_app example. ([5798e331](https://github.com/djangoflow/flutter-djangoflow/commit/5798e331e660ea94ef0087f9e5f0159540e1e06d))
+
 ## 3.4.0
 
  - **FEAT**: add dismissAll method. ([baaeb826](https://github.com/djangoflow/flutter-djangoflow/commit/baaeb826abd2f1dd685e083a4a4570808d5b4b40))

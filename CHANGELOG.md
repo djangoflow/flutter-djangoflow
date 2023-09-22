@@ -3,6 +3,30 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2023-09-22
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`djangoflow_app` - `v3.5.0`](#djangoflow_app---v350)
+
+---
+
+#### `djangoflow_app` - `v3.5.0`
+
+ - chore: update djangoflow_app to 3.5.0
+
+ - **REFACTOR**: update sdk contraints for djangoflow_app. ([12df5e6e](https://github.com/djangoflow/flutter-djangoflow/commit/12df5e6e3decdc2e6099d79495b527311d0f2c0c))
+ - **REFACTOR**: add djangoflow_app example. ([5798e331](https://github.com/djangoflow/flutter-djangoflow/commit/5798e331e660ea94ef0087f9e5f0159540e1e06d))
+
+
 ## 2023-09-19
 
 ### Changes
