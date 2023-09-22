@@ -25,10 +25,10 @@ void main() {
     });
 
     test(
-        'authenticateWithSocialProvider() throws LoginProviderNotFoundException if provider is not found',
+        'requestTokenFromSocialProvider() throws LoginProviderNotFoundException if provider is not found',
         () async {
       await expectLater(
-        cubit.authenticateWithSocialProvider<String>(const SocialLoginType(
+        cubit.requestTokenFromSocialProvider<String>(const SocialLoginType(
           id: 'Google',
           provider: ProviderEnum.googleOauth2,
         )),
