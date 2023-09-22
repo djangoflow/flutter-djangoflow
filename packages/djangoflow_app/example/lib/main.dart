@@ -5,13 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 void main() {
   DjangoflowAppRunner.run(
     onException: (exception, stackTrace) {
-      String? errorMessage;
-      if (exception is _AppException) {
-        errorMessage = exception.message;
-      }
-      errorMessage ??= 'An error occurred';
-
-      DjangoflowAppSnackbar.showError(errorMessage);
+      DjangoflowAppSnackbar.showError(exception.toString());
     },
     rootWidgetBuilder: (builder) => builder(
       AppBuilder(
@@ -21,12 +15,11 @@ void main() {
         listeners: [
           BlocListener<AppCubit, AppState>(
             listenWhen: (previous, current) =>
-                previous.environment != current.environment &&
-                current.environment == AppEnvironment.live,
+                previous.environment != current.environment,
             listener: (context, state) {
               DjangoflowAppSnackbar.showInAppNotification(
                 title: 'Environment Changed',
-                body: 'App is in live environment now.',
+                body: 'App is in ${state.environment.name} environment now.',
               );
             },
           ),
@@ -55,8 +48,7 @@ void main() {
                     const SizedBox(height: 16),
                     ElevatedButton(
                       child: const Text('Throw exception'),
-                      onPressed: () =>
-                          throw const _AppException('Test exception'),
+                      onPressed: () => throw Exception('Test exception'),
                     ),
                   ],
                 ),
@@ -107,13 +99,4 @@ class _EnvironmentToggle extends StatelessWidget {
           },
         ),
       );
-}
-
-class _AppException implements Exception {
-  const _AppException(this.message);
-
-  final String message;
-
-  @override
-  String toString() => message;
 }
