@@ -199,7 +199,7 @@ Let's say we are going to login via google, inside your app, initiate social log
 
   // Authenticate with Google
   final result =
-      await authCubit.authenticateWithSocialProvider<
+      await authCubit.requestTokenFromSocialProvider<
           GoogleSignInAccount>(
     socialLogin.type,
   );
