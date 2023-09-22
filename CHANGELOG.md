@@ -15,6 +15,27 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`djangoflow_openapi_extensions` - `v0.0.3+2`](#djangoflow_openapi_extensions---v0032)
+
+---
+
+#### `djangoflow_openapi_extensions` - `v0.0.3+2`
+
+ - **REFACTOR**: update djangoflow_openapi dependency. ([b486077c](https://github.com/djangoflow/flutter-djangoflow/commit/b486077c80b763f3223ee9149872714b36738398))
+
+
+## 2023-09-22
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`djangoflow_app` - `v3.5.0`](#djangoflow_app---v350)
 
 ---
