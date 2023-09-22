@@ -14,28 +14,19 @@ void main() async {
         initialLink,
         appLinksRepository,
       ),
-      child: const MainApp(),
+      child: MaterialApp(
+        routes: {
+          '/': (context) => const _HomePage(),
+          '/primary': (context) => const _PrimaryPage(),
+          '/secondary': (context) => const _SecondaryPage(),
+        },
+      ),
     ),
   );
 }
 
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      routes: {
-        '/': (context) => const HomePage(),
-        '/primary': (context) => const PrimaryPage(),
-        '/secondary': (context) => const SecondaryPage(),
-      },
-    );
-  }
-}
-
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+class _HomePage extends StatelessWidget {
+  const _HomePage();
 
   @override
   Widget build(BuildContext context) => AppLinksCubitListener(
@@ -49,8 +40,8 @@ class HomePage extends StatelessWidget {
       );
 }
 
-class PrimaryPage extends StatelessWidget {
-  const PrimaryPage({super.key});
+class _PrimaryPage extends StatelessWidget {
+  const _PrimaryPage();
 
   @override
   Widget build(BuildContext context) => Scaffold(
@@ -58,8 +49,8 @@ class PrimaryPage extends StatelessWidget {
       );
 }
 
-class SecondaryPage extends StatelessWidget {
-  const SecondaryPage({super.key});
+class _SecondaryPage extends StatelessWidget {
+  const _SecondaryPage();
 
   @override
   Widget build(BuildContext context) => Scaffold(
