@@ -1,6 +1,11 @@
-import 'package:djangoflow_auth/djangoflow_auth.dart';
+import 'package:djangoflow_auth/src/interfaces/social_login.dart';
+import 'package:djangoflow_auth/src/models/social_login_type/social_login_type.dart';
 import 'package:djangoflow_openapi/djangoflow_openapi.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
+
+import 'auth_state.dart';
+
+export 'auth_state.dart';
 
 /// This is the base class for AuthCubit.
 /// It allows to create AuthCubit based on any kind of backends.
