@@ -17,3 +17,7 @@ To launch the app with a deep link, run the following command:
 adb shell am start -a android.intent.action.VIEW -d "app://example/primary"
 ```
 
+2. On iOS Simulator
+```bash
+/usr/bin/xcrun simctl openurl booted "app://example/primary" 
+```
