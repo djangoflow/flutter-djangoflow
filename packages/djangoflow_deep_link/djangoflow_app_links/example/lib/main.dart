@@ -24,18 +24,12 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AppLinksCubitListener(
-      listener: (context, state) {
-        final path = state?.path;
-        if (path != null) Navigator.of(context).pushNamed(path);
+    return MaterialApp(
+      routes: {
+        '/': (context) => const HomePage(),
+        '/primary': (context) => const PrimaryPage(),
+        '/secondary': (context) => const SecondaryPage(),
       },
-      child: MaterialApp(
-        routes: {
-          '/': (context) => const HomePage(),
-          '/primary': (context) => const PrimaryPage(),
-          '/secondary': (context) => const SecondaryPage(),
-        },
-      ),
     );
   }
 }
@@ -44,8 +38,14 @@ class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
   @override
-  Widget build(BuildContext context) => Scaffold(
-        appBar: AppBar(title: const Text('Home Page')),
+  Widget build(BuildContext context) => AppLinksCubitListener(
+        listener: (context, state) {
+          if (state == null) return;
+          Navigator.of(context).pushNamed(state.path);
+        },
+        child: Scaffold(
+          appBar: AppBar(title: const Text('Home Page')),
+        ),
       );
 }
 
