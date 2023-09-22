@@ -1,3 +1,12 @@
+## 0.3.0
+
+> Note: This release has breaking changes.
+
+ - **REFACTOR**: update tests. ([c08d86d6](https://github.com/djangoflow/flutter-djangoflow/commit/c08d86d65e7039f047c93f3d8c8082ea5035549d))
+ - **FEAT**: add HydratedAuthCubitBase abstract class. ([356ba929](https://github.com/djangoflow/flutter-djangoflow/commit/356ba929d28fa8742abd06bafd3a5d9f8f03a652))
+ - **DOCS**: update README. ([09286317](https://github.com/djangoflow/flutter-djangoflow/commit/092863175b130b8f03a295166ef9c1a3caadcbca))
+ - **BREAKING** **REFACTOR**: AuthCubit now extends HydratedAuthCubitBase. ([804a5e08](https://github.com/djangoflow/flutter-djangoflow/commit/804a5e0896712dd381664f8de8ab04b033923714))
+
 ## 0.2.2+1
 
  - **REFACTOR**: update djangoflow_openapi dependency. ([b486077c](https://github.com/djangoflow/flutter-djangoflow/commit/b486077c80b763f3223ee9149872714b36738398))

@@ -1,6 +1,6 @@
 name: djangoflow_auth_facebook
 description: djangoflow_auth_facebook adds a touch of Facebook magic to your Flutter app with Djangoflow API
-version: 0.0.4+10
+version: 0.0.4+11
 homepage: https://github.com/djangoflow/flutter-djangoflow/
 
 environment:
@@ -10,7 +10,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  djangoflow_auth: ^0.2.2+1
+  djangoflow_auth: ^0.3.0
   djangoflow_openapi: ^0.0.21
   flutter_facebook_auth: ^6.0.1
 

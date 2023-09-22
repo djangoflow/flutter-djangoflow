@@ -1,3 +1,8 @@
+## 1.2.1
+
+ - **REFACTOR**: update dependencies. ([8cb54ae9](https://github.com/djangoflow/flutter-djangoflow/commit/8cb54ae9474b0c5c692ced59be5a1298de08f68f))
+ - **REFACTOR**: add djangofow_app_links example. ([b54423e0](https://github.com/djangoflow/flutter-djangoflow/commit/b54423e0988ac31086e81af3c84f188b9eb5498d))
+
 ## [1.2.0] - 14 June 2023
 
 - Updated dependencies

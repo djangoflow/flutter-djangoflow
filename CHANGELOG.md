@@ -3,6 +3,48 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2023-09-23
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - [`djangoflow_auth` - `v0.3.0`](#djangoflow_auth---v030)
+
+Packages with other changes:
+
+ - [`djangoflow_app_links` - `v1.2.1`](#djangoflow_app_links---v121)
+ - [`djangoflow_auth_discord` - `v0.0.4+12`](#djangoflow_auth_discord---v00412)
+ - [`djangoflow_auth_facebook` - `v0.0.4+11`](#djangoflow_auth_facebook---v00411)
+ - [`djangoflow_auth_google` - `v0.0.3+11`](#djangoflow_auth_google---v00311)
+ - [`djangoflow_auth_apple` - `v0.0.5+11`](#djangoflow_auth_apple---v00511)
+
+Packages with dependency updates only:
+
+> Packages listed below depend on other packages in this workspace that have had changes. Their versions have been incremented to bump the minimum dependency versions of the packages they depend upon in this project.
+
+ - `djangoflow_auth_discord` - `v0.0.4+12`
+ - `djangoflow_auth_facebook` - `v0.0.4+11`
+ - `djangoflow_auth_google` - `v0.0.3+11`
+ - `djangoflow_auth_apple` - `v0.0.5+11`
+
+---
+
+#### `djangoflow_auth` - `v0.3.0`
+
+ - **REFACTOR**: update tests. ([c08d86d6](https://github.com/djangoflow/flutter-djangoflow/commit/c08d86d65e7039f047c93f3d8c8082ea5035549d))
+ - **FEAT**: add HydratedAuthCubitBase abstract class. ([356ba929](https://github.com/djangoflow/flutter-djangoflow/commit/356ba929d28fa8742abd06bafd3a5d9f8f03a652))
+ - **DOCS**: update README. ([09286317](https://github.com/djangoflow/flutter-djangoflow/commit/092863175b130b8f03a295166ef9c1a3caadcbca))
+ - **BREAKING** **REFACTOR**: AuthCubit now extends HydratedAuthCubitBase. ([804a5e08](https://github.com/djangoflow/flutter-djangoflow/commit/804a5e0896712dd381664f8de8ab04b033923714))
+
+#### `djangoflow_app_links` - `v1.2.1`
+
+ - **REFACTOR**: update dependencies. ([8cb54ae9](https://github.com/djangoflow/flutter-djangoflow/commit/8cb54ae9474b0c5c692ced59be5a1298de08f68f))
+ - **REFACTOR**: add djangofow_app_links example. ([b54423e0](https://github.com/djangoflow/flutter-djangoflow/commit/b54423e0988ac31086e81af3c84f188b9eb5498d))
+
+
 ## 2023-09-22
 
 ### Changes
