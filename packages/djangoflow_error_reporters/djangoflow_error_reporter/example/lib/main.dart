@@ -18,29 +18,67 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        body: ListView(
-          padding: const EdgeInsets.all(16),
-          children: [
-            ElevatedButton(
-              onPressed: () {
-                try {
-                  throw Exception('Test Exception');
-                } catch (error) {
-                  DjangoflowErrorReporter.instance.report(
-                    exception: error,
-                    stackTrace: StackTrace.current,
-                  );
-                }
-              },
-              child: const Text('Throw Exception'),
-            ),
-          ],
-        ),
+      home: _HomePage(),
+    );
+  }
+}
+
+class _HomePage extends StatefulWidget {
+  const _HomePage();
+
+  @override
+  State<_HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<_HomePage> {
+  _AppEnv _appEnv = _AppEnv.live;
+
+  _AppEnv get appEnv => _appEnv;
+
+  set appEnv(_AppEnv value) {
+    setState(() {
+      _appEnv = value;
+      DjangoflowErrorReporter.instance.initialize(
+        env: value.toString(),
+        release: '1.0.0+1',
+      );
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: ListView(
+        padding: const EdgeInsets.all(16),
+        children: [
+          SwitchListTile.adaptive(
+            value: appEnv == _AppEnv.live,
+            title: Text('${appEnv.name.toString().toUpperCase()} Environment'),
+            onChanged: (value) {
+              appEnv = value ? _AppEnv.live : _AppEnv.staging;
+            },
+          ),
+          const SizedBox(height: 16),
+          ElevatedButton(
+            onPressed: () {
+              try {
+                throw Exception('Test Exception');
+              } catch (error) {
+                DjangoflowErrorReporter.instance.report(
+                  exception: error,
+                  stackTrace: StackTrace.current,
+                );
+              }
+            },
+            child: const Text('Throw Exception'),
+          ),
+        ],
       ),
     );
   }
 }
+
+enum _AppEnv { live, staging }
 
 class _LoggerErrorReporter extends ErrorReporter {
   String? env;
