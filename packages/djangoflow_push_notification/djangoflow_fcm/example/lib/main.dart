@@ -38,23 +38,8 @@ class MainApp extends StatelessWidget {
   }
 }
 
-class _HomePage extends StatefulWidget {
+class _HomePage extends StatelessWidget {
   const _HomePage();
-
-  @override
-  State<_HomePage> createState() => _HomePageState();
-}
-
-class _HomePageState extends State<_HomePage> {
-  String? _fcmToken;
-
-  String? get fcmToken => _fcmToken;
-
-  set fcmToken(String? value) {
-    setState(() {
-      _fcmToken = value;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -62,9 +47,8 @@ class _HomePageState extends State<_HomePage> {
       appBar: AppBar(
         title: const Text('Djangoflow FCM Example'),
       ),
-      body: DjangoflowFCMBlocListener(
+      body: BlocConsumer<DjangoflowFCMBloc, DjangoflowFCMState>(
         listener: (context, state) {
-          fcmToken = state.token;
           final notification = state.remoteMessage?.notification;
           if (notification != null) {
             ScaffoldMessenger.of(context).showSnackBar(
@@ -82,23 +66,27 @@ class _HomePageState extends State<_HomePage> {
             );
           }
         },
-        child: ListView(
-          padding: const EdgeInsets.all(16),
-          children: [
-            if (fcmToken == null) ...[
-              const Text('Token is null'),
+        builder: (context, state) {
+          final fcmToken = state.token;
+
+          return ListView(
+            padding: const EdgeInsets.all(16),
+            children: [
+              if (fcmToken == null) ...[
+                const Text('Token is null'),
+                const SizedBox(height: 16),
+                ElevatedButton(
+                  onPressed: () => context.read<DjangoflowFCMBloc>().add(
+                        DjangoflowFCMTokenRequested(),
+                      ),
+                  child: const Text('Request FCM Token'),
+                ),
+              ] else
+                Text(fcmToken),
               const SizedBox(height: 16),
-              ElevatedButton(
-                onPressed: () => context.read<DjangoflowFCMBloc>().add(
-                      DjangoflowFCMTokenRequested(),
-                    ),
-                child: const Text('Request FCM Token'),
-              ),
-            ] else if (fcmToken != null)
-              Text(fcmToken!),
-            const SizedBox(height: 16),
-          ],
-        ),
+            ],
+          );
+        },
       ),
     );
   }
