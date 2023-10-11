@@ -12,7 +12,9 @@ class DjangoflowSentryReporter extends ErrorReporter {
         (options) => options
           ..dsn = sentryDSN
           ..environment = env
-          ..release = release,
+          ..release = release
+          ..enableAutoSessionTracking =
+              false, //https://glitchtip.com/sdkdocs/dart-flutter
       );
 
   @override
