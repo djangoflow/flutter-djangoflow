@@ -3,6 +3,33 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2023-10-11
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`djangoflow_error_reporter` - `v0.1.0+1`](#djangoflow_error_reporter---v0101)
+ - [`djangoflow_sentry_reporter` - `v0.1.0+1`](#djangoflow_sentry_reporter---v0101)
+
+---
+
+#### `djangoflow_error_reporter` - `v0.1.0+1`
+
+ - **REFACTOR**: Add example for djangoflow_error_reporter ([#53](https://github.com/djangoflow/flutter-djangoflow/issues/53)). ([d570113d](https://github.com/djangoflow/flutter-djangoflow/commit/d570113db5ea75f14f05c72bb4f383c026d5b9df))
+
+#### `djangoflow_sentry_reporter` - `v0.1.0+1`
+
+ - **REFACTOR**: enableAutoSessionTracking set to false. ([820e6e05](https://github.com/djangoflow/flutter-djangoflow/commit/820e6e05bbde95127db8a03b6dc6001099e778ac))
+ - **REFACTOR**: add djangoflow_sentry_reporter example ([#54](https://github.com/djangoflow/flutter-djangoflow/issues/54)). ([a0ca00f4](https://github.com/djangoflow/flutter-djangoflow/commit/a0ca00f45a7e378d8990c32b9e6ee4ea044186e0))
+
+
 ## 2023-09-23
 
 ### Changes

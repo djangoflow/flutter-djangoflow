@@ -1,3 +1,8 @@
+## 0.1.0+1
+
+ - **REFACTOR**: enableAutoSessionTracking set to false. ([820e6e05](https://github.com/djangoflow/flutter-djangoflow/commit/820e6e05bbde95127db8a03b6dc6001099e778ac))
+ - **REFACTOR**: add djangoflow_sentry_reporter example ([#54](https://github.com/djangoflow/flutter-djangoflow/issues/54)). ([a0ca00f4](https://github.com/djangoflow/flutter-djangoflow/commit/a0ca00f45a7e378d8990c32b9e6ee4ea044186e0))
+
 ## [0.1.0] - 15 June 2023
 
 - Update dependencies
