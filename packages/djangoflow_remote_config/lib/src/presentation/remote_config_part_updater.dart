@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../blocs/remote_config_cubit/remote_config_cubit_base.dart';
-import '../blocs/remote_config_cubit/remote_config_state.dart';
 
 class RemoteConfigPartUpdater<C extends RemoteConfigCubitBase>
     extends StatefulWidget {

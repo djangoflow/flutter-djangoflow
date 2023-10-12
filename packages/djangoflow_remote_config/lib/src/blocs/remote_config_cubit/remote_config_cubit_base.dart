@@ -2,6 +2,8 @@ import 'package:dio/dio.dart';
 import 'package:djangoflow_remote_config/src/blocs/remote_config_cubit/remote_config_state.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 
+export 'remote_config_state.dart';
+
 /// The base class for all remote config cubits.
 /// [fallbackConfig] is the default config that will be used if data fails to
 /// load from the server.
