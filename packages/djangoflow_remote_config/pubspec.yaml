@@ -4,11 +4,14 @@ version: 0.0.1
 homepage: https://github.com/djangoflow/flutter-djangoflow/
 
 environment:
-  sdk: '>=3.1.1 <4.0.0'
+  sdk: ">=3.1.1 <4.0.0"
   flutter: ">=1.17.0"
 
 dependencies:
   dio: ^5.3.3
+  djangoflow_bloc_extensions: ^0.0.2+1
+  djangoflow_openapi: ^0.0.24
+  djangoflow_openapi_extensions: ^0.0.3+2
   flutter:
     sdk: flutter
   flutter_bloc: ^8.1.3

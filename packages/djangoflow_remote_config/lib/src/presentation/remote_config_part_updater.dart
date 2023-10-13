@@ -1,11 +1,9 @@
-import 'package:djangoflow_remote_config/src/blocs/app_launch_remote_config_cubit/app_launch_remote_config_cubit.dart';
+import 'package:djangoflow_remote_config/djangoflow_remote_config.dart';
 import 'package:djangoflow_remote_config/src/utils/remote_config_extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../blocs/remote_config_cubit/remote_config_cubit_base.dart';
-
-class RemoteConfigPartUpdater<C extends RemoteConfigCubitBase>
+class RemoteConfigPartUpdater<C extends RemoteConfigCubit>
     extends StatefulWidget {
   const RemoteConfigPartUpdater({
     super.key,
@@ -21,7 +19,7 @@ class RemoteConfigPartUpdater<C extends RemoteConfigCubitBase>
       _RemoteConfigPartUpdaterState<C>();
 }
 
-class _RemoteConfigPartUpdaterState<C extends RemoteConfigCubitBase>
+class _RemoteConfigPartUpdaterState<C extends RemoteConfigCubit>
     extends State<RemoteConfigPartUpdater<C>> {
   late final C cubit;
 
