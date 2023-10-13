@@ -7,9 +7,7 @@ import 'package:djangoflow_openapi/src/auth/api_key_auth.dart';
 import 'package:djangoflow_openapi/src/auth/basic_auth.dart';
 import 'package:djangoflow_openapi/src/auth/bearer_auth.dart';
 import 'package:djangoflow_openapi/src/auth/oauth.dart';
-import 'package:djangoflow_openapi/src/api/auth_api.dart';
-import 'package:djangoflow_openapi/src/api/chat_api.dart';
-import 'package:djangoflow_openapi/src/api/notifications_api.dart';
+import 'package:djangoflow_openapi/src/api/v1_api.dart';
 
 class DjangoflowOpenapi {
   static const String basePath = r'http://localhost';
@@ -62,21 +60,9 @@ class DjangoflowOpenapi {
     }
   }
 
-  /// Get AuthApi instance, base route and serializer can be overridden by a given but be careful,
+  /// Get V1Api instance, base route and serializer can be overridden by a given but be careful,
   /// by doing that all interceptors will not be executed
-  AuthApi getAuthApi() {
-    return AuthApi(dio);
-  }
-
-  /// Get ChatApi instance, base route and serializer can be overridden by a given but be careful,
-  /// by doing that all interceptors will not be executed
-  ChatApi getChatApi() {
-    return ChatApi(dio);
-  }
-
-  /// Get NotificationsApi instance, base route and serializer can be overridden by a given but be careful,
-  /// by doing that all interceptors will not be executed
-  NotificationsApi getNotificationsApi() {
-    return NotificationsApi(dio);
+  V1Api getV1Api() {
+    return V1Api(dio);
   }
 }

@@ -1,16 +1,16 @@
 {
     "openapi": "3.0.3",
     "info": {
-        "title": "DF Chat API",
+        "title": "Project API",
         "version": "0.0.1",
-        "description": "DF Chat API (Django)"
+        "description": "description"
     },
     "paths": {
         "/api/v1/auth/otp/": {
             "post": {
-                "operationId": "auth_otp_create",
+                "operationId": "v1_auth_otp_create",
                 "tags": [
-                    "auth"
+                    "v1"
                 ],
                 "requestBody": {
                     "content": {
@@ -63,7 +63,7 @@
         },
         "/api/v1/auth/otp-devices/": {
             "get": {
-                "operationId": "auth_otp_devices_list",
+                "operationId": "v1_auth_otp_devices_list",
                 "parameters": [
                     {
                         "name": "limit",
@@ -85,7 +85,7 @@
                     }
                 ],
                 "tags": [
-                    "auth"
+                    "v1"
                 ],
                 "security": [
                     {
@@ -116,9 +116,9 @@
                 }
             },
             "post": {
-                "operationId": "auth_otp_devices_create",
+                "operationId": "v1_auth_otp_devices_create",
                 "tags": [
-                    "auth"
+                    "v1"
                 ],
                 "requestBody": {
                     "content": {
@@ -171,7 +171,7 @@
         },
         "/api/v1/auth/otp-devices/{id}/": {
             "get": {
-                "operationId": "auth_otp_devices_retrieve",
+                "operationId": "v1_auth_otp_devices_retrieve",
                 "parameters": [
                     {
                         "in": "path",
@@ -192,7 +192,7 @@
                     }
                 ],
                 "tags": [
-                    "auth"
+                    "v1"
                 ],
                 "security": [
                     {
@@ -223,7 +223,7 @@
                 }
             },
             "delete": {
-                "operationId": "auth_otp_devices_destroy",
+                "operationId": "v1_auth_otp_devices_destroy",
                 "parameters": [
                     {
                         "in": "path",
@@ -244,7 +244,7 @@
                     }
                 ],
                 "tags": [
-                    "auth"
+                    "v1"
                 ],
                 "security": [
                     {
@@ -270,7 +270,7 @@
         },
         "/api/v1/auth/otp-devices/{id}/confirm/": {
             "post": {
-                "operationId": "auth_otp_devices_confirm_create",
+                "operationId": "v1_auth_otp_devices_confirm_create",
                 "parameters": [
                     {
                         "in": "path",
@@ -291,7 +291,7 @@
                     }
                 ],
                 "tags": [
-                    "auth"
+                    "v1"
                 ],
                 "requestBody": {
                     "content": {
@@ -337,9 +337,9 @@
         },
         "/api/v1/auth/social/": {
             "post": {
-                "operationId": "auth_social_create",
+                "operationId": "v1_auth_social_create",
                 "tags": [
-                    "auth"
+                    "v1"
                 ],
                 "requestBody": {
                     "content": {
@@ -392,9 +392,9 @@
         },
         "/api/v1/auth/social/connect/": {
             "post": {
-                "operationId": "auth_social_connect_create",
+                "operationId": "v1_auth_social_connect_create",
                 "tags": [
-                    "auth"
+                    "v1"
                 ],
                 "requestBody": {
                     "content": {
@@ -447,9 +447,9 @@
         },
         "/api/v1/auth/token/": {
             "post": {
-                "operationId": "auth_token_create",
+                "operationId": "v1_auth_token_create",
                 "tags": [
-                    "auth"
+                    "v1"
                 ],
                 "requestBody": {
                     "content": {
@@ -502,9 +502,9 @@
         },
         "/api/v1/auth/token/blacklist/": {
             "post": {
-                "operationId": "auth_token_blacklist_create",
+                "operationId": "v1_auth_token_blacklist_create",
                 "tags": [
-                    "auth"
+                    "v1"
                 ],
                 "requestBody": {
                     "content": {
@@ -558,9 +558,9 @@
         },
         "/api/v1/auth/token/refresh/": {
             "post": {
-                "operationId": "auth_token_refresh_create",
+                "operationId": "v1_auth_token_refresh_create",
                 "tags": [
-                    "auth"
+                    "v1"
                 ],
                 "requestBody": {
                     "content": {
@@ -614,9 +614,9 @@
         },
         "/api/v1/auth/token/verify/": {
             "post": {
-                "operationId": "auth_token_verify_create",
+                "operationId": "v1_auth_token_verify_create",
                 "tags": [
-                    "auth"
+                    "v1"
                 ],
                 "requestBody": {
                     "content": {
@@ -670,9 +670,9 @@
         },
         "/api/v1/auth/users/": {
             "post": {
-                "operationId": "auth_users_create",
+                "operationId": "v1_auth_users_create",
                 "tags": [
-                    "auth"
+                    "v1"
                 ],
                 "requestBody": {
                     "content": {
@@ -724,7 +724,7 @@
         },
         "/api/v1/auth/users/{id}/": {
             "get": {
-                "operationId": "auth_users_retrieve",
+                "operationId": "v1_auth_users_retrieve",
                 "parameters": [
                     {
                         "in": "path",
@@ -736,7 +736,7 @@
                     }
                 ],
                 "tags": [
-                    "auth"
+                    "v1"
                 ],
                 "security": [
                     {
@@ -767,7 +767,7 @@
                 }
             },
             "patch": {
-                "operationId": "auth_users_partial_update",
+                "operationId": "v1_auth_users_partial_update",
                 "parameters": [
                     {
                         "in": "path",
@@ -779,7 +779,7 @@
                     }
                 ],
                 "tags": [
-                    "auth"
+                    "v1"
                 ],
                 "requestBody": {
                     "content": {
@@ -831,7 +831,7 @@
         },
         "/api/v1/auth/users/{id}/set-password/": {
             "post": {
-                "operationId": "auth_users_set_password_create",
+                "operationId": "v1_auth_users_set_password_create",
                 "parameters": [
                     {
                         "in": "path",
@@ -843,7 +843,7 @@
                     }
                 ],
                 "tags": [
-                    "auth"
+                    "v1"
                 ],
                 "requestBody": {
                     "content": {
@@ -889,7 +889,7 @@
         },
         "/api/v1/auth/users/{id}/two-fa/": {
             "get": {
-                "operationId": "auth_users_two_fa_retrieve",
+                "operationId": "v1_auth_users_two_fa_retrieve",
                 "parameters": [
                     {
                         "in": "path",
@@ -901,7 +901,7 @@
                     }
                 ],
                 "tags": [
-                    "auth"
+                    "v1"
                 ],
                 "security": [
                     {
@@ -932,7 +932,7 @@
                 }
             },
             "patch": {
-                "operationId": "auth_users_two_fa_partial_update",
+                "operationId": "v1_auth_users_two_fa_partial_update",
                 "parameters": [
                     {
                         "in": "path",
@@ -944,7 +944,7 @@
                     }
                 ],
                 "tags": [
-                    "auth"
+                    "v1"
                 ],
                 "requestBody": {
                     "content": {
@@ -986,1453 +986,6 @@
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/User2FA"
-                                }
-                            }
-                        },
-                        "description": ""
-                    }
-                }
-            }
-        },
-        "/api/v1/chat/images/": {
-            "get": {
-                "operationId": "chat_images_list",
-                "parameters": [
-                    {
-                        "name": "limit",
-                        "required": false,
-                        "in": "query",
-                        "description": "Number of results to return per page.",
-                        "schema": {
-                            "type": "integer"
-                        }
-                    },
-                    {
-                        "name": "offset",
-                        "required": false,
-                        "in": "query",
-                        "description": "The initial index from which to return the results.",
-                        "schema": {
-                            "type": "integer"
-                        }
-                    }
-                ],
-                "tags": [
-                    "chat"
-                ],
-                "security": [
-                    {
-                        "jwtAuth": []
-                    }
-                ],
-                "responses": {
-                    "400": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ErrorResponse"
-                                }
-                            }
-                        },
-                        "description": ""
-                    },
-                    "200": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/PaginatedMessageImageList"
-                                }
-                            }
-                        },
-                        "description": ""
-                    }
-                }
-            },
-            "post": {
-                "operationId": "chat_images_create",
-                "tags": [
-                    "chat"
-                ],
-                "requestBody": {
-                    "content": {
-                        "multipart/form-data": {
-                            "schema": {
-                                "$ref": "#/components/schemas/MessageImageRequest"
-                            }
-                        }
-                    },
-                    "required": true
-                },
-                "security": [
-                    {
-                        "jwtAuth": []
-                    }
-                ],
-                "responses": {
-                    "400": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ErrorResponse"
-                                }
-                            }
-                        },
-                        "description": ""
-                    },
-                    "201": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/MessageImage"
-                                }
-                            }
-                        },
-                        "description": ""
-                    }
-                }
-            }
-        },
-        "/api/v1/chat/images/{id}/": {
-            "get": {
-                "operationId": "chat_images_retrieve",
-                "parameters": [
-                    {
-                        "in": "path",
-                        "name": "id",
-                        "schema": {
-                            "type": "string"
-                        },
-                        "description": "A unique integer value identifying this message image.",
-                        "required": true
-                    }
-                ],
-                "tags": [
-                    "chat"
-                ],
-                "security": [
-                    {
-                        "jwtAuth": []
-                    }
-                ],
-                "responses": {
-                    "400": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ErrorResponse"
-                                }
-                            }
-                        },
-                        "description": ""
-                    },
-                    "200": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/MessageImage"
-                                }
-                            }
-                        },
-                        "description": ""
-                    }
-                }
-            },
-            "put": {
-                "operationId": "chat_images_update",
-                "parameters": [
-                    {
-                        "in": "path",
-                        "name": "id",
-                        "schema": {
-                            "type": "string"
-                        },
-                        "description": "A unique integer value identifying this message image.",
-                        "required": true
-                    }
-                ],
-                "tags": [
-                    "chat"
-                ],
-                "requestBody": {
-                    "content": {
-                        "multipart/form-data": {
-                            "schema": {
-                                "$ref": "#/components/schemas/MessageImageRequest"
-                            }
-                        }
-                    },
-                    "required": true
-                },
-                "security": [
-                    {
-                        "jwtAuth": []
-                    }
-                ],
-                "responses": {
-                    "400": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ErrorResponse"
-                                }
-                            }
-                        },
-                        "description": ""
-                    },
-                    "200": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/MessageImage"
-                                }
-                            }
-                        },
-                        "description": ""
-                    }
-                }
-            },
-            "patch": {
-                "operationId": "chat_images_partial_update",
-                "parameters": [
-                    {
-                        "in": "path",
-                        "name": "id",
-                        "schema": {
-                            "type": "string"
-                        },
-                        "description": "A unique integer value identifying this message image.",
-                        "required": true
-                    }
-                ],
-                "tags": [
-                    "chat"
-                ],
-                "requestBody": {
-                    "content": {
-                        "multipart/form-data": {
-                            "schema": {
-                                "$ref": "#/components/schemas/PatchedMessageImageRequest"
-                            }
-                        }
-                    }
-                },
-                "security": [
-                    {
-                        "jwtAuth": []
-                    }
-                ],
-                "responses": {
-                    "400": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ErrorResponse"
-                                }
-                            }
-                        },
-                        "description": ""
-                    },
-                    "200": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/MessageImage"
-                                }
-                            }
-                        },
-                        "description": ""
-                    }
-                }
-            },
-            "delete": {
-                "operationId": "chat_images_destroy",
-                "parameters": [
-                    {
-                        "in": "path",
-                        "name": "id",
-                        "schema": {
-                            "type": "string"
-                        },
-                        "description": "A unique integer value identifying this message image.",
-                        "required": true
-                    }
-                ],
-                "tags": [
-                    "chat"
-                ],
-                "security": [
-                    {
-                        "jwtAuth": []
-                    }
-                ],
-                "responses": {
-                    "400": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ErrorResponse"
-                                }
-                            }
-                        },
-                        "description": ""
-                    },
-                    "204": {
-                        "description": "No response body"
-                    }
-                }
-            }
-        },
-        "/api/v1/chat/rooms/": {
-            "get": {
-                "operationId": "chat_rooms_list",
-                "parameters": [
-                    {
-                        "name": "limit",
-                        "required": false,
-                        "in": "query",
-                        "description": "Number of results to return per page.",
-                        "schema": {
-                            "type": "integer"
-                        }
-                    },
-                    {
-                        "name": "offset",
-                        "required": false,
-                        "in": "query",
-                        "description": "The initial index from which to return the results.",
-                        "schema": {
-                            "type": "integer"
-                        }
-                    }
-                ],
-                "tags": [
-                    "chat"
-                ],
-                "security": [
-                    {
-                        "jwtAuth": []
-                    }
-                ],
-                "responses": {
-                    "400": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ErrorResponse"
-                                }
-                            }
-                        },
-                        "description": ""
-                    },
-                    "200": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/PaginatedRoomList"
-                                }
-                            }
-                        },
-                        "description": ""
-                    }
-                }
-            },
-            "post": {
-                "operationId": "chat_rooms_create",
-                "tags": [
-                    "chat"
-                ],
-                "requestBody": {
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/RoomRequest"
-                            }
-                        },
-                        "application/x-www-form-urlencoded": {
-                            "schema": {
-                                "$ref": "#/components/schemas/RoomRequest"
-                            }
-                        },
-                        "multipart/form-data": {
-                            "schema": {
-                                "$ref": "#/components/schemas/RoomRequest"
-                            }
-                        }
-                    },
-                    "required": true
-                },
-                "security": [
-                    {
-                        "jwtAuth": []
-                    }
-                ],
-                "responses": {
-                    "400": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ErrorResponse"
-                                }
-                            }
-                        },
-                        "description": ""
-                    },
-                    "201": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Room"
-                                }
-                            }
-                        },
-                        "description": ""
-                    }
-                }
-            }
-        },
-        "/api/v1/chat/rooms/{id}/": {
-            "get": {
-                "operationId": "chat_rooms_retrieve",
-                "parameters": [
-                    {
-                        "in": "path",
-                        "name": "id",
-                        "schema": {
-                            "type": "string"
-                        },
-                        "description": "A unique integer value identifying this room.",
-                        "required": true
-                    }
-                ],
-                "tags": [
-                    "chat"
-                ],
-                "security": [
-                    {
-                        "jwtAuth": []
-                    }
-                ],
-                "responses": {
-                    "400": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ErrorResponse"
-                                }
-                            }
-                        },
-                        "description": ""
-                    },
-                    "200": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Room"
-                                }
-                            }
-                        },
-                        "description": ""
-                    }
-                }
-            },
-            "put": {
-                "operationId": "chat_rooms_update",
-                "parameters": [
-                    {
-                        "in": "path",
-                        "name": "id",
-                        "schema": {
-                            "type": "string"
-                        },
-                        "description": "A unique integer value identifying this room.",
-                        "required": true
-                    }
-                ],
-                "tags": [
-                    "chat"
-                ],
-                "requestBody": {
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/RoomRequest"
-                            }
-                        },
-                        "application/x-www-form-urlencoded": {
-                            "schema": {
-                                "$ref": "#/components/schemas/RoomRequest"
-                            }
-                        },
-                        "multipart/form-data": {
-                            "schema": {
-                                "$ref": "#/components/schemas/RoomRequest"
-                            }
-                        }
-                    },
-                    "required": true
-                },
-                "security": [
-                    {
-                        "jwtAuth": []
-                    }
-                ],
-                "responses": {
-                    "400": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ErrorResponse"
-                                }
-                            }
-                        },
-                        "description": ""
-                    },
-                    "200": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Room"
-                                }
-                            }
-                        },
-                        "description": ""
-                    }
-                }
-            },
-            "patch": {
-                "operationId": "chat_rooms_partial_update",
-                "parameters": [
-                    {
-                        "in": "path",
-                        "name": "id",
-                        "schema": {
-                            "type": "string"
-                        },
-                        "description": "A unique integer value identifying this room.",
-                        "required": true
-                    }
-                ],
-                "tags": [
-                    "chat"
-                ],
-                "requestBody": {
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/PatchedRoomRequest"
-                            }
-                        },
-                        "application/x-www-form-urlencoded": {
-                            "schema": {
-                                "$ref": "#/components/schemas/PatchedRoomRequest"
-                            }
-                        },
-                        "multipart/form-data": {
-                            "schema": {
-                                "$ref": "#/components/schemas/PatchedRoomRequest"
-                            }
-                        }
-                    }
-                },
-                "security": [
-                    {
-                        "jwtAuth": []
-                    }
-                ],
-                "responses": {
-                    "400": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ErrorResponse"
-                                }
-                            }
-                        },
-                        "description": ""
-                    },
-                    "200": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Room"
-                                }
-                            }
-                        },
-                        "description": ""
-                    }
-                }
-            },
-            "delete": {
-                "operationId": "chat_rooms_destroy",
-                "parameters": [
-                    {
-                        "in": "path",
-                        "name": "id",
-                        "schema": {
-                            "type": "string"
-                        },
-                        "description": "A unique integer value identifying this room.",
-                        "required": true
-                    }
-                ],
-                "tags": [
-                    "chat"
-                ],
-                "security": [
-                    {
-                        "jwtAuth": []
-                    }
-                ],
-                "responses": {
-                    "400": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ErrorResponse"
-                                }
-                            }
-                        },
-                        "description": ""
-                    },
-                    "204": {
-                        "description": "No response body"
-                    }
-                }
-            }
-        },
-        "/api/v1/chat/rooms/{id}/mute/": {
-            "post": {
-                "operationId": "chat_rooms_mute_create",
-                "parameters": [
-                    {
-                        "in": "path",
-                        "name": "id",
-                        "schema": {
-                            "type": "string"
-                        },
-                        "description": "A unique integer value identifying this room.",
-                        "required": true
-                    }
-                ],
-                "tags": [
-                    "chat"
-                ],
-                "security": [
-                    {
-                        "jwtAuth": []
-                    }
-                ],
-                "responses": {
-                    "400": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ErrorResponse"
-                                }
-                            }
-                        },
-                        "description": ""
-                    },
-                    "200": {
-                        "description": "No response body"
-                    }
-                }
-            }
-        },
-        "/api/v1/chat/rooms/{id}/unmute/": {
-            "post": {
-                "operationId": "chat_rooms_unmute_create",
-                "parameters": [
-                    {
-                        "in": "path",
-                        "name": "id",
-                        "schema": {
-                            "type": "string"
-                        },
-                        "description": "A unique integer value identifying this room.",
-                        "required": true
-                    }
-                ],
-                "tags": [
-                    "chat"
-                ],
-                "security": [
-                    {
-                        "jwtAuth": []
-                    }
-                ],
-                "responses": {
-                    "400": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ErrorResponse"
-                                }
-                            }
-                        },
-                        "description": ""
-                    },
-                    "200": {
-                        "description": "No response body"
-                    }
-                }
-            }
-        },
-        "/api/v1/chat/rooms/{room_pk}/messages/": {
-            "get": {
-                "operationId": "chat_rooms_messages_list",
-                "parameters": [
-                    {
-                        "name": "limit",
-                        "required": false,
-                        "in": "query",
-                        "description": "Number of results to return per page.",
-                        "schema": {
-                            "type": "integer"
-                        }
-                    },
-                    {
-                        "name": "offset",
-                        "required": false,
-                        "in": "query",
-                        "description": "The initial index from which to return the results.",
-                        "schema": {
-                            "type": "integer"
-                        }
-                    },
-                    {
-                        "in": "path",
-                        "name": "room_pk",
-                        "schema": {
-                            "type": "string"
-                        },
-                        "required": true
-                    }
-                ],
-                "tags": [
-                    "chat"
-                ],
-                "security": [
-                    {
-                        "jwtAuth": []
-                    }
-                ],
-                "responses": {
-                    "400": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ErrorResponse"
-                                }
-                            }
-                        },
-                        "description": ""
-                    },
-                    "200": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/PaginatedMessageList"
-                                }
-                            }
-                        },
-                        "description": ""
-                    }
-                }
-            },
-            "post": {
-                "operationId": "chat_rooms_messages_create",
-                "parameters": [
-                    {
-                        "in": "path",
-                        "name": "room_pk",
-                        "schema": {
-                            "type": "string"
-                        },
-                        "required": true
-                    }
-                ],
-                "tags": [
-                    "chat"
-                ],
-                "requestBody": {
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/MessageRequest"
-                            }
-                        },
-                        "application/x-www-form-urlencoded": {
-                            "schema": {
-                                "$ref": "#/components/schemas/MessageRequest"
-                            }
-                        },
-                        "multipart/form-data": {
-                            "schema": {
-                                "$ref": "#/components/schemas/MessageRequest"
-                            }
-                        }
-                    }
-                },
-                "security": [
-                    {
-                        "jwtAuth": []
-                    }
-                ],
-                "responses": {
-                    "400": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ErrorResponse"
-                                }
-                            }
-                        },
-                        "description": ""
-                    },
-                    "201": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Message"
-                                }
-                            }
-                        },
-                        "description": ""
-                    }
-                }
-            }
-        },
-        "/api/v1/chat/rooms/{room_pk}/messages/{id}/": {
-            "get": {
-                "operationId": "chat_rooms_messages_retrieve",
-                "parameters": [
-                    {
-                        "in": "path",
-                        "name": "id",
-                        "schema": {
-                            "type": "string"
-                        },
-                        "description": "A unique integer value identifying this message.",
-                        "required": true
-                    },
-                    {
-                        "in": "path",
-                        "name": "room_pk",
-                        "schema": {
-                            "type": "string"
-                        },
-                        "required": true
-                    }
-                ],
-                "tags": [
-                    "chat"
-                ],
-                "security": [
-                    {
-                        "jwtAuth": []
-                    }
-                ],
-                "responses": {
-                    "400": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ErrorResponse"
-                                }
-                            }
-                        },
-                        "description": ""
-                    },
-                    "200": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Message"
-                                }
-                            }
-                        },
-                        "description": ""
-                    }
-                }
-            },
-            "put": {
-                "operationId": "chat_rooms_messages_update",
-                "parameters": [
-                    {
-                        "in": "path",
-                        "name": "id",
-                        "schema": {
-                            "type": "string"
-                        },
-                        "description": "A unique integer value identifying this message.",
-                        "required": true
-                    },
-                    {
-                        "in": "path",
-                        "name": "room_pk",
-                        "schema": {
-                            "type": "string"
-                        },
-                        "required": true
-                    }
-                ],
-                "tags": [
-                    "chat"
-                ],
-                "requestBody": {
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/MessageRequest"
-                            }
-                        },
-                        "application/x-www-form-urlencoded": {
-                            "schema": {
-                                "$ref": "#/components/schemas/MessageRequest"
-                            }
-                        },
-                        "multipart/form-data": {
-                            "schema": {
-                                "$ref": "#/components/schemas/MessageRequest"
-                            }
-                        }
-                    }
-                },
-                "security": [
-                    {
-                        "jwtAuth": []
-                    }
-                ],
-                "responses": {
-                    "400": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ErrorResponse"
-                                }
-                            }
-                        },
-                        "description": ""
-                    },
-                    "200": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Message"
-                                }
-                            }
-                        },
-                        "description": ""
-                    }
-                }
-            },
-            "patch": {
-                "operationId": "chat_rooms_messages_partial_update",
-                "parameters": [
-                    {
-                        "in": "path",
-                        "name": "id",
-                        "schema": {
-                            "type": "string"
-                        },
-                        "description": "A unique integer value identifying this message.",
-                        "required": true
-                    },
-                    {
-                        "in": "path",
-                        "name": "room_pk",
-                        "schema": {
-                            "type": "string"
-                        },
-                        "required": true
-                    }
-                ],
-                "tags": [
-                    "chat"
-                ],
-                "requestBody": {
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/PatchedMessageRequest"
-                            }
-                        },
-                        "application/x-www-form-urlencoded": {
-                            "schema": {
-                                "$ref": "#/components/schemas/PatchedMessageRequest"
-                            }
-                        },
-                        "multipart/form-data": {
-                            "schema": {
-                                "$ref": "#/components/schemas/PatchedMessageRequest"
-                            }
-                        }
-                    }
-                },
-                "security": [
-                    {
-                        "jwtAuth": []
-                    }
-                ],
-                "responses": {
-                    "400": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ErrorResponse"
-                                }
-                            }
-                        },
-                        "description": ""
-                    },
-                    "200": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Message"
-                                }
-                            }
-                        },
-                        "description": ""
-                    }
-                }
-            },
-            "delete": {
-                "operationId": "chat_rooms_messages_destroy",
-                "parameters": [
-                    {
-                        "in": "path",
-                        "name": "id",
-                        "schema": {
-                            "type": "string"
-                        },
-                        "description": "A unique integer value identifying this message.",
-                        "required": true
-                    },
-                    {
-                        "in": "path",
-                        "name": "room_pk",
-                        "schema": {
-                            "type": "string"
-                        },
-                        "required": true
-                    }
-                ],
-                "tags": [
-                    "chat"
-                ],
-                "security": [
-                    {
-                        "jwtAuth": []
-                    }
-                ],
-                "responses": {
-                    "204": {
-                        "description": "No response body"
-                    },
-                    "400": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ErrorResponse"
-                                }
-                            }
-                        },
-                        "description": ""
-                    }
-                }
-            }
-        },
-        "/api/v1/chat/rooms/{room_pk}/messages/seen/": {
-            "post": {
-                "operationId": "chat_rooms_messages_seen_create",
-                "parameters": [
-                    {
-                        "in": "path",
-                        "name": "room_pk",
-                        "schema": {
-                            "type": "string"
-                        },
-                        "required": true
-                    }
-                ],
-                "tags": [
-                    "chat"
-                ],
-                "requestBody": {
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/MessageSeenRequest"
-                            }
-                        },
-                        "application/x-www-form-urlencoded": {
-                            "schema": {
-                                "$ref": "#/components/schemas/MessageSeenRequest"
-                            }
-                        },
-                        "multipart/form-data": {
-                            "schema": {
-                                "$ref": "#/components/schemas/MessageSeenRequest"
-                            }
-                        }
-                    },
-                    "required": true
-                },
-                "security": [
-                    {
-                        "jwtAuth": []
-                    }
-                ],
-                "responses": {
-                    "400": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ErrorResponse"
-                                }
-                            }
-                        },
-                        "description": ""
-                    },
-                    "200": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/MessageSeen"
-                                }
-                            }
-                        },
-                        "description": ""
-                    }
-                }
-            }
-        },
-        "/api/v1/chat/rooms/{room_pk}/users/": {
-            "get": {
-                "operationId": "chat_rooms_users_list",
-                "parameters": [
-                    {
-                        "in": "path",
-                        "name": "room_pk",
-                        "schema": {
-                            "type": "string"
-                        },
-                        "required": true
-                    }
-                ],
-                "tags": [
-                    "chat"
-                ],
-                "security": [
-                    {
-                        "jwtAuth": []
-                    }
-                ],
-                "responses": {
-                    "400": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ErrorResponse"
-                                }
-                            }
-                        },
-                        "description": ""
-                    },
-                    "200": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "type": "array",
-                                    "items": {
-                                        "$ref": "#/components/schemas/RoomUser"
-                                    }
-                                }
-                            }
-                        },
-                        "description": ""
-                    }
-                }
-            },
-            "post": {
-                "operationId": "chat_rooms_users_create",
-                "parameters": [
-                    {
-                        "in": "path",
-                        "name": "room_pk",
-                        "schema": {
-                            "type": "string"
-                        },
-                        "required": true
-                    }
-                ],
-                "tags": [
-                    "chat"
-                ],
-                "security": [
-                    {
-                        "jwtAuth": []
-                    }
-                ],
-                "responses": {
-                    "400": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ErrorResponse"
-                                }
-                            }
-                        },
-                        "description": ""
-                    },
-                    "201": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/RoomUser"
-                                }
-                            }
-                        },
-                        "description": ""
-                    }
-                }
-            }
-        },
-        "/api/v1/chat/rooms/{room_pk}/users/{id}/": {
-            "get": {
-                "operationId": "chat_rooms_users_retrieve",
-                "parameters": [
-                    {
-                        "in": "path",
-                        "name": "id",
-                        "schema": {
-                            "type": "string"
-                        },
-                        "description": "A unique integer value identifying this room user.",
-                        "required": true
-                    },
-                    {
-                        "in": "path",
-                        "name": "room_pk",
-                        "schema": {
-                            "type": "string"
-                        },
-                        "required": true
-                    }
-                ],
-                "tags": [
-                    "chat"
-                ],
-                "security": [
-                    {
-                        "jwtAuth": []
-                    }
-                ],
-                "responses": {
-                    "400": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ErrorResponse"
-                                }
-                            }
-                        },
-                        "description": ""
-                    },
-                    "200": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/RoomUser"
-                                }
-                            }
-                        },
-                        "description": ""
-                    }
-                }
-            },
-            "put": {
-                "operationId": "chat_rooms_users_update",
-                "parameters": [
-                    {
-                        "in": "path",
-                        "name": "id",
-                        "schema": {
-                            "type": "string"
-                        },
-                        "description": "A unique integer value identifying this room user.",
-                        "required": true
-                    },
-                    {
-                        "in": "path",
-                        "name": "room_pk",
-                        "schema": {
-                            "type": "string"
-                        },
-                        "required": true
-                    }
-                ],
-                "tags": [
-                    "chat"
-                ],
-                "security": [
-                    {
-                        "jwtAuth": []
-                    }
-                ],
-                "responses": {
-                    "400": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ErrorResponse"
-                                }
-                            }
-                        },
-                        "description": ""
-                    },
-                    "200": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/RoomUser"
-                                }
-                            }
-                        },
-                        "description": ""
-                    }
-                }
-            },
-            "patch": {
-                "operationId": "chat_rooms_users_partial_update",
-                "parameters": [
-                    {
-                        "in": "path",
-                        "name": "id",
-                        "schema": {
-                            "type": "string"
-                        },
-                        "description": "A unique integer value identifying this room user.",
-                        "required": true
-                    },
-                    {
-                        "in": "path",
-                        "name": "room_pk",
-                        "schema": {
-                            "type": "string"
-                        },
-                        "required": true
-                    }
-                ],
-                "tags": [
-                    "chat"
-                ],
-                "security": [
-                    {
-                        "jwtAuth": []
-                    }
-                ],
-                "responses": {
-                    "400": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ErrorResponse"
-                                }
-                            }
-                        },
-                        "description": ""
-                    },
-                    "200": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/RoomUser"
-                                }
-                            }
-                        },
-                        "description": ""
-                    }
-                }
-            },
-            "delete": {
-                "operationId": "chat_rooms_users_destroy",
-                "parameters": [
-                    {
-                        "in": "path",
-                        "name": "id",
-                        "schema": {
-                            "type": "string"
-                        },
-                        "description": "A unique integer value identifying this room user.",
-                        "required": true
-                    },
-                    {
-                        "in": "path",
-                        "name": "room_pk",
-                        "schema": {
-                            "type": "string"
-                        },
-                        "required": true
-                    }
-                ],
-                "tags": [
-                    "chat"
-                ],
-                "security": [
-                    {
-                        "jwtAuth": []
-                    }
-                ],
-                "responses": {
-                    "400": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ErrorResponse"
-                                }
-                            }
-                        },
-                        "description": ""
-                    },
-                    "204": {
-                        "description": "No response body"
-                    }
-                }
-            }
-        },
-        "/api/v1/chat/rooms/{room_pk}/users/names/": {
-            "get": {
-                "operationId": "chat_rooms_users_names_list",
-                "parameters": [
-                    {
-                        "in": "path",
-                        "name": "room_pk",
-                        "schema": {
-                            "type": "string"
-                        },
-                        "required": true
-                    }
-                ],
-                "tags": [
-                    "chat"
-                ],
-                "security": [
-                    {
-                        "jwtAuth": []
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "type": "array",
-                                    "items": {
-                                        "$ref": "#/components/schemas/UserName"
-                                    }
                                 }
                             }
                         },
@@ -2443,9 +996,9 @@
         },
         "/api/v1/notifications/action-categories/": {
             "get": {
-                "operationId": "notifications_action_categories_list",
+                "operationId": "v1_notifications_action_categories_list",
                 "tags": [
-                    "notifications"
+                    "v1"
                 ],
                 "security": [
                     {
@@ -2482,7 +1035,7 @@
         },
         "/api/v1/notifications/devices/": {
             "get": {
-                "operationId": "notifications_devices_list",
+                "operationId": "v1_notifications_devices_list",
                 "parameters": [
                     {
                         "name": "limit",
@@ -2504,7 +1057,7 @@
                     }
                 ],
                 "tags": [
-                    "notifications"
+                    "v1"
                 ],
                 "security": [
                     {
@@ -2535,9 +1088,9 @@
                 }
             },
             "post": {
-                "operationId": "notifications_devices_create",
+                "operationId": "v1_notifications_devices_create",
                 "tags": [
-                    "notifications"
+                    "v1"
                 ],
                 "requestBody": {
                     "content": {
@@ -2590,7 +1143,7 @@
         },
         "/api/v1/notifications/devices/{registration_id}/": {
             "get": {
-                "operationId": "notifications_devices_retrieve",
+                "operationId": "v1_notifications_devices_retrieve",
                 "parameters": [
                     {
                         "in": "path",
@@ -2603,7 +1156,7 @@
                     }
                 ],
                 "tags": [
-                    "notifications"
+                    "v1"
                 ],
                 "security": [
                     {
@@ -2634,7 +1187,7 @@
                 }
             },
             "put": {
-                "operationId": "notifications_devices_update",
+                "operationId": "v1_notifications_devices_update",
                 "parameters": [
                     {
                         "in": "path",
@@ -2647,7 +1200,7 @@
                     }
                 ],
                 "tags": [
-                    "notifications"
+                    "v1"
                 ],
                 "requestBody": {
                     "content": {
@@ -2698,7 +1251,7 @@
                 }
             },
             "patch": {
-                "operationId": "notifications_devices_partial_update",
+                "operationId": "v1_notifications_devices_partial_update",
                 "parameters": [
                     {
                         "in": "path",
@@ -2711,7 +1264,7 @@
                     }
                 ],
                 "tags": [
-                    "notifications"
+                    "v1"
                 ],
                 "requestBody": {
                     "content": {
@@ -2761,7 +1314,7 @@
                 }
             },
             "delete": {
-                "operationId": "notifications_devices_destroy",
+                "operationId": "v1_notifications_devices_destroy",
                 "parameters": [
                     {
                         "in": "path",
@@ -2774,7 +1327,7 @@
                     }
                 ],
                 "tags": [
-                    "notifications"
+                    "v1"
                 ],
                 "security": [
                     {
@@ -2794,6 +1347,58 @@
                     },
                     "204": {
                         "description": "No response body"
+                    }
+                }
+            }
+        },
+        "/api/v1/remoteconfig/": {
+            "get": {
+                "operationId": "v1_remoteconfig_retrieve",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "params",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {}
+                        },
+                        "description": "json-encoded object of attribute key value pairs",
+                        "explode": true
+                    },
+                    {
+                        "in": "query",
+                        "name": "part",
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "app_launch",
+                                "default",
+                                "legal"
+                            ]
+                        },
+                        "description": "Name of the configuration part.",
+                        "required": true
+                    }
+                ],
+                "tags": [
+                    "v1"
+                ],
+                "security": [
+                    {
+                        "jwtAuth": []
+                    },
+                    {}
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/RemoteConfig"
+                                }
+                            }
+                        },
+                        "description": ""
                     }
                 }
             }
@@ -2850,171 +1455,6 @@
                 },
                 "required": [
                     "errors"
-                ]
-            },
-            "Message": {
-                "type": "object",
-                "properties": {
-                    "id": {
-                        "type": "string",
-                        "readOnly": true
-                    },
-                    "created": {
-                        "type": "string",
-                        "format": "date-time",
-                        "readOnly": true
-                    },
-                    "modified": {
-                        "type": "string",
-                        "format": "date-time",
-                        "readOnly": true
-                    },
-                    "room_user_id": {
-                        "type": "string",
-                        "readOnly": true
-                    },
-                    "is_me": {
-                        "type": "boolean",
-                        "nullable": true,
-                        "readOnly": true
-                    },
-                    "is_seen_by_me": {
-                        "type": "boolean",
-                        "readOnly": true
-                    },
-                    "room_id": {
-                        "type": "string",
-                        "readOnly": true
-                    },
-                    "images": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/MessageImage"
-                        },
-                        "readOnly": true
-                    },
-                    "reactions": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/Message"
-                        },
-                        "readOnly": true
-                    },
-                    "body": {
-                        "type": "string"
-                    },
-                    "parent_id": {
-                        "type": "string"
-                    },
-                    "is_reaction": {
-                        "type": "boolean",
-                        "default": false
-                    }
-                }
-            },
-            "MessageImage": {
-                "type": "object",
-                "properties": {
-                    "id": {
-                        "type": "string",
-                        "readOnly": true
-                    },
-                    "message_id": {
-                        "type": "string"
-                    },
-                    "room_id": {
-                        "type": "string"
-                    },
-                    "image": {
-                        "type": "string",
-                        "format": "uri"
-                    },
-                    "height": {
-                        "type": "integer",
-                        "readOnly": true
-                    },
-                    "width": {
-                        "type": "integer",
-                        "readOnly": true
-                    },
-                    "name": {
-                        "type": "string",
-                        "readOnly": true
-                    },
-                    "size": {
-                        "type": "integer",
-                        "nullable": true,
-                        "readOnly": true
-                    }
-                },
-                "required": [
-                    "image"
-                ]
-            },
-            "MessageImageRequest": {
-                "type": "object",
-                "properties": {
-                    "message_id": {
-                        "type": "string",
-                        "minLength": 1
-                    },
-                    "room_id": {
-                        "type": "string",
-                        "minLength": 1
-                    },
-                    "image": {
-                        "type": "string",
-                        "format": "binary"
-                    }
-                },
-                "required": [
-                    "image"
-                ]
-            },
-            "MessageRequest": {
-                "type": "object",
-                "properties": {
-                    "body": {
-                        "type": "string",
-                        "minLength": 1
-                    },
-                    "parent_id": {
-                        "type": "string",
-                        "minLength": 1
-                    },
-                    "is_reaction": {
-                        "type": "boolean",
-                        "default": false
-                    }
-                }
-            },
-            "MessageSeen": {
-                "type": "object",
-                "properties": {
-                    "message_ids": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
-                    }
-                },
-                "required": [
-                    "message_ids"
-                ]
-            },
-            "MessageSeenRequest": {
-                "type": "object",
-                "properties": {
-                    "message_ids": {
-                        "type": "array",
-                        "items": {
-                            "type": "string",
-                            "minLength": 1
-                        }
-                    }
-                },
-                "required": [
-                    "message_ids"
                 ]
             },
             "OTPDevice": {
@@ -3107,60 +1547,6 @@
                     }
                 }
             },
-            "PaginatedMessageImageList": {
-                "type": "object",
-                "properties": {
-                    "count": {
-                        "type": "integer",
-                        "example": 123
-                    },
-                    "next": {
-                        "type": "string",
-                        "nullable": true,
-                        "format": "uri",
-                        "example": "http://api.example.org/accounts/?offset=400&limit=100"
-                    },
-                    "previous": {
-                        "type": "string",
-                        "nullable": true,
-                        "format": "uri",
-                        "example": "http://api.example.org/accounts/?offset=200&limit=100"
-                    },
-                    "results": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/MessageImage"
-                        }
-                    }
-                }
-            },
-            "PaginatedMessageList": {
-                "type": "object",
-                "properties": {
-                    "count": {
-                        "type": "integer",
-                        "example": 123
-                    },
-                    "next": {
-                        "type": "string",
-                        "nullable": true,
-                        "format": "uri",
-                        "example": "http://api.example.org/accounts/?offset=400&limit=100"
-                    },
-                    "previous": {
-                        "type": "string",
-                        "nullable": true,
-                        "format": "uri",
-                        "example": "http://api.example.org/accounts/?offset=200&limit=100"
-                    },
-                    "results": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/Message"
-                        }
-                    }
-                }
-            },
             "PaginatedOTPDeviceList": {
                 "type": "object",
                 "properties": {
@@ -3188,33 +1574,6 @@
                     }
                 }
             },
-            "PaginatedRoomList": {
-                "type": "object",
-                "properties": {
-                    "count": {
-                        "type": "integer",
-                        "example": 123
-                    },
-                    "next": {
-                        "type": "string",
-                        "nullable": true,
-                        "format": "uri",
-                        "example": "http://api.example.org/accounts/?offset=400&limit=100"
-                    },
-                    "previous": {
-                        "type": "string",
-                        "nullable": true,
-                        "format": "uri",
-                        "example": "http://api.example.org/accounts/?offset=200&limit=100"
-                    },
-                    "results": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/Room"
-                        }
-                    }
-                }
-            },
             "PaginatedUserDeviceList": {
                 "type": "object",
                 "properties": {
@@ -3238,67 +1597,6 @@
                         "type": "array",
                         "items": {
                             "$ref": "#/components/schemas/UserDevice"
-                        }
-                    }
-                }
-            },
-            "PatchedMessageImageRequest": {
-                "type": "object",
-                "properties": {
-                    "message_id": {
-                        "type": "string",
-                        "minLength": 1
-                    },
-                    "room_id": {
-                        "type": "string",
-                        "minLength": 1
-                    },
-                    "image": {
-                        "type": "string",
-                        "format": "binary"
-                    }
-                }
-            },
-            "PatchedMessageRequest": {
-                "type": "object",
-                "properties": {
-                    "body": {
-                        "type": "string",
-                        "minLength": 1
-                    },
-                    "parent_id": {
-                        "type": "string",
-                        "minLength": 1
-                    },
-                    "is_reaction": {
-                        "type": "boolean",
-                        "default": false
-                    }
-                }
-            },
-            "PatchedRoomRequest": {
-                "type": "object",
-                "properties": {
-                    "title": {
-                        "type": "string",
-                        "minLength": 1,
-                        "maxLength": 512
-                    },
-                    "description": {
-                        "type": "string"
-                    },
-                    "is_public": {
-                        "type": "boolean"
-                    },
-                    "image": {
-                        "type": "string",
-                        "format": "binary",
-                        "nullable": true
-                    },
-                    "users": {
-                        "type": "array",
-                        "items": {
-                            "type": "integer"
                         }
                     }
                 }
@@ -3414,139 +1712,17 @@
                     "name"
                 ]
             },
-            "Room": {
+            "RemoteConfig": {
                 "type": "object",
                 "properties": {
-                    "id": {
-                        "type": "string",
-                        "readOnly": true
-                    },
-                    "created": {
-                        "type": "string",
-                        "format": "date-time",
-                        "readOnly": true
-                    },
-                    "modified": {
-                        "type": "string",
-                        "format": "date-time",
-                        "readOnly": true
-                    },
-                    "creator_id": {
-                        "type": "string",
-                        "readOnly": true
-                    },
-                    "message_total_count": {
-                        "type": "integer",
-                        "readOnly": true
-                    },
-                    "message_new_count": {
-                        "type": "integer",
-                        "readOnly": true
-                    },
-                    "last_message": {
-                        "allOf": [
-                            {
-                                "$ref": "#/components/schemas/Message"
-                            }
-                        ],
-                        "nullable": true,
-                        "readOnly": true
-                    },
-                    "is_muted": {
-                        "type": "boolean",
-                        "readOnly": true
-                    },
-                    "title": {
-                        "type": "string",
-                        "maxLength": 512
-                    },
-                    "description": {
-                        "type": "string"
-                    },
-                    "is_public": {
-                        "type": "boolean"
-                    },
-                    "image": {
-                        "type": "string",
-                        "format": "uri",
-                        "nullable": true
-                    },
-                    "users": {
-                        "type": "array",
-                        "items": {
-                            "type": "integer"
-                        }
+                    "part": {
+                        "type": "object",
+                        "additionalProperties": {}
                     }
                 },
                 "required": [
-                    "title"
+                    "part"
                 ]
-            },
-            "RoomRequest": {
-                "type": "object",
-                "properties": {
-                    "title": {
-                        "type": "string",
-                        "minLength": 1,
-                        "maxLength": 512
-                    },
-                    "description": {
-                        "type": "string"
-                    },
-                    "is_public": {
-                        "type": "boolean"
-                    },
-                    "image": {
-                        "type": "string",
-                        "format": "binary",
-                        "nullable": true
-                    },
-                    "users": {
-                        "type": "array",
-                        "items": {
-                            "type": "integer"
-                        }
-                    }
-                },
-                "required": [
-                    "title"
-                ]
-            },
-            "RoomUser": {
-                "type": "object",
-                "properties": {
-                    "id": {
-                        "type": "string",
-                        "readOnly": true
-                    },
-                    "name": {
-                        "type": "string",
-                        "readOnly": true
-                    },
-                    "image": {
-                        "type": "string",
-                        "format": "uri",
-                        "readOnly": true
-                    },
-                    "is_me": {
-                        "type": "boolean",
-                        "nullable": true,
-                        "readOnly": true
-                    },
-                    "is_online": {
-                        "type": "boolean",
-                        "readOnly": true,
-                        "default": true
-                    },
-                    "is_active": {
-                        "type": "boolean",
-                        "readOnly": true
-                    },
-                    "room_id": {
-                        "type": "string",
-                        "readOnly": true
-                    }
-                }
             },
             "SocialTokenObtainRequest": {
                 "type": "object",
@@ -3757,19 +1933,6 @@
                     "email": {
                         "type": "string",
                         "format": "email"
-                    }
-                }
-            },
-            "UserName": {
-                "type": "object",
-                "properties": {
-                    "id": {
-                        "type": "string",
-                        "readOnly": true
-                    },
-                    "first_name": {
-                        "type": "string",
-                        "readOnly": true
                     }
                 }
             }
