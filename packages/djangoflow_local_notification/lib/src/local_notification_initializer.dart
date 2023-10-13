@@ -102,7 +102,7 @@ class NotificationInitializer {
                   AndroidFlutterLocalNotificationsPlugin>();
 
       final bool? grantedNotificationPermission =
-          await androidImplementation?.requestPermission();
+          await androidImplementation?.requestNotificationsPermission();
       return grantedNotificationPermission;
     }
     return null;
