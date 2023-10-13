@@ -8,7 +8,9 @@ export 'package:djangoflow_openapi/src/auth/basic_auth.dart';
 export 'package:djangoflow_openapi/src/auth/oauth.dart';
 
 
-export 'package:djangoflow_openapi/src/api/v1_api.dart';
+export 'package:djangoflow_openapi/src/api/auth_api.dart';
+export 'package:djangoflow_openapi/src/api/notifications_api.dart';
+export 'package:djangoflow_openapi/src/api/remoteconfig_api.dart';
 
 export 'package:djangoflow_openapi/src/model/change_password_request.dart';
 export 'package:djangoflow_openapi/src/model/error.dart';

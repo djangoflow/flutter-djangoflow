@@ -1,1948 +1,1220 @@
-{
-    "openapi": "3.0.3",
-    "info": {
-        "title": "Project API",
-        "version": "0.0.1",
-        "description": "description"
-    },
-    "paths": {
-        "/api/v1/auth/otp/": {
-            "post": {
-                "operationId": "v1_auth_otp_create",
-                "tags": [
-                    "v1"
-                ],
-                "requestBody": {
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/OTPObtainRequest"
-                            }
-                        },
-                        "application/x-www-form-urlencoded": {
-                            "schema": {
-                                "$ref": "#/components/schemas/OTPObtainRequest"
-                            }
-                        },
-                        "multipart/form-data": {
-                            "schema": {
-                                "$ref": "#/components/schemas/OTPObtainRequest"
-                            }
-                        }
-                    }
-                },
-                "security": [
-                    {
-                        "jwtAuth": []
-                    },
-                    {}
-                ],
-                "responses": {
-                    "400": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ErrorResponse"
-                                }
-                            }
-                        },
-                        "description": ""
-                    },
-                    "201": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/OTPObtain"
-                                }
-                            }
-                        },
-                        "description": ""
-                    }
-                }
-            }
-        },
-        "/api/v1/auth/otp-devices/": {
-            "get": {
-                "operationId": "v1_auth_otp_devices_list",
-                "parameters": [
-                    {
-                        "name": "limit",
-                        "required": false,
-                        "in": "query",
-                        "description": "Number of results to return per page.",
-                        "schema": {
-                            "type": "integer"
-                        }
-                    },
-                    {
-                        "name": "offset",
-                        "required": false,
-                        "in": "query",
-                        "description": "The initial index from which to return the results.",
-                        "schema": {
-                            "type": "integer"
-                        }
-                    }
-                ],
-                "tags": [
-                    "v1"
-                ],
-                "security": [
-                    {
-                        "jwtAuth": []
-                    }
-                ],
-                "responses": {
-                    "400": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ErrorResponse"
-                                }
-                            }
-                        },
-                        "description": ""
-                    },
-                    "200": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/PaginatedOTPDeviceList"
-                                }
-                            }
-                        },
-                        "description": ""
-                    }
-                }
-            },
-            "post": {
-                "operationId": "v1_auth_otp_devices_create",
-                "tags": [
-                    "v1"
-                ],
-                "requestBody": {
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/OTPDeviceRequest"
-                            }
-                        },
-                        "application/x-www-form-urlencoded": {
-                            "schema": {
-                                "$ref": "#/components/schemas/OTPDeviceRequest"
-                            }
-                        },
-                        "multipart/form-data": {
-                            "schema": {
-                                "$ref": "#/components/schemas/OTPDeviceRequest"
-                            }
-                        }
-                    },
-                    "required": true
-                },
-                "security": [
-                    {
-                        "jwtAuth": []
-                    }
-                ],
-                "responses": {
-                    "400": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ErrorResponse"
-                                }
-                            }
-                        },
-                        "description": ""
-                    },
-                    "201": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/OTPDevice"
-                                }
-                            }
-                        },
-                        "description": ""
-                    }
-                }
-            }
-        },
-        "/api/v1/auth/otp-devices/{id}/": {
-            "get": {
-                "operationId": "v1_auth_otp_devices_retrieve",
-                "parameters": [
-                    {
-                        "in": "path",
-                        "name": "id",
-                        "schema": {
-                            "type": "string"
-                        },
-                        "required": true
-                    },
-                    {
-                        "in": "query",
-                        "name": "type",
-                        "schema": {
-                            "type": "string"
-                        },
-                        "description": "OTP Device type",
-                        "required": true
-                    }
-                ],
-                "tags": [
-                    "v1"
-                ],
-                "security": [
-                    {
-                        "jwtAuth": []
-                    }
-                ],
-                "responses": {
-                    "400": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ErrorResponse"
-                                }
-                            }
-                        },
-                        "description": ""
-                    },
-                    "200": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/OTPDevice"
-                                }
-                            }
-                        },
-                        "description": ""
-                    }
-                }
-            },
-            "delete": {
-                "operationId": "v1_auth_otp_devices_destroy",
-                "parameters": [
-                    {
-                        "in": "path",
-                        "name": "id",
-                        "schema": {
-                            "type": "string"
-                        },
-                        "required": true
-                    },
-                    {
-                        "in": "query",
-                        "name": "type",
-                        "schema": {
-                            "type": "string"
-                        },
-                        "description": "OTP Device type",
-                        "required": true
-                    }
-                ],
-                "tags": [
-                    "v1"
-                ],
-                "security": [
-                    {
-                        "jwtAuth": []
-                    }
-                ],
-                "responses": {
-                    "400": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ErrorResponse"
-                                }
-                            }
-                        },
-                        "description": ""
-                    },
-                    "204": {
-                        "description": "No response body"
-                    }
-                }
-            }
-        },
-        "/api/v1/auth/otp-devices/{id}/confirm/": {
-            "post": {
-                "operationId": "v1_auth_otp_devices_confirm_create",
-                "parameters": [
-                    {
-                        "in": "path",
-                        "name": "id",
-                        "schema": {
-                            "type": "string"
-                        },
-                        "required": true
-                    },
-                    {
-                        "in": "query",
-                        "name": "type",
-                        "schema": {
-                            "type": "string"
-                        },
-                        "description": "OTP Device type",
-                        "required": true
-                    }
-                ],
-                "tags": [
-                    "v1"
-                ],
-                "requestBody": {
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/OTPDeviceConfirmRequest"
-                            }
-                        },
-                        "application/x-www-form-urlencoded": {
-                            "schema": {
-                                "$ref": "#/components/schemas/OTPDeviceConfirmRequest"
-                            }
-                        },
-                        "multipart/form-data": {
-                            "schema": {
-                                "$ref": "#/components/schemas/OTPDeviceConfirmRequest"
-                            }
-                        }
-                    },
-                    "required": true
-                },
-                "security": [
-                    {
-                        "jwtAuth": []
-                    }
-                ],
-                "responses": {
-                    "400": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ErrorResponse"
-                                }
-                            }
-                        },
-                        "description": ""
-                    },
-                    "200": {
-                        "description": "No response body"
-                    }
-                }
-            }
-        },
-        "/api/v1/auth/social/": {
-            "post": {
-                "operationId": "v1_auth_social_create",
-                "tags": [
-                    "v1"
-                ],
-                "requestBody": {
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/SocialTokenObtainRequest"
-                            }
-                        },
-                        "application/x-www-form-urlencoded": {
-                            "schema": {
-                                "$ref": "#/components/schemas/SocialTokenObtainRequest"
-                            }
-                        },
-                        "multipart/form-data": {
-                            "schema": {
-                                "$ref": "#/components/schemas/SocialTokenObtainRequest"
-                            }
-                        }
-                    },
-                    "required": true
-                },
-                "security": [
-                    {
-                        "jwtAuth": []
-                    }
-                ],
-                "responses": {
-                    "400": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ErrorResponse"
-                                }
-                            }
-                        },
-                        "description": ""
-                    },
-                    "201": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Token"
-                                }
-                            }
-                        },
-                        "description": ""
-                    }
-                }
-            }
-        },
-        "/api/v1/auth/social/connect/": {
-            "post": {
-                "operationId": "v1_auth_social_connect_create",
-                "tags": [
-                    "v1"
-                ],
-                "requestBody": {
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/SocialTokenObtainRequest"
-                            }
-                        },
-                        "application/x-www-form-urlencoded": {
-                            "schema": {
-                                "$ref": "#/components/schemas/SocialTokenObtainRequest"
-                            }
-                        },
-                        "multipart/form-data": {
-                            "schema": {
-                                "$ref": "#/components/schemas/SocialTokenObtainRequest"
-                            }
-                        }
-                    },
-                    "required": true
-                },
-                "security": [
-                    {
-                        "jwtAuth": []
-                    }
-                ],
-                "responses": {
-                    "400": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ErrorResponse"
-                                }
-                            }
-                        },
-                        "description": ""
-                    },
-                    "200": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Token"
-                                }
-                            }
-                        },
-                        "description": ""
-                    }
-                }
-            }
-        },
-        "/api/v1/auth/token/": {
-            "post": {
-                "operationId": "v1_auth_token_create",
-                "tags": [
-                    "v1"
-                ],
-                "requestBody": {
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/TokenObtainRequest"
-                            }
-                        },
-                        "application/x-www-form-urlencoded": {
-                            "schema": {
-                                "$ref": "#/components/schemas/TokenObtainRequest"
-                            }
-                        },
-                        "multipart/form-data": {
-                            "schema": {
-                                "$ref": "#/components/schemas/TokenObtainRequest"
-                            }
-                        }
-                    }
-                },
-                "security": [
-                    {
-                        "jwtAuth": []
-                    },
-                    {}
-                ],
-                "responses": {
-                    "400": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ErrorResponse"
-                                }
-                            }
-                        },
-                        "description": ""
-                    },
-                    "201": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Token"
-                                }
-                            }
-                        },
-                        "description": ""
-                    }
-                }
-            }
-        },
-        "/api/v1/auth/token/blacklist/": {
-            "post": {
-                "operationId": "v1_auth_token_blacklist_create",
-                "tags": [
-                    "v1"
-                ],
-                "requestBody": {
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/TokenBlacklistRequest"
-                            }
-                        },
-                        "application/x-www-form-urlencoded": {
-                            "schema": {
-                                "$ref": "#/components/schemas/TokenBlacklistRequest"
-                            }
-                        },
-                        "multipart/form-data": {
-                            "schema": {
-                                "$ref": "#/components/schemas/TokenBlacklistRequest"
-                            }
-                        }
-                    },
-                    "required": true
-                },
-                "security": [
-                    {
-                        "jwtAuth": []
-                    },
-                    {}
-                ],
-                "responses": {
-                    "400": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ErrorResponse"
-                                }
-                            }
-                        },
-                        "description": ""
-                    },
-                    "200": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Token"
-                                }
-                            }
-                        },
-                        "description": ""
-                    }
-                }
-            }
-        },
-        "/api/v1/auth/token/refresh/": {
-            "post": {
-                "operationId": "v1_auth_token_refresh_create",
-                "tags": [
-                    "v1"
-                ],
-                "requestBody": {
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/TokenRefreshRequest"
-                            }
-                        },
-                        "application/x-www-form-urlencoded": {
-                            "schema": {
-                                "$ref": "#/components/schemas/TokenRefreshRequest"
-                            }
-                        },
-                        "multipart/form-data": {
-                            "schema": {
-                                "$ref": "#/components/schemas/TokenRefreshRequest"
-                            }
-                        }
-                    },
-                    "required": true
-                },
-                "security": [
-                    {
-                        "jwtAuth": []
-                    },
-                    {}
-                ],
-                "responses": {
-                    "400": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ErrorResponse"
-                                }
-                            }
-                        },
-                        "description": ""
-                    },
-                    "200": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Token"
-                                }
-                            }
-                        },
-                        "description": ""
-                    }
-                }
-            }
-        },
-        "/api/v1/auth/token/verify/": {
-            "post": {
-                "operationId": "v1_auth_token_verify_create",
-                "tags": [
-                    "v1"
-                ],
-                "requestBody": {
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/TokenVerifyRequest"
-                            }
-                        },
-                        "application/x-www-form-urlencoded": {
-                            "schema": {
-                                "$ref": "#/components/schemas/TokenVerifyRequest"
-                            }
-                        },
-                        "multipart/form-data": {
-                            "schema": {
-                                "$ref": "#/components/schemas/TokenVerifyRequest"
-                            }
-                        }
-                    },
-                    "required": true
-                },
-                "security": [
-                    {
-                        "jwtAuth": []
-                    },
-                    {}
-                ],
-                "responses": {
-                    "400": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ErrorResponse"
-                                }
-                            }
-                        },
-                        "description": ""
-                    },
-                    "200": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Token"
-                                }
-                            }
-                        },
-                        "description": ""
-                    }
-                }
-            }
-        },
-        "/api/v1/auth/users/": {
-            "post": {
-                "operationId": "v1_auth_users_create",
-                "tags": [
-                    "v1"
-                ],
-                "requestBody": {
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/UserIdentityRequest"
-                            }
-                        },
-                        "application/x-www-form-urlencoded": {
-                            "schema": {
-                                "$ref": "#/components/schemas/UserIdentityRequest"
-                            }
-                        },
-                        "multipart/form-data": {
-                            "schema": {
-                                "$ref": "#/components/schemas/UserIdentityRequest"
-                            }
-                        }
-                    }
-                },
-                "security": [
-                    {
-                        "jwtAuth": []
-                    }
-                ],
-                "responses": {
-                    "400": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ErrorResponse"
-                                }
-                            }
-                        },
-                        "description": ""
-                    },
-                    "201": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/UserIdentity"
-                                }
-                            }
-                        },
-                        "description": ""
-                    }
-                }
-            }
-        },
-        "/api/v1/auth/users/{id}/": {
-            "get": {
-                "operationId": "v1_auth_users_retrieve",
-                "parameters": [
-                    {
-                        "in": "path",
-                        "name": "id",
-                        "schema": {
-                            "type": "string"
-                        },
-                        "required": true
-                    }
-                ],
-                "tags": [
-                    "v1"
-                ],
-                "security": [
-                    {
-                        "jwtAuth": []
-                    }
-                ],
-                "responses": {
-                    "400": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ErrorResponse"
-                                }
-                            }
-                        },
-                        "description": ""
-                    },
-                    "200": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/UserIdentity"
-                                }
-                            }
-                        },
-                        "description": ""
-                    }
-                }
-            },
-            "patch": {
-                "operationId": "v1_auth_users_partial_update",
-                "parameters": [
-                    {
-                        "in": "path",
-                        "name": "id",
-                        "schema": {
-                            "type": "string"
-                        },
-                        "required": true
-                    }
-                ],
-                "tags": [
-                    "v1"
-                ],
-                "requestBody": {
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/PatchedUserIdentityRequest"
-                            }
-                        },
-                        "application/x-www-form-urlencoded": {
-                            "schema": {
-                                "$ref": "#/components/schemas/PatchedUserIdentityRequest"
-                            }
-                        },
-                        "multipart/form-data": {
-                            "schema": {
-                                "$ref": "#/components/schemas/PatchedUserIdentityRequest"
-                            }
-                        }
-                    }
-                },
-                "security": [
-                    {
-                        "jwtAuth": []
-                    }
-                ],
-                "responses": {
-                    "400": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ErrorResponse"
-                                }
-                            }
-                        },
-                        "description": ""
-                    },
-                    "200": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/UserIdentity"
-                                }
-                            }
-                        },
-                        "description": ""
-                    }
-                }
-            }
-        },
-        "/api/v1/auth/users/{id}/set-password/": {
-            "post": {
-                "operationId": "v1_auth_users_set_password_create",
-                "parameters": [
-                    {
-                        "in": "path",
-                        "name": "id",
-                        "schema": {
-                            "type": "string"
-                        },
-                        "required": true
-                    }
-                ],
-                "tags": [
-                    "v1"
-                ],
-                "requestBody": {
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/ChangePasswordRequest"
-                            }
-                        },
-                        "application/x-www-form-urlencoded": {
-                            "schema": {
-                                "$ref": "#/components/schemas/ChangePasswordRequest"
-                            }
-                        },
-                        "multipart/form-data": {
-                            "schema": {
-                                "$ref": "#/components/schemas/ChangePasswordRequest"
-                            }
-                        }
-                    },
-                    "required": true
-                },
-                "security": [
-                    {
-                        "jwtAuth": []
-                    }
-                ],
-                "responses": {
-                    "400": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ErrorResponse"
-                                }
-                            }
-                        },
-                        "description": ""
-                    },
-                    "200": {
-                        "description": "No response body"
-                    }
-                }
-            }
-        },
-        "/api/v1/auth/users/{id}/two-fa/": {
-            "get": {
-                "operationId": "v1_auth_users_two_fa_retrieve",
-                "parameters": [
-                    {
-                        "in": "path",
-                        "name": "id",
-                        "schema": {
-                            "type": "string"
-                        },
-                        "required": true
-                    }
-                ],
-                "tags": [
-                    "v1"
-                ],
-                "security": [
-                    {
-                        "jwtAuth": []
-                    }
-                ],
-                "responses": {
-                    "400": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ErrorResponse"
-                                }
-                            }
-                        },
-                        "description": ""
-                    },
-                    "200": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/User2FA"
-                                }
-                            }
-                        },
-                        "description": ""
-                    }
-                }
-            },
-            "patch": {
-                "operationId": "v1_auth_users_two_fa_partial_update",
-                "parameters": [
-                    {
-                        "in": "path",
-                        "name": "id",
-                        "schema": {
-                            "type": "string"
-                        },
-                        "required": true
-                    }
-                ],
-                "tags": [
-                    "v1"
-                ],
-                "requestBody": {
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/PatchedUser2FARequest"
-                            }
-                        },
-                        "application/x-www-form-urlencoded": {
-                            "schema": {
-                                "$ref": "#/components/schemas/PatchedUser2FARequest"
-                            }
-                        },
-                        "multipart/form-data": {
-                            "schema": {
-                                "$ref": "#/components/schemas/PatchedUser2FARequest"
-                            }
-                        }
-                    }
-                },
-                "security": [
-                    {
-                        "jwtAuth": []
-                    }
-                ],
-                "responses": {
-                    "400": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ErrorResponse"
-                                }
-                            }
-                        },
-                        "description": ""
-                    },
-                    "200": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/User2FA"
-                                }
-                            }
-                        },
-                        "description": ""
-                    }
-                }
-            }
-        },
-        "/api/v1/notifications/action-categories/": {
-            "get": {
-                "operationId": "v1_notifications_action_categories_list",
-                "tags": [
-                    "v1"
-                ],
-                "security": [
-                    {
-                        "jwtAuth": []
-                    },
-                    {}
-                ],
-                "responses": {
-                    "400": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ErrorResponse"
-                                }
-                            }
-                        },
-                        "description": ""
-                    },
-                    "200": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "type": "array",
-                                    "items": {
-                                        "$ref": "#/components/schemas/PushActionCategory"
-                                    }
-                                }
-                            }
-                        },
-                        "description": ""
-                    }
-                }
-            }
-        },
-        "/api/v1/notifications/devices/": {
-            "get": {
-                "operationId": "v1_notifications_devices_list",
-                "parameters": [
-                    {
-                        "name": "limit",
-                        "required": false,
-                        "in": "query",
-                        "description": "Number of results to return per page.",
-                        "schema": {
-                            "type": "integer"
-                        }
-                    },
-                    {
-                        "name": "offset",
-                        "required": false,
-                        "in": "query",
-                        "description": "The initial index from which to return the results.",
-                        "schema": {
-                            "type": "integer"
-                        }
-                    }
-                ],
-                "tags": [
-                    "v1"
-                ],
-                "security": [
-                    {
-                        "jwtAuth": []
-                    }
-                ],
-                "responses": {
-                    "400": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ErrorResponse"
-                                }
-                            }
-                        },
-                        "description": ""
-                    },
-                    "200": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/PaginatedUserDeviceList"
-                                }
-                            }
-                        },
-                        "description": ""
-                    }
-                }
-            },
-            "post": {
-                "operationId": "v1_notifications_devices_create",
-                "tags": [
-                    "v1"
-                ],
-                "requestBody": {
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/UserDeviceRequest"
-                            }
-                        },
-                        "application/x-www-form-urlencoded": {
-                            "schema": {
-                                "$ref": "#/components/schemas/UserDeviceRequest"
-                            }
-                        },
-                        "multipart/form-data": {
-                            "schema": {
-                                "$ref": "#/components/schemas/UserDeviceRequest"
-                            }
-                        }
-                    },
-                    "required": true
-                },
-                "security": [
-                    {
-                        "jwtAuth": []
-                    }
-                ],
-                "responses": {
-                    "400": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ErrorResponse"
-                                }
-                            }
-                        },
-                        "description": ""
-                    },
-                    "201": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/UserDevice"
-                                }
-                            }
-                        },
-                        "description": ""
-                    }
-                }
-            }
-        },
-        "/api/v1/notifications/devices/{registration_id}/": {
-            "get": {
-                "operationId": "v1_notifications_devices_retrieve",
-                "parameters": [
-                    {
-                        "in": "path",
-                        "name": "registration_id",
-                        "schema": {
-                            "type": "string",
-                            "title": "Registration token"
-                        },
-                        "required": true
-                    }
-                ],
-                "tags": [
-                    "v1"
-                ],
-                "security": [
-                    {
-                        "jwtAuth": []
-                    }
-                ],
-                "responses": {
-                    "400": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ErrorResponse"
-                                }
-                            }
-                        },
-                        "description": ""
-                    },
-                    "200": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/UserDevice"
-                                }
-                            }
-                        },
-                        "description": ""
-                    }
-                }
-            },
-            "put": {
-                "operationId": "v1_notifications_devices_update",
-                "parameters": [
-                    {
-                        "in": "path",
-                        "name": "registration_id",
-                        "schema": {
-                            "type": "string",
-                            "title": "Registration token"
-                        },
-                        "required": true
-                    }
-                ],
-                "tags": [
-                    "v1"
-                ],
-                "requestBody": {
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/UserDeviceRequest"
-                            }
-                        },
-                        "application/x-www-form-urlencoded": {
-                            "schema": {
-                                "$ref": "#/components/schemas/UserDeviceRequest"
-                            }
-                        },
-                        "multipart/form-data": {
-                            "schema": {
-                                "$ref": "#/components/schemas/UserDeviceRequest"
-                            }
-                        }
-                    },
-                    "required": true
-                },
-                "security": [
-                    {
-                        "jwtAuth": []
-                    }
-                ],
-                "responses": {
-                    "400": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ErrorResponse"
-                                }
-                            }
-                        },
-                        "description": ""
-                    },
-                    "200": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/UserDevice"
-                                }
-                            }
-                        },
-                        "description": ""
-                    }
-                }
-            },
-            "patch": {
-                "operationId": "v1_notifications_devices_partial_update",
-                "parameters": [
-                    {
-                        "in": "path",
-                        "name": "registration_id",
-                        "schema": {
-                            "type": "string",
-                            "title": "Registration token"
-                        },
-                        "required": true
-                    }
-                ],
-                "tags": [
-                    "v1"
-                ],
-                "requestBody": {
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/PatchedUserDeviceRequest"
-                            }
-                        },
-                        "application/x-www-form-urlencoded": {
-                            "schema": {
-                                "$ref": "#/components/schemas/PatchedUserDeviceRequest"
-                            }
-                        },
-                        "multipart/form-data": {
-                            "schema": {
-                                "$ref": "#/components/schemas/PatchedUserDeviceRequest"
-                            }
-                        }
-                    }
-                },
-                "security": [
-                    {
-                        "jwtAuth": []
-                    }
-                ],
-                "responses": {
-                    "400": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ErrorResponse"
-                                }
-                            }
-                        },
-                        "description": ""
-                    },
-                    "200": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/UserDevice"
-                                }
-                            }
-                        },
-                        "description": ""
-                    }
-                }
-            },
-            "delete": {
-                "operationId": "v1_notifications_devices_destroy",
-                "parameters": [
-                    {
-                        "in": "path",
-                        "name": "registration_id",
-                        "schema": {
-                            "type": "string",
-                            "title": "Registration token"
-                        },
-                        "required": true
-                    }
-                ],
-                "tags": [
-                    "v1"
-                ],
-                "security": [
-                    {
-                        "jwtAuth": []
-                    }
-                ],
-                "responses": {
-                    "400": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ErrorResponse"
-                                }
-                            }
-                        },
-                        "description": ""
-                    },
-                    "204": {
-                        "description": "No response body"
-                    }
-                }
-            }
-        },
-        "/api/v1/remoteconfig/": {
-            "get": {
-                "operationId": "v1_remoteconfig_retrieve",
-                "parameters": [
-                    {
-                        "in": "query",
-                        "name": "params",
-                        "schema": {
-                            "type": "object",
-                            "additionalProperties": {}
-                        },
-                        "description": "json-encoded object of attribute key value pairs",
-                        "explode": true
-                    },
-                    {
-                        "in": "query",
-                        "name": "part",
-                        "schema": {
-                            "type": "string",
-                            "enum": [
-                                "app_launch",
-                                "default",
-                                "legal"
-                            ]
-                        },
-                        "description": "Name of the configuration part.",
-                        "required": true
-                    }
-                ],
-                "tags": [
-                    "v1"
-                ],
-                "security": [
-                    {
-                        "jwtAuth": []
-                    },
-                    {}
-                ],
-                "responses": {
-                    "200": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/RemoteConfig"
-                                }
-                            }
-                        },
-                        "description": ""
-                    }
-                }
-            }
-        }
-    },
-    "components": {
-        "schemas": {
-            "ChangePasswordRequest": {
-                "type": "object",
-                "properties": {
-                    "old_password": {
-                        "type": "string",
-                        "writeOnly": true,
-                        "minLength": 1
-                    },
-                    "new_password": {
-                        "type": "string",
-                        "writeOnly": true,
-                        "minLength": 1
-                    }
-                },
-                "required": [
-                    "new_password",
-                    "old_password"
-                ]
-            },
-            "Error": {
-                "type": "object",
-                "properties": {
-                    "message": {
-                        "type": "string"
-                    },
-                    "code": {
-                        "type": "string"
-                    },
-                    "field": {
-                        "type": "string"
-                    }
-                },
-                "required": [
-                    "code",
-                    "message"
-                ]
-            },
-            "ErrorResponse": {
-                "type": "object",
-                "properties": {
-                    "errors": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/Error"
-                        }
-                    }
-                },
-                "required": [
-                    "errors"
-                ]
-            },
-            "OTPDevice": {
-                "type": "object",
-                "properties": {
-                    "id": {
-                        "type": "integer",
-                        "readOnly": true
-                    },
-                    "name": {
-                        "type": "string"
-                    },
-                    "type": {
-                        "$ref": "#/components/schemas/OTPDeviceTypeEnum"
-                    },
-                    "confirmed": {
-                        "type": "boolean",
-                        "readOnly": true
-                    },
-                    "extra_data": {
-                        "type": "object",
-                        "additionalProperties": {
-                            "type": "string"
-                        },
-                        "readOnly": true
-                    }
-                },
-                "required": [
-                    "type"
-                ]
-            },
-            "OTPDeviceConfirmRequest": {
-                "type": "object",
-                "properties": {
-                    "otp": {
-                        "type": "string",
-                        "writeOnly": true,
-                        "minLength": 1
-                    }
-                },
-                "required": [
-                    "otp"
-                ]
-            },
-            "OTPDeviceRequest": {
-                "type": "object",
-                "properties": {
-                    "name": {
-                        "type": "string",
-                        "minLength": 1
-                    },
-                    "type": {
-                        "$ref": "#/components/schemas/OTPDeviceTypeEnum"
-                    }
-                },
-                "required": [
-                    "type"
-                ]
-            },
-            "OTPDeviceTypeEnum": {
-                "enum": [
-                    "email",
-                    "totp",
-                    "sms"
-                ],
-                "type": "string",
-                "description": "* `email` - email\n* `totp` - totp\n* `sms` - sms"
-            },
-            "OTPObtain": {
-                "type": "object",
-                "properties": {
-                    "email": {
-                        "type": "string",
-                        "format": "email"
-                    },
-                    "otp": {
-                        "type": "string"
-                    }
-                }
-            },
-            "OTPObtainRequest": {
-                "type": "object",
-                "properties": {
-                    "email": {
-                        "type": "string",
-                        "format": "email"
-                    },
-                    "otp": {
-                        "type": "string"
-                    }
-                }
-            },
-            "PaginatedOTPDeviceList": {
-                "type": "object",
-                "properties": {
-                    "count": {
-                        "type": "integer",
-                        "example": 123
-                    },
-                    "next": {
-                        "type": "string",
-                        "nullable": true,
-                        "format": "uri",
-                        "example": "http://api.example.org/accounts/?offset=400&limit=100"
-                    },
-                    "previous": {
-                        "type": "string",
-                        "nullable": true,
-                        "format": "uri",
-                        "example": "http://api.example.org/accounts/?offset=200&limit=100"
-                    },
-                    "results": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/OTPDevice"
-                        }
-                    }
-                }
-            },
-            "PaginatedUserDeviceList": {
-                "type": "object",
-                "properties": {
-                    "count": {
-                        "type": "integer",
-                        "example": 123
-                    },
-                    "next": {
-                        "type": "string",
-                        "nullable": true,
-                        "format": "uri",
-                        "example": "http://api.example.org/accounts/?offset=400&limit=100"
-                    },
-                    "previous": {
-                        "type": "string",
-                        "nullable": true,
-                        "format": "uri",
-                        "example": "http://api.example.org/accounts/?offset=200&limit=100"
-                    },
-                    "results": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/UserDevice"
-                        }
-                    }
-                }
-            },
-            "PatchedUser2FARequest": {
-                "type": "object",
-                "properties": {
-                    "is_required": {
-                        "type": "boolean"
-                    }
-                }
-            },
-            "PatchedUserDeviceRequest": {
-                "type": "object",
-                "properties": {
-                    "name": {
-                        "type": "string",
-                        "nullable": true,
-                        "maxLength": 255
-                    },
-                    "registration_id": {
-                        "type": "string",
-                        "minLength": 1,
-                        "title": "Registration token"
-                    },
-                    "device_id": {
-                        "type": "string",
-                        "nullable": true,
-                        "description": "Unique device identifier",
-                        "maxLength": 255
-                    },
-                    "active": {
-                        "type": "boolean",
-                        "default": true,
-                        "title": "Is active",
-                        "description": "Inactive devices will not be sent notifications"
-                    },
-                    "type": {
-                        "$ref": "#/components/schemas/UserDeviceTypeEnum"
-                    }
-                }
-            },
-            "PatchedUserIdentityRequest": {
-                "type": "object",
-                "properties": {
-                    "first_name": {
-                        "type": "string"
-                    },
-                    "last_name": {
-                        "type": "string"
-                    },
-                    "password": {
-                        "type": "string",
-                        "writeOnly": true
-                    },
-                    "email": {
-                        "type": "string",
-                        "format": "email"
-                    }
-                }
-            },
-            "ProviderEnum": {
-                "enum": [
-                    "google-oauth2"
-                ],
-                "type": "string",
-                "description": "* `google-oauth2` - google-oauth2"
-            },
-            "PushAction": {
-                "type": "object",
-                "properties": {
-                    "name": {
-                        "type": "string",
-                        "title": "Id",
-                        "maxLength": 64
-                    },
-                    "button_text": {
-                        "type": "string",
-                        "maxLength": 64
-                    },
-                    "authentication_required": {
-                        "type": "boolean"
-                    },
-                    "destructive": {
-                        "type": "boolean"
-                    },
-                    "foreground": {
-                        "type": "boolean"
-                    }
-                },
-                "required": [
-                    "button_text",
-                    "name"
-                ]
-            },
-            "PushActionCategory": {
-                "type": "object",
-                "properties": {
-                    "name": {
-                        "type": "string",
-                        "title": "Id",
-                        "maxLength": 64
-                    },
-                    "actions": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/PushAction"
-                        }
-                    }
-                },
-                "required": [
-                    "actions",
-                    "name"
-                ]
-            },
-            "RemoteConfig": {
-                "type": "object",
-                "properties": {
-                    "part": {
-                        "type": "object",
-                        "additionalProperties": {}
-                    }
-                },
-                "required": [
-                    "part"
-                ]
-            },
-            "SocialTokenObtainRequest": {
-                "type": "object",
-                "properties": {
-                    "access_token": {
-                        "type": "string",
-                        "writeOnly": true,
-                        "minLength": 1
-                    },
-                    "provider": {
-                        "$ref": "#/components/schemas/ProviderEnum"
-                    },
-                    "otp": {
-                        "type": "string",
-                        "writeOnly": true
-                    }
-                },
-                "required": [
-                    "access_token",
-                    "provider"
-                ]
-            },
-            "Token": {
-                "type": "object",
-                "properties": {
-                    "token": {
-                        "type": "string",
-                        "readOnly": true
-                    }
-                }
-            },
-            "TokenBlacklistRequest": {
-                "type": "object",
-                "properties": {
-                    "refresh": {
-                        "type": "string",
-                        "writeOnly": true,
-                        "minLength": 1
-                    }
-                },
-                "required": [
-                    "refresh"
-                ]
-            },
-            "TokenObtainRequest": {
-                "type": "object",
-                "properties": {
-                    "otp": {
-                        "type": "string",
-                        "writeOnly": true
-                    },
-                    "email": {
-                        "type": "string",
-                        "format": "email",
-                        "writeOnly": true
-                    }
-                }
-            },
-            "TokenRefreshRequest": {
-                "type": "object",
-                "properties": {
-                    "refresh": {
-                        "type": "string",
-                        "writeOnly": true,
-                        "minLength": 1
-                    }
-                },
-                "required": [
-                    "refresh"
-                ]
-            },
-            "TokenVerifyRequest": {
-                "type": "object",
-                "properties": {
-                    "token": {
-                        "type": "string",
-                        "writeOnly": true,
-                        "minLength": 1
-                    }
-                },
-                "required": [
-                    "token"
-                ]
-            },
-            "User2FA": {
-                "type": "object",
-                "properties": {
-                    "is_required": {
-                        "type": "boolean"
-                    }
-                }
-            },
-            "UserDevice": {
-                "type": "object",
-                "properties": {
-                    "id": {
-                        "type": "integer",
-                        "readOnly": true
-                    },
-                    "name": {
-                        "type": "string",
-                        "nullable": true,
-                        "maxLength": 255
-                    },
-                    "registration_id": {
-                        "type": "string",
-                        "title": "Registration token"
-                    },
-                    "device_id": {
-                        "type": "string",
-                        "nullable": true,
-                        "description": "Unique device identifier",
-                        "maxLength": 255
-                    },
-                    "active": {
-                        "type": "boolean",
-                        "default": true,
-                        "title": "Is active",
-                        "description": "Inactive devices will not be sent notifications"
-                    },
-                    "date_created": {
-                        "type": "string",
-                        "format": "date-time",
-                        "readOnly": true,
-                        "nullable": true,
-                        "title": "Creation date"
-                    },
-                    "type": {
-                        "$ref": "#/components/schemas/UserDeviceTypeEnum"
-                    }
-                },
-                "required": [
-                    "registration_id",
-                    "type"
-                ]
-            },
-            "UserDeviceRequest": {
-                "type": "object",
-                "properties": {
-                    "name": {
-                        "type": "string",
-                        "nullable": true,
-                        "maxLength": 255
-                    },
-                    "registration_id": {
-                        "type": "string",
-                        "minLength": 1,
-                        "title": "Registration token"
-                    },
-                    "device_id": {
-                        "type": "string",
-                        "nullable": true,
-                        "description": "Unique device identifier",
-                        "maxLength": 255
-                    },
-                    "active": {
-                        "type": "boolean",
-                        "default": true,
-                        "title": "Is active",
-                        "description": "Inactive devices will not be sent notifications"
-                    },
-                    "type": {
-                        "$ref": "#/components/schemas/UserDeviceTypeEnum"
-                    }
-                },
-                "required": [
-                    "registration_id",
-                    "type"
-                ]
-            },
-            "UserDeviceTypeEnum": {
-                "enum": [
-                    "ios",
-                    "android",
-                    "web"
-                ],
-                "type": "string",
-                "description": "* `ios` - ios\n* `android` - android\n* `web` - web"
-            },
-            "UserIdentity": {
-                "type": "object",
-                "properties": {
-                    "first_name": {
-                        "type": "string"
-                    },
-                    "last_name": {
-                        "type": "string"
-                    },
-                    "email": {
-                        "type": "string",
-                        "format": "email"
-                    }
-                }
-            },
-            "UserIdentityRequest": {
-                "type": "object",
-                "properties": {
-                    "first_name": {
-                        "type": "string"
-                    },
-                    "last_name": {
-                        "type": "string"
-                    },
-                    "password": {
-                        "type": "string",
-                        "writeOnly": true
-                    },
-                    "email": {
-                        "type": "string",
-                        "format": "email"
-                    }
-                }
-            }
-        },
-        "securitySchemes": {
-            "jwtAuth": {
-                "type": "http",
-                "scheme": "bearer",
-                "bearerFormat": "JWT"
-            }
-        }
-    }
-}
+openapi: 3.0.3
+info:
+  title: Project API
+  version: 0.0.1 (v1)
+  description: description
+paths:
+  /api/v1/auth/otp/:
+    post:
+      operationId: auth_otp_create
+      tags:
+      - auth
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OTPObtainRequest'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/OTPObtainRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/OTPObtainRequest'
+      security:
+      - jwtAuth: []
+      - {}
+      responses:
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+          description: ''
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OTPObtain'
+          description: ''
+  /api/v1/auth/otp-devices/:
+    get:
+      operationId: auth_otp_devices_list
+      parameters:
+      - name: limit
+        required: false
+        in: query
+        description: Number of results to return per page.
+        schema:
+          type: integer
+      - name: offset
+        required: false
+        in: query
+        description: The initial index from which to return the results.
+        schema:
+          type: integer
+      tags:
+      - auth
+      security:
+      - jwtAuth: []
+      responses:
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+          description: ''
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedOTPDeviceList'
+          description: ''
+    post:
+      operationId: auth_otp_devices_create
+      tags:
+      - auth
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OTPDeviceRequest'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/OTPDeviceRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/OTPDeviceRequest'
+        required: true
+      security:
+      - jwtAuth: []
+      responses:
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+          description: ''
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OTPDevice'
+          description: ''
+  /api/v1/auth/otp-devices/{id}/:
+    get:
+      operationId: auth_otp_devices_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+        required: true
+      - in: query
+        name: type
+        schema:
+          type: string
+        description: OTP Device type
+        required: true
+      tags:
+      - auth
+      security:
+      - jwtAuth: []
+      responses:
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+          description: ''
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OTPDevice'
+          description: ''
+    delete:
+      operationId: auth_otp_devices_destroy
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+        required: true
+      - in: query
+        name: type
+        schema:
+          type: string
+        description: OTP Device type
+        required: true
+      tags:
+      - auth
+      security:
+      - jwtAuth: []
+      responses:
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+          description: ''
+        '204':
+          description: No response body
+  /api/v1/auth/otp-devices/{id}/confirm/:
+    post:
+      operationId: auth_otp_devices_confirm_create
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+        required: true
+      - in: query
+        name: type
+        schema:
+          type: string
+        description: OTP Device type
+        required: true
+      tags:
+      - auth
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OTPDeviceConfirmRequest'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/OTPDeviceConfirmRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/OTPDeviceConfirmRequest'
+        required: true
+      security:
+      - jwtAuth: []
+      responses:
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+          description: ''
+        '200':
+          description: No response body
+  /api/v1/auth/social/:
+    post:
+      operationId: auth_social_create
+      tags:
+      - auth
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SocialTokenObtainRequest'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/SocialTokenObtainRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/SocialTokenObtainRequest'
+        required: true
+      security:
+      - jwtAuth: []
+      responses:
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+          description: ''
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Token'
+          description: ''
+  /api/v1/auth/social/connect/:
+    post:
+      operationId: auth_social_connect_create
+      tags:
+      - auth
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SocialTokenObtainRequest'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/SocialTokenObtainRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/SocialTokenObtainRequest'
+        required: true
+      security:
+      - jwtAuth: []
+      responses:
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+          description: ''
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Token'
+          description: ''
+  /api/v1/auth/token/:
+    post:
+      operationId: auth_token_create
+      tags:
+      - auth
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TokenObtainRequest'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/TokenObtainRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/TokenObtainRequest'
+      security:
+      - jwtAuth: []
+      - {}
+      responses:
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+          description: ''
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Token'
+          description: ''
+  /api/v1/auth/token/blacklist/:
+    post:
+      operationId: auth_token_blacklist_create
+      tags:
+      - auth
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TokenBlacklistRequest'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/TokenBlacklistRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/TokenBlacklistRequest'
+        required: true
+      security:
+      - jwtAuth: []
+      - {}
+      responses:
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+          description: ''
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Token'
+          description: ''
+  /api/v1/auth/token/refresh/:
+    post:
+      operationId: auth_token_refresh_create
+      tags:
+      - auth
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TokenRefreshRequest'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/TokenRefreshRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/TokenRefreshRequest'
+        required: true
+      security:
+      - jwtAuth: []
+      - {}
+      responses:
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+          description: ''
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Token'
+          description: ''
+  /api/v1/auth/token/verify/:
+    post:
+      operationId: auth_token_verify_create
+      tags:
+      - auth
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TokenVerifyRequest'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/TokenVerifyRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/TokenVerifyRequest'
+        required: true
+      security:
+      - jwtAuth: []
+      - {}
+      responses:
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+          description: ''
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Token'
+          description: ''
+  /api/v1/auth/users/:
+    post:
+      operationId: auth_users_create
+      tags:
+      - auth
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserIdentityRequest'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/UserIdentityRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/UserIdentityRequest'
+      security:
+      - jwtAuth: []
+      responses:
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+          description: ''
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserIdentity'
+          description: ''
+  /api/v1/auth/users/{id}/:
+    get:
+      operationId: auth_users_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+        required: true
+      tags:
+      - auth
+      security:
+      - jwtAuth: []
+      responses:
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+          description: ''
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserIdentity'
+          description: ''
+    patch:
+      operationId: auth_users_partial_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+        required: true
+      tags:
+      - auth
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedUserIdentityRequest'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedUserIdentityRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedUserIdentityRequest'
+      security:
+      - jwtAuth: []
+      responses:
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+          description: ''
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserIdentity'
+          description: ''
+  /api/v1/auth/users/{id}/set-password/:
+    post:
+      operationId: auth_users_set_password_create
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+        required: true
+      tags:
+      - auth
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ChangePasswordRequest'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/ChangePasswordRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/ChangePasswordRequest'
+        required: true
+      security:
+      - jwtAuth: []
+      responses:
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+          description: ''
+        '200':
+          description: No response body
+  /api/v1/auth/users/{id}/two-fa/:
+    get:
+      operationId: auth_users_two_fa_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+        required: true
+      tags:
+      - auth
+      security:
+      - jwtAuth: []
+      responses:
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+          description: ''
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User2FA'
+          description: ''
+    patch:
+      operationId: auth_users_two_fa_partial_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+        required: true
+      tags:
+      - auth
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedUser2FARequest'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedUser2FARequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedUser2FARequest'
+      security:
+      - jwtAuth: []
+      responses:
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+          description: ''
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User2FA'
+          description: ''
+  /api/v1/notifications/action-categories/:
+    get:
+      operationId: notifications_action_categories_list
+      tags:
+      - notifications
+      security:
+      - jwtAuth: []
+      - {}
+      responses:
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+          description: ''
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/PushActionCategory'
+          description: ''
+  /api/v1/notifications/devices/:
+    get:
+      operationId: notifications_devices_list
+      parameters:
+      - name: limit
+        required: false
+        in: query
+        description: Number of results to return per page.
+        schema:
+          type: integer
+      - name: offset
+        required: false
+        in: query
+        description: The initial index from which to return the results.
+        schema:
+          type: integer
+      tags:
+      - notifications
+      security:
+      - jwtAuth: []
+      responses:
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+          description: ''
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedUserDeviceList'
+          description: ''
+    post:
+      operationId: notifications_devices_create
+      tags:
+      - notifications
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserDeviceRequest'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/UserDeviceRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/UserDeviceRequest'
+        required: true
+      security:
+      - jwtAuth: []
+      responses:
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+          description: ''
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserDevice'
+          description: ''
+  /api/v1/notifications/devices/{registration_id}/:
+    get:
+      operationId: notifications_devices_retrieve
+      parameters:
+      - in: path
+        name: registration_id
+        schema:
+          type: string
+          title: Registration token
+        required: true
+      tags:
+      - notifications
+      security:
+      - jwtAuth: []
+      responses:
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+          description: ''
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserDevice'
+          description: ''
+    put:
+      operationId: notifications_devices_update
+      parameters:
+      - in: path
+        name: registration_id
+        schema:
+          type: string
+          title: Registration token
+        required: true
+      tags:
+      - notifications
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserDeviceRequest'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/UserDeviceRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/UserDeviceRequest'
+        required: true
+      security:
+      - jwtAuth: []
+      responses:
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+          description: ''
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserDevice'
+          description: ''
+    patch:
+      operationId: notifications_devices_partial_update
+      parameters:
+      - in: path
+        name: registration_id
+        schema:
+          type: string
+          title: Registration token
+        required: true
+      tags:
+      - notifications
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedUserDeviceRequest'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedUserDeviceRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedUserDeviceRequest'
+      security:
+      - jwtAuth: []
+      responses:
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+          description: ''
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserDevice'
+          description: ''
+    delete:
+      operationId: notifications_devices_destroy
+      parameters:
+      - in: path
+        name: registration_id
+        schema:
+          type: string
+          title: Registration token
+        required: true
+      tags:
+      - notifications
+      security:
+      - jwtAuth: []
+      responses:
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+          description: ''
+        '204':
+          description: No response body
+  /api/v1/remoteconfig/:
+    get:
+      operationId: remoteconfig_retrieve
+      parameters:
+      - in: query
+        name: params
+        schema:
+          type: object
+          additionalProperties: {}
+        description: json-encoded object of attribute key value pairs
+        explode: true
+      - in: query
+        name: part
+        schema:
+          type: string
+          enum:
+          - app_launch
+          - default
+          - legal
+        description: Name of the configuration part.
+        required: true
+      tags:
+      - remoteconfig
+      security:
+      - jwtAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RemoteConfig'
+          description: ''
+components:
+  schemas:
+    ChangePasswordRequest:
+      type: object
+      properties:
+        old_password:
+          type: string
+          writeOnly: true
+          minLength: 1
+        new_password:
+          type: string
+          writeOnly: true
+          minLength: 1
+      required:
+      - new_password
+      - old_password
+    Error:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: string
+        field:
+          type: string
+      required:
+      - code
+      - message
+    ErrorResponse:
+      type: object
+      properties:
+        errors:
+          type: array
+          items:
+            $ref: '#/components/schemas/Error'
+      required:
+      - errors
+    OTPDevice:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+        type:
+          $ref: '#/components/schemas/OTPDeviceTypeEnum'
+        confirmed:
+          type: boolean
+          readOnly: true
+        extra_data:
+          type: object
+          additionalProperties:
+            type: string
+          readOnly: true
+      required:
+      - type
+    OTPDeviceConfirmRequest:
+      type: object
+      properties:
+        otp:
+          type: string
+          writeOnly: true
+          minLength: 1
+      required:
+      - otp
+    OTPDeviceRequest:
+      type: object
+      properties:
+        name:
+          type: string
+          minLength: 1
+        type:
+          $ref: '#/components/schemas/OTPDeviceTypeEnum'
+      required:
+      - type
+    OTPDeviceTypeEnum:
+      enum:
+      - email
+      - totp
+      - sms
+      type: string
+      description: |-
+        * `email` - email
+        * `totp` - totp
+        * `sms` - sms
+    OTPObtain:
+      type: object
+      properties:
+        email:
+          type: string
+          format: email
+        otp:
+          type: string
+    OTPObtainRequest:
+      type: object
+      properties:
+        email:
+          type: string
+          format: email
+        otp:
+          type: string
+    PaginatedOTPDeviceList:
+      type: object
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=400&limit=100
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=200&limit=100
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/OTPDevice'
+    PaginatedUserDeviceList:
+      type: object
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=400&limit=100
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=200&limit=100
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/UserDevice'
+    PatchedUser2FARequest:
+      type: object
+      properties:
+        is_required:
+          type: boolean
+    PatchedUserDeviceRequest:
+      type: object
+      properties:
+        name:
+          type: string
+          nullable: true
+          maxLength: 255
+        registration_id:
+          type: string
+          minLength: 1
+          title: Registration token
+        device_id:
+          type: string
+          nullable: true
+          description: Unique device identifier
+          maxLength: 255
+        active:
+          type: boolean
+          default: true
+          title: Is active
+          description: Inactive devices will not be sent notifications
+        type:
+          $ref: '#/components/schemas/UserDeviceTypeEnum'
+    PatchedUserIdentityRequest:
+      type: object
+      properties:
+        first_name:
+          type: string
+        last_name:
+          type: string
+        password:
+          type: string
+          writeOnly: true
+        email:
+          type: string
+          format: email
+    ProviderEnum:
+      enum:
+      - google-oauth2
+      type: string
+      description: '* `google-oauth2` - google-oauth2'
+    PushAction:
+      type: object
+      properties:
+        name:
+          type: string
+          title: Id
+          maxLength: 64
+        button_text:
+          type: string
+          maxLength: 64
+        authentication_required:
+          type: boolean
+        destructive:
+          type: boolean
+        foreground:
+          type: boolean
+      required:
+      - button_text
+      - name
+    PushActionCategory:
+      type: object
+      properties:
+        name:
+          type: string
+          title: Id
+          maxLength: 64
+        actions:
+          type: array
+          items:
+            $ref: '#/components/schemas/PushAction'
+      required:
+      - actions
+      - name
+    RemoteConfig:
+      type: object
+      properties:
+        part:
+          type: object
+          additionalProperties: {}
+      required:
+      - part
+    SocialTokenObtainRequest:
+      type: object
+      properties:
+        access_token:
+          type: string
+          writeOnly: true
+          minLength: 1
+        provider:
+          $ref: '#/components/schemas/ProviderEnum'
+        otp:
+          type: string
+          writeOnly: true
+      required:
+      - access_token
+      - provider
+    Token:
+      type: object
+      properties:
+        token:
+          type: string
+          readOnly: true
+    TokenBlacklistRequest:
+      type: object
+      properties:
+        refresh:
+          type: string
+          writeOnly: true
+          minLength: 1
+      required:
+      - refresh
+    TokenObtainRequest:
+      type: object
+      properties:
+        otp:
+          type: string
+          writeOnly: true
+        email:
+          type: string
+          format: email
+          writeOnly: true
+    TokenRefreshRequest:
+      type: object
+      properties:
+        refresh:
+          type: string
+          writeOnly: true
+          minLength: 1
+      required:
+      - refresh
+    TokenVerifyRequest:
+      type: object
+      properties:
+        token:
+          type: string
+          writeOnly: true
+          minLength: 1
+      required:
+      - token
+    User2FA:
+      type: object
+      properties:
+        is_required:
+          type: boolean
+    UserDevice:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          nullable: true
+          maxLength: 255
+        registration_id:
+          type: string
+          title: Registration token
+        device_id:
+          type: string
+          nullable: true
+          description: Unique device identifier
+          maxLength: 255
+        active:
+          type: boolean
+          default: true
+          title: Is active
+          description: Inactive devices will not be sent notifications
+        date_created:
+          type: string
+          format: date-time
+          readOnly: true
+          nullable: true
+          title: Creation date
+        type:
+          $ref: '#/components/schemas/UserDeviceTypeEnum'
+      required:
+      - registration_id
+      - type
+    UserDeviceRequest:
+      type: object
+      properties:
+        name:
+          type: string
+          nullable: true
+          maxLength: 255
+        registration_id:
+          type: string
+          minLength: 1
+          title: Registration token
+        device_id:
+          type: string
+          nullable: true
+          description: Unique device identifier
+          maxLength: 255
+        active:
+          type: boolean
+          default: true
+          title: Is active
+          description: Inactive devices will not be sent notifications
+        type:
+          $ref: '#/components/schemas/UserDeviceTypeEnum'
+      required:
+      - registration_id
+      - type
+    UserDeviceTypeEnum:
+      enum:
+      - ios
+      - android
+      - web
+      type: string
+      description: |-
+        * `ios` - ios
+        * `android` - android
+        * `web` - web
+    UserIdentity:
+      type: object
+      properties:
+        first_name:
+          type: string
+        last_name:
+          type: string
+        email:
+          type: string
+          format: email
+    UserIdentityRequest:
+      type: object
+      properties:
+        first_name:
+          type: string
+        last_name:
+          type: string
+        password:
+          type: string
+          writeOnly: true
+        email:
+          type: string
+          format: email
+  securitySchemes:
+    jwtAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+

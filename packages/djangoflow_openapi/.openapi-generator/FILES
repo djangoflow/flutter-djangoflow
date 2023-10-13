@@ -2,9 +2,11 @@
 README.md
 analysis_options.yaml
 build.yaml
+doc/AuthApi.md
 doc/ChangePasswordRequest.md
 doc/Error.md
 doc/ErrorResponse.md
+doc/NotificationsApi.md
 doc/OTPDevice.md
 doc/OTPDeviceConfirmRequest.md
 doc/OTPDeviceRequest.md
@@ -20,6 +22,7 @@ doc/ProviderEnum.md
 doc/PushAction.md
 doc/PushActionCategory.md
 doc/RemoteConfig.md
+doc/RemoteconfigApi.md
 doc/SocialTokenObtainRequest.md
 doc/Token.md
 doc/TokenBlacklistRequest.md
@@ -32,10 +35,11 @@ doc/UserDeviceRequest.md
 doc/UserDeviceTypeEnum.md
 doc/UserIdentity.md
 doc/UserIdentityRequest.md
-doc/V1Api.md
 lib/djangoflow_openapi.dart
 lib/src/api.dart
-lib/src/api/v1_api.dart
+lib/src/api/auth_api.dart
+lib/src/api/notifications_api.dart
+lib/src/api/remoteconfig_api.dart
 lib/src/auth/api_key_auth.dart
 lib/src/auth/auth.dart
 lib/src/auth/basic_auth.dart
@@ -73,9 +77,11 @@ lib/src/model/user_device_type_enum.dart
 lib/src/model/user_identity.dart
 lib/src/model/user_identity_request.dart
 pubspec.yaml
+test/auth_api_test.dart
 test/change_password_request_test.dart
 test/error_response_test.dart
 test/error_test.dart
+test/notifications_api_test.dart
 test/otp_device_confirm_request_test.dart
 test/otp_device_request_test.dart
 test/otp_device_test.dart
@@ -91,6 +97,7 @@ test/provider_enum_test.dart
 test/push_action_category_test.dart
 test/push_action_test.dart
 test/remote_config_test.dart
+test/remoteconfig_api_test.dart
 test/social_token_obtain_request_test.dart
 test/token_blacklist_request_test.dart
 test/token_obtain_request_test.dart
@@ -103,4 +110,3 @@ test/user_device_test.dart
 test/user_device_type_enum_test.dart
 test/user_identity_request_test.dart
 test/user_identity_test.dart
-test/v1_api_test.dart
