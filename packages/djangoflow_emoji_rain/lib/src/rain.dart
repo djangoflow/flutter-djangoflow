@@ -4,6 +4,12 @@ import 'package:flutter/material.dart';
 
 import 'rain_drop.dart';
 
+/// A widget that creates a rain of emojis on the screen.
+///
+/// [emoji] is the emoji character that will be used for the raindrops.
+/// [numberOfRainDrops] specifies the number of raindrops on the screen.
+/// [fallSpeedFactor] is a multiplier to control the speed of the falling raindrops. Higher values mean slower raindrops.
+/// [onRainStopped] is a callback that is triggered when the rain stops.
 class Rain extends StatefulWidget {
   const Rain({
     super.key,
