@@ -6,13 +6,15 @@ part of 'social_login_type.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_SocialLoginType _$$_SocialLoginTypeFromJson(Map<String, dynamic> json) =>
-    _$_SocialLoginType(
+_$SocialLoginTypeImpl _$$SocialLoginTypeImplFromJson(
+        Map<String, dynamic> json) =>
+    _$SocialLoginTypeImpl(
       provider: $enumDecode(_$ProviderEnumEnumMap, json['provider']),
       id: json['id'] as String,
     );
 
-Map<String, dynamic> _$$_SocialLoginTypeToJson(_$_SocialLoginType instance) =>
+Map<String, dynamic> _$$SocialLoginTypeImplToJson(
+        _$SocialLoginTypeImpl instance) =>
     <String, dynamic>{
       'provider': _$ProviderEnumEnumMap[instance.provider]!,
       'id': instance.id,

@@ -6,9 +6,9 @@ part of 'gsi_button_config_wrapper.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_GSIButtonConfigWrapper _$$_GSIButtonConfigWrapperFromJson(
+_$GSIButtonConfigWrapperImpl _$$GSIButtonConfigWrapperImplFromJson(
         Map<String, dynamic> json) =>
-    _$_GSIButtonConfigWrapper(
+    _$GSIButtonConfigWrapperImpl(
       type: $enumDecodeNullable(_$GSIWrapperButtonTypeEnumMap, json['type']),
       theme: $enumDecodeNullable(_$GSIWrapperButtonThemeEnumMap, json['theme']),
       size: $enumDecodeNullable(_$GSIWrapperButtonSizeEnumMap, json['size']),
@@ -20,8 +20,8 @@ _$_GSIButtonConfigWrapper _$$_GSIButtonConfigWrapperFromJson(
       minimumWidth: (json['minimumWidth'] as num?)?.toDouble(),
     );
 
-Map<String, dynamic> _$$_GSIButtonConfigWrapperToJson(
-        _$_GSIButtonConfigWrapper instance) =>
+Map<String, dynamic> _$$GSIButtonConfigWrapperImplToJson(
+        _$GSIButtonConfigWrapperImpl instance) =>
     <String, dynamic>{
       'type': _$GSIWrapperButtonTypeEnumMap[instance.type],
       'theme': _$GSIWrapperButtonThemeEnumMap[instance.theme],

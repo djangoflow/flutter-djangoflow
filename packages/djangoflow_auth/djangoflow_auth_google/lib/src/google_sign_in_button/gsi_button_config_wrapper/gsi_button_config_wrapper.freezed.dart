@@ -115,11 +115,12 @@ class _$GSIButtonConfigWrapperCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_GSIButtonConfigWrapperCopyWith<$Res>
+abstract class _$$GSIButtonConfigWrapperImplCopyWith<$Res>
     implements $GSIButtonConfigWrapperCopyWith<$Res> {
-  factory _$$_GSIButtonConfigWrapperCopyWith(_$_GSIButtonConfigWrapper value,
-          $Res Function(_$_GSIButtonConfigWrapper) then) =
-      __$$_GSIButtonConfigWrapperCopyWithImpl<$Res>;
+  factory _$$GSIButtonConfigWrapperImplCopyWith(
+          _$GSIButtonConfigWrapperImpl value,
+          $Res Function(_$GSIButtonConfigWrapperImpl) then) =
+      __$$GSIButtonConfigWrapperImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -134,12 +135,13 @@ abstract class _$$_GSIButtonConfigWrapperCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_GSIButtonConfigWrapperCopyWithImpl<$Res>
+class __$$GSIButtonConfigWrapperImplCopyWithImpl<$Res>
     extends _$GSIButtonConfigWrapperCopyWithImpl<$Res,
-        _$_GSIButtonConfigWrapper>
-    implements _$$_GSIButtonConfigWrapperCopyWith<$Res> {
-  __$$_GSIButtonConfigWrapperCopyWithImpl(_$_GSIButtonConfigWrapper _value,
-      $Res Function(_$_GSIButtonConfigWrapper) _then)
+        _$GSIButtonConfigWrapperImpl>
+    implements _$$GSIButtonConfigWrapperImplCopyWith<$Res> {
+  __$$GSIButtonConfigWrapperImplCopyWithImpl(
+      _$GSIButtonConfigWrapperImpl _value,
+      $Res Function(_$GSIButtonConfigWrapperImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -154,7 +156,7 @@ class __$$_GSIButtonConfigWrapperCopyWithImpl<$Res>
     Object? locale = freezed,
     Object? minimumWidth = freezed,
   }) {
-    return _then(_$_GSIButtonConfigWrapper(
+    return _then(_$GSIButtonConfigWrapperImpl(
       type: freezed == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -193,8 +195,8 @@ class __$$_GSIButtonConfigWrapperCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_GSIButtonConfigWrapper extends _GSIButtonConfigWrapper {
-  const _$_GSIButtonConfigWrapper(
+class _$GSIButtonConfigWrapperImpl extends _GSIButtonConfigWrapper {
+  const _$GSIButtonConfigWrapperImpl(
       {this.type,
       this.theme,
       this.size,
@@ -205,8 +207,8 @@ class _$_GSIButtonConfigWrapper extends _GSIButtonConfigWrapper {
       this.minimumWidth})
       : super._();
 
-  factory _$_GSIButtonConfigWrapper.fromJson(Map<String, dynamic> json) =>
-      _$$_GSIButtonConfigWrapperFromJson(json);
+  factory _$GSIButtonConfigWrapperImpl.fromJson(Map<String, dynamic> json) =>
+      _$$GSIButtonConfigWrapperImplFromJson(json);
 
   @override
   final GSIWrapperButtonType? type;
@@ -234,7 +236,7 @@ class _$_GSIButtonConfigWrapper extends _GSIButtonConfigWrapper {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_GSIButtonConfigWrapper &&
+            other is _$GSIButtonConfigWrapperImpl &&
             (identical(other.type, type) || other.type == type) &&
             (identical(other.theme, theme) || other.theme == theme) &&
             (identical(other.size, size) || other.size == size) &&
@@ -255,13 +257,13 @@ class _$_GSIButtonConfigWrapper extends _GSIButtonConfigWrapper {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_GSIButtonConfigWrapperCopyWith<_$_GSIButtonConfigWrapper> get copyWith =>
-      __$$_GSIButtonConfigWrapperCopyWithImpl<_$_GSIButtonConfigWrapper>(
-          this, _$identity);
+  _$$GSIButtonConfigWrapperImplCopyWith<_$GSIButtonConfigWrapperImpl>
+      get copyWith => __$$GSIButtonConfigWrapperImplCopyWithImpl<
+          _$GSIButtonConfigWrapperImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_GSIButtonConfigWrapperToJson(
+    return _$$GSIButtonConfigWrapperImplToJson(
       this,
     );
   }
@@ -276,11 +278,11 @@ abstract class _GSIButtonConfigWrapper extends GSIButtonConfigWrapper {
       final GSIWrapperButtonShape? shape,
       final GSIWrapperButtonLogoAlignment? logoAlignment,
       final String? locale,
-      final double? minimumWidth}) = _$_GSIButtonConfigWrapper;
+      final double? minimumWidth}) = _$GSIButtonConfigWrapperImpl;
   const _GSIButtonConfigWrapper._() : super._();
 
   factory _GSIButtonConfigWrapper.fromJson(Map<String, dynamic> json) =
-      _$_GSIButtonConfigWrapper.fromJson;
+      _$GSIButtonConfigWrapperImpl.fromJson;
 
   @override
   GSIWrapperButtonType? get type;
@@ -300,6 +302,6 @@ abstract class _GSIButtonConfigWrapper extends GSIButtonConfigWrapper {
   double? get minimumWidth;
   @override
   @JsonKey(ignore: true)
-  _$$_GSIButtonConfigWrapperCopyWith<_$_GSIButtonConfigWrapper> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$GSIButtonConfigWrapperImplCopyWith<_$GSIButtonConfigWrapperImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

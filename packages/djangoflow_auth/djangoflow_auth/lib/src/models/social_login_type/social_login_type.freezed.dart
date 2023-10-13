@@ -68,22 +68,22 @@ class _$SocialLoginTypeCopyWithImpl<$Res, $Val extends SocialLoginType>
 }
 
 /// @nodoc
-abstract class _$$_SocialLoginTypeCopyWith<$Res>
+abstract class _$$SocialLoginTypeImplCopyWith<$Res>
     implements $SocialLoginTypeCopyWith<$Res> {
-  factory _$$_SocialLoginTypeCopyWith(
-          _$_SocialLoginType value, $Res Function(_$_SocialLoginType) then) =
-      __$$_SocialLoginTypeCopyWithImpl<$Res>;
+  factory _$$SocialLoginTypeImplCopyWith(_$SocialLoginTypeImpl value,
+          $Res Function(_$SocialLoginTypeImpl) then) =
+      __$$SocialLoginTypeImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({ProviderEnum provider, String id});
 }
 
 /// @nodoc
-class __$$_SocialLoginTypeCopyWithImpl<$Res>
-    extends _$SocialLoginTypeCopyWithImpl<$Res, _$_SocialLoginType>
-    implements _$$_SocialLoginTypeCopyWith<$Res> {
-  __$$_SocialLoginTypeCopyWithImpl(
-      _$_SocialLoginType _value, $Res Function(_$_SocialLoginType) _then)
+class __$$SocialLoginTypeImplCopyWithImpl<$Res>
+    extends _$SocialLoginTypeCopyWithImpl<$Res, _$SocialLoginTypeImpl>
+    implements _$$SocialLoginTypeImplCopyWith<$Res> {
+  __$$SocialLoginTypeImplCopyWithImpl(
+      _$SocialLoginTypeImpl _value, $Res Function(_$SocialLoginTypeImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -92,7 +92,7 @@ class __$$_SocialLoginTypeCopyWithImpl<$Res>
     Object? provider = null,
     Object? id = null,
   }) {
-    return _then(_$_SocialLoginType(
+    return _then(_$SocialLoginTypeImpl(
       provider: null == provider
           ? _value.provider
           : provider // ignore: cast_nullable_to_non_nullable
@@ -107,11 +107,11 @@ class __$$_SocialLoginTypeCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_SocialLoginType implements _SocialLoginType {
-  const _$_SocialLoginType({required this.provider, required this.id});
+class _$SocialLoginTypeImpl implements _SocialLoginType {
+  const _$SocialLoginTypeImpl({required this.provider, required this.id});
 
-  factory _$_SocialLoginType.fromJson(Map<String, dynamic> json) =>
-      _$$_SocialLoginTypeFromJson(json);
+  factory _$SocialLoginTypeImpl.fromJson(Map<String, dynamic> json) =>
+      _$$SocialLoginTypeImplFromJson(json);
 
   @override
   final ProviderEnum provider;
@@ -127,7 +127,7 @@ class _$_SocialLoginType implements _SocialLoginType {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_SocialLoginType &&
+            other is _$SocialLoginTypeImpl &&
             (identical(other.provider, provider) ||
                 other.provider == provider) &&
             (identical(other.id, id) || other.id == id));
@@ -140,12 +140,13 @@ class _$_SocialLoginType implements _SocialLoginType {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_SocialLoginTypeCopyWith<_$_SocialLoginType> get copyWith =>
-      __$$_SocialLoginTypeCopyWithImpl<_$_SocialLoginType>(this, _$identity);
+  _$$SocialLoginTypeImplCopyWith<_$SocialLoginTypeImpl> get copyWith =>
+      __$$SocialLoginTypeImplCopyWithImpl<_$SocialLoginTypeImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_SocialLoginTypeToJson(
+    return _$$SocialLoginTypeImplToJson(
       this,
     );
   }
@@ -154,10 +155,10 @@ class _$_SocialLoginType implements _SocialLoginType {
 abstract class _SocialLoginType implements SocialLoginType {
   const factory _SocialLoginType(
       {required final ProviderEnum provider,
-      required final String id}) = _$_SocialLoginType;
+      required final String id}) = _$SocialLoginTypeImpl;
 
   factory _SocialLoginType.fromJson(Map<String, dynamic> json) =
-      _$_SocialLoginType.fromJson;
+      _$SocialLoginTypeImpl.fromJson;
 
   @override
   ProviderEnum get provider;
@@ -165,6 +166,6 @@ abstract class _SocialLoginType implements SocialLoginType {
   String get id;
   @override
   @JsonKey(ignore: true)
-  _$$_SocialLoginTypeCopyWith<_$_SocialLoginType> get copyWith =>
+  _$$SocialLoginTypeImplCopyWith<_$SocialLoginTypeImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
