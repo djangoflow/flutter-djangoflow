@@ -15,6 +15,51 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`djangoflow_auth` - `v0.3.0+1`](#djangoflow_auth---v0301)
+ - [`djangoflow_emoji_rain` - `v0.0.3`](#djangoflow_emoji_rain---v003)
+ - [`djangoflow_local_notification` - `v0.0.2+5`](#djangoflow_local_notification---v0025)
+ - [`djangoflow_auth_discord` - `v0.0.4+13`](#djangoflow_auth_discord---v00413)
+ - [`djangoflow_auth_google` - `v0.0.3+12`](#djangoflow_auth_google---v00312)
+ - [`djangoflow_auth_facebook` - `v0.0.4+12`](#djangoflow_auth_facebook---v00412)
+ - [`djangoflow_auth_apple` - `v0.0.5+12`](#djangoflow_auth_apple---v00512)
+
+Packages with dependency updates only:
+
+> Packages listed below depend on other packages in this workspace that have had changes. Their versions have been incremented to bump the minimum dependency versions of the packages they depend upon in this project.
+
+ - `djangoflow_auth_discord` - `v0.0.4+13`
+ - `djangoflow_auth_google` - `v0.0.3+12`
+ - `djangoflow_auth_facebook` - `v0.0.4+12`
+ - `djangoflow_auth_apple` - `v0.0.5+12`
+
+---
+
+#### `djangoflow_auth` - `v0.3.0+1`
+
+ - **REFACTOR**: update dependencies. ([ba8d8a77](https://github.com/djangoflow/flutter-djangoflow/commit/ba8d8a7754b8cc924cea8f29f68005f7d4cf218d))
+
+#### `djangoflow_emoji_rain` - `v0.0.3`
+
+ - **FEAT**: Implement emoji rain ([#58](https://github.com/djangoflow/flutter-djangoflow/issues/58)). ([0716af35](https://github.com/djangoflow/flutter-djangoflow/commit/0716af35278400c8fb397943efec21070df97cdc))
+ - **FEAT**: Implement emoji rain ([#58](https://github.com/djangoflow/flutter-djangoflow/issues/58)). ([5b4aea4e](https://github.com/djangoflow/flutter-djangoflow/commit/5b4aea4e406bf94f41a2e9fbb9cb0b479109f9c9))
+
+#### `djangoflow_local_notification` - `v0.0.2+5`
+
+ - **REFACTOR**: update dependencies. ([3a832e53](https://github.com/djangoflow/flutter-djangoflow/commit/3a832e53d66d927fa056401ac281153816e4d435))
+
+
+## 2023-10-13
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`djangoflow_emoji_rain` - `v0.0.2`](#djangoflow_emoji_rain---v002)
 
 ---
