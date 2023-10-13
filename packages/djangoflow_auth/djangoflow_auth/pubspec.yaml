@@ -1,6 +1,6 @@
 name: djangoflow_auth
 description: djangoflow_auth is your ultimate Flutter authentication companion, packed with Djangoflow API supports.
-version: 0.3.0
+version: 0.3.0+1
 homepage: https://github.com/djangoflow/flutter-djangoflow/
 
 environment:
@@ -17,7 +17,7 @@ dependencies:
   freezed_annotation: ^2.2.0
   hydrated_bloc: ^9.1.2
   universal_html: ^2.2.3
-  uuid: ^3.0.7
+  uuid: ^4.1.0
 
 dev_dependencies:
   flutter_test:

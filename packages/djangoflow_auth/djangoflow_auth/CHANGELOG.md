@@ -1,3 +1,7 @@
+## 0.3.0+1
+
+ - **REFACTOR**: update dependencies. ([ba8d8a77](https://github.com/djangoflow/flutter-djangoflow/commit/ba8d8a7754b8cc924cea8f29f68005f7d4cf218d))
+
 ## 0.3.0
 
 > Note: This release has breaking changes.
