@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2023-10-13
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`djangoflow_emoji_rain` - `v0.0.2`](#djangoflow_emoji_rain---v002)
+
+---
+
+#### `djangoflow_emoji_rain` - `v0.0.2`
+
+ - **FEAT**: Implement emoji rain ([#58](https://github.com/djangoflow/flutter-djangoflow/issues/58)). ([5b4aea4e](https://github.com/djangoflow/flutter-djangoflow/commit/5b4aea4e406bf94f41a2e9fbb9cb0b479109f9c9))
+
+
 ## 2023-10-11
 
 ### Changes
