@@ -15,6 +15,64 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`djangoflow_auth` - `v0.3.0+2`](#djangoflow_auth---v0302)
+ - [`djangoflow_auth_apple` - `v0.0.5+13`](#djangoflow_auth_apple---v00513)
+ - [`djangoflow_auth_discord` - `v0.0.4+14`](#djangoflow_auth_discord---v00414)
+ - [`djangoflow_auth_facebook` - `v0.0.4+13`](#djangoflow_auth_facebook---v00413)
+ - [`djangoflow_auth_google` - `v0.0.3+13`](#djangoflow_auth_google---v00313)
+ - [`djangoflow_local_notification` - `v0.0.2+6`](#djangoflow_local_notification---v0026)
+ - [`djangoflow_openapi_extensions` - `v0.0.3+3`](#djangoflow_openapi_extensions---v0033)
+ - [`djangoflow_remote_config` - `v0.0.1+1`](#djangoflow_remote_config---v0011)
+
+Packages with dependency updates only:
+
+> Packages listed below depend on other packages in this workspace that have had changes. Their versions have been incremented to bump the minimum dependency versions of the packages they depend upon in this project.
+
+ - `djangoflow_remote_config` - `v0.0.1+1`
+
+---
+
+#### `djangoflow_auth` - `v0.3.0+2`
+
+ - **REFACTOR**: update djangoflow_openapi dependency. ([993a8c5b](https://github.com/djangoflow/flutter-djangoflow/commit/993a8c5bd4017f6e967a24a2106ba1b18f3e604e))
+
+#### `djangoflow_auth_apple` - `v0.0.5+13`
+
+ - **REFACTOR**: update djangoflow_openapi dependency. ([993a8c5b](https://github.com/djangoflow/flutter-djangoflow/commit/993a8c5bd4017f6e967a24a2106ba1b18f3e604e))
+
+#### `djangoflow_auth_discord` - `v0.0.4+14`
+
+ - **REFACTOR**: update djangoflow_openapi dependency. ([993a8c5b](https://github.com/djangoflow/flutter-djangoflow/commit/993a8c5bd4017f6e967a24a2106ba1b18f3e604e))
+
+#### `djangoflow_auth_facebook` - `v0.0.4+13`
+
+ - **REFACTOR**: update djangoflow_openapi dependency. ([993a8c5b](https://github.com/djangoflow/flutter-djangoflow/commit/993a8c5bd4017f6e967a24a2106ba1b18f3e604e))
+
+#### `djangoflow_auth_google` - `v0.0.3+13`
+
+ - **REFACTOR**: update djangoflow_openapi dependency. ([993a8c5b](https://github.com/djangoflow/flutter-djangoflow/commit/993a8c5bd4017f6e967a24a2106ba1b18f3e604e))
+
+#### `djangoflow_local_notification` - `v0.0.2+6`
+
+ - **REFACTOR**: update djangoflow_openapi dependency. ([993a8c5b](https://github.com/djangoflow/flutter-djangoflow/commit/993a8c5bd4017f6e967a24a2106ba1b18f3e604e))
+
+#### `djangoflow_openapi_extensions` - `v0.0.3+3`
+
+ - **REFACTOR**: update djangoflow_openapi dependency. ([993a8c5b](https://github.com/djangoflow/flutter-djangoflow/commit/993a8c5bd4017f6e967a24a2106ba1b18f3e604e))
+
+
+## 2023-10-13
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`djangoflow_auth` - `v0.3.0+1`](#djangoflow_auth---v0301)
  - [`djangoflow_emoji_rain` - `v0.0.3`](#djangoflow_emoji_rain---v003)
  - [`djangoflow_local_notification` - `v0.0.2+5`](#djangoflow_local_notification---v0025)

@@ -1,3 +1,7 @@
+## 0.3.0+2
+
+ - **REFACTOR**: update djangoflow_openapi dependency. ([993a8c5b](https://github.com/djangoflow/flutter-djangoflow/commit/993a8c5bd4017f6e967a24a2106ba1b18f3e604e))
+
 ## 0.3.0+1
 
  - **REFACTOR**: update dependencies. ([ba8d8a77](https://github.com/djangoflow/flutter-djangoflow/commit/ba8d8a7754b8cc924cea8f29f68005f7d4cf218d))
