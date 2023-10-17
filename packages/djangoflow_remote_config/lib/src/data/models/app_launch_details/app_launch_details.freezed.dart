@@ -208,6 +208,7 @@ BrandDetails _$BrandDetailsFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$BrandDetails {
   ThemeDetails? get theme => throw _privateConstructorUsedError;
+  LogoDetails? get logo => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -221,9 +222,10 @@ abstract class $BrandDetailsCopyWith<$Res> {
           BrandDetails value, $Res Function(BrandDetails) then) =
       _$BrandDetailsCopyWithImpl<$Res, BrandDetails>;
   @useResult
-  $Res call({ThemeDetails? theme});
+  $Res call({ThemeDetails? theme, LogoDetails? logo});
 
   $ThemeDetailsCopyWith<$Res>? get theme;
+  $LogoDetailsCopyWith<$Res>? get logo;
 }
 
 /// @nodoc
@@ -240,12 +242,17 @@ class _$BrandDetailsCopyWithImpl<$Res, $Val extends BrandDetails>
   @override
   $Res call({
     Object? theme = freezed,
+    Object? logo = freezed,
   }) {
     return _then(_value.copyWith(
       theme: freezed == theme
           ? _value.theme
           : theme // ignore: cast_nullable_to_non_nullable
               as ThemeDetails?,
+      logo: freezed == logo
+          ? _value.logo
+          : logo // ignore: cast_nullable_to_non_nullable
+              as LogoDetails?,
     ) as $Val);
   }
 
@@ -260,6 +267,18 @@ class _$BrandDetailsCopyWithImpl<$Res, $Val extends BrandDetails>
       return _then(_value.copyWith(theme: value) as $Val);
     });
   }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $LogoDetailsCopyWith<$Res>? get logo {
+    if (_value.logo == null) {
+      return null;
+    }
+
+    return $LogoDetailsCopyWith<$Res>(_value.logo!, (value) {
+      return _then(_value.copyWith(logo: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
@@ -270,10 +289,12 @@ abstract class _$$BrandDetailsImplCopyWith<$Res>
       __$$BrandDetailsImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({ThemeDetails? theme});
+  $Res call({ThemeDetails? theme, LogoDetails? logo});
 
   @override
   $ThemeDetailsCopyWith<$Res>? get theme;
+  @override
+  $LogoDetailsCopyWith<$Res>? get logo;
 }
 
 /// @nodoc
@@ -288,12 +309,17 @@ class __$$BrandDetailsImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? theme = freezed,
+    Object? logo = freezed,
   }) {
     return _then(_$BrandDetailsImpl(
       theme: freezed == theme
           ? _value.theme
           : theme // ignore: cast_nullable_to_non_nullable
               as ThemeDetails?,
+      logo: freezed == logo
+          ? _value.logo
+          : logo // ignore: cast_nullable_to_non_nullable
+              as LogoDetails?,
     ));
   }
 }
@@ -301,17 +327,19 @@ class __$$BrandDetailsImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$BrandDetailsImpl implements _BrandDetails {
-  const _$BrandDetailsImpl({this.theme});
+  const _$BrandDetailsImpl({this.theme, this.logo});
 
   factory _$BrandDetailsImpl.fromJson(Map<String, dynamic> json) =>
       _$$BrandDetailsImplFromJson(json);
 
   @override
   final ThemeDetails? theme;
+  @override
+  final LogoDetails? logo;
 
   @override
   String toString() {
-    return 'BrandDetails(theme: $theme)';
+    return 'BrandDetails(theme: $theme, logo: $logo)';
   }
 
   @override
@@ -319,12 +347,13 @@ class _$BrandDetailsImpl implements _BrandDetails {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$BrandDetailsImpl &&
-            (identical(other.theme, theme) || other.theme == theme));
+            (identical(other.theme, theme) || other.theme == theme) &&
+            (identical(other.logo, logo) || other.logo == logo));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, theme);
+  int get hashCode => Object.hash(runtimeType, theme, logo);
 
   @JsonKey(ignore: true)
   @override
@@ -341,13 +370,17 @@ class _$BrandDetailsImpl implements _BrandDetails {
 }
 
 abstract class _BrandDetails implements BrandDetails {
-  const factory _BrandDetails({final ThemeDetails? theme}) = _$BrandDetailsImpl;
+  const factory _BrandDetails(
+      {final ThemeDetails? theme,
+      final LogoDetails? logo}) = _$BrandDetailsImpl;
 
   factory _BrandDetails.fromJson(Map<String, dynamic> json) =
       _$BrandDetailsImpl.fromJson;
 
   @override
   ThemeDetails? get theme;
+  @override
+  LogoDetails? get logo;
   @override
   @JsonKey(ignore: true)
   _$$BrandDetailsImplCopyWith<_$BrandDetailsImpl> get copyWith =>
@@ -678,5 +711,158 @@ abstract class _UpdatesDetails implements UpdatesDetails {
   @override
   @JsonKey(ignore: true)
   _$$UpdatesDetailsImplCopyWith<_$UpdatesDetailsImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+LogoDetails _$LogoDetailsFromJson(Map<String, dynamic> json) {
+  return _LogoDetails.fromJson(json);
+}
+
+/// @nodoc
+mixin _$LogoDetails {
+  String? get large => throw _privateConstructorUsedError;
+  String? get small => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $LogoDetailsCopyWith<LogoDetails> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $LogoDetailsCopyWith<$Res> {
+  factory $LogoDetailsCopyWith(
+          LogoDetails value, $Res Function(LogoDetails) then) =
+      _$LogoDetailsCopyWithImpl<$Res, LogoDetails>;
+  @useResult
+  $Res call({String? large, String? small});
+}
+
+/// @nodoc
+class _$LogoDetailsCopyWithImpl<$Res, $Val extends LogoDetails>
+    implements $LogoDetailsCopyWith<$Res> {
+  _$LogoDetailsCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? large = freezed,
+    Object? small = freezed,
+  }) {
+    return _then(_value.copyWith(
+      large: freezed == large
+          ? _value.large
+          : large // ignore: cast_nullable_to_non_nullable
+              as String?,
+      small: freezed == small
+          ? _value.small
+          : small // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$LogoDetailsImplCopyWith<$Res>
+    implements $LogoDetailsCopyWith<$Res> {
+  factory _$$LogoDetailsImplCopyWith(
+          _$LogoDetailsImpl value, $Res Function(_$LogoDetailsImpl) then) =
+      __$$LogoDetailsImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String? large, String? small});
+}
+
+/// @nodoc
+class __$$LogoDetailsImplCopyWithImpl<$Res>
+    extends _$LogoDetailsCopyWithImpl<$Res, _$LogoDetailsImpl>
+    implements _$$LogoDetailsImplCopyWith<$Res> {
+  __$$LogoDetailsImplCopyWithImpl(
+      _$LogoDetailsImpl _value, $Res Function(_$LogoDetailsImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? large = freezed,
+    Object? small = freezed,
+  }) {
+    return _then(_$LogoDetailsImpl(
+      large: freezed == large
+          ? _value.large
+          : large // ignore: cast_nullable_to_non_nullable
+              as String?,
+      small: freezed == small
+          ? _value.small
+          : small // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$LogoDetailsImpl implements _LogoDetails {
+  const _$LogoDetailsImpl({this.large, this.small});
+
+  factory _$LogoDetailsImpl.fromJson(Map<String, dynamic> json) =>
+      _$$LogoDetailsImplFromJson(json);
+
+  @override
+  final String? large;
+  @override
+  final String? small;
+
+  @override
+  String toString() {
+    return 'LogoDetails(large: $large, small: $small)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LogoDetailsImpl &&
+            (identical(other.large, large) || other.large == large) &&
+            (identical(other.small, small) || other.small == small));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, large, small);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$LogoDetailsImplCopyWith<_$LogoDetailsImpl> get copyWith =>
+      __$$LogoDetailsImplCopyWithImpl<_$LogoDetailsImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$LogoDetailsImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _LogoDetails implements LogoDetails {
+  const factory _LogoDetails({final String? large, final String? small}) =
+      _$LogoDetailsImpl;
+
+  factory _LogoDetails.fromJson(Map<String, dynamic> json) =
+      _$LogoDetailsImpl.fromJson;
+
+  @override
+  String? get large;
+  @override
+  String? get small;
+  @override
+  @JsonKey(ignore: true)
+  _$$LogoDetailsImplCopyWith<_$LogoDetailsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

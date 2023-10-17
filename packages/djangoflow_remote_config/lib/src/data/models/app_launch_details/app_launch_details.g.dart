@@ -37,6 +37,9 @@ _$BrandDetailsImpl _$$BrandDetailsImplFromJson(Map<String, dynamic> json) =>
       theme: json['theme'] == null
           ? null
           : ThemeDetails.fromJson(json['theme'] as Map<String, dynamic>),
+      logo: json['logo'] == null
+          ? null
+          : LogoDetails.fromJson(json['logo'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$BrandDetailsImplToJson(_$BrandDetailsImpl instance) {
@@ -49,6 +52,7 @@ Map<String, dynamic> _$$BrandDetailsImplToJson(_$BrandDetailsImpl instance) {
   }
 
   writeNotNull('theme', instance.theme?.toJson());
+  writeNotNull('logo', instance.logo?.toJson());
   return val;
 }
 
@@ -91,5 +95,25 @@ Map<String, dynamic> _$$UpdatesDetailsImplToJson(
 
   writeNotNull('parts',
       instance.parts?.map((k, e) => MapEntry(k, e?.toIso8601String())));
+  return val;
+}
+
+_$LogoDetailsImpl _$$LogoDetailsImplFromJson(Map<String, dynamic> json) =>
+    _$LogoDetailsImpl(
+      large: json['large'] as String?,
+      small: json['small'] as String?,
+    );
+
+Map<String, dynamic> _$$LogoDetailsImplToJson(_$LogoDetailsImpl instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('large', instance.large);
+  writeNotNull('small', instance.small);
   return val;
 }

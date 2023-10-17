@@ -18,6 +18,7 @@ class AppLaunchDetails with _$AppLaunchDetails {
 class BrandDetails with _$BrandDetails {
   const factory BrandDetails({
     ThemeDetails? theme,
+    LogoDetails? logo,
   }) = _BrandDetails;
 
   factory BrandDetails.fromJson(Map<String, dynamic> json) =>
@@ -43,4 +44,15 @@ class UpdatesDetails with _$UpdatesDetails {
 
   factory UpdatesDetails.fromJson(Map<String, dynamic> json) =>
       _$UpdatesDetailsFromJson(json);
+}
+
+@freezed
+class LogoDetails with _$LogoDetails {
+  const factory LogoDetails({
+    String? large,
+    String? small,
+  }) = _LogoDetails;
+
+  factory LogoDetails.fromJson(Map<String, dynamic> json) =>
+      _$LogoDetailsFromJson(json);
 }
