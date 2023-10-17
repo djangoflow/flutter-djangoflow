@@ -1,6 +1,6 @@
 name: djangoflow_remote_config
 description: Djangoflow Remote Config is a library that helps to handle remote config in your flutter application.
-version: 0.0.2
+version: 0.0.3
 homepage: https://github.com/djangoflow/flutter-djangoflow/
 
 environment:

@@ -1,3 +1,7 @@
+## 0.0.3
+
+ - **FEAT**: add `loadSilently` to avoid triggering loading state. ([86ebd165](https://github.com/djangoflow/flutter-djangoflow/commit/86ebd165be9eb9fd6df18db566579e0534a39776))
+
 ## 0.0.2
 
  - **FEAT**: add logo fields to AppLaunchDetails. ([212a8661](https://github.com/djangoflow/flutter-djangoflow/commit/212a86617005532ff0a0b8ed4b26c1492729c555))

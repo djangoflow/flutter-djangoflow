@@ -15,6 +15,27 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`djangoflow_remote_config` - `v0.0.3`](#djangoflow_remote_config---v003)
+
+---
+
+#### `djangoflow_remote_config` - `v0.0.3`
+
+ - **FEAT**: add `loadSilently` to avoid triggering loading state. ([86ebd165](https://github.com/djangoflow/flutter-djangoflow/commit/86ebd165be9eb9fd6df18db566579e0534a39776))
+
+
+## 2023-10-17
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`djangoflow_remote_config` - `v0.0.2`](#djangoflow_remote_config---v002)
 
 ---
