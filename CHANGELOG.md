@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2023-10-17
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`djangoflow_remote_config` - `v0.0.2`](#djangoflow_remote_config---v002)
+
+---
+
+#### `djangoflow_remote_config` - `v0.0.2`
+
+ - **FEAT**: add logo fields to AppLaunchDetails. ([212a8661](https://github.com/djangoflow/flutter-djangoflow/commit/212a86617005532ff0a0b8ed4b26c1492729c555))
+
+
 ## 2023-10-13
 
 ### Changes
