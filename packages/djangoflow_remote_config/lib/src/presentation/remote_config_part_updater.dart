@@ -9,10 +9,12 @@ class RemoteConfigPartUpdater<C extends RemoteConfigCubit>
     super.key,
     required this.create,
     this.child,
+    this.loadSilently,
   });
 
   final C Function(BuildContext context) create;
   final Widget? child;
+  final bool? loadSilently;
 
   @override
   State<RemoteConfigPartUpdater<C>> createState() =>
@@ -77,12 +79,17 @@ class _RemoteConfigPartUpdaterState<C extends RemoteConfigCubit>
       if (remoteLastUpdateTimeStamp != null) {
         if (localLastUpdateTimeStamp == null ||
             remoteLastUpdateTimeStamp.isAfter(localLastUpdateTimeStamp)) {
-          cubit.load(lastUpdate: remoteLastUpdateTimeStamp);
+          cubit.load(
+            lastUpdate: remoteLastUpdateTimeStamp,
+            loadSilently: widget.loadSilently,
+          );
         }
       }
     } else {
       // fetch data fallback
-      cubit.load();
+      cubit.load(
+        loadSilently: widget.loadSilently,
+      );
     }
   }
 }

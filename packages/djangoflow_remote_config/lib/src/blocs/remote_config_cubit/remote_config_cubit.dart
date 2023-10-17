@@ -44,10 +44,13 @@ abstract class RemoteConfigCubit extends HydratedCubit<RemoteConfigState>
   /// [lastUpdate] is the timestamp provided by app_launch part to know when was the last time
   /// config was updated. if [lastUpdate] is older then we should call [load] to get latest data
   /// otherwise can be used via hydrated state.
-  Future<void> load({DateTime? lastUpdate}) async {
+  Future<void> load({DateTime? lastUpdate, bool? loadSilently}) async {
     await _remoteConfigApiChecker(() async {
       try {
-        emit(state.copyWith(isLoading: true));
+        if (loadSilently != true) {
+          emit(state.copyWith(isLoading: true));
+        }
+
         final result = (await remoteconfigApi!.remoteconfigRetrieve(
           part_: part,
           params: params,
