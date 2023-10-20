@@ -1,4 +1,5 @@
 import 'package:djangoflow_auth_apple/djangoflow_auth_apple.dart';
+// ignore: depend_on_referenced_packages
 import 'package:djangoflow_openapi/djangoflow_openapi.dart';
 import 'package:flutter_test/flutter_test.dart';
 

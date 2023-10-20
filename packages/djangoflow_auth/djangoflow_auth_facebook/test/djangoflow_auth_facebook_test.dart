@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:djangoflow_auth/djangoflow_auth.dart';
 import 'package:djangoflow_auth_facebook/djangoflow_auth_facebook.dart';
+// ignore: depend_on_referenced_packages
 import 'package:djangoflow_openapi/djangoflow_openapi.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
