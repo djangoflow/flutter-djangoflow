@@ -3,6 +3,42 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2023-10-20
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - [`djangoflow_auth_apple` - `v0.1.0`](#djangoflow_auth_apple---v010)
+ - [`djangoflow_auth_discord` - `v0.1.0`](#djangoflow_auth_discord---v010)
+ - [`djangoflow_auth_facebook` - `v0.1.0`](#djangoflow_auth_facebook---v010)
+ - [`djangoflow_auth_google` - `v0.1.0`](#djangoflow_auth_google---v010)
+
+Packages with other changes:
+
+ - There are no other changes in this release.
+
+---
+
+#### `djangoflow_auth_apple` - `v0.1.0`
+
+ - **BREAKING** **REFACTOR**: remove djangoflow_openapi dependency from social provider packages. ([178a6b77](https://github.com/djangoflow/flutter-djangoflow/commit/178a6b77a84ccfe4dda70a169dcf248653498d8c))
+
+#### `djangoflow_auth_discord` - `v0.1.0`
+
+ - **BREAKING** **REFACTOR**: remove djangoflow_openapi dependency from social provider packages. ([178a6b77](https://github.com/djangoflow/flutter-djangoflow/commit/178a6b77a84ccfe4dda70a169dcf248653498d8c))
+
+#### `djangoflow_auth_facebook` - `v0.1.0`
+
+ - **BREAKING** **REFACTOR**: remove djangoflow_openapi dependency from social provider packages. ([178a6b77](https://github.com/djangoflow/flutter-djangoflow/commit/178a6b77a84ccfe4dda70a169dcf248653498d8c))
+
+#### `djangoflow_auth_google` - `v0.1.0`
+
+ - **BREAKING** **REFACTOR**: remove djangoflow_openapi dependency from social provider packages. ([178a6b77](https://github.com/djangoflow/flutter-djangoflow/commit/178a6b77a84ccfe4dda70a169dcf248653498d8c))
+
+
 ## 2023-10-17
 
 ### Changes

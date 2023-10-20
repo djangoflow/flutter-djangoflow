@@ -1,3 +1,9 @@
+## 0.1.0
+
+> Note: This release has breaking changes.
+
+ - **BREAKING** **REFACTOR**: remove djangoflow_openapi dependency from social provider packages. ([178a6b77](https://github.com/djangoflow/flutter-djangoflow/commit/178a6b77a84ccfe4dda70a169dcf248653498d8c))
+
 ## 0.0.4+13
 
  - **REFACTOR**: update djangoflow_openapi dependency. ([993a8c5b](https://github.com/djangoflow/flutter-djangoflow/commit/993a8c5bd4017f6e967a24a2106ba1b18f3e604e))
