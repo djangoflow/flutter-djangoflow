@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:mounted_state/mounted_state.dart';
 
 import 'rain_drop.dart';
 
@@ -28,7 +29,8 @@ class Rain extends StatefulWidget {
   State<Rain> createState() => _RainState();
 }
 
-class _RainState extends State<Rain> with SingleTickerProviderStateMixin {
+class _RainState extends State<Rain>
+    with SingleTickerProviderStateMixin, MountedStateOverride {
   AnimationController? _controller;
   List<RainDrop> rainDrops = [];
 
