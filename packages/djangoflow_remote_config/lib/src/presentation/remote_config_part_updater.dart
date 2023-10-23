@@ -1,5 +1,4 @@
 import 'package:djangoflow_remote_config/djangoflow_remote_config.dart';
-import 'package:djangoflow_remote_config/src/utils/remote_config_extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
