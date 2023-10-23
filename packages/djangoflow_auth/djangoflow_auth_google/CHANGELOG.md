@@ -1,3 +1,7 @@
+## 0.1.0+1
+
+ - **FIX**(djangoflow_auth_google): Add mounted state. ([efc87249](https://github.com/djangoflow/flutter-djangoflow/commit/efc8724959f67da6b8c0238b17cdc2459dba12c5))
+
 ## 0.1.0
 
 > Note: This release has breaking changes.

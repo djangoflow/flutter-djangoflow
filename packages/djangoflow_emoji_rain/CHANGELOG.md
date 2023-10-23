@@ -1,3 +1,7 @@
+## 0.0.3+1
+
+ - **FIX**(djangoflow_emoji_rain): Add mounted state. ([c1becc45](https://github.com/djangoflow/flutter-djangoflow/commit/c1becc45cda069c041227eb98cc7baad474c5fff))
+
 ## 0.0.3
 
  - **FEAT**: Implement emoji rain ([#58](https://github.com/djangoflow/flutter-djangoflow/issues/58)). ([0716af35](https://github.com/djangoflow/flutter-djangoflow/commit/0716af35278400c8fb397943efec21070df97cdc))

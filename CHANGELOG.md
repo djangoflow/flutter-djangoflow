@@ -3,6 +3,32 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2023-10-23
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`djangoflow_auth_google` - `v0.1.0+1`](#djangoflow_auth_google---v0101)
+ - [`djangoflow_emoji_rain` - `v0.0.3+1`](#djangoflow_emoji_rain---v0031)
+
+---
+
+#### `djangoflow_auth_google` - `v0.1.0+1`
+
+ - **FIX**(djangoflow_auth_google): Add mounted state. ([efc87249](https://github.com/djangoflow/flutter-djangoflow/commit/efc8724959f67da6b8c0238b17cdc2459dba12c5))
+
+#### `djangoflow_emoji_rain` - `v0.0.3+1`
+
+ - **FIX**(djangoflow_emoji_rain): Add mounted state. ([c1becc45](https://github.com/djangoflow/flutter-djangoflow/commit/c1becc45cda069c041227eb98cc7baad474c5fff))
+
+
 ## 2023-10-20
 
 ### Changes
