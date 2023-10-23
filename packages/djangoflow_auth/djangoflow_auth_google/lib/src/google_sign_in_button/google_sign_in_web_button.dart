@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:mounted_state/mounted_state.dart';
 
 import 'google_sign_in_button.dart';
 
@@ -12,6 +13,7 @@ class GoogleSignInWebButton extends StatefulWidget {
     this.enableSilentLogin,
     this.configurationWrapper,
   });
+
   final GoogleSignIn googleSignIn;
   final bool? enableSilentLogin;
   final GSIButtonConfigWrapper? configurationWrapper;
@@ -22,7 +24,8 @@ class GoogleSignInWebButton extends StatefulWidget {
   State<GoogleSignInWebButton> createState() => _GoogleSignInWebButtonState();
 }
 
-class _GoogleSignInWebButtonState extends State<GoogleSignInWebButton> {
+class _GoogleSignInWebButtonState extends State<GoogleSignInWebButton>
+    with MountedStateOverride {
   bool _isAuthorized = false; // has granted permissions?
   @override
   void initState() {
