@@ -92,7 +92,7 @@ fix(auth, ui): resolve layout issue on smaller screens
 docs(analytics): update contribution guidelines
 ```
 
-When you commit changes to the repository following these types of commit patterns, Melos will automatically generate changelogs and bump the version of the affected packages.
+When you commit changes to the repository following these types of commit patterns, Melos will automatically generate changelogs and bump the version of the affected packages. More details about conventional commits, [click here](https://www.conventionalcommits.org/en/v1.0.0/#specification)
 
 Here are some additional tips for contributing to your monorepo:
 
