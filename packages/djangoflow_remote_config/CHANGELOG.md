@@ -1,3 +1,9 @@
+## 0.0.3+1
+
+ - **REFACTOR**: remove not needed import. ([9721a1f1](https://github.com/djangoflow/flutter-djangoflow/commit/9721a1f1290068b98f6b0cab0e2474b09f4527d2))
+ - **DOCS**: update README with troubleshooting section. ([22e15804](https://github.com/djangoflow/flutter-djangoflow/commit/22e158044a1ccf9d8ce2831e1907d813b901dc82))
+ - **DOCS**(remote_config): update code documentation. ([12fc9beb](https://github.com/djangoflow/flutter-djangoflow/commit/12fc9beb777692827801339a538f288d40e6d0e2))
+
 ## 0.0.3
 
  - **FEAT**: add `loadSilently` to avoid triggering loading state. ([86ebd165](https://github.com/djangoflow/flutter-djangoflow/commit/86ebd165be9eb9fd6df18db566579e0534a39776))
