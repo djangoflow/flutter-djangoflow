@@ -2,6 +2,21 @@ import 'package:djangoflow_remote_config/djangoflow_remote_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+/// [C] is the cubit type that extends [RemoteConfigCubit] and
+/// [RemoteConfigState] is the state type of the cubit
+/// [child] is the widget that will be wrapped by [BlocProvider]
+///
+/// [loadSilently] is a flag that indicates if the cubit should load
+/// data silently or not. if [loadSilently] is true then the cubit will
+/// not emit any `isLoading` change when it loads data.
+///
+/// [create] is a function that creates the cubit
+///
+/// [RemoteConfigPartUpdater] will listen to [AppLaunchRemoteConfigCubit]
+/// and will call [cubit.load] if the part of the cubit is updated.
+/// [RemoteConfigPartUpdater] will also call [cubit.load] if the part
+/// of the cubit is not updated but [AppLaunchRemoteConfigCubit] is
+/// updated and the part of the cubit is not loaded yet.
 class RemoteConfigPartUpdater<C extends RemoteConfigCubit>
     extends StatefulWidget {
   const RemoteConfigPartUpdater({
@@ -34,14 +49,14 @@ class _RemoteConfigPartUpdaterState<C extends RemoteConfigCubit>
     if (appLaunchConfig != null) {
       _maybeLoadData(
         updatesMap: appLaunchConfig.toAppLaunchDetails().updates?.parts,
-        localLastUpdateTimeStamp: cubit.state.lastUpdate,
+        localLastUpdateTime: cubit.state.lastUpdate,
       );
     }
   }
 
   @override
   void dispose() {
-    if (cubit.isClosed == false) {
+    if (!cubit.isClosed) {
       cubit.close();
     }
 
@@ -55,10 +70,10 @@ class _RemoteConfigPartUpdaterState<C extends RemoteConfigCubit>
           listener: (context, state) {
             final updatesMap =
                 state.config?.toAppLaunchDetails().updates?.parts;
-            final localLastUpdateTimeStamp = cubit.state.lastUpdate;
+            final localLastUpdateTime = cubit.state.lastUpdate;
             _maybeLoadData(
               updatesMap: updatesMap,
-              localLastUpdateTimeStamp: localLastUpdateTimeStamp,
+              localLastUpdateTime: localLastUpdateTime,
             );
           },
           child: widget.child,
@@ -66,20 +81,20 @@ class _RemoteConfigPartUpdaterState<C extends RemoteConfigCubit>
       );
 
   /// [updatesMap] is the map of parts and their last update timestamp
-  /// [localLastUpdateTimeStamp] is the last update timestamp of the part
+  /// [localLastUpdateTime] is the last update timestamp of the part
   /// we are interested in. if [updatesMap] has a newer timestamp then we
   /// should call [cubit.load] to get latest data.
   void _maybeLoadData({
     Map<String, DateTime?>? updatesMap,
-    DateTime? localLastUpdateTimeStamp,
+    DateTime? localLastUpdateTime,
   }) {
     if (updatesMap != null) {
-      final remoteLastUpdateTimeStamp = updatesMap[cubit.part];
-      if (remoteLastUpdateTimeStamp != null) {
-        if (localLastUpdateTimeStamp == null ||
-            remoteLastUpdateTimeStamp.isAfter(localLastUpdateTimeStamp)) {
+      final remoteLastUpdateTime = updatesMap[cubit.part];
+      if (remoteLastUpdateTime != null) {
+        if (localLastUpdateTime == null ||
+            remoteLastUpdateTime.isAfter(localLastUpdateTime)) {
           cubit.load(
-            lastUpdate: remoteLastUpdateTimeStamp,
+            lastUpdate: remoteLastUpdateTime,
             loadSilently: widget.loadSilently,
           );
         }
