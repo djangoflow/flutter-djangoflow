@@ -82,6 +82,34 @@ RemoteConfigPartUpdater<AppLaunchRemoteConfigCubit>(
 
 Check out the `example` directory for a complete example app demonstrating the package's capabilities.
 
+## 🚧 Troubleshooting
+
+If you're encountering issues with Map conversion(specially for `json_dyanmic_widget` package), please follow these steps for proper configuration:
+
+1. Open/Create your `build.yaml` file in your packages that are using `json_serializable`.
+2. Inside the `build.yaml`(could be djangoflow_openapi or any application or dart package) file, add the following line:
+
+```yaml
+targets:
+  $default:
+    builders:
+      json_serializable:
+        options:
+          # Options configure how source code is generated for every
+          # `@JsonSerializable`-annotated class in the package.
+          #
+          # The default value for each is listed.
+          any_map: true # <- here
+          checked: true
+          create_factory: true
+          create_to_json: true
+          disallow_unrecognized_keys: true
+          explicit_to_json: true
+          field_rename: none
+          ignore_unannotated: false
+          include_if_null: false
+```
+
 ## 🤝 Contributing
 
 We welcome contributions! Feel free to open an issue or submit a pull request if you have any improvements or find any bugs.
