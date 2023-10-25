@@ -9,3 +9,4 @@ export 'src/presentation/listeners/app_cubit_listener.dart';
 export 'src/utils/djangoflow_app_runner.dart';
 export 'src/utils/djangoflow_app_snackbar.dart';
 export 'src/data/interceptors/app_header_interceptor.dart';
+export 'src/utils/extensions/package_info_extensions.dart';
