@@ -55,6 +55,8 @@ void main() => DjangoflowAppRunner.run(
 
 `SandboxBanner`: A simple Banner that allows you to show a banner on the top-start corner of the screen with a custom message and color. It's useful to indicate the current environment (e.g., sandbox, production).
 
+`EnvSwitcher`: A simple widget that allows you to toggle between different environments with a long press.
+
 ## Note
 
 `DjangoflowAppSnackbar` uses `ScaffoldMessenger`. `DjangoflowAppSnackbar`'s global key needs to be provided to `MaterialApp`'s `scaffoldMessengerKey`.
