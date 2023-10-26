@@ -1,3 +1,7 @@
+## 0.0.4
+
+ - **FEAT**(djangoflow_remote_config): Add mapExtensions ([#71](https://github.com/djangoflow/flutter-djangoflow/issues/71)). ([aad72fef](https://github.com/djangoflow/flutter-djangoflow/commit/aad72fefb6dc13fe805d389df98f27126337f142))
+
 ## 0.0.3+1
 
  - **REFACTOR**: remove not needed import. ([9721a1f1](https://github.com/djangoflow/flutter-djangoflow/commit/9721a1f1290068b98f6b0cab0e2474b09f4527d2))

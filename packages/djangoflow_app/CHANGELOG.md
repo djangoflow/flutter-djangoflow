@@ -1,3 +1,8 @@
+## 3.6.0
+
+ - **FEAT**(djangoflow_app): Add package_info_extensions. ([b99d82cf](https://github.com/djangoflow/flutter-djangoflow/commit/b99d82cf82d0aa615b3e2c811d371770f3ac1ecd))
+ - **FEAT**(djangoflow_app): Add EnvSwitcher. ([46d8b3f4](https://github.com/djangoflow/flutter-djangoflow/commit/46d8b3f46836163c8b954de85c80b9e147d7fdda))
+
 ## 3.5.0
 
  - chore: update djangoflow_app to 3.5.0
