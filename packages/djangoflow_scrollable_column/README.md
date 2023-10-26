@@ -1,101 +1,84 @@
-# djangoflow_scrollable_column
+<div align="center">
+  <img src="https://user-images.githubusercontent.com/116165418/238683908-ddaa2265-af04-4915-8f02-bae1bce43291.png" alt="Djangoflow Scrollable Column Logo" width="200">
+  <h1 align="center">📜 Djangoflow Scrollable Column for Flutter 📜</h1>
+</div>
 
-A scrollable column widget for Flutter.
+<p align="center">
+  <a href="https://github.com/djangoflow/flutter-djangoflow/">
+    <img alt="GitHub Repository" src="https://img.shields.io/badge/GitHub-Repository-blue.svg">
+  </a>
+  <a href="https://pub.dev/packages/djangoflow_scrollable_column">
+    <img alt="Pub Package" src="https://img.shields.io/pub/v/djangoflow_scrollable_column.svg">
+  </a>
+</p>
 
-## Description
+<p align="center">
+  A Flutter package that provides the `DjangoflowScrollableColumn` widget, allowing you to create a vertically scrollable column of widgets with ease.
+</p>
 
-The project aims to provide a scrollable column widget for Flutter applications using the
-`DjangoflowScrollableColumn` class. It allows scrolling a column widget with a fixed height and
-variable content height.
+---
 
-## Installation
+## 🌟 Features
 
-To install the project, follow these steps:
+- **Vertical Scrolling**: Easily create scrollable columns with your choice of children widgets.
+- **Customizable Layout**: Control the alignment and layout of the column.
+- **Flexibility**: Use it as a part of your app's UI to display dynamic content.
 
-- Add the project dependency to your pubspec.yaml file:
+## 📦 Installation
+
+To add `djangoflow_scrollable_column` to your Flutter project, add the following line to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  djangoflow_scrollable_column: ^x.x.x
+  djangoflow_scrollable_column: <latest_version>
 ```
 
-- Run flutter pub get to fetch the dependency.
+Then, run:
 
-## Usage
+```bash
+flutter pub get
+```
 
-To use the project in your Flutter application, follow these steps:
+## 🚀 Quick Start
+
+### 🌅 Using `DjangoflowScrollableColumn`
+
+Simply import the package and use the `DjangoflowScrollableColumn` widget to create your scrollable column of widgets.
 
 ```dart
-import 'package:flutter/material.dart';
 import 'package:djangoflow_scrollable_column/djangoflow_scrollable_column.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
-
-  @override
-  Widget build(BuildContext context) =>
-      Scaffold(
-        body: DjangoflowScrollableColumn(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            Text('Item 1'),
-            Text('Item 2'),
-            Text('Item 3'),
-          ],
-        ),
-      );
-}
+DjangoflowScrollableColumn(
+  children: [
+    // Your widgets go here
+  ],
+)
 ```
 
-## Contributing
+### 🛠 Customization
 
-Thank you for your interest in contributing to our project! We welcome contributions from the
-community to help improve and enhance the project. Whether it's reporting bugs, suggesting new
-features, or submitting code changes, your contributions are valuable to us.
+You can customize the layout and alignment of your scrollable column by providing optional parameters to `DjangoflowScrollableColumn`.
 
-Here are some guidelines to follow when contributing:
+```dart
+DjangoflowScrollableColumn(
+  children: [
+    // Your widgets go here
+  ],
+  mainAxisAlignment: MainAxisAlignment.center,
+  crossAxisAlignment: CrossAxisAlignment.start,
+  verticalDirection: VerticalDirection.up,
+  // Add more parameters as needed
+)
+```
 
-### Bug Reports:
+## 📖 Example
 
-- If you encounter a bug or issue, please submit a detailed bug report.
-- Include steps to reproduce the issue, expected behavior, and actual behavior.
-- Provide any relevant error messages or screenshots.
-- You can submit bug reports through GH issues, please add [djangoflow_scrollable_column] as prefix for the
-  issue title
+Check out the `example` directory for a sample application that demonstrates how to use `DjangoflowScrollableColumn` in your Flutter project.
 
-### Feature Requests:
+## 🤝 Contributing
 
-- If you have a feature request or enhancement suggestion, we would love to hear it.
-- Clearly describe the feature you would like to see added and provide use cases or examples.
-- Explain any technical considerations or requirements.
-- You can submit feature requests through GH issues.
+We welcome contributions! Feel free to open an issue or submit a pull request if you have any improvements or find any bugs. You can find contribution guideline [here](../../README.md#contribution-guideline)
 
-### Code Contributions:
+## 📜 License
 
-If you want to contribute code changes or improvements, please follow these steps:
-
-- Fork the repository and create a new branch for your changes.
-- Make your code changes, ensuring adherence to coding standards and conventions.
-- Write tests to cover your changes.
-- Update the documentation if necessary.
-- Submit a pull request with a clear description of your changes and their purpose.
-- We will review your pull request and provide feedback as needed. Please be patient, as the review
-  process may take some time.
-
-### Documentation Contributions:
-
-- Documentation improvements are highly appreciated.
-- If you find any gaps, errors, or areas for improvement in the documentation, please let us know.
-- You can make edits directly to the documentation files or submit a pull request with your changes.
-
-### Code of Conduct:
-
-- We adhere to a code of conduct to ensure a welcoming and inclusive community.
-- We expect all contributors to follow the code of conduct and maintain a respectful environment.
-
-### Contact Information:
-
-If you have any questions or need assistance, you can reach out to
-us [hello@apexive.com](mailto:hello@apexive.com).
-We appreciate your interest and contributions to our project. Thank you for helping us make it
-better!
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
