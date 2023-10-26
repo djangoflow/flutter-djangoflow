@@ -83,10 +83,11 @@ class _$AppStateCopyWithImpl<$Res, $Val extends AppState>
 }
 
 /// @nodoc
-abstract class _$$_AppStateCopyWith<$Res> implements $AppStateCopyWith<$Res> {
-  factory _$$_AppStateCopyWith(
-          _$_AppState value, $Res Function(_$_AppState) then) =
-      __$$_AppStateCopyWithImpl<$Res>;
+abstract class _$$AppStateImplCopyWith<$Res>
+    implements $AppStateCopyWith<$Res> {
+  factory _$$AppStateImplCopyWith(
+          _$AppStateImpl value, $Res Function(_$AppStateImpl) then) =
+      __$$AppStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -97,11 +98,11 @@ abstract class _$$_AppStateCopyWith<$Res> implements $AppStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_AppStateCopyWithImpl<$Res>
-    extends _$AppStateCopyWithImpl<$Res, _$_AppState>
-    implements _$$_AppStateCopyWith<$Res> {
-  __$$_AppStateCopyWithImpl(
-      _$_AppState _value, $Res Function(_$_AppState) _then)
+class __$$AppStateImplCopyWithImpl<$Res>
+    extends _$AppStateCopyWithImpl<$Res, _$AppStateImpl>
+    implements _$$AppStateImplCopyWith<$Res> {
+  __$$AppStateImplCopyWithImpl(
+      _$AppStateImpl _value, $Res Function(_$AppStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -112,7 +113,7 @@ class __$$_AppStateCopyWithImpl<$Res>
     Object? locale = null,
     Object? themeMode = null,
   }) {
-    return _then(_$_AppState(
+    return _then(_$AppStateImpl(
       firstRun: null == firstRun
           ? _value.firstRun
           : firstRun // ignore: cast_nullable_to_non_nullable
@@ -135,15 +136,15 @@ class __$$_AppStateCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_AppState with DiagnosticableTreeMixin implements _AppState {
-  const _$_AppState(
+class _$AppStateImpl with DiagnosticableTreeMixin implements _AppState {
+  const _$AppStateImpl(
       {this.firstRun = true,
       this.environment = AppEnvironment.live,
       this.locale = 'en',
       this.themeMode = ThemeMode.light});
 
-  factory _$_AppState.fromJson(Map<String, dynamic> json) =>
-      _$$_AppStateFromJson(json);
+  factory _$AppStateImpl.fromJson(Map<String, dynamic> json) =>
+      _$$AppStateImplFromJson(json);
 
   @override
   @JsonKey()
@@ -178,7 +179,7 @@ class _$_AppState with DiagnosticableTreeMixin implements _AppState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_AppState &&
+            other is _$AppStateImpl &&
             (identical(other.firstRun, firstRun) ||
                 other.firstRun == firstRun) &&
             (identical(other.environment, environment) ||
@@ -196,12 +197,12 @@ class _$_AppState with DiagnosticableTreeMixin implements _AppState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_AppStateCopyWith<_$_AppState> get copyWith =>
-      __$$_AppStateCopyWithImpl<_$_AppState>(this, _$identity);
+  _$$AppStateImplCopyWith<_$AppStateImpl> get copyWith =>
+      __$$AppStateImplCopyWithImpl<_$AppStateImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_AppStateToJson(
+    return _$$AppStateImplToJson(
       this,
     );
   }
@@ -212,9 +213,10 @@ abstract class _AppState implements AppState {
       {final bool firstRun,
       final AppEnvironment environment,
       final String locale,
-      final ThemeMode themeMode}) = _$_AppState;
+      final ThemeMode themeMode}) = _$AppStateImpl;
 
-  factory _AppState.fromJson(Map<String, dynamic> json) = _$_AppState.fromJson;
+  factory _AppState.fromJson(Map<String, dynamic> json) =
+      _$AppStateImpl.fromJson;
 
   @override
   bool get firstRun;
@@ -226,6 +228,6 @@ abstract class _AppState implements AppState {
   ThemeMode get themeMode;
   @override
   @JsonKey(ignore: true)
-  _$$_AppStateCopyWith<_$_AppState> get copyWith =>
+  _$$AppStateImplCopyWith<_$AppStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

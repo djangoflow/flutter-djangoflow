@@ -3,6 +3,33 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2023-10-26
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`djangoflow_app` - `v3.6.0`](#djangoflow_app---v360)
+ - [`djangoflow_remote_config` - `v0.0.4`](#djangoflow_remote_config---v004)
+
+---
+
+#### `djangoflow_app` - `v3.6.0`
+
+ - **FEAT**(djangoflow_app): Add package_info_extensions. ([b99d82cf](https://github.com/djangoflow/flutter-djangoflow/commit/b99d82cf82d0aa615b3e2c811d371770f3ac1ecd))
+ - **FEAT**(djangoflow_app): Add EnvSwitcher. ([46d8b3f4](https://github.com/djangoflow/flutter-djangoflow/commit/46d8b3f46836163c8b954de85c80b9e147d7fdda))
+
+#### `djangoflow_remote_config` - `v0.0.4`
+
+ - **FEAT**(djangoflow_remote_config): Add mapExtensions ([#71](https://github.com/djangoflow/flutter-djangoflow/issues/71)). ([aad72fef](https://github.com/djangoflow/flutter-djangoflow/commit/aad72fefb6dc13fe805d389df98f27126337f142))
+
+
 ## 2023-10-24
 
 ### Changes
