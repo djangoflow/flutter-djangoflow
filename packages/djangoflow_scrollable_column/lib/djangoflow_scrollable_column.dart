@@ -2,6 +2,7 @@ library djangoflow_scrollable_column;
 
 import 'package:flutter/material.dart';
 
+/// Creates a vertical array of widgets that are scrollable.
 class DjangoflowScrollableColumn extends StatelessWidget {
   final ScrollController? controller;
   final MainAxisAlignment mainAxisAlignment;
@@ -24,9 +25,7 @@ class DjangoflowScrollableColumn extends StatelessWidget {
     this.controller,
     this.verticalDirection = VerticalDirection.down,
     this.textBaseline,
-  }) : super(
-          key: key,
-        );
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) => CustomScrollView(
