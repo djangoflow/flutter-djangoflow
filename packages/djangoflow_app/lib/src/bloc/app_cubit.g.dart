@@ -6,7 +6,8 @@ part of 'app_cubit.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_AppState _$$_AppStateFromJson(Map<String, dynamic> json) => _$_AppState(
+_$AppStateImpl _$$AppStateImplFromJson(Map<String, dynamic> json) =>
+    _$AppStateImpl(
       firstRun: json['firstRun'] as bool? ?? true,
       environment:
           $enumDecodeNullable(_$AppEnvironmentEnumMap, json['environment']) ??
@@ -16,7 +17,7 @@ _$_AppState _$$_AppStateFromJson(Map<String, dynamic> json) => _$_AppState(
           ThemeMode.light,
     );
 
-Map<String, dynamic> _$$_AppStateToJson(_$_AppState instance) =>
+Map<String, dynamic> _$$AppStateImplToJson(_$AppStateImpl instance) =>
     <String, dynamic>{
       'firstRun': instance.firstRun,
       'environment': _$AppEnvironmentEnumMap[instance.environment]!,
