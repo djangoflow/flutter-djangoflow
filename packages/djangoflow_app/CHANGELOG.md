@@ -1,3 +1,7 @@
+## 3.6.1
+
+ - **REFACTOR**: update build_runner generated files. ([2981f62a](https://github.com/djangoflow/flutter-djangoflow/commit/2981f62a0817228bdab5fc0c1dad74ac1566087e))
+
 ## 3.6.0
 
  - **FEAT**(djangoflow_app): Add package_info_extensions. ([b99d82cf](https://github.com/djangoflow/flutter-djangoflow/commit/b99d82cf82d0aa615b3e2c811d371770f3ac1ecd))

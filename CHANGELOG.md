@@ -15,6 +15,32 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`djangoflow_app` - `v3.6.1`](#djangoflow_app---v361)
+ - [`djangoflow_scrollable_column` - `v0.0.1+1`](#djangoflow_scrollable_column---v0011)
+
+---
+
+#### `djangoflow_app` - `v3.6.1`
+
+ - **REFACTOR**: update build_runner generated files. ([2981f62a](https://github.com/djangoflow/flutter-djangoflow/commit/2981f62a0817228bdab5fc0c1dad74ac1566087e))
+
+#### `djangoflow_scrollable_column` - `v0.0.1+1`
+
+ - **DOCS**: update CHANGELOG. ([2cefb62f](https://github.com/djangoflow/flutter-djangoflow/commit/2cefb62f889b7af5e509b155c1f543fdd30ed954))
+
+
+## 2023-10-26
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`djangoflow_app` - `v3.6.0`](#djangoflow_app---v360)
  - [`djangoflow_remote_config` - `v0.0.4`](#djangoflow_remote_config---v004)
 
