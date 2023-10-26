@@ -60,7 +60,7 @@ Here are some guidelines to follow when contributing:
 - If you encounter a bug or issue, please submit a detailed bug report.
 - Include steps to reproduce the issue, expected behavior, and actual behavior.
 - Provide any relevant error messages or screenshots.
-- You can submit bug reports through GH issues, please add [djangoflow_websocket] as prefix for the
+- You can submit bug reports through GH issues, please add [djangoflow_scrollable_column] as prefix for the
   issue title
 
 ### Feature Requests:
