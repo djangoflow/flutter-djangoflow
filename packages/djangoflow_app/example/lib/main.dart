@@ -89,14 +89,9 @@ class _EnvironmentToggle extends StatelessWidget {
   const _EnvironmentToggle({super.key});
 
   @override
-  Widget build(BuildContext context) => AppCubitBuilder(
-        builder: (context, state) => SwitchListTile.adaptive(
-          applyCupertinoTheme: true,
-          value: state.environment == AppEnvironment.live,
-          title: const Text('Live Environment'),
-          onChanged: (_) {
-            context.read<AppCubit>().toggleEnvironment();
-          },
+  Widget build(BuildContext context) => const EnvSwitcher(
+        child: ListTile(
+          title: Text('Long press to toggle environment'),
         ),
       );
 }
