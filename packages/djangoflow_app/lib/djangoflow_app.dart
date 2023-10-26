@@ -10,3 +10,4 @@ export 'src/presentation/listeners/app_cubit_listener.dart';
 export 'src/presentation/sandbox_banner.dart';
 export 'src/utils/djangoflow_app_runner.dart';
 export 'src/utils/djangoflow_app_snackbar.dart';
+export 'src/utils/extensions/package_info_extensions.dart';
