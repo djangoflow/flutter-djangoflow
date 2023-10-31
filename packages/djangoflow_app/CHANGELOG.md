@@ -1,3 +1,7 @@
+## 3.6.2
+
+ - **REFACTOR**(djangoflow_app): Expose AppCubit.internal. ([2c1996ae](https://github.com/djangoflow/flutter-djangoflow/commit/2c1996aea69f87493246bcf86e452d005cf476a0))
+
 ## 3.6.1
 
  - **REFACTOR**: update build_runner generated files. ([2981f62a](https://github.com/djangoflow/flutter-djangoflow/commit/2981f62a0817228bdab5fc0c1dad74ac1566087e))

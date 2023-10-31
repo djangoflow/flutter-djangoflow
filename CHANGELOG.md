@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2023-10-31
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`djangoflow_app` - `v3.6.2`](#djangoflow_app---v362)
+
+---
+
+#### `djangoflow_app` - `v3.6.2`
+
+ - **REFACTOR**(djangoflow_app): Expose AppCubit.internal. ([2c1996ae](https://github.com/djangoflow/flutter-djangoflow/commit/2c1996aea69f87493246bcf86e452d005cf476a0))
+
+
 ## 2023-10-26
 
 ### Changes
