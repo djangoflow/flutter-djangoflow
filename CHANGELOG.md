@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2023-11-18
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`djangoflow_app` - `v3.7.0`](#djangoflow_app---v370)
+
+---
+
+#### `djangoflow_app` - `v3.7.0`
+
+ - **FEAT**: add appVersionWithPackageName. ([3b900fa6](https://github.com/djangoflow/flutter-djangoflow/commit/3b900fa6fbc47e09e437d475b770cd1633aa2f04))
+
+
 ## 2023-10-31
 
 ### Changes

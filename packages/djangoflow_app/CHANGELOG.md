@@ -1,3 +1,7 @@
+## 3.7.0
+
+ - **FEAT**: add appVersionWithPackageName. ([3b900fa6](https://github.com/djangoflow/flutter-djangoflow/commit/3b900fa6fbc47e09e437d475b770cd1633aa2f04))
+
 ## 3.6.2
 
  - **REFACTOR**(djangoflow_app): Expose AppCubit.internal. ([2c1996ae](https://github.com/djangoflow/flutter-djangoflow/commit/2c1996aea69f87493246bcf86e452d005cf476a0))
