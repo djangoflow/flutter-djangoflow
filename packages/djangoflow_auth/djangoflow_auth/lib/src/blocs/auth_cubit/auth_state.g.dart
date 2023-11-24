@@ -6,33 +6,36 @@ part of 'auth_state.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Initial _$$_InitialFromJson(Map<String, dynamic> json) => _$_Initial(
+_$InitialImpl _$$InitialImplFromJson(Map<String, dynamic> json) =>
+    _$InitialImpl(
       $type: json['runtimeType'] as String?,
     );
 
-Map<String, dynamic> _$$_InitialToJson(_$_Initial instance) =>
+Map<String, dynamic> _$$InitialImplToJson(_$InitialImpl instance) =>
     <String, dynamic>{
       'runtimeType': instance.$type,
     };
 
-_$_Authenticated _$$_AuthenticatedFromJson(Map<String, dynamic> json) =>
-    _$_Authenticated(
+_$AuthenticatedImpl _$$AuthenticatedImplFromJson(Map<String, dynamic> json) =>
+    _$AuthenticatedImpl(
       token: json['token'] as String,
       $type: json['runtimeType'] as String?,
     );
 
-Map<String, dynamic> _$$_AuthenticatedToJson(_$_Authenticated instance) =>
+Map<String, dynamic> _$$AuthenticatedImplToJson(_$AuthenticatedImpl instance) =>
     <String, dynamic>{
       'token': instance.token,
       'runtimeType': instance.$type,
     };
 
-_$_Unauthenticated _$$_UnauthenticatedFromJson(Map<String, dynamic> json) =>
-    _$_Unauthenticated(
+_$UnauthenticatedImpl _$$UnauthenticatedImplFromJson(
+        Map<String, dynamic> json) =>
+    _$UnauthenticatedImpl(
       $type: json['runtimeType'] as String?,
     );
 
-Map<String, dynamic> _$$_UnauthenticatedToJson(_$_Unauthenticated instance) =>
+Map<String, dynamic> _$$UnauthenticatedImplToJson(
+        _$UnauthenticatedImpl instance) =>
     <String, dynamic>{
       'runtimeType': instance.$type,
     };

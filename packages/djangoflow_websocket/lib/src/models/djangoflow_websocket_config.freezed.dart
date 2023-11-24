@@ -102,12 +102,12 @@ class _$DjangoflowWebsocketConfigCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_DjangoflowWebsocketConfigCopyWith<$Res>
+abstract class _$$DjangoflowWebsocketConfigImplCopyWith<$Res>
     implements $DjangoflowWebsocketConfigCopyWith<$Res> {
-  factory _$$_DjangoflowWebsocketConfigCopyWith(
-          _$_DjangoflowWebsocketConfig value,
-          $Res Function(_$_DjangoflowWebsocketConfig) then) =
-      __$$_DjangoflowWebsocketConfigCopyWithImpl<$Res>;
+  factory _$$DjangoflowWebsocketConfigImplCopyWith(
+          _$DjangoflowWebsocketConfigImpl value,
+          $Res Function(_$DjangoflowWebsocketConfigImpl) then) =
+      __$$DjangoflowWebsocketConfigImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -121,13 +121,13 @@ abstract class _$$_DjangoflowWebsocketConfigCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_DjangoflowWebsocketConfigCopyWithImpl<$Res>
+class __$$DjangoflowWebsocketConfigImplCopyWithImpl<$Res>
     extends _$DjangoflowWebsocketConfigCopyWithImpl<$Res,
-        _$_DjangoflowWebsocketConfig>
-    implements _$$_DjangoflowWebsocketConfigCopyWith<$Res> {
-  __$$_DjangoflowWebsocketConfigCopyWithImpl(
-      _$_DjangoflowWebsocketConfig _value,
-      $Res Function(_$_DjangoflowWebsocketConfig) _then)
+        _$DjangoflowWebsocketConfigImpl>
+    implements _$$DjangoflowWebsocketConfigImplCopyWith<$Res> {
+  __$$DjangoflowWebsocketConfigImplCopyWithImpl(
+      _$DjangoflowWebsocketConfigImpl _value,
+      $Res Function(_$DjangoflowWebsocketConfigImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -141,7 +141,7 @@ class __$$_DjangoflowWebsocketConfigCopyWithImpl<$Res>
     Object? wSReconnectDelay = null,
     Object? wSCheckConnectionDelay = null,
   }) {
-    return _then(_$_DjangoflowWebsocketConfig(
+    return _then(_$DjangoflowWebsocketConfigImpl(
       connectingMessage: null == connectingMessage
           ? _value.connectingMessage
           : connectingMessage // ignore: cast_nullable_to_non_nullable
@@ -176,8 +176,8 @@ class __$$_DjangoflowWebsocketConfigCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_DjangoflowWebsocketConfig implements _DjangoflowWebsocketConfig {
-  const _$_DjangoflowWebsocketConfig(
+class _$DjangoflowWebsocketConfigImpl implements _DjangoflowWebsocketConfig {
+  const _$DjangoflowWebsocketConfigImpl(
       {this.connectingMessage = 'Connecting....',
       this.reConnectingMessage = 'Re-connecting....',
       this.failedToSubscribeMessage = 'failed to subscribe',
@@ -217,7 +217,7 @@ class _$_DjangoflowWebsocketConfig implements _DjangoflowWebsocketConfig {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_DjangoflowWebsocketConfig &&
+            other is _$DjangoflowWebsocketConfigImpl &&
             (identical(other.connectingMessage, connectingMessage) ||
                 other.connectingMessage == connectingMessage) &&
             (identical(other.reConnectingMessage, reConnectingMessage) ||
@@ -251,9 +251,9 @@ class _$_DjangoflowWebsocketConfig implements _DjangoflowWebsocketConfig {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_DjangoflowWebsocketConfigCopyWith<_$_DjangoflowWebsocketConfig>
-      get copyWith => __$$_DjangoflowWebsocketConfigCopyWithImpl<
-          _$_DjangoflowWebsocketConfig>(this, _$identity);
+  _$$DjangoflowWebsocketConfigImplCopyWith<_$DjangoflowWebsocketConfigImpl>
+      get copyWith => __$$DjangoflowWebsocketConfigImplCopyWithImpl<
+          _$DjangoflowWebsocketConfigImpl>(this, _$identity);
 }
 
 abstract class _DjangoflowWebsocketConfig implements DjangoflowWebsocketConfig {
@@ -264,7 +264,7 @@ abstract class _DjangoflowWebsocketConfig implements DjangoflowWebsocketConfig {
       final String connectionErrorMessage,
       final String serverClosedConnectionMessage,
       final Duration wSReconnectDelay,
-      final Duration wSCheckConnectionDelay}) = _$_DjangoflowWebsocketConfig;
+      final Duration wSCheckConnectionDelay}) = _$DjangoflowWebsocketConfigImpl;
 
   @override
   String get connectingMessage;
@@ -282,6 +282,6 @@ abstract class _DjangoflowWebsocketConfig implements DjangoflowWebsocketConfig {
   Duration get wSCheckConnectionDelay;
   @override
   @JsonKey(ignore: true)
-  _$$_DjangoflowWebsocketConfigCopyWith<_$_DjangoflowWebsocketConfig>
+  _$$DjangoflowWebsocketConfigImplCopyWith<_$DjangoflowWebsocketConfigImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

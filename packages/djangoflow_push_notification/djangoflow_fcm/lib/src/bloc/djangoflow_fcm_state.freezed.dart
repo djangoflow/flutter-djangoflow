@@ -81,11 +81,11 @@ class _$DjangoflowFCMStateCopyWithImpl<$Res, $Val extends DjangoflowFCMState>
 }
 
 /// @nodoc
-abstract class _$$_DjangoflowFCMStateCopyWith<$Res>
+abstract class _$$DjangoflowFCMStateImplCopyWith<$Res>
     implements $DjangoflowFCMStateCopyWith<$Res> {
-  factory _$$_DjangoflowFCMStateCopyWith(_$_DjangoflowFCMState value,
-          $Res Function(_$_DjangoflowFCMState) then) =
-      __$$_DjangoflowFCMStateCopyWithImpl<$Res>;
+  factory _$$DjangoflowFCMStateImplCopyWith(_$DjangoflowFCMStateImpl value,
+          $Res Function(_$DjangoflowFCMStateImpl) then) =
+      __$$DjangoflowFCMStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -96,11 +96,11 @@ abstract class _$$_DjangoflowFCMStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_DjangoflowFCMStateCopyWithImpl<$Res>
-    extends _$DjangoflowFCMStateCopyWithImpl<$Res, _$_DjangoflowFCMState>
-    implements _$$_DjangoflowFCMStateCopyWith<$Res> {
-  __$$_DjangoflowFCMStateCopyWithImpl(
-      _$_DjangoflowFCMState _value, $Res Function(_$_DjangoflowFCMState) _then)
+class __$$DjangoflowFCMStateImplCopyWithImpl<$Res>
+    extends _$DjangoflowFCMStateCopyWithImpl<$Res, _$DjangoflowFCMStateImpl>
+    implements _$$DjangoflowFCMStateImplCopyWith<$Res> {
+  __$$DjangoflowFCMStateImplCopyWithImpl(_$DjangoflowFCMStateImpl _value,
+      $Res Function(_$DjangoflowFCMStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -111,7 +111,7 @@ class __$$_DjangoflowFCMStateCopyWithImpl<$Res>
     Object? notificationAuthorizationStatus = freezed,
     Object? remoteMessageOpenedApp = freezed,
   }) {
-    return _then(_$_DjangoflowFCMState(
+    return _then(_$DjangoflowFCMStateImpl(
       remoteMessage: freezed == remoteMessage
           ? _value.remoteMessage
           : remoteMessage // ignore: cast_nullable_to_non_nullable
@@ -135,8 +135,8 @@ class __$$_DjangoflowFCMStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_DjangoflowFCMState implements _DjangoflowFCMState {
-  const _$_DjangoflowFCMState(
+class _$DjangoflowFCMStateImpl implements _DjangoflowFCMState {
+  const _$DjangoflowFCMStateImpl(
       {this.remoteMessage,
       this.token,
       this.notificationAuthorizationStatus,
@@ -160,7 +160,7 @@ class _$_DjangoflowFCMState implements _DjangoflowFCMState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_DjangoflowFCMState &&
+            other is _$DjangoflowFCMStateImpl &&
             (identical(other.remoteMessage, remoteMessage) ||
                 other.remoteMessage == remoteMessage) &&
             (identical(other.token, token) || other.token == token) &&
@@ -179,8 +179,8 @@ class _$_DjangoflowFCMState implements _DjangoflowFCMState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_DjangoflowFCMStateCopyWith<_$_DjangoflowFCMState> get copyWith =>
-      __$$_DjangoflowFCMStateCopyWithImpl<_$_DjangoflowFCMState>(
+  _$$DjangoflowFCMStateImplCopyWith<_$DjangoflowFCMStateImpl> get copyWith =>
+      __$$DjangoflowFCMStateImplCopyWithImpl<_$DjangoflowFCMStateImpl>(
           this, _$identity);
 }
 
@@ -189,7 +189,7 @@ abstract class _DjangoflowFCMState implements DjangoflowFCMState {
       {final RemoteMessage? remoteMessage,
       final String? token,
       final AuthorizationStatus? notificationAuthorizationStatus,
-      final bool? remoteMessageOpenedApp}) = _$_DjangoflowFCMState;
+      final bool? remoteMessageOpenedApp}) = _$DjangoflowFCMStateImpl;
 
   @override
   RemoteMessage? get remoteMessage;
@@ -201,6 +201,6 @@ abstract class _DjangoflowFCMState implements DjangoflowFCMState {
   bool? get remoteMessageOpenedApp;
   @override
   @JsonKey(ignore: true)
-  _$$_DjangoflowFCMStateCopyWith<_$_DjangoflowFCMState> get copyWith =>
+  _$$DjangoflowFCMStateImplCopyWith<_$DjangoflowFCMStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

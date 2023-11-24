@@ -6,15 +6,15 @@ part of 'djangoflow_websocket_state.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_DjangoflowWebsocketState _$$_DjangoflowWebsocketStateFromJson(
+_$DjangoflowWebsocketStateImpl _$$DjangoflowWebsocketStateImplFromJson(
         Map<String, dynamic> json) =>
-    _$_DjangoflowWebsocketState(
+    _$DjangoflowWebsocketStateImpl(
       message: json['message'] as Map<String, dynamic>?,
       connectionStateMessage: json['connectionStateMessage'] as String?,
     );
 
-Map<String, dynamic> _$$_DjangoflowWebsocketStateToJson(
-        _$_DjangoflowWebsocketState instance) =>
+Map<String, dynamic> _$$DjangoflowWebsocketStateImplToJson(
+        _$DjangoflowWebsocketStateImpl instance) =>
     <String, dynamic>{
       'message': instance.message,
       'connectionStateMessage': instance.connectionStateMessage,

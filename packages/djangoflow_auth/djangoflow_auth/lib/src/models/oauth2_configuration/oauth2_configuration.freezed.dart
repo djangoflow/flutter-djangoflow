@@ -123,11 +123,11 @@ class _$OAuth2ConfigurationCopyWithImpl<$Res, $Val extends OAuth2Configuration>
 }
 
 /// @nodoc
-abstract class _$$_OAuth2ConfigurationCopyWith<$Res>
+abstract class _$$OAuth2ConfigurationImplCopyWith<$Res>
     implements $OAuth2ConfigurationCopyWith<$Res> {
-  factory _$$_OAuth2ConfigurationCopyWith(_$_OAuth2Configuration value,
-          $Res Function(_$_OAuth2Configuration) then) =
-      __$$_OAuth2ConfigurationCopyWithImpl<$Res>;
+  factory _$$OAuth2ConfigurationImplCopyWith(_$OAuth2ConfigurationImpl value,
+          $Res Function(_$OAuth2ConfigurationImpl) then) =
+      __$$OAuth2ConfigurationImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -145,11 +145,11 @@ abstract class _$$_OAuth2ConfigurationCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_OAuth2ConfigurationCopyWithImpl<$Res>
-    extends _$OAuth2ConfigurationCopyWithImpl<$Res, _$_OAuth2Configuration>
-    implements _$$_OAuth2ConfigurationCopyWith<$Res> {
-  __$$_OAuth2ConfigurationCopyWithImpl(_$_OAuth2Configuration _value,
-      $Res Function(_$_OAuth2Configuration) _then)
+class __$$OAuth2ConfigurationImplCopyWithImpl<$Res>
+    extends _$OAuth2ConfigurationCopyWithImpl<$Res, _$OAuth2ConfigurationImpl>
+    implements _$$OAuth2ConfigurationImplCopyWith<$Res> {
+  __$$OAuth2ConfigurationImplCopyWithImpl(_$OAuth2ConfigurationImpl _value,
+      $Res Function(_$OAuth2ConfigurationImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -164,7 +164,7 @@ class __$$_OAuth2ConfigurationCopyWithImpl<$Res>
     Object? responseType = freezed,
     Object? customUriScheme = freezed,
   }) {
-    return _then(_$_OAuth2Configuration(
+    return _then(_$OAuth2ConfigurationImpl(
       clientId: null == clientId
           ? _value.clientId
           : clientId // ignore: cast_nullable_to_non_nullable
@@ -203,8 +203,8 @@ class __$$_OAuth2ConfigurationCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_OAuth2Configuration extends _OAuth2Configuration {
-  const _$_OAuth2Configuration(
+class _$OAuth2ConfigurationImpl extends _OAuth2Configuration {
+  const _$OAuth2ConfigurationImpl(
       {@JsonKey(name: 'client_id') required this.clientId,
       @JsonKey(name: 'redirect_uri') required this.redirectUri,
       required this.scope,
@@ -216,8 +216,8 @@ class _$_OAuth2Configuration extends _OAuth2Configuration {
       this.customUriScheme})
       : super._();
 
-  factory _$_OAuth2Configuration.fromJson(Map<String, dynamic> json) =>
-      _$$_OAuth2ConfigurationFromJson(json);
+  factory _$OAuth2ConfigurationImpl.fromJson(Map<String, dynamic> json) =>
+      _$$OAuth2ConfigurationImplFromJson(json);
 
   @override
   @JsonKey(name: 'client_id')
@@ -253,7 +253,7 @@ class _$_OAuth2Configuration extends _OAuth2Configuration {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_OAuth2Configuration &&
+            other is _$OAuth2ConfigurationImpl &&
             (identical(other.clientId, clientId) ||
                 other.clientId == clientId) &&
             (identical(other.redirectUri, redirectUri) ||
@@ -278,13 +278,13 @@ class _$_OAuth2Configuration extends _OAuth2Configuration {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_OAuth2ConfigurationCopyWith<_$_OAuth2Configuration> get copyWith =>
-      __$$_OAuth2ConfigurationCopyWithImpl<_$_OAuth2Configuration>(
+  _$$OAuth2ConfigurationImplCopyWith<_$OAuth2ConfigurationImpl> get copyWith =>
+      __$$OAuth2ConfigurationImplCopyWithImpl<_$OAuth2ConfigurationImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_OAuth2ConfigurationToJson(
+    return _$$OAuth2ConfigurationImplToJson(
       this,
     );
   }
@@ -302,11 +302,11 @@ abstract class _OAuth2Configuration extends OAuth2Configuration {
       final String? codeChallengeMethod,
       @JsonKey(name: 'response_type', includeIfNull: false)
       final String? responseType,
-      final String? customUriScheme}) = _$_OAuth2Configuration;
+      final String? customUriScheme}) = _$OAuth2ConfigurationImpl;
   const _OAuth2Configuration._() : super._();
 
   factory _OAuth2Configuration.fromJson(Map<String, dynamic> json) =
-      _$_OAuth2Configuration.fromJson;
+      _$OAuth2ConfigurationImpl.fromJson;
 
   @override
   @JsonKey(name: 'client_id')
@@ -334,6 +334,6 @@ abstract class _OAuth2Configuration extends OAuth2Configuration {
   String? get customUriScheme;
   @override
   @JsonKey(ignore: true)
-  _$$_OAuth2ConfigurationCopyWith<_$_OAuth2Configuration> get copyWith =>
+  _$$OAuth2ConfigurationImplCopyWith<_$OAuth2ConfigurationImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

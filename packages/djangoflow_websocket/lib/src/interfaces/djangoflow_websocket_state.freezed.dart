@@ -73,24 +73,25 @@ class _$DjangoflowWebsocketStateCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_DjangoflowWebsocketStateCopyWith<$Res>
+abstract class _$$DjangoflowWebsocketStateImplCopyWith<$Res>
     implements $DjangoflowWebsocketStateCopyWith<$Res> {
-  factory _$$_DjangoflowWebsocketStateCopyWith(
-          _$_DjangoflowWebsocketState value,
-          $Res Function(_$_DjangoflowWebsocketState) then) =
-      __$$_DjangoflowWebsocketStateCopyWithImpl<$Res>;
+  factory _$$DjangoflowWebsocketStateImplCopyWith(
+          _$DjangoflowWebsocketStateImpl value,
+          $Res Function(_$DjangoflowWebsocketStateImpl) then) =
+      __$$DjangoflowWebsocketStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({Map<String, dynamic>? message, String? connectionStateMessage});
 }
 
 /// @nodoc
-class __$$_DjangoflowWebsocketStateCopyWithImpl<$Res>
+class __$$DjangoflowWebsocketStateImplCopyWithImpl<$Res>
     extends _$DjangoflowWebsocketStateCopyWithImpl<$Res,
-        _$_DjangoflowWebsocketState>
-    implements _$$_DjangoflowWebsocketStateCopyWith<$Res> {
-  __$$_DjangoflowWebsocketStateCopyWithImpl(_$_DjangoflowWebsocketState _value,
-      $Res Function(_$_DjangoflowWebsocketState) _then)
+        _$DjangoflowWebsocketStateImpl>
+    implements _$$DjangoflowWebsocketStateImplCopyWith<$Res> {
+  __$$DjangoflowWebsocketStateImplCopyWithImpl(
+      _$DjangoflowWebsocketStateImpl _value,
+      $Res Function(_$DjangoflowWebsocketStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -99,7 +100,7 @@ class __$$_DjangoflowWebsocketStateCopyWithImpl<$Res>
     Object? message = freezed,
     Object? connectionStateMessage = freezed,
   }) {
-    return _then(_$_DjangoflowWebsocketState(
+    return _then(_$DjangoflowWebsocketStateImpl(
       message: freezed == message
           ? _value._message
           : message // ignore: cast_nullable_to_non_nullable
@@ -114,13 +115,13 @@ class __$$_DjangoflowWebsocketStateCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_DjangoflowWebsocketState implements _DjangoflowWebsocketState {
-  const _$_DjangoflowWebsocketState(
+class _$DjangoflowWebsocketStateImpl implements _DjangoflowWebsocketState {
+  const _$DjangoflowWebsocketStateImpl(
       {final Map<String, dynamic>? message, this.connectionStateMessage})
       : _message = message;
 
-  factory _$_DjangoflowWebsocketState.fromJson(Map<String, dynamic> json) =>
-      _$$_DjangoflowWebsocketStateFromJson(json);
+  factory _$DjangoflowWebsocketStateImpl.fromJson(Map<String, dynamic> json) =>
+      _$$DjangoflowWebsocketStateImplFromJson(json);
 
   /// The last message received from the server
   final Map<String, dynamic>? _message;
@@ -148,7 +149,7 @@ class _$_DjangoflowWebsocketState implements _DjangoflowWebsocketState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_DjangoflowWebsocketState &&
+            other is _$DjangoflowWebsocketStateImpl &&
             const DeepCollectionEquality().equals(other._message, _message) &&
             (identical(other.connectionStateMessage, connectionStateMessage) ||
                 other.connectionStateMessage == connectionStateMessage));
@@ -162,13 +163,13 @@ class _$_DjangoflowWebsocketState implements _DjangoflowWebsocketState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_DjangoflowWebsocketStateCopyWith<_$_DjangoflowWebsocketState>
-      get copyWith => __$$_DjangoflowWebsocketStateCopyWithImpl<
-          _$_DjangoflowWebsocketState>(this, _$identity);
+  _$$DjangoflowWebsocketStateImplCopyWith<_$DjangoflowWebsocketStateImpl>
+      get copyWith => __$$DjangoflowWebsocketStateImplCopyWithImpl<
+          _$DjangoflowWebsocketStateImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DjangoflowWebsocketStateToJson(
+    return _$$DjangoflowWebsocketStateImplToJson(
       this,
     );
   }
@@ -177,10 +178,10 @@ class _$_DjangoflowWebsocketState implements _DjangoflowWebsocketState {
 abstract class _DjangoflowWebsocketState implements DjangoflowWebsocketState {
   const factory _DjangoflowWebsocketState(
       {final Map<String, dynamic>? message,
-      final String? connectionStateMessage}) = _$_DjangoflowWebsocketState;
+      final String? connectionStateMessage}) = _$DjangoflowWebsocketStateImpl;
 
   factory _DjangoflowWebsocketState.fromJson(Map<String, dynamic> json) =
-      _$_DjangoflowWebsocketState.fromJson;
+      _$DjangoflowWebsocketStateImpl.fromJson;
 
   @override
 
@@ -192,6 +193,6 @@ abstract class _DjangoflowWebsocketState implements DjangoflowWebsocketState {
   String? get connectionStateMessage;
   @override
   @JsonKey(ignore: true)
-  _$$_DjangoflowWebsocketStateCopyWith<_$_DjangoflowWebsocketState>
+  _$$DjangoflowWebsocketStateImplCopyWith<_$DjangoflowWebsocketStateImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

@@ -78,11 +78,11 @@ class _$ActionCategoryStateCopyWithImpl<$Res, $Val extends ActionCategoryState>
 }
 
 /// @nodoc
-abstract class _$$_ActionCategoryStateCopyWith<$Res>
+abstract class _$$ActionCategoryStateImplCopyWith<$Res>
     implements $ActionCategoryStateCopyWith<$Res> {
-  factory _$$_ActionCategoryStateCopyWith(_$_ActionCategoryState value,
-          $Res Function(_$_ActionCategoryState) then) =
-      __$$_ActionCategoryStateCopyWithImpl<$Res>;
+  factory _$$ActionCategoryStateImplCopyWith(_$ActionCategoryStateImpl value,
+          $Res Function(_$ActionCategoryStateImpl) then) =
+      __$$ActionCategoryStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -92,11 +92,11 @@ abstract class _$$_ActionCategoryStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_ActionCategoryStateCopyWithImpl<$Res>
-    extends _$ActionCategoryStateCopyWithImpl<$Res, _$_ActionCategoryState>
-    implements _$$_ActionCategoryStateCopyWith<$Res> {
-  __$$_ActionCategoryStateCopyWithImpl(_$_ActionCategoryState _value,
-      $Res Function(_$_ActionCategoryState) _then)
+class __$$ActionCategoryStateImplCopyWithImpl<$Res>
+    extends _$ActionCategoryStateCopyWithImpl<$Res, _$ActionCategoryStateImpl>
+    implements _$$ActionCategoryStateImplCopyWith<$Res> {
+  __$$ActionCategoryStateImplCopyWithImpl(_$ActionCategoryStateImpl _value,
+      $Res Function(_$ActionCategoryStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -106,7 +106,7 @@ class __$$_ActionCategoryStateCopyWithImpl<$Res>
     Object? hasError = null,
     Object? actionCategories = null,
   }) {
-    return _then(_$_ActionCategoryState(
+    return _then(_$ActionCategoryStateImpl(
       isLoading: null == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
@@ -125,15 +125,15 @@ class __$$_ActionCategoryStateCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_ActionCategoryState implements _ActionCategoryState {
-  const _$_ActionCategoryState(
+class _$ActionCategoryStateImpl implements _ActionCategoryState {
+  const _$ActionCategoryStateImpl(
       {this.isLoading = true,
       this.hasError = false,
       final List<PushActionCategory> actionCategories = const []})
       : _actionCategories = actionCategories;
 
-  factory _$_ActionCategoryState.fromJson(Map<String, dynamic> json) =>
-      _$$_ActionCategoryStateFromJson(json);
+  factory _$ActionCategoryStateImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ActionCategoryStateImplFromJson(json);
 
   @override
   @JsonKey()
@@ -160,7 +160,7 @@ class _$_ActionCategoryState implements _ActionCategoryState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ActionCategoryState &&
+            other is _$ActionCategoryStateImpl &&
             (identical(other.isLoading, isLoading) ||
                 other.isLoading == isLoading) &&
             (identical(other.hasError, hasError) ||
@@ -177,13 +177,13 @@ class _$_ActionCategoryState implements _ActionCategoryState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ActionCategoryStateCopyWith<_$_ActionCategoryState> get copyWith =>
-      __$$_ActionCategoryStateCopyWithImpl<_$_ActionCategoryState>(
+  _$$ActionCategoryStateImplCopyWith<_$ActionCategoryStateImpl> get copyWith =>
+      __$$ActionCategoryStateImplCopyWithImpl<_$ActionCategoryStateImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ActionCategoryStateToJson(
+    return _$$ActionCategoryStateImplToJson(
       this,
     );
   }
@@ -194,10 +194,10 @@ abstract class _ActionCategoryState implements ActionCategoryState {
           {final bool isLoading,
           final bool hasError,
           final List<PushActionCategory> actionCategories}) =
-      _$_ActionCategoryState;
+      _$ActionCategoryStateImpl;
 
   factory _ActionCategoryState.fromJson(Map<String, dynamic> json) =
-      _$_ActionCategoryState.fromJson;
+      _$ActionCategoryStateImpl.fromJson;
 
   @override
   bool get isLoading;
@@ -207,6 +207,6 @@ abstract class _ActionCategoryState implements ActionCategoryState {
   List<PushActionCategory> get actionCategories;
   @override
   @JsonKey(ignore: true)
-  _$$_ActionCategoryStateCopyWith<_$_ActionCategoryState> get copyWith =>
+  _$$ActionCategoryStateImplCopyWith<_$ActionCategoryStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

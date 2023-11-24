@@ -10,7 +10,7 @@ export 'auth_state.dart';
 /// This is the base class for AuthCubit.
 /// It allows to create AuthCubit based on any kind of backends.
 abstract class HydratedAuthCubitBase extends HydratedCubit<AuthState> {
-  HydratedAuthCubitBase(AuthState initialState) : super(initialState);
+  HydratedAuthCubitBase(super.initialState);
 
   List<SocialLogin> socialLogins = [];
 

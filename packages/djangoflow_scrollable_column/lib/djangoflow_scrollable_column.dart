@@ -16,7 +16,7 @@ class DjangoflowScrollableColumn extends StatelessWidget {
 
   const DjangoflowScrollableColumn({
     required this.children,
-    Key? key,
+    super.key,
     this.primary,
     this.mainAxisAlignment = MainAxisAlignment.start,
     this.mainAxisSize = MainAxisSize.max,
@@ -25,7 +25,7 @@ class DjangoflowScrollableColumn extends StatelessWidget {
     this.controller,
     this.verticalDirection = VerticalDirection.down,
     this.textBaseline,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) => CustomScrollView(

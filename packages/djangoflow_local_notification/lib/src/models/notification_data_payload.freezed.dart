@@ -135,11 +135,12 @@ class _$NotificationDataPayloadCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_NotificationDataPayloadCopyWith<$Res>
+abstract class _$$NotificationDataPayloadImplCopyWith<$Res>
     implements $NotificationDataPayloadCopyWith<$Res> {
-  factory _$$_NotificationDataPayloadCopyWith(_$_NotificationDataPayload value,
-          $Res Function(_$_NotificationDataPayload) then) =
-      __$$_NotificationDataPayloadCopyWithImpl<$Res>;
+  factory _$$NotificationDataPayloadImplCopyWith(
+          _$NotificationDataPayloadImpl value,
+          $Res Function(_$NotificationDataPayloadImpl) then) =
+      __$$NotificationDataPayloadImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -157,12 +158,13 @@ abstract class _$$_NotificationDataPayloadCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_NotificationDataPayloadCopyWithImpl<$Res>
+class __$$NotificationDataPayloadImplCopyWithImpl<$Res>
     extends _$NotificationDataPayloadCopyWithImpl<$Res,
-        _$_NotificationDataPayload>
-    implements _$$_NotificationDataPayloadCopyWith<$Res> {
-  __$$_NotificationDataPayloadCopyWithImpl(_$_NotificationDataPayload _value,
-      $Res Function(_$_NotificationDataPayload) _then)
+        _$NotificationDataPayloadImpl>
+    implements _$$NotificationDataPayloadImplCopyWith<$Res> {
+  __$$NotificationDataPayloadImplCopyWithImpl(
+      _$NotificationDataPayloadImpl _value,
+      $Res Function(_$NotificationDataPayloadImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -180,7 +182,7 @@ class __$$_NotificationDataPayloadCopyWithImpl<$Res>
     Object? image = freezed,
     Object? payload = freezed,
   }) {
-    return _then(_$_NotificationDataPayload(
+    return _then(_$NotificationDataPayloadImpl(
       notificationId: freezed == notificationId
           ? _value.notificationId
           : notificationId // ignore: cast_nullable_to_non_nullable
@@ -231,8 +233,8 @@ class __$$_NotificationDataPayloadCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_NotificationDataPayload implements _NotificationDataPayload {
-  const _$_NotificationDataPayload(
+class _$NotificationDataPayloadImpl implements _NotificationDataPayload {
+  const _$NotificationDataPayloadImpl(
       {this.notificationId,
       this.id,
       this.title,
@@ -246,8 +248,8 @@ class _$_NotificationDataPayload implements _NotificationDataPayload {
       final Map<String, dynamic>? payload})
       : _payload = payload;
 
-  factory _$_NotificationDataPayload.fromJson(Map<String, dynamic> json) =>
-      _$$_NotificationDataPayloadFromJson(json);
+  factory _$NotificationDataPayloadImpl.fromJson(Map<String, dynamic> json) =>
+      _$$NotificationDataPayloadImplFromJson(json);
 
   @override
   final String? notificationId;
@@ -288,7 +290,7 @@ class _$_NotificationDataPayload implements _NotificationDataPayload {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_NotificationDataPayload &&
+            other is _$NotificationDataPayloadImpl &&
             (identical(other.notificationId, notificationId) ||
                 other.notificationId == notificationId) &&
             (identical(other.id, id) || other.id == id) &&
@@ -325,14 +327,13 @@ class _$_NotificationDataPayload implements _NotificationDataPayload {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_NotificationDataPayloadCopyWith<_$_NotificationDataPayload>
-      get copyWith =>
-          __$$_NotificationDataPayloadCopyWithImpl<_$_NotificationDataPayload>(
-              this, _$identity);
+  _$$NotificationDataPayloadImplCopyWith<_$NotificationDataPayloadImpl>
+      get copyWith => __$$NotificationDataPayloadImplCopyWithImpl<
+          _$NotificationDataPayloadImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_NotificationDataPayloadToJson(
+    return _$$NotificationDataPayloadImplToJson(
       this,
     );
   }
@@ -350,10 +351,10 @@ abstract class _NotificationDataPayload implements NotificationDataPayload {
       final String? dismissed,
       final String? multiline,
       final String? image,
-      final Map<String, dynamic>? payload}) = _$_NotificationDataPayload;
+      final Map<String, dynamic>? payload}) = _$NotificationDataPayloadImpl;
 
   factory _NotificationDataPayload.fromJson(Map<String, dynamic> json) =
-      _$_NotificationDataPayload.fromJson;
+      _$NotificationDataPayloadImpl.fromJson;
 
   @override
   String? get notificationId;
@@ -379,7 +380,7 @@ abstract class _NotificationDataPayload implements NotificationDataPayload {
   Map<String, dynamic>? get payload;
   @override
   @JsonKey(ignore: true)
-  _$$_NotificationDataPayloadCopyWith<_$_NotificationDataPayload>
+  _$$NotificationDataPayloadImplCopyWith<_$NotificationDataPayloadImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -439,25 +440,25 @@ class _$NotificationPayloadActionCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_NotificationPayloadActionCopyWith<$Res>
+abstract class _$$NotificationPayloadActionImplCopyWith<$Res>
     implements $NotificationPayloadActionCopyWith<$Res> {
-  factory _$$_NotificationPayloadActionCopyWith(
-          _$_NotificationPayloadAction value,
-          $Res Function(_$_NotificationPayloadAction) then) =
-      __$$_NotificationPayloadActionCopyWithImpl<$Res>;
+  factory _$$NotificationPayloadActionImplCopyWith(
+          _$NotificationPayloadActionImpl value,
+          $Res Function(_$NotificationPayloadActionImpl) then) =
+      __$$NotificationPayloadActionImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String? method, String? url});
 }
 
 /// @nodoc
-class __$$_NotificationPayloadActionCopyWithImpl<$Res>
+class __$$NotificationPayloadActionImplCopyWithImpl<$Res>
     extends _$NotificationPayloadActionCopyWithImpl<$Res,
-        _$_NotificationPayloadAction>
-    implements _$$_NotificationPayloadActionCopyWith<$Res> {
-  __$$_NotificationPayloadActionCopyWithImpl(
-      _$_NotificationPayloadAction _value,
-      $Res Function(_$_NotificationPayloadAction) _then)
+        _$NotificationPayloadActionImpl>
+    implements _$$NotificationPayloadActionImplCopyWith<$Res> {
+  __$$NotificationPayloadActionImplCopyWithImpl(
+      _$NotificationPayloadActionImpl _value,
+      $Res Function(_$NotificationPayloadActionImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -466,7 +467,7 @@ class __$$_NotificationPayloadActionCopyWithImpl<$Res>
     Object? method = freezed,
     Object? url = freezed,
   }) {
-    return _then(_$_NotificationPayloadAction(
+    return _then(_$NotificationPayloadActionImpl(
       method: freezed == method
           ? _value.method
           : method // ignore: cast_nullable_to_non_nullable
@@ -481,11 +482,11 @@ class __$$_NotificationPayloadActionCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_NotificationPayloadAction implements _NotificationPayloadAction {
-  const _$_NotificationPayloadAction({this.method, this.url});
+class _$NotificationPayloadActionImpl implements _NotificationPayloadAction {
+  const _$NotificationPayloadActionImpl({this.method, this.url});
 
-  factory _$_NotificationPayloadAction.fromJson(Map<String, dynamic> json) =>
-      _$$_NotificationPayloadActionFromJson(json);
+  factory _$NotificationPayloadActionImpl.fromJson(Map<String, dynamic> json) =>
+      _$$NotificationPayloadActionImplFromJson(json);
 
   @override
   final String? method;
@@ -501,7 +502,7 @@ class _$_NotificationPayloadAction implements _NotificationPayloadAction {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_NotificationPayloadAction &&
+            other is _$NotificationPayloadActionImpl &&
             (identical(other.method, method) || other.method == method) &&
             (identical(other.url, url) || other.url == url));
   }
@@ -513,13 +514,13 @@ class _$_NotificationPayloadAction implements _NotificationPayloadAction {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_NotificationPayloadActionCopyWith<_$_NotificationPayloadAction>
-      get copyWith => __$$_NotificationPayloadActionCopyWithImpl<
-          _$_NotificationPayloadAction>(this, _$identity);
+  _$$NotificationPayloadActionImplCopyWith<_$NotificationPayloadActionImpl>
+      get copyWith => __$$NotificationPayloadActionImplCopyWithImpl<
+          _$NotificationPayloadActionImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_NotificationPayloadActionToJson(
+    return _$$NotificationPayloadActionImplToJson(
       this,
     );
   }
@@ -527,10 +528,11 @@ class _$_NotificationPayloadAction implements _NotificationPayloadAction {
 
 abstract class _NotificationPayloadAction implements NotificationPayloadAction {
   const factory _NotificationPayloadAction(
-      {final String? method, final String? url}) = _$_NotificationPayloadAction;
+      {final String? method,
+      final String? url}) = _$NotificationPayloadActionImpl;
 
   factory _NotificationPayloadAction.fromJson(Map<String, dynamic> json) =
-      _$_NotificationPayloadAction.fromJson;
+      _$NotificationPayloadActionImpl.fromJson;
 
   @override
   String? get method;
@@ -538,6 +540,6 @@ abstract class _NotificationPayloadAction implements NotificationPayloadAction {
   String? get url;
   @override
   @JsonKey(ignore: true)
-  _$$_NotificationPayloadActionCopyWith<_$_NotificationPayloadAction>
+  _$$NotificationPayloadActionImplCopyWith<_$NotificationPayloadActionImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
