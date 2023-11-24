@@ -1,3 +1,8 @@
+## 0.1.0+1
+
+ - **REFACTOR**: use latest dependency. ([7ffec4dc](https://github.com/djangoflow/flutter-djangoflow/commit/7ffec4dcd4b52bebde4fa37706649556ae7d6394))
+ - **REFACTOR**: upgrade to flutter_lint 3.0.1. ([ebfc2663](https://github.com/djangoflow/flutter-djangoflow/commit/ebfc266338959dece73dd2b2198277ef0d225bb2))
+
 ## [0.1.0] - 15 June 2023
 
 - Updated dependencies and tests

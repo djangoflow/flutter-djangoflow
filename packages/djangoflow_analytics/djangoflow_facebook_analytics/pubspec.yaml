@@ -1,6 +1,6 @@
 name: djangoflow_facebook_analytics
 description: A library provides an easy and organized way to implement Facebook Analytics for your Flutter apps.
-version: 0.0.4
+version: 0.0.4+1
 homepage: https://github.com/djangoflow/flutter-djangoflow/
 
 environment:
@@ -11,7 +11,7 @@ dependencies:
   flutter:
     sdk: flutter
   analytics: ^1.0.2
-  djangoflow_analytics: ^0.0.2
+  djangoflow_analytics: ^0.0.2+1
   facebook_app_events: ^0.19.0
   mockito: ^5.3.2
 

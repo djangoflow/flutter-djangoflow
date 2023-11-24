@@ -1,3 +1,7 @@
+## 1.2.1
+
+ - **REFACTOR**: upgrade to flutter_lint 3.0.1. ([ebfc2663](https://github.com/djangoflow/flutter-djangoflow/commit/ebfc266338959dece73dd2b2198277ef0d225bb2))
+
 ## [1.2.0] - 14 June 2023
 
 - Updated dependencies

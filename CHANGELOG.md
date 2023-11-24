@@ -3,6 +3,137 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2023-11-25
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`djangoflow_analytics` - `v0.0.2+1`](#djangoflow_analytics---v0021)
+ - [`djangoflow_app` - `v3.7.1`](#djangoflow_app---v371)
+ - [`djangoflow_app_links` - `v1.2.2`](#djangoflow_app_links---v122)
+ - [`djangoflow_auth` - `v0.3.0+3`](#djangoflow_auth---v0303)
+ - [`djangoflow_auth_apple` - `v0.1.0+1`](#djangoflow_auth_apple---v0101)
+ - [`djangoflow_auth_discord` - `v0.1.0+1`](#djangoflow_auth_discord---v0101)
+ - [`djangoflow_auth_facebook` - `v0.1.0+1`](#djangoflow_auth_facebook---v0101)
+ - [`djangoflow_auth_google` - `v0.1.0+2`](#djangoflow_auth_google---v0102)
+ - [`djangoflow_bloc_extensions` - `v0.0.2+2`](#djangoflow_bloc_extensions---v0022)
+ - [`djangoflow_deep_link_interface` - `v1.2.1`](#djangoflow_deep_link_interface---v121)
+ - [`djangoflow_emoji_rain` - `v0.0.3+2`](#djangoflow_emoji_rain---v0032)
+ - [`djangoflow_error_reporter` - `v0.1.0+2`](#djangoflow_error_reporter---v0102)
+ - [`djangoflow_facebook_analytics` - `v0.0.4+1`](#djangoflow_facebook_analytics---v0041)
+ - [`djangoflow_fcm` - `v0.1.0+1`](#djangoflow_fcm---v0101)
+ - [`djangoflow_firebase_analytics` - `v0.2.0+1`](#djangoflow_firebase_analytics---v0201)
+ - [`djangoflow_local_notification` - `v0.0.2+7`](#djangoflow_local_notification---v0027)
+ - [`djangoflow_mixpanel_analytics` - `v0.1.0+1`](#djangoflow_mixpanel_analytics---v0101)
+ - [`djangoflow_remote_config` - `v0.0.4+1`](#djangoflow_remote_config---v0041)
+ - [`djangoflow_scrollable_column` - `v0.0.1+2`](#djangoflow_scrollable_column---v0012)
+ - [`djangoflow_sentry_reporter` - `v0.1.0+2`](#djangoflow_sentry_reporter---v0102)
+ - [`djangoflow_websocket` - `v0.1.0+4`](#djangoflow_websocket---v0104)
+
+---
+
+#### `djangoflow_analytics` - `v0.0.2+1`
+
+ - **REFACTOR**: upgrade to flutter_lint 3.0.1. ([ebfc2663](https://github.com/djangoflow/flutter-djangoflow/commit/ebfc266338959dece73dd2b2198277ef0d225bb2))
+
+#### `djangoflow_app` - `v3.7.1`
+
+ - **REFACTOR**: use latest dependency. ([7ffec4dc](https://github.com/djangoflow/flutter-djangoflow/commit/7ffec4dcd4b52bebde4fa37706649556ae7d6394))
+ - **REFACTOR**: upgrade to flutter_lint 3.0.1. ([ebfc2663](https://github.com/djangoflow/flutter-djangoflow/commit/ebfc266338959dece73dd2b2198277ef0d225bb2))
+
+#### `djangoflow_app_links` - `v1.2.2`
+
+ - **REFACTOR**: upgrade to flutter_lint 3.0.1. ([ebfc2663](https://github.com/djangoflow/flutter-djangoflow/commit/ebfc266338959dece73dd2b2198277ef0d225bb2))
+
+#### `djangoflow_auth` - `v0.3.0+3`
+
+ - **REFACTOR**: use latest dependency. ([7ffec4dc](https://github.com/djangoflow/flutter-djangoflow/commit/7ffec4dcd4b52bebde4fa37706649556ae7d6394))
+ - **REFACTOR**: upgrade to flutter_lint 3.0.1. ([ebfc2663](https://github.com/djangoflow/flutter-djangoflow/commit/ebfc266338959dece73dd2b2198277ef0d225bb2))
+
+#### `djangoflow_auth_apple` - `v0.1.0+1`
+
+ - **REFACTOR**: upgrade to flutter_lint 3.0.1. ([ebfc2663](https://github.com/djangoflow/flutter-djangoflow/commit/ebfc266338959dece73dd2b2198277ef0d225bb2))
+
+#### `djangoflow_auth_discord` - `v0.1.0+1`
+
+ - **REFACTOR**: use latest dependency. ([7ffec4dc](https://github.com/djangoflow/flutter-djangoflow/commit/7ffec4dcd4b52bebde4fa37706649556ae7d6394))
+ - **REFACTOR**: upgrade to flutter_lint 3.0.1. ([ebfc2663](https://github.com/djangoflow/flutter-djangoflow/commit/ebfc266338959dece73dd2b2198277ef0d225bb2))
+
+#### `djangoflow_auth_facebook` - `v0.1.0+1`
+
+ - **REFACTOR**: use latest dependency. ([7ffec4dc](https://github.com/djangoflow/flutter-djangoflow/commit/7ffec4dcd4b52bebde4fa37706649556ae7d6394))
+ - **REFACTOR**: upgrade to flutter_lint 3.0.1. ([ebfc2663](https://github.com/djangoflow/flutter-djangoflow/commit/ebfc266338959dece73dd2b2198277ef0d225bb2))
+
+#### `djangoflow_auth_google` - `v0.1.0+2`
+
+ - **REFACTOR**: use latest dependency. ([7ffec4dc](https://github.com/djangoflow/flutter-djangoflow/commit/7ffec4dcd4b52bebde4fa37706649556ae7d6394))
+ - **REFACTOR**: upgrade to flutter_lint 3.0.1. ([ebfc2663](https://github.com/djangoflow/flutter-djangoflow/commit/ebfc266338959dece73dd2b2198277ef0d225bb2))
+
+#### `djangoflow_bloc_extensions` - `v0.0.2+2`
+
+ - **REFACTOR**: upgrade to flutter_lint 3.0.1. ([ebfc2663](https://github.com/djangoflow/flutter-djangoflow/commit/ebfc266338959dece73dd2b2198277ef0d225bb2))
+
+#### `djangoflow_deep_link_interface` - `v1.2.1`
+
+ - **REFACTOR**: upgrade to flutter_lint 3.0.1. ([ebfc2663](https://github.com/djangoflow/flutter-djangoflow/commit/ebfc266338959dece73dd2b2198277ef0d225bb2))
+
+#### `djangoflow_emoji_rain` - `v0.0.3+2`
+
+ - **REFACTOR**: upgrade to flutter_lint 3.0.1. ([ebfc2663](https://github.com/djangoflow/flutter-djangoflow/commit/ebfc266338959dece73dd2b2198277ef0d225bb2))
+
+#### `djangoflow_error_reporter` - `v0.1.0+2`
+
+ - **REFACTOR**: upgrade to flutter_lint 3.0.1. ([ebfc2663](https://github.com/djangoflow/flutter-djangoflow/commit/ebfc266338959dece73dd2b2198277ef0d225bb2))
+
+#### `djangoflow_facebook_analytics` - `v0.0.4+1`
+
+ - **REFACTOR**: upgrade to flutter_lint 3.0.1. ([ebfc2663](https://github.com/djangoflow/flutter-djangoflow/commit/ebfc266338959dece73dd2b2198277ef0d225bb2))
+
+#### `djangoflow_fcm` - `v0.1.0+1`
+
+ - **REFACTOR**: use latest dependency. ([7ffec4dc](https://github.com/djangoflow/flutter-djangoflow/commit/7ffec4dcd4b52bebde4fa37706649556ae7d6394))
+ - **REFACTOR**: upgrade to flutter_lint 3.0.1. ([ebfc2663](https://github.com/djangoflow/flutter-djangoflow/commit/ebfc266338959dece73dd2b2198277ef0d225bb2))
+
+#### `djangoflow_firebase_analytics` - `v0.2.0+1`
+
+ - **REFACTOR**: use latest dependency. ([7ffec4dc](https://github.com/djangoflow/flutter-djangoflow/commit/7ffec4dcd4b52bebde4fa37706649556ae7d6394))
+ - **REFACTOR**: upgrade to flutter_lint 3.0.1. ([ebfc2663](https://github.com/djangoflow/flutter-djangoflow/commit/ebfc266338959dece73dd2b2198277ef0d225bb2))
+
+#### `djangoflow_local_notification` - `v0.0.2+7`
+
+ - **REFACTOR**: use latest dependency. ([7ffec4dc](https://github.com/djangoflow/flutter-djangoflow/commit/7ffec4dcd4b52bebde4fa37706649556ae7d6394))
+ - **REFACTOR**: upgrade to flutter_lint 3.0.1. ([ebfc2663](https://github.com/djangoflow/flutter-djangoflow/commit/ebfc266338959dece73dd2b2198277ef0d225bb2))
+
+#### `djangoflow_mixpanel_analytics` - `v0.1.0+1`
+
+ - **REFACTOR**: use latest dependency. ([7ffec4dc](https://github.com/djangoflow/flutter-djangoflow/commit/7ffec4dcd4b52bebde4fa37706649556ae7d6394))
+ - **REFACTOR**: upgrade to flutter_lint 3.0.1. ([ebfc2663](https://github.com/djangoflow/flutter-djangoflow/commit/ebfc266338959dece73dd2b2198277ef0d225bb2))
+
+#### `djangoflow_remote_config` - `v0.0.4+1`
+
+ - **REFACTOR**: upgrade to flutter_lint 3.0.1. ([ebfc2663](https://github.com/djangoflow/flutter-djangoflow/commit/ebfc266338959dece73dd2b2198277ef0d225bb2))
+
+#### `djangoflow_scrollable_column` - `v0.0.1+2`
+
+ - **REFACTOR**: upgrade to flutter_lint 3.0.1. ([ebfc2663](https://github.com/djangoflow/flutter-djangoflow/commit/ebfc266338959dece73dd2b2198277ef0d225bb2))
+
+#### `djangoflow_sentry_reporter` - `v0.1.0+2`
+
+ - **REFACTOR**: upgrade to flutter_lint 3.0.1. ([ebfc2663](https://github.com/djangoflow/flutter-djangoflow/commit/ebfc266338959dece73dd2b2198277ef0d225bb2))
+
+#### `djangoflow_websocket` - `v0.1.0+4`
+
+ - **REFACTOR**: use latest dependency. ([7ffec4dc](https://github.com/djangoflow/flutter-djangoflow/commit/7ffec4dcd4b52bebde4fa37706649556ae7d6394))
+ - **REFACTOR**: upgrade to flutter_lint 3.0.1. ([ebfc2663](https://github.com/djangoflow/flutter-djangoflow/commit/ebfc266338959dece73dd2b2198277ef0d225bb2))
+
+
 ## 2023-11-18
 
 ### Changes

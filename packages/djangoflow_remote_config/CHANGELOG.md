@@ -1,3 +1,7 @@
+## 0.0.4+1
+
+ - **REFACTOR**: upgrade to flutter_lint 3.0.1. ([ebfc2663](https://github.com/djangoflow/flutter-djangoflow/commit/ebfc266338959dece73dd2b2198277ef0d225bb2))
+
 ## 0.0.4
 
  - **FEAT**(djangoflow_remote_config): Add mapExtensions ([#71](https://github.com/djangoflow/flutter-djangoflow/issues/71)). ([aad72fef](https://github.com/djangoflow/flutter-djangoflow/commit/aad72fefb6dc13fe805d389df98f27126337f142))

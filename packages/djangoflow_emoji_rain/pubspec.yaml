@@ -1,6 +1,6 @@
 name: djangoflow_emoji_rain
 description: A Flutter package for creating a delightful rain of emojis on your screen.
-version: 0.0.3+1
+version: 0.0.3+2
 homepage: https://github.com/djangoflow/flutter-djangoflow/
 
 environment:
