@@ -12,9 +12,9 @@ dependencies:
     sdk: flutter
   djangoflow_auth: ^0.3.0+2
   freezed_annotation: ^2.4.1
-  google_sign_in: ^6.1.4
-  google_sign_in_platform_interface: ^2.4.1
-  google_sign_in_web: ^0.12.0+2
+  google_sign_in: ^6.1.6
+  google_sign_in_platform_interface: ^2.4.2
+  google_sign_in_web: ^0.12.1
   json_annotation: ^4.8.1
   mounted_state: ^1.0.1
 
@@ -23,7 +23,7 @@ dev_dependencies:
     sdk: flutter
   build_runner: ^2.4.6
   flutter_lints: ^3.0.1
-  freezed: ^2.4.2
+  freezed: ^2.4.5
   json_serializable: ^6.7.1
 
 flutter:
