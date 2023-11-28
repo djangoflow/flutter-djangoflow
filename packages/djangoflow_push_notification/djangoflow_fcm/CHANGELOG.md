@@ -1,3 +1,7 @@
+## 0.1.0+2
+
+ - **FIX**(fcm): AbortError, no active Service Worker for web. ([aabeb45d](https://github.com/djangoflow/flutter-djangoflow/commit/aabeb45d13b20d04ffea5321fdcd7f6c03176821))
+
 ## 0.1.0+1
 
  - **REFACTOR**: use latest dependency. ([7ffec4dc](https://github.com/djangoflow/flutter-djangoflow/commit/7ffec4dcd4b52bebde4fa37706649556ae7d6394))

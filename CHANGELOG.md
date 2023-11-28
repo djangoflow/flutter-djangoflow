@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2023-11-28
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`djangoflow_fcm` - `v0.1.0+2`](#djangoflow_fcm---v0102)
+
+---
+
+#### `djangoflow_fcm` - `v0.1.0+2`
+
+ - **FIX**(fcm): AbortError, no active Service Worker for web. ([aabeb45d](https://github.com/djangoflow/flutter-djangoflow/commit/aabeb45d13b20d04ffea5321fdcd7f6c03176821))
+
+
 ## 2023-11-25
 
 ### Changes
