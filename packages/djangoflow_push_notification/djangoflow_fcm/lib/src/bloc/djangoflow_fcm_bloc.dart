@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:djangoflow_fcm/src/data/djangoflow_fcm_repository.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'djangoflow_fcm_event.dart';
@@ -60,6 +61,12 @@ class DjangoflowFCMBloc extends Bloc<DjangoflowFCMEvent, DjangoflowFCMState> {
     if (isSupported) {
       final permission = await repository.requestNotificationPermission();
       if (permission.authorizationStatus == AuthorizationStatus.authorized) {
+        // https://github.com/firebase/flutterfire/issues/11798#issuecomment-1826360250
+        // Remove it when https://github.com/firebase/flutterfire/issues/11954
+        // https://github.com/firebase/flutterfire/issues/11798 are fixed
+        if (kIsWeb) {
+          await repository.deleteToken();
+        }
         final token = await repository.getToken();
         add(DjangoflowFCMOnTokenReceived(token));
       } else {
