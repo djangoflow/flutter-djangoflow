@@ -15,6 +15,27 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`djangoflow_fcm` - `v0.1.0+3`](#djangoflow_fcm---v0103)
+
+---
+
+#### `djangoflow_fcm` - `v0.1.0+3`
+
+ - **REFACTOR**: update conditions for web getToken AbortError. ([0980c1e2](https://github.com/djangoflow/flutter-djangoflow/commit/0980c1e281b86504754a24832b76a7b617e939dd))
+
+
+## 2023-11-28
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`djangoflow_fcm` - `v0.1.0+2`](#djangoflow_fcm---v0102)
 
 ---

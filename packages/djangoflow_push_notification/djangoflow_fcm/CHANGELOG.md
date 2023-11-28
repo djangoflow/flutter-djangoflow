@@ -1,3 +1,7 @@
+## 0.1.0+3
+
+ - **REFACTOR**: update conditions for web getToken AbortError. ([0980c1e2](https://github.com/djangoflow/flutter-djangoflow/commit/0980c1e281b86504754a24832b76a7b617e939dd))
+
 ## 0.1.0+2
 
  - **FIX**(fcm): AbortError, no active Service Worker for web. ([aabeb45d](https://github.com/djangoflow/flutter-djangoflow/commit/aabeb45d13b20d04ffea5321fdcd7f6c03176821))
