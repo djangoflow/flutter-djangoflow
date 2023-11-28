@@ -33,4 +33,7 @@ class DjangoflowFCMRepository {
   Future<void> deleteToken() => _messaging.deleteToken();
 
   Future<bool> isSupported() => _messaging.isSupported();
+
+  Future<NotificationSettings> getNotificationSettings() =>
+      _messaging.getNotificationSettings();
 }

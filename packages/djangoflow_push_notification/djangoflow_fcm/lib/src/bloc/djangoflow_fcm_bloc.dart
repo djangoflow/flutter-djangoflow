@@ -59,20 +59,27 @@ class DjangoflowFCMBloc extends Bloc<DjangoflowFCMEvent, DjangoflowFCMState> {
       Emitter<DjangoflowFCMState> emit) async {
     final isSupported = await repository.isSupported();
     if (isSupported) {
-      final permission = await repository.requestNotificationPermission();
-      if (permission.authorizationStatus == AuthorizationStatus.authorized) {
+      AuthorizationStatus authorizationStatus;
+      final settings = await repository.getNotificationSettings();
+      authorizationStatus = settings.authorizationStatus;
+      if (settings.authorizationStatus != AuthorizationStatus.authorized) {
         // https://github.com/firebase/flutterfire/issues/11798#issuecomment-1826360250
         // Remove it when https://github.com/firebase/flutterfire/issues/11954
         // https://github.com/firebase/flutterfire/issues/11798 are fixed
         if (kIsWeb) {
           await repository.deleteToken();
         }
+        final permission = await repository.requestNotificationPermission();
+        authorizationStatus = permission.authorizationStatus;
+      }
+
+      if (authorizationStatus == AuthorizationStatus.authorized) {
         final token = await repository.getToken();
         add(DjangoflowFCMOnTokenReceived(token));
       } else {
         emit(
           state.copyWith(
-            notificationAuthorizationStatus: permission.authorizationStatus,
+            notificationAuthorizationStatus: authorizationStatus,
           ),
         );
       }
