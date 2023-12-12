@@ -135,4 +135,29 @@ class MockDjangoflowFCMRepository extends _i1.Mock
         returnValue: _i4.Future<bool>.value(false),
         returnValueForMissingStub: _i4.Future<bool>.value(false),
       ) as _i4.Future<bool>);
+
+  @override
+  _i4.Future<_i2.NotificationSettings> getNotificationSettings() =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #getNotificationSettings,
+          [],
+        ),
+        returnValue: _i4.Future<_i2.NotificationSettings>.value(
+            _FakeNotificationSettings_0(
+          this,
+          Invocation.method(
+            #getNotificationSettings,
+            [],
+          ),
+        )),
+        returnValueForMissingStub: _i4.Future<_i2.NotificationSettings>.value(
+            _FakeNotificationSettings_0(
+          this,
+          Invocation.method(
+            #getNotificationSettings,
+            [],
+          ),
+        )),
+      ) as _i4.Future<_i2.NotificationSettings>);
 }
