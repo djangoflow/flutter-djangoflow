@@ -1,3 +1,7 @@
+## 0.1.0+4
+
+ - **REFACTOR**: update dependencies. ([691d2a1d](https://github.com/djangoflow/flutter-djangoflow/commit/691d2a1d8c087e33194b986ed77d33af92d19d0d))
+
 ## 0.1.0+3
 
  - **REFACTOR**: update conditions for web getToken AbortError. ([0980c1e2](https://github.com/djangoflow/flutter-djangoflow/commit/0980c1e281b86504754a24832b76a7b617e939dd))

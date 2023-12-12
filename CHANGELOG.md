@@ -3,6 +3,32 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2023-12-12
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`djangoflow_auth_google` - `v0.1.0+3`](#djangoflow_auth_google---v0103)
+ - [`djangoflow_fcm` - `v0.1.0+4`](#djangoflow_fcm---v0104)
+
+---
+
+#### `djangoflow_auth_google` - `v0.1.0+3`
+
+ - **REFACTOR**: update dependencies. ([691d2a1d](https://github.com/djangoflow/flutter-djangoflow/commit/691d2a1d8c087e33194b986ed77d33af92d19d0d))
+
+#### `djangoflow_fcm` - `v0.1.0+4`
+
+ - **REFACTOR**: update dependencies. ([691d2a1d](https://github.com/djangoflow/flutter-djangoflow/commit/691d2a1d8c087e33194b986ed77d33af92d19d0d))
+
+
 ## 2023-11-28
 
 ### Changes
