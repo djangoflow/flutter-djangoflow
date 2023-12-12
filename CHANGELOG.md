@@ -15,6 +15,27 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`djangoflow_fcm` - `v0.1.0+5`](#djangoflow_fcm---v0105)
+
+---
+
+#### `djangoflow_fcm` - `v0.1.0+5`
+
+ - **REFACTOR**: update dependency. ([0b68f0ce](https://github.com/djangoflow/flutter-djangoflow/commit/0b68f0cef10551dc2572d2133861c472578669b0))
+
+
+## 2023-12-12
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`djangoflow_auth_google` - `v0.1.0+3`](#djangoflow_auth_google---v0103)
  - [`djangoflow_fcm` - `v0.1.0+4`](#djangoflow_fcm---v0104)
 

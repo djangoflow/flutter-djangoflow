@@ -1,3 +1,7 @@
+## 0.1.0+5
+
+ - **REFACTOR**: update dependency. ([0b68f0ce](https://github.com/djangoflow/flutter-djangoflow/commit/0b68f0cef10551dc2572d2133861c472578669b0))
+
 ## 0.1.0+4
 
  - **REFACTOR**: update dependencies. ([691d2a1d](https://github.com/djangoflow/flutter-djangoflow/commit/691d2a1d8c087e33194b986ed77d33af92d19d0d))
