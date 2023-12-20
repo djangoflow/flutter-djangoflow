@@ -1,3 +1,7 @@
+## 0.3.0+4
+
+ - **FIX**: check if signed in before logging out. ([e830367e](https://github.com/djangoflow/flutter-djangoflow/commit/e830367e66e2bb65bd3950c8a6ccb9c40de7d959))
+
 ## 0.3.0+3
 
  - **REFACTOR**: use latest dependency. ([7ffec4dc](https://github.com/djangoflow/flutter-djangoflow/commit/7ffec4dcd4b52bebde4fa37706649556ae7d6394))

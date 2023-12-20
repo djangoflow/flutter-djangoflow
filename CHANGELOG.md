@@ -3,6 +3,40 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2023-12-20
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`djangoflow_auth` - `v0.3.0+4`](#djangoflow_auth---v0304)
+ - [`djangoflow_auth_discord` - `v0.1.0+2`](#djangoflow_auth_discord---v0102)
+ - [`djangoflow_auth_apple` - `v0.1.0+2`](#djangoflow_auth_apple---v0102)
+ - [`djangoflow_auth_facebook` - `v0.1.0+2`](#djangoflow_auth_facebook---v0102)
+ - [`djangoflow_auth_google` - `v0.1.0+4`](#djangoflow_auth_google---v0104)
+
+Packages with dependency updates only:
+
+> Packages listed below depend on other packages in this workspace that have had changes. Their versions have been incremented to bump the minimum dependency versions of the packages they depend upon in this project.
+
+ - `djangoflow_auth_discord` - `v0.1.0+2`
+ - `djangoflow_auth_apple` - `v0.1.0+2`
+ - `djangoflow_auth_facebook` - `v0.1.0+2`
+ - `djangoflow_auth_google` - `v0.1.0+4`
+
+---
+
+#### `djangoflow_auth` - `v0.3.0+4`
+
+ - **FIX**: check if signed in before logging out. ([e830367e](https://github.com/djangoflow/flutter-djangoflow/commit/e830367e66e2bb65bd3950c8a6ccb9c40de7d959))
+
+
 ## 2023-12-12
 
 ### Changes
