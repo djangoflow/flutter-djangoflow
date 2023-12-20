@@ -14,7 +14,10 @@ class JwtAuthInterceptor extends Interceptor {
   @override
   void onError(DioException err, ErrorInterceptorHandler handler) {
     if (err.response?.statusCode == 401) {
-      AuthCubit.instance.logout();
+      final isSignedIn = AuthCubit.instance.state.token != null;
+      if (isSignedIn) {
+        AuthCubit.instance.logout();
+      }
     }
     super.onError(err, handler);
   }
