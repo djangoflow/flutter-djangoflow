@@ -1,3 +1,7 @@
+## 0.1.0+6
+
+ - **REVERT**: remove workaround for. ([2171605b](https://github.com/djangoflow/flutter-djangoflow/commit/2171605be95e377054f5c53182c00675c71c5f77))
+
 ## 0.1.0+5
 
  - **REFACTOR**: update dependency. ([0b68f0ce](https://github.com/djangoflow/flutter-djangoflow/commit/0b68f0cef10551dc2572d2133861c472578669b0))

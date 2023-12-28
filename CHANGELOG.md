@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2023-12-28
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`djangoflow_fcm` - `v0.1.0+6`](#djangoflow_fcm---v0106)
+
+---
+
+#### `djangoflow_fcm` - `v0.1.0+6`
+
+ - **REVERT**: remove workaround for. ([2171605b](https://github.com/djangoflow/flutter-djangoflow/commit/2171605be95e377054f5c53182c00675c71c5f77))
+
+
 ## 2023-12-20
 
 ### Changes
