@@ -63,12 +63,6 @@ class DjangoflowFCMBloc extends Bloc<DjangoflowFCMEvent, DjangoflowFCMState> {
       final settings = await repository.getNotificationSettings();
       authorizationStatus = settings.authorizationStatus;
       if (settings.authorizationStatus != AuthorizationStatus.authorized) {
-        // https://github.com/firebase/flutterfire/issues/11798#issuecomment-1826360250
-        // Remove it when https://github.com/firebase/flutterfire/issues/11954
-        // https://github.com/firebase/flutterfire/issues/11798 are fixed
-        if (kIsWeb) {
-          await repository.deleteToken();
-        }
         final permission = await repository.requestNotificationPermission();
         authorizationStatus = permission.authorizationStatus;
       }
