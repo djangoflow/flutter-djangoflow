@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:djangoflow_fcm/src/data/djangoflow_fcm_repository.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'djangoflow_fcm_event.dart';
