@@ -14,10 +14,17 @@ typedef OnExceptionCallBack = Function(
 typedef RootWidgetBuilder = FutureOr<Widget> Function(
     AppBuilder Function(AppBuilder appBuilder) builder);
 
+typedef FlutterErrorBuilder = Widget Function(FlutterErrorDetails error);
+
 class DjangoflowAppRunner {
   static Future<void> run({
     required OnExceptionCallBack onException,
     required RootWidgetBuilder rootWidgetBuilder,
+
+    /// To provide custom widget for flutter errors
+    /// This will override the default [ErrorWidget]
+    /// https://docs.flutter.dev/testing/errors#handling-all-types-of-errors
+    FlutterErrorBuilder? flutterErrorBuilder,
   }) async =>
       runZonedGuarded(
         () async {
@@ -30,13 +37,17 @@ class DjangoflowAppRunner {
             onException(details.exception, details.stack);
           };
 
-          if (!kDebugMode) {
-            ErrorWidget.builder = (FlutterErrorDetails error) {
+          ErrorWidget.builder = (FlutterErrorDetails error) {
+            if (error.stack != null) {
               Zone.current.handleUncaughtError(error.exception, error.stack!);
+            }
 
-              return const Offstage();
-            };
-          }
+            return _buildDebugErrorWidget(
+              error: error,
+              flutterErrorBuilder: flutterErrorBuilder,
+            );
+          };
+
           final storage = await HydratedStorage.build(
             storageDirectory: kIsWeb
                 ? HydratedStorage.webStorageDirectory
@@ -56,4 +67,30 @@ class DjangoflowAppRunner {
           onException(exception, stackTrace);
         },
       );
+
+  static Widget _buildDebugErrorWidget({
+    required FlutterErrorDetails error,
+    FlutterErrorBuilder? flutterErrorBuilder,
+  }) {
+    final exception = error.exception;
+    String message = '';
+
+    try {
+      message = '${exception.toString()}\n${error.stack.toString()}';
+    } catch (e) {
+      message = 'An error was thrown';
+    }
+    // Without Scaffold showing snackbar will show error as there are no Scaffold
+    // to show snackbar
+    return Scaffold(
+      body: flutterErrorBuilder != null
+          ? flutterErrorBuilder(error)
+          : !kDebugMode
+              ? const Offstage()
+              : ErrorWidget.withDetails(
+                  message: message,
+                  error: exception is FlutterError ? exception : null,
+                ),
+    );
+  }
 }
