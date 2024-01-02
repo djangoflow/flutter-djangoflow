@@ -1,3 +1,7 @@
+## 3.7.2
+
+ - **FIX**: showing snackbar results in to empty scaffold error. ([f1ab4a96](https://github.com/djangoflow/flutter-djangoflow/commit/f1ab4a96cac91d860eb5ba38860fc32ebf83bcfa))
+
 ## 3.7.1
 
  - **REFACTOR**: use latest dependency. ([7ffec4dc](https://github.com/djangoflow/flutter-djangoflow/commit/7ffec4dcd4b52bebde4fa37706649556ae7d6394))

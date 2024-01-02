@@ -3,6 +3,32 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2024-01-02
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`djangoflow_app` - `v3.7.2`](#djangoflow_app---v372)
+ - [`djangoflow_fcm` - `v0.1.0+7`](#djangoflow_fcm---v0107)
+
+---
+
+#### `djangoflow_app` - `v3.7.2`
+
+ - **FIX**: showing snackbar results in to empty scaffold error. ([f1ab4a96](https://github.com/djangoflow/flutter-djangoflow/commit/f1ab4a96cac91d860eb5ba38860fc32ebf83bcfa))
+
+#### `djangoflow_fcm` - `v0.1.0+7`
+
+ - **REFACTOR**: remove unused import. ([a94c4f34](https://github.com/djangoflow/flutter-djangoflow/commit/a94c4f34e9c17b9da724b222b739830cdeaf9f9f))
+
+
 ## 2023-12-28
 
 ### Changes

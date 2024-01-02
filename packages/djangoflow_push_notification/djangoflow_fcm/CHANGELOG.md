@@ -1,3 +1,7 @@
+## 0.1.0+7
+
+ - **REFACTOR**: remove unused import. ([a94c4f34](https://github.com/djangoflow/flutter-djangoflow/commit/a94c4f34e9c17b9da724b222b739830cdeaf9f9f))
+
 ## 0.1.0+6
 
  - **REVERT**: remove workaround for. ([2171605b](https://github.com/djangoflow/flutter-djangoflow/commit/2171605be95e377054f5c53182c00675c71c5f77))
