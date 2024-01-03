@@ -25,7 +25,7 @@ void main() {
       mockFirebaseAnalytics.setUserId(id: anyNamed('id')),
     ).thenAnswer((_) => Future.value());
     when(mockFirebaseAnalytics.setUserProperty(
-            name: anyNamed('name'), value: anyNamed('value')))
+            name: anyNamed('name'), value: anyNamed('value'),),)
         .thenAnswer((_) => Future.value());
     userPropertyRemover.perform(event);
     verify(
@@ -33,7 +33,7 @@ void main() {
     ).called(1);
     verifyNever(
       mockFirebaseAnalytics.setUserProperty(
-          name: anyNamed('name'), value: anyNamed('value')),
+          name: anyNamed('name'), value: anyNamed('value'),),
     );
   });
 

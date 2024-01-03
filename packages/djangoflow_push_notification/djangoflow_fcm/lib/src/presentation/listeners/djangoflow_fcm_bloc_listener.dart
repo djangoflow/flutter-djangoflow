@@ -4,9 +4,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class DjangoflowFCMBlocListener
     extends BlocListener<DjangoflowFCMBloc, DjangoflowFCMState> {
   DjangoflowFCMBlocListener({
-    super.key,
+    required super.listener, super.key,
     super.child,
-    required super.listener,
     BlocListenerCondition<DjangoflowFCMState>? listenWhen,
   }) : super(listenWhen: listenWhen ?? (prev, current) => prev != current);
 }

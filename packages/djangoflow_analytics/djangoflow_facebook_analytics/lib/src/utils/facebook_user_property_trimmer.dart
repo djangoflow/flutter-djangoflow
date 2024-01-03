@@ -1,6 +1,6 @@
 import 'package:djangoflow_analytics/djangoflow_analytics.dart';
 
-import '../configurations/constants.dart';
+import 'package:djangoflow_facebook_analytics/src/configurations/constants.dart';
 
 class FacebookUserPropertyTrimmer extends UserPropertyTrimmer {
   @override

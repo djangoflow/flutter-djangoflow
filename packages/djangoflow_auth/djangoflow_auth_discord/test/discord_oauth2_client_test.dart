@@ -26,7 +26,7 @@ void main() {
         authorizeUrl: authorizeUrl,
         tokenUrl: tokenUrl,
         redirectUri: redirectUri,
-        customUriScheme: customUriScheme);
+        customUriScheme: customUriScheme,);
 
     test('Get new token', () async {
       final httpClient = MockClient();
@@ -42,17 +42,17 @@ void main() {
 
       when(webAuthClient.authenticate(
               url: DiscordOAuth2Helper.addParamsToUrl(
-                  oauth2Client.authorizeUrl, authParams),
+                  oauth2Client.authorizeUrl, authParams,),
               callbackUrlScheme: customUriScheme,
-              redirectUrl: redirectUri))
+              redirectUrl: redirectUri,),)
           .thenAnswer((_) async =>
-              '$redirectUri#access_token=$accessToken&token_type=bearer&state=$state');
+              '$redirectUri#access_token=$accessToken&token_type=bearer&state=$state',);
 
       final tknResponse = await oauth2Client.getTokenWithImplicitGrantFlow(
           clientId: clientId,
           state: state,
           httpClient: httpClient,
-          webAuthClient: webAuthClient);
+          webAuthClient: webAuthClient,);
 
       expect(tknResponse.accessToken, accessToken);
     });

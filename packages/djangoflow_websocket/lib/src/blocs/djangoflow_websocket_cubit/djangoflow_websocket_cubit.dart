@@ -12,20 +12,20 @@ import 'package:web_socket_channel/status.dart' as status;
 /// and emits [DjangoflowWebsocketState]s. It also handles automatic reconnection.
 class DjangoflowWebsocketCubit extends DjangoflowWebsocketCubitBase
     with SafeEmitMixin {
-  StreamSubscription? _subscription;
-  WebSocketChannel? _channel;
 
   DjangoflowWebsocketCubit({required super.config})
       : super(
           const DjangoflowWebsocketState(),
         );
+  StreamSubscription? _subscription;
+  WebSocketChannel? _channel;
 
   /// Connect to a websocket server
   @override
   void connectToUri(Uri uri) {
     emit(state.copyWith(
       connectionStateMessage: config.connectingMessage,
-    ));
+    ),);
     _connect(uri);
   }
 
@@ -50,7 +50,7 @@ class DjangoflowWebsocketCubit extends DjangoflowWebsocketCubitBase
         );
         emit(state.copyWith(
           connectionStateMessage: null,
-        ));
+        ),);
       } else {
         _reconnect(uri, config.failedToSubscribeMessage);
       }
@@ -62,11 +62,11 @@ class DjangoflowWebsocketCubit extends DjangoflowWebsocketCubitBase
   Future<void> _reconnect(Uri uri, Object? message) async {
     emit(state.copyWith(
       connectionStateMessage: 'Error: ${message?.toString() ?? ""}, will retry',
-    ));
+    ),);
     await Future.delayed(config.wSReconnectDelay);
     emit(state.copyWith(
       connectionStateMessage: config.reConnectingMessage,
-    ));
+    ),);
     _connect(uri);
   }
 

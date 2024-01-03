@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
 class DjangoflowAppSnackbar {
-  static DjangoflowAppSnackbar get instance => _instance;
 
   factory DjangoflowAppSnackbar() => _instance;
+
+  DjangoflowAppSnackbar._internal();
+  static DjangoflowAppSnackbar get instance => _instance;
   static final DjangoflowAppSnackbar _instance =
       DjangoflowAppSnackbar._internal();
   static final scaffoldMessengerKey = GlobalKey<ScaffoldMessengerState>();
-
-  DjangoflowAppSnackbar._internal();
 
   static void showInfo(
     String message, {

@@ -3,7 +3,7 @@ import 'package:djangoflow_auth/src/models/social_login_type/social_login_type.d
 import 'package:djangoflow_openapi/djangoflow_openapi.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 
-import 'auth_state.dart';
+import 'package:djangoflow_auth/src/blocs/auth_cubit/auth_state.dart';
 
 export 'auth_state.dart';
 
@@ -41,7 +41,7 @@ abstract class HydratedAuthCubitBase extends HydratedCubit<AuthState> {
   /// Login user with social provider token data that was retrieved via [requestTokenFromSocialProvider]
   /// This will retrieve token from backend and login user
   Future<void> loginWithSocialProviderToken(
-      {required SocialTokenObtainRequest socialTokenObtainRequest});
+      {required SocialTokenObtainRequest socialTokenObtainRequest,});
 
   Future<void> changePassword({
     required String id,

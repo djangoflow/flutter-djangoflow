@@ -17,7 +17,7 @@ extension PushActionCategoryExtension on PushActionCategory {
                     DarwinNotificationActionOption.foreground,
                   if (e.authenticationRequired == true)
                     DarwinNotificationActionOption.authenticationRequired,
-                }))
+                },),)
             .toList(),
         options: <DarwinNotificationCategoryOption>{
           DarwinNotificationCategoryOption.hiddenPreviewShowTitle,
@@ -32,7 +32,7 @@ extension PushActionCategoryListExtension on List<PushActionCategory> {
 
   List<AndroidNotificationAction> toAndroidNotificationActions(
       String actionCategory,
-      {Color? destructiveColor}) {
+      {Color? destructiveColor,}) {
     final pushCategory = firstWhereOrNull((e) => e.name == actionCategory);
     if (pushCategory == null) {
       return <AndroidNotificationAction>[];
@@ -43,7 +43,7 @@ extension PushActionCategoryListExtension on List<PushActionCategory> {
                 e.buttonText,
                 titleColor: e.destructive == true ? destructiveColor : null,
                 showsUserInterface: e.foreground == true,
-              ))
+              ),)
           .toList();
     }
   }

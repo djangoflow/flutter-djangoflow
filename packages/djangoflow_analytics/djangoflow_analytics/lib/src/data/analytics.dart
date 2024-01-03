@@ -3,11 +3,11 @@ import 'package:flutter/foundation.dart';
 
 /// An [AnalyticService] that performs [AnalyticAction]s.
 class DjangoflowAnalytics extends AnalyticService<AnalyticAction> {
+  DjangoflowAnalytics._internal() : super();
   static DjangoflowAnalytics get instance => _instance;
   static final DjangoflowAnalytics _instance = DjangoflowAnalytics._internal();
 
   bool _hasInitialized = false;
-  DjangoflowAnalytics._internal() : super();
 
   @visibleForTesting
   static DjangoflowAnalytics get testInstance =>
@@ -20,7 +20,7 @@ class DjangoflowAnalytics extends AnalyticService<AnalyticAction> {
   final _performers = <AnalyticActionPerformer<AnalyticAction>>{};
 
   /// Returns true if the DjangoflowAnalytics has been initialized.
-  bool get hasInitialized => _hasInitialized == true;
+  bool get hasInitialized => _hasInitialized;
 
   /// Returns a list of all the performers.
   List<AnalyticActionPerformer> get performers => _performers.toList();
@@ -28,7 +28,7 @@ class DjangoflowAnalytics extends AnalyticService<AnalyticAction> {
   /// Perform [action] with all the performers.
   @override
   void performAction(AnalyticAction action) {
-    if (hasInitialized == true) {
+    if (hasInitialized) {
       _getPerformersByAction(action)
           .forEach((performer) => performer.perform(action));
     }

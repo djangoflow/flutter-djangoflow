@@ -1,6 +1,6 @@
 import 'package:djangoflow_analytics/djangoflow_analytics.dart';
 
-import '../configurations/constants.dart';
+import 'package:djangoflow_firebase_analytics/src/configurations/constants.dart';
 
 class FirebaseUserPropertyCutter extends UserPropertyTrimmer {
   @override

@@ -3,8 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AppCubitBuilder extends BlocBuilder<AppCubit, AppState> {
   AppCubitBuilder({
-    super.key,
-    required super.builder,
+    required super.builder, super.key,
     BlocBuilderCondition<AppState>? buildWhen,
   }) : super(
           buildWhen: buildWhen ?? (previous, current) => previous != current,

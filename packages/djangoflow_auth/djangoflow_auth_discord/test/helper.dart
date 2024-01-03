@@ -22,9 +22,11 @@ class DiscordOAuth2Helper {
 
   static String addParamsToUrl(String url, Map params) {
     var qs = params2qs(params);
+    String resultUrl = url;
+    if (qs.isNotEmpty) {
+      resultUrl += '?$qs';
+    }
 
-    if (qs.isNotEmpty) url = '$url?$qs';
-
-    return url;
+    return resultUrl;
   }
 }

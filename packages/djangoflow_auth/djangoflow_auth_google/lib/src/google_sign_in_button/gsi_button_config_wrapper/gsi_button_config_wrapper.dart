@@ -6,7 +6,6 @@ part 'gsi_button_config_wrapper.g.dart';
 /// one to one mapped with GSIButtonConfiguration from google_sign_in_web
 @freezed
 class GSIButtonConfigWrapper with _$GSIButtonConfigWrapper {
-  const GSIButtonConfigWrapper._();
 
   const factory GSIButtonConfigWrapper({
     GSIWrapperButtonType? type,
@@ -18,6 +17,7 @@ class GSIButtonConfigWrapper with _$GSIButtonConfigWrapper {
     String? locale,
     double? minimumWidth,
   }) = _GSIButtonConfigWrapper;
+  const GSIButtonConfigWrapper._();
 
   factory GSIButtonConfigWrapper.fromJson(
     Map<String, dynamic> map,

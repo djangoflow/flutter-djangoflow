@@ -8,14 +8,14 @@ environment:
   flutter: ">=1.17.0"
 
 dependencies:
+  djangoflow_error_reporter: ^0.1.0+2
   flutter:
     sdk: flutter
-  djangoflow_error_reporter: ^0.1.0+2
   sentry_flutter: ^7.7.0
 
 dev_dependencies:
+  flutter_lints: ^3.0.1
   flutter_test:
     sdk: flutter
-  flutter_lints: ^3.0.1
 
 flutter:

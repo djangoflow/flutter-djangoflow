@@ -6,7 +6,7 @@ import 'dart:math' as math;
 
 class WebWindow {
   const WebWindow({
-    this.hasScrollbars = false,
+    required this.onClosed, required this.uri, required this.title, this.hasScrollbars = false,
     this.isResizable = false,
     this.hasStatusBar = false,
     this.hasLocationbar = false,
@@ -19,13 +19,10 @@ class WebWindow {
     this.onMessage,
     // ignore: unused_element
     this.centerOnScreen = true,
-    required this.onClosed,
-    required this.uri,
-    required this.title,
   });
 
   factory WebWindow.open({
-    bool hasScrollbars = false,
+    required void Function() onClosed, required Uri uri, required String title, bool hasScrollbars = false,
     bool isResizable = false,
     bool hasStatusBar = false,
     bool hasLocationbar = false,
@@ -36,9 +33,6 @@ class WebWindow {
     int width = 360,
     int height = 600,
     void Function(html.MessageEvent event, void Function() close)? onMessage,
-    required void Function() onClosed,
-    required Uri uri,
-    required String title,
   }) =>
       WebWindow(
         hasScrollbars: hasScrollbars,

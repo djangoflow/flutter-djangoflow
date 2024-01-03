@@ -1,7 +1,7 @@
 import 'package:google_sign_in_platform_interface/google_sign_in_platform_interface.dart';
 import 'package:google_sign_in_web/google_sign_in_web.dart' as web;
 
-import '../google_sign_in_button.dart';
+import 'package:djangoflow_auth_google/src/google_sign_in_button/google_sign_in_button.dart';
 
 class GoogleSignInButton extends BaseGoogleSignInButton {
   GoogleSignInButton({super.key, super.onPressed, super.configurationWrapper})

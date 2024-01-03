@@ -15,13 +15,13 @@ class TestErrorReporter extends ErrorReporter {
 
   @override
   Future<void> report(
-      {required Object exception, StackTrace? stackTrace}) async {
+      {required Object exception, StackTrace? stackTrace,}) async {
     _reportedException = exception;
   }
 
   @override
   Future<void> updateUserInformation(
-      {String? id, String? email, String? name}) async {
+      {String? id, String? email, String? name,}) async {
     _reportedId = id;
     _reportedEmail = email;
     _reportedName = name;
@@ -45,7 +45,7 @@ void main() {
       djangoflowErrorReporter.addAll([errorReporter]);
       final exception = Exception('test exception');
       await djangoflowErrorReporter.report(
-          exception: exception, stackTrace: null);
+          exception: exception, stackTrace: null,);
       expect(errorReporter._reportedException, exception);
     });
 
@@ -54,7 +54,7 @@ void main() {
       final djangoflowErrorReporter = DjangoflowErrorReporter.instance;
       djangoflowErrorReporter.addAll([errorReporter]);
       await djangoflowErrorReporter.updateUserInformation(
-          id: '123', email: 'user@example.com', name: 'User');
+          id: '123', email: 'user@example.com', name: 'User',);
       expect(errorReporter._reportedId, '123');
       expect(errorReporter._reportedEmail, 'user@example.com');
       expect(errorReporter._reportedName, 'User');

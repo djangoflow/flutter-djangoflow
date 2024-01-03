@@ -2,10 +2,6 @@ import 'package:djangoflow_auth/djangoflow_auth.dart';
 import 'package:sign_in_with_apple/sign_in_with_apple.dart';
 
 class AppleSocialLogin extends SocialLogin<AuthorizationCredentialAppleID> {
-  final List<AppleIDAuthorizationScopes> scopes;
-  final String? nonce;
-  final WebAuthenticationOptions? webAuthenticationOptions;
-  final String? state;
 
   AppleSocialLogin({
     required super.type,
@@ -17,6 +13,10 @@ class AppleSocialLogin extends SocialLogin<AuthorizationCredentialAppleID> {
     this.nonce,
     this.webAuthenticationOptions,
   });
+  final List<AppleIDAuthorizationScopes> scopes;
+  final String? nonce;
+  final WebAuthenticationOptions? webAuthenticationOptions;
+  final String? state;
 
   @override
   Future<AuthorizationCredentialAppleID?> login() async {

@@ -37,7 +37,7 @@ class NotificationInitializer {
     DidReceiveLocalNotificationCallback? onDidReceiveLocalNotification,
     DidReceiveNotificationResponseCallback? onDidReceiveNotificationResponse,
   }) async {
-    if (_hasInitialized == false || forceInitialize == true) {
+    if (!_hasInitialized || forceInitialize == true) {
       AndroidInitializationSettings initializationSettingsAndroid =
           AndroidInitializationSettings(defaultAndroidNotificationIcon);
       final DarwinInitializationSettings initializationSettingsDarwin =

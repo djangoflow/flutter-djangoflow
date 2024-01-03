@@ -6,8 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class DjangoflowWebsocketBlocBuilder<C extends DjangoflowWebsocketCubitBase>
     extends BlocBuilder<C, DjangoflowWebsocketState> {
   const DjangoflowWebsocketBlocBuilder({
-    super.key,
-    required super.builder,
+    required super.builder, super.key,
     super.buildWhen,
     super.bloc,
   });

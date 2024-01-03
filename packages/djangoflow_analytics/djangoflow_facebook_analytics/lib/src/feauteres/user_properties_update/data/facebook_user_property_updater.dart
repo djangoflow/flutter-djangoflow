@@ -4,7 +4,7 @@ import 'package:djangoflow_facebook_analytics/src/configurations/constants.dart'
 import 'package:djangoflow_facebook_analytics/src/utils/utils.dart';
 import 'package:facebook_app_events/facebook_app_events.dart';
 
-import 'facebook_updatable_user_property.dart';
+import 'package:djangoflow_facebook_analytics/src/feauteres/user_properties_update/data/facebook_updatable_user_property.dart';
 
 /// Supports updating keys and values of user properties.
 /// User properties keys are available for the following keys:
@@ -14,11 +14,11 @@ import 'facebook_updatable_user_property.dart';
 /// - [kLastNameKey] = 'last_name' -> setUserData({lastName: String?})
 class FacebookUserPropertyUpdater
     implements AnalyticActionPerformer<FacebookUpdatableUserProperty> {
+
+  FacebookUserPropertyUpdater(this._facebookAppEvents);
   final FacebookAppEvents _facebookAppEvents;
   final FacebookUserPropertyTrimmer _userPropertyCutter =
       FacebookUserPropertyTrimmer();
-
-  FacebookUserPropertyUpdater(this._facebookAppEvents);
   @override
   bool canHandle(AnalyticAction action) =>
       action is FacebookUpdatableUserProperty;

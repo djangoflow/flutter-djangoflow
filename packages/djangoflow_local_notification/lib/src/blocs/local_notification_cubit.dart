@@ -4,7 +4,7 @@ import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:djangoflow_openapi/djangoflow_openapi.dart';
 
-import 'local_notification_state.dart';
+import 'package:djangoflow_local_notification/src/blocs/local_notification_state.dart';
 export 'local_notification_state.dart';
 
 typedef PresentableNotificationCallBack = Future<NotificationDetails?>
@@ -12,11 +12,11 @@ typedef PresentableNotificationCallBack = Future<NotificationDetails?>
 
 class LocalNotificationCubit extends Cubit<LocalNotificationState>
     with SafeEmitMixin<LocalNotificationState> {
+
+  LocalNotificationCubit._internal() : super(const LocalNotificationState());
   static LocalNotificationCubit get instance => _instance;
   static final LocalNotificationCubit _instance =
       LocalNotificationCubit._internal();
-
-  LocalNotificationCubit._internal() : super(const LocalNotificationState());
 
   NotificationInitializer? notificationInitializer;
 

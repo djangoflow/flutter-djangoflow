@@ -31,7 +31,7 @@ void main() {
         cubit.requestTokenFromSocialProvider<String>(const SocialLoginType(
           id: 'Google',
           provider: ProviderEnum.googleOauth2,
-        )),
+        ),),
         throwsA(
           isA<LoginProviderNotFoundException>(),
         ),

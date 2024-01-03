@@ -40,7 +40,7 @@ void main() {
     ).thenAnswer((_) => Future.value());
     when(mockFacebookAppEvents.setUserData(
       email: event.value,
-    )).thenAnswer((_) => Future.value());
+    ),).thenAnswer((_) => Future.value());
     userPropertyUpdater.perform(event);
     verify(
       mockFacebookAppEvents.setUserData(email: event.value),
@@ -56,7 +56,7 @@ void main() {
     ).thenAnswer((_) => Future.value());
     when(mockFacebookAppEvents.setUserData(
       firstName: event.value,
-    )).thenAnswer((_) => Future.value());
+    ),).thenAnswer((_) => Future.value());
     userPropertyUpdater.perform(event);
     verify(
       mockFacebookAppEvents.setUserData(firstName: event.value),
@@ -72,7 +72,7 @@ void main() {
     ).thenAnswer((_) => Future.value());
     when(mockFacebookAppEvents.setUserData(
       lastName: event.value,
-    )).thenAnswer((_) => Future.value());
+    ),).thenAnswer((_) => Future.value());
     userPropertyUpdater.perform(event);
     verify(
       mockFacebookAppEvents.setUserData(lastName: event.value),

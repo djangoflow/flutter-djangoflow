@@ -8,19 +8,19 @@ environment:
   flutter: ">=1.17.0"
 
 dependencies:
-  flutter:
-    sdk: flutter
   analytics: ^1.0.2
   djangoflow_analytics: ^0.0.2+1
   firebase_analytics: ^10.7.1
   firebase_analytics_platform_interface: ^3.8.1
   firebase_core: ^2.23.0
+  flutter:
+    sdk: flutter
   mockito: ^5.4.0
 
 dev_dependencies:
+  build_runner: ^2.4.6
+  flutter_lints: ^3.0.1
   flutter_test:
     sdk: flutter
-  flutter_lints: ^3.0.1
-  build_runner: ^2.4.6
 
 flutter:

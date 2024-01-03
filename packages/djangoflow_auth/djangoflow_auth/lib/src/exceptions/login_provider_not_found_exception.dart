@@ -1,7 +1,7 @@
 class LoginProviderNotFoundException implements Exception {
-  final String message;
 
   LoginProviderNotFoundException(this.message);
+  final String message;
 
   @override
   String toString() => message;

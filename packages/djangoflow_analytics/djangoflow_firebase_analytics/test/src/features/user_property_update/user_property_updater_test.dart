@@ -26,7 +26,7 @@ void main() {
     ).thenAnswer((_) => Future.value());
     when(
       mockFirebaseAnalytics.setUserProperty(
-          name: anyNamed('name'), value: anyNamed('value')),
+          name: anyNamed('name'), value: anyNamed('value'),),
     ).thenAnswer((_) => Future.value());
 
     userPropertyUpdater.perform(event);
@@ -35,7 +35,7 @@ void main() {
     ).called(1);
 
     verifyNever(mockFirebaseAnalytics.setUserProperty(
-        name: anyNamed('name'), value: anyNamed('value')));
+        name: anyNamed('name'), value: anyNamed('value'),),);
   });
 
   test('perform() should not call setUserId and update email', () {
@@ -44,12 +44,12 @@ void main() {
       mockFirebaseAnalytics.setUserId(id: anyNamed('id')),
     ).thenAnswer((_) => Future.value());
     when(mockFirebaseAnalytics.setUserProperty(
-            name: anyNamed('name'), value: anyNamed('value')))
+            name: anyNamed('name'), value: anyNamed('value'),),)
         .thenAnswer((_) => Future.value());
     userPropertyUpdater.perform(event);
     verify(
       mockFirebaseAnalytics.setUserProperty(
-          name: event.key, value: event.value),
+          name: event.key, value: event.value,),
     ).called(1);
 
     verifyNever(mockFirebaseAnalytics.setUserId(id: anyNamed('id')));

@@ -7,10 +7,10 @@ import 'package:flutter_test/flutter_test.dart';
 import '../../helpers/test_string_generator.dart';
 
 class TestFirebaseUserProperty implements AnalyticAction {
-  final String key;
-  final String value;
 
   TestFirebaseUserProperty(this.key, this.value);
+  final String key;
+  final String value;
 }
 
 void main() {
@@ -32,7 +32,7 @@ void main() {
       final testEventTrimmer = FirebaseEventTrimmer();
       final testUserProperty = TestFirebaseUserProperty(
           testStringGen.generateRandomString(kMaxSetUserPropertyKeyLength + 10),
-          'value1');
+          'value1',);
       final trimmedKey = testEventTrimmer.trimName(testUserProperty.key);
 
       expect(trimmedKey, hasLength(kMaxSetUserPropertyKeyLength));
@@ -45,7 +45,7 @@ void main() {
       final testUserProperty = TestFirebaseUserProperty(
           'key1',
           testStringGen
-              .generateRandomString(kMaxSetUserPropertyValueLength + 10));
+              .generateRandomString(kMaxSetUserPropertyValueLength + 10),);
       final trimmedValue = testEventTrimmer.trimValue(testUserProperty.value);
 
       expect(trimmedValue, hasLength(kMaxSetUserPropertyValueLength));

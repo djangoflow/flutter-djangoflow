@@ -22,7 +22,7 @@ void main() {
     test('getForegroundRemoteMessageStream returns FirebaseMessaging.onMessage',
         () {
       expect(repository.getForegroundRemoteMessageStream(),
-          FirebaseMessaging.onMessage);
+          FirebaseMessaging.onMessage,);
     });
 
     test(
@@ -38,7 +38,7 @@ void main() {
         'getBackgroundRemoteMessageTappedStream returns FirebaseMessaging.onMessageOpenedApp',
         () {
       expect(repository.getBackgroundRemoteMessageTappedStream(),
-          FirebaseMessaging.onMessageOpenedApp);
+          FirebaseMessaging.onMessageOpenedApp,);
     });
 
     test('requestNotificationPermission calls _messaging.requestPermission',
@@ -50,7 +50,7 @@ void main() {
               carPlay: false,
               criticalAlert: false,
               provisional: false,
-              sound: true))
+              sound: true,),)
           .thenAnswer((_) => Future.value(testNotificationSettings));
       final result = await repository.requestNotificationPermission();
       expect(result, isA<NotificationSettings>());

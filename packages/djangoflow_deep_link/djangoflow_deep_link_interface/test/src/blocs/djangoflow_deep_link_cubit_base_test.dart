@@ -8,7 +8,7 @@ import '../data/djangoflow_deep_link_repository_base_test.mocks.dart';
 class TestDjangoflowDeepLinkCubit<String>
     extends DjangoflowDeepLinkCubitBase<String> {
   TestDjangoflowDeepLinkCubit(
-      DjangoflowDeepLinkRepositoryBase<String> repository)
+      DjangoflowDeepLinkRepositoryBase<String> repository,)
       : super(null, repository);
 }
 
