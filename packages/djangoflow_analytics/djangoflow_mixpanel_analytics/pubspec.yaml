@@ -1,6 +1,6 @@
 name: djangoflow_mixpanel_analytics
 description: A library provides an easy and organized way to implement Mixpanel Analytics for your Flutter apps.
-version: 0.1.0+1
+version: 0.1.0+2
 homepage: https://github.com/djangoflow/flutter-djangoflow/
 
 environment:
@@ -9,7 +9,7 @@ environment:
 
 dependencies:
   analytics: ^1.0.2
-  djangoflow_analytics: ^0.0.2+1
+  djangoflow_analytics: ^0.0.2+2
   flutter:
     sdk: flutter
   mixpanel_flutter: ^2.2.0

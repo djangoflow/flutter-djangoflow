@@ -3,6 +3,144 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2024-01-03
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`djangoflow_analytics` - `v0.0.2+2`](#djangoflow_analytics---v0022)
+ - [`djangoflow_app` - `v3.7.3`](#djangoflow_app---v373)
+ - [`djangoflow_app_links` - `v1.2.3`](#djangoflow_app_links---v123)
+ - [`djangoflow_auth` - `v0.3.0+5`](#djangoflow_auth---v0305)
+ - [`djangoflow_auth_apple` - `v0.1.0+3`](#djangoflow_auth_apple---v0103)
+ - [`djangoflow_auth_discord` - `v0.1.0+3`](#djangoflow_auth_discord---v0103)
+ - [`djangoflow_auth_facebook` - `v0.1.0+3`](#djangoflow_auth_facebook---v0103)
+ - [`djangoflow_auth_google` - `v0.1.0+5`](#djangoflow_auth_google---v0105)
+ - [`djangoflow_bloc_extensions` - `v0.0.2+3`](#djangoflow_bloc_extensions---v0023)
+ - [`djangoflow_deep_link_interface` - `v1.2.2`](#djangoflow_deep_link_interface---v122)
+ - [`djangoflow_error_reporter` - `v0.1.0+3`](#djangoflow_error_reporter---v0103)
+ - [`djangoflow_facebook_analytics` - `v0.0.4+2`](#djangoflow_facebook_analytics---v0042)
+ - [`djangoflow_fcm` - `v0.1.0+8`](#djangoflow_fcm---v0108)
+ - [`djangoflow_firebase_analytics` - `v0.2.0+2`](#djangoflow_firebase_analytics---v0202)
+ - [`djangoflow_local_notification` - `v0.0.2+8`](#djangoflow_local_notification---v0028)
+ - [`djangoflow_mixpanel_analytics` - `v0.1.0+2`](#djangoflow_mixpanel_analytics---v0102)
+ - [`djangoflow_sentry_reporter` - `v0.1.0+3`](#djangoflow_sentry_reporter---v0103)
+ - [`djangoflow_video_player` - `v0.0.2`](#djangoflow_video_player---v002)
+ - [`djangoflow_websocket` - `v0.1.0+5`](#djangoflow_websocket---v0105)
+ - [`djangoflow_remote_config` - `v0.0.4+2`](#djangoflow_remote_config---v0042)
+
+Packages with dependency updates only:
+
+> Packages listed below depend on other packages in this workspace that have had changes. Their versions have been incremented to bump the minimum dependency versions of the packages they depend upon in this project.
+
+ - `djangoflow_remote_config` - `v0.0.4+2`
+
+---
+
+#### `djangoflow_analytics` - `v0.0.2+2`
+
+ - **REFACTOR**: resolve linter warnings. ([9ab6b6e5](https://github.com/djangoflow/flutter-djangoflow/commit/9ab6b6e5e700de585393939f3afd1cb2527f9d39))
+
+#### `djangoflow_app` - `v3.7.3`
+
+ - **REFACTOR**: format the codebase. ([fc078388](https://github.com/djangoflow/flutter-djangoflow/commit/fc0783887eb7881d079c7381299248cea2fdf63a))
+ - **REFACTOR**: resolve linter warnings. ([9ab6b6e5](https://github.com/djangoflow/flutter-djangoflow/commit/9ab6b6e5e700de585393939f3afd1cb2527f9d39))
+
+#### `djangoflow_app_links` - `v1.2.3`
+
+ - **REFACTOR**: format the codebase. ([fc078388](https://github.com/djangoflow/flutter-djangoflow/commit/fc0783887eb7881d079c7381299248cea2fdf63a))
+ - **REFACTOR**: resolve linter warnings. ([9ab6b6e5](https://github.com/djangoflow/flutter-djangoflow/commit/9ab6b6e5e700de585393939f3afd1cb2527f9d39))
+
+#### `djangoflow_auth` - `v0.3.0+5`
+
+ - **REFACTOR**: format the codebase. ([fc078388](https://github.com/djangoflow/flutter-djangoflow/commit/fc0783887eb7881d079c7381299248cea2fdf63a))
+ - **REFACTOR**: resolve linter warnings. ([9ab6b6e5](https://github.com/djangoflow/flutter-djangoflow/commit/9ab6b6e5e700de585393939f3afd1cb2527f9d39))
+
+#### `djangoflow_auth_apple` - `v0.1.0+3`
+
+ - **REFACTOR**: format the codebase. ([fc078388](https://github.com/djangoflow/flutter-djangoflow/commit/fc0783887eb7881d079c7381299248cea2fdf63a))
+ - **REFACTOR**: resolve linter warnings. ([9ab6b6e5](https://github.com/djangoflow/flutter-djangoflow/commit/9ab6b6e5e700de585393939f3afd1cb2527f9d39))
+
+#### `djangoflow_auth_discord` - `v0.1.0+3`
+
+ - **REFACTOR**: format the codebase. ([fc078388](https://github.com/djangoflow/flutter-djangoflow/commit/fc0783887eb7881d079c7381299248cea2fdf63a))
+ - **REFACTOR**: resolve linter warnings. ([9ab6b6e5](https://github.com/djangoflow/flutter-djangoflow/commit/9ab6b6e5e700de585393939f3afd1cb2527f9d39))
+
+#### `djangoflow_auth_facebook` - `v0.1.0+3`
+
+ - **REFACTOR**: format the codebase. ([fc078388](https://github.com/djangoflow/flutter-djangoflow/commit/fc0783887eb7881d079c7381299248cea2fdf63a))
+ - **REFACTOR**: resolve linter warnings. ([9ab6b6e5](https://github.com/djangoflow/flutter-djangoflow/commit/9ab6b6e5e700de585393939f3afd1cb2527f9d39))
+
+#### `djangoflow_auth_google` - `v0.1.0+5`
+
+ - **REFACTOR**: format the codebase. ([fc078388](https://github.com/djangoflow/flutter-djangoflow/commit/fc0783887eb7881d079c7381299248cea2fdf63a))
+ - **REFACTOR**: resolve linter warnings. ([9ab6b6e5](https://github.com/djangoflow/flutter-djangoflow/commit/9ab6b6e5e700de585393939f3afd1cb2527f9d39))
+
+#### `djangoflow_bloc_extensions` - `v0.0.2+3`
+
+ - **REFACTOR**: resolve linter warnings. ([9ab6b6e5](https://github.com/djangoflow/flutter-djangoflow/commit/9ab6b6e5e700de585393939f3afd1cb2527f9d39))
+
+#### `djangoflow_deep_link_interface` - `v1.2.2`
+
+ - **REFACTOR**: format the codebase. ([fc078388](https://github.com/djangoflow/flutter-djangoflow/commit/fc0783887eb7881d079c7381299248cea2fdf63a))
+ - **REFACTOR**: resolve linter warnings. ([9ab6b6e5](https://github.com/djangoflow/flutter-djangoflow/commit/9ab6b6e5e700de585393939f3afd1cb2527f9d39))
+
+#### `djangoflow_error_reporter` - `v0.1.0+3`
+
+ - **REFACTOR**: format the codebase. ([fc078388](https://github.com/djangoflow/flutter-djangoflow/commit/fc0783887eb7881d079c7381299248cea2fdf63a))
+ - **REFACTOR**: resolve linter warnings. ([9ab6b6e5](https://github.com/djangoflow/flutter-djangoflow/commit/9ab6b6e5e700de585393939f3afd1cb2527f9d39))
+
+#### `djangoflow_facebook_analytics` - `v0.0.4+2`
+
+ - **REFACTOR**: format the codebase. ([fc078388](https://github.com/djangoflow/flutter-djangoflow/commit/fc0783887eb7881d079c7381299248cea2fdf63a))
+ - **REFACTOR**: resolve linter warnings. ([9ab6b6e5](https://github.com/djangoflow/flutter-djangoflow/commit/9ab6b6e5e700de585393939f3afd1cb2527f9d39))
+
+#### `djangoflow_fcm` - `v0.1.0+8`
+
+ - **REFACTOR**: format the codebase. ([fc078388](https://github.com/djangoflow/flutter-djangoflow/commit/fc0783887eb7881d079c7381299248cea2fdf63a))
+ - **REFACTOR**: resolve linter warnings. ([9ab6b6e5](https://github.com/djangoflow/flutter-djangoflow/commit/9ab6b6e5e700de585393939f3afd1cb2527f9d39))
+
+#### `djangoflow_firebase_analytics` - `v0.2.0+2`
+
+ - **REFACTOR**: format the codebase. ([fc078388](https://github.com/djangoflow/flutter-djangoflow/commit/fc0783887eb7881d079c7381299248cea2fdf63a))
+ - **REFACTOR**: resolve linter warnings. ([9ab6b6e5](https://github.com/djangoflow/flutter-djangoflow/commit/9ab6b6e5e700de585393939f3afd1cb2527f9d39))
+
+#### `djangoflow_local_notification` - `v0.0.2+8`
+
+ - **REFACTOR**: format the codebase. ([fc078388](https://github.com/djangoflow/flutter-djangoflow/commit/fc0783887eb7881d079c7381299248cea2fdf63a))
+ - **REFACTOR**: resolve linter warnings. ([9ab6b6e5](https://github.com/djangoflow/flutter-djangoflow/commit/9ab6b6e5e700de585393939f3afd1cb2527f9d39))
+
+#### `djangoflow_mixpanel_analytics` - `v0.1.0+2`
+
+ - **REFACTOR**: format the codebase. ([fc078388](https://github.com/djangoflow/flutter-djangoflow/commit/fc0783887eb7881d079c7381299248cea2fdf63a))
+ - **REFACTOR**: resolve linter warnings. ([9ab6b6e5](https://github.com/djangoflow/flutter-djangoflow/commit/9ab6b6e5e700de585393939f3afd1cb2527f9d39))
+
+#### `djangoflow_sentry_reporter` - `v0.1.0+3`
+
+ - **REFACTOR**: format the codebase. ([fc078388](https://github.com/djangoflow/flutter-djangoflow/commit/fc0783887eb7881d079c7381299248cea2fdf63a))
+ - **REFACTOR**: resolve linter warnings. ([9ab6b6e5](https://github.com/djangoflow/flutter-djangoflow/commit/9ab6b6e5e700de585393939f3afd1cb2527f9d39))
+
+#### `djangoflow_video_player` - `v0.0.2`
+
+ - **REFACTOR**: expose more fields for VideoPlayerController. ([73909c85](https://github.com/djangoflow/flutter-djangoflow/commit/73909c8584617c50d2ed727ddab62934ddbfdc7a))
+ - **REFACTOR**: update VideoPlayerWidgetBuilder. ([28cf6739](https://github.com/djangoflow/flutter-djangoflow/commit/28cf673998dc2246408704b8009e43821c197b8a))
+ - **FEAT**: add VideoPlayerWidget. ([06345040](https://github.com/djangoflow/flutter-djangoflow/commit/063450400be600c281f5c77d5a8ee1ffe765d167))
+ - **FEAT**: add VideoPlayerWidgetBuilder. ([38f844c1](https://github.com/djangoflow/flutter-djangoflow/commit/38f844c1a792f7287457a56baba7a51dfbca9b8c))
+ - **FEAT**: initialize djangoflow_video_player pacakge. ([3cca34f7](https://github.com/djangoflow/flutter-djangoflow/commit/3cca34f792f84016960b8abbb383cb8d39cf9dfc))
+
+#### `djangoflow_websocket` - `v0.1.0+5`
+
+ - **REFACTOR**: format the codebase. ([fc078388](https://github.com/djangoflow/flutter-djangoflow/commit/fc0783887eb7881d079c7381299248cea2fdf63a))
+ - **REFACTOR**: resolve linter warnings. ([9ab6b6e5](https://github.com/djangoflow/flutter-djangoflow/commit/9ab6b6e5e700de585393939f3afd1cb2527f9d39))
+
+
 ## 2024-01-02
 
 ### Changes

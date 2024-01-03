@@ -1,3 +1,8 @@
+## 3.7.3
+
+ - **REFACTOR**: format the codebase. ([fc078388](https://github.com/djangoflow/flutter-djangoflow/commit/fc0783887eb7881d079c7381299248cea2fdf63a))
+ - **REFACTOR**: resolve linter warnings. ([9ab6b6e5](https://github.com/djangoflow/flutter-djangoflow/commit/9ab6b6e5e700de585393939f3afd1cb2527f9d39))
+
 ## 3.7.2
 
  - **FIX**: showing snackbar results in to empty scaffold error. ([f1ab4a96](https://github.com/djangoflow/flutter-djangoflow/commit/f1ab4a96cac91d860eb5ba38860fc32ebf83bcfa))

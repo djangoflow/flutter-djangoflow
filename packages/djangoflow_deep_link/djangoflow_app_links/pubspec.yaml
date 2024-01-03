@@ -1,6 +1,6 @@
 name: djangoflow_app_links
 description: A Djangoflow package that implements deep-link handling via app_links package.
-version: 1.2.2
+version: 1.2.3
 homepage: https://github.com/djangoflow/flutter-djangoflow/
 
 environment:
@@ -10,7 +10,7 @@ environment:
 dependencies:
   app_links: ^3.4.3
   bloc_test: ^9.1.4
-  djangoflow_deep_link_interface: ^1.2.1
+  djangoflow_deep_link_interface: ^1.2.2
   flutter:
     sdk: flutter
   flutter_bloc: ^8.1.3

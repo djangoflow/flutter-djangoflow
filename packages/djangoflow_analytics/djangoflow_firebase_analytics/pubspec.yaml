@@ -1,6 +1,6 @@
 name: djangoflow_firebase_analytics
 description: A library provides an easy and organized way to implement Firebase Analytics for your Flutter apps.
-version: 0.2.0+1
+version: 0.2.0+2
 homepage: https://github.com/djangoflow/flutter-djangoflow/
 
 environment:
@@ -9,7 +9,7 @@ environment:
 
 dependencies:
   analytics: ^1.0.2
-  djangoflow_analytics: ^0.0.2+1
+  djangoflow_analytics: ^0.0.2+2
   firebase_analytics: ^10.7.1
   firebase_analytics_platform_interface: ^3.8.1
   firebase_core: ^2.23.0

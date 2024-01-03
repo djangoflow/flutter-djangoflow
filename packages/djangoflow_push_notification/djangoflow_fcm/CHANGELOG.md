@@ -1,3 +1,8 @@
+## 0.1.0+8
+
+ - **REFACTOR**: format the codebase. ([fc078388](https://github.com/djangoflow/flutter-djangoflow/commit/fc0783887eb7881d079c7381299248cea2fdf63a))
+ - **REFACTOR**: resolve linter warnings. ([9ab6b6e5](https://github.com/djangoflow/flutter-djangoflow/commit/9ab6b6e5e700de585393939f3afd1cb2527f9d39))
+
 ## 0.1.0+7
 
  - **REFACTOR**: remove unused import. ([a94c4f34](https://github.com/djangoflow/flutter-djangoflow/commit/a94c4f34e9c17b9da724b222b739830cdeaf9f9f))

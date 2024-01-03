@@ -1,3 +1,8 @@
+## 0.3.0+5
+
+ - **REFACTOR**: format the codebase. ([fc078388](https://github.com/djangoflow/flutter-djangoflow/commit/fc0783887eb7881d079c7381299248cea2fdf63a))
+ - **REFACTOR**: resolve linter warnings. ([9ab6b6e5](https://github.com/djangoflow/flutter-djangoflow/commit/9ab6b6e5e700de585393939f3afd1cb2527f9d39))
+
 ## 0.3.0+4
 
  - **FIX**: check if signed in before logging out. ([e830367e](https://github.com/djangoflow/flutter-djangoflow/commit/e830367e66e2bb65bd3950c8a6ccb9c40de7d959))
