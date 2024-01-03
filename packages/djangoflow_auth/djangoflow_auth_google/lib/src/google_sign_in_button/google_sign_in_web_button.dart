@@ -7,7 +7,9 @@ import 'package:djangoflow_auth_google/src/google_sign_in_button/google_sign_in_
 
 class GoogleSignInWebButton extends StatefulWidget {
   const GoogleSignInWebButton({
-    required this.onSignIn, required this.googleSignIn, super.key,
+    required this.onSignIn,
+    required this.googleSignIn,
+    super.key,
     this.enableSilentLogin,
     this.configurationWrapper,
   });

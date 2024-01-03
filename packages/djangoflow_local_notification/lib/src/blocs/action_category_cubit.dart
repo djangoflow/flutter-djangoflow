@@ -7,7 +7,6 @@ export 'action_category_state.dart';
 
 class ActionCategoryCubit extends HydratedCubit<ActionCategoryState>
     with SafeEmitMixin {
-
   ActionCategoryCubit._internal() : super(const ActionCategoryState());
   static ActionCategoryCubit get instance => _instance;
   static final ActionCategoryCubit _instance = ActionCategoryCubit._internal();
@@ -15,24 +14,30 @@ class ActionCategoryCubit extends HydratedCubit<ActionCategoryState>
   NotificationsApi? notificationsApi;
 
   Future<void> load() async {
-    emit(state.copyWith(
-      isLoading: true,
-      hasError: false,
-    ),);
+    emit(
+      state.copyWith(
+        isLoading: true,
+        hasError: false,
+      ),
+    );
     try {
       await _notificationsApiChecker(() async {
         final actionCategories =
             (await notificationsApi?.notificationsActionCategoriesList())?.data;
-        emit(state.copyWith(
-          isLoading: false,
-          actionCategories: actionCategories ?? <PushActionCategory>[],
-        ),);
+        emit(
+          state.copyWith(
+            isLoading: false,
+            actionCategories: actionCategories ?? <PushActionCategory>[],
+          ),
+        );
       });
     } catch (e) {
-      emit(state.copyWith(
-        isLoading: false,
-        hasError: true,
-      ),);
+      emit(
+        state.copyWith(
+          isLoading: false,
+          hasError: true,
+        ),
+      );
       rethrow;
     }
   }

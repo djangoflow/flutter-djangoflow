@@ -14,7 +14,6 @@ import 'package:djangoflow_facebook_analytics/src/feauteres/user_properties_upda
 /// - [kLastNameKey] = 'last_name' -> setUserData({lastName: String?})
 class FacebookUserPropertyUpdater
     implements AnalyticActionPerformer<FacebookUpdatableUserProperty> {
-
   FacebookUserPropertyUpdater(this._facebookAppEvents);
   final FacebookAppEvents _facebookAppEvents;
   final FacebookUserPropertyTrimmer _userPropertyCutter =

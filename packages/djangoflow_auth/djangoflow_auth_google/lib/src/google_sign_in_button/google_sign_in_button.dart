@@ -9,10 +9,12 @@ export 'gsi_button_config_wrapper/gsi_button_config_wrapper.dart';
 export 'google_sign_in_web_button.dart';
 
 abstract class BaseGoogleSignInButton extends StatelessWidget {
-  const BaseGoogleSignInButton(
-      {required this.child, super.key,
-      this.onPressed,
-      this.configurationWrapper,});
+  const BaseGoogleSignInButton({
+    required this.child,
+    super.key,
+    this.onPressed,
+    this.configurationWrapper,
+  });
   final VoidCallback? onPressed;
 
   /// The configuration wrapper for the button. Used for web-only.

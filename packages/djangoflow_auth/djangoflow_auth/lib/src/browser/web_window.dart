@@ -6,7 +6,10 @@ import 'dart:math' as math;
 
 class WebWindow {
   const WebWindow({
-    required this.onClosed, required this.uri, required this.title, this.hasScrollbars = false,
+    required this.onClosed,
+    required this.uri,
+    required this.title,
+    this.hasScrollbars = false,
     this.isResizable = false,
     this.hasStatusBar = false,
     this.hasLocationbar = false,
@@ -22,7 +25,10 @@ class WebWindow {
   });
 
   factory WebWindow.open({
-    required void Function() onClosed, required Uri uri, required String title, bool hasScrollbars = false,
+    required void Function() onClosed,
+    required Uri uri,
+    required String title,
+    bool hasScrollbars = false,
     bool isResizable = false,
     bool hasStatusBar = false,
     bool hasLocationbar = false,

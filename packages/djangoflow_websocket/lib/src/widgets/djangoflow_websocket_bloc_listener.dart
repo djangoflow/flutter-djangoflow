@@ -7,7 +7,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class DjangoflowWebsocketBlocListener<C extends DjangoflowWebsocketCubitBase>
     extends BlocListener<C, DjangoflowWebsocketState> {
   DjangoflowWebsocketBlocListener({
-    required super.listener, super.key,
+    required super.listener,
+    super.key,
     super.bloc,
     super.child,
     BlocListenerCondition<DjangoflowWebsocketState>? listenWhen,

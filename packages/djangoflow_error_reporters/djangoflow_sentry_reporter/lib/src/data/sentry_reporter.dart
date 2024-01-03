@@ -2,7 +2,6 @@ import 'package:djangoflow_error_reporter/djangoflow_error_reporter.dart';
 import 'package:sentry_flutter/sentry_flutter.dart';
 
 class DjangoflowSentryReporter extends ErrorReporter {
-
   DjangoflowSentryReporter(this.sentryDSN);
   final String sentryDSN;
 
@@ -18,14 +17,19 @@ class DjangoflowSentryReporter extends ErrorReporter {
       );
 
   @override
-  Future<void> report(
-      {required Object exception, StackTrace? stackTrace,}) async {
+  Future<void> report({
+    required Object exception,
+    StackTrace? stackTrace,
+  }) async {
     await Sentry.captureException(exception, stackTrace: stackTrace);
   }
 
   @override
-  Future<void> updateUserInformation(
-          {String? id, String? email, String? name,}) async =>
+  Future<void> updateUserInformation({
+    String? id,
+    String? email,
+    String? name,
+  }) async =>
       await Sentry.configureScope(
         (config) => config
           ..setUser(

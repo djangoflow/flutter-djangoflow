@@ -40,8 +40,9 @@ abstract class HydratedAuthCubitBase extends HydratedCubit<AuthState> {
 
   /// Login user with social provider token data that was retrieved via [requestTokenFromSocialProvider]
   /// This will retrieve token from backend and login user
-  Future<void> loginWithSocialProviderToken(
-      {required SocialTokenObtainRequest socialTokenObtainRequest,});
+  Future<void> loginWithSocialProviderToken({
+    required SocialTokenObtainRequest socialTokenObtainRequest,
+  });
 
   Future<void> changePassword({
     required String id,

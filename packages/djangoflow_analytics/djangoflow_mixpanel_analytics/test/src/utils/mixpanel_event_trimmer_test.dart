@@ -46,8 +46,10 @@ void main() {
         'key1': testStringGen.generateRandomString(kMaxEventValueLength + 10),
       };
       final trimmedParams = testEventTrimmer.trimMapParams(params);
-      expect(trimmedParams.values,
-          everyElement(allOf(hasLength(kMaxEventValueLength))),);
+      expect(
+        trimmedParams.values,
+        everyElement(allOf(hasLength(kMaxEventValueLength))),
+      );
     });
   });
 }

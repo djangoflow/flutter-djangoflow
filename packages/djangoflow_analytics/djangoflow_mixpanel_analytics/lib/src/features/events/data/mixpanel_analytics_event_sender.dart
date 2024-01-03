@@ -6,7 +6,6 @@ import 'package:djangoflow_mixpanel_analytics/src/features/events/data/mixpanel_
 
 class MixpanelAnalyticEventSender
     implements AnalyticActionPerformer<MixpanelAnalyticsEvent> {
-
   MixpanelAnalyticEventSender(this._mixpanel);
   final Mixpanel _mixpanel;
   final MixpanelEventTrimmer _eventTrimmer = MixpanelEventTrimmer();

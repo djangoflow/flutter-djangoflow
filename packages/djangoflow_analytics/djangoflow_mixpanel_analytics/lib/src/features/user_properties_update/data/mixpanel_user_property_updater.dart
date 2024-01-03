@@ -7,7 +7,6 @@ import 'package:djangoflow_mixpanel_analytics/src/features/user_properties_updat
 
 class MixpanelUserPropertyUpdater
     implements AnalyticActionPerformer<MixpanelUpdatableUserProperty> {
-
   MixpanelUserPropertyUpdater(this._mixpanel);
   final Mixpanel _mixpanel;
   final MixpanelUserPropertyCutter _userPropertyCutter =

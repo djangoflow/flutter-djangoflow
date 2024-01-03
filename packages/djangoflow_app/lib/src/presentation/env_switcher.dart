@@ -4,7 +4,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 /// A widget that toggles the app's environment when long pressed.
 class EnvSwitcher extends StatelessWidget {
-
   const EnvSwitcher({required this.child, super.key});
   final Widget child;
 

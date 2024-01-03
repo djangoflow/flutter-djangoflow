@@ -12,7 +12,6 @@ typedef PresentableNotificationCallBack = Future<NotificationDetails?>
 
 class LocalNotificationCubit extends Cubit<LocalNotificationState>
     with SafeEmitMixin<LocalNotificationState> {
-
   LocalNotificationCubit._internal() : super(const LocalNotificationState());
   static LocalNotificationCubit get instance => _instance;
   static final LocalNotificationCubit _instance =

@@ -21,8 +21,10 @@ void main() {
   group('DjangoflowFCMRepository', () {
     test('getForegroundRemoteMessageStream returns FirebaseMessaging.onMessage',
         () {
-      expect(repository.getForegroundRemoteMessageStream(),
-          FirebaseMessaging.onMessage,);
+      expect(
+        repository.getForegroundRemoteMessageStream(),
+        FirebaseMessaging.onMessage,
+      );
     });
 
     test(
@@ -37,21 +39,25 @@ void main() {
     test(
         'getBackgroundRemoteMessageTappedStream returns FirebaseMessaging.onMessageOpenedApp',
         () {
-      expect(repository.getBackgroundRemoteMessageTappedStream(),
-          FirebaseMessaging.onMessageOpenedApp,);
+      expect(
+        repository.getBackgroundRemoteMessageTappedStream(),
+        FirebaseMessaging.onMessageOpenedApp,
+      );
     });
 
     test('requestNotificationPermission calls _messaging.requestPermission',
         () async {
-      when(mockMessaging.requestPermission(
-              alert: true,
-              announcement: false,
-              badge: true,
-              carPlay: false,
-              criticalAlert: false,
-              provisional: false,
-              sound: true,),)
-          .thenAnswer((_) => Future.value(testNotificationSettings));
+      when(
+        mockMessaging.requestPermission(
+          alert: true,
+          announcement: false,
+          badge: true,
+          carPlay: false,
+          criticalAlert: false,
+          provisional: false,
+          sound: true,
+        ),
+      ).thenAnswer((_) => Future.value(testNotificationSettings));
       final result = await repository.requestNotificationPermission();
       expect(result, isA<NotificationSettings>());
     });

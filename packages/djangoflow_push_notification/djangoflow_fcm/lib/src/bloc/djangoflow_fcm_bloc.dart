@@ -11,7 +11,6 @@ export 'djangoflow_fcm_event.dart';
 export 'djangoflow_fcm_state.dart';
 
 class DjangoflowFCMBloc extends Bloc<DjangoflowFCMEvent, DjangoflowFCMState> {
-
   DjangoflowFCMBloc(this.repository) : super(const DjangoflowFCMState()) {
     on<DjangoflowFCMOnMessageReceived>(_onMessageReceived);
     on<DjangoflowFCMOnTokenReceived>(_onTokenReceived);
@@ -36,8 +35,10 @@ class DjangoflowFCMBloc extends Bloc<DjangoflowFCMEvent, DjangoflowFCMState> {
   late StreamSubscription<RemoteMessage>
       _backroundRemoteMessageTappedSubscription;
 
-  void _onMessageReceived(DjangoflowFCMOnMessageReceived event,
-          Emitter<DjangoflowFCMState> emit,) =>
+  void _onMessageReceived(
+    DjangoflowFCMOnMessageReceived event,
+    Emitter<DjangoflowFCMState> emit,
+  ) =>
       emit(
         state.copyWith(
           remoteMessage: event.remoteMessage,
@@ -45,8 +46,10 @@ class DjangoflowFCMBloc extends Bloc<DjangoflowFCMEvent, DjangoflowFCMState> {
         ),
       );
 
-  void _onTokenReceived(DjangoflowFCMOnTokenReceived event,
-          Emitter<DjangoflowFCMState> emit,) =>
+  void _onTokenReceived(
+    DjangoflowFCMOnTokenReceived event,
+    Emitter<DjangoflowFCMState> emit,
+  ) =>
       emit(
         state.copyWith(
           token: event.token,
@@ -54,8 +57,10 @@ class DjangoflowFCMBloc extends Bloc<DjangoflowFCMEvent, DjangoflowFCMState> {
         ),
       );
 
-  Future<void> _getToken(DjangoflowFCMTokenRequested event,
-      Emitter<DjangoflowFCMState> emit,) async {
+  Future<void> _getToken(
+    DjangoflowFCMTokenRequested event,
+    Emitter<DjangoflowFCMState> emit,
+  ) async {
     final isSupported = await repository.isSupported();
     if (isSupported) {
       AuthorizationStatus authorizationStatus;
@@ -79,26 +84,36 @@ class DjangoflowFCMBloc extends Bloc<DjangoflowFCMEvent, DjangoflowFCMState> {
     }
   }
 
-  Future<void> _getIntiailMessage(DjangoflowFCMInitialMessageRequested event,
-      Emitter<DjangoflowFCMState> emit,) async {
+  Future<void> _getIntiailMessage(
+    DjangoflowFCMInitialMessageRequested event,
+    Emitter<DjangoflowFCMState> emit,
+  ) async {
     final initialMessage = await repository.getInitialRemoteMessage();
     if (initialMessage != null) {
-      add(DjangoflowFCMOnMessageReceived(
-        initialMessage,
-        remoteMessageOpenedApp: true,
-      ),);
+      add(
+        DjangoflowFCMOnMessageReceived(
+          initialMessage,
+          remoteMessageOpenedApp: true,
+        ),
+      );
     }
   }
 
-  void _onMessage(RemoteMessage remoteMessage,
-          {bool? remoteMessageOpenedApp,}) =>
-      add(DjangoflowFCMOnMessageReceived(
-        remoteMessage,
-        remoteMessageOpenedApp: remoteMessageOpenedApp,
-      ),);
+  void _onMessage(
+    RemoteMessage remoteMessage, {
+    bool? remoteMessageOpenedApp,
+  }) =>
+      add(
+        DjangoflowFCMOnMessageReceived(
+          remoteMessage,
+          remoteMessageOpenedApp: remoteMessageOpenedApp,
+        ),
+      );
 
-  Future<void> _deletePushToken(DjangoflowFCMDeletePushToken event,
-      Emitter<DjangoflowFCMState> emit,) async {
+  Future<void> _deletePushToken(
+    DjangoflowFCMDeletePushToken event,
+    Emitter<DjangoflowFCMState> emit,
+  ) async {
     if (await repository.isSupported()) {
       final permission = await repository.requestNotificationPermission();
       if (permission.authorizationStatus == AuthorizationStatus.authorized) {

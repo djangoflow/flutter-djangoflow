@@ -6,7 +6,6 @@ part 'auth_state.g.dart';
 
 @Freezed(genericArgumentFactories: true, copyWith: true)
 sealed class AuthState with _$AuthState {
-
   factory AuthState.fromJson(Map<String, dynamic> json) =>
       _$AuthStateFromJson(json);
   const factory AuthState.initial() = _Initial;

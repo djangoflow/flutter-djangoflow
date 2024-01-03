@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
 class SandboxBanner extends StatelessWidget {
-
   const SandboxBanner({
-    required this.child, required this.isSandbox, super.key,
+    required this.child,
+    required this.isSandbox,
+    super.key,
     this.color = Colors.orange,
     this.message = 'sandbox',
   });

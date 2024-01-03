@@ -8,7 +8,6 @@ import 'package:djangoflow_firebase_analytics/src/feauteres/user_properties_upda
 
 class FirebaseUserPropertyUpdater
     implements AnalyticActionPerformer<FirebaseUpdatableUserProperty> {
-
   FirebaseUserPropertyUpdater(this._firebaseAnalytics);
   final FirebaseAnalytics _firebaseAnalytics;
   final FirebaseUserPropertyCutter _userPropertyCutter =

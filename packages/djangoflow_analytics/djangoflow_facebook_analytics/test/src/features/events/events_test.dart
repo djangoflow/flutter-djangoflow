@@ -7,7 +7,6 @@ import '../../../helpers/test_string_generator.dart';
 import '../advertise_tracking/facebook_advertise_tracking_updater_test.mocks.dart';
 
 class TestFacebookAnalyticsEvents implements FacebookAnalyticsEvent {
-
   const TestFacebookAnalyticsEvents({
     required this.eventkey,
     required this.eventParams,
@@ -52,16 +51,18 @@ void main() {
     );
     when(
       mockFacebookAppEvents.logEvent(
-          name: event.key,
-          parameters: event.params,
-          valueToSum: event.valueToSum,),
+        name: event.key,
+        parameters: event.params,
+        valueToSum: event.valueToSum,
+      ),
     ).thenAnswer((_) => Future.value());
     eventSender.perform(event);
     verify(
       mockFacebookAppEvents.logEvent(
-          name: event.key,
-          parameters: event.params,
-          valueToSum: event.valueToSum,),
+        name: event.key,
+        parameters: event.params,
+        valueToSum: event.valueToSum,
+      ),
     ).called(1);
   });
 
@@ -74,16 +75,18 @@ void main() {
     );
     when(
       mockFacebookAppEvents.logEvent(
-          name: event.key,
-          parameters: event.params,
-          valueToSum: event.valueToSum,),
+        name: event.key,
+        parameters: event.params,
+        valueToSum: event.valueToSum,
+      ),
     ).thenAnswer((_) => Future.value());
     eventSender.perform(event);
     verifyNever(
       mockFacebookAppEvents.logEvent(
-          name: event.key,
-          parameters: event.params,
-          valueToSum: event.valueToSum,),
+        name: event.key,
+        parameters: event.params,
+        valueToSum: event.valueToSum,
+      ),
     );
   });
 }

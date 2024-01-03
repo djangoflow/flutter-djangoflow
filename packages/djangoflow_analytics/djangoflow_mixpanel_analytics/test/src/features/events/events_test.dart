@@ -7,7 +7,6 @@ import 'package:mockito/mockito.dart';
 import '../../../helpers/helpers.dart';
 
 class TestMixpanelAnalyticsEvents implements MixpanelAnalyticsEvent {
-
   const TestMixpanelAnalyticsEvents({
     required this.eventkey,
     required this.eventParams,

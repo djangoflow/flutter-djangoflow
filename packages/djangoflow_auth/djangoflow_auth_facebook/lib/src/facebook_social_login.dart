@@ -2,9 +2,9 @@ import 'package:djangoflow_auth/djangoflow_auth.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 
 class FacebookSocialLogin extends SocialLogin<LoginResult> {
-
   FacebookSocialLogin({
-    required super.type, this.permissions = const ['email', 'public_profile'],
+    required super.type,
+    this.permissions = const ['email', 'public_profile'],
     this.loginBehavior = LoginBehavior.nativeWithFallback,
   });
   final List<String> permissions;

@@ -8,7 +8,6 @@ import 'package:djangoflow_firebase_analytics/src/feauteres/user_properties_remo
 
 class FirebaseUserPropertyRemover
     implements AnalyticActionPerformer<FirebaseRemovableUserProperty> {
-
   FirebaseUserPropertyRemover(this._firebaseAnalytics);
   final FirebaseAnalytics _firebaseAnalytics;
   final FirebaseUserPropertyCutter _userPropertyCutter =

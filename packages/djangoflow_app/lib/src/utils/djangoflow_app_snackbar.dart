@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 class DjangoflowAppSnackbar {
-
   factory DjangoflowAppSnackbar() => _instance;
 
   DjangoflowAppSnackbar._internal();

@@ -1,7 +1,6 @@
 import 'package:firebase_messaging/firebase_messaging.dart';
 
 class DjangoflowFCMRepository {
-
   DjangoflowFCMRepository(this._messaging, {this.vapidKey});
   final FirebaseMessaging _messaging;
   final String? vapidKey;

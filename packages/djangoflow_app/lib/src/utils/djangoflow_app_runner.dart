@@ -10,9 +10,12 @@ import 'package:path_provider/path_provider.dart';
 import 'package:djangoflow_app/src/bloc/bloc_exception_observer.dart';
 
 typedef OnExceptionCallBack = Function(
-    Object exception, StackTrace? stackTrace,);
+  Object exception,
+  StackTrace? stackTrace,
+);
 typedef RootWidgetBuilder = FutureOr<Widget> Function(
-    AppBuilder Function(AppBuilder appBuilder) builder,);
+  AppBuilder Function(AppBuilder appBuilder) builder,
+);
 
 typedef FlutterErrorBuilder = Widget Function(FlutterErrorDetails error);
 

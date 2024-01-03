@@ -6,7 +6,6 @@ part 'gsi_button_config_wrapper.g.dart';
 /// one to one mapped with GSIButtonConfiguration from google_sign_in_web
 @freezed
 class GSIButtonConfigWrapper with _$GSIButtonConfigWrapper {
-
   const factory GSIButtonConfigWrapper({
     GSIWrapperButtonType? type,
     GSIWrapperButtonTheme? theme,

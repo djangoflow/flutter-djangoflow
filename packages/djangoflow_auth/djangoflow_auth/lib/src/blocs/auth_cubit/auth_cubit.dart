@@ -49,8 +49,9 @@ class AuthCubit extends HydratedAuthCubitBase {
       );
 
   LoginProviderNotFoundException _loginProviderNotFoundException(
-          SocialLoginType type,
-          {String? message,}) =>
+    SocialLoginType type, {
+    String? message,
+  }) =>
       LoginProviderNotFoundException(
         message ?? 'Social Provider ${type.provider.name} was not found',
       );
@@ -138,11 +139,13 @@ class AuthCubit extends HydratedAuthCubitBase {
   /// Login user with social provider token data that was retrieved via [requestTokenFromSocialProvider]
   /// This will retrieve token from backend and login user
   @override
-  Future<void> loginWithSocialProviderToken(
-          {required SocialTokenObtainRequest socialTokenObtainRequest,}) async =>
+  Future<void> loginWithSocialProviderToken({
+    required SocialTokenObtainRequest socialTokenObtainRequest,
+  }) async =>
       _authApiChecker(() async {
         final result = (await authApi?.authSocialCreate(
-                socialTokenObtainRequest: socialTokenObtainRequest,))
+          socialTokenObtainRequest: socialTokenObtainRequest,
+        ))
             ?.data;
         if (result?.token != null) {
           _loginUsingToken(result!.token!);

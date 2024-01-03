@@ -2,7 +2,6 @@ import 'package:djangoflow_auth/djangoflow_auth.dart';
 import 'package:sign_in_with_apple/sign_in_with_apple.dart';
 
 class AppleSocialLogin extends SocialLogin<AuthorizationCredentialAppleID> {
-
   AppleSocialLogin({
     required super.type,
     this.scopes = const [

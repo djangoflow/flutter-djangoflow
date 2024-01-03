@@ -3,7 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AppLinksCubitListener extends BlocListener<AppLinksCubit, Uri?> {
   AppLinksCubitListener({
-    required super.listener, super.key,
+    required super.listener,
+    super.key,
     super.child,
     BlocListenerCondition<Uri?>? listenWhen,
   }) : super(

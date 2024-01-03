@@ -2,7 +2,8 @@ import 'package:djangoflow_fcm/src/presentation/listeners/djangoflow_fcm_bloc_li
 
 class DjangoflowFCMBlocTokenListener extends DjangoflowFCMBlocListener {
   DjangoflowFCMBlocTokenListener({
-    required super.listener, super.key,
+    required super.listener,
+    super.key,
     super.child,
   }) : super(
           listenWhen: (prev, current) =>

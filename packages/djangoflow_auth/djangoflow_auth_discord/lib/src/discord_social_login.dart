@@ -4,7 +4,6 @@ import 'package:flutter/foundation.dart';
 import 'package:djangoflow_auth_discord/src/discord_oauth2_client.dart';
 
 class DiscordSocialLoginProvider extends SocialLogin<String> {
-
   DiscordSocialLoginProvider({
     required this.oAuth2Configuration,
     required super.type,

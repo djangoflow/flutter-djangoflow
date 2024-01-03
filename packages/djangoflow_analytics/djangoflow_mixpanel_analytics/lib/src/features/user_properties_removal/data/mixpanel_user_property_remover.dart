@@ -7,7 +7,6 @@ import 'package:djangoflow_mixpanel_analytics/src/features/user_properties_remov
 
 class MixpanelUserPropertyRemover
     implements AnalyticActionPerformer<MixpanelRemovableUserProperty> {
-
   MixpanelUserPropertyRemover(this._mixpanel);
   final Mixpanel _mixpanel;
   final MixpanelUserPropertyCutter _userPropertyCutter =
