@@ -19,12 +19,20 @@ class VideoPlayerWidgetBuilder extends StatefulWidget {
     this.url,
     this.errorBuilder,
     this.onInitialize,
+    this.formatHint,
+    this.closedCaptionFile,
+    this.videoPlayerOptions,
+    this.httpHeaders = const <String, String>{},
   });
 
   final String? url;
   final VideoPlayerWidgetBuilderFunction builder;
   final VideoPlayerErrorWidgetBuilder? errorBuilder;
   final Future Function(VideoPlayerController controller)? onInitialize;
+  final VideoFormat? formatHint;
+  final Future<ClosedCaptionFile>? closedCaptionFile;
+  final VideoPlayerOptions? videoPlayerOptions;
+  final Map<String, String> httpHeaders;
 
   @override
   State<VideoPlayerWidgetBuilder> createState() =>
@@ -46,8 +54,13 @@ class _VideoPlayerWidgetBuilderState extends State<VideoPlayerWidgetBuilder> {
     if (widget.url != null) {
       final uri = Uri.tryParse(widget.url!);
       if (uri != null) {
-        _controller = VideoPlayerController.networkUrl(uri)
-          ..initialize().then((_) async {
+        _controller = VideoPlayerController.networkUrl(
+          uri,
+          closedCaptionFile: widget.closedCaptionFile,
+          formatHint: widget.formatHint,
+          videoPlayerOptions: widget.videoPlayerOptions,
+          httpHeaders: widget.httpHeaders,
+        )..initialize().then((_) async {
             if (widget.onInitialize != null) {
               await widget.onInitialize!(_controller!);
             }
@@ -79,17 +92,10 @@ class _VideoPlayerWidgetBuilderState extends State<VideoPlayerWidgetBuilder> {
 
   @override
   Widget build(BuildContext context) {
-    if (_error != null) {
-      if (widget.errorBuilder != null) {
-        return widget.errorBuilder!(context, _error!);
-      } else {
-        return const Center(
-          child: Icon(
-            Icons.error,
-          ),
-        );
-      }
+    if (_error != null && widget.errorBuilder != null) {
+      return widget.errorBuilder!(context, _error!);
     }
+
     return widget.builder(context, _controller, _isInitialized);
   }
 }
