@@ -1,5 +1,5 @@
 name: djangoflow_video_player
-description: "A new Flutter package project."
+description: "A Flutter package that provides a highly customizable `VideoPlayerWidget`, making video playback in your Flutter applications seamless and flexible."
 version: 0.0.2
 homepage: https://github.com/djangoflow/flutter-djangoflow/tree/main/packages/djangoflow_video_player
 
