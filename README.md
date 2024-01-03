@@ -30,6 +30,11 @@ Welcome to the world of Flutter modules for DjangoFlow! This repository contains
 | djangoflow_scrollable_column   | A Flutter package that provides the `DjangoFlowScrollableColumn` widget, allowing you to create a vertically scrollable column of widgets with ease.                                                                                                                                                                                                                                                                  | [Link](https://github.com/djangoflow/flutter-djangoflow/tree/main/packages/djangoflow_scrollable_column)                          |
 | djangoflow_websocket           | The project offers a set of classes and utilities to simplify WebSocket communication in Flutter applications. The core component is the DjangoFlowWebsocketCubit, which manages the WebSocket connection, emits DjangoFlowWebsocketState objects to represent the WebSocket state, and provides methods to connect and disconnect from the server. It handles automatic reconnection in case of connection failures. | [Link](https://github.com/djangoflow/flutter-djangoflow/tree/main/packages/djangoflow_websocket)                                  |
 
+## Planned modules
+
+- [ ] djangoflow_video_player: A flutter package that will provide ease to use Video Player widgets based on [video_player](https://pub.dev/packages/video_player/)
+- [ ] djangoflow_survey: A flutter package that will facilate DjangoFlow API to render surveys on top of [survey_kit](https://pub.dev/packages/survey_kit) and [survey_flow](https://pub.dev/packages/survey_flow)
+
 ## Contribution Guideline
 
 1. Fork the repository and create a new branch for your changes.
