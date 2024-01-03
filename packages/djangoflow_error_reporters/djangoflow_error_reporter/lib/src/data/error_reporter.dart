@@ -1,13 +1,12 @@
-import 'error_reporter_base.dart';
+import 'package:djangoflow_error_reporter/src/data/error_reporter_base.dart';
 
 /// Provides singleton to add all the `ErrorReporter`s and implements
 /// the functionality of `ErrorReporter`
 class DjangoflowErrorReporter extends ErrorReporter {
+  DjangoflowErrorReporter._internal() : super();
   static DjangoflowErrorReporter get instance => _instance;
   static final DjangoflowErrorReporter _instance =
       DjangoflowErrorReporter._internal();
-
-  DjangoflowErrorReporter._internal() : super();
 
   bool? _enabled = false;
 
@@ -36,8 +35,10 @@ class DjangoflowErrorReporter extends ErrorReporter {
   }
 
   @override
-  Future<void> report(
-      {required Object exception, StackTrace? stackTrace}) async {
+  Future<void> report({
+    required Object exception,
+    StackTrace? stackTrace,
+  }) async {
     if (_enabled == true) {
       for (final errorReporter in _errorReporters) {
         errorReporter.report(
@@ -49,8 +50,11 @@ class DjangoflowErrorReporter extends ErrorReporter {
   }
 
   @override
-  Future<void> updateUserInformation(
-      {String? id, String? email, String? name}) async {
+  Future<void> updateUserInformation({
+    String? id,
+    String? email,
+    String? name,
+  }) async {
     if (_enabled == true) {
       for (final errorReporter in _errorReporters) {
         errorReporter.updateUserInformation(id: id, email: email, name: name);

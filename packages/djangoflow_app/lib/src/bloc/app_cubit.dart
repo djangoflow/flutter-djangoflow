@@ -24,15 +24,14 @@ class AppState with _$AppState {
 }
 
 class AppCubit extends HydratedCubit<AppState> {
+  @visibleForTesting
+  AppCubit.internal() : super(_initialState ?? const AppState());
   static AppCubit get instance => _instance;
   static final AppCubit _instance = AppCubit.internal();
   static PackageInfo? packageInfo;
 
   static AppState? _initialState;
   static set initialState(AppState? appState) => _initialState = appState;
-
-  @visibleForTesting
-  AppCubit.internal() : super(_initialState ?? const AppState());
 
   void firstRunDone() => emit(state.copyWith(firstRun: false));
 

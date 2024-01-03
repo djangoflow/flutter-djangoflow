@@ -2,10 +2,11 @@ import 'package:djangoflow_fcm/src/presentation/listeners/djangoflow_fcm_bloc_li
 
 class DjangoflowFCMBlocMessageListener extends DjangoflowFCMBlocListener {
   DjangoflowFCMBlocMessageListener({
+    required super.listener,
     super.key,
     super.child,
-    required super.listener,
   }) : super(
-            listenWhen: (prev, current) =>
-                prev.remoteMessage != current.remoteMessage);
+          listenWhen: (prev, current) =>
+              prev.remoteMessage != current.remoteMessage,
+        );
 }

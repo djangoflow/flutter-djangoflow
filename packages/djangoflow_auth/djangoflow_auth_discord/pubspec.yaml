@@ -8,17 +8,17 @@ environment:
   flutter: ">=1.17.0"
 
 dependencies:
+  djangoflow_auth: ^0.3.0+4
   flutter:
     sdk: flutter
-  djangoflow_auth: ^0.3.0+4
-  oauth2_client: ^3.2.2
   http: ^1.1.0
+  oauth2_client: ^3.2.2
 
 dev_dependencies:
-  flutter_test:
-    sdk: flutter
   build_runner: ^2.4.6
   flutter_lints: ^3.0.1
+  flutter_test:
+    sdk: flutter
   mockito: ^5.4.2
 
 flutter:

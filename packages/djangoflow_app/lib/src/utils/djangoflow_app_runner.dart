@@ -7,12 +7,15 @@ import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:path_provider/path_provider.dart';
 
-import '../bloc/bloc_exception_observer.dart';
+import 'package:djangoflow_app/src/bloc/bloc_exception_observer.dart';
 
 typedef OnExceptionCallBack = Function(
-    Object exception, StackTrace? stackTrace);
+  Object exception,
+  StackTrace? stackTrace,
+);
 typedef RootWidgetBuilder = FutureOr<Widget> Function(
-    AppBuilder Function(AppBuilder appBuilder) builder);
+  AppBuilder Function(AppBuilder appBuilder) builder,
+);
 
 typedef FlutterErrorBuilder = Widget Function(FlutterErrorDetails error);
 

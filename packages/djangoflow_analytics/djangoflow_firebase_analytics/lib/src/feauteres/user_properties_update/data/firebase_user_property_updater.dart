@@ -4,15 +4,14 @@ import 'package:djangoflow_firebase_analytics/src/configurations/constants.dart'
 import 'package:djangoflow_firebase_analytics/src/utils/firebase_user_property_trimmer.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
 
-import 'firebase_updatable_user_property.dart';
+import 'package:djangoflow_firebase_analytics/src/feauteres/user_properties_update/data/firebase_updatable_user_property.dart';
 
 class FirebaseUserPropertyUpdater
     implements AnalyticActionPerformer<FirebaseUpdatableUserProperty> {
+  FirebaseUserPropertyUpdater(this._firebaseAnalytics);
   final FirebaseAnalytics _firebaseAnalytics;
   final FirebaseUserPropertyCutter _userPropertyCutter =
       FirebaseUserPropertyCutter();
-
-  FirebaseUserPropertyUpdater(this._firebaseAnalytics);
   @override
   bool canHandle(AnalyticAction action) =>
       action is FirebaseUpdatableUserProperty;

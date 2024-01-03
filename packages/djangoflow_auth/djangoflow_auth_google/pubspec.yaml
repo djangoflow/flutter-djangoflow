@@ -8,9 +8,9 @@ environment:
   flutter: ">=1.17.0"
 
 dependencies:
+  djangoflow_auth: ^0.3.0+4
   flutter:
     sdk: flutter
-  djangoflow_auth: ^0.3.0+4
   freezed_annotation: ^2.4.1
   google_sign_in: ^6.2.0
   google_sign_in_platform_interface: ^2.4.3
@@ -19,10 +19,10 @@ dependencies:
   mounted_state: ^1.0.1
 
 dev_dependencies:
-  flutter_test:
-    sdk: flutter
   build_runner: ^2.4.7
   flutter_lints: ^3.0.1
+  flutter_test:
+    sdk: flutter
   freezed: ^2.4.5
   json_serializable: ^6.7.1
 

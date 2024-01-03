@@ -10,7 +10,8 @@ extension SocialLoginListExtensions on List<SocialLogin> {
     );
     if (socialLogin == null) {
       throw LoginProviderNotFoundException(
-          'SocialLogin not found for ${provider.name}\nMake sure you have added the SocialLogin to the list of SocialLogins in the AuthCubit');
+        'SocialLogin not found for ${provider.name}\nMake sure you have added the SocialLogin to the list of SocialLogins in the AuthCubit',
+      );
     }
 
     return socialLogin;

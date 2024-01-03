@@ -8,10 +8,16 @@ import 'package:djangoflow_chat/utils/extensions/message_extension.dart';
 import 'package:djangoflow_chat/utils/extensions/string_extensions.dart';
 import 'package:djangoflow_openapi/djangoflow_openapi.dart';
 
-import 'chat_state.dart';
+import 'package:djangoflow_chat/blocs/chat_cubit/chat_state.dart';
 export 'chat_state.dart';
 
 class ChatCubit extends Cubit<ChatState> with SafeEmitMixin<ChatState> {
+
+  ChatCubit(
+    this._chatApi, {
+    required this.roomId,
+    this.defaultChatPageSize = kDefaultPageSize,
+  }) : super(ChatState(roomId: roomId));
   /// The [ChatApi] instance
   final ChatApi _chatApi;
 
@@ -20,12 +26,6 @@ class ChatCubit extends Cubit<ChatState> with SafeEmitMixin<ChatState> {
 
   /// The [Room] id
   final String roomId;
-
-  ChatCubit(
-    this._chatApi, {
-    required this.roomId,
-    this.defaultChatPageSize = kDefaultPageSize,
-  }) : super(ChatState(roomId: roomId));
 
   /// Loads the [Room], [RoomUser]s and [Message] as well, this needs to be called at the start of the chat
   /// to load the initial data
@@ -53,7 +53,7 @@ class ChatCubit extends Cubit<ChatState> with SafeEmitMixin<ChatState> {
 
   /// Load messages, automatically load more messages for pagination
   Future<void> loadMoreMessages(
-      {required String roomId, bool reload = false}) async {
+      {required String roomId, bool reload = false,}) async {
     final messages = ((await _chatApi.chatRoomsMessagesList(
           roomPk: roomId,
           limit: defaultChatPageSize,
@@ -85,13 +85,13 @@ class ChatCubit extends Cubit<ChatState> with SafeEmitMixin<ChatState> {
 
     if (seenIds.isNotEmpty || reactionIds.isNotEmpty) {
       markMessagesAsSeen(
-          roomId: roomId, messageIds: [...seenIds, ...reactionIds]);
+          roomId: roomId, messageIds: [...seenIds, ...reactionIds],);
     }
   }
 
   /// Send text message
   Future<Message?> sendTextMessage(
-      {required String roomId, required String text}) async {
+      {required String roomId, required String text,}) async {
     final result = (await _chatApi.chatRoomsMessagesCreate(
       roomPk: roomId,
       messageRequest: MessageRequest(
@@ -105,7 +105,7 @@ class ChatCubit extends Cubit<ChatState> with SafeEmitMixin<ChatState> {
 
   /// Send image message
   Future<void> uploadImageToMessage(
-      {required String roomId, required MultipartFile image}) async {
+      {required String roomId, required MultipartFile image,}) async {
     // upload image
     await _chatApi.chatImagesCreate(
       roomId: roomId,
@@ -128,7 +128,7 @@ class ChatCubit extends Cubit<ChatState> with SafeEmitMixin<ChatState> {
   /// Returns the current user
   RoomUser _getMe(Map<String, RoomUser> roomUsers) =>
       roomUsers.values.firstWhereOrNull(
-          (roomUser) => roomUser.isMe == true && roomUser.isActive == true) ??
+          (roomUser) => roomUser.isMe == true && roomUser.isActive == true,) ??
       AnynomousUser();
 
   /// Add a [Message] to `messages`
@@ -195,7 +195,7 @@ class ChatCubit extends Cubit<ChatState> with SafeEmitMixin<ChatState> {
 
       final messageCurrentReactions = message?.reactions ?? [];
       final existingReaction = (messageCurrentReactions.firstWhereOrNull(
-          (element) => element.body == reactionBody && element.isMe == true));
+          (element) => element.body == reactionBody && element.isMe == true,));
       if (existingReaction != null) {
         if (existingReaction.id != null) {
           await _removeReaction(messageId: existingReaction.id!);
@@ -218,7 +218,7 @@ class ChatCubit extends Cubit<ChatState> with SafeEmitMixin<ChatState> {
 
   /// Private method to add a reaction to a message
   Future<void> _addReaction(
-      {required String messageId, required String reactionBody}) async {
+      {required String messageId, required String reactionBody,}) async {
     await _chatApi.chatRoomsMessagesCreate(
       roomPk: state.roomId,
       messageRequest: MessageRequest(

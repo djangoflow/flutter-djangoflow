@@ -23,10 +23,11 @@ void main() {
 
   group('Implicit flow Grant.', () {
     final oauth2Client = DiscordOAuth2Client(
-        authorizeUrl: authorizeUrl,
-        tokenUrl: tokenUrl,
-        redirectUri: redirectUri,
-        customUriScheme: customUriScheme);
+      authorizeUrl: authorizeUrl,
+      tokenUrl: tokenUrl,
+      redirectUri: redirectUri,
+      customUriScheme: customUriScheme,
+    );
 
     test('Get new token', () async {
       final httpClient = MockClient();
@@ -40,19 +41,26 @@ void main() {
         'state': state,
       };
 
-      when(webAuthClient.authenticate(
-              url: DiscordOAuth2Helper.addParamsToUrl(
-                  oauth2Client.authorizeUrl, authParams),
-              callbackUrlScheme: customUriScheme,
-              redirectUrl: redirectUri))
-          .thenAnswer((_) async =>
-              '$redirectUri#access_token=$accessToken&token_type=bearer&state=$state');
+      when(
+        webAuthClient.authenticate(
+          url: DiscordOAuth2Helper.addParamsToUrl(
+            oauth2Client.authorizeUrl,
+            authParams,
+          ),
+          callbackUrlScheme: customUriScheme,
+          redirectUrl: redirectUri,
+        ),
+      ).thenAnswer(
+        (_) async =>
+            '$redirectUri#access_token=$accessToken&token_type=bearer&state=$state',
+      );
 
       final tknResponse = await oauth2Client.getTokenWithImplicitGrantFlow(
-          clientId: clientId,
-          state: state,
-          httpClient: httpClient,
-          webAuthClient: webAuthClient);
+        clientId: clientId,
+        state: state,
+        httpClient: httpClient,
+        webAuthClient: webAuthClient,
+      );
 
       expect(tknResponse.accessToken, accessToken);
     });

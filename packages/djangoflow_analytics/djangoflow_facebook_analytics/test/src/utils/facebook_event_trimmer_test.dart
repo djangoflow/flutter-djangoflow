@@ -32,7 +32,7 @@ void main() {
         () {
       final testEventTrimmer = FacebookEventTrimmer();
       final params = {
-        testStringGen.generateRandomString(kMaxEventKeyLength + 10): 'value2'
+        testStringGen.generateRandomString(kMaxEventKeyLength + 10): 'value2',
       };
       final trimmedParams = testEventTrimmer.trimMapParams(params);
       expect(trimmedParams.keys, everyElement(hasLength(kMaxEventKeyLength)));
@@ -43,11 +43,13 @@ void main() {
         () {
       final testEventTrimmer = FacebookEventTrimmer();
       final params = {
-        'key1': testStringGen.generateRandomString(kMaxEventValueLength + 10)
+        'key1': testStringGen.generateRandomString(kMaxEventValueLength + 10),
       };
       final trimmedParams = testEventTrimmer.trimMapParams(params);
-      expect(trimmedParams.values,
-          everyElement(allOf(hasLength(kMaxEventValueLength))));
+      expect(
+        trimmedParams.values,
+        everyElement(allOf(hasLength(kMaxEventValueLength))),
+      );
     });
   });
 }

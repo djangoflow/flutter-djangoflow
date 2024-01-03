@@ -7,10 +7,9 @@ import 'package:flutter_test/flutter_test.dart';
 import '../../helpers/test_string_generator.dart';
 
 class TestMixpanelUserProperty implements AnalyticAction {
+  TestMixpanelUserProperty(this.key, this.value);
   final String key;
   final String value;
-
-  TestMixpanelUserProperty(this.key, this.value);
 }
 
 void main() {
@@ -31,8 +30,9 @@ void main() {
         () {
       final testEventTrimmer = MixpanelEventTrimmer();
       final testUserProperty = TestMixpanelUserProperty(
-          testStringGen.generateRandomString(kMaxSetUserPropertyKeyLength + 10),
-          'value1');
+        testStringGen.generateRandomString(kMaxSetUserPropertyKeyLength + 10),
+        'value1',
+      );
       final trimmedKey = testEventTrimmer.trimName(testUserProperty.key);
 
       expect(trimmedKey, hasLength(kMaxSetUserPropertyKeyLength));
@@ -43,9 +43,9 @@ void main() {
         () {
       final testEventTrimmer = MixpanelEventTrimmer();
       final testUserProperty = TestMixpanelUserProperty(
-          'key1',
-          testStringGen
-              .generateRandomString(kMaxSetUserPropertyValueLength + 10));
+        'key1',
+        testStringGen.generateRandomString(kMaxSetUserPropertyValueLength + 10),
+      );
       final trimmedValue = testEventTrimmer.trimValue(testUserProperty.value);
 
       expect(trimmedValue, hasLength(kMaxSetUserPropertyValueLength));

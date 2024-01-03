@@ -7,13 +7,12 @@ import 'package:mockito/mockito.dart';
 import '../../../helpers/helpers.dart';
 
 class TestFirebaseAnalyticsEvents implements FirebaseAnalyticsEvent {
-  final String eventkey;
-  final Map<String, Object?> eventParams;
-
   const TestFirebaseAnalyticsEvents({
     required this.eventkey,
     required this.eventParams,
   });
+  final String eventkey;
+  final Map<String, Object?> eventParams;
   @override
   String get key => eventkey;
 

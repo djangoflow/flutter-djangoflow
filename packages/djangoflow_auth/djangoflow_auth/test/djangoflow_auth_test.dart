@@ -28,10 +28,12 @@ void main() {
         'requestTokenFromSocialProvider() throws LoginProviderNotFoundException if provider is not found',
         () async {
       await expectLater(
-        cubit.requestTokenFromSocialProvider<String>(const SocialLoginType(
-          id: 'Google',
-          provider: ProviderEnum.googleOauth2,
-        )),
+        cubit.requestTokenFromSocialProvider<String>(
+          const SocialLoginType(
+            id: 'Google',
+            provider: ProviderEnum.googleOauth2,
+          ),
+        ),
         throwsA(
           isA<LoginProviderNotFoundException>(),
         ),

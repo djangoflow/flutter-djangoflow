@@ -5,10 +5,10 @@ typedef AppBuilderStateCallBack = Function(BuildContext context);
 
 class AppBuilder extends StatelessWidget {
   const AppBuilder({
-    super.key,
     required this.providers,
-    this.listeners,
     required this.builder,
+    super.key,
+    this.listeners,
     this.repositoryProviders,
     this.onInitState,
     this.onDispose,
@@ -57,8 +57,11 @@ class AppBuilder extends StatelessWidget {
 }
 
 class _AppBuilderStateProvider extends StatefulWidget {
-  const _AppBuilderStateProvider(
-      {this.onInitState, this.onDispose, required this.builder});
+  const _AppBuilderStateProvider({
+    required this.builder,
+    this.onInitState,
+    this.onDispose,
+  });
 
   /// [WidgetBuilder] is a Flutter framework's callback signature
   final AppBuilderStateCallBack? onInitState;

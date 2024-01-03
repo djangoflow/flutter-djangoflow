@@ -7,7 +7,6 @@ part 'oauth2_configuration.g.dart';
 
 @freezed
 class OAuth2Configuration with _$OAuth2Configuration {
-  const OAuth2Configuration._();
   const factory OAuth2Configuration({
     @JsonKey(name: 'client_id') required String clientId,
     @JsonKey(name: 'redirect_uri') required String redirectUri,
@@ -22,6 +21,7 @@ class OAuth2Configuration with _$OAuth2Configuration {
     /// Needed for mobile platforms
     String? customUriScheme,
   }) = _OAuth2Configuration;
+  const OAuth2Configuration._();
 
   factory OAuth2Configuration.fromJson(Map<String, dynamic> json) =>
       _$OAuth2ConfigurationFromJson(json);

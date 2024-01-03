@@ -22,8 +22,8 @@ const mockUserData = {
       'is_silhouette': true,
       'url':
           'https://scontent.fuio21-1.fna.fbcdn.net/v/t1.30497-1/s200x200/84628273_176159830277856_972693363922829312_n.jpg?_nc_cat=1&ccb=2&_nc_sid=12b3be&_nc_ohc=3o6I0i4GDoIAX9NnWZh&_nc_ht=scontent.fuio21-1.fna&tp=7&oh=f4663dde69650ea86114d0839ee8748b&oe=601BA865',
-      'width': 200
-    }
+      'width': 200,
+    },
   },
-  'id': '136742241592917'
+  'id': '136742241592917',
 };

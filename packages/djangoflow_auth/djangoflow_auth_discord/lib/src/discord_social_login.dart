@@ -1,15 +1,14 @@
 import 'package:djangoflow_auth/djangoflow_auth.dart';
 import 'package:flutter/foundation.dart';
 
-import 'discord_oauth2_client.dart';
+import 'package:djangoflow_auth_discord/src/discord_oauth2_client.dart';
 
 class DiscordSocialLoginProvider extends SocialLogin<String> {
-  OAuth2Configuration oAuth2Configuration;
-
   DiscordSocialLoginProvider({
     required this.oAuth2Configuration,
     required super.type,
   });
+  OAuth2Configuration oAuth2Configuration;
   @override
   Future<String?> login() async {
     final params = oAuth2Configuration.toJson();

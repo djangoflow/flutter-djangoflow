@@ -8,21 +8,21 @@ environment:
   flutter: ">=1.17.0"
 
 dependencies:
-  flutter:
-    sdk: flutter
   bloc: ^8.1.1
   collection: ^1.17.0
   dio: ^5.1.1
   djangoflow_bloc_extensions: 0.0.2+1
   djangoflow_openapi: 0.0.21
+  flutter:
+    sdk: flutter
   flutter_bloc: ^8.1.2
   freezed_annotation: ^2.1.0
 
 dev_dependencies:
-  flutter_test:
-    sdk: flutter
   build_runner: ^2.2.0
   flutter_lints: ^2.0.0
+  flutter_test:
+    sdk: flutter
   freezed: ^2.1.0+1
   json_serializable: ^6.3.1
 

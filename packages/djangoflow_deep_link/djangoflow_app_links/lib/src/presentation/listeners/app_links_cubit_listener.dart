@@ -3,9 +3,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AppLinksCubitListener extends BlocListener<AppLinksCubit, Uri?> {
   AppLinksCubitListener({
+    required super.listener,
     super.key,
     super.child,
-    required super.listener,
     BlocListenerCondition<Uri?>? listenWhen,
   }) : super(
           listenWhen: listenWhen ?? (prev, current) => prev != current,

@@ -3,13 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:mounted_state/mounted_state.dart';
 
-import 'google_sign_in_button.dart';
+import 'package:djangoflow_auth_google/src/google_sign_in_button/google_sign_in_button.dart';
 
 class GoogleSignInWebButton extends StatefulWidget {
   const GoogleSignInWebButton({
-    super.key,
     required this.onSignIn,
     required this.googleSignIn,
+    super.key,
     this.enableSilentLogin,
     this.configurationWrapper,
   });

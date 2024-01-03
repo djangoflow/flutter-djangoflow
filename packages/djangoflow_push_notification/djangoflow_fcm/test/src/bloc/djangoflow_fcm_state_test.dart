@@ -16,8 +16,10 @@ void main() {
       );
       expect(state.remoteMessage, remoteMessage);
       expect(state.token, token);
-      expect(state.notificationAuthorizationStatus,
-          notificationAuthorizationStatus);
+      expect(
+        state.notificationAuthorizationStatus,
+        notificationAuthorizationStatus,
+      );
     });
   });
 }

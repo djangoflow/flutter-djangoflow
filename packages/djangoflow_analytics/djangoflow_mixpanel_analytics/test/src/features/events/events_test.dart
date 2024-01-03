@@ -7,13 +7,12 @@ import 'package:mockito/mockito.dart';
 import '../../../helpers/helpers.dart';
 
 class TestMixpanelAnalyticsEvents implements MixpanelAnalyticsEvent {
-  final String eventkey;
-  final Map<String, Object?> eventParams;
-
   const TestMixpanelAnalyticsEvents({
     required this.eventkey,
     required this.eventParams,
   });
+  final String eventkey;
+  final Map<String, Object?> eventParams;
   @override
   String get key => eventkey;
 

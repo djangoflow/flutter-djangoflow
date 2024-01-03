@@ -70,7 +70,7 @@ void main() {
       build: AppCubit.internal,
       act: (bloc) => bloc.firstRunDone(),
       expect: () => [
-        isA<AppState>().having((state) => state.firstRun, 'firstRun', false)
+        isA<AppState>().having((state) => state.firstRun, 'firstRun', false),
       ],
     );
 
@@ -84,7 +84,7 @@ void main() {
           (state) => state.themeMode,
           'themeMode',
           ThemeMode.dark,
-        )
+        ),
       ],
     );
 

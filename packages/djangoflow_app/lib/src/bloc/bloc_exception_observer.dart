@@ -2,9 +2,8 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class BlocExceptionObserver extends BlocObserver {
-  final Function(Object exception, StackTrace? stackTrace) onException;
-
   BlocExceptionObserver({required this.onException}) : super();
+  final Function(Object exception, StackTrace? stackTrace) onException;
 
   @override
   void onTransition(Bloc bloc, Transition transition) {

@@ -1,16 +1,16 @@
 import 'package:bloc/bloc.dart';
 import 'package:djangoflow_websocket/src/models/djangoflow_websocket_config.dart';
 
-import 'djangoflow_websocket_state.dart';
+import 'package:djangoflow_websocket/src/interfaces/djangoflow_websocket_state.dart';
 export 'djangoflow_websocket_state.dart';
 
 abstract class DjangoflowWebsocketCubitBase
     extends Cubit<DjangoflowWebsocketState> {
-  final DjangoflowWebsocketConfig config;
   DjangoflowWebsocketCubitBase(
     super.initialState, {
     required this.config,
   });
+  final DjangoflowWebsocketConfig config;
 
   /// [connectToUri] is called to connect to a websocket server
   void connectToUri(Uri uri);
