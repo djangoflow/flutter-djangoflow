@@ -11,7 +11,7 @@
   </a>
 </p>
 <p align="center">
-  A Flutter package that provides a highly customizable `VideoPlayerWidget`, making video playback in your Flutter applications seamless and flexible.
+  A Flutter package that provides an easy way to integrate video_player package in Flutter apps, making video playback in your Flutter applications seamless and flexible.
 </p>
 
 ## 🌟 Features
