@@ -1,7 +1,7 @@
 name: djangoflow_local_notification
 description: A streamlined and flexible local notification solution for Flutter mobile apps, seamlessly integrated with DjangoFlow framework to enable dynamic notification actions.
 version: 0.0.2+8
-homepage: https://github.com/djangoflow/flutter-djangoflow/
+homepage: https://github.com/djangoflow/flutter-djangoflow/tree/main/packages/djangoflow_local_notification
 
 environment:
   sdk: ">=3.0.6 <4.0.0"

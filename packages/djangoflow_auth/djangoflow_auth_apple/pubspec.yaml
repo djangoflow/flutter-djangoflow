@@ -1,7 +1,7 @@
 name: djangoflow_auth_apple
 description: djangoflow_auth_apple lets you embrace the magic of Apple Sign-In within your Flutter app!
 version: 0.1.0+3
-homepage: https://github.com/djangoflow/flutter-djangoflow/
+homepage: https://github.com/djangoflow/flutter-djangoflow/tree/main/packages/djangoflow_auth/djangoflow_auth_apple
 
 environment:
   sdk: ">=3.0.6 <4.0.0"

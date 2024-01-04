@@ -1,7 +1,7 @@
 name: djangoflow_fcm
 description: A Djangoflow Flutter project to handle notifications using firebase_messaging
 version: 0.1.0+8
-homepage: https://github.com/djangoflow/flutter-djangoflow/
+homepage: https://github.com/djangoflow/flutter-djangoflow/tree/main/packages/djangoflow_push_notification/djangoflow_fcm
 
 environment:
   sdk: ">=2.18.6 <4.0.0"

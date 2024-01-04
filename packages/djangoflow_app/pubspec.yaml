@@ -1,7 +1,7 @@
 name: djangoflow_app
 description: A simple, opinionated, and minimal Flutter application structure for quick start and easy maintenance.
 version: 3.7.3
-homepage: https://github.com/djangoflow/flutter-djangoflow/
+homepage: https://github.com/djangoflow/flutter-djangoflow/tree/main/packages/djangoflow_app
 
 environment:
   sdk: ">=3.0.0 <4.0.0"
