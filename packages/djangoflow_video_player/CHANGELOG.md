@@ -1,3 +1,8 @@
+## 0.0.2+1
+
+ - **REFACTOR**: add exmaple app. ([1db8de56](https://github.com/djangoflow/flutter-djangoflow/commit/1db8de56925e53013210698338b624d2bf28507c))
+ - **FIX**: add missing AspectRatio widget. ([a1640906](https://github.com/djangoflow/flutter-djangoflow/commit/a164090675996c0fa93b18afd449cc482adec642))
+
 ## 0.0.2
 
  - **REFACTOR**: expose more fields for VideoPlayerController. ([73909c85](https://github.com/djangoflow/flutter-djangoflow/commit/73909c8584617c50d2ed727ddab62934ddbfdc7a))

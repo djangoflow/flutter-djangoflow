@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2024-01-06
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`djangoflow_video_player` - `v0.0.2+1`](#djangoflow_video_player---v0021)
+
+---
+
+#### `djangoflow_video_player` - `v0.0.2+1`
+
+ - **REFACTOR**: add exmaple app. ([1db8de56](https://github.com/djangoflow/flutter-djangoflow/commit/1db8de56925e53013210698338b624d2bf28507c))
+ - **FIX**: add missing AspectRatio widget. ([a1640906](https://github.com/djangoflow/flutter-djangoflow/commit/a164090675996c0fa93b18afd449cc482adec642))
+
+
 ## 2024-01-03
 
 ### Changes
