@@ -46,15 +46,18 @@ class VideoPlayerWidget extends StatelessWidget {
             return loadingIndicator ??
                 const Center(child: CircularProgressIndicator.adaptive());
           }
-          return _VideoPlayerUI(
-            controller: controller,
-            thumbnailUrl: thumbnailUrl,
-            thumbnailBuilder: thumbnailBuilder,
-            blurRadius: blurRadius,
-            playIcon: playIcon,
-            pauseIcon: pauseIcon,
-            volumeUpIcon: volumeUpIcon,
-            volumeOffIcon: volumeOffIcon,
+          return AspectRatio(
+            aspectRatio: controller.value.aspectRatio,
+            child: _VideoPlayerUI(
+              controller: controller,
+              thumbnailUrl: thumbnailUrl,
+              thumbnailBuilder: thumbnailBuilder,
+              blurRadius: blurRadius,
+              playIcon: playIcon,
+              pauseIcon: pauseIcon,
+              volumeUpIcon: volumeUpIcon,
+              volumeOffIcon: volumeOffIcon,
+            ),
           );
         },
         errorBuilder: errorBuilder ??
@@ -106,6 +109,15 @@ class __VideoPlayerUIState extends State<_VideoPlayerUI> {
   void _listener() {
     _isPlaying?.value = widget.controller.value.isPlaying;
     _isMuted?.value = widget.controller.value.volume == 0;
+  }
+
+  @override
+  void didUpdateWidget(_VideoPlayerUI oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (oldWidget.controller != widget.controller) {
+      oldWidget.controller.removeListener(_listener);
+      widget.controller.addListener(_listener);
+    }
   }
 
   @override
