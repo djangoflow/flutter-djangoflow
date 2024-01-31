@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2024-02-01
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`djangoflow_video_player` - `v0.0.2+3`](#djangoflow_video_player---v0023)
+
+---
+
+#### `djangoflow_video_player` - `v0.0.2+3`
+
+ - **REFACTOR**: update sdk constraints. ([dcc52876](https://github.com/djangoflow/flutter-djangoflow/commit/dcc52876898896da284f1f5c0b9e37bd34c5b3e6))
+
+
 ## 2024-01-31
 
 ### Changes

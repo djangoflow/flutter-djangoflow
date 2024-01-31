@@ -1,3 +1,7 @@
+## 0.0.2+3
+
+ - **REFACTOR**: update sdk constraints. ([dcc52876](https://github.com/djangoflow/flutter-djangoflow/commit/dcc52876898896da284f1f5c0b9e37bd34c5b3e6))
+
 ## 0.0.2+2
 
  - **FIX**: video player initialization on web. ([e72c5d4b](https://github.com/djangoflow/flutter-djangoflow/commit/e72c5d4b58b550531f038df82ed5a887a51af273))
