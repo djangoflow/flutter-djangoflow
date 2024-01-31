@@ -47,34 +47,45 @@ class _VideoPlayerWidgetBuilderState extends State<VideoPlayerWidgetBuilder> {
   @override
   void initState() {
     super.initState();
-    _initializeAndListen();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      _initializeAndListen();
+    });
   }
 
   Future<void> _initializeAndListen() async {
     if (widget.url != null) {
       final uri = Uri.tryParse(widget.url!);
       if (uri != null) {
-        _controller = VideoPlayerController.networkUrl(
-          uri,
-          closedCaptionFile: widget.closedCaptionFile,
-          formatHint: widget.formatHint,
-          videoPlayerOptions: widget.videoPlayerOptions,
-          httpHeaders: widget.httpHeaders,
-        )..initialize().then((_) async {
+        try {
+          _controller = VideoPlayerController.networkUrl(
+            uri,
+            closedCaptionFile: widget.closedCaptionFile,
+            formatHint: widget.formatHint,
+            videoPlayerOptions: widget.videoPlayerOptions,
+            httpHeaders: widget.httpHeaders,
+          );
+          if (_controller != null) {
+            await _controller!.initialize();
+            await _controller!.setVolume(0);
+            await _controller!.setLooping(false);
             if (widget.onInitialize != null) {
               await widget.onInitialize!(_controller!);
             }
             setState(() {
               _isInitialized = true;
             });
-          }).catchError((error) {
-            setState(() {
-              _error = error;
-            });
-            debugPrint('Error initializing video player: $error');
+            _controller!.addListener(_listener);
+          } else {
+            throw Exception(
+              'VideoPlayerController is null after initialization',
+            );
+          }
+        } catch (error) {
+          setState(() {
+            _error = error;
           });
-
-        _controller?.addListener(_listener);
+          debugPrint('Error initializing video player: $error');
+        }
       }
     }
   }
