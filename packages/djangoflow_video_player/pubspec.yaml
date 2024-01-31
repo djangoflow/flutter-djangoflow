@@ -4,14 +4,14 @@ version: 0.0.2+2
 homepage: https://github.com/djangoflow/flutter-djangoflow/tree/main/packages/djangoflow_video_player
 
 environment:
-  sdk: ">=3.2.2 <4.0.0"
-  flutter: ">=1.17.0"
+  sdk: ">=3.1.0 <4.0.0"
+  flutter: ">=3.13.0"
 
 dependencies:
   cached_network_image: ^3.3.1
   flutter:
     sdk: flutter
-  video_player: ^2.8.1
+  video_player: ^2.8.2
 
 dev_dependencies:
   flutter_lints: ^3.0.1
