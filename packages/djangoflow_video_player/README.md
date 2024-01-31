@@ -96,6 +96,10 @@ VideoPlayerWidget(
 
 ```
 
+## 🚧 Troubleshooting
+
+Having SDK constraint mismatch can cause `UnimplemenetedError:init() has not been implemented` error. In that case make sure flutter app package or dart package that is using this package matches correct SDK constraint as the video_player package.
+
 ## 🤝 Contributing
 
 [Contribution Guideline](https://github.com/djangoflow/flutter-djangoflow?tab=readme-ov-file#contribution-guideline)
