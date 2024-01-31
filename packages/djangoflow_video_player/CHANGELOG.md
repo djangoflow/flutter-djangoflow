@@ -1,3 +1,7 @@
+## 0.0.2+2
+
+ - **FIX**: video player initialization on web. ([e72c5d4b](https://github.com/djangoflow/flutter-djangoflow/commit/e72c5d4b58b550531f038df82ed5a887a51af273))
+
 ## 0.0.2+1
 
  - **REFACTOR**: add exmaple app. ([1db8de56](https://github.com/djangoflow/flutter-djangoflow/commit/1db8de56925e53013210698338b624d2bf28507c))

@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2024-01-31
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`djangoflow_video_player` - `v0.0.2+2`](#djangoflow_video_player---v0022)
+
+---
+
+#### `djangoflow_video_player` - `v0.0.2+2`
+
+ - **FIX**: video player initialization on web. ([e72c5d4b](https://github.com/djangoflow/flutter-djangoflow/commit/e72c5d4b58b550531f038df82ed5a887a51af273))
+
+
 ## 2024-01-06
 
 ### Changes
