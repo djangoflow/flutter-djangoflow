@@ -1,16 +1,14 @@
 import 'package:flutter/material.dart';
 
 class RainDrop {
-  
   final double initialPositionX;
   final double initialPositionY;
   final RainDropEmoji rainDropEmoji;
 
   RainDrop(
-      {
-      required this.initialPositionX,
+      {required this.initialPositionX,
       required this.initialPositionY,
-       required this.rainDropEmoji,});
+      required this.rainDropEmoji});
 }
 
 ///[RainDropEmoji] is a class that contains the emoji, size, color, and gradient
