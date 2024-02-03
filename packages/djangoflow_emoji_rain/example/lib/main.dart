@@ -32,7 +32,13 @@ class _MainAppState extends State<MainApp> {
             ),
             if (_showRain)
               Rain(
-                emoji: '＄',
+                emojiList: [
+                  RainDropEmoji(emoji: '💧', emojiSize: 50),
+                  RainDropEmoji(emoji: '💦', emojiSize: 30),
+                  RainDropEmoji(
+                      emoji: "\$", emojiSize: 40, emojiColor: Colors.green),
+                  RainDropEmoji(emoji: '💦', emojiSize: 20)
+                ],
                 numberOfRainDrops: 50,
                 fallSpeedFactor: 2,
                 onRainStopped: () {
