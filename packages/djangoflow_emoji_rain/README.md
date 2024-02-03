@@ -48,7 +48,12 @@ Here's a simple example to sprinkle some emoji rain into your app:
 import 'package:djangoflow_emoji_rain/rain.dart';
 
 Rain(
-  emoji: '🌧️',
+  emojiList: [
+    RainDropEmoji(emoji: '💧', emojiSize: 50),
+    RainDropEmoji(emoji: '💦', emojiSize: 30),
+    RainDropEmoji(emoji: "\$", emojiSize: 40, emojiColor: Colors.green),
+    RainDropEmoji(emoji: '💦', emojiSize: 20)
+  ],
   numberOfRainDrops: 50,
   fallSpeedFactor: 1.0,
   onRainStopped: () {
@@ -59,7 +64,7 @@ Rain(
 
 ### 🛠 Parameters
 
-- `emoji`: The emoji to use for the raindrops.
+- `emojiList`: The list emoji to use for the raindrops.
 - `numberOfRainDrops`: Number of raindrops on the screen.
 - `fallSpeedFactor`: Speed multiplier for the falling raindrops.
 - `onRainStopped`: Callback triggered when the rain stops.

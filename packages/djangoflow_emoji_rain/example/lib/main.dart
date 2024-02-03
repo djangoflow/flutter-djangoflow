@@ -39,7 +39,7 @@ class _MainAppState extends State<MainApp> {
                       emoji: "\$", emojiSize: 40, emojiColor: Colors.green),
                   RainDropEmoji(emoji: '💦', emojiSize: 20)
                 ],
-                numberOfRainDrops: 50,
+                numberOfRainDrops: 100,
                 fallSpeedFactor: 2,
                 onRainStopped: () {
                   setState(() {
