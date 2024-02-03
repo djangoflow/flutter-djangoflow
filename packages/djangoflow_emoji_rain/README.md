@@ -73,6 +73,13 @@ Rain(
 
 Check out the `example` directory for a complete example app demonstrating the package's capabilities.
 
+
+## 📱 Preview
+<img src="https://github.com/SaujanBindukar/flutter-djangoflow/assets/34705432/b5ea9fcc-dc04-4c90-a764-f1878526bdee.gif" alt="Example Preview" width="300" height="580">
+
+
+
+
 ## 🤝 Contributing
 
 We welcome contributions! Feel free to open an issue or submit a pull request if you have any improvements or find any bugs.
