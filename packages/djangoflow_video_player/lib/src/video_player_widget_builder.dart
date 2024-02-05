@@ -66,8 +66,6 @@ class _VideoPlayerWidgetBuilderState extends State<VideoPlayerWidgetBuilder> {
           );
           if (_controller != null) {
             await _controller!.initialize();
-            await _controller!.setVolume(0);
-            await _controller!.setLooping(false);
             if (widget.onInitialize != null) {
               await widget.onInitialize!(_controller!);
             }
@@ -91,7 +89,13 @@ class _VideoPlayerWidgetBuilderState extends State<VideoPlayerWidgetBuilder> {
   }
 
   void _listener() {
-    setState(() {});
+    if (_controller != null) {
+      if (_controller!.value.hasError) {
+        setState(() {
+          _error = _controller!.value.errorDescription;
+        });
+      }
+    }
   }
 
   @override
