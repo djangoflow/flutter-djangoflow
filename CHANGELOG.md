@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2024-02-05
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - [`djangoflow_video_player` - `v0.1.0`](#djangoflow_video_player---v010)
+
+Packages with other changes:
+
+ - There are no other changes in this release.
+
+---
+
+#### `djangoflow_video_player` - `v0.1.0`
+
+ - **DOCS**: update readme with troubleshooting. ([69a662fd](https://github.com/djangoflow/flutter-djangoflow/commit/69a662fd0d146f73903695a9f363a0b41549ffea))
+ - **BREAKING** **REFACTOR**: remove not mandatory controller initialization. ([2c491181](https://github.com/djangoflow/flutter-djangoflow/commit/2c491181ddc0691003431c1bdf47f7eb47e6b40f))
+
+
 ## 2024-02-01
 
 ### Changes

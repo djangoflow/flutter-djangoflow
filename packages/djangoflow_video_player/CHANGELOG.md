@@ -1,3 +1,10 @@
+## 0.1.0
+
+> Note: This release has breaking changes.
+
+ - **DOCS**: update readme with troubleshooting. ([69a662fd](https://github.com/djangoflow/flutter-djangoflow/commit/69a662fd0d146f73903695a9f363a0b41549ffea))
+ - **BREAKING** **REFACTOR**: remove not mandatory controller initialization. ([2c491181](https://github.com/djangoflow/flutter-djangoflow/commit/2c491181ddc0691003431c1bdf47f7eb47e6b40f))
+
 ## 0.0.2+3
 
  - **REFACTOR**: update sdk constraints. ([dcc52876](https://github.com/djangoflow/flutter-djangoflow/commit/dcc52876898896da284f1f5c0b9e37bd34c5b3e6))
