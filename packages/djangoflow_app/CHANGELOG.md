@@ -1,3 +1,7 @@
+## 3.7.4
+
+ - **REFACTOR**: expose more fields for DjangoflowAppSnackbar. ([cc7e27f4](https://github.com/djangoflow/flutter-djangoflow/commit/cc7e27f43d3e6fae68ac0dccc2dd53516fff6501))
+
 ## 3.7.3
 
  - **REFACTOR**: format the codebase. ([fc078388](https://github.com/djangoflow/flutter-djangoflow/commit/fc0783887eb7881d079c7381299248cea2fdf63a))

@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2024-02-07
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`djangoflow_app` - `v3.7.4`](#djangoflow_app---v374)
+
+---
+
+#### `djangoflow_app` - `v3.7.4`
+
+ - **REFACTOR**: expose more fields for DjangoflowAppSnackbar. ([cc7e27f4](https://github.com/djangoflow/flutter-djangoflow/commit/cc7e27f43d3e6fae68ac0dccc2dd53516fff6501))
+
+
 ## 2024-02-05
 
 ### Changes
