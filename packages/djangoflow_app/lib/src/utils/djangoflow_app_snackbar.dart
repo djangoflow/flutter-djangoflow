@@ -13,10 +13,16 @@ class DjangoflowAppSnackbar {
     String message, {
     SnackBarAction? action,
     Duration duration = const Duration(seconds: 4),
+    EdgeInsetsGeometry? margin,
+    SnackBarBehavior? behavior,
+    ShapeBorder? shape,
   }) {
     if (scaffoldMessengerKey.currentState?.mounted == true) {
       scaffoldMessengerKey.currentState?.showSnackBar(
         SnackBar(
+          shape: shape,
+          margin: margin,
+          behavior: behavior,
           duration: duration,
           content: Text(message),
           action: action ??
@@ -29,11 +35,20 @@ class DjangoflowAppSnackbar {
     }
   }
 
-  static void showError(String message, {SnackBarAction? action}) {
+  static void showError(
+    String message, {
+    SnackBarAction? action,
+    EdgeInsetsGeometry? margin,
+    SnackBarBehavior? behavior,
+    ShapeBorder? shape,
+  }) {
     if (scaffoldMessengerKey.currentState?.mounted == true) {
       scaffoldMessengerKey.currentState?.showSnackBar(
         SnackBar(
           backgroundColor: Colors.red,
+          shape: shape,
+          margin: margin,
+          behavior: behavior,
           content: Text(message),
           action: action ??
               const SnackBarAction(
@@ -57,11 +72,17 @@ class DjangoflowAppSnackbar {
     ),
     TextStyle? bodyTextStyle,
     Duration duration = const Duration(seconds: 12),
+    EdgeInsetsGeometry? margin,
+    SnackBarBehavior? behavior,
+    ShapeBorder? shape,
   }) {
     if (scaffoldMessengerKey.currentState?.mounted == true) {
       scaffoldMessengerKey.currentState?.showSnackBar(
         SnackBar(
           duration: duration,
+          shape: shape,
+          margin: margin,
+          behavior: behavior,
           content: Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
