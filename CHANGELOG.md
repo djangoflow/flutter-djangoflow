@@ -15,6 +15,27 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`djangoflow_app` - `v3.7.5`](#djangoflow_app---v375)
+
+---
+
+#### `djangoflow_app` - `v3.7.5`
+
+ - **REFACTOR**: expose dismissDirection. ([d071f5f3](https://github.com/djangoflow/flutter-djangoflow/commit/d071f5f3446e1ca89e86b6a0f32362bda9d2b0ae))
+
+
+## 2024-02-07
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`djangoflow_app` - `v3.7.4`](#djangoflow_app---v374)
 
 ---

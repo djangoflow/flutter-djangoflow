@@ -1,3 +1,7 @@
+## 3.7.5
+
+ - **REFACTOR**: expose dismissDirection. ([d071f5f3](https://github.com/djangoflow/flutter-djangoflow/commit/d071f5f3446e1ca89e86b6a0f32362bda9d2b0ae))
+
 ## 3.7.4
 
  - **REFACTOR**: expose more fields for DjangoflowAppSnackbar. ([cc7e27f4](https://github.com/djangoflow/flutter-djangoflow/commit/cc7e27f43d3e6fae68ac0dccc2dd53516fff6501))
