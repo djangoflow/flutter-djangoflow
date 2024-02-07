@@ -16,6 +16,7 @@ class DjangoflowAppSnackbar {
     EdgeInsetsGeometry? margin,
     SnackBarBehavior? behavior,
     ShapeBorder? shape,
+    DismissDirection dismissDirection = DismissDirection.down,
   }) {
     if (scaffoldMessengerKey.currentState?.mounted == true) {
       scaffoldMessengerKey.currentState?.showSnackBar(
@@ -23,6 +24,7 @@ class DjangoflowAppSnackbar {
           shape: shape,
           margin: margin,
           behavior: behavior,
+          dismissDirection: dismissDirection,
           duration: duration,
           content: Text(message),
           action: action ??
@@ -41,6 +43,7 @@ class DjangoflowAppSnackbar {
     EdgeInsetsGeometry? margin,
     SnackBarBehavior? behavior,
     ShapeBorder? shape,
+    DismissDirection dismissDirection = DismissDirection.down,
   }) {
     if (scaffoldMessengerKey.currentState?.mounted == true) {
       scaffoldMessengerKey.currentState?.showSnackBar(
@@ -49,6 +52,7 @@ class DjangoflowAppSnackbar {
           shape: shape,
           margin: margin,
           behavior: behavior,
+          dismissDirection: dismissDirection,
           content: Text(message),
           action: action ??
               const SnackBarAction(
@@ -75,6 +79,7 @@ class DjangoflowAppSnackbar {
     EdgeInsetsGeometry? margin,
     SnackBarBehavior? behavior,
     ShapeBorder? shape,
+    DismissDirection dismissDirection = DismissDirection.down,
   }) {
     if (scaffoldMessengerKey.currentState?.mounted == true) {
       scaffoldMessengerKey.currentState?.showSnackBar(
@@ -83,6 +88,7 @@ class DjangoflowAppSnackbar {
           shape: shape,
           margin: margin,
           behavior: behavior,
+          dismissDirection: dismissDirection,
           content: Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
