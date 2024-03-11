@@ -15,6 +15,27 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`djangoflow_remote_config` - `v0.0.4+4`](#djangoflow_remote_config---v0044)
+
+---
+
+#### `djangoflow_remote_config` - `v0.0.4+4`
+
+ - **FIX**: do not update lastUpdate if result was empty. ([fee86fc4](https://github.com/djangoflow/flutter-djangoflow/commit/fee86fc45cdff0a208356ac90bf11847dd7ffd80))
+
+
+## 2024-03-11
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`djangoflow_remote_config` - `v0.0.4+3`](#djangoflow_remote_config---v0043)
 
 ---

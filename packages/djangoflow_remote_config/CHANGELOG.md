@@ -1,3 +1,7 @@
+## 0.0.4+4
+
+ - **FIX**: do not update lastUpdate if result was empty. ([fee86fc4](https://github.com/djangoflow/flutter-djangoflow/commit/fee86fc45cdff0a208356ac90bf11847dd7ffd80))
+
 ## 0.0.4+3
 
  - **FIX**: if empty then use fallback. ([b1d2fc45](https://github.com/djangoflow/flutter-djangoflow/commit/b1d2fc45a8bd8bc6d92e7149c6c14e63af22ca88))
