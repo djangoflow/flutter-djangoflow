@@ -56,14 +56,13 @@ abstract class RemoteConfigCubit extends HydratedCubit<RemoteConfigState>
           params: params,
         ))
             .data;
-
+        final isResultNotEmpty =
+            result?.part_ != null && result!.part_.isNotEmpty;
         emit(
           state.copyWith(
-            config: (result?.part_ != null && result!.part_.isNotEmpty)
-                ? result.part_
-                : fallbackConfig,
+            config: isResultNotEmpty ? result.part_ : fallbackConfig,
             isLoading: false,
-            lastUpdate: lastUpdate,
+            lastUpdate: isResultNotEmpty ? lastUpdate : null,
           ),
         );
       } catch (e) {
