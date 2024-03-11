@@ -1,3 +1,7 @@
+## 0.0.4+3
+
+ - **FIX**: if empty then use fallback. ([b1d2fc45](https://github.com/djangoflow/flutter-djangoflow/commit/b1d2fc45a8bd8bc6d92e7149c6c14e63af22ca88))
+
 ## 0.0.4+2
 
  - Update a dependency to the latest release.

@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2024-03-11
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`djangoflow_remote_config` - `v0.0.4+3`](#djangoflow_remote_config---v0043)
+
+---
+
+#### `djangoflow_remote_config` - `v0.0.4+3`
+
+ - **FIX**: if empty then use fallback. ([b1d2fc45](https://github.com/djangoflow/flutter-djangoflow/commit/b1d2fc45a8bd8bc6d92e7149c6c14e63af22ca88))
+
+
 ## 2024-02-07
 
 ### Changes
