@@ -3,10 +3,10 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:djangoflow_openapi/src/model/user_device.dart';
+import 'package:djangoflow_openapi/src/model/chat_message.dart';
 import 'package:json_annotation/json_annotation.dart';
 
-part 'paginated_user_device_list.g.dart';
+part 'paginated_chat_message_list.g.dart';
 
 
 @JsonSerializable(
@@ -15,11 +15,9 @@ part 'paginated_user_device_list.g.dart';
   disallowUnrecognizedKeys: false,
   explicitToJson: true,
 )
-class PaginatedUserDeviceList {
-  /// Returns a new [PaginatedUserDeviceList] instance.
-  PaginatedUserDeviceList({
-
-    required  this.count,
+class PaginatedChatMessageList {
+  /// Returns a new [PaginatedChatMessageList] instance.
+  PaginatedChatMessageList({
 
      this.next,
 
@@ -27,18 +25,6 @@ class PaginatedUserDeviceList {
 
     required  this.results,
   });
-
-  @JsonKey(
-    
-    name: r'count',
-    required: true,
-    includeIfNull: false
-  )
-
-
-  final int count;
-
-
 
   @JsonKey(
     
@@ -72,27 +58,25 @@ class PaginatedUserDeviceList {
   )
 
 
-  final List<UserDevice> results;
+  final List<ChatMessage> results;
 
 
 
   @override
-  bool operator ==(Object other) => identical(this, other) || other is PaginatedUserDeviceList &&
-     other.count == count &&
+  bool operator ==(Object other) => identical(this, other) || other is PaginatedChatMessageList &&
      other.next == next &&
      other.previous == previous &&
      other.results == results;
 
   @override
   int get hashCode =>
-    count.hashCode +
     (next == null ? 0 : next.hashCode) +
     (previous == null ? 0 : previous.hashCode) +
     results.hashCode;
 
-  factory PaginatedUserDeviceList.fromJson(Map<String, dynamic> json) => _$PaginatedUserDeviceListFromJson(json);
+  factory PaginatedChatMessageList.fromJson(Map<String, dynamic> json) => _$PaginatedChatMessageListFromJson(json);
 
-  Map<String, dynamic> toJson() => _$PaginatedUserDeviceListToJson(this);
+  Map<String, dynamic> toJson() => _$PaginatedChatMessageListToJson(this);
 
   @override
   String toString() {

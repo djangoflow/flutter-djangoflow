@@ -9,10 +9,21 @@ export 'package:djangoflow_openapi/src/auth/oauth.dart';
 
 
 export 'package:djangoflow_openapi/src/api/auth_api.dart';
+export 'package:djangoflow_openapi/src/api/chat_api.dart';
 export 'package:djangoflow_openapi/src/api/notifications_api.dart';
 export 'package:djangoflow_openapi/src/api/remoteconfig_api.dart';
 
+export 'package:djangoflow_openapi/src/model/action_enum.dart';
 export 'package:djangoflow_openapi/src/model/change_password_request.dart';
+export 'package:djangoflow_openapi/src/model/chat_message.dart';
+export 'package:djangoflow_openapi/src/model/chat_message_request.dart';
+export 'package:djangoflow_openapi/src/model/chat_message_update.dart';
+export 'package:djangoflow_openapi/src/model/chat_message_update_request.dart';
+export 'package:djangoflow_openapi/src/model/chat_room.dart';
+export 'package:djangoflow_openapi/src/model/chat_room_members.dart';
+export 'package:djangoflow_openapi/src/model/chat_room_members_request.dart';
+export 'package:djangoflow_openapi/src/model/chat_room_request.dart';
+export 'package:djangoflow_openapi/src/model/chat_type_enum.dart';
 export 'package:djangoflow_openapi/src/model/error.dart';
 export 'package:djangoflow_openapi/src/model/error_response.dart';
 export 'package:djangoflow_openapi/src/model/otp_device.dart';
@@ -21,8 +32,12 @@ export 'package:djangoflow_openapi/src/model/otp_device_request.dart';
 export 'package:djangoflow_openapi/src/model/otp_device_type_enum.dart';
 export 'package:djangoflow_openapi/src/model/otp_obtain.dart';
 export 'package:djangoflow_openapi/src/model/otp_obtain_request.dart';
+export 'package:djangoflow_openapi/src/model/paginated_chat_message_list.dart';
+export 'package:djangoflow_openapi/src/model/paginated_chat_room_list.dart';
 export 'package:djangoflow_openapi/src/model/paginated_otp_device_list.dart';
 export 'package:djangoflow_openapi/src/model/paginated_user_device_list.dart';
+export 'package:djangoflow_openapi/src/model/patched_chat_message_update_request.dart';
+export 'package:djangoflow_openapi/src/model/patched_chat_room_request.dart';
 export 'package:djangoflow_openapi/src/model/patched_user2_fa_request.dart';
 export 'package:djangoflow_openapi/src/model/patched_user_device_request.dart';
 export 'package:djangoflow_openapi/src/model/patched_user_identity_request.dart';

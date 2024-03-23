@@ -17,5 +17,10 @@ void main() {
       // TODO
     });
 
+    // String redirectPath
+    test('to test the property `redirectPath`', () async {
+      // TODO
+    });
+
   });
 }

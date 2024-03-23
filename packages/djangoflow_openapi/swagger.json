@@ -583,6 +583,442 @@ paths:
               schema:
                 $ref: '#/components/schemas/User2FA'
           description: ''
+  /api/v1/chat/rooms/:
+    get:
+      operationId: chat_rooms_list
+      parameters:
+      - name: cursor
+        required: false
+        in: query
+        description: The pagination cursor value.
+        schema:
+          type: string
+      tags:
+      - chat
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+          description: ''
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedChatRoomList'
+          description: ''
+    post:
+      operationId: chat_rooms_create
+      tags:
+      - chat
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ChatRoomRequest'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/ChatRoomRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/ChatRoomRequest'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+          description: ''
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ChatRoom'
+          description: ''
+  /api/v1/chat/rooms/{id}/:
+    get:
+      operationId: chat_rooms_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+        required: true
+      tags:
+      - chat
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+          description: ''
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ChatRoom'
+          description: ''
+    put:
+      operationId: chat_rooms_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+        required: true
+      tags:
+      - chat
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ChatRoomRequest'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/ChatRoomRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/ChatRoomRequest'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+          description: ''
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ChatRoom'
+          description: ''
+    patch:
+      operationId: chat_rooms_partial_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+        required: true
+      tags:
+      - chat
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedChatRoomRequest'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedChatRoomRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedChatRoomRequest'
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+          description: ''
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ChatRoom'
+          description: ''
+    delete:
+      operationId: chat_rooms_destroy
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+        required: true
+      tags:
+      - chat
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+          description: ''
+        '204':
+          description: No response body
+  /api/v1/chat/rooms/{id}/member/:
+    post:
+      operationId: chat_rooms_member_create
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+        required: true
+      tags:
+      - chat
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ChatRoomMembersRequest'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/ChatRoomMembersRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/ChatRoomMembersRequest'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+          description: ''
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ChatRoomMembers'
+          description: ''
+  /api/v1/chat/rooms/{room_id}/messages/:
+    get:
+      operationId: chat_rooms_messages_list
+      parameters:
+      - name: cursor
+        required: false
+        in: query
+        description: The pagination cursor value.
+        schema:
+          type: string
+      - in: path
+        name: room_id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - chat
+      security:
+      - jwtAuth: []
+      responses:
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+          description: ''
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedChatMessageList'
+          description: ''
+    post:
+      operationId: chat_rooms_messages_create
+      parameters:
+      - in: path
+        name: room_id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - chat
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ChatMessageRequest'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/ChatMessageRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/ChatMessageRequest'
+        required: true
+      security:
+      - jwtAuth: []
+      responses:
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+          description: ''
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ChatMessage'
+          description: ''
+  /api/v1/chat/rooms/{room_id}/messages/{id}/:
+    get:
+      operationId: chat_rooms_messages_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this chat message.
+        required: true
+      - in: path
+        name: room_id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - chat
+      security:
+      - jwtAuth: []
+      responses:
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+          description: ''
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ChatMessage'
+          description: ''
+    put:
+      operationId: chat_rooms_messages_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this chat message.
+        required: true
+      - in: path
+        name: room_id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - chat
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ChatMessageUpdateRequest'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/ChatMessageUpdateRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/ChatMessageUpdateRequest'
+        required: true
+      security:
+      - jwtAuth: []
+      responses:
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+          description: ''
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ChatMessageUpdate'
+          description: ''
+    patch:
+      operationId: chat_rooms_messages_partial_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this chat message.
+        required: true
+      - in: path
+        name: room_id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - chat
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedChatMessageUpdateRequest'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedChatMessageUpdateRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedChatMessageUpdateRequest'
+      security:
+      - jwtAuth: []
+      responses:
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+          description: ''
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ChatMessageUpdate'
+          description: ''
+    delete:
+      operationId: chat_rooms_messages_destroy
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this chat message.
+        required: true
+      - in: path
+        name: room_id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - chat
+      security:
+      - jwtAuth: []
+      responses:
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+          description: ''
+        '204':
+          description: No response body
   /api/v1/notifications/action-categories/:
     get:
       operationId: notifications_action_categories_list
@@ -829,6 +1265,14 @@ paths:
           description: ''
 components:
   schemas:
+    ActionEnum:
+      enum:
+      - add
+      - remove
+      type: string
+      description: |-
+        * `add` - add
+        * `remove` - remove
     ChangePasswordRequest:
       type: object
       properties:
@@ -843,6 +1287,138 @@ components:
       required:
       - new_password
       - old_password
+    ChatMessage:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        chat_room:
+          type: integer
+        created_by:
+          type: integer
+        message:
+          type: string
+        created:
+          type: string
+          format: date-time
+          readOnly: true
+      required:
+      - message
+    ChatMessageRequest:
+      type: object
+      properties:
+        chat_room:
+          type: integer
+        created_by:
+          type: integer
+        message:
+          type: string
+          minLength: 1
+      required:
+      - message
+    ChatMessageUpdate:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        created:
+          type: string
+          format: date-time
+          readOnly: true
+        modified:
+          type: string
+          format: date-time
+          readOnly: true
+        message:
+          type: string
+        chat_room:
+          type: integer
+          readOnly: true
+        created_by:
+          type: integer
+          readOnly: true
+      required:
+      - message
+    ChatMessageUpdateRequest:
+      type: object
+      properties:
+        message:
+          type: string
+          minLength: 1
+      required:
+      - message
+    ChatRoom:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        title:
+          type: string
+          maxLength: 128
+        created:
+          type: string
+          format: date-time
+          readOnly: true
+        chat_type:
+          $ref: '#/components/schemas/ChatTypeEnum'
+        newest_message:
+          type: string
+          readOnly: true
+      required:
+      - title
+    ChatRoomMembers:
+      type: object
+      properties:
+        users:
+          type: array
+          items:
+            type: integer
+        action:
+          $ref: '#/components/schemas/ActionEnum'
+      required:
+      - action
+      - users
+    ChatRoomMembersRequest:
+      type: object
+      properties:
+        users:
+          type: array
+          items:
+            type: integer
+        action:
+          $ref: '#/components/schemas/ActionEnum'
+      required:
+      - action
+      - users
+    ChatRoomRequest:
+      type: object
+      properties:
+        title:
+          type: string
+          minLength: 1
+          maxLength: 128
+        chat_type:
+          $ref: '#/components/schemas/ChatTypeEnum'
+        users:
+          type: array
+          items:
+            type: integer
+            writeOnly: true
+          writeOnly: true
+      required:
+      - title
+      - users
+    ChatTypeEnum:
+      enum:
+      - group
+      - private
+      type: string
+      description: |-
+        * `group` - Group Chat
+        * `private` - Private Chat
     Error:
       type: object
       properties:
@@ -929,8 +1505,53 @@ components:
           format: email
         otp:
           type: string
+        redirect_path:
+          type: string
+          writeOnly: true
+          minLength: 1
+    PaginatedChatMessageList:
+      type: object
+      required:
+      - results
+      properties:
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?cursor=cD00ODY%3D"
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?cursor=cj0xJnA9NDg3
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/ChatMessage'
+    PaginatedChatRoomList:
+      type: object
+      required:
+      - results
+      properties:
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?cursor=cD00ODY%3D"
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?cursor=cj0xJnA9NDg3
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/ChatRoom'
     PaginatedOTPDeviceList:
       type: object
+      required:
+      - count
+      - results
       properties:
         count:
           type: integer
@@ -951,6 +1572,9 @@ components:
             $ref: '#/components/schemas/OTPDevice'
     PaginatedUserDeviceList:
       type: object
+      required:
+      - count
+      - results
       properties:
         count:
           type: integer
@@ -969,6 +1593,27 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/UserDevice'
+    PatchedChatMessageUpdateRequest:
+      type: object
+      properties:
+        message:
+          type: string
+          minLength: 1
+    PatchedChatRoomRequest:
+      type: object
+      properties:
+        title:
+          type: string
+          minLength: 1
+          maxLength: 128
+        chat_type:
+          $ref: '#/components/schemas/ChatTypeEnum'
+        users:
+          type: array
+          items:
+            type: integer
+            writeOnly: true
+          writeOnly: true
     PatchedUser2FARequest:
       type: object
       properties:
@@ -1213,6 +1858,13 @@ components:
           type: string
           format: email
   securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+    cookieAuth:
+      type: apiKey
+      in: cookie
+      name: sessionid
     jwtAuth:
       type: http
       scheme: bearer

@@ -8,6 +8,7 @@ import 'package:djangoflow_openapi/src/auth/basic_auth.dart';
 import 'package:djangoflow_openapi/src/auth/bearer_auth.dart';
 import 'package:djangoflow_openapi/src/auth/oauth.dart';
 import 'package:djangoflow_openapi/src/api/auth_api.dart';
+import 'package:djangoflow_openapi/src/api/chat_api.dart';
 import 'package:djangoflow_openapi/src/api/notifications_api.dart';
 import 'package:djangoflow_openapi/src/api/remoteconfig_api.dart';
 
@@ -66,6 +67,12 @@ class DjangoflowOpenapi {
   /// by doing that all interceptors will not be executed
   AuthApi getAuthApi() {
     return AuthApi(dio);
+  }
+
+  /// Get ChatApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  ChatApi getChatApi() {
+    return ChatApi(dio);
   }
 
   /// Get NotificationsApi instance, base route and serializer can be overridden by a given but be careful,
