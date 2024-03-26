@@ -7,13 +7,13 @@ part 'chat_state.g.dart';
 @freezed
 class ChatState with _$ChatState {
   const factory ChatState({
-    required String roomId,
-    Room? room,
-    @Default(<String, RoomUser>{}) Map<String, RoomUser> roomUsers,
-    @Default(<Message>[]) List<Message> messages,
-    RoomUser? me,
+    required int roomId,
+    ChatRoom? room,
+    @Default(<int, User>{}) Map<int, User> roomUsers,
+    @Default(<ChatMessage>[]) List<ChatMessage> messages,
+    User? me,
     @Default(false) bool loading,
-    @Default(false) bool uploadingImage,
+    // @Default(false) bool uploadingImage,
   }) = _ChatState;
 
   factory ChatState.fromJson(Map<String, dynamic> json) =>

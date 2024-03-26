@@ -20,13 +20,12 @@ ChatState _$ChatStateFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$ChatState {
-  String get roomId => throw _privateConstructorUsedError;
-  Room? get room => throw _privateConstructorUsedError;
-  Map<String, RoomUser> get roomUsers => throw _privateConstructorUsedError;
-  List<Message> get messages => throw _privateConstructorUsedError;
-  RoomUser? get me => throw _privateConstructorUsedError;
+  int get roomId => throw _privateConstructorUsedError;
+  ChatRoom? get room => throw _privateConstructorUsedError;
+  Map<int, User> get roomUsers => throw _privateConstructorUsedError;
+  List<ChatMessage> get messages => throw _privateConstructorUsedError;
+  User? get me => throw _privateConstructorUsedError;
   bool get loading => throw _privateConstructorUsedError;
-  bool get uploadingImage => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -40,13 +39,12 @@ abstract class $ChatStateCopyWith<$Res> {
       _$ChatStateCopyWithImpl<$Res, ChatState>;
   @useResult
   $Res call(
-      {String roomId,
-      Room? room,
-      Map<String, RoomUser> roomUsers,
-      List<Message> messages,
-      RoomUser? me,
-      bool loading,
-      bool uploadingImage});
+      {int roomId,
+      ChatRoom? room,
+      Map<int, User> roomUsers,
+      List<ChatMessage> messages,
+      User? me,
+      bool loading});
 }
 
 /// @nodoc
@@ -68,36 +66,31 @@ class _$ChatStateCopyWithImpl<$Res, $Val extends ChatState>
     Object? messages = null,
     Object? me = freezed,
     Object? loading = null,
-    Object? uploadingImage = null,
   }) {
     return _then(_value.copyWith(
       roomId: null == roomId
           ? _value.roomId
           : roomId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       room: freezed == room
           ? _value.room
           : room // ignore: cast_nullable_to_non_nullable
-              as Room?,
+              as ChatRoom?,
       roomUsers: null == roomUsers
           ? _value.roomUsers
           : roomUsers // ignore: cast_nullable_to_non_nullable
-              as Map<String, RoomUser>,
+              as Map<int, User>,
       messages: null == messages
           ? _value.messages
           : messages // ignore: cast_nullable_to_non_nullable
-              as List<Message>,
+              as List<ChatMessage>,
       me: freezed == me
           ? _value.me
           : me // ignore: cast_nullable_to_non_nullable
-              as RoomUser?,
+              as User?,
       loading: null == loading
           ? _value.loading
           : loading // ignore: cast_nullable_to_non_nullable
-              as bool,
-      uploadingImage: null == uploadingImage
-          ? _value.uploadingImage
-          : uploadingImage // ignore: cast_nullable_to_non_nullable
               as bool,
     ) as $Val);
   }
@@ -112,13 +105,12 @@ abstract class _$$ChatStateImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String roomId,
-      Room? room,
-      Map<String, RoomUser> roomUsers,
-      List<Message> messages,
-      RoomUser? me,
-      bool loading,
-      bool uploadingImage});
+      {int roomId,
+      ChatRoom? room,
+      Map<int, User> roomUsers,
+      List<ChatMessage> messages,
+      User? me,
+      bool loading});
 }
 
 /// @nodoc
@@ -138,36 +130,31 @@ class __$$ChatStateImplCopyWithImpl<$Res>
     Object? messages = null,
     Object? me = freezed,
     Object? loading = null,
-    Object? uploadingImage = null,
   }) {
     return _then(_$ChatStateImpl(
       roomId: null == roomId
           ? _value.roomId
           : roomId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       room: freezed == room
           ? _value.room
           : room // ignore: cast_nullable_to_non_nullable
-              as Room?,
+              as ChatRoom?,
       roomUsers: null == roomUsers
           ? _value._roomUsers
           : roomUsers // ignore: cast_nullable_to_non_nullable
-              as Map<String, RoomUser>,
+              as Map<int, User>,
       messages: null == messages
           ? _value._messages
           : messages // ignore: cast_nullable_to_non_nullable
-              as List<Message>,
+              as List<ChatMessage>,
       me: freezed == me
           ? _value.me
           : me // ignore: cast_nullable_to_non_nullable
-              as RoomUser?,
+              as User?,
       loading: null == loading
           ? _value.loading
           : loading // ignore: cast_nullable_to_non_nullable
-              as bool,
-      uploadingImage: null == uploadingImage
-          ? _value.uploadingImage
-          : uploadingImage // ignore: cast_nullable_to_non_nullable
               as bool,
     ));
   }
@@ -179,11 +166,10 @@ class _$ChatStateImpl implements _ChatState {
   const _$ChatStateImpl(
       {required this.roomId,
       this.room,
-      final Map<String, RoomUser> roomUsers = const <String, RoomUser>{},
-      final List<Message> messages = const <Message>[],
+      final Map<int, User> roomUsers = const <int, User>{},
+      final List<ChatMessage> messages = const <ChatMessage>[],
       this.me,
-      this.loading = false,
-      this.uploadingImage = false})
+      this.loading = false})
       : _roomUsers = roomUsers,
         _messages = messages;
 
@@ -191,39 +177,36 @@ class _$ChatStateImpl implements _ChatState {
       _$$ChatStateImplFromJson(json);
 
   @override
-  final String roomId;
+  final int roomId;
   @override
-  final Room? room;
-  final Map<String, RoomUser> _roomUsers;
+  final ChatRoom? room;
+  final Map<int, User> _roomUsers;
   @override
   @JsonKey()
-  Map<String, RoomUser> get roomUsers {
+  Map<int, User> get roomUsers {
     if (_roomUsers is EqualUnmodifiableMapView) return _roomUsers;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableMapView(_roomUsers);
   }
 
-  final List<Message> _messages;
+  final List<ChatMessage> _messages;
   @override
   @JsonKey()
-  List<Message> get messages {
+  List<ChatMessage> get messages {
     if (_messages is EqualUnmodifiableListView) return _messages;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_messages);
   }
 
   @override
-  final RoomUser? me;
+  final User? me;
   @override
   @JsonKey()
   final bool loading;
-  @override
-  @JsonKey()
-  final bool uploadingImage;
 
   @override
   String toString() {
-    return 'ChatState(roomId: $roomId, room: $room, roomUsers: $roomUsers, messages: $messages, me: $me, loading: $loading, uploadingImage: $uploadingImage)';
+    return 'ChatState(roomId: $roomId, room: $room, roomUsers: $roomUsers, messages: $messages, me: $me, loading: $loading)';
   }
 
   @override
@@ -237,9 +220,7 @@ class _$ChatStateImpl implements _ChatState {
                 .equals(other._roomUsers, _roomUsers) &&
             const DeepCollectionEquality().equals(other._messages, _messages) &&
             (identical(other.me, me) || other.me == me) &&
-            (identical(other.loading, loading) || other.loading == loading) &&
-            (identical(other.uploadingImage, uploadingImage) ||
-                other.uploadingImage == uploadingImage));
+            (identical(other.loading, loading) || other.loading == loading));
   }
 
   @JsonKey(ignore: true)
@@ -251,8 +232,7 @@ class _$ChatStateImpl implements _ChatState {
       const DeepCollectionEquality().hash(_roomUsers),
       const DeepCollectionEquality().hash(_messages),
       me,
-      loading,
-      uploadingImage);
+      loading);
 
   @JsonKey(ignore: true)
   @override
@@ -270,31 +250,28 @@ class _$ChatStateImpl implements _ChatState {
 
 abstract class _ChatState implements ChatState {
   const factory _ChatState(
-      {required final String roomId,
-      final Room? room,
-      final Map<String, RoomUser> roomUsers,
-      final List<Message> messages,
-      final RoomUser? me,
-      final bool loading,
-      final bool uploadingImage}) = _$ChatStateImpl;
+      {required final int roomId,
+      final ChatRoom? room,
+      final Map<int, User> roomUsers,
+      final List<ChatMessage> messages,
+      final User? me,
+      final bool loading}) = _$ChatStateImpl;
 
   factory _ChatState.fromJson(Map<String, dynamic> json) =
       _$ChatStateImpl.fromJson;
 
   @override
-  String get roomId;
+  int get roomId;
   @override
-  Room? get room;
+  ChatRoom? get room;
   @override
-  Map<String, RoomUser> get roomUsers;
+  Map<int, User> get roomUsers;
   @override
-  List<Message> get messages;
+  List<ChatMessage> get messages;
   @override
-  RoomUser? get me;
+  User? get me;
   @override
   bool get loading;
-  @override
-  bool get uploadingImage;
   @override
   @JsonKey(ignore: true)
   _$$ChatStateImplCopyWith<_$ChatStateImpl> get copyWith =>
