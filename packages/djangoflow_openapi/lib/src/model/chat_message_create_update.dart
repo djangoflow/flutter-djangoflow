@@ -3,9 +3,10 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:djangoflow_openapi/src/model/user.dart';
 import 'package:json_annotation/json_annotation.dart';
 
-part 'chat_message_update.g.dart';
+part 'chat_message_create_update.g.dart';
 
 
 @JsonSerializable(
@@ -14,9 +15,9 @@ part 'chat_message_update.g.dart';
   disallowUnrecognizedKeys: false,
   explicitToJson: true,
 )
-class ChatMessageUpdate {
-  /// Returns a new [ChatMessageUpdate] instance.
-  ChatMessageUpdate({
+class ChatMessageCreateUpdate {
+  /// Returns a new [ChatMessageCreateUpdate] instance.
+  ChatMessageCreateUpdate({
 
      this.id,
 
@@ -24,11 +25,11 @@ class ChatMessageUpdate {
 
      this.modified,
 
-    required  this.message,
-
      this.chatRoom,
 
      this.createdBy,
+
+    required  this.message,
   });
 
   @JsonKey(
@@ -69,18 +70,6 @@ class ChatMessageUpdate {
 
   @JsonKey(
     
-    name: r'message',
-    required: true,
-    includeIfNull: false
-  )
-
-
-  final String message;
-
-
-
-  @JsonKey(
-    
     name: r'chat_room',
     required: false,
     includeIfNull: false
@@ -99,31 +88,43 @@ class ChatMessageUpdate {
   )
 
 
-  final int? createdBy;
+  final User? createdBy;
+
+
+
+  @JsonKey(
+    
+    name: r'message',
+    required: true,
+    includeIfNull: false
+  )
+
+
+  final String message;
 
 
 
   @override
-  bool operator ==(Object other) => identical(this, other) || other is ChatMessageUpdate &&
+  bool operator ==(Object other) => identical(this, other) || other is ChatMessageCreateUpdate &&
      other.id == id &&
      other.created == created &&
      other.modified == modified &&
-     other.message == message &&
      other.chatRoom == chatRoom &&
-     other.createdBy == createdBy;
+     other.createdBy == createdBy &&
+     other.message == message;
 
   @override
   int get hashCode =>
     id.hashCode +
     created.hashCode +
     modified.hashCode +
-    message.hashCode +
     chatRoom.hashCode +
-    createdBy.hashCode;
+    createdBy.hashCode +
+    message.hashCode;
 
-  factory ChatMessageUpdate.fromJson(Map<String, dynamic> json) => _$ChatMessageUpdateFromJson(json);
+  factory ChatMessageCreateUpdate.fromJson(Map<String, dynamic> json) => _$ChatMessageCreateUpdateFromJson(json);
 
-  Map<String, dynamic> toJson() => _$ChatMessageUpdateToJson(this);
+  Map<String, dynamic> toJson() => _$ChatMessageCreateUpdateToJson(this);
 
   @override
   String toString() {

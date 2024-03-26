@@ -1,4 +1,4 @@
-# djangoflow_openapi.model.ChatMessageUpdateRequest
+# djangoflow_openapi.model.PatchedChatMessageCreateUpdateRequest
 
 ## Load the model package
 ```dart
@@ -8,7 +8,7 @@ import 'package:djangoflow_openapi/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**message** | **String** |  | 
+**message** | **String** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -1,12 +1,12 @@
 import 'package:test/test.dart';
 import 'package:djangoflow_openapi/djangoflow_openapi.dart';
 
-// tests for ChatMessageUpdate
+// tests for ChatMessageCreateUpdate
 void main() {
-  final ChatMessageUpdate? instance = /* ChatMessageUpdate(...) */ null;
+  final ChatMessageCreateUpdate? instance = /* ChatMessageCreateUpdate(...) */ null;
   // TODO add properties to the entity
 
-  group(ChatMessageUpdate, () {
+  group(ChatMessageCreateUpdate, () {
     // int id
     test('to test the property `id`', () async {
       // TODO
@@ -22,18 +22,18 @@ void main() {
       // TODO
     });
 
-    // String message
-    test('to test the property `message`', () async {
-      // TODO
-    });
-
     // int chatRoom
     test('to test the property `chatRoom`', () async {
       // TODO
     });
 
-    // int createdBy
+    // User createdBy
     test('to test the property `createdBy`', () async {
+      // TODO
+    });
+
+    // String message
+    test('to test the property `message`', () async {
       // TODO
     });
 

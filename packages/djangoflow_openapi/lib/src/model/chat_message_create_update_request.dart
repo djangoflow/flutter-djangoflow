@@ -5,7 +5,7 @@
 // ignore_for_file: unused_element
 import 'package:json_annotation/json_annotation.dart';
 
-part 'chat_message_update_request.g.dart';
+part 'chat_message_create_update_request.g.dart';
 
 
 @JsonSerializable(
@@ -14,9 +14,9 @@ part 'chat_message_update_request.g.dart';
   disallowUnrecognizedKeys: false,
   explicitToJson: true,
 )
-class ChatMessageUpdateRequest {
-  /// Returns a new [ChatMessageUpdateRequest] instance.
-  ChatMessageUpdateRequest({
+class ChatMessageCreateUpdateRequest {
+  /// Returns a new [ChatMessageCreateUpdateRequest] instance.
+  ChatMessageCreateUpdateRequest({
 
     required  this.message,
   });
@@ -34,16 +34,16 @@ class ChatMessageUpdateRequest {
 
 
   @override
-  bool operator ==(Object other) => identical(this, other) || other is ChatMessageUpdateRequest &&
+  bool operator ==(Object other) => identical(this, other) || other is ChatMessageCreateUpdateRequest &&
      other.message == message;
 
   @override
   int get hashCode =>
     message.hashCode;
 
-  factory ChatMessageUpdateRequest.fromJson(Map<String, dynamic> json) => _$ChatMessageUpdateRequestFromJson(json);
+  factory ChatMessageCreateUpdateRequest.fromJson(Map<String, dynamic> json) => _$ChatMessageCreateUpdateRequestFromJson(json);
 
-  Map<String, dynamic> toJson() => _$ChatMessageUpdateRequestToJson(this);
+  Map<String, dynamic> toJson() => _$ChatMessageCreateUpdateRequestToJson(this);
 
   @override
   String toString() {

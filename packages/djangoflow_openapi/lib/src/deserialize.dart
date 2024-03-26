@@ -1,8 +1,7 @@
 import 'package:djangoflow_openapi/src/model/change_password_request.dart';
 import 'package:djangoflow_openapi/src/model/chat_message.dart';
-import 'package:djangoflow_openapi/src/model/chat_message_request.dart';
-import 'package:djangoflow_openapi/src/model/chat_message_update.dart';
-import 'package:djangoflow_openapi/src/model/chat_message_update_request.dart';
+import 'package:djangoflow_openapi/src/model/chat_message_create_update.dart';
+import 'package:djangoflow_openapi/src/model/chat_message_create_update_request.dart';
 import 'package:djangoflow_openapi/src/model/chat_room.dart';
 import 'package:djangoflow_openapi/src/model/chat_room_member_list.dart';
 import 'package:djangoflow_openapi/src/model/chat_room_members.dart';
@@ -19,7 +18,7 @@ import 'package:djangoflow_openapi/src/model/paginated_chat_message_list.dart';
 import 'package:djangoflow_openapi/src/model/paginated_chat_room_list.dart';
 import 'package:djangoflow_openapi/src/model/paginated_otp_device_list.dart';
 import 'package:djangoflow_openapi/src/model/paginated_user_device_list.dart';
-import 'package:djangoflow_openapi/src/model/patched_chat_message_update_request.dart';
+import 'package:djangoflow_openapi/src/model/patched_chat_message_create_update_request.dart';
 import 'package:djangoflow_openapi/src/model/patched_chat_room_request.dart';
 import 'package:djangoflow_openapi/src/model/patched_user2_fa_request.dart';
 import 'package:djangoflow_openapi/src/model/patched_user_device_request.dart';
@@ -66,12 +65,10 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           return ChangePasswordRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'ChatMessage':
           return ChatMessage.fromJson(value as Map<String, dynamic>) as ReturnType;
-        case 'ChatMessageRequest':
-          return ChatMessageRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
-        case 'ChatMessageUpdate':
-          return ChatMessageUpdate.fromJson(value as Map<String, dynamic>) as ReturnType;
-        case 'ChatMessageUpdateRequest':
-          return ChatMessageUpdateRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'ChatMessageCreateUpdate':
+          return ChatMessageCreateUpdate.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'ChatMessageCreateUpdateRequest':
+          return ChatMessageCreateUpdateRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'ChatRoom':
           return ChatRoom.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'ChatRoomMemberList':
@@ -110,8 +107,8 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           return PaginatedOTPDeviceList.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'PaginatedUserDeviceList':
           return PaginatedUserDeviceList.fromJson(value as Map<String, dynamic>) as ReturnType;
-        case 'PatchedChatMessageUpdateRequest':
-          return PatchedChatMessageUpdateRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'PatchedChatMessageCreateUpdateRequest':
+          return PatchedChatMessageCreateUpdateRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'PatchedChatRoomRequest':
           return PatchedChatRoomRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'PatchedUser2FARequest':

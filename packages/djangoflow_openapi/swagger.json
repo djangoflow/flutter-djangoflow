@@ -858,7 +858,7 @@ paths:
       - in: path
         name: room_id
         schema:
-          type: string
+          type: integer
         required: true
       tags:
       - chat
@@ -883,7 +883,7 @@ paths:
       - in: path
         name: room_id
         schema:
-          type: string
+          type: integer
         required: true
       tags:
       - chat
@@ -891,13 +891,13 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/ChatMessageRequest'
+              $ref: '#/components/schemas/ChatMessageCreateUpdateRequest'
           application/x-www-form-urlencoded:
             schema:
-              $ref: '#/components/schemas/ChatMessageRequest'
+              $ref: '#/components/schemas/ChatMessageCreateUpdateRequest'
           multipart/form-data:
             schema:
-              $ref: '#/components/schemas/ChatMessageRequest'
+              $ref: '#/components/schemas/ChatMessageCreateUpdateRequest'
         required: true
       security:
       - jwtAuth: []
@@ -912,7 +912,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ChatMessage'
+                $ref: '#/components/schemas/ChatMessageCreateUpdate'
           description: ''
   /api/v1/chat/rooms/{room_id}/messages/{id}/:
     get:
@@ -927,7 +927,7 @@ paths:
       - in: path
         name: room_id
         schema:
-          type: string
+          type: integer
         required: true
       tags:
       - chat
@@ -958,7 +958,7 @@ paths:
       - in: path
         name: room_id
         schema:
-          type: string
+          type: integer
         required: true
       tags:
       - chat
@@ -966,13 +966,13 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/ChatMessageUpdateRequest'
+              $ref: '#/components/schemas/ChatMessageCreateUpdateRequest'
           application/x-www-form-urlencoded:
             schema:
-              $ref: '#/components/schemas/ChatMessageUpdateRequest'
+              $ref: '#/components/schemas/ChatMessageCreateUpdateRequest'
           multipart/form-data:
             schema:
-              $ref: '#/components/schemas/ChatMessageUpdateRequest'
+              $ref: '#/components/schemas/ChatMessageCreateUpdateRequest'
         required: true
       security:
       - jwtAuth: []
@@ -987,7 +987,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ChatMessageUpdate'
+                $ref: '#/components/schemas/ChatMessageCreateUpdate'
           description: ''
     patch:
       operationId: chat_rooms_messages_partial_update
@@ -1001,7 +1001,7 @@ paths:
       - in: path
         name: room_id
         schema:
-          type: string
+          type: integer
         required: true
       tags:
       - chat
@@ -1009,13 +1009,13 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/PatchedChatMessageUpdateRequest'
+              $ref: '#/components/schemas/PatchedChatMessageCreateUpdateRequest'
           application/x-www-form-urlencoded:
             schema:
-              $ref: '#/components/schemas/PatchedChatMessageUpdateRequest'
+              $ref: '#/components/schemas/PatchedChatMessageCreateUpdateRequest'
           multipart/form-data:
             schema:
-              $ref: '#/components/schemas/PatchedChatMessageUpdateRequest'
+              $ref: '#/components/schemas/PatchedChatMessageCreateUpdateRequest'
       security:
       - jwtAuth: []
       responses:
@@ -1029,7 +1029,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ChatMessageUpdate'
+                $ref: '#/components/schemas/ChatMessageCreateUpdate'
           description: ''
     delete:
       operationId: chat_rooms_messages_destroy
@@ -1043,7 +1043,7 @@ paths:
       - in: path
         name: room_id
         schema:
-          type: string
+          type: integer
         required: true
       tags:
       - chat
@@ -1346,17 +1346,7 @@ components:
           readOnly: true
       required:
       - message
-    ChatMessageRequest:
-      type: object
-      properties:
-        chat_room:
-          type: integer
-        message:
-          type: string
-          minLength: 1
-      required:
-      - message
-    ChatMessageUpdate:
+    ChatMessageCreateUpdate:
       type: object
       properties:
         id:
@@ -1370,17 +1360,18 @@ components:
           type: string
           format: date-time
           readOnly: true
-        message:
-          type: string
         chat_room:
           type: integer
           readOnly: true
         created_by:
-          type: integer
+          allOf:
+          - $ref: '#/components/schemas/User'
           readOnly: true
+        message:
+          type: string
       required:
       - message
-    ChatMessageUpdateRequest:
+    ChatMessageCreateUpdateRequest:
       type: object
       properties:
         message:
@@ -1648,7 +1639,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/UserDevice'
-    PatchedChatMessageUpdateRequest:
+    PatchedChatMessageCreateUpdateRequest:
       type: object
       properties:
         message:
