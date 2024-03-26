@@ -478,7 +478,7 @@ _responseData = rawData == null ? null : deserialize<ChatRoomMemberList, ChatRoo
   /// Returns a [Future] containing a [Response] with a [ChatMessage] as data
   /// Throws [DioError] if API call or serialization fails
   Future<Response<ChatMessage>> chatRoomsMessagesCreate({ 
-    required int roomId,
+    required String roomId,
     required ChatMessageRequest chatMessageRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -576,7 +576,7 @@ _responseData = rawData == null ? null : deserialize<ChatMessage, ChatMessage>(r
   /// Throws [DioError] if API call or serialization fails
   Future<Response<void>> chatRoomsMessagesDestroy({ 
     required int id,
-    required int roomId,
+    required String roomId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -631,7 +631,7 @@ _responseData = rawData == null ? null : deserialize<ChatMessage, ChatMessage>(r
   /// Returns a [Future] containing a [Response] with a [PaginatedChatMessageList] as data
   /// Throws [DioError] if API call or serialization fails
   Future<Response<PaginatedChatMessageList>> chatRoomsMessagesList({ 
-    required int roomId,
+    required String roomId,
     int? limit,
     int? offset,
     CancelToken? cancelToken,
@@ -719,7 +719,7 @@ _responseData = rawData == null ? null : deserialize<PaginatedChatMessageList, P
   /// Throws [DioError] if API call or serialization fails
   Future<Response<ChatMessageUpdate>> chatRoomsMessagesPartialUpdate({ 
     required int id,
-    required int roomId,
+    required String roomId,
     PatchedChatMessageUpdateRequest? patchedChatMessageUpdateRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -817,7 +817,7 @@ _responseData = rawData == null ? null : deserialize<ChatMessageUpdate, ChatMess
   /// Throws [DioError] if API call or serialization fails
   Future<Response<ChatMessage>> chatRoomsMessagesRetrieve({ 
     required int id,
-    required int roomId,
+    required String roomId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -897,7 +897,7 @@ _responseData = rawData == null ? null : deserialize<ChatMessage, ChatMessage>(r
   /// Throws [DioError] if API call or serialization fails
   Future<Response<ChatMessageUpdate>> chatRoomsMessagesUpdate({ 
     required int id,
-    required int roomId,
+    required String roomId,
     required ChatMessageUpdateRequest chatMessageUpdateRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,

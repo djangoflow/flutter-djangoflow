@@ -32,32 +32,32 @@ void main() {
       // TODO
     });
 
-    //Future<ChatMessage> chatRoomsMessagesCreate(int roomId, ChatMessageRequest chatMessageRequest) async
+    //Future<ChatMessage> chatRoomsMessagesCreate(String roomId, ChatMessageRequest chatMessageRequest) async
     test('test chatRoomsMessagesCreate', () async {
       // TODO
     });
 
-    //Future chatRoomsMessagesDestroy(int id, int roomId) async
+    //Future chatRoomsMessagesDestroy(int id, String roomId) async
     test('test chatRoomsMessagesDestroy', () async {
       // TODO
     });
 
-    //Future<PaginatedChatMessageList> chatRoomsMessagesList(int roomId, { int limit, int offset }) async
+    //Future<PaginatedChatMessageList> chatRoomsMessagesList(String roomId, { int limit, int offset }) async
     test('test chatRoomsMessagesList', () async {
       // TODO
     });
 
-    //Future<ChatMessageUpdate> chatRoomsMessagesPartialUpdate(int id, int roomId, { PatchedChatMessageUpdateRequest patchedChatMessageUpdateRequest }) async
+    //Future<ChatMessageUpdate> chatRoomsMessagesPartialUpdate(int id, String roomId, { PatchedChatMessageUpdateRequest patchedChatMessageUpdateRequest }) async
     test('test chatRoomsMessagesPartialUpdate', () async {
       // TODO
     });
 
-    //Future<ChatMessage> chatRoomsMessagesRetrieve(int id, int roomId) async
+    //Future<ChatMessage> chatRoomsMessagesRetrieve(int id, String roomId) async
     test('test chatRoomsMessagesRetrieve', () async {
       // TODO
     });
 
-    //Future<ChatMessageUpdate> chatRoomsMessagesUpdate(int id, int roomId, ChatMessageUpdateRequest chatMessageUpdateRequest) async
+    //Future<ChatMessageUpdate> chatRoomsMessagesUpdate(int id, String roomId, ChatMessageUpdateRequest chatMessageUpdateRequest) async
     test('test chatRoomsMessagesUpdate', () async {
       // TODO
     });

@@ -281,7 +281,7 @@ import 'package:djangoflow_openapi/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = DjangoflowOpenapi().getChatApi();
-final int roomId = 56; // int | 
+final String roomId = roomId_example; // String | 
 final ChatMessageRequest chatMessageRequest = ; // ChatMessageRequest | 
 
 try {
@@ -296,7 +296,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **roomId** | **int**|  | 
+ **roomId** | **String**|  | 
  **chatMessageRequest** | [**ChatMessageRequest**](ChatMessageRequest.md)|  | 
 
 ### Return type
@@ -328,7 +328,7 @@ import 'package:djangoflow_openapi/api.dart';
 
 final api = DjangoflowOpenapi().getChatApi();
 final int id = 56; // int | A unique integer value identifying this chat message.
-final int roomId = 56; // int | 
+final String roomId = roomId_example; // String | 
 
 try {
     api.chatRoomsMessagesDestroy(id, roomId);
@@ -342,7 +342,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| A unique integer value identifying this chat message. | 
- **roomId** | **int**|  | 
+ **roomId** | **String**|  | 
 
 ### Return type
 
@@ -372,7 +372,7 @@ import 'package:djangoflow_openapi/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = DjangoflowOpenapi().getChatApi();
-final int roomId = 56; // int | 
+final String roomId = roomId_example; // String | 
 final int limit = 56; // int | Number of results to return per page.
 final int offset = 56; // int | The initial index from which to return the results.
 
@@ -388,7 +388,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **roomId** | **int**|  | 
+ **roomId** | **String**|  | 
  **limit** | **int**| Number of results to return per page. | [optional] 
  **offset** | **int**| The initial index from which to return the results. | [optional] 
 
@@ -421,7 +421,7 @@ import 'package:djangoflow_openapi/api.dart';
 
 final api = DjangoflowOpenapi().getChatApi();
 final int id = 56; // int | A unique integer value identifying this chat message.
-final int roomId = 56; // int | 
+final String roomId = roomId_example; // String | 
 final PatchedChatMessageUpdateRequest patchedChatMessageUpdateRequest = ; // PatchedChatMessageUpdateRequest | 
 
 try {
@@ -437,7 +437,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| A unique integer value identifying this chat message. | 
- **roomId** | **int**|  | 
+ **roomId** | **String**|  | 
  **patchedChatMessageUpdateRequest** | [**PatchedChatMessageUpdateRequest**](PatchedChatMessageUpdateRequest.md)|  | [optional] 
 
 ### Return type
@@ -469,7 +469,7 @@ import 'package:djangoflow_openapi/api.dart';
 
 final api = DjangoflowOpenapi().getChatApi();
 final int id = 56; // int | A unique integer value identifying this chat message.
-final int roomId = 56; // int | 
+final String roomId = roomId_example; // String | 
 
 try {
     final response = api.chatRoomsMessagesRetrieve(id, roomId);
@@ -484,7 +484,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| A unique integer value identifying this chat message. | 
- **roomId** | **int**|  | 
+ **roomId** | **String**|  | 
 
 ### Return type
 
@@ -515,7 +515,7 @@ import 'package:djangoflow_openapi/api.dart';
 
 final api = DjangoflowOpenapi().getChatApi();
 final int id = 56; // int | A unique integer value identifying this chat message.
-final int roomId = 56; // int | 
+final String roomId = roomId_example; // String | 
 final ChatMessageUpdateRequest chatMessageUpdateRequest = ; // ChatMessageUpdateRequest | 
 
 try {
@@ -531,7 +531,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| A unique integer value identifying this chat message. | 
- **roomId** | **int**|  | 
+ **roomId** | **String**|  | 
  **chatMessageUpdateRequest** | [**ChatMessageUpdateRequest**](ChatMessageUpdateRequest.md)|  | 
 
 ### Return type
