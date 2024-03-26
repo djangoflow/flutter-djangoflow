@@ -1,12 +1,12 @@
 import 'package:test/test.dart';
 import 'package:djangoflow_openapi/djangoflow_openapi.dart';
 
-// tests for ChatMessageCreateUpdateRequest
+// tests for PatchedChatMessageRequest
 void main() {
-  final ChatMessageCreateUpdateRequest? instance = /* ChatMessageCreateUpdateRequest(...) */ null;
+  final PatchedChatMessageRequest? instance = /* PatchedChatMessageRequest(...) */ null;
   // TODO add properties to the entity
 
-  group(ChatMessageCreateUpdateRequest, () {
+  group(PatchedChatMessageRequest, () {
     // String message
     test('to test the property `message`', () async {
       // TODO

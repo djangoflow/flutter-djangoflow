@@ -9,10 +9,11 @@ import 'package:djangoflow_openapi/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | [optional] 
+**created** | [**DateTime**](DateTime.md) |  | [optional] 
+**modified** | [**DateTime**](DateTime.md) |  | [optional] 
 **chatRoom** | **int** |  | [optional] 
 **createdBy** | [**User**](User.md) |  | [optional] 
 **message** | **String** |  | 
-**created** | [**DateTime**](DateTime.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -891,13 +891,13 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/ChatMessageCreateUpdateRequest'
+              $ref: '#/components/schemas/ChatMessageRequest'
           application/x-www-form-urlencoded:
             schema:
-              $ref: '#/components/schemas/ChatMessageCreateUpdateRequest'
+              $ref: '#/components/schemas/ChatMessageRequest'
           multipart/form-data:
             schema:
-              $ref: '#/components/schemas/ChatMessageCreateUpdateRequest'
+              $ref: '#/components/schemas/ChatMessageRequest'
         required: true
       security:
       - jwtAuth: []
@@ -912,7 +912,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ChatMessageCreateUpdate'
+                $ref: '#/components/schemas/ChatMessage'
           description: ''
   /api/v1/chat/rooms/{room_id}/messages/{id}/:
     get:
@@ -966,13 +966,13 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/ChatMessageCreateUpdateRequest'
+              $ref: '#/components/schemas/ChatMessageRequest'
           application/x-www-form-urlencoded:
             schema:
-              $ref: '#/components/schemas/ChatMessageCreateUpdateRequest'
+              $ref: '#/components/schemas/ChatMessageRequest'
           multipart/form-data:
             schema:
-              $ref: '#/components/schemas/ChatMessageCreateUpdateRequest'
+              $ref: '#/components/schemas/ChatMessageRequest'
         required: true
       security:
       - jwtAuth: []
@@ -987,7 +987,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ChatMessageCreateUpdate'
+                $ref: '#/components/schemas/ChatMessage'
           description: ''
     patch:
       operationId: chat_rooms_messages_partial_update
@@ -1009,13 +1009,13 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/PatchedChatMessageCreateUpdateRequest'
+              $ref: '#/components/schemas/PatchedChatMessageRequest'
           application/x-www-form-urlencoded:
             schema:
-              $ref: '#/components/schemas/PatchedChatMessageCreateUpdateRequest'
+              $ref: '#/components/schemas/PatchedChatMessageRequest'
           multipart/form-data:
             schema:
-              $ref: '#/components/schemas/PatchedChatMessageCreateUpdateRequest'
+              $ref: '#/components/schemas/PatchedChatMessageRequest'
       security:
       - jwtAuth: []
       responses:
@@ -1029,7 +1029,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ChatMessageCreateUpdate'
+                $ref: '#/components/schemas/ChatMessage'
           description: ''
     delete:
       operationId: chat_rooms_messages_destroy
@@ -1332,26 +1332,6 @@ components:
         id:
           type: integer
           readOnly: true
-        chat_room:
-          type: integer
-        created_by:
-          allOf:
-          - $ref: '#/components/schemas/User'
-          readOnly: true
-        message:
-          type: string
-        created:
-          type: string
-          format: date-time
-          readOnly: true
-      required:
-      - message
-    ChatMessageCreateUpdate:
-      type: object
-      properties:
-        id:
-          type: integer
-          readOnly: true
         created:
           type: string
           format: date-time
@@ -1371,7 +1351,7 @@ components:
           type: string
       required:
       - message
-    ChatMessageCreateUpdateRequest:
+    ChatMessageRequest:
       type: object
       properties:
         message:
@@ -1639,7 +1619,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/UserDevice'
-    PatchedChatMessageCreateUpdateRequest:
+    PatchedChatMessageRequest:
       type: object
       properties:
         message:

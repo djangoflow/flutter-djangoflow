@@ -1,4 +1,4 @@
-# djangoflow_openapi.model.ChatMessageCreateUpdateRequest
+# djangoflow_openapi.model.ChatMessageRequest
 
 ## Load the model package
 ```dart

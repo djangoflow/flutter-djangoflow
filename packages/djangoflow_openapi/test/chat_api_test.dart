@@ -32,7 +32,7 @@ void main() {
       // TODO
     });
 
-    //Future<ChatMessageCreateUpdate> chatRoomsMessagesCreate(int roomId, ChatMessageCreateUpdateRequest chatMessageCreateUpdateRequest) async
+    //Future<ChatMessage> chatRoomsMessagesCreate(int roomId, ChatMessageRequest chatMessageRequest) async
     test('test chatRoomsMessagesCreate', () async {
       // TODO
     });
@@ -47,7 +47,7 @@ void main() {
       // TODO
     });
 
-    //Future<ChatMessageCreateUpdate> chatRoomsMessagesPartialUpdate(int id, int roomId, { PatchedChatMessageCreateUpdateRequest patchedChatMessageCreateUpdateRequest }) async
+    //Future<ChatMessage> chatRoomsMessagesPartialUpdate(int id, int roomId, { PatchedChatMessageRequest patchedChatMessageRequest }) async
     test('test chatRoomsMessagesPartialUpdate', () async {
       // TODO
     });
@@ -57,7 +57,7 @@ void main() {
       // TODO
     });
 
-    //Future<ChatMessageCreateUpdate> chatRoomsMessagesUpdate(int id, int roomId, ChatMessageCreateUpdateRequest chatMessageCreateUpdateRequest) async
+    //Future<ChatMessage> chatRoomsMessagesUpdate(int id, int roomId, ChatMessageRequest chatMessageRequest) async
     test('test chatRoomsMessagesUpdate', () async {
       // TODO
     });

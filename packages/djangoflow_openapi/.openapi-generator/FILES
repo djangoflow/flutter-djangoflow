@@ -7,8 +7,7 @@ doc/AuthApi.md
 doc/ChangePasswordRequest.md
 doc/ChatApi.md
 doc/ChatMessage.md
-doc/ChatMessageCreateUpdate.md
-doc/ChatMessageCreateUpdateRequest.md
+doc/ChatMessageRequest.md
 doc/ChatRoom.md
 doc/ChatRoomMemberList.md
 doc/ChatRoomMembers.md
@@ -28,7 +27,7 @@ doc/PaginatedChatMessageList.md
 doc/PaginatedChatRoomList.md
 doc/PaginatedOTPDeviceList.md
 doc/PaginatedUserDeviceList.md
-doc/PatchedChatMessageCreateUpdateRequest.md
+doc/PatchedChatMessageRequest.md
 doc/PatchedChatRoomRequest.md
 doc/PatchedUser2FARequest.md
 doc/PatchedUserDeviceRequest.md
@@ -67,8 +66,7 @@ lib/src/deserialize.dart
 lib/src/model/action_enum.dart
 lib/src/model/change_password_request.dart
 lib/src/model/chat_message.dart
-lib/src/model/chat_message_create_update.dart
-lib/src/model/chat_message_create_update_request.dart
+lib/src/model/chat_message_request.dart
 lib/src/model/chat_room.dart
 lib/src/model/chat_room_member_list.dart
 lib/src/model/chat_room_members.dart
@@ -87,7 +85,7 @@ lib/src/model/paginated_chat_message_list.dart
 lib/src/model/paginated_chat_room_list.dart
 lib/src/model/paginated_otp_device_list.dart
 lib/src/model/paginated_user_device_list.dart
-lib/src/model/patched_chat_message_create_update_request.dart
+lib/src/model/patched_chat_message_request.dart
 lib/src/model/patched_chat_room_request.dart
 lib/src/model/patched_user2_fa_request.dart
 lib/src/model/patched_user_device_request.dart
@@ -115,8 +113,7 @@ test/action_enum_test.dart
 test/auth_api_test.dart
 test/change_password_request_test.dart
 test/chat_api_test.dart
-test/chat_message_create_update_request_test.dart
-test/chat_message_create_update_test.dart
+test/chat_message_request_test.dart
 test/chat_message_test.dart
 test/chat_room_member_list_test.dart
 test/chat_room_members_request_test.dart
@@ -137,7 +134,7 @@ test/paginated_chat_message_list_test.dart
 test/paginated_chat_room_list_test.dart
 test/paginated_otp_device_list_test.dart
 test/paginated_user_device_list_test.dart
-test/patched_chat_message_create_update_request_test.dart
+test/patched_chat_message_request_test.dart
 test/patched_chat_room_request_test.dart
 test/patched_user2_fa_request_test.dart
 test/patched_user_device_request_test.dart

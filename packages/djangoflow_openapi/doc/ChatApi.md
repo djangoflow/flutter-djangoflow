@@ -269,7 +269,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **chatRoomsMessagesCreate**
-> ChatMessageCreateUpdate chatRoomsMessagesCreate(roomId, chatMessageCreateUpdateRequest)
+> ChatMessage chatRoomsMessagesCreate(roomId, chatMessageRequest)
 
 
 
@@ -282,10 +282,10 @@ import 'package:djangoflow_openapi/api.dart';
 
 final api = DjangoflowOpenapi().getChatApi();
 final int roomId = 56; // int | 
-final ChatMessageCreateUpdateRequest chatMessageCreateUpdateRequest = ; // ChatMessageCreateUpdateRequest | 
+final ChatMessageRequest chatMessageRequest = ; // ChatMessageRequest | 
 
 try {
-    final response = api.chatRoomsMessagesCreate(roomId, chatMessageCreateUpdateRequest);
+    final response = api.chatRoomsMessagesCreate(roomId, chatMessageRequest);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling ChatApi->chatRoomsMessagesCreate: $e\n');
@@ -297,11 +297,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **roomId** | **int**|  | 
- **chatMessageCreateUpdateRequest** | [**ChatMessageCreateUpdateRequest**](ChatMessageCreateUpdateRequest.md)|  | 
+ **chatMessageRequest** | [**ChatMessageRequest**](ChatMessageRequest.md)|  | 
 
 ### Return type
 
-[**ChatMessageCreateUpdate**](ChatMessageCreateUpdate.md)
+[**ChatMessage**](ChatMessage.md)
 
 ### Authorization
 
@@ -408,7 +408,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **chatRoomsMessagesPartialUpdate**
-> ChatMessageCreateUpdate chatRoomsMessagesPartialUpdate(id, roomId, patchedChatMessageCreateUpdateRequest)
+> ChatMessage chatRoomsMessagesPartialUpdate(id, roomId, patchedChatMessageRequest)
 
 
 
@@ -422,10 +422,10 @@ import 'package:djangoflow_openapi/api.dart';
 final api = DjangoflowOpenapi().getChatApi();
 final int id = 56; // int | A unique integer value identifying this chat message.
 final int roomId = 56; // int | 
-final PatchedChatMessageCreateUpdateRequest patchedChatMessageCreateUpdateRequest = ; // PatchedChatMessageCreateUpdateRequest | 
+final PatchedChatMessageRequest patchedChatMessageRequest = ; // PatchedChatMessageRequest | 
 
 try {
-    final response = api.chatRoomsMessagesPartialUpdate(id, roomId, patchedChatMessageCreateUpdateRequest);
+    final response = api.chatRoomsMessagesPartialUpdate(id, roomId, patchedChatMessageRequest);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling ChatApi->chatRoomsMessagesPartialUpdate: $e\n');
@@ -438,11 +438,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| A unique integer value identifying this chat message. | 
  **roomId** | **int**|  | 
- **patchedChatMessageCreateUpdateRequest** | [**PatchedChatMessageCreateUpdateRequest**](PatchedChatMessageCreateUpdateRequest.md)|  | [optional] 
+ **patchedChatMessageRequest** | [**PatchedChatMessageRequest**](PatchedChatMessageRequest.md)|  | [optional] 
 
 ### Return type
 
-[**ChatMessageCreateUpdate**](ChatMessageCreateUpdate.md)
+[**ChatMessage**](ChatMessage.md)
 
 ### Authorization
 
@@ -502,7 +502,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **chatRoomsMessagesUpdate**
-> ChatMessageCreateUpdate chatRoomsMessagesUpdate(id, roomId, chatMessageCreateUpdateRequest)
+> ChatMessage chatRoomsMessagesUpdate(id, roomId, chatMessageRequest)
 
 
 
@@ -516,10 +516,10 @@ import 'package:djangoflow_openapi/api.dart';
 final api = DjangoflowOpenapi().getChatApi();
 final int id = 56; // int | A unique integer value identifying this chat message.
 final int roomId = 56; // int | 
-final ChatMessageCreateUpdateRequest chatMessageCreateUpdateRequest = ; // ChatMessageCreateUpdateRequest | 
+final ChatMessageRequest chatMessageRequest = ; // ChatMessageRequest | 
 
 try {
-    final response = api.chatRoomsMessagesUpdate(id, roomId, chatMessageCreateUpdateRequest);
+    final response = api.chatRoomsMessagesUpdate(id, roomId, chatMessageRequest);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling ChatApi->chatRoomsMessagesUpdate: $e\n');
@@ -532,11 +532,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| A unique integer value identifying this chat message. | 
  **roomId** | **int**|  | 
- **chatMessageCreateUpdateRequest** | [**ChatMessageCreateUpdateRequest**](ChatMessageCreateUpdateRequest.md)|  | 
+ **chatMessageRequest** | [**ChatMessageRequest**](ChatMessageRequest.md)|  | 
 
 ### Return type
 
-[**ChatMessageCreateUpdate**](ChatMessageCreateUpdate.md)
+[**ChatMessage**](ChatMessage.md)
 
 ### Authorization
 

@@ -12,6 +12,16 @@ void main() {
       // TODO
     });
 
+    // DateTime created
+    test('to test the property `created`', () async {
+      // TODO
+    });
+
+    // DateTime modified
+    test('to test the property `modified`', () async {
+      // TODO
+    });
+
     // int chatRoom
     test('to test the property `chatRoom`', () async {
       // TODO
@@ -24,11 +34,6 @@ void main() {
 
     // String message
     test('to test the property `message`', () async {
-      // TODO
-    });
-
-    // DateTime created
-    test('to test the property `created`', () async {
       // TODO
     });
 

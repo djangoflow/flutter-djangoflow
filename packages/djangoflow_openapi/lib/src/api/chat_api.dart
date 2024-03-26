@@ -10,8 +10,7 @@ import 'package:djangoflow_openapi/src/deserialize.dart';
 import 'package:dio/dio.dart';
 
 import 'package:djangoflow_openapi/src/model/chat_message.dart';
-import 'package:djangoflow_openapi/src/model/chat_message_create_update.dart';
-import 'package:djangoflow_openapi/src/model/chat_message_create_update_request.dart';
+import 'package:djangoflow_openapi/src/model/chat_message_request.dart';
 import 'package:djangoflow_openapi/src/model/chat_room.dart';
 import 'package:djangoflow_openapi/src/model/chat_room_member_list.dart';
 import 'package:djangoflow_openapi/src/model/chat_room_members.dart';
@@ -20,7 +19,7 @@ import 'package:djangoflow_openapi/src/model/chat_room_request.dart';
 import 'package:djangoflow_openapi/src/model/error_response.dart';
 import 'package:djangoflow_openapi/src/model/paginated_chat_message_list.dart';
 import 'package:djangoflow_openapi/src/model/paginated_chat_room_list.dart';
-import 'package:djangoflow_openapi/src/model/patched_chat_message_create_update_request.dart';
+import 'package:djangoflow_openapi/src/model/patched_chat_message_request.dart';
 import 'package:djangoflow_openapi/src/model/patched_chat_room_request.dart';
 
 class ChatApi {
@@ -466,7 +465,7 @@ _responseData = rawData == null ? null : deserialize<ChatRoomMemberList, ChatRoo
   ///
   /// Parameters:
   /// * [roomId] 
-  /// * [chatMessageCreateUpdateRequest] 
+  /// * [chatMessageRequest] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -474,11 +473,11 @@ _responseData = rawData == null ? null : deserialize<ChatRoomMemberList, ChatRoo
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [ChatMessageCreateUpdate] as data
+  /// Returns a [Future] containing a [Response] with a [ChatMessage] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<ChatMessageCreateUpdate>> chatRoomsMessagesCreate({ 
+  Future<Response<ChatMessage>> chatRoomsMessagesCreate({ 
     required int roomId,
-    required ChatMessageCreateUpdateRequest chatMessageCreateUpdateRequest,
+    required ChatMessageRequest chatMessageRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -509,7 +508,7 @@ _responseData = rawData == null ? null : deserialize<ChatRoomMemberList, ChatRoo
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(chatMessageCreateUpdateRequest);
+_bodyData=jsonEncode(chatMessageRequest);
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(
@@ -531,11 +530,11 @@ _bodyData=jsonEncode(chatMessageCreateUpdateRequest);
       onReceiveProgress: onReceiveProgress,
     );
 
-    ChatMessageCreateUpdate? _responseData;
+    ChatMessage? _responseData;
 
     try {
 final rawData = _response.data;
-_responseData = rawData == null ? null : deserialize<ChatMessageCreateUpdate, ChatMessageCreateUpdate>(rawData, 'ChatMessageCreateUpdate', growable: true);
+_responseData = rawData == null ? null : deserialize<ChatMessage, ChatMessage>(rawData, 'ChatMessage', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -546,7 +545,7 @@ _responseData = rawData == null ? null : deserialize<ChatMessageCreateUpdate, Ch
       );
     }
 
-    return Response<ChatMessageCreateUpdate>(
+    return Response<ChatMessage>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -706,7 +705,7 @@ _responseData = rawData == null ? null : deserialize<PaginatedChatMessageList, P
   /// Parameters:
   /// * [id] - A unique integer value identifying this chat message.
   /// * [roomId] 
-  /// * [patchedChatMessageCreateUpdateRequest] 
+  /// * [patchedChatMessageRequest] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -714,12 +713,12 @@ _responseData = rawData == null ? null : deserialize<PaginatedChatMessageList, P
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [ChatMessageCreateUpdate] as data
+  /// Returns a [Future] containing a [Response] with a [ChatMessage] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<ChatMessageCreateUpdate>> chatRoomsMessagesPartialUpdate({ 
+  Future<Response<ChatMessage>> chatRoomsMessagesPartialUpdate({ 
     required int id,
     required int roomId,
-    PatchedChatMessageCreateUpdateRequest? patchedChatMessageCreateUpdateRequest,
+    PatchedChatMessageRequest? patchedChatMessageRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -750,7 +749,7 @@ _responseData = rawData == null ? null : deserialize<PaginatedChatMessageList, P
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(patchedChatMessageCreateUpdateRequest);
+_bodyData=jsonEncode(patchedChatMessageRequest);
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(
@@ -772,11 +771,11 @@ _bodyData=jsonEncode(patchedChatMessageCreateUpdateRequest);
       onReceiveProgress: onReceiveProgress,
     );
 
-    ChatMessageCreateUpdate? _responseData;
+    ChatMessage? _responseData;
 
     try {
 final rawData = _response.data;
-_responseData = rawData == null ? null : deserialize<ChatMessageCreateUpdate, ChatMessageCreateUpdate>(rawData, 'ChatMessageCreateUpdate', growable: true);
+_responseData = rawData == null ? null : deserialize<ChatMessage, ChatMessage>(rawData, 'ChatMessage', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -787,7 +786,7 @@ _responseData = rawData == null ? null : deserialize<ChatMessageCreateUpdate, Ch
       );
     }
 
-    return Response<ChatMessageCreateUpdate>(
+    return Response<ChatMessage>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -884,7 +883,7 @@ _responseData = rawData == null ? null : deserialize<ChatMessage, ChatMessage>(r
   /// Parameters:
   /// * [id] - A unique integer value identifying this chat message.
   /// * [roomId] 
-  /// * [chatMessageCreateUpdateRequest] 
+  /// * [chatMessageRequest] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -892,12 +891,12 @@ _responseData = rawData == null ? null : deserialize<ChatMessage, ChatMessage>(r
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [ChatMessageCreateUpdate] as data
+  /// Returns a [Future] containing a [Response] with a [ChatMessage] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<ChatMessageCreateUpdate>> chatRoomsMessagesUpdate({ 
+  Future<Response<ChatMessage>> chatRoomsMessagesUpdate({ 
     required int id,
     required int roomId,
-    required ChatMessageCreateUpdateRequest chatMessageCreateUpdateRequest,
+    required ChatMessageRequest chatMessageRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -928,7 +927,7 @@ _responseData = rawData == null ? null : deserialize<ChatMessage, ChatMessage>(r
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(chatMessageCreateUpdateRequest);
+_bodyData=jsonEncode(chatMessageRequest);
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(
@@ -950,11 +949,11 @@ _bodyData=jsonEncode(chatMessageCreateUpdateRequest);
       onReceiveProgress: onReceiveProgress,
     );
 
-    ChatMessageCreateUpdate? _responseData;
+    ChatMessage? _responseData;
 
     try {
 final rawData = _response.data;
-_responseData = rawData == null ? null : deserialize<ChatMessageCreateUpdate, ChatMessageCreateUpdate>(rawData, 'ChatMessageCreateUpdate', growable: true);
+_responseData = rawData == null ? null : deserialize<ChatMessage, ChatMessage>(rawData, 'ChatMessage', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -965,7 +964,7 @@ _responseData = rawData == null ? null : deserialize<ChatMessageCreateUpdate, Ch
       );
     }
 
-    return Response<ChatMessageCreateUpdate>(
+    return Response<ChatMessage>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
