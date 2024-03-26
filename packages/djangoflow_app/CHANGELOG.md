@@ -1,3 +1,7 @@
+## 3.7.6
+
+ - **REFACTOR**: update generated files. ([b057a275](https://github.com/djangoflow/flutter-djangoflow/commit/b057a2751bd47d0d2e436a3418232c01218fda59))
+
 ## 3.7.5
 
  - **REFACTOR**: expose dismissDirection. ([d071f5f3](https://github.com/djangoflow/flutter-djangoflow/commit/d071f5f3446e1ca89e86b6a0f32362bda9d2b0ae))

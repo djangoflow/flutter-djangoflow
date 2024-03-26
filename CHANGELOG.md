@@ -3,6 +3,101 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2024-03-27
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - [`djangoflow_auth` - `v0.4.0`](#djangoflow_auth---v040)
+
+Packages with other changes:
+
+ - [`djangoflow_analytics` - `v0.0.2+3`](#djangoflow_analytics---v0023)
+ - [`djangoflow_app` - `v3.7.6`](#djangoflow_app---v376)
+ - [`djangoflow_app_links` - `v1.2.4`](#djangoflow_app_links---v124)
+ - [`djangoflow_auth_discord` - `v0.1.0+4`](#djangoflow_auth_discord---v0104)
+ - [`djangoflow_auth_google` - `v0.1.0+6`](#djangoflow_auth_google---v0106)
+ - [`djangoflow_deep_link_interface` - `v1.2.3`](#djangoflow_deep_link_interface---v123)
+ - [`djangoflow_facebook_analytics` - `v0.0.4+3`](#djangoflow_facebook_analytics---v0043)
+ - [`djangoflow_fcm` - `v0.1.0+9`](#djangoflow_fcm---v0109)
+ - [`djangoflow_firebase_analytics` - `v0.2.0+3`](#djangoflow_firebase_analytics---v0203)
+ - [`djangoflow_local_notification` - `v0.0.2+9`](#djangoflow_local_notification---v0029)
+ - [`djangoflow_mixpanel_analytics` - `v0.1.0+3`](#djangoflow_mixpanel_analytics---v0103)
+ - [`djangoflow_remote_config` - `v0.0.4+5`](#djangoflow_remote_config---v0045)
+ - [`djangoflow_websocket` - `v0.1.0+6`](#djangoflow_websocket---v0106)
+ - [`djangoflow_auth_apple` - `v0.1.0+4`](#djangoflow_auth_apple---v0104)
+ - [`djangoflow_auth_facebook` - `v0.1.0+4`](#djangoflow_auth_facebook---v0104)
+
+Packages with dependency updates only:
+
+> Packages listed below depend on other packages in this workspace that have had changes. Their versions have been incremented to bump the minimum dependency versions of the packages they depend upon in this project.
+
+ - `djangoflow_auth_apple` - `v0.1.0+4`
+ - `djangoflow_auth_facebook` - `v0.1.0+4`
+
+---
+
+#### `djangoflow_auth` - `v0.4.0`
+
+ - **REFACTOR**: update generated files. ([b057a275](https://github.com/djangoflow/flutter-djangoflow/commit/b057a2751bd47d0d2e436a3418232c01218fda59))
+ - **BREAKING** **REFACTOR**: bump djangoflow_openapi version. ([26b7bcd1](https://github.com/djangoflow/flutter-djangoflow/commit/26b7bcd14ac2ab19240342acbff70c44a6131773))
+
+#### `djangoflow_analytics` - `v0.0.2+3`
+
+ - **REFACTOR**: update generated files. ([b057a275](https://github.com/djangoflow/flutter-djangoflow/commit/b057a2751bd47d0d2e436a3418232c01218fda59))
+
+#### `djangoflow_app` - `v3.7.6`
+
+ - **REFACTOR**: update generated files. ([b057a275](https://github.com/djangoflow/flutter-djangoflow/commit/b057a2751bd47d0d2e436a3418232c01218fda59))
+
+#### `djangoflow_app_links` - `v1.2.4`
+
+ - **REFACTOR**: update generated files. ([b057a275](https://github.com/djangoflow/flutter-djangoflow/commit/b057a2751bd47d0d2e436a3418232c01218fda59))
+
+#### `djangoflow_auth_discord` - `v0.1.0+4`
+
+ - **REFACTOR**: update generated files. ([b057a275](https://github.com/djangoflow/flutter-djangoflow/commit/b057a2751bd47d0d2e436a3418232c01218fda59))
+
+#### `djangoflow_auth_google` - `v0.1.0+6`
+
+ - **REFACTOR**: update generated files. ([b057a275](https://github.com/djangoflow/flutter-djangoflow/commit/b057a2751bd47d0d2e436a3418232c01218fda59))
+
+#### `djangoflow_deep_link_interface` - `v1.2.3`
+
+ - **REFACTOR**: update generated files. ([b057a275](https://github.com/djangoflow/flutter-djangoflow/commit/b057a2751bd47d0d2e436a3418232c01218fda59))
+
+#### `djangoflow_facebook_analytics` - `v0.0.4+3`
+
+ - **REFACTOR**: update generated files. ([b057a275](https://github.com/djangoflow/flutter-djangoflow/commit/b057a2751bd47d0d2e436a3418232c01218fda59))
+
+#### `djangoflow_fcm` - `v0.1.0+9`
+
+ - **REFACTOR**: update generated files. ([b057a275](https://github.com/djangoflow/flutter-djangoflow/commit/b057a2751bd47d0d2e436a3418232c01218fda59))
+
+#### `djangoflow_firebase_analytics` - `v0.2.0+3`
+
+ - **REFACTOR**: update generated files. ([b057a275](https://github.com/djangoflow/flutter-djangoflow/commit/b057a2751bd47d0d2e436a3418232c01218fda59))
+
+#### `djangoflow_local_notification` - `v0.0.2+9`
+
+ - **REFACTOR**: update generated files. ([b057a275](https://github.com/djangoflow/flutter-djangoflow/commit/b057a2751bd47d0d2e436a3418232c01218fda59))
+
+#### `djangoflow_mixpanel_analytics` - `v0.1.0+3`
+
+ - **REFACTOR**: update generated files. ([b057a275](https://github.com/djangoflow/flutter-djangoflow/commit/b057a2751bd47d0d2e436a3418232c01218fda59))
+
+#### `djangoflow_remote_config` - `v0.0.4+5`
+
+ - **REFACTOR**: update generated files. ([b057a275](https://github.com/djangoflow/flutter-djangoflow/commit/b057a2751bd47d0d2e436a3418232c01218fda59))
+
+#### `djangoflow_websocket` - `v0.1.0+6`
+
+ - **REFACTOR**: update generated files. ([b057a275](https://github.com/djangoflow/flutter-djangoflow/commit/b057a2751bd47d0d2e436a3418232c01218fda59))
+
+
 ## 2024-03-11
 
 ### Changes

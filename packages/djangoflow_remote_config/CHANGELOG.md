@@ -1,3 +1,7 @@
+## 0.0.4+5
+
+ - **REFACTOR**: update generated files. ([b057a275](https://github.com/djangoflow/flutter-djangoflow/commit/b057a2751bd47d0d2e436a3418232c01218fda59))
+
 ## 0.0.4+4
 
  - **FIX**: do not update lastUpdate if result was empty. ([fee86fc4](https://github.com/djangoflow/flutter-djangoflow/commit/fee86fc45cdff0a208356ac90bf11847dd7ffd80))

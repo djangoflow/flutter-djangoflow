@@ -1,3 +1,10 @@
+## 0.4.0
+
+> Note: This release has breaking changes.
+
+ - **REFACTOR**: update generated files. ([b057a275](https://github.com/djangoflow/flutter-djangoflow/commit/b057a2751bd47d0d2e436a3418232c01218fda59))
+ - **BREAKING** **REFACTOR**: bump djangoflow_openapi version. ([26b7bcd1](https://github.com/djangoflow/flutter-djangoflow/commit/26b7bcd14ac2ab19240342acbff70c44a6131773))
+
 ## 0.3.0+5
 
  - **REFACTOR**: format the codebase. ([fc078388](https://github.com/djangoflow/flutter-djangoflow/commit/fc0783887eb7881d079c7381299248cea2fdf63a))

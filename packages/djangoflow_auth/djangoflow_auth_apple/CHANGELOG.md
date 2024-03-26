@@ -1,3 +1,7 @@
+## 0.1.0+4
+
+ - Update a dependency to the latest release.
+
 ## 0.1.0+3
 
  - **REFACTOR**: format the codebase. ([fc078388](https://github.com/djangoflow/flutter-djangoflow/commit/fc0783887eb7881d079c7381299248cea2fdf63a))
