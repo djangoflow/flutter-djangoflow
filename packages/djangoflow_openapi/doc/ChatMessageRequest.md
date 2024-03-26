@@ -9,7 +9,6 @@ import 'package:djangoflow_openapi/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **chatRoom** | **int** |  | [optional] 
-**createdBy** | **int** |  | [optional] 
 **message** | **String** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

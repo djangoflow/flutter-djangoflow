@@ -28,8 +28,6 @@ class ChatMessage {
     required  this.message,
 
      this.created,
-
-     this.user,
   });
 
   @JsonKey(
@@ -64,7 +62,7 @@ class ChatMessage {
   )
 
 
-  final int? createdBy;
+  final User? createdBy;
 
 
 
@@ -92,26 +90,13 @@ class ChatMessage {
 
 
 
-  @JsonKey(
-    
-    name: r'user',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  final User? user;
-
-
-
   @override
   bool operator ==(Object other) => identical(this, other) || other is ChatMessage &&
      other.id == id &&
      other.chatRoom == chatRoom &&
      other.createdBy == createdBy &&
      other.message == message &&
-     other.created == created &&
-     other.user == user;
+     other.created == created;
 
   @override
   int get hashCode =>
@@ -119,8 +104,7 @@ class ChatMessage {
     chatRoom.hashCode +
     createdBy.hashCode +
     message.hashCode +
-    created.hashCode +
-    user.hashCode;
+    created.hashCode;
 
   factory ChatMessage.fromJson(Map<String, dynamic> json) => _$ChatMessageFromJson(json);
 

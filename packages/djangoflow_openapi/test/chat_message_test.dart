@@ -17,7 +17,7 @@ void main() {
       // TODO
     });
 
-    // int createdBy
+    // User createdBy
     test('to test the property `createdBy`', () async {
       // TODO
     });
@@ -29,11 +29,6 @@ void main() {
 
     // DateTime created
     test('to test the property `created`', () async {
-      // TODO
-    });
-
-    // User user
-    test('to test the property `user`', () async {
       // TODO
     });
 

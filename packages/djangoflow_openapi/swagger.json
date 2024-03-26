@@ -1335,16 +1335,14 @@ components:
         chat_room:
           type: integer
         created_by:
-          type: integer
+          allOf:
+          - $ref: '#/components/schemas/User'
+          readOnly: true
         message:
           type: string
         created:
           type: string
           format: date-time
-          readOnly: true
-        user:
-          allOf:
-          - $ref: '#/components/schemas/User'
           readOnly: true
       required:
       - message
@@ -1352,8 +1350,6 @@ components:
       type: object
       properties:
         chat_room:
-          type: integer
-        created_by:
           type: integer
         message:
           type: string

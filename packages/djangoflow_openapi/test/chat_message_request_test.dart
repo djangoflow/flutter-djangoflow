@@ -12,11 +12,6 @@ void main() {
       // TODO
     });
 
-    // int createdBy
-    test('to test the property `createdBy`', () async {
-      // TODO
-    });
-
     // String message
     test('to test the property `message`', () async {
       // TODO
