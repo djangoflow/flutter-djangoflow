@@ -17,13 +17,18 @@ void main() {
       // TODO
     });
 
-    //Future<PaginatedChatRoomList> chatRoomsList({ String cursor }) async
+    //Future<PaginatedChatRoomList> chatRoomsList({ int limit, int offset }) async
     test('test chatRoomsList', () async {
       // TODO
     });
 
     //Future<ChatRoomMembers> chatRoomsMemberCreate(String id, ChatRoomMembersRequest chatRoomMembersRequest) async
     test('test chatRoomsMemberCreate', () async {
+      // TODO
+    });
+
+    //Future<User> chatRoomsMembersRetrieve(String id) async
+    test('test chatRoomsMembersRetrieve', () async {
       // TODO
     });
 
@@ -37,7 +42,7 @@ void main() {
       // TODO
     });
 
-    //Future<PaginatedChatMessageList> chatRoomsMessagesList(int roomId, { String cursor }) async
+    //Future<PaginatedChatMessageList> chatRoomsMessagesList(int roomId, { int limit, int offset }) async
     test('test chatRoomsMessagesList', () async {
       // TODO
     });

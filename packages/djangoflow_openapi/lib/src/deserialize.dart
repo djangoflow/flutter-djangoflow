@@ -32,11 +32,13 @@ import 'package:djangoflow_openapi/src/model/token_blacklist_request.dart';
 import 'package:djangoflow_openapi/src/model/token_obtain_request.dart';
 import 'package:djangoflow_openapi/src/model/token_refresh_request.dart';
 import 'package:djangoflow_openapi/src/model/token_verify_request.dart';
+import 'package:djangoflow_openapi/src/model/user.dart';
 import 'package:djangoflow_openapi/src/model/user2_fa.dart';
 import 'package:djangoflow_openapi/src/model/user_device.dart';
 import 'package:djangoflow_openapi/src/model/user_device_request.dart';
 import 'package:djangoflow_openapi/src/model/user_identity.dart';
 import 'package:djangoflow_openapi/src/model/user_identity_request.dart';
+import 'package:djangoflow_openapi/src/model/user_request.dart';
 
 final _regList = RegExp(r'^List<(.*)>$');
 final _regSet = RegExp(r'^Set<(.*)>$');
@@ -136,6 +138,8 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           return TokenRefreshRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'TokenVerifyRequest':
           return TokenVerifyRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'User':
+          return User.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'User2FA':
           return User2FA.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'UserDevice':
@@ -149,6 +153,8 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           return UserIdentity.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'UserIdentityRequest':
           return UserIdentityRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'UserRequest':
+          return UserRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
         default:
           RegExpMatch? match;
 

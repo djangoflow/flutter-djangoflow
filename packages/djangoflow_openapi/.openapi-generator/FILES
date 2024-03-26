@@ -44,12 +44,14 @@ doc/TokenBlacklistRequest.md
 doc/TokenObtainRequest.md
 doc/TokenRefreshRequest.md
 doc/TokenVerifyRequest.md
+doc/User.md
 doc/User2FA.md
 doc/UserDevice.md
 doc/UserDeviceRequest.md
 doc/UserDeviceTypeEnum.md
 doc/UserIdentity.md
 doc/UserIdentityRequest.md
+doc/UserRequest.md
 lib/djangoflow_openapi.dart
 lib/src/api.dart
 lib/src/api/auth_api.dart
@@ -100,12 +102,14 @@ lib/src/model/token_blacklist_request.dart
 lib/src/model/token_obtain_request.dart
 lib/src/model/token_refresh_request.dart
 lib/src/model/token_verify_request.dart
+lib/src/model/user.dart
 lib/src/model/user2_fa.dart
 lib/src/model/user_device.dart
 lib/src/model/user_device_request.dart
 lib/src/model/user_device_type_enum.dart
 lib/src/model/user_identity.dart
 lib/src/model/user_identity_request.dart
+lib/src/model/user_request.dart
 pubspec.yaml
 test/action_enum_test.dart
 test/auth_api_test.dart
@@ -155,3 +159,5 @@ test/user_device_test.dart
 test/user_device_type_enum_test.dart
 test/user_identity_request_test.dart
 test/user_identity_test.dart
+test/user_request_test.dart
+test/user_test.dart

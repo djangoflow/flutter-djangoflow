@@ -19,12 +19,26 @@ class PaginatedChatRoomList {
   /// Returns a new [PaginatedChatRoomList] instance.
   PaginatedChatRoomList({
 
+    required  this.count,
+
      this.next,
 
      this.previous,
 
     required  this.results,
   });
+
+  @JsonKey(
+    
+    name: r'count',
+    required: true,
+    includeIfNull: false
+  )
+
+
+  final int count;
+
+
 
   @JsonKey(
     
@@ -64,12 +78,14 @@ class PaginatedChatRoomList {
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is PaginatedChatRoomList &&
+     other.count == count &&
      other.next == next &&
      other.previous == previous &&
      other.results == results;
 
   @override
   int get hashCode =>
+    count.hashCode +
     (next == null ? 0 : next.hashCode) +
     (previous == null ? 0 : previous.hashCode) +
     results.hashCode;

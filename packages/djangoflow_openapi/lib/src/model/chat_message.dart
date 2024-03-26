@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:djangoflow_openapi/src/model/user.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'chat_message.g.dart';
@@ -27,6 +28,8 @@ class ChatMessage {
     required  this.message,
 
      this.created,
+
+     this.user,
   });
 
   @JsonKey(
@@ -89,13 +92,26 @@ class ChatMessage {
 
 
 
+  @JsonKey(
+    
+    name: r'user',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final User? user;
+
+
+
   @override
   bool operator ==(Object other) => identical(this, other) || other is ChatMessage &&
      other.id == id &&
      other.chatRoom == chatRoom &&
      other.createdBy == createdBy &&
      other.message == message &&
-     other.created == created;
+     other.created == created &&
+     other.user == user;
 
   @override
   int get hashCode =>
@@ -103,7 +119,8 @@ class ChatMessage {
     chatRoom.hashCode +
     createdBy.hashCode +
     message.hashCode +
-    created.hashCode;
+    created.hashCode +
+    user.hashCode;
 
   factory ChatMessage.fromJson(Map<String, dynamic> json) => _$ChatMessageFromJson(json);
 

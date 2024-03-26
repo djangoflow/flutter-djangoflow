@@ -22,6 +22,7 @@ import 'package:djangoflow_openapi/src/model/paginated_chat_message_list.dart';
 import 'package:djangoflow_openapi/src/model/paginated_chat_room_list.dart';
 import 'package:djangoflow_openapi/src/model/patched_chat_message_update_request.dart';
 import 'package:djangoflow_openapi/src/model/patched_chat_room_request.dart';
+import 'package:djangoflow_openapi/src/model/user.dart';
 
 class ChatApi {
 
@@ -191,7 +192,8 @@ _responseData = rawData == null ? null : deserialize<ChatRoom, ChatRoom>(rawData
   /// 
   ///
   /// Parameters:
-  /// * [cursor] - The pagination cursor value.
+  /// * [limit] - Number of results to return per page.
+  /// * [offset] - The initial index from which to return the results.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -202,7 +204,8 @@ _responseData = rawData == null ? null : deserialize<ChatRoom, ChatRoom>(rawData
   /// Returns a [Future] containing a [Response] with a [PaginatedChatRoomList] as data
   /// Throws [DioError] if API call or serialization fails
   Future<Response<PaginatedChatRoomList>> chatRoomsList({ 
-    String? cursor,
+    int? limit,
+    int? offset,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -235,7 +238,8 @@ _responseData = rawData == null ? null : deserialize<ChatRoom, ChatRoom>(rawData
     );
 
     final _queryParameters = <String, dynamic>{
-      if (cursor != null) r'cursor': cursor,
+      if (limit != null) r'limit': limit,
+      if (offset != null) r'offset': offset,
     };
 
     final _response = await _dio.request<Object>(
@@ -365,6 +369,88 @@ _responseData = rawData == null ? null : deserialize<ChatRoomMembers, ChatRoomMe
     }
 
     return Response<ChatRoomMembers>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
+  /// chatRoomsMembersRetrieve
+  /// 
+  ///
+  /// Parameters:
+  /// * [id] 
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [User] as data
+  /// Throws [DioError] if API call or serialization fails
+  Future<Response<User>> chatRoomsMembersRetrieve({ 
+    required String id,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/api/v1/chat/rooms/{id}/members/'.replaceAll('{' r'id' '}', id.toString());
+    final _options = Options(
+      method: r'GET',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'http',
+            'scheme': 'basic',
+            'name': 'basicAuth',
+          },{
+            'type': 'apiKey',
+            'name': 'cookieAuth',
+            'keyName': 'sessionid',
+            'where': '',
+          },
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
+
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    User? _responseData;
+
+    try {
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<User, User>(rawData, 'User', growable: true);
+    } catch (error, stackTrace) {
+      throw DioError(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioErrorType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<User>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -533,7 +619,8 @@ _responseData = rawData == null ? null : deserialize<ChatMessage, ChatMessage>(r
   ///
   /// Parameters:
   /// * [roomId] 
-  /// * [cursor] - The pagination cursor value.
+  /// * [limit] - Number of results to return per page.
+  /// * [offset] - The initial index from which to return the results.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -545,7 +632,8 @@ _responseData = rawData == null ? null : deserialize<ChatMessage, ChatMessage>(r
   /// Throws [DioError] if API call or serialization fails
   Future<Response<PaginatedChatMessageList>> chatRoomsMessagesList({ 
     required int roomId,
-    String? cursor,
+    int? limit,
+    int? offset,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -573,7 +661,8 @@ _responseData = rawData == null ? null : deserialize<ChatMessage, ChatMessage>(r
     );
 
     final _queryParameters = <String, dynamic>{
-      if (cursor != null) r'cursor': cursor,
+      if (limit != null) r'limit': limit,
+      if (offset != null) r'offset': offset,
     };
 
     final _response = await _dio.request<Object>(

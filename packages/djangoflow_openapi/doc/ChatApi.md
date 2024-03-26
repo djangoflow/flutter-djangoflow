@@ -13,6 +13,7 @@ Method | HTTP request | Description
 [**chatRoomsDestroy**](ChatApi.md#chatroomsdestroy) | **DELETE** /api/v1/chat/rooms/{id}/ | 
 [**chatRoomsList**](ChatApi.md#chatroomslist) | **GET** /api/v1/chat/rooms/ | 
 [**chatRoomsMemberCreate**](ChatApi.md#chatroomsmembercreate) | **POST** /api/v1/chat/rooms/{id}/member/ | 
+[**chatRoomsMembersRetrieve**](ChatApi.md#chatroomsmembersretrieve) | **GET** /api/v1/chat/rooms/{id}/members/ | 
 [**chatRoomsMessagesCreate**](ChatApi.md#chatroomsmessagescreate) | **POST** /api/v1/chat/rooms/{room_id}/messages/ | 
 [**chatRoomsMessagesDestroy**](ChatApi.md#chatroomsmessagesdestroy) | **DELETE** /api/v1/chat/rooms/{room_id}/messages/{id}/ | 
 [**chatRoomsMessagesList**](ChatApi.md#chatroomsmessageslist) | **GET** /api/v1/chat/rooms/{room_id}/messages/ | 
@@ -120,7 +121,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **chatRoomsList**
-> PaginatedChatRoomList chatRoomsList(cursor)
+> PaginatedChatRoomList chatRoomsList(limit, offset)
 
 
 
@@ -136,10 +137,11 @@ import 'package:djangoflow_openapi/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('cookieAuth').apiKeyPrefix = 'Bearer';
 
 final api = DjangoflowOpenapi().getChatApi();
-final String cursor = cursor_example; // String | The pagination cursor value.
+final int limit = 56; // int | Number of results to return per page.
+final int offset = 56; // int | The initial index from which to return the results.
 
 try {
-    final response = api.chatRoomsList(cursor);
+    final response = api.chatRoomsList(limit, offset);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling ChatApi->chatRoomsList: $e\n');
@@ -150,7 +152,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cursor** | **String**| The pagination cursor value. | [optional] 
+ **limit** | **int**| Number of results to return per page. | [optional] 
+ **offset** | **int**| The initial index from which to return the results. | [optional] 
 
 ### Return type
 
@@ -213,6 +216,54 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **chatRoomsMembersRetrieve**
+> User chatRoomsMembersRetrieve(id)
+
+
+
+### Example
+```dart
+import 'package:djangoflow_openapi/api.dart';
+// TODO Configure HTTP basic authorization: basicAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
+// TODO Configure API key authorization: cookieAuth
+//defaultApiClient.getAuthentication<ApiKeyAuth>('cookieAuth').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('cookieAuth').apiKeyPrefix = 'Bearer';
+
+final api = DjangoflowOpenapi().getChatApi();
+final String id = id_example; // String | 
+
+try {
+    final response = api.chatRoomsMembersRetrieve(id);
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling ChatApi->chatRoomsMembersRetrieve: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**|  | 
+
+### Return type
+
+[**User**](User.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [cookieAuth](../README.md#cookieAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -309,7 +360,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **chatRoomsMessagesList**
-> PaginatedChatMessageList chatRoomsMessagesList(roomId, cursor)
+> PaginatedChatMessageList chatRoomsMessagesList(roomId, limit, offset)
 
 
 
@@ -322,10 +373,11 @@ import 'package:djangoflow_openapi/api.dart';
 
 final api = DjangoflowOpenapi().getChatApi();
 final int roomId = 56; // int | 
-final String cursor = cursor_example; // String | The pagination cursor value.
+final int limit = 56; // int | Number of results to return per page.
+final int offset = 56; // int | The initial index from which to return the results.
 
 try {
-    final response = api.chatRoomsMessagesList(roomId, cursor);
+    final response = api.chatRoomsMessagesList(roomId, limit, offset);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling ChatApi->chatRoomsMessagesList: $e\n');
@@ -337,7 +389,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **roomId** | **int**|  | 
- **cursor** | **String**| The pagination cursor value. | [optional] 
+ **limit** | **int**| Number of results to return per page. | [optional] 
+ **offset** | **int**| The initial index from which to return the results. | [optional] 
 
 ### Return type
 

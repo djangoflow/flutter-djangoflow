@@ -7,6 +7,11 @@ void main() {
   // TODO add properties to the entity
 
   group(PaginatedChatRoomList, () {
+    // int count
+    test('to test the property `count`', () async {
+      // TODO
+    });
+
     // String next
     test('to test the property `next`', () async {
       // TODO
