@@ -27,7 +27,7 @@ void main() {
       // TODO
     });
 
-    //Future<User> chatRoomsMembersRetrieve(String id) async
+    //Future<ChatRoomMemberList> chatRoomsMembersRetrieve(String id) async
     test('test chatRoomsMembersRetrieve', () async {
       // TODO
     });

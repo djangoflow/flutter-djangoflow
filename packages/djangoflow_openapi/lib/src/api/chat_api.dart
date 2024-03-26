@@ -14,6 +14,7 @@ import 'package:djangoflow_openapi/src/model/chat_message_request.dart';
 import 'package:djangoflow_openapi/src/model/chat_message_update.dart';
 import 'package:djangoflow_openapi/src/model/chat_message_update_request.dart';
 import 'package:djangoflow_openapi/src/model/chat_room.dart';
+import 'package:djangoflow_openapi/src/model/chat_room_member_list.dart';
 import 'package:djangoflow_openapi/src/model/chat_room_members.dart';
 import 'package:djangoflow_openapi/src/model/chat_room_members_request.dart';
 import 'package:djangoflow_openapi/src/model/chat_room_request.dart';
@@ -22,7 +23,6 @@ import 'package:djangoflow_openapi/src/model/paginated_chat_message_list.dart';
 import 'package:djangoflow_openapi/src/model/paginated_chat_room_list.dart';
 import 'package:djangoflow_openapi/src/model/patched_chat_message_update_request.dart';
 import 'package:djangoflow_openapi/src/model/patched_chat_room_request.dart';
-import 'package:djangoflow_openapi/src/model/user.dart';
 
 class ChatApi {
 
@@ -392,9 +392,9 @@ _responseData = rawData == null ? null : deserialize<ChatRoomMembers, ChatRoomMe
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [User] as data
+  /// Returns a [Future] containing a [Response] with a [ChatRoomMemberList] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<User>> chatRoomsMembersRetrieve({ 
+  Future<Response<ChatRoomMemberList>> chatRoomsMembersRetrieve({ 
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -435,11 +435,11 @@ _responseData = rawData == null ? null : deserialize<ChatRoomMembers, ChatRoomMe
       onReceiveProgress: onReceiveProgress,
     );
 
-    User? _responseData;
+    ChatRoomMemberList? _responseData;
 
     try {
 final rawData = _response.data;
-_responseData = rawData == null ? null : deserialize<User, User>(rawData, 'User', growable: true);
+_responseData = rawData == null ? null : deserialize<ChatRoomMemberList, ChatRoomMemberList>(rawData, 'ChatRoomMemberList', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -450,7 +450,7 @@ _responseData = rawData == null ? null : deserialize<User, User>(rawData, 'User'
       );
     }
 
-    return Response<User>(
+    return Response<ChatRoomMemberList>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

@@ -20,6 +20,7 @@ export 'package:djangoflow_openapi/src/model/chat_message_request.dart';
 export 'package:djangoflow_openapi/src/model/chat_message_update.dart';
 export 'package:djangoflow_openapi/src/model/chat_message_update_request.dart';
 export 'package:djangoflow_openapi/src/model/chat_room.dart';
+export 'package:djangoflow_openapi/src/model/chat_room_member_list.dart';
 export 'package:djangoflow_openapi/src/model/chat_room_members.dart';
 export 'package:djangoflow_openapi/src/model/chat_room_members_request.dart';
 export 'package:djangoflow_openapi/src/model/chat_room_request.dart';

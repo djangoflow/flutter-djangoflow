@@ -837,7 +837,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/User'
+                $ref: '#/components/schemas/ChatRoomMemberList'
           description: ''
   /api/v1/chat/rooms/{room_id}/messages/:
     get:
@@ -1408,6 +1408,14 @@ components:
           readOnly: true
       required:
       - title
+    ChatRoomMemberList:
+      type: object
+      properties:
+        members:
+          type: array
+          items:
+            $ref: '#/components/schemas/User'
+          readOnly: true
     ChatRoomMembers:
       type: object
       properties:

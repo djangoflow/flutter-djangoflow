@@ -221,7 +221,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **chatRoomsMembersRetrieve**
-> User chatRoomsMembersRetrieve(id)
+> ChatRoomMemberList chatRoomsMembersRetrieve(id)
 
 
 
@@ -255,7 +255,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**User**](User.md)
+[**ChatRoomMemberList**](ChatRoomMemberList.md)
 
 ### Authorization
 

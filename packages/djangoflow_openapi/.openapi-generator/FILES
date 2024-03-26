@@ -11,6 +11,7 @@ doc/ChatMessageRequest.md
 doc/ChatMessageUpdate.md
 doc/ChatMessageUpdateRequest.md
 doc/ChatRoom.md
+doc/ChatRoomMemberList.md
 doc/ChatRoomMembers.md
 doc/ChatRoomMembersRequest.md
 doc/ChatRoomRequest.md
@@ -71,6 +72,7 @@ lib/src/model/chat_message_request.dart
 lib/src/model/chat_message_update.dart
 lib/src/model/chat_message_update_request.dart
 lib/src/model/chat_room.dart
+lib/src/model/chat_room_member_list.dart
 lib/src/model/chat_room_members.dart
 lib/src/model/chat_room_members_request.dart
 lib/src/model/chat_room_request.dart
@@ -119,6 +121,7 @@ test/chat_message_request_test.dart
 test/chat_message_test.dart
 test/chat_message_update_request_test.dart
 test/chat_message_update_test.dart
+test/chat_room_member_list_test.dart
 test/chat_room_members_request_test.dart
 test/chat_room_members_test.dart
 test/chat_room_request_test.dart
