@@ -287,7 +287,7 @@ class _$NotificationDataPayloadImpl implements _NotificationDataPayload {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$NotificationDataPayloadImpl &&
@@ -499,7 +499,7 @@ class _$NotificationPayloadActionImpl implements _NotificationPayloadAction {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$NotificationPayloadActionImpl &&

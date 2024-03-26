@@ -156,7 +156,7 @@ class _$AppLaunchDetailsImpl implements _AppLaunchDetails {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AppLaunchDetailsImpl &&
@@ -343,7 +343,7 @@ class _$BrandDetailsImpl implements _BrandDetails {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$BrandDetailsImpl &&
@@ -518,7 +518,7 @@ class _$ThemeDetailsImpl implements _ThemeDetails {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ThemeDetailsImpl &&
@@ -672,7 +672,7 @@ class _$UpdatesDetailsImpl implements _UpdatesDetails {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UpdatesDetailsImpl &&
@@ -824,7 +824,7 @@ class _$LogoDetailsImpl implements _LogoDetails {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$LogoDetailsImpl &&

@@ -250,7 +250,7 @@ class _$OAuth2ConfigurationImpl extends _OAuth2Configuration {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$OAuth2ConfigurationImpl &&
