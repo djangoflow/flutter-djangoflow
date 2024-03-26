@@ -1882,6 +1882,9 @@ components:
         email:
           type: string
           format: email
+        id:
+          type: string
+          readOnly: true
     UserIdentityRequest:
       type: object
       properties:
