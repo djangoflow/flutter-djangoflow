@@ -3,6 +3,29 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2024-04-05
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - [`djangoflow_chat` - `v0.1.0`](#djangoflow_chat---v010)
+
+Packages with other changes:
+
+ - There are no other changes in this release.
+
+---
+
+#### `djangoflow_chat` - `v0.1.0`
+
+ - **REFACTOR**: resolve linter warnings. ([9ab6b6e5](https://github.com/djangoflow/flutter-djangoflow/commit/9ab6b6e5e700de585393939f3afd1cb2527f9d39))
+ - **REFACTOR**: freeze djangoflow_openapi version due to not supporting anymore. ([25697269](https://github.com/djangoflow/flutter-djangoflow/commit/2569726978588c1c41201fcd38065ff0ff110eb9))
+ - **BREAKING** **REFACTOR**: update chat cubit. ([fd0dbc87](https://github.com/djangoflow/flutter-djangoflow/commit/fd0dbc87d1bb82f7da868ff379a26fc8037dfa0d))
+
+
 ## 2024-03-27
 
 ### Changes
