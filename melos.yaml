@@ -8,7 +8,6 @@ packages:
 ignore:
   - "packages/*example*"
   - "packages/**/*example*"
-  - "packages/*djangoflow_chat*"
 
 command:
   version:
