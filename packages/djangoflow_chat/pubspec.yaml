@@ -1,6 +1,6 @@
 name: djangoflow_chat
 description: The djangoflow_chat package provides a set of classes and methods for building real-time chat applications in Flutter using [django-df-chat](https://github.com/djangoflow/django-df-chat) and djangoflow_openapi
-version: 0.1.0
+version: 0.1.0+1
 homepage: https://github.com/djangoflow/flutter-djangoflow/
 
 environment:

@@ -11,6 +11,27 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 Packages with breaking changes:
 
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`djangoflow_chat` - `v0.1.0+1`](#djangoflow_chat---v0101)
+
+---
+
+#### `djangoflow_chat` - `v0.1.0+1`
+
+ - **REFACTOR**: update dependencies. ([79d7a927](https://github.com/djangoflow/flutter-djangoflow/commit/79d7a927901ebb738dc40e7b61addda682b0aa5e))
+
+
+## 2024-04-05
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
  - [`djangoflow_chat` - `v0.1.0`](#djangoflow_chat---v010)
 
 Packages with other changes:
