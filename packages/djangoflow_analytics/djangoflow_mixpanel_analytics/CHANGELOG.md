@@ -1,3 +1,9 @@
+## 0.3.0
+
+> Note: This release has breaking changes.
+
+ - **BREAKING** **REFACTOR**: use mixpanel_flutter 2.2.0. ([e3309852](https://github.com/djangoflow/flutter-djangoflow/commit/e330985213489a59978552e1da41a7926b85f6f0))
+
 ## 0.2.1+1
 
  - **REFACTOR**: update collecting user properties. ([a9b586b7](https://github.com/djangoflow/flutter-djangoflow/commit/a9b586b736bdfc45a114e6f04b3810573b5e6899))
