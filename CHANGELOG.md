@@ -3,6 +3,31 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2024-04-08
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - [`djangoflow_mixpanel_analytics` - `v0.2.0`](#djangoflow_mixpanel_analytics---v020)
+
+Packages with other changes:
+
+ - [`djangoflow_chat` - `v0.1.0+2`](#djangoflow_chat---v0102)
+
+---
+
+#### `djangoflow_mixpanel_analytics` - `v0.2.0`
+
+ - **BREAKING** **REFACTOR**: update dependencies and sdk constraints. ([dfd33354](https://github.com/djangoflow/flutter-djangoflow/commit/dfd3335485e00cc62dd775d5cb060c1df33ea928))
+
+#### `djangoflow_chat` - `v0.1.0+2`
+
+ - **REFACTOR**: update freezed generated files. ([cada8a1f](https://github.com/djangoflow/flutter-djangoflow/commit/cada8a1f3041dd91220ef9bcc555775b5f967474))
+
+
 ## 2024-04-05
 
 ### Changes

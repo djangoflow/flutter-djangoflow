@@ -1,3 +1,9 @@
+## 0.2.0
+
+> Note: This release has breaking changes.
+
+ - **BREAKING** **REFACTOR**: update dependencies and sdk constraints. ([dfd33354](https://github.com/djangoflow/flutter-djangoflow/commit/dfd3335485e00cc62dd775d5cb060c1df33ea928))
+
 ## 0.1.0+3
 
  - **REFACTOR**: update generated files. ([b057a275](https://github.com/djangoflow/flutter-djangoflow/commit/b057a2751bd47d0d2e436a3418232c01218fda59))

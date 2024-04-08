@@ -1,3 +1,7 @@
+## 0.1.0+2
+
+ - **REFACTOR**: update freezed generated files. ([cada8a1f](https://github.com/djangoflow/flutter-djangoflow/commit/cada8a1f3041dd91220ef9bcc555775b5f967474))
+
 ## 0.1.0+1
 
  - **REFACTOR**: update dependencies. ([79d7a927](https://github.com/djangoflow/flutter-djangoflow/commit/79d7a927901ebb738dc40e7b61addda682b0aa5e))
