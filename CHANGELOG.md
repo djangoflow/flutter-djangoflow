@@ -11,6 +11,28 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 Packages with breaking changes:
 
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`djangoflow_mixpanel_analytics` - `v0.2.1`](#djangoflow_mixpanel_analytics---v021)
+
+---
+
+#### `djangoflow_mixpanel_analytics` - `v0.2.1`
+
+ - **REVERT**: lower the mixpanel_flutter version. ([6f140a3b](https://github.com/djangoflow/flutter-djangoflow/commit/6f140a3be819412b4c869f7c6b37911d647b90c7))
+ - **FEAT**: support updating mixpanel user identity. ([7ab9f9df](https://github.com/djangoflow/flutter-djangoflow/commit/7ab9f9dfcd1758dcd38e014c55d21f17761aba73))
+
+
+## 2024-04-08
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
  - [`djangoflow_mixpanel_analytics` - `v0.2.0`](#djangoflow_mixpanel_analytics---v020)
 
 Packages with other changes:
