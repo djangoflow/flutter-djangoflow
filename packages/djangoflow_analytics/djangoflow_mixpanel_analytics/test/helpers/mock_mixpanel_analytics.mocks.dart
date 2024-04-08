@@ -112,13 +112,14 @@ class MockMixpanel extends _i1.Mock implements _i2.Mixpanel {
       );
 
   @override
-  void identify(String? distinctId) => super.noSuchMethod(
+  _i3.Future<void> identify(String? distinctId) => (super.noSuchMethod(
         Invocation.method(
           #identify,
           [distinctId],
         ),
-        returnValueForMissingStub: null,
-      );
+        returnValue: _i3.Future<void>.value(),
+        returnValueForMissingStub: _i3.Future<void>.value(),
+      ) as _i3.Future<void>);
 
   @override
   void alias(
@@ -137,18 +138,19 @@ class MockMixpanel extends _i1.Mock implements _i2.Mixpanel {
       );
 
   @override
-  void track(
+  _i3.Future<void> track(
     String? eventName, {
     Map<String, dynamic>? properties,
   }) =>
-      super.noSuchMethod(
+      (super.noSuchMethod(
         Invocation.method(
           #track,
           [eventName],
           {#properties: properties},
         ),
-        returnValueForMissingStub: null,
-      );
+        returnValue: _i3.Future<void>.value(),
+        returnValueForMissingStub: _i3.Future<void>.value(),
+      ) as _i3.Future<void>);
 
   @override
   _i2.People getPeople() => (super.noSuchMethod(
@@ -173,12 +175,12 @@ class MockMixpanel extends _i1.Mock implements _i2.Mixpanel {
       ) as _i2.People);
 
   @override
-  void trackWithGroups(
+  _i3.Future<void> trackWithGroups(
     String? eventName,
     Map<String, dynamic>? properties,
     Map<String, dynamic>? groups,
   ) =>
-      super.noSuchMethod(
+      (super.noSuchMethod(
         Invocation.method(
           #trackWithGroups,
           [
@@ -187,8 +189,9 @@ class MockMixpanel extends _i1.Mock implements _i2.Mixpanel {
             groups,
           ],
         ),
-        returnValueForMissingStub: null,
-      );
+        returnValue: _i3.Future<void>.value(),
+        returnValueForMissingStub: _i3.Future<void>.value(),
+      ) as _i3.Future<void>);
 
   @override
   void setGroup(
@@ -290,33 +293,38 @@ class MockMixpanel extends _i1.Mock implements _i2.Mixpanel {
       );
 
   @override
-  void registerSuperProperties(Map<String, dynamic>? properties) =>
-      super.noSuchMethod(
+  _i3.Future<void> registerSuperProperties(Map<String, dynamic>? properties) =>
+      (super.noSuchMethod(
         Invocation.method(
           #registerSuperProperties,
           [properties],
         ),
-        returnValueForMissingStub: null,
-      );
+        returnValue: _i3.Future<void>.value(),
+        returnValueForMissingStub: _i3.Future<void>.value(),
+      ) as _i3.Future<void>);
 
   @override
-  void registerSuperPropertiesOnce(Map<String, dynamic>? properties) =>
-      super.noSuchMethod(
+  _i3.Future<void> registerSuperPropertiesOnce(
+          Map<String, dynamic>? properties) =>
+      (super.noSuchMethod(
         Invocation.method(
           #registerSuperPropertiesOnce,
           [properties],
         ),
-        returnValueForMissingStub: null,
-      );
+        returnValue: _i3.Future<void>.value(),
+        returnValueForMissingStub: _i3.Future<void>.value(),
+      ) as _i3.Future<void>);
 
   @override
-  void unregisterSuperProperty(String? propertyName) => super.noSuchMethod(
+  _i3.Future<void> unregisterSuperProperty(String? propertyName) =>
+      (super.noSuchMethod(
         Invocation.method(
           #unregisterSuperProperty,
           [propertyName],
         ),
-        returnValueForMissingStub: null,
-      );
+        returnValue: _i3.Future<void>.value(),
+        returnValueForMissingStub: _i3.Future<void>.value(),
+      ) as _i3.Future<void>);
 
   @override
   _i3.Future<Map<dynamic, dynamic>?> getSuperProperties() =>
@@ -330,13 +338,14 @@ class MockMixpanel extends _i1.Mock implements _i2.Mixpanel {
       ) as _i3.Future<Map<dynamic, dynamic>?>);
 
   @override
-  void clearSuperProperties() => super.noSuchMethod(
+  _i3.Future<void> clearSuperProperties() => (super.noSuchMethod(
         Invocation.method(
           #clearSuperProperties,
           [],
         ),
-        returnValueForMissingStub: null,
-      );
+        returnValue: _i3.Future<void>.value(),
+        returnValueForMissingStub: _i3.Future<void>.value(),
+      ) as _i3.Future<void>);
 
   @override
   void timeEvent(String? eventName) => super.noSuchMethod(
@@ -359,13 +368,14 @@ class MockMixpanel extends _i1.Mock implements _i2.Mixpanel {
       ) as _i3.Future<double?>);
 
   @override
-  void reset() => super.noSuchMethod(
+  _i3.Future<void> reset() => (super.noSuchMethod(
         Invocation.method(
           #reset,
           [],
         ),
-        returnValueForMissingStub: null,
-      );
+        returnValue: _i3.Future<void>.value(),
+        returnValueForMissingStub: _i3.Future<void>.value(),
+      ) as _i3.Future<void>);
 
   @override
   _i3.Future<String> getDistinctId() => (super.noSuchMethod(

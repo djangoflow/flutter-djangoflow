@@ -23,7 +23,7 @@ void main() {
     final event = MixpanelRemovableUserProperty(kEmailKey);
     when(
       mockMixpanelAnalytics.unregisterSuperProperty(any),
-    ).thenAnswer((_) {});
+    ).thenAnswer((_) => Future.value());
 
     userPropertyRemover.perform(event);
     verify(

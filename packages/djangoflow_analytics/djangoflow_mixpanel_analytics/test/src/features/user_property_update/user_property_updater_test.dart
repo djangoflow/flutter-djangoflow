@@ -22,7 +22,7 @@ void main() {
     final event = MixpanelUpdatableUserProperty('key', 'value');
     when(
       mockMixpanelAnalytics.registerSuperProperties(any),
-    ).thenAnswer((_) {});
+    ).thenAnswer((_) => Future.value());
 
     userPropertyUpdater.perform(event);
     verify(
