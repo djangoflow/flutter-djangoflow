@@ -1,3 +1,8 @@
+## 0.2.1+1
+
+ - **REFACTOR**: update collecting user properties. ([a9b586b7](https://github.com/djangoflow/flutter-djangoflow/commit/a9b586b736bdfc45a114e6f04b3810573b5e6899))
+ - **REFACTOR**: update exports. ([1f9edd98](https://github.com/djangoflow/flutter-djangoflow/commit/1f9edd983a1f31233bfd2c0e900ec3bd807d0a39))
+
 ## 0.2.1
 
  - **REVERT**: lower the mixpanel_flutter version. ([6f140a3b](https://github.com/djangoflow/flutter-djangoflow/commit/6f140a3be819412b4c869f7c6b37911d647b90c7))

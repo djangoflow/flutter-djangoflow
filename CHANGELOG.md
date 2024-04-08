@@ -15,6 +15,28 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`djangoflow_mixpanel_analytics` - `v0.2.1+1`](#djangoflow_mixpanel_analytics---v0211)
+
+---
+
+#### `djangoflow_mixpanel_analytics` - `v0.2.1+1`
+
+ - **REFACTOR**: update collecting user properties. ([a9b586b7](https://github.com/djangoflow/flutter-djangoflow/commit/a9b586b736bdfc45a114e6f04b3810573b5e6899))
+ - **REFACTOR**: update exports. ([1f9edd98](https://github.com/djangoflow/flutter-djangoflow/commit/1f9edd983a1f31233bfd2c0e900ec3bd807d0a39))
+
+
+## 2024-04-08
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`djangoflow_mixpanel_analytics` - `v0.2.1`](#djangoflow_mixpanel_analytics---v021)
 
 ---
