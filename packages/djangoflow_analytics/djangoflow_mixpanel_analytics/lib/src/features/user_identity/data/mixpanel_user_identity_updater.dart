@@ -14,15 +14,13 @@ class MixpanelUserIdentityUpdater
   @override
   void perform(UpdateMixpanelUserIdentity action) {
     if (action.id != null) {
-      _mixpanel.identify(action.id!).then((value) {
-        if (action.userProperties != null &&
-            action.userProperties!.isNotEmpty) {
-          final people = _mixpanel.getPeople();
-          action.userProperties!.forEach((key, value) {
-            people.set(key, value);
-          });
-        }
-      });
+      _mixpanel.identify(action.id!);
+      if (action.userProperties != null && action.userProperties!.isNotEmpty) {
+        final people = _mixpanel.getPeople();
+        action.userProperties!.forEach((key, value) {
+          people.set(key, value);
+        });
+      }
     } else {
       _mixpanel.reset();
     }
