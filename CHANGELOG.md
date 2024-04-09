@@ -11,6 +11,27 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 Packages with breaking changes:
 
+ - [`djangoflow_app_links` - `v2.0.0`](#djangoflow_app_links---v200)
+
+Packages with other changes:
+
+ - There are no other changes in this release.
+
+---
+
+#### `djangoflow_app_links` - `v2.0.0`
+
+ - **BREAKING** **REFACTOR**: update dependencies. ([3426f63d](https://github.com/djangoflow/flutter-djangoflow/commit/3426f63d0c39672a7c502dd4e93a2ee22b7b0292))
+
+
+## 2024-04-09
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
  - [`djangoflow_app` - `v4.0.0`](#djangoflow_app---v400)
 
 Packages with other changes:
