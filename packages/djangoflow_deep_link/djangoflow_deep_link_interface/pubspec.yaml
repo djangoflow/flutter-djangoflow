@@ -1,6 +1,6 @@
 name: djangoflow_deep_link_interface
 description: A Djangoflow Flutter package to provide abstraction for deep-link extraction.
-version: 1.2.3
+version: 1.2.4
 homepage: https://github.com/djangoflow/flutter-djangoflow/tree/main/packages/djangoflow_deep_link/djangoflow_deep_link_interface
 
 environment:

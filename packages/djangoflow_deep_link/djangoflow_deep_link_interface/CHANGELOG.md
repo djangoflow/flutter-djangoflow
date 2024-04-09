@@ -1,3 +1,7 @@
+## 1.2.4
+
+ - **REFACTOR**: update dependencies. ([cfd76e2a](https://github.com/djangoflow/flutter-djangoflow/commit/cfd76e2a8ff657977c83530fba6d028da503c815))
+
 ## 1.2.3
 
  - **REFACTOR**: update generated files. ([b057a275](https://github.com/djangoflow/flutter-djangoflow/commit/b057a2751bd47d0d2e436a3418232c01218fda59))
