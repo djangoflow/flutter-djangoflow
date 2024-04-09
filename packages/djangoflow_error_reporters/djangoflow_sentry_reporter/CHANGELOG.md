@@ -1,3 +1,9 @@
+## 0.2.0
+
+> Note: This release has breaking changes.
+
+ - **BREAKING** **REFACTOR**: update sentry dependency. ([9e84bca9](https://github.com/djangoflow/flutter-djangoflow/commit/9e84bca97d1b60eef09022550f255b31f026293f))
+
 ## 0.1.0+3
 
  - **REFACTOR**: format the codebase. ([fc078388](https://github.com/djangoflow/flutter-djangoflow/commit/fc0783887eb7881d079c7381299248cea2fdf63a))

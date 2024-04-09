@@ -1,6 +1,6 @@
 name: djangoflow_sentry_reporter
 description: A library that allows you to report errors to `Sentry` using the `djangoflow_error_reporter` pacakge.
-version: 0.1.0+3
+version: 0.2.0
 homepage: https://github.com/djangoflow/flutter-djangoflow/tree/main/packages/djangoflow_error_reporters/djangoflow_sentry_reporter
 
 environment:
