@@ -11,6 +11,27 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 Packages with breaking changes:
 
+ - [`djangoflow_mixpanel_analytics` - `v0.4.0`](#djangoflow_mixpanel_analytics---v040)
+
+Packages with other changes:
+
+ - There are no other changes in this release.
+
+---
+
+#### `djangoflow_mixpanel_analytics` - `v0.4.0`
+
+ - **BREAKING** **REFACTOR**: update dependencies. ([c3f92792](https://github.com/djangoflow/flutter-djangoflow/commit/c3f927926d9418a91095f81d59df076071ff38cf))
+
+
+## 2024-04-09
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
  - There are no breaking changes in this release.
 
 Packages with other changes:

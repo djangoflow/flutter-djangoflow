@@ -1,3 +1,9 @@
+## 0.4.0
+
+> Note: This release has breaking changes.
+
+ - **BREAKING** **REFACTOR**: update dependencies. ([c3f92792](https://github.com/djangoflow/flutter-djangoflow/commit/c3f927926d9418a91095f81d59df076071ff38cf))
+
 ## 0.3.0
 
 > Note: This release has breaking changes.
