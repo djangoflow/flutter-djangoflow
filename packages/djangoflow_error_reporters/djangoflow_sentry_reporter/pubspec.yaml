@@ -5,13 +5,12 @@ homepage: https://github.com/djangoflow/flutter-djangoflow/tree/main/packages/dj
 
 environment:
   sdk: ">=2.18.6 <4.0.0"
-  flutter: ">=1.17.0"
 
 dependencies:
   djangoflow_error_reporter: ^0.1.0+3
   flutter:
     sdk: flutter
-  sentry_flutter: ^7.7.0
+  sentry_flutter: ^7.18.0
 
 dev_dependencies:
   flutter_lints: ^3.0.1
