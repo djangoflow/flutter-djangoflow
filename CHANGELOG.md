@@ -3,6 +3,39 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2024-05-01
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - [`djangoflow_auth` - `v0.5.0`](#djangoflow_auth---v050)
+
+Packages with other changes:
+
+ - [`djangoflow_auth_google` - `v0.1.0+7`](#djangoflow_auth_google---v0107)
+ - [`djangoflow_auth_facebook` - `v0.1.0+5`](#djangoflow_auth_facebook---v0105)
+ - [`djangoflow_auth_apple` - `v0.1.0+5`](#djangoflow_auth_apple---v0105)
+ - [`djangoflow_auth_discord` - `v0.1.0+5`](#djangoflow_auth_discord---v0105)
+
+Packages with dependency updates only:
+
+> Packages listed below depend on other packages in this workspace that have had changes. Their versions have been incremented to bump the minimum dependency versions of the packages they depend upon in this project.
+
+ - `djangoflow_auth_google` - `v0.1.0+7`
+ - `djangoflow_auth_facebook` - `v0.1.0+5`
+ - `djangoflow_auth_apple` - `v0.1.0+5`
+ - `djangoflow_auth_discord` - `v0.1.0+5`
+
+---
+
+#### `djangoflow_auth` - `v0.5.0`
+
+ - **BREAKING** **REFACTOR**: add authCubit field for JwtAuthInterceptor. ([bc17ac36](https://github.com/djangoflow/flutter-djangoflow/commit/bc17ac364952d147819630c2dd2388295a124820))
+
+
 ## 2024-04-09
 
 ### Changes

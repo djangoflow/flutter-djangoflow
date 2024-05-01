@@ -1,3 +1,7 @@
+## 0.1.0+5
+
+ - Update a dependency to the latest release.
+
 ## 0.1.0+4
 
  - **REFACTOR**: update generated files. ([b057a275](https://github.com/djangoflow/flutter-djangoflow/commit/b057a2751bd47d0d2e436a3418232c01218fda59))

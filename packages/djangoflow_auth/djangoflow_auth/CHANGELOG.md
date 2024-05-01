@@ -1,3 +1,9 @@
+## 0.5.0
+
+> Note: This release has breaking changes.
+
+ - **BREAKING** **REFACTOR**: add authCubit field for JwtAuthInterceptor. ([bc17ac36](https://github.com/djangoflow/flutter-djangoflow/commit/bc17ac364952d147819630c2dd2388295a124820))
+
 ## 0.4.0
 
 > Note: This release has breaking changes.
