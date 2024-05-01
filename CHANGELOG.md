@@ -11,6 +11,40 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 Packages with breaking changes:
 
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`djangoflow_auth` - `v0.5.0+1`](#djangoflow_auth---v0501)
+ - [`djangoflow_auth_google` - `v0.1.0+8`](#djangoflow_auth_google---v0108)
+ - [`djangoflow_auth_discord` - `v0.1.0+6`](#djangoflow_auth_discord---v0106)
+ - [`djangoflow_auth_apple` - `v0.1.0+6`](#djangoflow_auth_apple---v0106)
+ - [`djangoflow_auth_facebook` - `v0.1.0+6`](#djangoflow_auth_facebook---v0106)
+
+Packages with dependency updates only:
+
+> Packages listed below depend on other packages in this workspace that have had changes. Their versions have been incremented to bump the minimum dependency versions of the packages they depend upon in this project.
+
+ - `djangoflow_auth_google` - `v0.1.0+8`
+ - `djangoflow_auth_discord` - `v0.1.0+6`
+ - `djangoflow_auth_apple` - `v0.1.0+6`
+ - `djangoflow_auth_facebook` - `v0.1.0+6`
+
+---
+
+#### `djangoflow_auth` - `v0.5.0+1`
+
+ - **FIX**: use correct cubit in JwtAuthIntercetor. ([75450618](https://github.com/djangoflow/flutter-djangoflow/commit/7545061806303c60186f59dfd58cea8f35deef25))
+
+
+## 2024-05-01
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
  - [`djangoflow_auth` - `v0.5.0`](#djangoflow_auth---v050)
 
 Packages with other changes:

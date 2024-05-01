@@ -1,3 +1,7 @@
+## 0.5.0+1
+
+ - **FIX**: use correct cubit in JwtAuthIntercetor. ([75450618](https://github.com/djangoflow/flutter-djangoflow/commit/7545061806303c60186f59dfd58cea8f35deef25))
+
 ## 0.5.0
 
 > Note: This release has breaking changes.
