@@ -8,7 +8,7 @@ class JwtAuthInterceptor extends Interceptor {
 
   @override
   void onRequest(RequestOptions options, RequestInterceptorHandler handler) {
-    if (AuthCubit.instance.state.token != null) {
+    if (authCubit.state.token != null) {
       options.headers['Authorization'] = 'Bearer ${authCubit.state.token}';
     }
     super.onRequest(options, handler);
