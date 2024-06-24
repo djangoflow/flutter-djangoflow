@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2024-06-24
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`djangoflow_remote_config` - `v0.0.4+6`](#djangoflow_remote_config---v0046)
+
+---
+
+#### `djangoflow_remote_config` - `v0.0.4+6`
+
+ - **REFACTOR**: add appVersion field to app launch model. ([ad5c5c81](https://github.com/djangoflow/flutter-djangoflow/commit/ad5c5c81c742988fd25ed2241d4711cb8bf4f64a))
+
+
 ## 2024-05-01
 
 ### Changes

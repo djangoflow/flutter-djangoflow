@@ -1,3 +1,7 @@
+## 0.0.4+6
+
+ - **REFACTOR**: add appVersion field to app launch model. ([ad5c5c81](https://github.com/djangoflow/flutter-djangoflow/commit/ad5c5c81c742988fd25ed2241d4711cb8bf4f64a))
+
 ## 0.0.4+5
 
  - **REFACTOR**: update generated files. ([b057a275](https://github.com/djangoflow/flutter-djangoflow/commit/b057a2751bd47d0d2e436a3418232c01218fda59))
