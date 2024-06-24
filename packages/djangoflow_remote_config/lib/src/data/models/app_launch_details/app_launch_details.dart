@@ -7,6 +7,8 @@ part 'app_launch_details.g.dart';
 class AppLaunchDetails with _$AppLaunchDetails {
   const factory AppLaunchDetails({
     BrandDetails? brand,
+    // ignore: invalid_annotation_target
+    @JsonKey(name: 'app_version') VersionDetails? appVersion,
     UpdatesDetails? updates,
   }) = _AppLaunchDetails;
 
@@ -55,4 +57,15 @@ class LogoDetails with _$LogoDetails {
 
   factory LogoDetails.fromJson(Map<String, dynamic> json) =>
       _$LogoDetailsFromJson(json);
+}
+
+@freezed
+class VersionDetails with _$VersionDetails {
+  const factory VersionDetails({
+    String? latest,
+    String? required,
+  }) = _VersionDetails;
+
+  factory VersionDetails.fromJson(Map<String, dynamic> json) =>
+      _$VersionDetailsFromJson(json);
 }

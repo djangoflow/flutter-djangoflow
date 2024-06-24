@@ -21,6 +21,8 @@ AppLaunchDetails _$AppLaunchDetailsFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$AppLaunchDetails {
   BrandDetails? get brand => throw _privateConstructorUsedError;
+  @JsonKey(name: 'app_version')
+  VersionDetails? get appVersion => throw _privateConstructorUsedError;
   UpdatesDetails? get updates => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -35,9 +37,13 @@ abstract class $AppLaunchDetailsCopyWith<$Res> {
           AppLaunchDetails value, $Res Function(AppLaunchDetails) then) =
       _$AppLaunchDetailsCopyWithImpl<$Res, AppLaunchDetails>;
   @useResult
-  $Res call({BrandDetails? brand, UpdatesDetails? updates});
+  $Res call(
+      {BrandDetails? brand,
+      @JsonKey(name: 'app_version') VersionDetails? appVersion,
+      UpdatesDetails? updates});
 
   $BrandDetailsCopyWith<$Res>? get brand;
+  $VersionDetailsCopyWith<$Res>? get appVersion;
   $UpdatesDetailsCopyWith<$Res>? get updates;
 }
 
@@ -55,6 +61,7 @@ class _$AppLaunchDetailsCopyWithImpl<$Res, $Val extends AppLaunchDetails>
   @override
   $Res call({
     Object? brand = freezed,
+    Object? appVersion = freezed,
     Object? updates = freezed,
   }) {
     return _then(_value.copyWith(
@@ -62,6 +69,10 @@ class _$AppLaunchDetailsCopyWithImpl<$Res, $Val extends AppLaunchDetails>
           ? _value.brand
           : brand // ignore: cast_nullable_to_non_nullable
               as BrandDetails?,
+      appVersion: freezed == appVersion
+          ? _value.appVersion
+          : appVersion // ignore: cast_nullable_to_non_nullable
+              as VersionDetails?,
       updates: freezed == updates
           ? _value.updates
           : updates // ignore: cast_nullable_to_non_nullable
@@ -78,6 +89,18 @@ class _$AppLaunchDetailsCopyWithImpl<$Res, $Val extends AppLaunchDetails>
 
     return $BrandDetailsCopyWith<$Res>(_value.brand!, (value) {
       return _then(_value.copyWith(brand: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $VersionDetailsCopyWith<$Res>? get appVersion {
+    if (_value.appVersion == null) {
+      return null;
+    }
+
+    return $VersionDetailsCopyWith<$Res>(_value.appVersion!, (value) {
+      return _then(_value.copyWith(appVersion: value) as $Val);
     });
   }
 
@@ -102,10 +125,15 @@ abstract class _$$AppLaunchDetailsImplCopyWith<$Res>
       __$$AppLaunchDetailsImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({BrandDetails? brand, UpdatesDetails? updates});
+  $Res call(
+      {BrandDetails? brand,
+      @JsonKey(name: 'app_version') VersionDetails? appVersion,
+      UpdatesDetails? updates});
 
   @override
   $BrandDetailsCopyWith<$Res>? get brand;
+  @override
+  $VersionDetailsCopyWith<$Res>? get appVersion;
   @override
   $UpdatesDetailsCopyWith<$Res>? get updates;
 }
@@ -122,6 +150,7 @@ class __$$AppLaunchDetailsImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? brand = freezed,
+    Object? appVersion = freezed,
     Object? updates = freezed,
   }) {
     return _then(_$AppLaunchDetailsImpl(
@@ -129,6 +158,10 @@ class __$$AppLaunchDetailsImplCopyWithImpl<$Res>
           ? _value.brand
           : brand // ignore: cast_nullable_to_non_nullable
               as BrandDetails?,
+      appVersion: freezed == appVersion
+          ? _value.appVersion
+          : appVersion // ignore: cast_nullable_to_non_nullable
+              as VersionDetails?,
       updates: freezed == updates
           ? _value.updates
           : updates // ignore: cast_nullable_to_non_nullable
@@ -140,7 +173,10 @@ class __$$AppLaunchDetailsImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$AppLaunchDetailsImpl implements _AppLaunchDetails {
-  const _$AppLaunchDetailsImpl({this.brand, this.updates});
+  const _$AppLaunchDetailsImpl(
+      {this.brand,
+      @JsonKey(name: 'app_version') this.appVersion,
+      this.updates});
 
   factory _$AppLaunchDetailsImpl.fromJson(Map<String, dynamic> json) =>
       _$$AppLaunchDetailsImplFromJson(json);
@@ -148,11 +184,14 @@ class _$AppLaunchDetailsImpl implements _AppLaunchDetails {
   @override
   final BrandDetails? brand;
   @override
+  @JsonKey(name: 'app_version')
+  final VersionDetails? appVersion;
+  @override
   final UpdatesDetails? updates;
 
   @override
   String toString() {
-    return 'AppLaunchDetails(brand: $brand, updates: $updates)';
+    return 'AppLaunchDetails(brand: $brand, appVersion: $appVersion, updates: $updates)';
   }
 
   @override
@@ -161,12 +200,14 @@ class _$AppLaunchDetailsImpl implements _AppLaunchDetails {
         (other.runtimeType == runtimeType &&
             other is _$AppLaunchDetailsImpl &&
             (identical(other.brand, brand) || other.brand == brand) &&
+            (identical(other.appVersion, appVersion) ||
+                other.appVersion == appVersion) &&
             (identical(other.updates, updates) || other.updates == updates));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, brand, updates);
+  int get hashCode => Object.hash(runtimeType, brand, appVersion, updates);
 
   @JsonKey(ignore: true)
   @override
@@ -186,6 +227,7 @@ class _$AppLaunchDetailsImpl implements _AppLaunchDetails {
 abstract class _AppLaunchDetails implements AppLaunchDetails {
   const factory _AppLaunchDetails(
       {final BrandDetails? brand,
+      @JsonKey(name: 'app_version') final VersionDetails? appVersion,
       final UpdatesDetails? updates}) = _$AppLaunchDetailsImpl;
 
   factory _AppLaunchDetails.fromJson(Map<String, dynamic> json) =
@@ -193,6 +235,9 @@ abstract class _AppLaunchDetails implements AppLaunchDetails {
 
   @override
   BrandDetails? get brand;
+  @override
+  @JsonKey(name: 'app_version')
+  VersionDetails? get appVersion;
   @override
   UpdatesDetails? get updates;
   @override
@@ -864,5 +909,160 @@ abstract class _LogoDetails implements LogoDetails {
   @override
   @JsonKey(ignore: true)
   _$$LogoDetailsImplCopyWith<_$LogoDetailsImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+VersionDetails _$VersionDetailsFromJson(Map<String, dynamic> json) {
+  return _VersionDetails.fromJson(json);
+}
+
+/// @nodoc
+mixin _$VersionDetails {
+  String? get latest => throw _privateConstructorUsedError;
+  String? get required => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $VersionDetailsCopyWith<VersionDetails> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $VersionDetailsCopyWith<$Res> {
+  factory $VersionDetailsCopyWith(
+          VersionDetails value, $Res Function(VersionDetails) then) =
+      _$VersionDetailsCopyWithImpl<$Res, VersionDetails>;
+  @useResult
+  $Res call({String? latest, String? required});
+}
+
+/// @nodoc
+class _$VersionDetailsCopyWithImpl<$Res, $Val extends VersionDetails>
+    implements $VersionDetailsCopyWith<$Res> {
+  _$VersionDetailsCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? latest = freezed,
+    Object? required = freezed,
+  }) {
+    return _then(_value.copyWith(
+      latest: freezed == latest
+          ? _value.latest
+          : latest // ignore: cast_nullable_to_non_nullable
+              as String?,
+      required: freezed == required
+          ? _value.required
+          : required // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$VersionDetailsImplCopyWith<$Res>
+    implements $VersionDetailsCopyWith<$Res> {
+  factory _$$VersionDetailsImplCopyWith(_$VersionDetailsImpl value,
+          $Res Function(_$VersionDetailsImpl) then) =
+      __$$VersionDetailsImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String? latest, String? required});
+}
+
+/// @nodoc
+class __$$VersionDetailsImplCopyWithImpl<$Res>
+    extends _$VersionDetailsCopyWithImpl<$Res, _$VersionDetailsImpl>
+    implements _$$VersionDetailsImplCopyWith<$Res> {
+  __$$VersionDetailsImplCopyWithImpl(
+      _$VersionDetailsImpl _value, $Res Function(_$VersionDetailsImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? latest = freezed,
+    Object? required = freezed,
+  }) {
+    return _then(_$VersionDetailsImpl(
+      latest: freezed == latest
+          ? _value.latest
+          : latest // ignore: cast_nullable_to_non_nullable
+              as String?,
+      required: freezed == required
+          ? _value.required
+          : required // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$VersionDetailsImpl implements _VersionDetails {
+  const _$VersionDetailsImpl({this.latest, this.required});
+
+  factory _$VersionDetailsImpl.fromJson(Map<String, dynamic> json) =>
+      _$$VersionDetailsImplFromJson(json);
+
+  @override
+  final String? latest;
+  @override
+  final String? required;
+
+  @override
+  String toString() {
+    return 'VersionDetails(latest: $latest, required: $required)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$VersionDetailsImpl &&
+            (identical(other.latest, latest) || other.latest == latest) &&
+            (identical(other.required, required) ||
+                other.required == required));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, latest, required);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$VersionDetailsImplCopyWith<_$VersionDetailsImpl> get copyWith =>
+      __$$VersionDetailsImplCopyWithImpl<_$VersionDetailsImpl>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$VersionDetailsImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _VersionDetails implements VersionDetails {
+  const factory _VersionDetails(
+      {final String? latest, final String? required}) = _$VersionDetailsImpl;
+
+  factory _VersionDetails.fromJson(Map<String, dynamic> json) =
+      _$VersionDetailsImpl.fromJson;
+
+  @override
+  String? get latest;
+  @override
+  String? get required;
+  @override
+  @JsonKey(ignore: true)
+  _$$VersionDetailsImplCopyWith<_$VersionDetailsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

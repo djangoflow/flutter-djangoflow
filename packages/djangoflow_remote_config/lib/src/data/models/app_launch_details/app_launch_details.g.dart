@@ -12,6 +12,10 @@ _$AppLaunchDetailsImpl _$$AppLaunchDetailsImplFromJson(
       brand: json['brand'] == null
           ? null
           : BrandDetails.fromJson(json['brand'] as Map<String, dynamic>),
+      appVersion: json['app_version'] == null
+          ? null
+          : VersionDetails.fromJson(
+              json['app_version'] as Map<String, dynamic>),
       updates: json['updates'] == null
           ? null
           : UpdatesDetails.fromJson(json['updates'] as Map<String, dynamic>),
@@ -28,6 +32,7 @@ Map<String, dynamic> _$$AppLaunchDetailsImplToJson(
   }
 
   writeNotNull('brand', instance.brand?.toJson());
+  writeNotNull('app_version', instance.appVersion?.toJson());
   writeNotNull('updates', instance.updates?.toJson());
   return val;
 }
@@ -115,5 +120,26 @@ Map<String, dynamic> _$$LogoDetailsImplToJson(_$LogoDetailsImpl instance) {
 
   writeNotNull('large', instance.large);
   writeNotNull('small', instance.small);
+  return val;
+}
+
+_$VersionDetailsImpl _$$VersionDetailsImplFromJson(Map<String, dynamic> json) =>
+    _$VersionDetailsImpl(
+      latest: json['latest'] as String?,
+      required: json['required'] as String?,
+    );
+
+Map<String, dynamic> _$$VersionDetailsImplToJson(
+    _$VersionDetailsImpl instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('latest', instance.latest);
+  writeNotNull('required', instance.required);
   return val;
 }
