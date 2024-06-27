@@ -7,22 +7,22 @@ import 'rain_drop.dart';
 
 /// A widget that creates a rain of emojis on the screen.
 ///
-/// [emoji] is the emoji character that will be used for the raindrops.
+/// [emojiList] is the list of emoji character that will be used for the raindrops.
 /// [numberOfRainDrops] specifies the number of raindrops on the screen.
 /// [fallSpeedFactor] is a multiplier to control the speed of the falling raindrops. Higher values mean slower raindrops.
 /// [onRainStopped] is a callback that is triggered when the rain stops.
 class Rain extends StatefulWidget {
-  const Rain({
+  Rain({
     super.key,
-    required this.emoji,
     this.onRainStopped,
     required this.numberOfRainDrops,
     this.fallSpeedFactor = 1.0,
-  });
-  final String emoji;
+    this.emojiList = const [],
+  }) : assert(emojiList.isNotEmpty, 'Emoji list cannot be empty');
   final int numberOfRainDrops;
 
   final double fallSpeedFactor;
+  final List<RainDropEmoji> emojiList;
 
   final VoidCallback? onRainStopped;
   @override
@@ -40,20 +40,7 @@ class _RainState extends State<Rain>
 
     // Generate initial raindrops
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      for (int i = 0; i < widget.numberOfRainDrops; i++) {
-        final initialPositionX =
-            Random().nextDouble() * MediaQuery.of(context).size.width;
-        final initialPositionY =
-            Random().nextDouble() * MediaQuery.of(context).size.height;
-
-        rainDrops.add(
-          RainDrop(
-            size: Random().nextDouble() * 30 + 10,
-            initialPositionX: initialPositionX,
-            initialPositionY: initialPositionY,
-          ),
-        );
-      }
+      rainDrops = _generateRainDrops();
 
       // Calculate the maximum time needed for a raindrop to reach the bottom
       double maxTime = rainDrops
@@ -82,6 +69,23 @@ class _RainState extends State<Rain>
     });
   }
 
+  List<RainDrop> _generateRainDrops() {
+    final random = Random();
+    return List.generate(widget.numberOfRainDrops, (index) {
+      final initialPositionX =
+          random.nextDouble() * MediaQuery.of(context).size.width;
+      final initialPositionY =
+          random.nextDouble() * MediaQuery.of(context).size.height;
+
+      return RainDrop(
+        initialPositionX: initialPositionX,
+        initialPositionY: initialPositionY,
+        rainDropEmoji:
+            widget.emojiList[random.nextInt(widget.emojiList.length)],
+      );
+    });
+  }
+
   @override
   void dispose() {
     _controller?.dispose();
@@ -95,6 +99,12 @@ class _RainState extends State<Rain>
           animation: _controller!,
           builder: (context, child) => Stack(
             children: rainDrops.map((rainDrop) {
+              final rainDropEmoji = rainDrop.rainDropEmoji;
+              if (rainDropEmoji.gradient != null) {
+                assert(rainDropEmoji.gradient!.colors.length >= 2,
+                    'colors list must have at least two colors');
+              }
+
               double fallDistance =
                   (_controller!.value * MediaQuery.of(context).size.height);
               double totalFallDistance =
@@ -111,14 +121,54 @@ class _RainState extends State<Rain>
                   rainDrop.initialPositionX,
                   positionY,
                 ),
-                child: Text(
-                  widget.emoji,
-                  style: TextStyle(
-                    fontSize: rainDrop.size,
-                  ),
-                ),
+                child: rainDrop.rainDropEmoji.gradient != null
+                    ? GradientText(
+                        text: rainDropEmoji.emoji,
+                        gradient: rainDropEmoji.gradient!,
+                        size: rainDropEmoji.emojiSize,
+                        color: rainDropEmoji.emojiColor,
+                      )
+                    : Text(
+                        rainDropEmoji.emoji,
+                        style: TextStyle(
+                          fontSize: rainDropEmoji.emojiSize,
+                          color: rainDropEmoji.emojiColor,
+                        ),
+                      ),
               );
             }).toList(),
           ),
         );
+}
+
+class GradientText extends StatelessWidget {
+  const GradientText({
+    super.key,
+    required this.text,
+    required this.gradient,
+    this.size,
+    this.color,
+  });
+
+  final String text;
+  final Color? color;
+  final double? size;
+  final Gradient gradient;
+
+  @override
+  Widget build(BuildContext context) {
+    return ShaderMask(
+      blendMode: BlendMode.srcIn,
+      shaderCallback: (bounds) => gradient.createShader(
+        Rect.fromLTWH(0, 0, bounds.width, bounds.height),
+      ),
+      child: Text(
+        text,
+        style: TextStyle(
+          color: color,
+          fontSize: size,
+        ),
+      ),
+    );
+  }
 }
