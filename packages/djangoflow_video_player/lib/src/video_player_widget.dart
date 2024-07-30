@@ -162,7 +162,7 @@ class __VideoPlayerUIState extends State<_VideoPlayerUI> {
                 : IgnorePointer(
                     child: Container(
                       width: double.infinity,
-                      color: theme.colorScheme.background.withOpacity(0.2),
+                      color: theme.colorScheme.surface.withOpacity(0.2),
                       child: Center(
                         child: Icon(
                           widget.playIcon,
@@ -223,7 +223,7 @@ class _ThumbnailWidget extends StatelessWidget {
 
     return Container(
       decoration: BoxDecoration(
-        color: theme.colorScheme.background,
+        color: theme.colorScheme.surface,
         image: DecorationImage(
           image: CachedNetworkImageProvider(thumbnailUrl),
           fit: BoxFit.cover,

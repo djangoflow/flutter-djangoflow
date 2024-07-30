@@ -26,7 +26,7 @@ class VideoPlayerScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Djangoflow Video Player'),
       ),
-      body: SizedBox(
+      body: const SizedBox(
         height: 400,
         child: VideoPlayerWidget(
           url:

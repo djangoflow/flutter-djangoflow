@@ -4,18 +4,16 @@ version: 0.1.0+6
 homepage: https://github.com/djangoflow/flutter-djangoflow/tree/main/packages/djangoflow_auth/djangoflow_auth_apple
 
 environment:
-  sdk: ">=3.0.6 <4.0.0"
+  sdk: ">=3.4.4 <4.0.0"
   flutter: ">=1.17.0"
 
 dependencies:
   djangoflow_auth: ^0.5.0+1
   flutter:
     sdk: flutter
-  sign_in_with_apple: ^5.0.0
+  sign_in_with_apple: ^6.1.1
 
 dev_dependencies:
-  flutter_lints: ^3.0.1
+  flutter_lints: ^4.0.0
   flutter_test:
     sdk: flutter
-
-flutter:

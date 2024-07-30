@@ -8,7 +8,7 @@ part of 'chat_state.dart';
 
 _$ChatStateImpl _$$ChatStateImplFromJson(Map<String, dynamic> json) =>
     _$ChatStateImpl(
-      roomId: json['roomId'] as int,
+      roomId: (json['roomId'] as num).toInt(),
       room: json['room'] == null
           ? null
           : ChatRoom.fromJson(json['room'] as Map<String, dynamic>),

@@ -1,3 +1,5 @@
+// ignore_for_file: invalid_annotation_target
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'app_launch_details.freezed.dart';
@@ -7,7 +9,6 @@ part 'app_launch_details.g.dart';
 class AppLaunchDetails with _$AppLaunchDetails {
   const factory AppLaunchDetails({
     BrandDetails? brand,
-    // ignore: invalid_annotation_target
     @JsonKey(name: 'app_version') VersionDetails? appVersion,
     UpdatesDetails? updates,
   }) = _AppLaunchDetails;

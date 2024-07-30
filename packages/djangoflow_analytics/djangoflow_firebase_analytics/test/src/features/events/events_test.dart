@@ -45,14 +45,14 @@ void main() {
     when(
       mockFirebaseAnalytics.logEvent(
         name: event.key,
-        parameters: event.params,
+        parameters: event.params.cast(),
       ),
     ).thenAnswer((_) => Future.value());
     eventSender.perform(event);
     verify(
       mockFirebaseAnalytics.logEvent(
         name: event.key,
-        parameters: event.params,
+        parameters: event.params.cast(),
       ),
     ).called(1);
   });
@@ -66,14 +66,14 @@ void main() {
     when(
       mockFirebaseAnalytics.logEvent(
         name: event.key,
-        parameters: event.params,
+        parameters: event.params.cast(),
       ),
     ).thenAnswer((_) => Future.value());
     eventSender.perform(event);
     verifyNever(
       mockFirebaseAnalytics.logEvent(
         name: event.key,
-        parameters: event.params,
+        parameters: event.params.cast(),
       ),
     );
   });
