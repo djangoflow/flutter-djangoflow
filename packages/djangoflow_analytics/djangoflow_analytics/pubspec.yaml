@@ -1,6 +1,6 @@
 name: djangoflow_analytics
 description: A library for tracking analytics with multiple Analytics providers in Flutter applications.
-version: 0.0.2+3
+version: 0.1.0
 homepage: https://github.com/djangoflow/flutter-djangoflow/tree/main/packages/djangoflow_analytics/djangoflow_analytics
 
 environment:

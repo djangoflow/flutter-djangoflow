@@ -1,6 +1,6 @@
 name: djangoflow_websocket
 description: Easily manage connecting to a WebSocket server, subscribing to messages, handling reconnections etc all at once with djangoflow_websocket
-version: 0.1.0+6
+version: 0.2.0
 homepage: https://github.com/djangoflow/flutter-djangoflow/tree/main/packages/djangoflow_websocket
 
 environment:
@@ -9,7 +9,7 @@ environment:
 
 dependencies:
   bloc: ^8.1.4
-  djangoflow_bloc_extensions: ^0.0.2+3
+  djangoflow_bloc_extensions: ^0.1.0
   flutter:
     sdk: flutter
   flutter_bloc: ^8.1.6

@@ -3,6 +3,138 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2024-07-30
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - [`djangoflow_analytics` - `v0.1.0`](#djangoflow_analytics---v010)
+ - [`djangoflow_app` - `v5.0.0`](#djangoflow_app---v500)
+ - [`djangoflow_auth` - `v0.6.0`](#djangoflow_auth---v060)
+ - [`djangoflow_auth_apple` - `v0.2.0`](#djangoflow_auth_apple---v020)
+ - [`djangoflow_auth_discord` - `v0.2.0`](#djangoflow_auth_discord---v020)
+ - [`djangoflow_auth_facebook` - `v0.2.0`](#djangoflow_auth_facebook---v020)
+ - [`djangoflow_auth_google` - `v0.2.0`](#djangoflow_auth_google---v020)
+ - [`djangoflow_bloc_extensions` - `v0.1.0`](#djangoflow_bloc_extensions---v010)
+ - [`djangoflow_chat` - `v0.2.0`](#djangoflow_chat---v020)
+ - [`djangoflow_deep_link_interface` - `v2.0.0`](#djangoflow_deep_link_interface---v200)
+ - [`djangoflow_emoji_rain` - `v0.1.0`](#djangoflow_emoji_rain---v010)
+ - [`djangoflow_error_reporter` - `v0.2.0`](#djangoflow_error_reporter---v020)
+ - [`djangoflow_facebook_analytics` - `v0.1.0`](#djangoflow_facebook_analytics---v010)
+ - [`djangoflow_fcm` - `v0.2.0`](#djangoflow_fcm---v020)
+ - [`djangoflow_firebase_analytics` - `v0.3.0`](#djangoflow_firebase_analytics---v030)
+ - [`djangoflow_local_notification` - `v0.1.0`](#djangoflow_local_notification---v010)
+ - [`djangoflow_mixpanel_analytics` - `v0.5.0`](#djangoflow_mixpanel_analytics---v050)
+ - [`djangoflow_remote_config` - `v0.1.0`](#djangoflow_remote_config---v010)
+ - [`djangoflow_scrollable_column` - `v0.1.0`](#djangoflow_scrollable_column---v010)
+ - [`djangoflow_sentry_reporter` - `v0.3.0`](#djangoflow_sentry_reporter---v030)
+ - [`djangoflow_video_player` - `v0.2.0`](#djangoflow_video_player---v020)
+ - [`djangoflow_websocket` - `v0.2.0`](#djangoflow_websocket---v020)
+
+Packages with other changes:
+
+ - [`djangoflow_app_links` - `v2.0.2`](#djangoflow_app_links---v202)
+
+Packages with dependency updates only:
+
+> Packages listed below depend on other packages in this workspace that have had changes. Their versions have been incremented to bump the minimum dependency versions of the packages they depend upon in this project.
+
+ - `djangoflow_app_links` - `v2.0.2`
+
+---
+
+#### `djangoflow_analytics` - `v0.1.0`
+
+ - **BREAKING** **REFACTOR**: update dependencies and sdk constraints. ([649ad55c](https://github.com/djangoflow/flutter-djangoflow/commit/649ad55c4fdfe4907bd67ec43dee6cfda55d8b90))
+
+#### `djangoflow_app` - `v5.0.0`
+
+ - **BREAKING** **REFACTOR**: update dependencies and sdk constraints. ([649ad55c](https://github.com/djangoflow/flutter-djangoflow/commit/649ad55c4fdfe4907bd67ec43dee6cfda55d8b90))
+
+#### `djangoflow_auth` - `v0.6.0`
+
+ - **BREAKING** **REFACTOR**: update dependencies and sdk constraints. ([649ad55c](https://github.com/djangoflow/flutter-djangoflow/commit/649ad55c4fdfe4907bd67ec43dee6cfda55d8b90))
+
+#### `djangoflow_auth_apple` - `v0.2.0`
+
+ - **BREAKING** **REFACTOR**: update dependencies and sdk constraints. ([649ad55c](https://github.com/djangoflow/flutter-djangoflow/commit/649ad55c4fdfe4907bd67ec43dee6cfda55d8b90))
+
+#### `djangoflow_auth_discord` - `v0.2.0`
+
+ - **BREAKING** **REFACTOR**: update dependencies and sdk constraints. ([649ad55c](https://github.com/djangoflow/flutter-djangoflow/commit/649ad55c4fdfe4907bd67ec43dee6cfda55d8b90))
+
+#### `djangoflow_auth_facebook` - `v0.2.0`
+
+ - **BREAKING** **REFACTOR**: update dependencies and sdk constraints. ([649ad55c](https://github.com/djangoflow/flutter-djangoflow/commit/649ad55c4fdfe4907bd67ec43dee6cfda55d8b90))
+
+#### `djangoflow_auth_google` - `v0.2.0`
+
+ - **BREAKING** **REFACTOR**: update dependencies and sdk constraints. ([649ad55c](https://github.com/djangoflow/flutter-djangoflow/commit/649ad55c4fdfe4907bd67ec43dee6cfda55d8b90))
+
+#### `djangoflow_bloc_extensions` - `v0.1.0`
+
+ - **BREAKING** **REFACTOR**: update dependencies and sdk constraints. ([649ad55c](https://github.com/djangoflow/flutter-djangoflow/commit/649ad55c4fdfe4907bd67ec43dee6cfda55d8b90))
+
+#### `djangoflow_chat` - `v0.2.0`
+
+ - **BREAKING** **REFACTOR**: update dependencies and sdk constraints. ([649ad55c](https://github.com/djangoflow/flutter-djangoflow/commit/649ad55c4fdfe4907bd67ec43dee6cfda55d8b90))
+
+#### `djangoflow_deep_link_interface` - `v2.0.0`
+
+ - **BREAKING** **REFACTOR**: update dependencies and sdk constraints. ([649ad55c](https://github.com/djangoflow/flutter-djangoflow/commit/649ad55c4fdfe4907bd67ec43dee6cfda55d8b90))
+
+#### `djangoflow_emoji_rain` - `v0.1.0`
+
+ - **BREAKING** **REFACTOR**: update dependencies and sdk constraints. ([649ad55c](https://github.com/djangoflow/flutter-djangoflow/commit/649ad55c4fdfe4907bd67ec43dee6cfda55d8b90))
+
+#### `djangoflow_error_reporter` - `v0.2.0`
+
+ - **BREAKING** **REFACTOR**: update dependencies and sdk constraints. ([649ad55c](https://github.com/djangoflow/flutter-djangoflow/commit/649ad55c4fdfe4907bd67ec43dee6cfda55d8b90))
+
+#### `djangoflow_facebook_analytics` - `v0.1.0`
+
+ - **BREAKING** **REFACTOR**: update dependencies and sdk constraints. ([649ad55c](https://github.com/djangoflow/flutter-djangoflow/commit/649ad55c4fdfe4907bd67ec43dee6cfda55d8b90))
+
+#### `djangoflow_fcm` - `v0.2.0`
+
+ - **BREAKING** **REFACTOR**: update dependencies and sdk constraints. ([649ad55c](https://github.com/djangoflow/flutter-djangoflow/commit/649ad55c4fdfe4907bd67ec43dee6cfda55d8b90))
+
+#### `djangoflow_firebase_analytics` - `v0.3.0`
+
+ - **BREAKING** **REFACTOR**: update dependencies and sdk constraints. ([649ad55c](https://github.com/djangoflow/flutter-djangoflow/commit/649ad55c4fdfe4907bd67ec43dee6cfda55d8b90))
+
+#### `djangoflow_local_notification` - `v0.1.0`
+
+ - **BREAKING** **REFACTOR**: update dependencies and sdk constraints. ([649ad55c](https://github.com/djangoflow/flutter-djangoflow/commit/649ad55c4fdfe4907bd67ec43dee6cfda55d8b90))
+
+#### `djangoflow_mixpanel_analytics` - `v0.5.0`
+
+ - **BREAKING** **REFACTOR**: update dependencies and sdk constraints. ([649ad55c](https://github.com/djangoflow/flutter-djangoflow/commit/649ad55c4fdfe4907bd67ec43dee6cfda55d8b90))
+
+#### `djangoflow_remote_config` - `v0.1.0`
+
+ - **BREAKING** **REFACTOR**: update dependencies and sdk constraints. ([649ad55c](https://github.com/djangoflow/flutter-djangoflow/commit/649ad55c4fdfe4907bd67ec43dee6cfda55d8b90))
+
+#### `djangoflow_scrollable_column` - `v0.1.0`
+
+ - **BREAKING** **REFACTOR**: update dependencies and sdk constraints. ([649ad55c](https://github.com/djangoflow/flutter-djangoflow/commit/649ad55c4fdfe4907bd67ec43dee6cfda55d8b90))
+
+#### `djangoflow_sentry_reporter` - `v0.3.0`
+
+ - **BREAKING** **REFACTOR**: update dependencies and sdk constraints. ([649ad55c](https://github.com/djangoflow/flutter-djangoflow/commit/649ad55c4fdfe4907bd67ec43dee6cfda55d8b90))
+
+#### `djangoflow_video_player` - `v0.2.0`
+
+ - **BREAKING** **REFACTOR**: update dependencies and sdk constraints. ([649ad55c](https://github.com/djangoflow/flutter-djangoflow/commit/649ad55c4fdfe4907bd67ec43dee6cfda55d8b90))
+
+#### `djangoflow_websocket` - `v0.2.0`
+
+ - **BREAKING** **REFACTOR**: update dependencies and sdk constraints. ([649ad55c](https://github.com/djangoflow/flutter-djangoflow/commit/649ad55c4fdfe4907bd67ec43dee6cfda55d8b90))
+
+
 ## 2024-06-24
 
 ### Changes

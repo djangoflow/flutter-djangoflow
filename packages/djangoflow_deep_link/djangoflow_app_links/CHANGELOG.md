@@ -1,3 +1,7 @@
+## 2.0.2
+
+ - Update a dependency to the latest release.
+
 ## 2.0.1
 
  - **REFACTOR**: update dependencies. ([cfd76e2a](https://github.com/djangoflow/flutter-djangoflow/commit/cfd76e2a8ff657977c83530fba6d028da503c815))
