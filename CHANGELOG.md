@@ -11,6 +11,34 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 Packages with breaking changes:
 
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`djangoflow_openapi_extensions` - `v0.0.3+4`](#djangoflow_openapi_extensions---v0034)
+ - [`djangoflow_remote_config` - `v0.1.0+1`](#djangoflow_remote_config---v0101)
+
+Packages with dependency updates only:
+
+> Packages listed below depend on other packages in this workspace that have had changes. Their versions have been incremented to bump the minimum dependency versions of the packages they depend upon in this project.
+
+ - `djangoflow_remote_config` - `v0.1.0+1`
+
+---
+
+#### `djangoflow_openapi_extensions` - `v0.0.3+4`
+
+ - **REFACTOR**: update dependencies to the last. ([259625c4](https://github.com/djangoflow/flutter-djangoflow/commit/259625c42e73bbaaaff8da7a9a03b372d6cf81b1))
+
+
+## 2024-07-30
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
  - [`djangoflow_analytics` - `v0.1.0`](#djangoflow_analytics---v010)
  - [`djangoflow_app` - `v5.0.0`](#djangoflow_app---v500)
  - [`djangoflow_auth` - `v0.6.0`](#djangoflow_auth---v060)
