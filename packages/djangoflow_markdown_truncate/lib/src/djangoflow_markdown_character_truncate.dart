@@ -28,89 +28,6 @@ class DjangoflowMarkdownCharacterTruncate extends BaseMarkdownTruncate {
 
   final int? maxCharacters;
 
-  Widget buildRichTextFromTextWidgets(List<Text> textWidgets) {
-    final spans = <InlineSpan>[];
-    var totalCharacters = 0;
-
-    for (final textWidget in textWidgets) {
-      final span = textWidget.textSpan;
-      if (span != null && span is TextSpan) {
-        final trimmedTextSpan = _trimTextSpan(span, totalCharacters);
-        spans.add(trimmedTextSpan);
-        totalCharacters += _getTextSpanCharacterCount(trimmedTextSpan);
-        if (maxCharacters != null && totalCharacters >= maxCharacters!) {
-          break;
-        }
-      } else if (textWidget.data != null) {
-        final trimmedText = textWidget.data!.replaceAll('\n', ' ').trimRight();
-        final textSpan = TextSpan(text: trimmedText, style: textWidget.style);
-        totalCharacters += trimmedText.length;
-        if (maxCharacters != null && totalCharacters >= maxCharacters!) {
-          final truncatedText = trimmedText.substring(
-            0,
-            trimmedText.length - (totalCharacters - maxCharacters!),
-          );
-          spans.add(TextSpan(text: truncatedText, style: textWidget.style));
-          spans.addAll(buildReadMoreSpan(styleSheet?.p, styleSheet?.a));
-          break;
-        }
-        spans.add(textSpan);
-      }
-    }
-
-    // Check if we need to append "Read more" at the end
-    if (totalCharacters >= maxCharacters!) {
-      spans.addAll(buildReadMoreSpan(styleSheet?.p, styleSheet?.a));
-    }
-
-    return RichText(
-      text: TextSpan(children: spans),
-      textAlign: TextAlign.start,
-      softWrap: true,
-    );
-  }
-
-  TextSpan _trimTextSpan(TextSpan textSpan, int totalCharacters) {
-    int localTotalCharacters = totalCharacters;
-
-    if (maxCharacters == null) {
-      return textSpan;
-    }
-
-    final currentTextLength = textSpan.text?.length ?? 0;
-    if (localTotalCharacters + currentTextLength > maxCharacters!) {
-      final remainingCharacters = maxCharacters! - localTotalCharacters;
-      return TextSpan(
-        text: textSpan.text?.substring(0, remainingCharacters) ?? '',
-        style: textSpan.style,
-      );
-    }
-
-    if (textSpan.children != null && textSpan.children!.isNotEmpty) {
-      final trimmedChildren = <InlineSpan>[];
-      for (final span in textSpan.children!) {
-        if (localTotalCharacters >= maxCharacters!) {
-          break;
-        }
-        if (span is TextSpan) {
-          final trimmedChild = _trimTextSpan(span, localTotalCharacters);
-          localTotalCharacters += _getTextSpanCharacterCount(trimmedChild);
-          trimmedChildren.add(trimmedChild);
-        } else {
-          trimmedChildren.add(span);
-        }
-      }
-
-      return TextSpan(
-        text: textSpan.text,
-        style: textSpan.style,
-        children: trimmedChildren,
-      );
-    } else {
-      return textSpan;
-    }
-  }
-
   @override
   Widget build(BuildContext context, List<Widget>? children) {
     if (maxCharacters == null) {
@@ -129,7 +46,10 @@ class DjangoflowMarkdownCharacterTruncate extends BaseMarkdownTruncate {
   }
 
   List<Widget> _truncateWidgets(
-      List<Widget> widgets, int maxCharacters, int initialCharacterCount) {
+    List<Widget> widgets,
+    int maxCharacters,
+    int initialCharacterCount,
+  ) {
     final truncatedWidgets = <Widget>[];
     var characterCount = initialCharacterCount;
 
@@ -210,11 +130,11 @@ class DjangoflowMarkdownCharacterTruncate extends BaseMarkdownTruncate {
 
         if (characterCount >= maxCharacters) {
           print('Crossed Limit $characterCount >= $maxCharacters');
-          truncatedWidgets.addAll(truncatedChildren);
+          truncatedWidgets.add(truncatedWidget);
 
           break;
         } else {
-          truncatedWidgets.add(truncatedWidget);
+          truncatedWidgets.add(widget);
         }
       } else {
         truncatedWidgets.add(widget);
@@ -222,7 +142,14 @@ class DjangoflowMarkdownCharacterTruncate extends BaseMarkdownTruncate {
 
       if (characterCount >= maxCharacters) {
         print(characterCount);
-        truncatedWidgets.add(Text('... [Read more]', style: styleSheet?.a));
+
+        truncatedWidgets.add(
+          Text.rich(
+            TextSpan(
+              children: buildReadMoreSpan(styleSheet?.p, styleSheet?.a),
+            ),
+          ),
+        );
         break;
       }
     }
@@ -346,8 +273,10 @@ class DjangoflowMarkdownCharacterTruncate extends BaseMarkdownTruncate {
 
       for (final child in children) {
         if (child is TextSpan) {
-          final truncatedChild = _truncateTextSpan(child,
-              remainingCharacters - text.length - childrenCharacterCount);
+          final truncatedChild = _truncateTextSpan(
+            child,
+            remainingCharacters - text.length - childrenCharacterCount,
+          );
           truncatedChildren.add(truncatedChild);
           childrenCharacterCount += _getTextSpanCharacterCount(truncatedChild);
         } else {
@@ -403,16 +332,33 @@ class DjangoflowMarkdownCharacterTruncate extends BaseMarkdownTruncate {
 
   int _getCharacterCount(List<Widget> widgets) {
     var count = 0;
+
     for (final widget in widgets) {
       if (widget is Text) {
+        // Count characters in Text widgets
         final textSpan = widget.textSpan;
         if (textSpan != null && textSpan is TextSpan) {
           count += _getTextSpanCharacterCount(textSpan);
         } else {
           count += widget.data?.length ?? 0;
         }
+      } else if (_hasChildren(widget)) {
+        // Recursively count characters in child widgets
+        final children = _getChildren(widget);
+        count += _getCharacterCount(children);
       }
     }
+
     return count;
   }
+
+  bool _hasChildren(Widget widget) =>
+      widget is Wrap ||
+      widget is Column ||
+      widget is Row ||
+      widget is SizedBox ||
+      widget is Flexible ||
+      widget is Expanded ||
+      widget is Padding ||
+      widget is Container;
 }
