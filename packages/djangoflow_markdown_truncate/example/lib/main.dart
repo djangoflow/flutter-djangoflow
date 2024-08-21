@@ -21,11 +21,6 @@ class MyApp extends StatelessWidget {
 
 class HomePage extends StatelessWidget {
   final String markdownSample = '''
-# Flutter Markdown Truncate Example
-
-This is an example of a Markdown content that supports both **maxCharacters** and **maxLines** truncation.
-
-### Features
 - **Bold text** is preserved.
 - _Italic text_ is preserved.
 - Links like [Google](https://google.com) are also preserved.
@@ -63,7 +58,7 @@ Try to truncate this text by setting different values for **maxCharacters** or *
               SizedBox(height: 10),
               DjangoflowMarkdownCharacterTruncate(
                 data: markdownSample,
-                maxCharacters: 100,
+                maxCharacters: 2,
                 styleSheet: MarkdownStyleSheet.fromTheme(Theme.of(context)),
                 onReadMoreTapped: () {
                   ScaffoldMessenger.of(context).showSnackBar(
