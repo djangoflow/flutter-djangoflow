@@ -214,7 +214,7 @@ class DjangoflowMarkdownCharacterTruncate extends BaseMarkdownTruncate {
 
           break;
         } else {
-          truncatedWidgets.addAll(truncatedChildren);
+          truncatedWidgets.add(truncatedWidget);
         }
       } else {
         truncatedWidgets.add(widget);
