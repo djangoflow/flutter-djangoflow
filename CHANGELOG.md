@@ -15,6 +15,27 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`djangoflow_markdown_truncate` - `v0.0.2+1`](#djangoflow_markdown_truncate---v0021)
+
+---
+
+#### `djangoflow_markdown_truncate` - `v0.0.2+1`
+
+ - **FIX**: return the truncatedChildren using super.build. ([d8cf77b2](https://github.com/djangoflow/flutter-djangoflow/commit/d8cf77b25f8286c9e2002d69021d840228560600))
+
+
+## 2024-08-22
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`djangoflow_markdown_truncate` - `v0.0.2`](#djangoflow_markdown_truncate---v002)
 
 ---

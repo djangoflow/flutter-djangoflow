@@ -1,3 +1,7 @@
+## 0.0.2+1
+
+ - **FIX**: return the truncatedChildren using super.build. ([d8cf77b2](https://github.com/djangoflow/flutter-djangoflow/commit/d8cf77b25f8286c9e2002d69021d840228560600))
+
 ## 0.0.2
 
  - **REFACTOR**: add simplified max line support. ([242da8a2](https://github.com/djangoflow/flutter-djangoflow/commit/242da8a2c334363c4b9385f5e26cf66dfc34b986))
