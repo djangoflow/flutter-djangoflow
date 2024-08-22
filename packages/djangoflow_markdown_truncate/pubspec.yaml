@@ -1,0 +1,18 @@
+name: djangoflow_markdown_truncate
+description: "A Flutter package to elegantly truncate Markdown content with support for character and line limits."
+version: 0.0.1
+homepage: https://github.com/djangoflow/flutter-djangoflow/tree/main/packages/djangoflow_markdown_truncate
+
+environment:
+  sdk: ">=3.4.4 <4.0.0"
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_markdown: ^0.7.3+1
+
+dev_dependencies:
+  flutter_lints: ^3.0.0
+  flutter_test:
+    sdk: flutter
