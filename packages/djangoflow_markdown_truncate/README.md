@@ -25,6 +25,14 @@
 - **Read More Integration**: Append a "Read more" link when the content is truncated.
 - **Style Preservation**: Maintain Markdown styling even after truncation.
 
+## 📱 Demo
+
+Here's how the `djangoflow_markdown_truncate` package looks in action on an iPhone simulator:
+
+<div align="center">
+  <img src="demo/screenshot.png" alt="Screenshot of djangoflow_markdown_truncate on iPhone Simulator" width="300">
+</div>
+
 ## 📦 Installation
 
 To add `djangoflow_markdown_truncate` to your Flutter project, add the following line to your `pubspec.yaml`:

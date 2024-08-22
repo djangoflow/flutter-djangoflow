@@ -21,12 +21,12 @@ class MyApp extends StatelessWidget {
 
 class HomePage extends StatelessWidget {
   final String markdownSample = '''
-- **Bold text** is preserved.
-- _Italic text_ is preserved.
-- Links like [Google](https://google.com) are also preserved.
-- Code snippets: `flutter create .`
-
-Try to truncate this text by setting different values for **maxCharacters** or **maxLines**.
+# h1 Heading 8-)
+## h2 Heading
+### h3 Heading
+#### h4 Heading
+##### h5 Heading
+###### h6 Heading
   ''';
 
   @override
@@ -52,13 +52,13 @@ Try to truncate this text by setting different values for **maxCharacters** or *
               ),
               const Divider(),
               Text(
-                'Character-based Truncation (max 100 characters)',
+                'Character-based Truncation (max 40 characters)',
                 style: Theme.of(context).textTheme.titleMedium,
               ),
               const SizedBox(height: 10),
               DjangoflowMarkdownCharacterTruncate(
                 data: markdownSample,
-                maxCharacters: 100,
+                maxCharacters: 40,
                 styleSheet: MarkdownStyleSheet.fromTheme(Theme.of(context)),
                 onReadMoreTapped: () {
                   ScaffoldMessenger.of(context).showSnackBar(
@@ -68,7 +68,7 @@ Try to truncate this text by setting different values for **maxCharacters** or *
               ),
               const Divider(),
               Text(
-                'Line-based Truncation (max 3 lines)',
+                'Line-based Truncation (max 1 lines)',
                 style: Theme.of(context).textTheme.titleMedium,
               ),
               const SizedBox(height: 10),
