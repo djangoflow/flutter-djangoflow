@@ -38,6 +38,7 @@ class DjangoflowMarkdownCharacterTruncate extends BaseMarkdownTruncate {
     }
 
     final truncatedChildren = _truncateWidgets(children!, maxCharacters!, 0);
+    // find ReadMoreWidget type in the nested widget tree and replace with with it's readMoreSpan
 
     return ListView(
       shrinkWrap: shrinkWrap,
@@ -79,7 +80,6 @@ class DjangoflowMarkdownCharacterTruncate extends BaseMarkdownTruncate {
             ),
           );
         } else {
-          print('Text: ${textSpan.runtimeType}');
           final text = widget.data ?? '';
           final remainingCharacters = maxCharacters - characterCount;
 
@@ -119,7 +119,6 @@ class DjangoflowMarkdownCharacterTruncate extends BaseMarkdownTruncate {
           widget is Expanded ||
           widget is Padding ||
           widget is Container) {
-        print(widget.runtimeType);
         final children = _getChildren(widget);
 
         final truncatedChildren =
@@ -129,7 +128,6 @@ class DjangoflowMarkdownCharacterTruncate extends BaseMarkdownTruncate {
             _createTruncatedWidget(widget, truncatedChildren);
 
         if (characterCount >= maxCharacters) {
-          print('Crossed Limit $characterCount >= $maxCharacters');
           truncatedWidgets.add(truncatedWidget);
 
           break;
@@ -141,8 +139,6 @@ class DjangoflowMarkdownCharacterTruncate extends BaseMarkdownTruncate {
       }
 
       if (characterCount >= maxCharacters) {
-        print(characterCount);
-
         truncatedWidgets.add(
           Text.rich(
             TextSpan(
@@ -158,6 +154,16 @@ class DjangoflowMarkdownCharacterTruncate extends BaseMarkdownTruncate {
   }
 
   Widget _createTruncatedWidget(Widget widget, List<Widget> truncatedChildren) {
+    final effectiveChildrenAsChild = truncatedChildren.length > 1
+        // Wrap with Stack to avoid overflow error in case of multiple children
+        ? Stack(clipBehavior: Clip.none, children: [
+            Row(
+              children: truncatedChildren,
+            ),
+          ])
+        : truncatedChildren.isNotEmpty
+            ? truncatedChildren.first
+            : const SizedBox();
     if (widget is Wrap) {
       return Wrap(
         key: widget.key,
@@ -199,30 +205,26 @@ class DjangoflowMarkdownCharacterTruncate extends BaseMarkdownTruncate {
         key: widget.key,
         width: widget.width,
         height: widget.height,
-        child: truncatedChildren.isNotEmpty ? truncatedChildren.first : null,
+        child: effectiveChildrenAsChild,
       );
     } else if (widget is Flexible) {
       return Flexible(
         key: widget.key,
         flex: widget.flex,
         fit: widget.fit,
-        child: truncatedChildren.isNotEmpty
-            ? truncatedChildren.first
-            : const SizedBox(),
+        child: effectiveChildrenAsChild,
       );
     } else if (widget is Expanded) {
       return Expanded(
         key: widget.key,
         flex: widget.flex,
-        child: truncatedChildren.isNotEmpty
-            ? truncatedChildren.first
-            : const SizedBox(),
+        child: effectiveChildrenAsChild,
       );
     } else if (widget is Padding) {
       return Padding(
         key: widget.key,
         padding: widget.padding,
-        child: truncatedChildren.isNotEmpty ? truncatedChildren.first : null,
+        child: effectiveChildrenAsChild,
       );
     } else if (widget is Container) {
       return Container(
@@ -236,7 +238,7 @@ class DjangoflowMarkdownCharacterTruncate extends BaseMarkdownTruncate {
         margin: widget.margin,
         transform: widget.transform,
         transformAlignment: widget.transformAlignment,
-        child: truncatedChildren.isNotEmpty ? truncatedChildren.first : null,
+        child: effectiveChildrenAsChild,
       );
     }
     return widget; // Return the original widget if no specific handling is needed
