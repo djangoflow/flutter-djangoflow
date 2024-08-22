@@ -54,15 +54,16 @@ abstract class BaseMarkdownTruncate extends MarkdownWidget {
   ) =>
       [
         TextSpan(text: '... ', style: defaultStyle),
-        TextSpan(
-          text: '[Read more]',
-          style: anchorStyle,
-          recognizer: TapGestureRecognizer()
-            ..onTap = () {
-              if (onReadMoreTapped != null) {
-                onReadMoreTapped!();
-              }
-            },
-        ),
+        if (onReadMoreTapped != null)
+          TextSpan(
+            text: '[Read more]',
+            style: anchorStyle,
+            recognizer: TapGestureRecognizer()
+              ..onTap = () {
+                if (onReadMoreTapped != null) {
+                  onReadMoreTapped!();
+                }
+              },
+          ),
       ];
 }
