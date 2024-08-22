@@ -33,7 +33,7 @@ Try to truncate this text by setting different values for **maxCharacters** or *
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Djangoflow Markdown Truncate Example'),
+        title: const Text('Djangoflow Markdown Truncate Example'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -45,40 +45,40 @@ Try to truncate this text by setting different values for **maxCharacters** or *
                 'Default MarkdownBody (No Truncation)',
                 style: Theme.of(context).textTheme.titleMedium,
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               MarkdownBody(
                 data: markdownSample,
                 styleSheet: MarkdownStyleSheet.fromTheme(Theme.of(context)),
               ),
-              Divider(),
+              const Divider(),
               Text(
                 'Character-based Truncation (max 100 characters)',
                 style: Theme.of(context).textTheme.titleMedium,
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               DjangoflowMarkdownCharacterTruncate(
                 data: markdownSample,
-                maxCharacters: 2,
+                maxCharacters: 100,
                 styleSheet: MarkdownStyleSheet.fromTheme(Theme.of(context)),
                 onReadMoreTapped: () {
                   ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(content: Text('Read more tapped!')),
+                    const SnackBar(content: Text('Read more tapped!')),
                   );
                 },
               ),
-              Divider(),
+              const Divider(),
               Text(
                 'Line-based Truncation (max 3 lines)',
                 style: Theme.of(context).textTheme.titleMedium,
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               DjangoflowMarkdownLineTruncate(
                 data: markdownSample,
-                maxLines: 3,
+                maxLines: 10,
                 styleSheet: MarkdownStyleSheet.fromTheme(Theme.of(context)),
                 onReadMoreTapped: () {
                   ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(content: Text('Read more tapped!')),
+                    const SnackBar(content: Text('Read more tapped!')),
                   );
                 },
               ),
