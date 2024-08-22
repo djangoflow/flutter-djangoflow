@@ -74,13 +74,8 @@ Try to truncate this text by setting different values for **maxCharacters** or *
               const SizedBox(height: 10),
               DjangoflowMarkdownLineTruncate(
                 data: markdownSample,
-                maxLines: 10,
+                maxLines: 1,
                 styleSheet: MarkdownStyleSheet.fromTheme(Theme.of(context)),
-                onReadMoreTapped: () {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(content: Text('Read more tapped!')),
-                  );
-                },
               ),
             ],
           ),
