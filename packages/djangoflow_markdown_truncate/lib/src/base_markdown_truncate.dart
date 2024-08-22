@@ -2,13 +2,13 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 
-abstract class BaseMarkdownTruncate extends MarkdownWidget {
+abstract class BaseMarkdownTruncate extends MarkdownBody {
   const BaseMarkdownTruncate({
     required super.data,
     super.key,
     super.selectable,
     super.styleSheet,
-    super.styleSheetTheme = null,
+    super.styleSheetTheme,
     super.syntaxHighlighter,
     super.onTapLink,
     super.onTapText,

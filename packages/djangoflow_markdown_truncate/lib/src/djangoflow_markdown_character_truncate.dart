@@ -44,10 +44,7 @@ class DjangoflowMarkdownCharacterTruncate extends BaseMarkdownTruncate {
   @override
   Widget build(BuildContext context, List<Widget>? children) {
     if (maxCharacters == null) {
-      return ListView(
-        shrinkWrap: shrinkWrap,
-        children: children!,
-      );
+      return super.build(context, children);
     }
 
     final truncatedChildren = _truncateWidgets(children!, maxCharacters!, 0);
