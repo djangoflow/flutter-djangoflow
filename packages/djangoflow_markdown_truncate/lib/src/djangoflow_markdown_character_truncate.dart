@@ -2,6 +2,19 @@ import 'package:flutter/material.dart';
 
 import 'package:djangoflow_markdown_truncate/src/base_markdown_truncate.dart';
 
+/// generate docs
+///
+/// This widget truncates the markdown content based on the number of characters.
+/// If the content exceeds the specified number of characters, the content is truncated and a "Read more" link is displayed.
+/// The "Read more" link is clickable and triggers the [onReadMoreTapped] callback.
+/// The [maxCharacters] parameter specifies the maximum number of characters to display.
+/// If the [maxCharacters] parameter is null, the content is displayed without truncation.
+/// The [shrinkWrap] parameter specifies whether the widget should shrink-wrap its content.
+/// If the [shrinkWrap] parameter is true, the widget will be wrapped in a [ListView] with [shrinkWrap] set to true.
+/// If the [shrinkWrap] parameter is false, the widget will be wrapped in a [Column] with [shrinkWrap] set to false.
+/// The [onReadMoreTapped] callback is triggered when the "Read more" link is tapped.
+/// The [onReadMoreTapped] callback is optional.
+/// The rest of the parameters are the same as the [MarkdownBody] widget.
 class DjangoflowMarkdownCharacterTruncate extends BaseMarkdownTruncate {
   const DjangoflowMarkdownCharacterTruncate({
     required super.data,
@@ -38,7 +51,6 @@ class DjangoflowMarkdownCharacterTruncate extends BaseMarkdownTruncate {
     }
 
     final truncatedChildren = _truncateWidgets(children!, maxCharacters!, 0);
-    // find ReadMoreWidget type in the nested widget tree and replace with with it's readMoreSpan
 
     return ListView(
       shrinkWrap: shrinkWrap,
@@ -46,6 +58,19 @@ class DjangoflowMarkdownCharacterTruncate extends BaseMarkdownTruncate {
     );
   }
 
+  /// Truncates a list of widgets to ensure the total character count does not exceed a specified maximum.
+  ///
+  /// This function processes each widget in the provided list. If the widget is a [Text] widget, it truncates
+  /// the text content to fit within the remaining character limit. For other types of widgets, it recursively
+  /// processes their children if applicable.
+  ///
+  /// If the character count exceeds the maximum allowed characters, a "Read More" text span is added at the end.
+  ///
+  /// [widgets] - The list of widgets to be truncated.
+  /// [maxCharacters] - The maximum allowed character count.
+  /// [initialCharacterCount] - The initial character count to start with.
+  ///
+  /// Returns a list of truncated widgets.
   List<Widget> _truncateWidgets(
     List<Widget> widgets,
     int maxCharacters,
@@ -153,6 +178,27 @@ class DjangoflowMarkdownCharacterTruncate extends BaseMarkdownTruncate {
     return truncatedWidgets;
   }
 
+  /// Creates a widget that truncates its children based on the type of the provided widget.
+  ///
+  /// This method checks the type of the given [widget] and returns a new widget
+  /// that wraps the [truncatedChildren] appropriately. If the [widget] is a
+  /// [Wrap], [Column], [Row], [SizedBox], [Flexible], [Expanded], [Padding],
+  /// or [Container], it constructs and returns a new instance of that widget
+  /// with the specified properties and the effective children as its child.
+  /// If the [widget] is not one of these types, it simply returns the original
+  /// widget.
+  ///
+  /// The [truncatedChildren] are wrapped in a [Stack] if there are multiple
+  /// children to avoid overflow errors. If there are no children, a
+  /// [SizedBox] is returned.
+  ///
+  /// Parameters:
+  /// - [widget]: The original widget to be wrapped or returned.
+  /// - [truncatedChildren]: A list of widgets that are to be displayed as children.
+  ///
+  /// Returns:
+  /// A new widget that contains the truncated children or the original widget
+  /// if no specific handling is needed.
   Widget _createTruncatedWidget(Widget widget, List<Widget> truncatedChildren) {
     final effectiveChildrenAsChild = truncatedChildren.length > 1
         // Wrap with Stack to avoid overflow error in case of multiple children
