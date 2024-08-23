@@ -169,6 +169,10 @@ class DjangoflowMarkdownCharacterTruncate extends BaseMarkdownTruncate {
       }
     }
 
+    if (_areAllTexts(truncatedWidgets)) {
+      return [_mergeAllTextWidgets(truncatedWidgets.cast<Text>())];
+    }
+
     return truncatedWidgets;
   }
 
@@ -196,11 +200,14 @@ class DjangoflowMarkdownCharacterTruncate extends BaseMarkdownTruncate {
   Widget _createTruncatedWidget(Widget widget, List<Widget> truncatedChildren) {
     final effectiveChildrenAsChild = truncatedChildren.length > 1
         // Wrap with Stack to avoid overflow error in case of multiple children
-        ? Stack(clipBehavior: Clip.none, children: [
-            Row(
-              children: truncatedChildren,
-            ),
-          ])
+        ? Stack(
+            clipBehavior: Clip.none,
+            children: [
+              Row(
+                children: truncatedChildren,
+              ),
+            ],
+          )
         : truncatedChildren.isNotEmpty
             ? truncatedChildren.first
             : const SizedBox();
@@ -305,6 +312,34 @@ class DjangoflowMarkdownCharacterTruncate extends BaseMarkdownTruncate {
     return [];
   }
 
+  Text _mergeAllTextWidgets(List<Widget> widgets) {
+    final spans = <TextSpan>[];
+
+    for (final widget in widgets) {
+      final textWidget = widget as Text;
+      final textSpan = textWidget.textSpan;
+      if (textSpan != null && textSpan is TextSpan) {
+        spans.add(textSpan);
+      } else {
+        final text = textWidget.data ?? '';
+        spans.add(
+          TextSpan(
+            text: text,
+            style: textWidget.style,
+            locale: textWidget.locale,
+            semanticsLabel: textWidget.semanticsLabel,
+          ),
+        );
+      }
+    }
+
+    return Text.rich(
+      TextSpan(
+        children: spans,
+      ),
+    );
+  }
+
   TextSpan _truncateTextSpan(TextSpan textSpan, int remainingCharacters) {
     final text = textSpan.text ?? '';
     final children = textSpan.children ?? [];
@@ -392,6 +427,15 @@ class DjangoflowMarkdownCharacterTruncate extends BaseMarkdownTruncate {
     }
 
     return count;
+  }
+
+  bool _areAllTexts(List<Widget> widgets) {
+    for (final widget in widgets) {
+      if (widget is! Text) {
+        return false;
+      }
+    }
+    return true;
   }
 
   bool _hasChildren(Widget widget) =>
