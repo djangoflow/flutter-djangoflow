@@ -20,12 +20,11 @@ abstract class BaseMarkdownTruncate extends MarkdownBody {
     super.checkboxBuilder,
     super.builders,
     super.listItemCrossAxisAlignment,
-    this.shrinkWrap = true,
-    super.fitContent = true,
+    super.shrinkWrap,
+    super.fitContent,
     this.onReadMoreTapped,
   });
 
-  final bool shrinkWrap;
   final VoidCallback? onReadMoreTapped;
 
   List<T> findWidgetsOfType<T>(Widget widget) {
