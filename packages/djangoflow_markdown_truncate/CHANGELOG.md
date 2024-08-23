@@ -1,3 +1,7 @@
+## 0.0.2+2
+
+ - **FIX**: when all truncated widgets are Text, merge them. ([f879f596](https://github.com/djangoflow/flutter-djangoflow/commit/f879f596dea0da341ccdf5f7779f43942f189b8c))
+
 ## 0.0.2+1
 
  - **FIX**: return the truncatedChildren using super.build. ([d8cf77b2](https://github.com/djangoflow/flutter-djangoflow/commit/d8cf77b25f8286c9e2002d69021d840228560600))

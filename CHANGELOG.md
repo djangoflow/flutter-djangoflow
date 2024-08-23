@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2024-08-23
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`djangoflow_markdown_truncate` - `v0.0.2+2`](#djangoflow_markdown_truncate---v0022)
+
+---
+
+#### `djangoflow_markdown_truncate` - `v0.0.2+2`
+
+ - **FIX**: when all truncated widgets are Text, merge them. ([f879f596](https://github.com/djangoflow/flutter-djangoflow/commit/f879f596dea0da341ccdf5f7779f43942f189b8c))
+
+
 ## 2024-08-22
 
 ### Changes
