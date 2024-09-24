@@ -24,8 +24,7 @@ mixin _$DjangoflowOdooAuthState {
   AuthStatus get status => throw _privateConstructorUsedError;
   String? get errorMessage => throw _privateConstructorUsedError;
   String? get baseUrl => throw _privateConstructorUsedError;
-  String? get database =>
-      throw _privateConstructorUsedError; // ignore: invalid_annotation_target
+  String? get database => throw _privateConstructorUsedError;
   @SessionConverter()
   OdooSession? get session => throw _privateConstructorUsedError;
 
@@ -185,7 +184,6 @@ class _$DjangoflowOdooAuthStateImpl implements _DjangoflowOdooAuthState {
   final String? baseUrl;
   @override
   final String? database;
-// ignore: invalid_annotation_target
   @override
   @SessionConverter()
   final OdooSession? session;
@@ -250,7 +248,7 @@ abstract class _DjangoflowOdooAuthState implements DjangoflowOdooAuthState {
   @override
   String? get baseUrl;
   @override
-  String? get database; // ignore: invalid_annotation_target
+  String? get database;
   @override
   @SessionConverter()
   OdooSession? get session;
