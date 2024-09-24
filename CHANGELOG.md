@@ -15,6 +15,38 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`djangoflow_odoo_auth` - `v0.0.2+1`](#djangoflow_odoo_auth---v0021)
+ - [`djangoflow_sync_drift_odoo` - `v0.0.2+1`](#djangoflow_sync_drift_odoo---v0021)
+ - [`djangoflow_sync_foundation` - `v0.0.2+1`](#djangoflow_sync_foundation---v0021)
+
+---
+
+#### `djangoflow_odoo_auth` - `v0.0.2+1`
+
+ - **REFACTOR**: update generated file. ([d794cec0](https://github.com/djangoflow/flutter-djangoflow/commit/d794cec0e2dd1bee338b0e336f0c53bd5993d73c))
+ - **DOCS**: update LICENSES. ([432d791f](https://github.com/djangoflow/flutter-djangoflow/commit/432d791f1dfebb746270f99d37a950beef0260d6))
+
+#### `djangoflow_sync_drift_odoo` - `v0.0.2+1`
+
+ - **DOCS**: update LICENSES. ([432d791f](https://github.com/djangoflow/flutter-djangoflow/commit/432d791f1dfebb746270f99d37a950beef0260d6))
+
+#### `djangoflow_sync_foundation` - `v0.0.2+1`
+
+ - **DOCS**: update LICENSES. ([432d791f](https://github.com/djangoflow/flutter-djangoflow/commit/432d791f1dfebb746270f99d37a950beef0260d6))
+
+
+## 2024-09-24
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`djangoflow_odoo_auth` - `v0.0.2`](#djangoflow_odoo_auth---v002)
  - [`djangoflow_sync_drift_odoo` - `v0.0.2`](#djangoflow_sync_drift_odoo---v002)
  - [`djangoflow_sync_foundation` - `v0.0.2`](#djangoflow_sync_foundation---v002)
