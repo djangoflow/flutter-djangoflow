@@ -1,3 +1,11 @@
+## 3.0.0
+
+> Note: This release has breaking changes.
+
+ - **REFACTOR**: update sdk constraints. ([a27a072f](https://github.com/djangoflow/flutter-djangoflow/commit/a27a072f78894be71ea973618e78b7ec6ae19742))
+ - **REFACTOR**: update app_links version and flutter_bloc dependency. ([564ae0bd](https://github.com/djangoflow/flutter-djangoflow/commit/564ae0bda768c97605023bf1c3df3f9605ea0810))
+ - **BREAKING** **REFACTOR**: update example. ([cad47a85](https://github.com/djangoflow/flutter-djangoflow/commit/cad47a8564052b2c284810728fc61893c8caf30e))
+
 ## 2.0.2
 
  - Update a dependency to the latest release.

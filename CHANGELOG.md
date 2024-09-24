@@ -11,6 +11,29 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 Packages with breaking changes:
 
+ - [`djangoflow_app_links` - `v3.0.0`](#djangoflow_app_links---v300)
+
+Packages with other changes:
+
+ - There are no other changes in this release.
+
+---
+
+#### `djangoflow_app_links` - `v3.0.0`
+
+ - **REFACTOR**: update sdk constraints. ([a27a072f](https://github.com/djangoflow/flutter-djangoflow/commit/a27a072f78894be71ea973618e78b7ec6ae19742))
+ - **REFACTOR**: update app_links version and flutter_bloc dependency. ([564ae0bd](https://github.com/djangoflow/flutter-djangoflow/commit/564ae0bda768c97605023bf1c3df3f9605ea0810))
+ - **BREAKING** **REFACTOR**: update example. ([cad47a85](https://github.com/djangoflow/flutter-djangoflow/commit/cad47a8564052b2c284810728fc61893c8caf30e))
+
+
+## 2024-09-24
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
  - There are no breaking changes in this release.
 
 Packages with other changes:
