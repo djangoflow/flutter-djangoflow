@@ -1,5 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:provider/provider.dart';
 
 typedef AppBuilderStateCallBack = Function(BuildContext context);
 
@@ -10,6 +11,7 @@ class AppBuilder extends StatelessWidget {
     super.key,
     this.blocListeners,
     this.repositoryProviders,
+    this.providers,
     this.onInitState,
     this.onDispose,
   });
@@ -19,8 +21,12 @@ class AppBuilder extends StatelessWidget {
 
   /// Global blocListeners
   final List<BlocListener>? blocListeners;
-  // Global repository blocProviders
+
+  /// Global repository blocProviders
   final List<RepositoryProvider>? repositoryProviders;
+
+  /// Global providers for other types of providers (e.g., ChangeNotifierProvider, etc.)
+  final List<Provider>? providers;
 
   final AppBuilderStateCallBack? onInitState;
   final AppBuilderStateCallBack? onDispose;
@@ -30,7 +36,7 @@ class AppBuilder extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final child = MultiBlocProvider(
+    final appContent = MultiBlocProvider(
       providers: blocProviders,
       // to provide current context where initState/dispose can access the blocProviders.
       child: _AppBuilderStateProvider(
@@ -45,12 +51,19 @@ class AppBuilder extends StatelessWidget {
       ),
     );
 
-    if (repositoryProviders == null) {
-      return child;
+    Widget contentWithRepositories = repositoryProviders == null
+        ? appContent
+        : MultiRepositoryProvider(
+            providers: repositoryProviders!,
+            child: appContent,
+          );
+
+    if (providers == null || providers!.isEmpty) {
+      return contentWithRepositories;
     } else {
-      return MultiRepositoryProvider(
-        providers: repositoryProviders!,
-        child: child,
+      return MultiProvider(
+        providers: providers!,
+        child: contentWithRepositories,
       );
     }
   }
@@ -63,10 +76,12 @@ class _AppBuilderStateProvider extends StatefulWidget {
     this.onDispose,
   });
 
-  /// [WidgetBuilder] is a Flutter framework's callback signature
   final AppBuilderStateCallBack? onInitState;
   final AppBuilderStateCallBack? onDispose;
+
+  /// [WidgetBuilder] is a Flutter framework's callback signature
   final WidgetBuilder builder;
+
   @override
   State<_AppBuilderStateProvider> createState() =>
       __AppBuilderStateProviderState();
