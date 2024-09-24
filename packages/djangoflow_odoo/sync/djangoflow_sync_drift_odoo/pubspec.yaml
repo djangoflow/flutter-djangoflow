@@ -1,0 +1,23 @@
+name: djangoflow_sync_drift_odoo
+description: "Odoo Sync package for Flutter using Drift"
+version: 0.0.1
+homepage: https://github.com/djangoflow/flutter-djangoflow/tree/main/packages/djangoflow_odoo/sync/djangoflow_sync_drift_odoo
+
+environment:
+  sdk: ^3.5.3
+  flutter: ">=1.17.0"
+
+dependencies:
+  djangoflow_sync_foundation: ^0.0.1
+  drift: ^2.20.2
+  flutter:
+    sdk: flutter
+  odoo_rpc: ^0.5.1
+  recase: ^4.1.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+  drift_dev: ^2.20.3
+  build_runner: ^2.4.12
