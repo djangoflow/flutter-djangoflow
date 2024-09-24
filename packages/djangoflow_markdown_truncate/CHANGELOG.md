@@ -1,3 +1,7 @@
+## 0.0.2+3
+
+ - **REFACTOR**: update params. ([38dbff73](https://github.com/djangoflow/flutter-djangoflow/commit/38dbff732945e551e570ac5631740ba069b573db))
+
 ## 0.0.2+2
 
  - **FIX**: when all truncated widgets are Text, merge them. ([f879f596](https://github.com/djangoflow/flutter-djangoflow/commit/f879f596dea0da341ccdf5f7779f43942f189b8c))

@@ -3,6 +3,33 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2024-09-24
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`djangoflow_app` - `v5.0.1`](#djangoflow_app---v501)
+ - [`djangoflow_markdown_truncate` - `v0.0.2+3`](#djangoflow_markdown_truncate---v0023)
+
+---
+
+#### `djangoflow_app` - `v5.0.1`
+
+ - **REFACTOR**: update params and add providers in AppBuilder. ([970e8558](https://github.com/djangoflow/flutter-djangoflow/commit/970e8558f72a631373231f18bb25724b6a7b8473))
+ - **REFACTOR**: update params and rename variables in AppBuilder. ([d3c82cee](https://github.com/djangoflow/flutter-djangoflow/commit/d3c82ceed3f06c117c105787c1bc683dcdbdf2bf))
+
+#### `djangoflow_markdown_truncate` - `v0.0.2+3`
+
+ - **REFACTOR**: update params. ([38dbff73](https://github.com/djangoflow/flutter-djangoflow/commit/38dbff732945e551e570ac5631740ba069b573db))
+
+
 ## 2024-08-23
 
 ### Changes

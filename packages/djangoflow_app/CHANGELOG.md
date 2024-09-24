@@ -1,3 +1,8 @@
+## 5.0.1
+
+ - **REFACTOR**: update params and add providers in AppBuilder. ([970e8558](https://github.com/djangoflow/flutter-djangoflow/commit/970e8558f72a631373231f18bb25724b6a7b8473))
+ - **REFACTOR**: update params and rename variables in AppBuilder. ([d3c82cee](https://github.com/djangoflow/flutter-djangoflow/commit/d3c82ceed3f06c117c105787c1bc683dcdbdf2bf))
+
 ## 5.0.0
 
 > Note: This release has breaking changes.
