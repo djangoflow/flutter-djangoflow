@@ -5,21 +5,21 @@ typedef AppBuilderStateCallBack = Function(BuildContext context);
 
 class AppBuilder extends StatelessWidget {
   const AppBuilder({
-    required this.providers,
+    required this.blocProviders,
     required this.builder,
     super.key,
-    this.listeners,
+    this.blocListeners,
     this.repositoryProviders,
     this.onInitState,
     this.onDispose,
   });
 
-  /// Global providers
-  final List<BlocProvider> providers;
+  /// Global blocProviders
+  final List<BlocProvider> blocProviders;
 
-  /// Global listeners
-  final List<BlocListener>? listeners;
-  // Global repository providers
+  /// Global blocListeners
+  final List<BlocListener>? blocListeners;
+  // Global repository blocProviders
   final List<RepositoryProvider>? repositoryProviders;
 
   final AppBuilderStateCallBack? onInitState;
@@ -31,15 +31,15 @@ class AppBuilder extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final child = MultiBlocProvider(
-      providers: providers,
-      // to provide current context where initState/dispose can access the providers.
+      providers: blocProviders,
+      // to provide current context where initState/dispose can access the blocProviders.
       child: _AppBuilderStateProvider(
         onInitState: onInitState,
         onDispose: onDispose,
-        builder: (context) => listeners == null
+        builder: (context) => blocListeners == null
             ? builder(context)
             : MultiBlocListener(
-                listeners: listeners!,
+                listeners: blocListeners!,
                 child: builder(context),
               ),
       ),
