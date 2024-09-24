@@ -1,6 +1,7 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
+import 'package:provider/single_child_widget.dart';
 
 typedef AppBuilderStateCallBack = Function(BuildContext context);
 
@@ -26,7 +27,7 @@ class AppBuilder extends StatelessWidget {
   final List<RepositoryProvider>? repositoryProviders;
 
   /// Global providers for other types of providers (e.g., ChangeNotifierProvider, etc.)
-  final List<Provider>? providers;
+  final List<SingleChildWidget>? providers;
 
   final AppBuilderStateCallBack? onInitState;
   final AppBuilderStateCallBack? onDispose;
