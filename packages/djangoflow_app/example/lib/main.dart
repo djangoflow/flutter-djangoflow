@@ -9,10 +9,10 @@ void main() {
     },
     rootWidgetBuilder: (builder) => builder(
       AppBuilder(
-        providers: [
+        blocProviders: [
           BlocProvider<AppCubit>(create: (context) => AppCubit.instance),
         ],
-        listeners: [
+        blocListeners: [
           BlocListener<AppCubit, AppState>(
             listenWhen: (previous, current) =>
                 previous.environment != current.environment,
