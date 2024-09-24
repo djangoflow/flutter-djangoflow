@@ -1,3 +1,7 @@
+## 5.0.2
+
+ - **REFACTOR**: update params and add SingleChildWidget import in AppBuilder. ([2ae11e1e](https://github.com/djangoflow/flutter-djangoflow/commit/2ae11e1e99d03bf99734c45b8d2ba729c502b974))
+
 ## 5.0.1
 
  - **REFACTOR**: update params and add providers in AppBuilder. ([970e8558](https://github.com/djangoflow/flutter-djangoflow/commit/970e8558f72a631373231f18bb25724b6a7b8473))

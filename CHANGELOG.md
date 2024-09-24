@@ -15,6 +15,27 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`djangoflow_app` - `v5.0.2`](#djangoflow_app---v502)
+
+---
+
+#### `djangoflow_app` - `v5.0.2`
+
+ - **REFACTOR**: update params and add SingleChildWidget import in AppBuilder. ([2ae11e1e](https://github.com/djangoflow/flutter-djangoflow/commit/2ae11e1e99d03bf99734c45b8d2ba729c502b974))
+
+
+## 2024-09-24
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`djangoflow_app` - `v5.0.1`](#djangoflow_app---v501)
  - [`djangoflow_markdown_truncate` - `v0.0.2+3`](#djangoflow_markdown_truncate---v0023)
 
