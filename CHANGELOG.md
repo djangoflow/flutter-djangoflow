@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2024-09-26
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`djangoflow_odoo_auth` - `v0.0.2+2`](#djangoflow_odoo_auth---v0022)
+
+---
+
+#### `djangoflow_odoo_auth` - `v0.0.2+2`
+
+ - **REFACTOR**: update djangoflow_odoo_auth_cubit.dart imports and emit statements. ([93fcaa78](https://github.com/djangoflow/flutter-djangoflow/commit/93fcaa78c9a4acb28976e7889d5e97ccd855fd52))
+ - **REFACTOR**: update djangoflow_odoo_auth_repository.dart. ([ef782425](https://github.com/djangoflow/flutter-djangoflow/commit/ef78242518d9c22241156b707c5407e4ba01a26e))
+
+
 ## 2024-09-24
 
 ### Changes

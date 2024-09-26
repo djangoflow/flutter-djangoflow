@@ -1,3 +1,8 @@
+## 0.0.2+2
+
+ - **REFACTOR**: update djangoflow_odoo_auth_cubit.dart imports and emit statements. ([93fcaa78](https://github.com/djangoflow/flutter-djangoflow/commit/93fcaa78c9a4acb28976e7889d5e97ccd855fd52))
+ - **REFACTOR**: update djangoflow_odoo_auth_repository.dart. ([ef782425](https://github.com/djangoflow/flutter-djangoflow/commit/ef78242518d9c22241156b707c5407e4ba01a26e))
+
 ## 0.0.2+1
 
  - **REFACTOR**: update generated file. ([d794cec0](https://github.com/djangoflow/flutter-djangoflow/commit/d794cec0e2dd1bee338b0e336f0c53bd5993d73c))
