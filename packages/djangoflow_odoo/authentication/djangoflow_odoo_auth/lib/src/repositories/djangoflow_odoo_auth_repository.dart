@@ -1,12 +1,11 @@
 import 'dart:async';
 import 'package:odoo_rpc/odoo_rpc.dart';
 
-import 'odoo_client_manager.dart';
+import 'package:djangoflow_odoo_auth/src/repositories/odoo_client_manager.dart';
 
 class DjangoflowOdooAuthRepository {
-  final OdooClientManager _clientManager;
-
   DjangoflowOdooAuthRepository(this._clientManager);
+  final OdooClientManager _clientManager;
 
   Future<void> initializeClient(String baseUrl, {OdooSession? session}) async {
     await _clientManager.initializeClient(baseUrl, session: session);
@@ -14,12 +13,17 @@ class DjangoflowOdooAuthRepository {
 
   Future<bool> validateSession() async {
     final odooClient = _clientManager.getClient();
-    if (odooClient == null) return false;
+    if (odooClient == null) {
+      return false;
+    }
     try {
       await odooClient.checkSession();
       return true;
     } catch (e) {
-      return false;
+      if (e is OdooSessionExpiredException) {
+        return false;
+      }
+      return true;
     }
   }
 
@@ -41,7 +45,9 @@ class DjangoflowOdooAuthRepository {
 
   Future<void> logout() async {
     final odooClient = _clientManager.getClient();
-    if (odooClient == null) return;
+    if (odooClient == null) {
+      return;
+    }
 
     await odooClient.destroySession();
   }
@@ -49,11 +55,27 @@ class DjangoflowOdooAuthRepository {
   Stream<OdooSession> get sessionStream =>
       _clientManager.getClient()?.sessionStream ?? const Stream.empty();
 
-  // You might want to implement a method to fetch databases
-  // Future<List<String>> getDatabases() async {
-  //   if (_odooClient == null) {
-  //     throw Exception('OdooClient not initialized. Call initializeClient() first.');
-  //   }
-  //   // Implement the logic to fetch databases
-  // }
+  Future<List<String>> getDatabases() async {
+    final odooClient = _clientManager.getClient();
+    if (odooClient == null) {
+      throw Exception(
+        'OdooClient not initialized. Call initializeClient() first.',
+      );
+    }
+
+    try {
+      // Calling the 'db.list' method on Odoo to fetch the available databases
+      final result = await odooClient.callKw({
+        'model': 'db',
+        'method': 'list',
+        'args': [],
+        'kwargs': {},
+      });
+
+      // Convert the result to a List<String>
+      return List<String>.from(result as List);
+    } catch (e) {
+      throw Exception('Failed to fetch databases: $e');
+    }
+  }
 }
