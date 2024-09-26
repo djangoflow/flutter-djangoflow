@@ -15,6 +15,27 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`djangoflow_odoo_auth` - `v0.0.2+4`](#djangoflow_odoo_auth---v0024)
+
+---
+
+#### `djangoflow_odoo_auth` - `v0.0.2+4`
+
+ - **REFACTOR**: update OdooClientManager initializeClient method signature. ([956a8e29](https://github.com/djangoflow/flutter-djangoflow/commit/956a8e29b5377e0ce7ca2612fa78bba61d6a0ed4))
+
+
+## 2024-09-26
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`djangoflow_odoo_auth` - `v0.0.2+3`](#djangoflow_odoo_auth---v0023)
 
 ---

@@ -1,3 +1,7 @@
+## 0.0.2+4
+
+ - **REFACTOR**: update OdooClientManager initializeClient method signature. ([956a8e29](https://github.com/djangoflow/flutter-djangoflow/commit/956a8e29b5377e0ce7ca2612fa78bba61d6a0ed4))
+
 ## 0.0.2+3
 
  - **REFACTOR**: update djangoflow_odoo_auth_cubit.dart to add getDbList() method. ([12106216](https://github.com/djangoflow/flutter-djangoflow/commit/1210621672b359bae172e9e6f18f93b277c2ce58))
