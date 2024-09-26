@@ -15,6 +15,27 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`djangoflow_sync_drift_odoo` - `v0.0.2+2`](#djangoflow_sync_drift_odoo---v0022)
+
+---
+
+#### `djangoflow_sync_drift_odoo` - `v0.0.2+2`
+
+ - **REFACTOR**: update SyncBackends table in database. ([e8e8254f](https://github.com/djangoflow/flutter-djangoflow/commit/e8e8254ff551e290bb3d966144c3684d8e9f0b5d))
+
+
+## 2024-09-26
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`djangoflow_odoo_auth` - `v0.0.2+4`](#djangoflow_odoo_auth---v0024)
 
 ---

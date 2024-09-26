@@ -1,3 +1,7 @@
+## 0.0.2+2
+
+ - **REFACTOR**: update SyncBackends table in database. ([e8e8254f](https://github.com/djangoflow/flutter-djangoflow/commit/e8e8254ff551e290bb3d966144c3684d8e9f0b5d))
+
 ## 0.0.2+1
 
  - **DOCS**: update LICENSES. ([432d791f](https://github.com/djangoflow/flutter-djangoflow/commit/432d791f1dfebb746270f99d37a950beef0260d6))
