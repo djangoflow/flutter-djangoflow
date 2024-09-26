@@ -3,6 +3,8 @@ import 'package:odoo_rpc/odoo_rpc.dart';
 
 import 'package:djangoflow_odoo_auth/src/repositories/odoo_client_manager.dart';
 
+import 'package:djangoflow_odoo_auth/src/utils/extended_odoo_client.dart';
+
 class DjangoflowOdooAuthRepository {
   DjangoflowOdooAuthRepository(this._clientManager);
   final OdooClientManager _clientManager;
@@ -62,20 +64,14 @@ class DjangoflowOdooAuthRepository {
         'OdooClient not initialized. Call initializeClient() first.',
       );
     }
-
-    try {
-      // Calling the 'db.list' method on Odoo to fetch the available databases
-      final result = await odooClient.callKw({
-        'model': 'db',
-        'method': 'list',
-        'args': [],
-        'kwargs': {},
-      });
-
-      // Convert the result to a List<String>
-      return List<String>.from(result as List);
-    } catch (e) {
-      throw Exception('Failed to fetch databases: $e');
+    if (odooClient is ExtendedOdooClient) {
+      try {
+        return await odooClient.getDatabaseList();
+      } catch (e) {
+        throw Exception('Failed to get database list: $e');
+      }
+    } else {
+      throw Exception('OdooClient is not an instance of ExtendedOdooClient');
     }
   }
 }
