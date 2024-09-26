@@ -30,7 +30,7 @@ class DjangoflowOdooAuthCubit extends HydratedCubit<DjangoflowOdooAuthState> {
   Future<void> checkAuthStatus() async {
     final storedSession = state.session;
     if (storedSession != null && state.baseUrl != null) {
-      await _repository.initializeClient(
+      _repository.initializeClient(
         state.baseUrl!,
         session: storedSession,
       );
@@ -59,12 +59,12 @@ class DjangoflowOdooAuthCubit extends HydratedCubit<DjangoflowOdooAuthState> {
     }
   }
 
-  Future<void> setBaseUrl(String url) async {
-    await _repository.initializeClient(url);
+  void setBaseUrl(String url) {
+    _repository.initializeClient(url);
     emit(state.copyWith(baseUrl: url));
   }
 
-  Future<void> setDatabase(String database) async {
+  void setDatabase(String database) {
     emit(state.copyWith(database: database));
   }
 

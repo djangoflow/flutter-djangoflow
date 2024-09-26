@@ -7,8 +7,8 @@ class DjangoflowOdooAuthRepository {
   DjangoflowOdooAuthRepository(this._clientManager);
   final OdooClientManager _clientManager;
 
-  Future<void> initializeClient(String baseUrl, {OdooSession? session}) async {
-    await _clientManager.initializeClient(baseUrl, session: session);
+  void initializeClient(String baseUrl, {OdooSession? session}) {
+    _clientManager.initializeClient(baseUrl, session: session);
   }
 
   Future<bool> validateSession() async {
