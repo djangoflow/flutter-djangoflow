@@ -1,24 +1,21 @@
 import 'package:djangoflow_sync_foundation/djangoflow_sync_foundation.dart';
 import 'package:drift/drift.dart';
 
-import '../database/database.dart';
+import 'package:djangoflow_sync_drift_odoo/src/database/database.dart';
 
 abstract class DriftBackend<T extends SyncModel, TTable extends BaseTable,
     TD extends DataClass> implements Backend<T> {
+  DriftBackend(this.database, this.table, this.backendId);
   final GeneratedDatabase database;
   final TableInfo<TTable, dynamic> table;
 
   final String backendId;
-
-  DriftBackend(this.database, this.table, this.backendId);
   T fromJson(Map<String, dynamic> json);
 
   T convertToModel(TD driftModel);
 
   @override
-  Future<bool> isAvailable() async {
-    return true;
-  }
+  Future<bool> isAvailable() async => true;
 
   // Abstract method to be implemented by concrete classes
   UpdateCompanion<Insertable> createCompanionWithBackendId(T item);
