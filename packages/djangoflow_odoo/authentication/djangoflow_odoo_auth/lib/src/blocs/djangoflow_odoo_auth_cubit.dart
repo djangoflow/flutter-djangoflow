@@ -100,12 +100,27 @@ class DjangoflowOdooAuthCubit extends HydratedCubit<DjangoflowOdooAuthState> {
     emit(
       state.copyWith(
         status: AuthStatus.unauthenticated,
-        baseUrl: null,
         database: null,
         errorMessage: null,
         session: null,
+        dbList: null,
+        baseUrl: null,
       ),
     );
+  }
+
+  Future<void> getDbList() async {
+    try {
+      final dbList = await _repository.getDatabases();
+      emit(state.copyWith(dbList: dbList));
+    } catch (e) {
+      emit(
+        state.copyWith(
+          status: AuthStatus.error,
+          errorMessage: e.toString(),
+        ),
+      );
+    }
   }
 
   @override

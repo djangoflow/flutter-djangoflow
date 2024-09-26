@@ -27,6 +27,7 @@ mixin _$DjangoflowOdooAuthState {
   String? get database => throw _privateConstructorUsedError;
   @SessionConverter()
   OdooSession? get session => throw _privateConstructorUsedError;
+  List<String>? get dbList => throw _privateConstructorUsedError;
 
   /// Serializes this DjangoflowOdooAuthState to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -49,7 +50,8 @@ abstract class $DjangoflowOdooAuthStateCopyWith<$Res> {
       String? errorMessage,
       String? baseUrl,
       String? database,
-      @SessionConverter() OdooSession? session});
+      @SessionConverter() OdooSession? session,
+      List<String>? dbList});
 }
 
 /// @nodoc
@@ -73,6 +75,7 @@ class _$DjangoflowOdooAuthStateCopyWithImpl<$Res,
     Object? baseUrl = freezed,
     Object? database = freezed,
     Object? session = freezed,
+    Object? dbList = freezed,
   }) {
     return _then(_value.copyWith(
       status: null == status
@@ -95,6 +98,10 @@ class _$DjangoflowOdooAuthStateCopyWithImpl<$Res,
           ? _value.session
           : session // ignore: cast_nullable_to_non_nullable
               as OdooSession?,
+      dbList: freezed == dbList
+          ? _value.dbList
+          : dbList // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
     ) as $Val);
   }
 }
@@ -113,7 +120,8 @@ abstract class _$$DjangoflowOdooAuthStateImplCopyWith<$Res>
       String? errorMessage,
       String? baseUrl,
       String? database,
-      @SessionConverter() OdooSession? session});
+      @SessionConverter() OdooSession? session,
+      List<String>? dbList});
 }
 
 /// @nodoc
@@ -136,6 +144,7 @@ class __$$DjangoflowOdooAuthStateImplCopyWithImpl<$Res>
     Object? baseUrl = freezed,
     Object? database = freezed,
     Object? session = freezed,
+    Object? dbList = freezed,
   }) {
     return _then(_$DjangoflowOdooAuthStateImpl(
       status: null == status
@@ -158,6 +167,10 @@ class __$$DjangoflowOdooAuthStateImplCopyWithImpl<$Res>
           ? _value.session
           : session // ignore: cast_nullable_to_non_nullable
               as OdooSession?,
+      dbList: freezed == dbList
+          ? _value._dbList
+          : dbList // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
     ));
   }
 }
@@ -170,7 +183,9 @@ class _$DjangoflowOdooAuthStateImpl implements _DjangoflowOdooAuthState {
       this.errorMessage,
       this.baseUrl,
       this.database,
-      @SessionConverter() this.session});
+      @SessionConverter() this.session,
+      final List<String>? dbList})
+      : _dbList = dbList;
 
   factory _$DjangoflowOdooAuthStateImpl.fromJson(Map<String, dynamic> json) =>
       _$$DjangoflowOdooAuthStateImplFromJson(json);
@@ -187,10 +202,19 @@ class _$DjangoflowOdooAuthStateImpl implements _DjangoflowOdooAuthState {
   @override
   @SessionConverter()
   final OdooSession? session;
+  final List<String>? _dbList;
+  @override
+  List<String>? get dbList {
+    final value = _dbList;
+    if (value == null) return null;
+    if (_dbList is EqualUnmodifiableListView) return _dbList;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   @override
   String toString() {
-    return 'DjangoflowOdooAuthState(status: $status, errorMessage: $errorMessage, baseUrl: $baseUrl, database: $database, session: $session)';
+    return 'DjangoflowOdooAuthState(status: $status, errorMessage: $errorMessage, baseUrl: $baseUrl, database: $database, session: $session, dbList: $dbList)';
   }
 
   @override
@@ -204,13 +228,14 @@ class _$DjangoflowOdooAuthStateImpl implements _DjangoflowOdooAuthState {
             (identical(other.baseUrl, baseUrl) || other.baseUrl == baseUrl) &&
             (identical(other.database, database) ||
                 other.database == database) &&
-            (identical(other.session, session) || other.session == session));
+            (identical(other.session, session) || other.session == session) &&
+            const DeepCollectionEquality().equals(other._dbList, _dbList));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, status, errorMessage, baseUrl, database, session);
+  int get hashCode => Object.hash(runtimeType, status, errorMessage, baseUrl,
+      database, session, const DeepCollectionEquality().hash(_dbList));
 
   /// Create a copy of DjangoflowOdooAuthState
   /// with the given fields replaced by the non-null parameter values.
@@ -231,12 +256,12 @@ class _$DjangoflowOdooAuthStateImpl implements _DjangoflowOdooAuthState {
 
 abstract class _DjangoflowOdooAuthState implements DjangoflowOdooAuthState {
   const factory _DjangoflowOdooAuthState(
-          {final AuthStatus status,
-          final String? errorMessage,
-          final String? baseUrl,
-          final String? database,
-          @SessionConverter() final OdooSession? session}) =
-      _$DjangoflowOdooAuthStateImpl;
+      {final AuthStatus status,
+      final String? errorMessage,
+      final String? baseUrl,
+      final String? database,
+      @SessionConverter() final OdooSession? session,
+      final List<String>? dbList}) = _$DjangoflowOdooAuthStateImpl;
 
   factory _DjangoflowOdooAuthState.fromJson(Map<String, dynamic> json) =
       _$DjangoflowOdooAuthStateImpl.fromJson;
@@ -252,6 +277,8 @@ abstract class _DjangoflowOdooAuthState implements DjangoflowOdooAuthState {
   @override
   @SessionConverter()
   OdooSession? get session;
+  @override
+  List<String>? get dbList;
 
   /// Create a copy of DjangoflowOdooAuthState
   /// with the given fields replaced by the non-null parameter values.

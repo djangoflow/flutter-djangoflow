@@ -16,6 +16,8 @@ _$DjangoflowOdooAuthStateImpl _$$DjangoflowOdooAuthStateImplFromJson(
       database: json['database'] as String?,
       session: const SessionConverter()
           .fromJson(json['session'] as Map<String, dynamic>?),
+      dbList:
+          (json['dbList'] as List<dynamic>?)?.map((e) => e as String).toList(),
     );
 
 Map<String, dynamic> _$$DjangoflowOdooAuthStateImplToJson(
@@ -26,6 +28,7 @@ Map<String, dynamic> _$$DjangoflowOdooAuthStateImplToJson(
       'baseUrl': instance.baseUrl,
       'database': instance.database,
       'session': const SessionConverter().toJson(instance.session),
+      'dbList': instance.dbList,
     };
 
 const _$AuthStatusEnumMap = {

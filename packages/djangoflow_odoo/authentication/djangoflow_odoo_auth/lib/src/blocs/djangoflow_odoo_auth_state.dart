@@ -14,6 +14,7 @@ class DjangoflowOdooAuthState with _$DjangoflowOdooAuthState {
     String? baseUrl,
     String? database,
     @SessionConverter() OdooSession? session,
+    List<String>? dbList,
   }) = _DjangoflowOdooAuthState;
 
   factory DjangoflowOdooAuthState.fromJson(Map<String, dynamic> json) =>
