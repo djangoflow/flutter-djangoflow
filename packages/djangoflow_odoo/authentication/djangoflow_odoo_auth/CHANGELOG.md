@@ -1,3 +1,7 @@
+## 0.0.2+3
+
+ - **REFACTOR**: update djangoflow_odoo_auth_cubit.dart to add getDbList() method. ([12106216](https://github.com/djangoflow/flutter-djangoflow/commit/1210621672b359bae172e9e6f18f93b277c2ce58))
+
 ## 0.0.2+2
 
  - **REFACTOR**: update djangoflow_odoo_auth_cubit.dart imports and emit statements. ([93fcaa78](https://github.com/djangoflow/flutter-djangoflow/commit/93fcaa78c9a4acb28976e7889d5e97ccd855fd52))

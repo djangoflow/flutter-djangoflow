@@ -15,6 +15,27 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`djangoflow_odoo_auth` - `v0.0.2+3`](#djangoflow_odoo_auth---v0023)
+
+---
+
+#### `djangoflow_odoo_auth` - `v0.0.2+3`
+
+ - **REFACTOR**: update djangoflow_odoo_auth_cubit.dart to add getDbList() method. ([12106216](https://github.com/djangoflow/flutter-djangoflow/commit/1210621672b359bae172e9e6f18f93b277c2ce58))
+
+
+## 2024-09-26
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`djangoflow_odoo_auth` - `v0.0.2+2`](#djangoflow_odoo_auth---v0022)
 
 ---
