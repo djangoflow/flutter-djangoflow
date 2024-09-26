@@ -11,10 +11,12 @@ class BaseTable extends Table {
 
 class SyncBackends extends Table {
   TextColumn get id => text()(); // Using text for more flexible IDs
-  TextColumn get type => text()();
+  TextColumn get type => text()(); // Can be "odoo", "drift", etc.
+  TextColumn get baseUrl => text()(); // Base URL for the backend
 
   @override
-  Set<Column> get primaryKey => {id};
+  Set<Column> get primaryKey =>
+      {id, baseUrl}; // Composite primary key for uniqueness
 }
 
 @DataClassName('SyncRegistry')

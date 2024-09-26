@@ -512,8 +512,14 @@ class $SyncBackendsTable extends i2.SyncBackends
   late final i0.GeneratedColumn<String> type = i0.GeneratedColumn<String>(
       'type', aliasedName, false,
       type: i0.DriftSqlType.string, requiredDuringInsert: true);
+  static const i0.VerificationMeta _baseUrlMeta =
+      const i0.VerificationMeta('baseUrl');
   @override
-  List<i0.GeneratedColumn> get $columns => [id, type];
+  late final i0.GeneratedColumn<String> baseUrl = i0.GeneratedColumn<String>(
+      'base_url', aliasedName, false,
+      type: i0.DriftSqlType.string, requiredDuringInsert: true);
+  @override
+  List<i0.GeneratedColumn> get $columns => [id, type, baseUrl];
   @override
   String get aliasedName => _alias ?? actualTableName;
   @override
@@ -536,11 +542,17 @@ class $SyncBackendsTable extends i2.SyncBackends
     } else if (isInserting) {
       context.missing(_typeMeta);
     }
+    if (data.containsKey('base_url')) {
+      context.handle(_baseUrlMeta,
+          baseUrl.isAcceptableOrUnknown(data['base_url']!, _baseUrlMeta));
+    } else if (isInserting) {
+      context.missing(_baseUrlMeta);
+    }
     return context;
   }
 
   @override
-  Set<i0.GeneratedColumn> get $primaryKey => {id};
+  Set<i0.GeneratedColumn> get $primaryKey => {id, baseUrl};
   @override
   i1.SyncBackend map(Map<String, dynamic> data, {String? tablePrefix}) {
     final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : '';
@@ -549,6 +561,8 @@ class $SyncBackendsTable extends i2.SyncBackends
           .read(i0.DriftSqlType.string, data['${effectivePrefix}id'])!,
       type: attachedDatabase.typeMapping
           .read(i0.DriftSqlType.string, data['${effectivePrefix}type'])!,
+      baseUrl: attachedDatabase.typeMapping
+          .read(i0.DriftSqlType.string, data['${effectivePrefix}base_url'])!,
     );
   }
 
@@ -562,12 +576,15 @@ class SyncBackend extends i0.DataClass
     implements i0.Insertable<i1.SyncBackend> {
   final String id;
   final String type;
-  const SyncBackend({required this.id, required this.type});
+  final String baseUrl;
+  const SyncBackend(
+      {required this.id, required this.type, required this.baseUrl});
   @override
   Map<String, i0.Expression> toColumns(bool nullToAbsent) {
     final map = <String, i0.Expression>{};
     map['id'] = i0.Variable<String>(id);
     map['type'] = i0.Variable<String>(type);
+    map['base_url'] = i0.Variable<String>(baseUrl);
     return map;
   }
 
@@ -575,6 +592,7 @@ class SyncBackend extends i0.DataClass
     return i1.SyncBackendsCompanion(
       id: i0.Value(id),
       type: i0.Value(type),
+      baseUrl: i0.Value(baseUrl),
     );
   }
 
@@ -584,6 +602,7 @@ class SyncBackend extends i0.DataClass
     return SyncBackend(
       id: serializer.fromJson<String>(json['id']),
       type: serializer.fromJson<String>(json['type']),
+      baseUrl: serializer.fromJson<String>(json['baseUrl']),
     );
   }
   @override
@@ -592,17 +611,21 @@ class SyncBackend extends i0.DataClass
     return <String, dynamic>{
       'id': serializer.toJson<String>(id),
       'type': serializer.toJson<String>(type),
+      'baseUrl': serializer.toJson<String>(baseUrl),
     };
   }
 
-  i1.SyncBackend copyWith({String? id, String? type}) => i1.SyncBackend(
+  i1.SyncBackend copyWith({String? id, String? type, String? baseUrl}) =>
+      i1.SyncBackend(
         id: id ?? this.id,
         type: type ?? this.type,
+        baseUrl: baseUrl ?? this.baseUrl,
       );
   SyncBackend copyWithCompanion(i1.SyncBackendsCompanion data) {
     return SyncBackend(
       id: data.id.present ? data.id.value : this.id,
       type: data.type.present ? data.type.value : this.type,
+      baseUrl: data.baseUrl.present ? data.baseUrl.value : this.baseUrl,
     );
   }
 
@@ -610,53 +633,65 @@ class SyncBackend extends i0.DataClass
   String toString() {
     return (StringBuffer('SyncBackend(')
           ..write('id: $id, ')
-          ..write('type: $type')
+          ..write('type: $type, ')
+          ..write('baseUrl: $baseUrl')
           ..write(')'))
         .toString();
   }
 
   @override
-  int get hashCode => Object.hash(id, type);
+  int get hashCode => Object.hash(id, type, baseUrl);
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
       (other is i1.SyncBackend &&
           other.id == this.id &&
-          other.type == this.type);
+          other.type == this.type &&
+          other.baseUrl == this.baseUrl);
 }
 
 class SyncBackendsCompanion extends i0.UpdateCompanion<i1.SyncBackend> {
   final i0.Value<String> id;
   final i0.Value<String> type;
+  final i0.Value<String> baseUrl;
   final i0.Value<int> rowid;
   const SyncBackendsCompanion({
     this.id = const i0.Value.absent(),
     this.type = const i0.Value.absent(),
+    this.baseUrl = const i0.Value.absent(),
     this.rowid = const i0.Value.absent(),
   });
   SyncBackendsCompanion.insert({
     required String id,
     required String type,
+    required String baseUrl,
     this.rowid = const i0.Value.absent(),
   })  : id = i0.Value(id),
-        type = i0.Value(type);
+        type = i0.Value(type),
+        baseUrl = i0.Value(baseUrl);
   static i0.Insertable<i1.SyncBackend> custom({
     i0.Expression<String>? id,
     i0.Expression<String>? type,
+    i0.Expression<String>? baseUrl,
     i0.Expression<int>? rowid,
   }) {
     return i0.RawValuesInsertable({
       if (id != null) 'id': id,
       if (type != null) 'type': type,
+      if (baseUrl != null) 'base_url': baseUrl,
       if (rowid != null) 'rowid': rowid,
     });
   }
 
   i1.SyncBackendsCompanion copyWith(
-      {i0.Value<String>? id, i0.Value<String>? type, i0.Value<int>? rowid}) {
+      {i0.Value<String>? id,
+      i0.Value<String>? type,
+      i0.Value<String>? baseUrl,
+      i0.Value<int>? rowid}) {
     return i1.SyncBackendsCompanion(
       id: id ?? this.id,
       type: type ?? this.type,
+      baseUrl: baseUrl ?? this.baseUrl,
       rowid: rowid ?? this.rowid,
     );
   }
@@ -670,6 +705,9 @@ class SyncBackendsCompanion extends i0.UpdateCompanion<i1.SyncBackend> {
     if (type.present) {
       map['type'] = i0.Variable<String>(type.value);
     }
+    if (baseUrl.present) {
+      map['base_url'] = i0.Variable<String>(baseUrl.value);
+    }
     if (rowid.present) {
       map['rowid'] = i0.Variable<int>(rowid.value);
     }
@@ -681,6 +719,7 @@ class SyncBackendsCompanion extends i0.UpdateCompanion<i1.SyncBackend> {
     return (StringBuffer('SyncBackendsCompanion(')
           ..write('id: $id, ')
           ..write('type: $type, ')
+          ..write('baseUrl: $baseUrl, ')
           ..write('rowid: $rowid')
           ..write(')'))
         .toString();
@@ -691,12 +730,14 @@ typedef $$SyncBackendsTableCreateCompanionBuilder = i1.SyncBackendsCompanion
     Function({
   required String id,
   required String type,
+  required String baseUrl,
   i0.Value<int> rowid,
 });
 typedef $$SyncBackendsTableUpdateCompanionBuilder = i1.SyncBackendsCompanion
     Function({
   i0.Value<String> id,
   i0.Value<String> type,
+  i0.Value<String> baseUrl,
   i0.Value<int> rowid,
 });
 
@@ -712,6 +753,11 @@ class $$SyncBackendsTableFilterComposer
       column: $state.table.type,
       builder: (column, joinBuilders) =>
           i0.ColumnFilters(column, joinBuilders: joinBuilders));
+
+  i0.ColumnFilters<String> get baseUrl => $state.composableBuilder(
+      column: $state.table.baseUrl,
+      builder: (column, joinBuilders) =>
+          i0.ColumnFilters(column, joinBuilders: joinBuilders));
 }
 
 class $$SyncBackendsTableOrderingComposer
@@ -724,6 +770,11 @@ class $$SyncBackendsTableOrderingComposer
 
   i0.ColumnOrderings<String> get type => $state.composableBuilder(
       column: $state.table.type,
+      builder: (column, joinBuilders) =>
+          i0.ColumnOrderings(column, joinBuilders: joinBuilders));
+
+  i0.ColumnOrderings<String> get baseUrl => $state.composableBuilder(
+      column: $state.table.baseUrl,
       builder: (column, joinBuilders) =>
           i0.ColumnOrderings(column, joinBuilders: joinBuilders));
 }
@@ -755,21 +806,25 @@ class $$SyncBackendsTableTableManager extends i0.RootTableManager<
           updateCompanionCallback: ({
             i0.Value<String> id = const i0.Value.absent(),
             i0.Value<String> type = const i0.Value.absent(),
+            i0.Value<String> baseUrl = const i0.Value.absent(),
             i0.Value<int> rowid = const i0.Value.absent(),
           }) =>
               i1.SyncBackendsCompanion(
             id: id,
             type: type,
+            baseUrl: baseUrl,
             rowid: rowid,
           ),
           createCompanionCallback: ({
             required String id,
             required String type,
+            required String baseUrl,
             i0.Value<int> rowid = const i0.Value.absent(),
           }) =>
               i1.SyncBackendsCompanion.insert(
             id: id,
             type: type,
+            baseUrl: baseUrl,
             rowid: rowid,
           ),
           withReferenceMapper: (p0) => p0
