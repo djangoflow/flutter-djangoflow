@@ -169,6 +169,12 @@ class DriftOdooSyncStrategy<T extends SyncModel, TTable extends BaseTable>
     if (modelName == null) {
       throw ArgumentError('modelName cannot be null');
     }
+    final destinationIsAvailable = await destination.isAvailable();
+    if (!destinationIsAvailable) {
+      throw BackendNotAvailableException(
+        'Destination backend is not available',
+      );
+    }
     if (destination is DriftBackend<T, TTable, dynamic>) {
       final updates = <SyncRegistriesCompanion>[];
       for (final item in items) {

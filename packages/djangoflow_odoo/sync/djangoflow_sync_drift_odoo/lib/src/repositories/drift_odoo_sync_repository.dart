@@ -141,12 +141,4 @@ abstract class DriftOdooSyncRepository<T extends SyncModel,
       );
     }
   }
-
-  @override
-  Future<void> sync() async {
-    if (await isPrimaryBackendAvailable) {
-      await syncStrategy.sync(secondaryBackend, primaryBackend);
-      await syncStrategy.sync(primaryBackend, secondaryBackend);
-    }
-  }
 }
