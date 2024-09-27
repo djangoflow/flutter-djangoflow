@@ -1,3 +1,4 @@
+import 'package:djangoflow_sync_foundation/src/exceptions/backend_not_available_exception.dart';
 import 'package:djangoflow_sync_foundation/src/interfaces/backend.dart';
 import 'package:djangoflow_sync_foundation/src/interfaces/repository.dart';
 import 'package:djangoflow_sync_foundation/src/interfaces/sync_strategy.dart';
@@ -126,6 +127,8 @@ abstract class SyncRepository<T extends SyncModel> implements Repository<T> {
     if (await isPrimaryBackendAvailable) {
       await syncStrategy.sync(secondaryBackend, primaryBackend);
       await syncStrategy.sync(primaryBackend, secondaryBackend);
+    } else {
+      throw BackendNotAvailableException('Primary backend is not available');
     }
   }
 }

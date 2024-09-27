@@ -1,3 +1,4 @@
+export 'exceptions/backend_not_available_exception.dart';
 export 'interfaces/backend.dart';
 export 'interfaces/connection_state_manager.dart';
 export 'interfaces/repository.dart';
