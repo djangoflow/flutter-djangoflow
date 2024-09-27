@@ -41,13 +41,18 @@ class DriftOdooSyncStrategy<T extends SyncModel, TTable extends BaseTable>
         odooBackendId, odooBackend.modelName);
     final updatedItems = await odooBackend.getAll(since: lastSyncTime);
 
-    for (var odooItem in updatedItems) {
+    for (final odooItem in updatedItems) {
       try {
         final driftItem = await driftBackend.getById(odooItem.id);
         if (driftItem != null) {
           final resolvedItem = await resolveConflict(odooItem, driftItem);
+
           await _updateOrCreateInDrift(
-              resolvedItem, driftBackend, odooBackend.modelName);
+            resolvedItem,
+            driftBackend,
+            odooBackend.modelName,
+            shouldReplace: resolvedItem.writeDate != driftItem.writeDate,
+          );
         } else {
           await _updateOrCreateInDrift(
               odooItem, driftBackend, odooBackend.modelName);
@@ -64,7 +69,7 @@ class DriftOdooSyncStrategy<T extends SyncModel, TTable extends BaseTable>
     final pendingRecords = await syncRegistryRepository.getPendingSyncRecords(
         driftBackendId, odooBackend.modelName);
 
-    for (var record in pendingRecords) {
+    for (final record in pendingRecords) {
       try {
         final driftItem = await driftBackend.getById(record.modelRecordId);
         if (driftItem != null) {
@@ -133,9 +138,14 @@ class DriftOdooSyncStrategy<T extends SyncModel, TTable extends BaseTable>
     }
     if (destination is DriftBackend<T, TTable, dynamic>) {
       final updates = <SyncRegistriesCompanion>[];
-      for (var item in items) {
-        await _updateOrCreateInDrift(item, destination, modelName);
-        updates.add(_getSyncRegistryCompanion(item, modelName, driftBackendId));
+      for (final item in items) {
+        final existingItem = await destination.getById(item.id);
+        if (existingItem != null) {
+          final resolvedItem = await resolveConflict(item, existingItem);
+          await _updateOrCreateInDrift(resolvedItem, destination, modelName);
+        } else {
+          await _updateOrCreateInDrift(item, destination, modelName);
+        }
       }
       await syncRegistryRepository.batchUpsertRegistry(updates);
     } else if (destination is OdooBackend<T>) {
@@ -148,23 +158,29 @@ class DriftOdooSyncStrategy<T extends SyncModel, TTable extends BaseTable>
   }
 
   SyncRegistriesCompanion _getSyncRegistryCompanion(
-      T item, String modelName, String backendId) {
-    return SyncRegistriesCompanion(
-      modelName: Value(modelName),
-      modelRecordId: Value(item.id),
-      backendId: Value(backendId),
-      recordWriteDate: Value(item.writeDate),
-      updatedAt: Value(DateTime.timestamp()),
-      pendingSync: const Value(false),
-    );
-  }
+    T item,
+    String modelName,
+    String backendId,
+  ) =>
+      SyncRegistriesCompanion(
+        modelName: Value(modelName),
+        modelRecordId: Value(item.id),
+        backendId: Value(backendId),
+        recordWriteDate: Value(item.writeDate),
+        updatedAt: Value(DateTime.timestamp()),
+        pendingSync: const Value(false),
+      );
 
-  Future<void> _updateOrCreateInDrift(T item,
-      DriftBackend<T, TTable, dynamic> driftBackend, String modelName) async {
+  Future<void> _updateOrCreateInDrift(
+    T item,
+    DriftBackend<T, TTable, dynamic> driftBackend,
+    String modelName, {
+    bool shouldReplace = true,
+  }) async {
     final existingItem = await driftBackend.getById(item.id);
-    if (existingItem != null) {
+    if (existingItem != null && shouldReplace) {
       await driftBackend.update(item);
-    } else {
+    } else if (existingItem == null) {
       await driftBackend.create(item);
     }
     await _upsertSyncRegistry(
