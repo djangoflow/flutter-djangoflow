@@ -27,7 +27,8 @@ abstract class SyncRepository<T extends SyncModel> implements Repository<T> {
         await syncStrategy.syncBatch(items, primaryBackend);
         await syncStrategy.syncBatch(items, secondaryBackend);
         return items;
-      } catch (_) {
+      } catch (e, stackTrace) {
+        logger.e('Error fetching items from primary backend:', e, stackTrace);
         return secondaryBackend.getAll();
       }
     } else {
@@ -46,7 +47,8 @@ abstract class SyncRepository<T extends SyncModel> implements Repository<T> {
           await syncStrategy.syncBatch([item], secondaryBackend);
         }
         return item;
-      } catch (_) {
+      } catch (e, stackTrace) {
+        logger.e('Error fetching item from primary backend:', e, stackTrace);
         return secondaryBackend.getById(id);
       }
     } else {
@@ -61,7 +63,8 @@ abstract class SyncRepository<T extends SyncModel> implements Repository<T> {
         final createdItem = await primaryBackend.create(item);
         await updateSecondaryBackend([createdItem]);
         return createdItem;
-      } catch (_) {
+      } catch (e, stackTrace) {
+        logger.e('Error creating item in primary backend:', e, stackTrace);
         return _createWithTemporaryId(item);
       }
     } else {
@@ -82,7 +85,8 @@ abstract class SyncRepository<T extends SyncModel> implements Repository<T> {
         final updatedItem = await primaryBackend.update(item);
         await updateSecondaryBackend([updatedItem]);
         return updatedItem;
-      } catch (_) {
+      } catch (e, stackTrace) {
+        logger.e('Error updating item in primary backend:', e, stackTrace);
         return secondaryBackend.update(item);
       }
     } else {
@@ -96,7 +100,8 @@ abstract class SyncRepository<T extends SyncModel> implements Repository<T> {
       try {
         await primaryBackend.delete(id);
         await secondaryBackend.delete(id);
-      } catch (_) {
+      } catch (e, stackTrace) {
+        logger.e('Error deleting item in primary backend:', e, stackTrace);
         final item = await secondaryBackend.getById(id);
         if (item != null) {
           await secondaryBackend

@@ -31,7 +31,8 @@ abstract class DriftOdooSyncRepository<T extends SyncModel,
             .syncBatch(items, primaryBackend, modelName: modelName);
 
         return items;
-      } catch (_) {
+      } catch (e, strackTrace) {
+        logger.e('Error fetching items from primary backend:', e, strackTrace);
         return secondaryBackend.getAll();
       }
     } else {
@@ -50,7 +51,8 @@ abstract class DriftOdooSyncRepository<T extends SyncModel,
               .syncBatch([item], primaryBackend, modelName: modelName);
         }
         return item;
-      } catch (_) {
+      } catch (e, strackTrace) {
+        logger.e('Error fetching item from primary backend:', e, strackTrace);
         return secondaryBackend.getById(id);
       }
     } else {
@@ -71,7 +73,8 @@ abstract class DriftOdooSyncRepository<T extends SyncModel,
         await driftOdooSyncStrategy
             .syncBatch([createdItem], secondaryBackend, modelName: modelName);
         return createdItem;
-      } catch (_) {
+      } catch (e, stackTrace) {
+        logger.e('Error creating item in primary backend:', e, stackTrace);
         return driftOdooSyncStrategy.createWithTemporaryId(item,
             secondaryBackend as DriftBackend<T, TTable, dynamic>, modelName);
       }
@@ -90,7 +93,8 @@ abstract class DriftOdooSyncRepository<T extends SyncModel,
         await (syncStrategy as DriftOdooSyncStrategy<T, TTable>)
             .syncBatch([updatedItem], primaryBackend, modelName: modelName);
         return updatedItem;
-      } catch (_) {
+      } catch (e, stackTrace) {
+        logger.e('Error updating item in primary backend:', e, stackTrace);
         return _updateSecondaryWithPendingSync(item);
       }
     } else {
@@ -115,7 +119,8 @@ abstract class DriftOdooSyncRepository<T extends SyncModel,
         await secondaryBackend.delete(id);
         // The sync strategy will handle updating the sync registry
         await driftOdooSyncStrategy.deleteRegistry(id, modelName);
-      } catch (_) {
+      } catch (e, stackTrace) {
+        logger.e('Error deleting item in primary backend:', e, stackTrace);
         await driftOdooSyncStrategy.markAsDeletedInSecondary(id,
             secondaryBackend as DriftBackend<T, TTable, dynamic>, modelName);
       }
