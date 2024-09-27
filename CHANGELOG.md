@@ -3,6 +3,44 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2024-09-27
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`djangoflow_odoo_auth` - `v0.0.3`](#djangoflow_odoo_auth---v003)
+ - [`djangoflow_sync_drift_odoo` - `v0.0.2+3`](#djangoflow_sync_drift_odoo---v0023)
+ - [`djangoflow_sync_foundation` - `v0.0.3`](#djangoflow_sync_foundation---v003)
+
+---
+
+#### `djangoflow_odoo_auth` - `v0.0.3`
+
+ - **REFACTOR**: linter fixes. ([f95182be](https://github.com/djangoflow/flutter-djangoflow/commit/f95182be6d9f5dcdbec7d79973f76bddcf06e67d))
+ - **REFACTOR**: update dependencies. ([f77e843f](https://github.com/djangoflow/flutter-djangoflow/commit/f77e843f3305212b280fac508f24d8f97772704a))
+ - **FEAT**: add ExtendedOdooClient, which can fetch database list. ([38437145](https://github.com/djangoflow/flutter-djangoflow/commit/384371458347b158dbff67bc3ef80337ff35231f))
+
+#### `djangoflow_sync_drift_odoo` - `v0.0.2+3`
+
+ - **REFACTOR**: linter fixes. ([f95182be](https://github.com/djangoflow/flutter-djangoflow/commit/f95182be6d9f5dcdbec7d79973f76bddcf06e67d))
+ - **REFACTOR**: add logs. ([00271ed8](https://github.com/djangoflow/flutter-djangoflow/commit/00271ed879e83081809cc20c3bab72b2aaee1d7e))
+ - **REFACTOR**: linter fixes. ([7b9adc66](https://github.com/djangoflow/flutter-djangoflow/commit/7b9adc662446bc1accfbe6909bf83d72e69e55bc))
+ - **FIX**: update syncing conditions. ([84949a01](https://github.com/djangoflow/flutter-djangoflow/commit/84949a01156ec99a5b40d4ed3a705074a5c5b2ff))
+
+#### `djangoflow_sync_foundation` - `v0.0.3`
+
+ - **REFACTOR**: linter fixes. ([f95182be](https://github.com/djangoflow/flutter-djangoflow/commit/f95182be6d9f5dcdbec7d79973f76bddcf06e67d))
+ - **REFACTOR**: add logs. ([00271ed8](https://github.com/djangoflow/flutter-djangoflow/commit/00271ed879e83081809cc20c3bab72b2aaee1d7e))
+ - **FEAT**: Add BackendNotAvailableException class. ([3daf892d](https://github.com/djangoflow/flutter-djangoflow/commit/3daf892db70d7d6d50423efee83bd5e4d65840ac))
+
+
 ## 2024-09-26
 
 ### Changes

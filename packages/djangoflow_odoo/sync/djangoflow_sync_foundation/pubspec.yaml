@@ -1,6 +1,6 @@
 name: djangoflow_sync_foundation
 description: "Foundation for syncing data between Odoo and Flutter"
-version: 0.0.2+1
+version: 0.0.3
 homepage: https://github.com/djangoflow/flutter-djangoflow/tree/main/packages/djangoflow_odoo/sync/djangoflow_sync_foundation
 
 environment:

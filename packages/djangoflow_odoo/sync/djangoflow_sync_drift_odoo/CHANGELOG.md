@@ -1,3 +1,10 @@
+## 0.0.2+3
+
+ - **REFACTOR**: linter fixes. ([f95182be](https://github.com/djangoflow/flutter-djangoflow/commit/f95182be6d9f5dcdbec7d79973f76bddcf06e67d))
+ - **REFACTOR**: add logs. ([00271ed8](https://github.com/djangoflow/flutter-djangoflow/commit/00271ed879e83081809cc20c3bab72b2aaee1d7e))
+ - **REFACTOR**: linter fixes. ([7b9adc66](https://github.com/djangoflow/flutter-djangoflow/commit/7b9adc662446bc1accfbe6909bf83d72e69e55bc))
+ - **FIX**: update syncing conditions. ([84949a01](https://github.com/djangoflow/flutter-djangoflow/commit/84949a01156ec99a5b40d4ed3a705074a5c5b2ff))
+
 ## 0.0.2+2
 
  - **REFACTOR**: update SyncBackends table in database. ([e8e8254f](https://github.com/djangoflow/flutter-djangoflow/commit/e8e8254ff551e290bb3d966144c3684d8e9f0b5d))
