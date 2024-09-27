@@ -30,11 +30,15 @@ class DjangoflowOdooAuthRepository {
   }
 
   Future<OdooSession?> login(
-      String database, String username, String password) async {
+    String database,
+    String username,
+    String password,
+  ) async {
     final odooClient = _clientManager.getClient();
     if (odooClient == null) {
       throw Exception(
-          'OdooClient not initialized. Call initializeClient() first.');
+        'OdooClient not initialized. Call initializeClient() first.',
+      );
     }
     try {
       final session =

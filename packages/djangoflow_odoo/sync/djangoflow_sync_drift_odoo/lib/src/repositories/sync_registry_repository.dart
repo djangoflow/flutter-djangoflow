@@ -1,4 +1,4 @@
-import '../database/database.drift.dart';
+import 'package:djangoflow_sync_drift_odoo/src/database/database.drift.dart';
 
 abstract class SyncRegistryRepository {
   Future<void> upsertRegistry({
@@ -11,10 +11,13 @@ abstract class SyncRegistryRepository {
   });
 
   Future<void> batchUpsertRegistry(
-      List<SyncRegistriesCompanion> syncRegistries);
+    List<SyncRegistriesCompanion> syncRegistries,
+  );
 
   Future<List<SyncRegistry>> getPendingSyncRecords(
-      String backendId, String modelName);
+    String backendId,
+    String modelName,
+  );
 
   Future<void> markSyncComplete(int syncRegistryId);
 

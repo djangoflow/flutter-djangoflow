@@ -1,9 +1,9 @@
 import 'package:djangoflow_sync_foundation/djangoflow_sync_foundation.dart';
 
-import '../backends/drift_backend.dart';
-import '../backends/odoo_backend.dart';
-import '../database/database.dart';
-import '../sync/drift_odoo_sync_strategy.dart';
+import 'package:djangoflow_sync_drift_odoo/src/backends/drift_backend.dart';
+import 'package:djangoflow_sync_drift_odoo/src/backends/odoo_backend.dart';
+import 'package:djangoflow_sync_drift_odoo/src/database/database.dart';
+import 'package:djangoflow_sync_drift_odoo/src/sync/drift_odoo_sync_strategy.dart';
 
 abstract class DriftOdooSyncRepository<T extends SyncModel,
     TTable extends BaseTable> extends SyncRepository<T> {
@@ -75,12 +75,18 @@ abstract class DriftOdooSyncRepository<T extends SyncModel,
         return createdItem;
       } catch (e, stackTrace) {
         logger.e('Error creating item in primary backend:', e, stackTrace);
-        return driftOdooSyncStrategy.createWithTemporaryId(item,
-            secondaryBackend as DriftBackend<T, TTable, dynamic>, modelName);
+        return driftOdooSyncStrategy.createWithTemporaryId(
+          item,
+          secondaryBackend as DriftBackend<T, TTable, dynamic>,
+          modelName,
+        );
       }
     } else {
-      return driftOdooSyncStrategy.createWithTemporaryId(item,
-          secondaryBackend as DriftBackend<T, TTable, dynamic>, modelName);
+      return driftOdooSyncStrategy.createWithTemporaryId(
+        item,
+        secondaryBackend as DriftBackend<T, TTable, dynamic>,
+        modelName,
+      );
     }
   }
 
@@ -121,12 +127,18 @@ abstract class DriftOdooSyncRepository<T extends SyncModel,
         await driftOdooSyncStrategy.deleteRegistry(id, modelName);
       } catch (e, stackTrace) {
         logger.e('Error deleting item in primary backend:', e, stackTrace);
-        await driftOdooSyncStrategy.markAsDeletedInSecondary(id,
-            secondaryBackend as DriftBackend<T, TTable, dynamic>, modelName);
+        await driftOdooSyncStrategy.markAsDeletedInSecondary(
+          id,
+          secondaryBackend as DriftBackend<T, TTable, dynamic>,
+          modelName,
+        );
       }
     } else {
       await driftOdooSyncStrategy.markAsDeletedInSecondary(
-          id, secondaryBackend as DriftBackend<T, TTable, dynamic>, modelName);
+        id,
+        secondaryBackend as DriftBackend<T, TTable, dynamic>,
+        modelName,
+      );
     }
   }
 

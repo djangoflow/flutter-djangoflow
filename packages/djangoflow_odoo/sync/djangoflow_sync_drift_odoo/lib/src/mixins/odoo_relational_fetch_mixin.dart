@@ -1,6 +1,6 @@
 import 'package:djangoflow_sync_foundation/djangoflow_sync_foundation.dart';
 
-import '../backends/odoo_backend.dart';
+import 'package:djangoflow_sync_drift_odoo/src/backends/odoo_backend.dart';
 
 mixin OdooRelationalFetchMixin<T extends SyncModel> on OdooBackend<T> {
   Map<String, OdooBackend> get relationalBackends;

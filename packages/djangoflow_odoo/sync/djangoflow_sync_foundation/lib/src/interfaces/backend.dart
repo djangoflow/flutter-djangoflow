@@ -1,4 +1,4 @@
-import 'sync_model.dart';
+import 'package:djangoflow_sync_foundation/src/interfaces/sync_model.dart';
 
 abstract class Backend<T extends SyncModel> {
   Future<List<T>> getAll({List<int>? ids, DateTime? since});

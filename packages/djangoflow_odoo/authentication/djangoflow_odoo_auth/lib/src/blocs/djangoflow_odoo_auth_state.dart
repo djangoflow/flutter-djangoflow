@@ -27,12 +27,12 @@ class SessionConverter
 
   @override
   OdooSession? fromJson(Map<String, dynamic>? json) {
-    if (json == null) return null;
+    if (json == null) {
+      return null;
+    }
     return OdooSession.fromJson(json);
   }
 
   @override
-  Map<String, dynamic>? toJson(OdooSession? session) {
-    return session?.toJson();
-  }
+  Map<String, dynamic>? toJson(OdooSession? session) => session?.toJson();
 }

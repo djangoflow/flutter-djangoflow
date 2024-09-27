@@ -58,8 +58,9 @@ abstract class DriftBackend<T extends SyncModel, TTable extends BaseTable,
   Future<T> update(T item) async {
     final companion = createCompanionWithBackendId(item);
     await (database.update(table)
-          ..where((tbl) =>
-              tbl.id.equals(item.id) & tbl.backendId.equals(backendId)))
+          ..where(
+            (tbl) => tbl.id.equals(item.id) & tbl.backendId.equals(backendId),
+          ))
         .write(companion);
     final updatedItem = await getById(item.id);
     if (updatedItem != null) {

@@ -37,6 +37,6 @@ class SyncRegistries extends Table {
 
   @override
   List<Set<Column>> get uniqueKeys => [
-        {modelName, modelRecordId, backendId}
+        {modelName, modelRecordId, backendId},
       ];
 }

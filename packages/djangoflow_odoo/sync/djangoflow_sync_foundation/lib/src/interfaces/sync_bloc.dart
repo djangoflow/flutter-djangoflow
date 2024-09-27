@@ -1,7 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'sync_repository.dart';
-import 'sync_model.dart';
-import '../utils/logger.dart';
+import 'package:djangoflow_sync_foundation/src/interfaces/sync_repository.dart';
+import 'package:djangoflow_sync_foundation/src/interfaces/sync_model.dart';
+import 'package:djangoflow_sync_foundation/src/utils/logger.dart';
 
 // Events
 abstract class ItemEvent {}
@@ -9,23 +9,23 @@ abstract class ItemEvent {}
 class LoadItems extends ItemEvent {}
 
 class LoadItem extends ItemEvent {
-  final int id;
   LoadItem(this.id);
+  final int id;
 }
 
 class CreateItem<T extends SyncModel> extends ItemEvent {
-  final T item;
   CreateItem(this.item);
+  final T item;
 }
 
 class UpdateItem<T extends SyncModel> extends ItemEvent {
-  final T item;
   UpdateItem(this.item);
+  final T item;
 }
 
 class DeleteItem extends ItemEvent {
-  final int id;
   DeleteItem(this.id);
+  final int id;
 }
 
 class Sync extends ItemEvent {}
@@ -38,21 +38,20 @@ class ItemInitial extends ItemState {}
 class ItemLoading extends ItemState {}
 
 class ItemsLoaded<T extends SyncModel> extends ItemState {
-  final List<T> items;
-
   ItemsLoaded(this.items);
+  final List<T> items;
 }
 
 class ItemLoaded<T extends SyncModel> extends ItemState {
-  final T item;
   ItemLoaded(this.item);
+  final T item;
 }
 
 class ItemOperationSuccess extends ItemState {}
 
 class ItemOperationFailure extends ItemState {
-  final String error;
   ItemOperationFailure(this.error);
+  final String error;
 }
 
 class ItemSyncing extends ItemState {}
@@ -61,8 +60,6 @@ class ItemSyncSuccess extends ItemState {}
 
 /// TODO try to use or combine with DataBloc, ListBloc
 class SyncBloc<T extends SyncModel> extends Bloc<ItemEvent, ItemState> {
-  final SyncRepository<T> repository;
-
   SyncBloc(this.repository) : super(ItemInitial()) {
     on<LoadItems>((event, emit) async {
       emit(ItemLoading());
@@ -136,6 +133,7 @@ class SyncBloc<T extends SyncModel> extends Bloc<ItemEvent, ItemState> {
       }
     });
   }
+  final SyncRepository<T> repository;
 
   void _logError(Object error, StackTrace stackTrace) {
     logger.e('Error: ', error, stackTrace);

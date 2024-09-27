@@ -1,19 +1,18 @@
-import '../interfaces/backend.dart';
-import '../interfaces/repository.dart';
-import '../interfaces/sync_strategy.dart';
-import 'sync_model.dart';
-import '../utils/id_generator.dart';
-import '../utils/logger.dart';
+import 'package:djangoflow_sync_foundation/src/interfaces/backend.dart';
+import 'package:djangoflow_sync_foundation/src/interfaces/repository.dart';
+import 'package:djangoflow_sync_foundation/src/interfaces/sync_strategy.dart';
+import 'package:djangoflow_sync_foundation/src/interfaces/sync_model.dart';
+import 'package:djangoflow_sync_foundation/src/utils/id_generator.dart';
+import 'package:djangoflow_sync_foundation/src/utils/logger.dart';
 
 abstract class SyncRepository<T extends SyncModel> implements Repository<T> {
+  SyncRepository(this.primaryBackend, this.secondaryBackend, this.syncStrategy);
   @override
   final Backend<T> primaryBackend;
 
   final Backend<T> secondaryBackend;
 
   final SyncStrategy<T> syncStrategy;
-
-  SyncRepository(this.primaryBackend, this.secondaryBackend, this.syncStrategy);
 
   Future<bool> get isPrimaryBackendAvailable => primaryBackend.isAvailable();
 
@@ -118,7 +117,7 @@ abstract class SyncRepository<T extends SyncModel> implements Repository<T> {
   }
 
   Future<void> updateSecondaryBackend(List<T> items) async {
-    for (var item in items) {
+    for (final item in items) {
       await secondaryBackend.update(item);
     }
   }

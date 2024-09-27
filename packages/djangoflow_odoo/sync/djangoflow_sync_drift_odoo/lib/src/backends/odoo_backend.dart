@@ -2,10 +2,9 @@ import 'package:djangoflow_sync_foundation/djangoflow_sync_foundation.dart';
 import 'package:odoo_rpc/odoo_rpc.dart';
 
 abstract class OdooBackend<T extends SyncModel> implements Backend<T> {
+  OdooBackend(this.odooClient, this.connectionStateManager);
   final OdooClient odooClient;
   final ConnectionStateManager connectionStateManager;
-
-  OdooBackend(this.odooClient, this.connectionStateManager);
 
   String get modelName;
 
@@ -15,9 +14,7 @@ abstract class OdooBackend<T extends SyncModel> implements Backend<T> {
   Map<String, dynamic> toOdooJson(T item);
 
   @override
-  Future<bool> isAvailable() async {
-    return connectionStateManager.isOnline;
-  }
+  Future<bool> isAvailable() async => connectionStateManager.isOnline;
 
   @override
   Future<T> create(T item) async {
@@ -63,7 +60,7 @@ abstract class OdooBackend<T extends SyncModel> implements Backend<T> {
         if (ids != null || since != null)
           'domain': [
             if (ids != null) ['id', 'in', ids],
-            if (since != null) ['write_date', '>=', since.toIso8601String()]
+            if (since != null) ['write_date', '>=', since.toIso8601String()],
           ],
       },
     });
@@ -112,11 +109,10 @@ abstract class OdooBackend<T extends SyncModel> implements Backend<T> {
     }
   }
 
-  Map<String, dynamic> removeOdooReservedFields(Map<String, dynamic> json) {
-    return json
-      ..remove('id')
-      ..remove('is_marked_as_deleted')
-      ..remove('create_date')
-      ..remove('write_date');
-  }
+  Map<String, dynamic> removeOdooReservedFields(Map<String, dynamic> json) =>
+      json
+        ..remove('id')
+        ..remove('is_marked_as_deleted')
+        ..remove('create_date')
+        ..remove('write_date');
 }

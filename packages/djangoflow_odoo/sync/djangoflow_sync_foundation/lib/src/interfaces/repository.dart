@@ -1,10 +1,9 @@
-import 'sync_model.dart';
-import 'backend.dart';
+import 'package:djangoflow_sync_foundation/src/interfaces/sync_model.dart';
+import 'package:djangoflow_sync_foundation/src/interfaces/backend.dart';
 
 abstract class Repository<T extends SyncModel> {
-  final Backend<T> primaryBackend;
-
   Repository(this.primaryBackend);
+  final Backend<T> primaryBackend;
 
   Future<List<T>> getAll();
   Future<T?> getById(int id);
