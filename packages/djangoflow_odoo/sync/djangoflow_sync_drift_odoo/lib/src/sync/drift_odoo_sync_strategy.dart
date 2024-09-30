@@ -130,9 +130,10 @@ class DriftOdooSyncStrategy<T extends SyncModel, TTable extends BaseTable>
         logger.i('Processing item with temporary ID ${item.id}');
         final createdItem = await odooBackend.create(item);
         logger.i('Created item in Odoo with permanent ID ${createdItem.id}');
+        final resolvedItem = await resolveConflict(item, createdItem);
 
         await driftBackend.delete(item.id);
-        await driftBackend.create(createdItem);
+        await driftBackend.create(resolvedItem);
         logger.i(
           'Replaced temporary ID ${item.id} with permanent ID ${createdItem.id} in Drift backend',
         );
@@ -289,6 +290,12 @@ class DriftOdooSyncStrategy<T extends SyncModel, TTable extends BaseTable>
 
   @override
   Future<T> resolveConflict(T sourceItem, T destinationItem) async {
+    if (IdGenerator.isTemporaryId(sourceItem.id)) {
+      return destinationItem;
+    } else if (IdGenerator.isTemporaryId(destinationItem.id)) {
+      return sourceItem;
+    }
+
     if (sourceItem.writeDate.isAfter(destinationItem.writeDate)) {
       return sourceItem;
     } else {
