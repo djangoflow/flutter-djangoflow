@@ -26,3 +26,4 @@ doc/api/
 .idea/
 .DS_Store
 **/pubspec_overrides.yaml
+packages/djangoflow_odoo/authentication/djangoflow_odoo_auth/lib/.claudesync/config.local.json
