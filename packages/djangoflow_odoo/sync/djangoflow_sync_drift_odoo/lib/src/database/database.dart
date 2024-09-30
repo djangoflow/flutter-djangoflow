@@ -1,7 +1,7 @@
 import 'package:drift/drift.dart';
 
 class BaseTable extends Table {
-  IntColumn get id => integer().autoIncrement()();
+  IntColumn get id => integer()();
   DateTimeColumn get createDate => dateTime()();
   DateTimeColumn get writeDate => dateTime()();
   BoolColumn get isMarkedAsDeleted =>
