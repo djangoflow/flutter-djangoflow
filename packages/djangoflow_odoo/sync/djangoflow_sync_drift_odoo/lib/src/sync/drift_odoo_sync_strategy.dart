@@ -15,10 +15,10 @@ class DriftOdooSyncStrategy<T extends SyncModel, TTable extends BaseTable>
     this.odooBackendId,
     this.idMappingRepository,
   );
+
   final SyncRegistryRepository syncRegistryRepository;
   final String driftBackendId;
   final String odooBackendId;
-
   final IdMappingRepository idMappingRepository;
 
   @override
@@ -46,26 +46,47 @@ class DriftOdooSyncStrategy<T extends SyncModel, TTable extends BaseTable>
       odooBackendId,
       odooBackend.modelName,
     );
-    final updatedItems = await odooBackend.getAll(since: lastSyncTime);
 
-    for (final odooItem in updatedItems) {
+    const batchSize = 100; // Adjust based on your needs
+    int offset = 0;
+    bool hasMore = true;
+
+    while (hasMore) {
+      final updatedItems = await odooBackend.getAll(
+        since: lastSyncTime,
+        limit: batchSize,
+        offset: offset,
+      );
+
+      if (updatedItems.isEmpty) {
+        hasMore = false;
+      } else {
+        await _processBatch(updatedItems, driftBackend, odooBackend.modelName);
+        offset += batchSize;
+      }
+    }
+
+    // Update last sync time
+  }
+
+  Future<void> _processBatch(
+    List<T> items,
+    DriftBackend<T, TTable, dynamic> driftBackend,
+    String modelName,
+  ) async {
+    for (final odooItem in items) {
       try {
         final driftItem = await driftBackend.getById(odooItem.id);
         if (driftItem != null) {
           final resolvedItem = await resolveConflict(odooItem, driftItem);
-
           await _updateOrCreateInDrift(
             resolvedItem,
             driftBackend,
-            odooBackend.modelName,
+            modelName,
             shouldReplace: resolvedItem.writeDate != driftItem.writeDate,
           );
         } else {
-          await _updateOrCreateInDrift(
-            odooItem,
-            driftBackend,
-            odooBackend.modelName,
-          );
+          await _updateOrCreateInDrift(odooItem, driftBackend, modelName);
         }
       } catch (e, stackTrace) {
         logger.e(
