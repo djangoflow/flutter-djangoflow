@@ -21,7 +21,12 @@ abstract class DriftBackend<T extends SyncModel, TTable extends BaseTable,
   UpdateCompanion<Insertable> createCompanionWithBackendId(T item);
 
   @override
-  Future<List<T>> getAll({List<int>? ids, DateTime? since}) async {
+  Future<List<T>> getAll({
+    List<int>? ids,
+    DateTime? since,
+    int? limit,
+    int? offset,
+  }) async {
     final query = database.select(table)
       ..where((tbl) => tbl.backendId.equals(backendId));
     if (ids != null && ids.isNotEmpty) {
@@ -29,6 +34,9 @@ abstract class DriftBackend<T extends SyncModel, TTable extends BaseTable,
     }
     if (since != null) {
       query.where((tbl) => tbl.writeDate.isBiggerThanValue(since));
+    }
+    if (limit != null) {
+      query.limit(limit, offset: offset);
     }
     final results = await query.get();
     return results.map((row) => convertToModel(row)).toList();

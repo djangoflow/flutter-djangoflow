@@ -49,7 +49,8 @@ abstract class OdooBackend<T extends SyncModel> implements Backend<T> {
   }
 
   @override
-  Future<List<T>> getAll({List<int>? ids, DateTime? since}) async {
+  Future<List<T>> getAll(
+      {List<int>? ids, DateTime? since, int? limit, int? offset}) async {
     logger.i('Fetching all records for $modelName');
     final response = await odooClient.callKw({
       'model': modelName,
@@ -62,12 +63,31 @@ abstract class OdooBackend<T extends SyncModel> implements Backend<T> {
             if (ids != null) ['id', 'in', ids],
             if (since != null) ['write_date', '>=', since.toIso8601String()],
           ],
+        if (limit != null) 'limit': limit,
+        if (limit != null && offset != null) 'offset': offset,
       },
     });
 
     logger.d('Fetched ${response.length} records for $modelName');
 
-    final items = (response as List).map((record) => fromJson(record)).toList();
+    final items = deserializeListResponse(response as List);
+
+    return items;
+  }
+
+  List<T> deserializeListResponse(List records) {
+    final items = records
+        .map((record) {
+          try {
+            final convertedItem = fromJson(record);
+            return convertedItem;
+          } catch (e, stackTrace) {
+            logger.e(
+                'Failed to convert record to $modelName: $e', e, stackTrace);
+          }
+        })
+        .whereType<T>()
+        .toList();
 
     return items;
   }
