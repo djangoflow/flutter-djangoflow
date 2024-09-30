@@ -3,6 +3,32 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2024-09-30
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`djangoflow_odoo_auth` - `v0.0.3+1`](#djangoflow_odoo_auth---v0031)
+ - [`djangoflow_sync_drift_odoo` - `v0.0.2+4`](#djangoflow_sync_drift_odoo---v0024)
+
+---
+
+#### `djangoflow_odoo_auth` - `v0.0.3+1`
+
+ - **REFACTOR**: Update xml_rpc dependency version to 0.5.1. ([e9d61217](https://github.com/djangoflow/flutter-djangoflow/commit/e9d61217907e7989930d3defdb7b86a5112b018b))
+
+#### `djangoflow_sync_drift_odoo` - `v0.0.2+4`
+
+ - **REFACTOR**: throw exception if backend is not available. ([ae51a212](https://github.com/djangoflow/flutter-djangoflow/commit/ae51a212b6423ab6b9ece6481930124808c3af8a))
+
+
 ## 2024-09-27
 
 ### Changes

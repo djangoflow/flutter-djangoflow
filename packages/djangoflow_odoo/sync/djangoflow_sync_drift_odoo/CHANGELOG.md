@@ -1,3 +1,7 @@
+## 0.0.2+4
+
+ - **REFACTOR**: throw exception if backend is not available. ([ae51a212](https://github.com/djangoflow/flutter-djangoflow/commit/ae51a212b6423ab6b9ece6481930124808c3af8a))
+
 ## 0.0.2+3
 
  - **REFACTOR**: linter fixes. ([f95182be](https://github.com/djangoflow/flutter-djangoflow/commit/f95182be6d9f5dcdbec7d79973f76bddcf06e67d))

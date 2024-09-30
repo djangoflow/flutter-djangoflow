@@ -1,3 +1,7 @@
+## 0.0.3+1
+
+ - **REFACTOR**: Update xml_rpc dependency version to 0.5.1. ([e9d61217](https://github.com/djangoflow/flutter-djangoflow/commit/e9d61217907e7989930d3defdb7b86a5112b018b))
+
 ## 0.0.3
 
  - **REFACTOR**: linter fixes. ([f95182be](https://github.com/djangoflow/flutter-djangoflow/commit/f95182be6d9f5dcdbec7d79973f76bddcf06e67d))
