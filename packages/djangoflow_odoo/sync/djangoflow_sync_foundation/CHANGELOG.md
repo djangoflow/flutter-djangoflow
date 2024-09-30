@@ -1,3 +1,9 @@
+## 0.1.0
+
+> Note: This release has breaking changes.
+
+ - **BREAKING** **REFACTOR**: Add limit and offset parameters to getAll method in Backend. ([715c2bda](https://github.com/djangoflow/flutter-djangoflow/commit/715c2bdaa7a0bb6114237086828e3b18556c3e9c))
+
 ## 0.0.3
 
  - **REFACTOR**: linter fixes. ([f95182be](https://github.com/djangoflow/flutter-djangoflow/commit/f95182be6d9f5dcdbec7d79973f76bddcf06e67d))

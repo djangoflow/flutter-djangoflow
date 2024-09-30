@@ -1,3 +1,10 @@
+## 0.1.0
+
+> Note: This release has breaking changes.
+
+ - **REFACTOR**: use batch processing when syncing many items. ([f75bc811](https://github.com/djangoflow/flutter-djangoflow/commit/f75bc811ade7cb9326bbee05abe08b6275a05d96))
+ - **BREAKING** **REFACTOR**: Add limit and offset parameters to getAll method in Backend. ([715c2bda](https://github.com/djangoflow/flutter-djangoflow/commit/715c2bdaa7a0bb6114237086828e3b18556c3e9c))
+
 ## 0.0.2+6
 
  - **REFACTOR**: Update id column in BaseTable to remove auto-increment. ([dff20233](https://github.com/djangoflow/flutter-djangoflow/commit/dff2023314a751cdf9a55e85ea99caddec7df685))

@@ -11,6 +11,33 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 Packages with breaking changes:
 
+ - [`djangoflow_sync_drift_odoo` - `v0.1.0`](#djangoflow_sync_drift_odoo---v010)
+ - [`djangoflow_sync_foundation` - `v0.1.0`](#djangoflow_sync_foundation---v010)
+
+Packages with other changes:
+
+ - There are no other changes in this release.
+
+---
+
+#### `djangoflow_sync_drift_odoo` - `v0.1.0`
+
+ - **REFACTOR**: use batch processing when syncing many items. ([f75bc811](https://github.com/djangoflow/flutter-djangoflow/commit/f75bc811ade7cb9326bbee05abe08b6275a05d96))
+ - **BREAKING** **REFACTOR**: Add limit and offset parameters to getAll method in Backend. ([715c2bda](https://github.com/djangoflow/flutter-djangoflow/commit/715c2bdaa7a0bb6114237086828e3b18556c3e9c))
+
+#### `djangoflow_sync_foundation` - `v0.1.0`
+
+ - **BREAKING** **REFACTOR**: Add limit and offset parameters to getAll method in Backend. ([715c2bda](https://github.com/djangoflow/flutter-djangoflow/commit/715c2bdaa7a0bb6114237086828e3b18556c3e9c))
+
+
+## 2024-10-01
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
  - [`djangoflow_odoo_auth` - `v0.1.0`](#djangoflow_odoo_auth---v010)
 
 Packages with other changes:
