@@ -3,6 +3,31 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2024-10-01
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - [`djangoflow_odoo_auth` - `v0.1.0`](#djangoflow_odoo_auth---v010)
+
+Packages with other changes:
+
+ - [`djangoflow_sync_drift_odoo` - `v0.0.2+6`](#djangoflow_sync_drift_odoo---v0026)
+
+---
+
+#### `djangoflow_odoo_auth` - `v0.1.0`
+
+ - **BREAKING** **REFACTOR**: add direct error handling. ([2bf42a14](https://github.com/djangoflow/flutter-djangoflow/commit/2bf42a14f5f08ec7f9411d1f6d7da777f950d4e8))
+
+#### `djangoflow_sync_drift_odoo` - `v0.0.2+6`
+
+ - **REFACTOR**: Update id column in BaseTable to remove auto-increment. ([dff20233](https://github.com/djangoflow/flutter-djangoflow/commit/dff2023314a751cdf9a55e85ea99caddec7df685))
+
+
 ## 2024-09-30
 
 ### Changes

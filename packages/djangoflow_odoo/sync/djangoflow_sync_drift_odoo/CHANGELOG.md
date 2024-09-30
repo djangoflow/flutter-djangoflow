@@ -1,3 +1,7 @@
+## 0.0.2+6
+
+ - **REFACTOR**: Update id column in BaseTable to remove auto-increment. ([dff20233](https://github.com/djangoflow/flutter-djangoflow/commit/dff2023314a751cdf9a55e85ea99caddec7df685))
+
 ## 0.0.2+5
 
  - **REFACTOR**: Resolve conflict in DriftOdooSyncStrategy. ([f1d41b7f](https://github.com/djangoflow/flutter-djangoflow/commit/f1d41b7fa355145c4fd598ca4b65f5ef5823595e))

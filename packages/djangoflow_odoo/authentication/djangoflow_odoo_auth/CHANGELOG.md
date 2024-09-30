@@ -1,3 +1,9 @@
+## 0.1.0
+
+> Note: This release has breaking changes.
+
+ - **BREAKING** **REFACTOR**: add direct error handling. ([2bf42a14](https://github.com/djangoflow/flutter-djangoflow/commit/2bf42a14f5f08ec7f9411d1f6d7da777f950d4e8))
+
 ## 0.0.3+1
 
  - **REFACTOR**: Update xml_rpc dependency version to 0.5.1. ([e9d61217](https://github.com/djangoflow/flutter-djangoflow/commit/e9d61217907e7989930d3defdb7b86a5112b018b))
