@@ -1,3 +1,7 @@
+## 0.0.2+5
+
+ - **REFACTOR**: Resolve conflict in DriftOdooSyncStrategy. ([f1d41b7f](https://github.com/djangoflow/flutter-djangoflow/commit/f1d41b7fa355145c4fd598ca4b65f5ef5823595e))
+
 ## 0.0.2+4
 
  - **REFACTOR**: throw exception if backend is not available. ([ae51a212](https://github.com/djangoflow/flutter-djangoflow/commit/ae51a212b6423ab6b9ece6481930124808c3af8a))

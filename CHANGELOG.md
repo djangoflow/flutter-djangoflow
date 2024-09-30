@@ -15,6 +15,27 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`djangoflow_sync_drift_odoo` - `v0.0.2+5`](#djangoflow_sync_drift_odoo---v0025)
+
+---
+
+#### `djangoflow_sync_drift_odoo` - `v0.0.2+5`
+
+ - **REFACTOR**: Resolve conflict in DriftOdooSyncStrategy. ([f1d41b7f](https://github.com/djangoflow/flutter-djangoflow/commit/f1d41b7fa355145c4fd598ca4b65f5ef5823595e))
+
+
+## 2024-09-30
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`djangoflow_odoo_auth` - `v0.0.3+1`](#djangoflow_odoo_auth---v0031)
  - [`djangoflow_sync_drift_odoo` - `v0.0.2+4`](#djangoflow_sync_drift_odoo---v0024)
 
