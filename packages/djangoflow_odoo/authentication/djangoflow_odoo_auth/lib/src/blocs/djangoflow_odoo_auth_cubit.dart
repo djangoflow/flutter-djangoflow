@@ -15,8 +15,18 @@ class DjangoflowOdooAuthCubit extends HydratedCubit<DjangoflowOdooAuthState> {
   final DjangoflowOdooAuthRepository _repository;
 
   void _handleSessionChange(OdooSession session) {
+    print('Session Changed : ${session.toJson()}');
     if (session.id.isEmpty || session.userId == 0) {
-      logout();
+      emit(
+        state.copyWith(
+          status: AuthStatus.unauthenticated,
+          database: null,
+          errorMessage: null,
+          session: null,
+          dbList: null,
+          baseUrl: null,
+        ),
+      );
     } else {
       emit(
         state.copyWith(
@@ -70,28 +80,30 @@ class DjangoflowOdooAuthCubit extends HydratedCubit<DjangoflowOdooAuthState> {
 
   Future<void> login(String username, String password) async {
     if (state.baseUrl == null || state.database == null) {
-      emit(
-        state.copyWith(
-          status: AuthStatus.error,
-          errorMessage: 'Base URL or database not set',
-        ),
-      );
-      return;
+      throw Exception('Base URL and Database must be set before login');
     }
     try {
       final session =
           await _repository.login(state.database!, username, password);
-      emit(
-        state.copyWith(
-          status: AuthStatus.authenticated,
-          session: session,
-        ),
-      );
+      if (session != null && session.id.isNotEmpty && session.userId != 0) {
+        emit(
+          state.copyWith(
+            status: AuthStatus.authenticated,
+            session: session,
+          ),
+        );
+      } else {
+        throw Exception('Failed to login');
+      }
+
       // The session change will be handled by the session stream listener
     } catch (e) {
-      emit(
-        state.copyWith(status: AuthStatus.error, errorMessage: e.toString()),
-      );
+      if (e is OdooSessionExpiredException) {
+        throw Exception('Session Expired');
+      } else if (e is OdooException) {
+        throw Exception('Failed to login, please check your credentials.');
+      }
+      rethrow;
     }
   }
 
@@ -100,11 +112,10 @@ class DjangoflowOdooAuthCubit extends HydratedCubit<DjangoflowOdooAuthState> {
     emit(
       state.copyWith(
         status: AuthStatus.unauthenticated,
-        database: null,
-        errorMessage: null,
         session: null,
         dbList: null,
-        baseUrl: null,
+        errorMessage: null,
+        database: null,
       ),
     );
   }
@@ -114,12 +125,7 @@ class DjangoflowOdooAuthCubit extends HydratedCubit<DjangoflowOdooAuthState> {
       final dbList = await _repository.getDatabases();
       emit(state.copyWith(dbList: dbList));
     } catch (e) {
-      emit(
-        state.copyWith(
-          status: AuthStatus.error,
-          errorMessage: e.toString(),
-        ),
-      );
+      throw Exception('Failed to get database list: $e');
     }
   }
 

@@ -40,13 +40,9 @@ class DjangoflowOdooAuthRepository {
         'OdooClient not initialized. Call initializeClient() first.',
       );
     }
-    try {
-      final session =
-          await odooClient.authenticate(database, username, password);
-      return session;
-    } catch (e) {
-      throw Exception('Login failed: $e');
-    }
+
+    final session = await odooClient.authenticate(database, username, password);
+    return session;
   }
 
   Future<void> logout() async {

@@ -4,7 +4,7 @@ import 'package:odoo_rpc/odoo_rpc.dart';
 part 'djangoflow_odoo_auth_state.freezed.dart';
 part 'djangoflow_odoo_auth_state.g.dart';
 
-enum AuthStatus { initial, unauthenticated, authenticated, error }
+enum AuthStatus { initial, unauthenticated, authenticated }
 
 @freezed
 class DjangoflowOdooAuthState with _$DjangoflowOdooAuthState {

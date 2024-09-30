@@ -35,5 +35,4 @@ const _$AuthStatusEnumMap = {
   AuthStatus.initial: 'initial',
   AuthStatus.unauthenticated: 'unauthenticated',
   AuthStatus.authenticated: 'authenticated',
-  AuthStatus.error: 'error',
 };
