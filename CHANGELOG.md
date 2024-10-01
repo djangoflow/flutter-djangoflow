@@ -3,6 +3,33 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2024-10-02
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`djangoflow_sync_drift_odoo` - `v0.1.0+2`](#djangoflow_sync_drift_odoo---v0102)
+ - [`djangoflow_sync_foundation` - `v0.1.0+1`](#djangoflow_sync_foundation---v0101)
+
+---
+
+#### `djangoflow_sync_drift_odoo` - `v0.1.0+2`
+
+ - **REFACTOR**: Update OdooBackend to use checkConnection() instead of isOnline. ([82665b1f](https://github.com/djangoflow/flutter-djangoflow/commit/82665b1f18254c2b57530aba0c02410f00f47129))
+ - **REFACTOR**: Add error handling for OdooException in DriftOdooSyncRepository. ([1d049cfe](https://github.com/djangoflow/flutter-djangoflow/commit/1d049cfe9c777a372553e8031e1bb913a9c672c5))
+
+#### `djangoflow_sync_foundation` - `v0.1.0+1`
+
+ - **REFACTOR**: Update OdooBackend to use checkConnection() instead of isOnline. ([82665b1f](https://github.com/djangoflow/flutter-djangoflow/commit/82665b1f18254c2b57530aba0c02410f00f47129))
+
+
 ## 2024-10-01
 
 ### Changes

@@ -1,3 +1,7 @@
+## 0.1.0+1
+
+ - **REFACTOR**: Update OdooBackend to use checkConnection() instead of isOnline. ([82665b1f](https://github.com/djangoflow/flutter-djangoflow/commit/82665b1f18254c2b57530aba0c02410f00f47129))
+
 ## 0.1.0
 
 > Note: This release has breaking changes.

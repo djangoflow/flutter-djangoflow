@@ -1,3 +1,8 @@
+## 0.1.0+2
+
+ - **REFACTOR**: Update OdooBackend to use checkConnection() instead of isOnline. ([82665b1f](https://github.com/djangoflow/flutter-djangoflow/commit/82665b1f18254c2b57530aba0c02410f00f47129))
+ - **REFACTOR**: Add error handling for OdooException in DriftOdooSyncRepository. ([1d049cfe](https://github.com/djangoflow/flutter-djangoflow/commit/1d049cfe9c777a372553e8031e1bb913a9c672c5))
+
 ## 0.1.0+1
 
  - **REFACTOR**: sync strategy to conditionally update existing item. ([987f1dc2](https://github.com/djangoflow/flutter-djangoflow/commit/987f1dc26adf5d6a6b7262b541f89d584186e6b9))
