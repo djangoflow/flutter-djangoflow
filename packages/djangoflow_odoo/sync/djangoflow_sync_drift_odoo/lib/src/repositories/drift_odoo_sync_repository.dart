@@ -4,6 +4,7 @@ import 'package:djangoflow_sync_drift_odoo/src/backends/drift_backend.dart';
 import 'package:djangoflow_sync_drift_odoo/src/backends/odoo_backend.dart';
 import 'package:djangoflow_sync_drift_odoo/src/database/database.dart';
 import 'package:djangoflow_sync_drift_odoo/src/sync/drift_odoo_sync_strategy.dart';
+import 'package:odoo_rpc/odoo_rpc.dart';
 
 abstract class DriftOdooSyncRepository<T extends SyncModel,
     TTable extends BaseTable> extends SyncRepository<T> {
@@ -32,6 +33,9 @@ abstract class DriftOdooSyncRepository<T extends SyncModel,
 
         return items;
       } catch (e, strackTrace) {
+        if (e is OdooException) {
+          rethrow;
+        }
         logger.e('Error fetching items from primary backend:', e, strackTrace);
         return secondaryBackend.getAll();
       }
@@ -52,6 +56,9 @@ abstract class DriftOdooSyncRepository<T extends SyncModel,
         }
         return item;
       } catch (e, strackTrace) {
+        if (e is OdooException) {
+          rethrow;
+        }
         logger.e('Error fetching item from primary backend:', e, strackTrace);
         return secondaryBackend.getById(id);
       }
@@ -74,6 +81,9 @@ abstract class DriftOdooSyncRepository<T extends SyncModel,
             .syncBatch([createdItem], secondaryBackend, modelName: modelName);
         return createdItem;
       } catch (e, stackTrace) {
+        if (e is OdooException) {
+          rethrow;
+        }
         logger.e('Error creating item in primary backend:', e, stackTrace);
         return driftOdooSyncStrategy.createWithTemporaryId(
           item,
@@ -100,6 +110,9 @@ abstract class DriftOdooSyncRepository<T extends SyncModel,
             .syncBatch([updatedItem], primaryBackend, modelName: modelName);
         return updatedItem;
       } catch (e, stackTrace) {
+        if (e is OdooException) {
+          rethrow;
+        }
         logger.e('Error updating item in primary backend:', e, stackTrace);
         return _updateSecondaryWithPendingSync(item);
       }
@@ -126,6 +139,9 @@ abstract class DriftOdooSyncRepository<T extends SyncModel,
         // The sync strategy will handle updating the sync registry
         await driftOdooSyncStrategy.deleteRegistry(id, modelName);
       } catch (e, stackTrace) {
+        if (e is OdooException) {
+          rethrow;
+        }
         logger.e('Error deleting item in primary backend:', e, stackTrace);
         await driftOdooSyncStrategy.markAsDeletedInSecondary(
           id,
