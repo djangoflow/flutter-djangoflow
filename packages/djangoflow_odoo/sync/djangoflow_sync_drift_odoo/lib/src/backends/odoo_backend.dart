@@ -14,7 +14,7 @@ abstract class OdooBackend<T extends SyncModel> implements Backend<T> {
   Map<String, dynamic> toOdooJson(T item);
 
   @override
-  Future<bool> isAvailable() async => connectionStateManager.isOnline;
+  Future<bool> isAvailable() async => connectionStateManager.checkConnection();
 
   @override
   Future<T> create(T item) async {
