@@ -53,8 +53,12 @@ abstract class DriftBackend<T extends SyncModel, TTable extends BaseTable,
   @override
   Future<T> create(T item) async {
     final companion = createCompanionWithBackendId(item);
-    final result = await database.into(table).insert(companion);
-    final createdItem = await getById(result);
+    await database.into(table).insert(
+          companion,
+          onConflict: DoNothing(),
+        );
+
+    final createdItem = await getById(item.id);
     if (createdItem != null) {
       return createdItem;
     } else {
