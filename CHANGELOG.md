@@ -11,6 +11,28 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 Packages with breaking changes:
 
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`djangoflow_sync_drift_odoo` - `v0.1.0+1`](#djangoflow_sync_drift_odoo---v0101)
+
+---
+
+#### `djangoflow_sync_drift_odoo` - `v0.1.0+1`
+
+ - **REFACTOR**: sync strategy to conditionally update existing item. ([987f1dc2](https://github.com/djangoflow/flutter-djangoflow/commit/987f1dc26adf5d6a6b7262b541f89d584186e6b9))
+ - **FIX**: add onConflict for insert statement to avoid errors during insert. ([f33e5805](https://github.com/djangoflow/flutter-djangoflow/commit/f33e58051d58c1a857ad05160dc6faa69281ad6b))
+
+
+## 2024-10-01
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
  - [`djangoflow_sync_drift_odoo` - `v0.1.0`](#djangoflow_sync_drift_odoo---v010)
  - [`djangoflow_sync_foundation` - `v0.1.0`](#djangoflow_sync_foundation---v010)
 
