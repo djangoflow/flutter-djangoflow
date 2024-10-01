@@ -240,8 +240,10 @@ class DriftOdooSyncStrategy<T extends SyncModel, TTable extends BaseTable>
     bool shouldReplace = true,
   }) async {
     final existingItem = await driftBackend.getById(item.id);
-    if (existingItem != null && shouldReplace) {
-      await driftBackend.update(item);
+    if (existingItem != null) {
+      if (shouldReplace) {
+        await driftBackend.update(item);
+      }
     } else if (existingItem == null) {
       await driftBackend.create(item);
     }
