@@ -15,6 +15,27 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`djangoflow_app` - `v5.0.3`](#djangoflow_app---v503)
+
+---
+
+#### `djangoflow_app` - `v5.0.3`
+
+ - **REFACTOR**: Update DjangoflowAppSnackbar to use a centralized method for showing snackbars. ([71a36554](https://github.com/djangoflow/flutter-djangoflow/commit/71a36554c7ed05354d264a6dd8317d8b3869bc6b))
+
+
+## 2024-10-02
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`djangoflow_sync_drift_odoo` - `v0.1.0+2`](#djangoflow_sync_drift_odoo---v0102)
  - [`djangoflow_sync_foundation` - `v0.1.0+1`](#djangoflow_sync_foundation---v0101)
 

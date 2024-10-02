@@ -1,3 +1,7 @@
+## 5.0.3
+
+ - **REFACTOR**: Update DjangoflowAppSnackbar to use a centralized method for showing snackbars. ([71a36554](https://github.com/djangoflow/flutter-djangoflow/commit/71a36554c7ed05354d264a6dd8317d8b3869bc6b))
+
 ## 5.0.2
 
  - **REFACTOR**: update params and add SingleChildWidget import in AppBuilder. ([2ae11e1e](https://github.com/djangoflow/flutter-djangoflow/commit/2ae11e1e99d03bf99734c45b8d2ba729c502b974))
