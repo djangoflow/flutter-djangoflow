@@ -9,6 +9,12 @@ class DjangoflowAppSnackbar {
       DjangoflowAppSnackbar._internal();
   static final scaffoldMessengerKey = GlobalKey<ScaffoldMessengerState>();
 
+  static SnackBarThemeData? _snackBarTheme;
+
+  static void initialize({required SnackBarThemeData snackBarTheme}) {
+    _snackBarTheme = snackBarTheme;
+  }
+
   static void showInfo(
     String message, {
     SnackBarAction? action,
@@ -17,24 +23,20 @@ class DjangoflowAppSnackbar {
     SnackBarBehavior? behavior,
     ShapeBorder? shape,
     DismissDirection dismissDirection = DismissDirection.down,
+    Color? backgroundColor,
+    TextStyle? textStyle,
   }) {
-    if (scaffoldMessengerKey.currentState?.mounted == true) {
-      scaffoldMessengerKey.currentState?.showSnackBar(
-        SnackBar(
-          shape: shape,
-          margin: margin,
-          behavior: behavior,
-          dismissDirection: dismissDirection,
-          duration: duration,
-          content: Text(message),
-          action: action ??
-              const SnackBarAction(
-                label: 'Dismiss',
-                onPressed: DjangoflowAppSnackbar.dismiss,
-              ),
-        ),
-      );
-    }
+    _showSnackBar(
+      message,
+      action: action,
+      duration: duration,
+      margin: margin,
+      behavior: behavior,
+      shape: shape,
+      dismissDirection: dismissDirection,
+      backgroundColor: backgroundColor ?? _snackBarTheme?.backgroundColor,
+      textStyle: textStyle ?? _snackBarTheme?.contentTextStyle,
+    );
   }
 
   static void showError(
@@ -44,51 +46,45 @@ class DjangoflowAppSnackbar {
     SnackBarBehavior? behavior,
     ShapeBorder? shape,
     DismissDirection dismissDirection = DismissDirection.down,
+    Color? backgroundColor,
+    TextStyle? textStyle,
   }) {
-    if (scaffoldMessengerKey.currentState?.mounted == true) {
-      scaffoldMessengerKey.currentState?.showSnackBar(
-        SnackBar(
-          backgroundColor: Colors.red,
-          shape: shape,
-          margin: margin,
-          behavior: behavior,
-          dismissDirection: dismissDirection,
-          content: Text(message),
-          action: action ??
-              const SnackBarAction(
-                label: 'Dismiss',
-                onPressed: DjangoflowAppSnackbar.dismiss,
-                textColor: Colors.white,
-              ),
-          duration: const Duration(seconds: 15),
-        ),
-      );
-    }
+    _showSnackBar(
+      message,
+      action: action,
+      duration: const Duration(seconds: 15),
+      margin: margin,
+      behavior: behavior,
+      shape: shape,
+      dismissDirection: dismissDirection,
+      backgroundColor: backgroundColor ?? Colors.red,
+      textStyle: textStyle ??
+          _snackBarTheme?.contentTextStyle?.copyWith(color: Colors.white),
+    );
   }
 
-  // ignore: long-parameter-list
   static void showInAppNotification({
     String? title,
     String? body,
     SnackBarAction? action,
-    TextStyle? titleTextStyle = const TextStyle(
-      fontWeight: FontWeight.bold,
-    ),
+    TextStyle? titleTextStyle,
     TextStyle? bodyTextStyle,
     Duration duration = const Duration(seconds: 12),
     EdgeInsetsGeometry? margin,
     SnackBarBehavior? behavior,
     ShapeBorder? shape,
     DismissDirection dismissDirection = DismissDirection.down,
+    Color? backgroundColor,
   }) {
     if (scaffoldMessengerKey.currentState?.mounted == true) {
       scaffoldMessengerKey.currentState?.showSnackBar(
         SnackBar(
           duration: duration,
-          shape: shape,
-          margin: margin,
-          behavior: behavior,
+          shape: shape ?? _snackBarTheme?.shape,
+          margin: margin ?? _snackBarTheme?.insetPadding,
+          behavior: behavior ?? _snackBarTheme?.behavior,
           dismissDirection: dismissDirection,
+          backgroundColor: backgroundColor ?? _snackBarTheme?.backgroundColor,
           content: Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -96,28 +92,59 @@ class DjangoflowAppSnackbar {
               if (title != null)
                 Text(
                   title,
-                  style: titleTextStyle,
+                  style: titleTextStyle ??
+                      _snackBarTheme?.contentTextStyle
+                          ?.copyWith(fontWeight: FontWeight.bold),
                   maxLines: 3,
                   overflow: TextOverflow.ellipsis,
                 ),
               if (body != null)
                 Text(
                   body,
-                  style: bodyTextStyle,
+                  style: bodyTextStyle ?? _snackBarTheme?.contentTextStyle,
                   maxLines: 6,
                   overflow: TextOverflow.ellipsis,
                 ),
             ],
           ),
-          action: action ??
-              const SnackBarAction(
-                label: 'Dismiss',
-                onPressed: DjangoflowAppSnackbar.dismiss,
-              ),
+          action: action ?? _buildDismissAction(),
         ),
       );
     }
   }
+
+  static void _showSnackBar(
+    String message, {
+    required DismissDirection dismissDirection,
+    required Duration duration,
+    SnackBarAction? action,
+    EdgeInsetsGeometry? margin,
+    SnackBarBehavior? behavior,
+    ShapeBorder? shape,
+    Color? backgroundColor,
+    TextStyle? textStyle,
+  }) {
+    if (scaffoldMessengerKey.currentState?.mounted == true) {
+      scaffoldMessengerKey.currentState?.showSnackBar(
+        SnackBar(
+          duration: duration,
+          shape: shape ?? _snackBarTheme?.shape,
+          margin: margin ?? _snackBarTheme?.insetPadding,
+          behavior: behavior ?? _snackBarTheme?.behavior,
+          dismissDirection: dismissDirection,
+          backgroundColor: backgroundColor,
+          content: Text(message, style: textStyle),
+          action: action ?? _buildDismissAction(),
+        ),
+      );
+    }
+  }
+
+  static SnackBarAction _buildDismissAction() => SnackBarAction(
+        label: 'Dismiss',
+        onPressed: dismiss,
+        textColor: _snackBarTheme?.actionTextColor,
+      );
 
   static void dismiss() {
     scaffoldMessengerKey.currentState?.removeCurrentSnackBar();
