@@ -3,6 +3,42 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2024-10-09
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`djangoflow_odoo_auth` - `v0.1.0+1`](#djangoflow_odoo_auth---v0101)
+ - [`djangoflow_odoo_oauth` - `v0.0.2`](#djangoflow_odoo_oauth---v002)
+ - [`djangoflow_sync_drift_odoo` - `v0.1.0+3`](#djangoflow_sync_drift_odoo---v0103)
+
+---
+
+#### `djangoflow_odoo_auth` - `v0.1.0+1`
+
+ - **REFACTOR**: update dependencies. ([82805098](https://github.com/djangoflow/flutter-djangoflow/commit/82805098b5fc2489aa9b440eb9da3719ced4a04e))
+ - **REFACTOR**: fix issue with converting comapny list as records. ([b740488f](https://github.com/djangoflow/flutter-djangoflow/commit/b740488f024c842ae9c4d5149b0b86412a373f85))
+ - **REFACTOR**: Rename getDbList to fetchDbList in DjangoflowOdooAuthCubit. ([7ec9f267](https://github.com/djangoflow/flutter-djangoflow/commit/7ec9f26710a6da4cf5b038fd4283264bc9981309))
+ - **REFACTOR**: Initialize client after successful login with custom session_id. ([ec75fbd8](https://github.com/djangoflow/flutter-djangoflow/commit/ec75fbd89d75a3231f0a938cf5eb5cb40b8c3f1c))
+ - **REFACTOR**: Update DjangoflowOdooAuthCubit and DjangoflowOdooAuthRepository. ([dd58e0c9](https://github.com/djangoflow/flutter-djangoflow/commit/dd58e0c9d524ca983936ec9499339ce7a682850f))
+ - **REFACTOR**: add dbName from OdooSession. ([c97bf6c4](https://github.com/djangoflow/flutter-djangoflow/commit/c97bf6c48d1679c21b03f308acbe2d6bf9b17a78))
+
+#### `djangoflow_odoo_oauth` - `v0.0.2`
+
+ - **FEAT**: add djangoflow_odoo_oauth package. ([38e1625a](https://github.com/djangoflow/flutter-djangoflow/commit/38e1625a5c495b7943b116fb13ca21d7b6034887))
+
+#### `djangoflow_sync_drift_odoo` - `v0.1.0+3`
+
+ - **REFACTOR**: update dependencies. ([5241b5e9](https://github.com/djangoflow/flutter-djangoflow/commit/5241b5e97fcf2720b7afdd0af2cc498c3d3cbb79))
+
+
 ## 2024-10-02
 
 ### Changes
