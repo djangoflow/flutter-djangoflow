@@ -15,6 +15,27 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`djangoflow_odoo_oauth` - `v0.0.2+1`](#djangoflow_odoo_oauth---v0021)
+
+---
+
+#### `djangoflow_odoo_oauth` - `v0.0.2+1`
+
+ - **REFACTOR**: update logout method in OdooSSOAuthenticator. ([1571255d](https://github.com/djangoflow/flutter-djangoflow/commit/1571255dd782da6ac061cdb9da021c181419d186))
+
+
+## 2024-10-09
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`djangoflow_odoo_auth` - `v0.1.0+1`](#djangoflow_odoo_auth---v0101)
  - [`djangoflow_odoo_oauth` - `v0.0.2`](#djangoflow_odoo_oauth---v002)
  - [`djangoflow_sync_drift_odoo` - `v0.1.0+3`](#djangoflow_sync_drift_odoo---v0103)
