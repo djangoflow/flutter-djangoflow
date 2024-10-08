@@ -137,6 +137,7 @@ class DjangoflowOdooAuthCubit extends HydratedCubit<DjangoflowOdooAuthState> {
     try {
       final session =
           await _repository.loginWithSessionId(state.baseUrl!, sessionId);
+      _repository.initializeClient(state.baseUrl!, session: session);
       emit(
         state.copyWith(
           status: AuthStatus.authenticated,
