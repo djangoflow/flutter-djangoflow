@@ -32,6 +32,7 @@ class DjangoflowOdooAuthCubit extends HydratedCubit<DjangoflowOdooAuthState> {
         state.copyWith(
           status: AuthStatus.authenticated,
           session: session,
+          database: session.dbName,
         ),
       );
     }
