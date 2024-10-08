@@ -30,7 +30,7 @@ class OdooSSOAuthenticator {
     }
   }
 
-  Future<void> logout(String sessionId) async {
+  Future<void> logout() async {
     WebViewCookieManager cookieManager = WebViewCookieManager();
     await cookieManager.clearCookies();
   }
