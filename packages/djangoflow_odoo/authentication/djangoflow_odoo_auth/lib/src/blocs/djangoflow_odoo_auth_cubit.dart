@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:odoo_rpc/odoo_rpc.dart';
 
@@ -15,7 +16,7 @@ class DjangoflowOdooAuthCubit extends HydratedCubit<DjangoflowOdooAuthState> {
   final DjangoflowOdooAuthRepository _repository;
 
   void _handleSessionChange(OdooSession session) {
-    print('Session Changed : ${session.toJson()}');
+    debugPrint('Session Changed : ${session.toJson()}');
     if (session.id.isEmpty || session.userId == 0) {
       emit(
         state.copyWith(

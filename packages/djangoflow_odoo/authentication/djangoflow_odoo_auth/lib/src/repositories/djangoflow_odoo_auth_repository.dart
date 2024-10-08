@@ -77,7 +77,9 @@ class DjangoflowOdooAuthRepository {
   }
 
   Future<OdooSession> loginWithSessionId(
-      String baseUrl, String sessionId) async {
+    String baseUrl,
+    String sessionId,
+  ) async {
     final tempClient = http.Client();
     try {
       final response = await tempClient.post(
