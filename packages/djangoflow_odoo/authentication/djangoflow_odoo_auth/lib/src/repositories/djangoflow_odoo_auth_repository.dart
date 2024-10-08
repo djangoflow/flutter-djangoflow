@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:convert';
+import 'package:crypto/crypto.dart';
 import 'package:odoo_rpc/odoo_rpc.dart';
 import 'package:http/http.dart' as http;
 import 'package:djangoflow_odoo_auth/src/repositories/odoo_client_manager.dart';
@@ -92,6 +93,7 @@ class DjangoflowOdooAuthRepository {
           'jsonrpc': '2.0',
           'method': 'call',
           'params': {},
+          'id': sha1.convert(utf8.encode(DateTime.now().toString())).toString(),
         }),
       );
 
@@ -115,7 +117,8 @@ class DjangoflowOdooAuthRepository {
         }
       }
 
-      final session = OdooSession.fromSessionInfo(result['result']);
+      final session =
+          OdooSession.fromSessionInfo({...result['result'], 'id': sessionId});
       return session;
     } finally {
       tempClient.close();

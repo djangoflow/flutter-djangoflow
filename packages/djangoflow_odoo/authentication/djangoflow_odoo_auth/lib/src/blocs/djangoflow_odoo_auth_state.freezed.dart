@@ -25,7 +25,7 @@ mixin _$DjangoflowOdooAuthState {
   String? get errorMessage => throw _privateConstructorUsedError;
   String? get baseUrl => throw _privateConstructorUsedError;
   String? get database => throw _privateConstructorUsedError;
-  @SessionConverter()
+  @OdooSessionConverter()
   OdooSession? get session => throw _privateConstructorUsedError;
   List<String>? get dbList => throw _privateConstructorUsedError;
 
@@ -50,7 +50,7 @@ abstract class $DjangoflowOdooAuthStateCopyWith<$Res> {
       String? errorMessage,
       String? baseUrl,
       String? database,
-      @SessionConverter() OdooSession? session,
+      @OdooSessionConverter() OdooSession? session,
       List<String>? dbList});
 }
 
@@ -120,7 +120,7 @@ abstract class _$$DjangoflowOdooAuthStateImplCopyWith<$Res>
       String? errorMessage,
       String? baseUrl,
       String? database,
-      @SessionConverter() OdooSession? session,
+      @OdooSessionConverter() OdooSession? session,
       List<String>? dbList});
 }
 
@@ -183,7 +183,7 @@ class _$DjangoflowOdooAuthStateImpl implements _DjangoflowOdooAuthState {
       this.errorMessage,
       this.baseUrl,
       this.database,
-      @SessionConverter() this.session,
+      @OdooSessionConverter() this.session,
       final List<String>? dbList})
       : _dbList = dbList;
 
@@ -200,7 +200,7 @@ class _$DjangoflowOdooAuthStateImpl implements _DjangoflowOdooAuthState {
   @override
   final String? database;
   @override
-  @SessionConverter()
+  @OdooSessionConverter()
   final OdooSession? session;
   final List<String>? _dbList;
   @override
@@ -260,7 +260,7 @@ abstract class _DjangoflowOdooAuthState implements DjangoflowOdooAuthState {
       final String? errorMessage,
       final String? baseUrl,
       final String? database,
-      @SessionConverter() final OdooSession? session,
+      @OdooSessionConverter() final OdooSession? session,
       final List<String>? dbList}) = _$DjangoflowOdooAuthStateImpl;
 
   factory _DjangoflowOdooAuthState.fromJson(Map<String, dynamic> json) =
@@ -275,7 +275,7 @@ abstract class _DjangoflowOdooAuthState implements DjangoflowOdooAuthState {
   @override
   String? get database;
   @override
-  @SessionConverter()
+  @OdooSessionConverter()
   OdooSession? get session;
   @override
   List<String>? get dbList;
