@@ -17,7 +17,7 @@ Add this to your package's `pubspec.yaml` file:
 dependencies:
   djangoflow_sync_drift_odoo: ^0.1.0
   drift: ^2.20.0
-  odoo_rpc: ^0.5.0
+  odoo_rpc: ^0.5.7
 ```
 
 ## Usage

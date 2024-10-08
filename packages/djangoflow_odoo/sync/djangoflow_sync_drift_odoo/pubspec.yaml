@@ -12,7 +12,7 @@ dependencies:
   drift: ^2.20.2
   flutter:
     sdk: flutter
-  odoo_rpc: ^0.5.1
+  odoo_rpc: ^0.5.7
   recase: ^4.1.0
 
 dev_dependencies:
