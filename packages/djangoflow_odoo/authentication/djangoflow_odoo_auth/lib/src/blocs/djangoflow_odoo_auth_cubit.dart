@@ -121,7 +121,7 @@ class DjangoflowOdooAuthCubit extends HydratedCubit<DjangoflowOdooAuthState> {
     );
   }
 
-  Future<void> getDbList() async {
+  Future<void> fetchDbList() async {
     try {
       final dbList = await _repository.getDatabases();
       emit(state.copyWith(dbList: dbList));
