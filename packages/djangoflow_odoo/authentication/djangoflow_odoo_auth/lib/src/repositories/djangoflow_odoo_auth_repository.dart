@@ -1,6 +1,7 @@
 import 'dart:async';
+import 'dart:convert';
 import 'package:odoo_rpc/odoo_rpc.dart';
-
+import 'package:http/http.dart' as http;
 import 'package:djangoflow_odoo_auth/src/repositories/odoo_client_manager.dart';
 
 import 'package:djangoflow_odoo_auth/src/utils/extended_odoo_client.dart';
@@ -72,6 +73,50 @@ class DjangoflowOdooAuthRepository {
       }
     } else {
       throw Exception('OdooClient is not an instance of ExtendedOdooClient');
+    }
+  }
+
+  Future<OdooSession> loginWithSessionId(
+      String baseUrl, String sessionId) async {
+    final tempClient = http.Client();
+    try {
+      final response = await tempClient.post(
+        Uri.parse('$baseUrl/web/session/get_session_info'),
+        headers: {
+          'Content-Type': 'application/json',
+          'Cookie': 'session_id=$sessionId',
+        },
+        body: json.encode({
+          'jsonrpc': '2.0',
+          'method': 'call',
+          'params': {},
+        }),
+      );
+
+      var result = json.decode(response.body);
+      if (result['error'] != null) {
+        if (result['error']['code'] == 100) {
+          // session expired
+
+          final err = result['error'].toString();
+          throw OdooSessionExpiredException(err);
+        } else {
+          // Other error
+          final err = result['error'].toString();
+          throw OdooException(err);
+        }
+      }
+      // Odoo 11 sets uid to False on failed login without any error message
+      if (result['result'].containsKey('uid')) {
+        if (result['result']['uid'] is bool) {
+          throw OdooException('Authentication failed');
+        }
+      }
+
+      final session = OdooSession.fromSessionInfo(result['result']);
+      return session;
+    } finally {
+      tempClient.close();
     }
   }
 }

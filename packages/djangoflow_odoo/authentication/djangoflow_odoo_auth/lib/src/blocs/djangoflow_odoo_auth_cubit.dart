@@ -130,6 +130,35 @@ class DjangoflowOdooAuthCubit extends HydratedCubit<DjangoflowOdooAuthState> {
     }
   }
 
+  Future<void> loginWithSessionId(String sessionId) async {
+    if (state.baseUrl == null) {
+      throw Exception('Base URL must be set before login');
+    }
+    try {
+      final session =
+          await _repository.loginWithSessionId(state.baseUrl!, sessionId);
+      emit(
+        state.copyWith(
+          status: AuthStatus.authenticated,
+          session: session,
+          database: session.dbName,
+        ),
+      );
+    } catch (e) {
+      emit(
+        state.copyWith(
+          status: AuthStatus.unauthenticated,
+        ),
+      );
+      if (e is OdooSessionExpiredException) {
+        throw Exception('Session Expired');
+      } else if (e is OdooException) {
+        throw Exception('Failed to login, please check your credentials.');
+      }
+      rethrow;
+    }
+  }
+
   @override
   DjangoflowOdooAuthState fromJson(Map<String, dynamic> json) =>
       DjangoflowOdooAuthState.fromJson(json);
