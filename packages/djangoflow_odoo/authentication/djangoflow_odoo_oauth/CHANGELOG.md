@@ -1,3 +1,7 @@
+## 0.0.3
+
+ - **FEAT**: Add PKCE authentication support to be used for odoo. ([ed89c051](https://github.com/djangoflow/flutter-djangoflow/commit/ed89c051d7da1a010f22606f16f41211dfb1a41b))
+
 ## 0.0.2+1
 
  - **REFACTOR**: update logout method in OdooSSOAuthenticator. ([1571255d](https://github.com/djangoflow/flutter-djangoflow/commit/1571255dd782da6ac061cdb9da021c181419d186))

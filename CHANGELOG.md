@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2024-10-11
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`djangoflow_odoo_oauth` - `v0.0.3`](#djangoflow_odoo_oauth---v003)
+
+---
+
+#### `djangoflow_odoo_oauth` - `v0.0.3`
+
+ - **FEAT**: Add PKCE authentication support to be used for odoo. ([ed89c051](https://github.com/djangoflow/flutter-djangoflow/commit/ed89c051d7da1a010f22606f16f41211dfb1a41b))
+
+
 ## 2024-10-09
 
 ### Changes
