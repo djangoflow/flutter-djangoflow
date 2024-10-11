@@ -13,7 +13,7 @@ typedef OnExceptionCallBack = Function(
   Object exception,
   StackTrace? stackTrace,
 );
-typedef RootWidgetBuilder = FutureOr<Widget> Function(
+typedef RootWidgetBuilder = FutureOr<Widget?> Function(
   AppBuilder Function(AppBuilder appBuilder) builder,
 );
 
@@ -59,10 +59,15 @@ class DjangoflowAppRunner {
 
           HydratedBloc.storage = storage;
           Bloc.observer = BlocExceptionObserver(onException: onException);
-
-          runApp(
-            await rootWidgetBuilder((appBuilder) => appBuilder),
-          );
+          final appbuilder =
+              await rootWidgetBuilder((appBuilder) => appBuilder);
+          if (appbuilder == null) {
+            return;
+          } else {
+            runApp(
+              appbuilder,
+            );
+          }
         },
         (exception, stackTrace) async {
           debugPrint('>>> $exception, $stackTrace');
