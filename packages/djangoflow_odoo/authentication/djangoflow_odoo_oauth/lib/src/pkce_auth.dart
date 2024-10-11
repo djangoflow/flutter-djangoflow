@@ -103,6 +103,7 @@ class PKCEAuth {
       }
     } catch (e) {
       debugPrint('Error during authorization: $e');
+      rethrow;
     }
 
     return null;
