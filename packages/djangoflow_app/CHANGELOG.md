@@ -1,3 +1,9 @@
+## 6.0.0
+
+> Note: This release has breaking changes.
+
+ - **BREAKING** **REFACTOR**: Update DjangoflowAppRunner to handle null root widget. ([9059c18c](https://github.com/djangoflow/flutter-djangoflow/commit/9059c18ca442b52bffdfb686191a41ffe6f27076))
+
 ## 5.0.3
 
  - **REFACTOR**: Update DjangoflowAppSnackbar to use a centralized method for showing snackbars. ([71a36554](https://github.com/djangoflow/flutter-djangoflow/commit/71a36554c7ed05354d264a6dd8317d8b3869bc6b))

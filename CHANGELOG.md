@@ -11,6 +11,27 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 Packages with breaking changes:
 
+ - [`djangoflow_app` - `v6.0.0`](#djangoflow_app---v600)
+
+Packages with other changes:
+
+ - There are no other changes in this release.
+
+---
+
+#### `djangoflow_app` - `v6.0.0`
+
+ - **BREAKING** **REFACTOR**: Update DjangoflowAppRunner to handle null root widget. ([9059c18c](https://github.com/djangoflow/flutter-djangoflow/commit/9059c18ca442b52bffdfb686191a41ffe6f27076))
+
+
+## 2024-10-11
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
  - There are no breaking changes in this release.
 
 Packages with other changes:
