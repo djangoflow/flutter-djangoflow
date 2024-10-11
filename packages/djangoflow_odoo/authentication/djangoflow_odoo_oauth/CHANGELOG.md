@@ -1,3 +1,7 @@
+## 0.0.4
+
+ - **FEAT**: Add web support for PKCE auth. ([c72fa769](https://github.com/djangoflow/flutter-djangoflow/commit/c72fa7690d64d99b00a6090d50af138b958bb4c5))
+
 ## 0.0.3+1
 
  - **REFACTOR**: rethrow error from authenticate method. ([a392e870](https://github.com/djangoflow/flutter-djangoflow/commit/a392e87090fc0242b75a873e96b77a3b8ec8b0dd))
