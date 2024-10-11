@@ -1,3 +1,7 @@
+## 0.0.3+1
+
+ - **REFACTOR**: rethrow error from authenticate method. ([a392e870](https://github.com/djangoflow/flutter-djangoflow/commit/a392e87090fc0242b75a873e96b77a3b8ec8b0dd))
+
 ## 0.0.3
 
  - **FEAT**: Add PKCE authentication support to be used for odoo. ([ed89c051](https://github.com/djangoflow/flutter-djangoflow/commit/ed89c051d7da1a010f22606f16f41211dfb1a41b))
