@@ -9,8 +9,10 @@ environment:
 
 dependencies:
   collection: ^1.18.0
+  crypto: ^3.0.5
   flutter:
     sdk: flutter
+  flutter_web_auth_2: ^4.0.1
   html: ^0.15.4
   http: ^1.2.2
   webview_cookie_manager: ^2.0.6
