@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2024-10-14
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`djangoflow_odoo_oauth` - `v0.0.4+1`](#djangoflow_odoo_oauth---v0041)
+
+---
+
+#### `djangoflow_odoo_oauth` - `v0.0.4+1`
+
+ - **REFACTOR**: Use FlutterWebAuth2Options in PKCE auth. ([6af4478d](https://github.com/djangoflow/flutter-djangoflow/commit/6af4478def3e16c067aa35f1a2c00f49652769c7))
+
+
 ## 2024-10-12
 
 ### Changes

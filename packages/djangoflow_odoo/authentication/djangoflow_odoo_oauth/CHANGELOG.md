@@ -1,3 +1,7 @@
+## 0.0.4+1
+
+ - **REFACTOR**: Use FlutterWebAuth2Options in PKCE auth. ([6af4478d](https://github.com/djangoflow/flutter-djangoflow/commit/6af4478def3e16c067aa35f1a2c00f49652769c7))
+
 ## 0.0.4
 
  - **FEAT**: Add web support for PKCE auth. ([c72fa769](https://github.com/djangoflow/flutter-djangoflow/commit/c72fa7690d64d99b00a6090d50af138b958bb4c5))
