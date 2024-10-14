@@ -74,7 +74,7 @@ class PKCEAuth {
   }
 
   Future<String?> performAuthorizationRequest({
-    String? webOnlyCallbackUrlScheme,
+    FlutterWebAuth2Options? options,
   }) async {
     _generatePKCE();
 
@@ -93,14 +93,10 @@ class PKCEAuth {
         .toString();
 
     try {
-      if (kIsWeb && webOnlyCallbackUrlScheme == null) {
-        throw Exception('webOnlyCallbackUrlScheme is required for web');
-      }
       final result = await FlutterWebAuth2.authenticate(
         url: authorizationUrl,
-        callbackUrlScheme: kIsWeb
-            ? webOnlyCallbackUrlScheme!
-            : Uri.parse(config.redirectUrl).scheme,
+        callbackUrlScheme: Uri.parse(config.redirectUrl).scheme,
+        options: options ?? const FlutterWebAuth2Options(),
       );
 
       final code = Uri.parse(result).queryParameters['code'];
