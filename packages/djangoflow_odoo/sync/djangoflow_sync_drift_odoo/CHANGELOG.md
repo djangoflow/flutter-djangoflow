@@ -1,3 +1,9 @@
+## 0.2.0
+
+> Note: This release has breaking changes.
+
+ - **BREAKING** **REFACTOR**: Update drift and related dependencies. ([054aac06](https://github.com/djangoflow/flutter-djangoflow/commit/054aac060d9dd19c5b9628faef58f2fe98b5fcda))
+
 ## 0.1.0+3
 
  - **REFACTOR**: update dependencies. ([5241b5e9](https://github.com/djangoflow/flutter-djangoflow/commit/5241b5e97fcf2720b7afdd0af2cc498c3d3cbb79))

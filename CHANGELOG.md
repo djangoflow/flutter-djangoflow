@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2024-10-15
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - [`djangoflow_sync_drift_odoo` - `v0.2.0`](#djangoflow_sync_drift_odoo---v020)
+
+Packages with other changes:
+
+ - There are no other changes in this release.
+
+---
+
+#### `djangoflow_sync_drift_odoo` - `v0.2.0`
+
+ - **BREAKING** **REFACTOR**: Update drift and related dependencies. ([054aac06](https://github.com/djangoflow/flutter-djangoflow/commit/054aac060d9dd19c5b9628faef58f2fe98b5fcda))
+
+
 ## 2024-10-14
 
 ### Changes
