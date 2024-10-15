@@ -41,7 +41,7 @@ class DjangoflowOdooAuthCubit extends HydratedCubit<DjangoflowOdooAuthState> {
 
   Future<void> checkAuthStatus() async {
     final storedSession = state.session;
-    if (storedSession != null && state.baseUrl != null) {
+    if (state.baseUrl != null) {
       _repository.initializeClient(
         state.baseUrl!,
         session: storedSession,
