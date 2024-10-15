@@ -11,6 +11,27 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 Packages with breaking changes:
 
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`djangoflow_odoo_auth` - `v0.1.0+2`](#djangoflow_odoo_auth---v0102)
+
+---
+
+#### `djangoflow_odoo_auth` - `v0.1.0+2`
+
+ - **REFACTOR**: Simplify OdooSession handling and update dependencies. ([e5edc82d](https://github.com/djangoflow/flutter-djangoflow/commit/e5edc82d6b0ee6644b54abde1bba9d12a7ac03e9))
+
+
+## 2024-10-15
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
  - [`djangoflow_sync_drift_odoo` - `v0.2.0`](#djangoflow_sync_drift_odoo---v020)
 
 Packages with other changes:

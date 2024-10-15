@@ -1,3 +1,7 @@
+## 0.1.0+2
+
+ - **REFACTOR**: Simplify OdooSession handling and update dependencies. ([e5edc82d](https://github.com/djangoflow/flutter-djangoflow/commit/e5edc82d6b0ee6644b54abde1bba9d12a7ac03e9))
+
 ## 0.1.0+1
 
  - **REFACTOR**: update dependencies. ([82805098](https://github.com/djangoflow/flutter-djangoflow/commit/82805098b5fc2489aa9b440eb9da3719ced4a04e))
