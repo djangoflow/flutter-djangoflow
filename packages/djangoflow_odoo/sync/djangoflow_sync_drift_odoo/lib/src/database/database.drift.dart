@@ -6,6 +6,783 @@ import 'package:djangoflow_sync_drift_odoo/src/database/database.dart' as i2;
 import 'package:drift/src/runtime/query_builder/query_builder.dart' as i3;
 import 'package:drift/internal/modular.dart' as i4;
 
+typedef $$BaseTableTableCreateCompanionBuilder = i1.BaseTableCompanion
+    Function({
+  required int id,
+  required DateTime createDate,
+  required DateTime writeDate,
+  i0.Value<bool> isMarkedAsDeleted,
+  required String backendId,
+  i0.Value<int> rowid,
+});
+typedef $$BaseTableTableUpdateCompanionBuilder = i1.BaseTableCompanion
+    Function({
+  i0.Value<int> id,
+  i0.Value<DateTime> createDate,
+  i0.Value<DateTime> writeDate,
+  i0.Value<bool> isMarkedAsDeleted,
+  i0.Value<String> backendId,
+  i0.Value<int> rowid,
+});
+
+class $$BaseTableTableFilterComposer
+    extends i0.Composer<i0.GeneratedDatabase, i1.$BaseTableTable> {
+  $$BaseTableTableFilterComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  i0.ColumnFilters<int> get id => $composableBuilder(
+      column: $table.id, builder: (column) => i0.ColumnFilters(column));
+
+  i0.ColumnFilters<DateTime> get createDate => $composableBuilder(
+      column: $table.createDate, builder: (column) => i0.ColumnFilters(column));
+
+  i0.ColumnFilters<DateTime> get writeDate => $composableBuilder(
+      column: $table.writeDate, builder: (column) => i0.ColumnFilters(column));
+
+  i0.ColumnFilters<bool> get isMarkedAsDeleted => $composableBuilder(
+      column: $table.isMarkedAsDeleted,
+      builder: (column) => i0.ColumnFilters(column));
+
+  i1.$$SyncBackendsTableFilterComposer get backendId {
+    final i1.$$SyncBackendsTableFilterComposer composer = $composerBuilder(
+        composer: this,
+        getCurrentColumn: (t) => t.backendId,
+        referencedTable: i4.ReadDatabaseContainer($db)
+            .resultSet<i1.$SyncBackendsTable>('sync_backends'),
+        getReferencedColumn: (t) => t.id,
+        builder: (joinBuilder,
+                {$addJoinBuilderToRootComposer,
+                $removeJoinBuilderFromRootComposer}) =>
+            i1.$$SyncBackendsTableFilterComposer(
+              $db: $db,
+              $table: i4.ReadDatabaseContainer($db)
+                  .resultSet<i1.$SyncBackendsTable>('sync_backends'),
+              $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+              joinBuilder: joinBuilder,
+              $removeJoinBuilderFromRootComposer:
+                  $removeJoinBuilderFromRootComposer,
+            ));
+    return composer;
+  }
+}
+
+class $$BaseTableTableOrderingComposer
+    extends i0.Composer<i0.GeneratedDatabase, i1.$BaseTableTable> {
+  $$BaseTableTableOrderingComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  i0.ColumnOrderings<int> get id => $composableBuilder(
+      column: $table.id, builder: (column) => i0.ColumnOrderings(column));
+
+  i0.ColumnOrderings<DateTime> get createDate => $composableBuilder(
+      column: $table.createDate,
+      builder: (column) => i0.ColumnOrderings(column));
+
+  i0.ColumnOrderings<DateTime> get writeDate => $composableBuilder(
+      column: $table.writeDate,
+      builder: (column) => i0.ColumnOrderings(column));
+
+  i0.ColumnOrderings<bool> get isMarkedAsDeleted => $composableBuilder(
+      column: $table.isMarkedAsDeleted,
+      builder: (column) => i0.ColumnOrderings(column));
+
+  i1.$$SyncBackendsTableOrderingComposer get backendId {
+    final i1.$$SyncBackendsTableOrderingComposer composer = $composerBuilder(
+        composer: this,
+        getCurrentColumn: (t) => t.backendId,
+        referencedTable: i4.ReadDatabaseContainer($db)
+            .resultSet<i1.$SyncBackendsTable>('sync_backends'),
+        getReferencedColumn: (t) => t.id,
+        builder: (joinBuilder,
+                {$addJoinBuilderToRootComposer,
+                $removeJoinBuilderFromRootComposer}) =>
+            i1.$$SyncBackendsTableOrderingComposer(
+              $db: $db,
+              $table: i4.ReadDatabaseContainer($db)
+                  .resultSet<i1.$SyncBackendsTable>('sync_backends'),
+              $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+              joinBuilder: joinBuilder,
+              $removeJoinBuilderFromRootComposer:
+                  $removeJoinBuilderFromRootComposer,
+            ));
+    return composer;
+  }
+}
+
+class $$BaseTableTableAnnotationComposer
+    extends i0.Composer<i0.GeneratedDatabase, i1.$BaseTableTable> {
+  $$BaseTableTableAnnotationComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  i0.GeneratedColumn<int> get id =>
+      $composableBuilder(column: $table.id, builder: (column) => column);
+
+  i0.GeneratedColumn<DateTime> get createDate => $composableBuilder(
+      column: $table.createDate, builder: (column) => column);
+
+  i0.GeneratedColumn<DateTime> get writeDate =>
+      $composableBuilder(column: $table.writeDate, builder: (column) => column);
+
+  i0.GeneratedColumn<bool> get isMarkedAsDeleted => $composableBuilder(
+      column: $table.isMarkedAsDeleted, builder: (column) => column);
+
+  i1.$$SyncBackendsTableAnnotationComposer get backendId {
+    final i1.$$SyncBackendsTableAnnotationComposer composer = $composerBuilder(
+        composer: this,
+        getCurrentColumn: (t) => t.backendId,
+        referencedTable: i4.ReadDatabaseContainer($db)
+            .resultSet<i1.$SyncBackendsTable>('sync_backends'),
+        getReferencedColumn: (t) => t.id,
+        builder: (joinBuilder,
+                {$addJoinBuilderToRootComposer,
+                $removeJoinBuilderFromRootComposer}) =>
+            i1.$$SyncBackendsTableAnnotationComposer(
+              $db: $db,
+              $table: i4.ReadDatabaseContainer($db)
+                  .resultSet<i1.$SyncBackendsTable>('sync_backends'),
+              $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+              joinBuilder: joinBuilder,
+              $removeJoinBuilderFromRootComposer:
+                  $removeJoinBuilderFromRootComposer,
+            ));
+    return composer;
+  }
+}
+
+class $$BaseTableTableTableManager extends i0.RootTableManager<
+    i0.GeneratedDatabase,
+    i1.$BaseTableTable,
+    i1.BaseTableData,
+    i1.$$BaseTableTableFilterComposer,
+    i1.$$BaseTableTableOrderingComposer,
+    i1.$$BaseTableTableAnnotationComposer,
+    $$BaseTableTableCreateCompanionBuilder,
+    $$BaseTableTableUpdateCompanionBuilder,
+    (
+      i1.BaseTableData,
+      i0.BaseReferences<i0.GeneratedDatabase, i1.$BaseTableTable,
+          i1.BaseTableData>
+    ),
+    i1.BaseTableData,
+    i0.PrefetchHooks Function({bool backendId})> {
+  $$BaseTableTableTableManager(
+      i0.GeneratedDatabase db, i1.$BaseTableTable table)
+      : super(i0.TableManagerState(
+          db: db,
+          table: table,
+          createFilteringComposer: () =>
+              i1.$$BaseTableTableFilterComposer($db: db, $table: table),
+          createOrderingComposer: () =>
+              i1.$$BaseTableTableOrderingComposer($db: db, $table: table),
+          createComputedFieldComposer: () =>
+              i1.$$BaseTableTableAnnotationComposer($db: db, $table: table),
+          updateCompanionCallback: ({
+            i0.Value<int> id = const i0.Value.absent(),
+            i0.Value<DateTime> createDate = const i0.Value.absent(),
+            i0.Value<DateTime> writeDate = const i0.Value.absent(),
+            i0.Value<bool> isMarkedAsDeleted = const i0.Value.absent(),
+            i0.Value<String> backendId = const i0.Value.absent(),
+            i0.Value<int> rowid = const i0.Value.absent(),
+          }) =>
+              i1.BaseTableCompanion(
+            id: id,
+            createDate: createDate,
+            writeDate: writeDate,
+            isMarkedAsDeleted: isMarkedAsDeleted,
+            backendId: backendId,
+            rowid: rowid,
+          ),
+          createCompanionCallback: ({
+            required int id,
+            required DateTime createDate,
+            required DateTime writeDate,
+            i0.Value<bool> isMarkedAsDeleted = const i0.Value.absent(),
+            required String backendId,
+            i0.Value<int> rowid = const i0.Value.absent(),
+          }) =>
+              i1.BaseTableCompanion.insert(
+            id: id,
+            createDate: createDate,
+            writeDate: writeDate,
+            isMarkedAsDeleted: isMarkedAsDeleted,
+            backendId: backendId,
+            rowid: rowid,
+          ),
+          withReferenceMapper: (p0) => p0
+              .map((e) => (e.readTable(table), i0.BaseReferences(db, table, e)))
+              .toList(),
+          prefetchHooksCallback: null,
+        ));
+}
+
+typedef $$BaseTableTableProcessedTableManager = i0.ProcessedTableManager<
+    i0.GeneratedDatabase,
+    i1.$BaseTableTable,
+    i1.BaseTableData,
+    i1.$$BaseTableTableFilterComposer,
+    i1.$$BaseTableTableOrderingComposer,
+    i1.$$BaseTableTableAnnotationComposer,
+    $$BaseTableTableCreateCompanionBuilder,
+    $$BaseTableTableUpdateCompanionBuilder,
+    (
+      i1.BaseTableData,
+      i0.BaseReferences<i0.GeneratedDatabase, i1.$BaseTableTable,
+          i1.BaseTableData>
+    ),
+    i1.BaseTableData,
+    i0.PrefetchHooks Function({bool backendId})>;
+typedef $$SyncBackendsTableCreateCompanionBuilder = i1.SyncBackendsCompanion
+    Function({
+  required String id,
+  required String type,
+  required String baseUrl,
+  i0.Value<int> rowid,
+});
+typedef $$SyncBackendsTableUpdateCompanionBuilder = i1.SyncBackendsCompanion
+    Function({
+  i0.Value<String> id,
+  i0.Value<String> type,
+  i0.Value<String> baseUrl,
+  i0.Value<int> rowid,
+});
+
+class $$SyncBackendsTableFilterComposer
+    extends i0.Composer<i0.GeneratedDatabase, i1.$SyncBackendsTable> {
+  $$SyncBackendsTableFilterComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  i0.ColumnFilters<String> get id => $composableBuilder(
+      column: $table.id, builder: (column) => i0.ColumnFilters(column));
+
+  i0.ColumnFilters<String> get type => $composableBuilder(
+      column: $table.type, builder: (column) => i0.ColumnFilters(column));
+
+  i0.ColumnFilters<String> get baseUrl => $composableBuilder(
+      column: $table.baseUrl, builder: (column) => i0.ColumnFilters(column));
+
+  i0.Expression<bool> baseTableRefs(
+      i0.Expression<bool> Function(i1.$$BaseTableTableFilterComposer f) f) {
+    final i1.$$BaseTableTableFilterComposer composer = $composerBuilder(
+        composer: this,
+        getCurrentColumn: (t) => t.id,
+        referencedTable: i4.ReadDatabaseContainer($db)
+            .resultSet<i1.$BaseTableTable>('base_table'),
+        getReferencedColumn: (t) => t.backendId,
+        builder: (joinBuilder,
+                {$addJoinBuilderToRootComposer,
+                $removeJoinBuilderFromRootComposer}) =>
+            i1.$$BaseTableTableFilterComposer(
+              $db: $db,
+              $table: i4.ReadDatabaseContainer($db)
+                  .resultSet<i1.$BaseTableTable>('base_table'),
+              $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+              joinBuilder: joinBuilder,
+              $removeJoinBuilderFromRootComposer:
+                  $removeJoinBuilderFromRootComposer,
+            ));
+    return f(composer);
+  }
+
+  i0.Expression<bool> syncRegistriesRefs(
+      i0.Expression<bool> Function(i1.$$SyncRegistriesTableFilterComposer f)
+          f) {
+    final i1.$$SyncRegistriesTableFilterComposer composer = $composerBuilder(
+        composer: this,
+        getCurrentColumn: (t) => t.id,
+        referencedTable: i4.ReadDatabaseContainer($db)
+            .resultSet<i1.$SyncRegistriesTable>('sync_registries'),
+        getReferencedColumn: (t) => t.backendId,
+        builder: (joinBuilder,
+                {$addJoinBuilderToRootComposer,
+                $removeJoinBuilderFromRootComposer}) =>
+            i1.$$SyncRegistriesTableFilterComposer(
+              $db: $db,
+              $table: i4.ReadDatabaseContainer($db)
+                  .resultSet<i1.$SyncRegistriesTable>('sync_registries'),
+              $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+              joinBuilder: joinBuilder,
+              $removeJoinBuilderFromRootComposer:
+                  $removeJoinBuilderFromRootComposer,
+            ));
+    return f(composer);
+  }
+}
+
+class $$SyncBackendsTableOrderingComposer
+    extends i0.Composer<i0.GeneratedDatabase, i1.$SyncBackendsTable> {
+  $$SyncBackendsTableOrderingComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  i0.ColumnOrderings<String> get id => $composableBuilder(
+      column: $table.id, builder: (column) => i0.ColumnOrderings(column));
+
+  i0.ColumnOrderings<String> get type => $composableBuilder(
+      column: $table.type, builder: (column) => i0.ColumnOrderings(column));
+
+  i0.ColumnOrderings<String> get baseUrl => $composableBuilder(
+      column: $table.baseUrl, builder: (column) => i0.ColumnOrderings(column));
+}
+
+class $$SyncBackendsTableAnnotationComposer
+    extends i0.Composer<i0.GeneratedDatabase, i1.$SyncBackendsTable> {
+  $$SyncBackendsTableAnnotationComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  i0.GeneratedColumn<String> get id =>
+      $composableBuilder(column: $table.id, builder: (column) => column);
+
+  i0.GeneratedColumn<String> get type =>
+      $composableBuilder(column: $table.type, builder: (column) => column);
+
+  i0.GeneratedColumn<String> get baseUrl =>
+      $composableBuilder(column: $table.baseUrl, builder: (column) => column);
+
+  i0.Expression<T> baseTableRefs<T extends Object>(
+      i0.Expression<T> Function(i1.$$BaseTableTableAnnotationComposer a) f) {
+    final i1.$$BaseTableTableAnnotationComposer composer = $composerBuilder(
+        composer: this,
+        getCurrentColumn: (t) => t.id,
+        referencedTable: i4.ReadDatabaseContainer($db)
+            .resultSet<i1.$BaseTableTable>('base_table'),
+        getReferencedColumn: (t) => t.backendId,
+        builder: (joinBuilder,
+                {$addJoinBuilderToRootComposer,
+                $removeJoinBuilderFromRootComposer}) =>
+            i1.$$BaseTableTableAnnotationComposer(
+              $db: $db,
+              $table: i4.ReadDatabaseContainer($db)
+                  .resultSet<i1.$BaseTableTable>('base_table'),
+              $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+              joinBuilder: joinBuilder,
+              $removeJoinBuilderFromRootComposer:
+                  $removeJoinBuilderFromRootComposer,
+            ));
+    return f(composer);
+  }
+
+  i0.Expression<T> syncRegistriesRefs<T extends Object>(
+      i0.Expression<T> Function(i1.$$SyncRegistriesTableAnnotationComposer a)
+          f) {
+    final i1.$$SyncRegistriesTableAnnotationComposer composer =
+        $composerBuilder(
+            composer: this,
+            getCurrentColumn: (t) => t.id,
+            referencedTable: i4.ReadDatabaseContainer($db)
+                .resultSet<i1.$SyncRegistriesTable>('sync_registries'),
+            getReferencedColumn: (t) => t.backendId,
+            builder: (joinBuilder,
+                    {$addJoinBuilderToRootComposer,
+                    $removeJoinBuilderFromRootComposer}) =>
+                i1.$$SyncRegistriesTableAnnotationComposer(
+                  $db: $db,
+                  $table: i4.ReadDatabaseContainer($db)
+                      .resultSet<i1.$SyncRegistriesTable>('sync_registries'),
+                  $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+                  joinBuilder: joinBuilder,
+                  $removeJoinBuilderFromRootComposer:
+                      $removeJoinBuilderFromRootComposer,
+                ));
+    return f(composer);
+  }
+}
+
+class $$SyncBackendsTableTableManager extends i0.RootTableManager<
+    i0.GeneratedDatabase,
+    i1.$SyncBackendsTable,
+    i1.SyncBackend,
+    i1.$$SyncBackendsTableFilterComposer,
+    i1.$$SyncBackendsTableOrderingComposer,
+    i1.$$SyncBackendsTableAnnotationComposer,
+    $$SyncBackendsTableCreateCompanionBuilder,
+    $$SyncBackendsTableUpdateCompanionBuilder,
+    (
+      i1.SyncBackend,
+      i0.BaseReferences<i0.GeneratedDatabase, i1.$SyncBackendsTable,
+          i1.SyncBackend>
+    ),
+    i1.SyncBackend,
+    i0.PrefetchHooks Function({bool baseTableRefs, bool syncRegistriesRefs})> {
+  $$SyncBackendsTableTableManager(
+      i0.GeneratedDatabase db, i1.$SyncBackendsTable table)
+      : super(i0.TableManagerState(
+          db: db,
+          table: table,
+          createFilteringComposer: () =>
+              i1.$$SyncBackendsTableFilterComposer($db: db, $table: table),
+          createOrderingComposer: () =>
+              i1.$$SyncBackendsTableOrderingComposer($db: db, $table: table),
+          createComputedFieldComposer: () =>
+              i1.$$SyncBackendsTableAnnotationComposer($db: db, $table: table),
+          updateCompanionCallback: ({
+            i0.Value<String> id = const i0.Value.absent(),
+            i0.Value<String> type = const i0.Value.absent(),
+            i0.Value<String> baseUrl = const i0.Value.absent(),
+            i0.Value<int> rowid = const i0.Value.absent(),
+          }) =>
+              i1.SyncBackendsCompanion(
+            id: id,
+            type: type,
+            baseUrl: baseUrl,
+            rowid: rowid,
+          ),
+          createCompanionCallback: ({
+            required String id,
+            required String type,
+            required String baseUrl,
+            i0.Value<int> rowid = const i0.Value.absent(),
+          }) =>
+              i1.SyncBackendsCompanion.insert(
+            id: id,
+            type: type,
+            baseUrl: baseUrl,
+            rowid: rowid,
+          ),
+          withReferenceMapper: (p0) => p0
+              .map((e) => (e.readTable(table), i0.BaseReferences(db, table, e)))
+              .toList(),
+          prefetchHooksCallback: null,
+        ));
+}
+
+typedef $$SyncBackendsTableProcessedTableManager = i0.ProcessedTableManager<
+    i0.GeneratedDatabase,
+    i1.$SyncBackendsTable,
+    i1.SyncBackend,
+    i1.$$SyncBackendsTableFilterComposer,
+    i1.$$SyncBackendsTableOrderingComposer,
+    i1.$$SyncBackendsTableAnnotationComposer,
+    $$SyncBackendsTableCreateCompanionBuilder,
+    $$SyncBackendsTableUpdateCompanionBuilder,
+    (
+      i1.SyncBackend,
+      i0.BaseReferences<i0.GeneratedDatabase, i1.$SyncBackendsTable,
+          i1.SyncBackend>
+    ),
+    i1.SyncBackend,
+    i0.PrefetchHooks Function({bool baseTableRefs, bool syncRegistriesRefs})>;
+typedef $$SyncRegistriesTableCreateCompanionBuilder = i1.SyncRegistriesCompanion
+    Function({
+  i0.Value<int> id,
+  required int modelRecordId,
+  required String modelName,
+  required String backendId,
+  i0.Value<DateTime?> recordDeletedAt,
+  required DateTime recordWriteDate,
+  i0.Value<bool> pendingSync,
+  required DateTime updatedAt,
+  required DateTime createdAt,
+});
+typedef $$SyncRegistriesTableUpdateCompanionBuilder = i1.SyncRegistriesCompanion
+    Function({
+  i0.Value<int> id,
+  i0.Value<int> modelRecordId,
+  i0.Value<String> modelName,
+  i0.Value<String> backendId,
+  i0.Value<DateTime?> recordDeletedAt,
+  i0.Value<DateTime> recordWriteDate,
+  i0.Value<bool> pendingSync,
+  i0.Value<DateTime> updatedAt,
+  i0.Value<DateTime> createdAt,
+});
+
+class $$SyncRegistriesTableFilterComposer
+    extends i0.Composer<i0.GeneratedDatabase, i1.$SyncRegistriesTable> {
+  $$SyncRegistriesTableFilterComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  i0.ColumnFilters<int> get id => $composableBuilder(
+      column: $table.id, builder: (column) => i0.ColumnFilters(column));
+
+  i0.ColumnFilters<int> get modelRecordId => $composableBuilder(
+      column: $table.modelRecordId,
+      builder: (column) => i0.ColumnFilters(column));
+
+  i0.ColumnFilters<String> get modelName => $composableBuilder(
+      column: $table.modelName, builder: (column) => i0.ColumnFilters(column));
+
+  i0.ColumnFilters<DateTime> get recordDeletedAt => $composableBuilder(
+      column: $table.recordDeletedAt,
+      builder: (column) => i0.ColumnFilters(column));
+
+  i0.ColumnFilters<DateTime> get recordWriteDate => $composableBuilder(
+      column: $table.recordWriteDate,
+      builder: (column) => i0.ColumnFilters(column));
+
+  i0.ColumnFilters<bool> get pendingSync => $composableBuilder(
+      column: $table.pendingSync,
+      builder: (column) => i0.ColumnFilters(column));
+
+  i0.ColumnFilters<DateTime> get updatedAt => $composableBuilder(
+      column: $table.updatedAt, builder: (column) => i0.ColumnFilters(column));
+
+  i0.ColumnFilters<DateTime> get createdAt => $composableBuilder(
+      column: $table.createdAt, builder: (column) => i0.ColumnFilters(column));
+
+  i1.$$SyncBackendsTableFilterComposer get backendId {
+    final i1.$$SyncBackendsTableFilterComposer composer = $composerBuilder(
+        composer: this,
+        getCurrentColumn: (t) => t.backendId,
+        referencedTable: i4.ReadDatabaseContainer($db)
+            .resultSet<i1.$SyncBackendsTable>('sync_backends'),
+        getReferencedColumn: (t) => t.id,
+        builder: (joinBuilder,
+                {$addJoinBuilderToRootComposer,
+                $removeJoinBuilderFromRootComposer}) =>
+            i1.$$SyncBackendsTableFilterComposer(
+              $db: $db,
+              $table: i4.ReadDatabaseContainer($db)
+                  .resultSet<i1.$SyncBackendsTable>('sync_backends'),
+              $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+              joinBuilder: joinBuilder,
+              $removeJoinBuilderFromRootComposer:
+                  $removeJoinBuilderFromRootComposer,
+            ));
+    return composer;
+  }
+}
+
+class $$SyncRegistriesTableOrderingComposer
+    extends i0.Composer<i0.GeneratedDatabase, i1.$SyncRegistriesTable> {
+  $$SyncRegistriesTableOrderingComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  i0.ColumnOrderings<int> get id => $composableBuilder(
+      column: $table.id, builder: (column) => i0.ColumnOrderings(column));
+
+  i0.ColumnOrderings<int> get modelRecordId => $composableBuilder(
+      column: $table.modelRecordId,
+      builder: (column) => i0.ColumnOrderings(column));
+
+  i0.ColumnOrderings<String> get modelName => $composableBuilder(
+      column: $table.modelName,
+      builder: (column) => i0.ColumnOrderings(column));
+
+  i0.ColumnOrderings<DateTime> get recordDeletedAt => $composableBuilder(
+      column: $table.recordDeletedAt,
+      builder: (column) => i0.ColumnOrderings(column));
+
+  i0.ColumnOrderings<DateTime> get recordWriteDate => $composableBuilder(
+      column: $table.recordWriteDate,
+      builder: (column) => i0.ColumnOrderings(column));
+
+  i0.ColumnOrderings<bool> get pendingSync => $composableBuilder(
+      column: $table.pendingSync,
+      builder: (column) => i0.ColumnOrderings(column));
+
+  i0.ColumnOrderings<DateTime> get updatedAt => $composableBuilder(
+      column: $table.updatedAt,
+      builder: (column) => i0.ColumnOrderings(column));
+
+  i0.ColumnOrderings<DateTime> get createdAt => $composableBuilder(
+      column: $table.createdAt,
+      builder: (column) => i0.ColumnOrderings(column));
+
+  i1.$$SyncBackendsTableOrderingComposer get backendId {
+    final i1.$$SyncBackendsTableOrderingComposer composer = $composerBuilder(
+        composer: this,
+        getCurrentColumn: (t) => t.backendId,
+        referencedTable: i4.ReadDatabaseContainer($db)
+            .resultSet<i1.$SyncBackendsTable>('sync_backends'),
+        getReferencedColumn: (t) => t.id,
+        builder: (joinBuilder,
+                {$addJoinBuilderToRootComposer,
+                $removeJoinBuilderFromRootComposer}) =>
+            i1.$$SyncBackendsTableOrderingComposer(
+              $db: $db,
+              $table: i4.ReadDatabaseContainer($db)
+                  .resultSet<i1.$SyncBackendsTable>('sync_backends'),
+              $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+              joinBuilder: joinBuilder,
+              $removeJoinBuilderFromRootComposer:
+                  $removeJoinBuilderFromRootComposer,
+            ));
+    return composer;
+  }
+}
+
+class $$SyncRegistriesTableAnnotationComposer
+    extends i0.Composer<i0.GeneratedDatabase, i1.$SyncRegistriesTable> {
+  $$SyncRegistriesTableAnnotationComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  i0.GeneratedColumn<int> get id =>
+      $composableBuilder(column: $table.id, builder: (column) => column);
+
+  i0.GeneratedColumn<int> get modelRecordId => $composableBuilder(
+      column: $table.modelRecordId, builder: (column) => column);
+
+  i0.GeneratedColumn<String> get modelName =>
+      $composableBuilder(column: $table.modelName, builder: (column) => column);
+
+  i0.GeneratedColumn<DateTime> get recordDeletedAt => $composableBuilder(
+      column: $table.recordDeletedAt, builder: (column) => column);
+
+  i0.GeneratedColumn<DateTime> get recordWriteDate => $composableBuilder(
+      column: $table.recordWriteDate, builder: (column) => column);
+
+  i0.GeneratedColumn<bool> get pendingSync => $composableBuilder(
+      column: $table.pendingSync, builder: (column) => column);
+
+  i0.GeneratedColumn<DateTime> get updatedAt =>
+      $composableBuilder(column: $table.updatedAt, builder: (column) => column);
+
+  i0.GeneratedColumn<DateTime> get createdAt =>
+      $composableBuilder(column: $table.createdAt, builder: (column) => column);
+
+  i1.$$SyncBackendsTableAnnotationComposer get backendId {
+    final i1.$$SyncBackendsTableAnnotationComposer composer = $composerBuilder(
+        composer: this,
+        getCurrentColumn: (t) => t.backendId,
+        referencedTable: i4.ReadDatabaseContainer($db)
+            .resultSet<i1.$SyncBackendsTable>('sync_backends'),
+        getReferencedColumn: (t) => t.id,
+        builder: (joinBuilder,
+                {$addJoinBuilderToRootComposer,
+                $removeJoinBuilderFromRootComposer}) =>
+            i1.$$SyncBackendsTableAnnotationComposer(
+              $db: $db,
+              $table: i4.ReadDatabaseContainer($db)
+                  .resultSet<i1.$SyncBackendsTable>('sync_backends'),
+              $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+              joinBuilder: joinBuilder,
+              $removeJoinBuilderFromRootComposer:
+                  $removeJoinBuilderFromRootComposer,
+            ));
+    return composer;
+  }
+}
+
+class $$SyncRegistriesTableTableManager extends i0.RootTableManager<
+    i0.GeneratedDatabase,
+    i1.$SyncRegistriesTable,
+    i1.SyncRegistry,
+    i1.$$SyncRegistriesTableFilterComposer,
+    i1.$$SyncRegistriesTableOrderingComposer,
+    i1.$$SyncRegistriesTableAnnotationComposer,
+    $$SyncRegistriesTableCreateCompanionBuilder,
+    $$SyncRegistriesTableUpdateCompanionBuilder,
+    (
+      i1.SyncRegistry,
+      i0.BaseReferences<i0.GeneratedDatabase, i1.$SyncRegistriesTable,
+          i1.SyncRegistry>
+    ),
+    i1.SyncRegistry,
+    i0.PrefetchHooks Function({bool backendId})> {
+  $$SyncRegistriesTableTableManager(
+      i0.GeneratedDatabase db, i1.$SyncRegistriesTable table)
+      : super(i0.TableManagerState(
+          db: db,
+          table: table,
+          createFilteringComposer: () =>
+              i1.$$SyncRegistriesTableFilterComposer($db: db, $table: table),
+          createOrderingComposer: () =>
+              i1.$$SyncRegistriesTableOrderingComposer($db: db, $table: table),
+          createComputedFieldComposer: () => i1
+              .$$SyncRegistriesTableAnnotationComposer($db: db, $table: table),
+          updateCompanionCallback: ({
+            i0.Value<int> id = const i0.Value.absent(),
+            i0.Value<int> modelRecordId = const i0.Value.absent(),
+            i0.Value<String> modelName = const i0.Value.absent(),
+            i0.Value<String> backendId = const i0.Value.absent(),
+            i0.Value<DateTime?> recordDeletedAt = const i0.Value.absent(),
+            i0.Value<DateTime> recordWriteDate = const i0.Value.absent(),
+            i0.Value<bool> pendingSync = const i0.Value.absent(),
+            i0.Value<DateTime> updatedAt = const i0.Value.absent(),
+            i0.Value<DateTime> createdAt = const i0.Value.absent(),
+          }) =>
+              i1.SyncRegistriesCompanion(
+            id: id,
+            modelRecordId: modelRecordId,
+            modelName: modelName,
+            backendId: backendId,
+            recordDeletedAt: recordDeletedAt,
+            recordWriteDate: recordWriteDate,
+            pendingSync: pendingSync,
+            updatedAt: updatedAt,
+            createdAt: createdAt,
+          ),
+          createCompanionCallback: ({
+            i0.Value<int> id = const i0.Value.absent(),
+            required int modelRecordId,
+            required String modelName,
+            required String backendId,
+            i0.Value<DateTime?> recordDeletedAt = const i0.Value.absent(),
+            required DateTime recordWriteDate,
+            i0.Value<bool> pendingSync = const i0.Value.absent(),
+            required DateTime updatedAt,
+            required DateTime createdAt,
+          }) =>
+              i1.SyncRegistriesCompanion.insert(
+            id: id,
+            modelRecordId: modelRecordId,
+            modelName: modelName,
+            backendId: backendId,
+            recordDeletedAt: recordDeletedAt,
+            recordWriteDate: recordWriteDate,
+            pendingSync: pendingSync,
+            updatedAt: updatedAt,
+            createdAt: createdAt,
+          ),
+          withReferenceMapper: (p0) => p0
+              .map((e) => (e.readTable(table), i0.BaseReferences(db, table, e)))
+              .toList(),
+          prefetchHooksCallback: null,
+        ));
+}
+
+typedef $$SyncRegistriesTableProcessedTableManager = i0.ProcessedTableManager<
+    i0.GeneratedDatabase,
+    i1.$SyncRegistriesTable,
+    i1.SyncRegistry,
+    i1.$$SyncRegistriesTableFilterComposer,
+    i1.$$SyncRegistriesTableOrderingComposer,
+    i1.$$SyncRegistriesTableAnnotationComposer,
+    $$SyncRegistriesTableCreateCompanionBuilder,
+    $$SyncRegistriesTableUpdateCompanionBuilder,
+    (
+      i1.SyncRegistry,
+      i0.BaseReferences<i0.GeneratedDatabase, i1.$SyncRegistriesTable,
+          i1.SyncRegistry>
+    ),
+    i1.SyncRegistry,
+    i0.PrefetchHooks Function({bool backendId})>;
+
 class $BaseTableTable extends i2.BaseTable
     with i0.TableInfo<$BaseTableTable, i1.BaseTableData> {
   @override
@@ -16,11 +793,7 @@ class $BaseTableTable extends i2.BaseTable
   @override
   late final i0.GeneratedColumn<int> id = i0.GeneratedColumn<int>(
       'id', aliasedName, false,
-      hasAutoIncrement: true,
-      type: i0.DriftSqlType.int,
-      requiredDuringInsert: false,
-      defaultConstraints:
-          i0.GeneratedColumn.constraintIsAlways('PRIMARY KEY AUTOINCREMENT'));
+      type: i0.DriftSqlType.int, requiredDuringInsert: true);
   static const i0.VerificationMeta _createDateMeta =
       const i0.VerificationMeta('createDate');
   @override
@@ -68,6 +841,8 @@ class $BaseTableTable extends i2.BaseTable
     final data = instance.toColumns(true);
     if (data.containsKey('id')) {
       context.handle(_idMeta, id.isAcceptableOrUnknown(data['id']!, _idMeta));
+    } else if (isInserting) {
+      context.missing(_idMeta);
     }
     if (data.containsKey('create_date')) {
       context.handle(
@@ -99,7 +874,7 @@ class $BaseTableTable extends i2.BaseTable
   }
 
   @override
-  Set<i0.GeneratedColumn> get $primaryKey => {id};
+  Set<i0.GeneratedColumn> get $primaryKey => const {};
   @override
   i1.BaseTableData map(Map<String, dynamic> data, {String? tablePrefix}) {
     final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : '';
@@ -238,20 +1013,24 @@ class BaseTableCompanion extends i0.UpdateCompanion<i1.BaseTableData> {
   final i0.Value<DateTime> writeDate;
   final i0.Value<bool> isMarkedAsDeleted;
   final i0.Value<String> backendId;
+  final i0.Value<int> rowid;
   const BaseTableCompanion({
     this.id = const i0.Value.absent(),
     this.createDate = const i0.Value.absent(),
     this.writeDate = const i0.Value.absent(),
     this.isMarkedAsDeleted = const i0.Value.absent(),
     this.backendId = const i0.Value.absent(),
+    this.rowid = const i0.Value.absent(),
   });
   BaseTableCompanion.insert({
-    this.id = const i0.Value.absent(),
+    required int id,
     required DateTime createDate,
     required DateTime writeDate,
     this.isMarkedAsDeleted = const i0.Value.absent(),
     required String backendId,
-  })  : createDate = i0.Value(createDate),
+    this.rowid = const i0.Value.absent(),
+  })  : id = i0.Value(id),
+        createDate = i0.Value(createDate),
         writeDate = i0.Value(writeDate),
         backendId = i0.Value(backendId);
   static i0.Insertable<i1.BaseTableData> custom({
@@ -260,6 +1039,7 @@ class BaseTableCompanion extends i0.UpdateCompanion<i1.BaseTableData> {
     i0.Expression<DateTime>? writeDate,
     i0.Expression<bool>? isMarkedAsDeleted,
     i0.Expression<String>? backendId,
+    i0.Expression<int>? rowid,
   }) {
     return i0.RawValuesInsertable({
       if (id != null) 'id': id,
@@ -267,6 +1047,7 @@ class BaseTableCompanion extends i0.UpdateCompanion<i1.BaseTableData> {
       if (writeDate != null) 'write_date': writeDate,
       if (isMarkedAsDeleted != null) 'is_marked_as_deleted': isMarkedAsDeleted,
       if (backendId != null) 'backend_id': backendId,
+      if (rowid != null) 'rowid': rowid,
     });
   }
 
@@ -275,13 +1056,15 @@ class BaseTableCompanion extends i0.UpdateCompanion<i1.BaseTableData> {
       i0.Value<DateTime>? createDate,
       i0.Value<DateTime>? writeDate,
       i0.Value<bool>? isMarkedAsDeleted,
-      i0.Value<String>? backendId}) {
+      i0.Value<String>? backendId,
+      i0.Value<int>? rowid}) {
     return i1.BaseTableCompanion(
       id: id ?? this.id,
       createDate: createDate ?? this.createDate,
       writeDate: writeDate ?? this.writeDate,
       isMarkedAsDeleted: isMarkedAsDeleted ?? this.isMarkedAsDeleted,
       backendId: backendId ?? this.backendId,
+      rowid: rowid ?? this.rowid,
     );
   }
 
@@ -303,6 +1086,9 @@ class BaseTableCompanion extends i0.UpdateCompanion<i1.BaseTableData> {
     if (backendId.present) {
       map['backend_id'] = i0.Variable<String>(backendId.value);
     }
+    if (rowid.present) {
+      map['rowid'] = i0.Variable<int>(rowid.value);
+    }
     return map;
   }
 
@@ -313,187 +1099,12 @@ class BaseTableCompanion extends i0.UpdateCompanion<i1.BaseTableData> {
           ..write('createDate: $createDate, ')
           ..write('writeDate: $writeDate, ')
           ..write('isMarkedAsDeleted: $isMarkedAsDeleted, ')
-          ..write('backendId: $backendId')
+          ..write('backendId: $backendId, ')
+          ..write('rowid: $rowid')
           ..write(')'))
         .toString();
   }
 }
-
-typedef $$BaseTableTableCreateCompanionBuilder = i1.BaseTableCompanion
-    Function({
-  i0.Value<int> id,
-  required DateTime createDate,
-  required DateTime writeDate,
-  i0.Value<bool> isMarkedAsDeleted,
-  required String backendId,
-});
-typedef $$BaseTableTableUpdateCompanionBuilder = i1.BaseTableCompanion
-    Function({
-  i0.Value<int> id,
-  i0.Value<DateTime> createDate,
-  i0.Value<DateTime> writeDate,
-  i0.Value<bool> isMarkedAsDeleted,
-  i0.Value<String> backendId,
-});
-
-class $$BaseTableTableFilterComposer
-    extends i0.FilterComposer<i0.GeneratedDatabase, i1.$BaseTableTable> {
-  $$BaseTableTableFilterComposer(super.$state);
-  i0.ColumnFilters<int> get id => $state.composableBuilder(
-      column: $state.table.id,
-      builder: (column, joinBuilders) =>
-          i0.ColumnFilters(column, joinBuilders: joinBuilders));
-
-  i0.ColumnFilters<DateTime> get createDate => $state.composableBuilder(
-      column: $state.table.createDate,
-      builder: (column, joinBuilders) =>
-          i0.ColumnFilters(column, joinBuilders: joinBuilders));
-
-  i0.ColumnFilters<DateTime> get writeDate => $state.composableBuilder(
-      column: $state.table.writeDate,
-      builder: (column, joinBuilders) =>
-          i0.ColumnFilters(column, joinBuilders: joinBuilders));
-
-  i0.ColumnFilters<bool> get isMarkedAsDeleted => $state.composableBuilder(
-      column: $state.table.isMarkedAsDeleted,
-      builder: (column, joinBuilders) =>
-          i0.ColumnFilters(column, joinBuilders: joinBuilders));
-
-  i1.$$SyncBackendsTableFilterComposer get backendId {
-    final i1.$$SyncBackendsTableFilterComposer composer =
-        $state.composerBuilder(
-            composer: this,
-            getCurrentColumn: (t) => t.backendId,
-            referencedTable: i4.ReadDatabaseContainer($state.db)
-                .resultSet<i1.$SyncBackendsTable>('sync_backends'),
-            getReferencedColumn: (t) => t.id,
-            builder: (joinBuilder, parentComposers) =>
-                i1.$$SyncBackendsTableFilterComposer(i0.ComposerState(
-                    $state.db,
-                    i4.ReadDatabaseContainer($state.db)
-                        .resultSet<i1.$SyncBackendsTable>('sync_backends'),
-                    joinBuilder,
-                    parentComposers)));
-    return composer;
-  }
-}
-
-class $$BaseTableTableOrderingComposer
-    extends i0.OrderingComposer<i0.GeneratedDatabase, i1.$BaseTableTable> {
-  $$BaseTableTableOrderingComposer(super.$state);
-  i0.ColumnOrderings<int> get id => $state.composableBuilder(
-      column: $state.table.id,
-      builder: (column, joinBuilders) =>
-          i0.ColumnOrderings(column, joinBuilders: joinBuilders));
-
-  i0.ColumnOrderings<DateTime> get createDate => $state.composableBuilder(
-      column: $state.table.createDate,
-      builder: (column, joinBuilders) =>
-          i0.ColumnOrderings(column, joinBuilders: joinBuilders));
-
-  i0.ColumnOrderings<DateTime> get writeDate => $state.composableBuilder(
-      column: $state.table.writeDate,
-      builder: (column, joinBuilders) =>
-          i0.ColumnOrderings(column, joinBuilders: joinBuilders));
-
-  i0.ColumnOrderings<bool> get isMarkedAsDeleted => $state.composableBuilder(
-      column: $state.table.isMarkedAsDeleted,
-      builder: (column, joinBuilders) =>
-          i0.ColumnOrderings(column, joinBuilders: joinBuilders));
-
-  i1.$$SyncBackendsTableOrderingComposer get backendId {
-    final i1.$$SyncBackendsTableOrderingComposer composer =
-        $state.composerBuilder(
-            composer: this,
-            getCurrentColumn: (t) => t.backendId,
-            referencedTable: i4.ReadDatabaseContainer($state.db)
-                .resultSet<i1.$SyncBackendsTable>('sync_backends'),
-            getReferencedColumn: (t) => t.id,
-            builder: (joinBuilder, parentComposers) =>
-                i1.$$SyncBackendsTableOrderingComposer(i0.ComposerState(
-                    $state.db,
-                    i4.ReadDatabaseContainer($state.db)
-                        .resultSet<i1.$SyncBackendsTable>('sync_backends'),
-                    joinBuilder,
-                    parentComposers)));
-    return composer;
-  }
-}
-
-class $$BaseTableTableTableManager extends i0.RootTableManager<
-    i0.GeneratedDatabase,
-    i1.$BaseTableTable,
-    i1.BaseTableData,
-    i1.$$BaseTableTableFilterComposer,
-    i1.$$BaseTableTableOrderingComposer,
-    $$BaseTableTableCreateCompanionBuilder,
-    $$BaseTableTableUpdateCompanionBuilder,
-    (
-      i1.BaseTableData,
-      i0.BaseReferences<i0.GeneratedDatabase, i1.$BaseTableTable,
-          i1.BaseTableData>
-    ),
-    i1.BaseTableData,
-    i0.PrefetchHooks Function({bool backendId})> {
-  $$BaseTableTableTableManager(
-      i0.GeneratedDatabase db, i1.$BaseTableTable table)
-      : super(i0.TableManagerState(
-          db: db,
-          table: table,
-          filteringComposer:
-              i1.$$BaseTableTableFilterComposer(i0.ComposerState(db, table)),
-          orderingComposer:
-              i1.$$BaseTableTableOrderingComposer(i0.ComposerState(db, table)),
-          updateCompanionCallback: ({
-            i0.Value<int> id = const i0.Value.absent(),
-            i0.Value<DateTime> createDate = const i0.Value.absent(),
-            i0.Value<DateTime> writeDate = const i0.Value.absent(),
-            i0.Value<bool> isMarkedAsDeleted = const i0.Value.absent(),
-            i0.Value<String> backendId = const i0.Value.absent(),
-          }) =>
-              i1.BaseTableCompanion(
-            id: id,
-            createDate: createDate,
-            writeDate: writeDate,
-            isMarkedAsDeleted: isMarkedAsDeleted,
-            backendId: backendId,
-          ),
-          createCompanionCallback: ({
-            i0.Value<int> id = const i0.Value.absent(),
-            required DateTime createDate,
-            required DateTime writeDate,
-            i0.Value<bool> isMarkedAsDeleted = const i0.Value.absent(),
-            required String backendId,
-          }) =>
-              i1.BaseTableCompanion.insert(
-            id: id,
-            createDate: createDate,
-            writeDate: writeDate,
-            isMarkedAsDeleted: isMarkedAsDeleted,
-            backendId: backendId,
-          ),
-          withReferenceMapper: (p0) => p0
-              .map((e) => (e.readTable(table), i0.BaseReferences(db, table, e)))
-              .toList(),
-          prefetchHooksCallback: null,
-        ));
-}
-
-typedef $$BaseTableTableProcessedTableManager = i0.ProcessedTableManager<
-    i0.GeneratedDatabase,
-    i1.$BaseTableTable,
-    i1.BaseTableData,
-    i1.$$BaseTableTableFilterComposer,
-    i1.$$BaseTableTableOrderingComposer,
-    $$BaseTableTableCreateCompanionBuilder,
-    $$BaseTableTableUpdateCompanionBuilder,
-    (
-      i1.BaseTableData,
-      i0.BaseReferences<i0.GeneratedDatabase, i1.$BaseTableTable,
-          i1.BaseTableData>
-    ),
-    i1.BaseTableData,
-    i0.PrefetchHooks Function({bool backendId})>;
 
 class $SyncBackendsTable extends i2.SyncBackends
     with i0.TableInfo<$SyncBackendsTable, i1.SyncBackend> {
@@ -725,130 +1336,6 @@ class SyncBackendsCompanion extends i0.UpdateCompanion<i1.SyncBackend> {
         .toString();
   }
 }
-
-typedef $$SyncBackendsTableCreateCompanionBuilder = i1.SyncBackendsCompanion
-    Function({
-  required String id,
-  required String type,
-  required String baseUrl,
-  i0.Value<int> rowid,
-});
-typedef $$SyncBackendsTableUpdateCompanionBuilder = i1.SyncBackendsCompanion
-    Function({
-  i0.Value<String> id,
-  i0.Value<String> type,
-  i0.Value<String> baseUrl,
-  i0.Value<int> rowid,
-});
-
-class $$SyncBackendsTableFilterComposer
-    extends i0.FilterComposer<i0.GeneratedDatabase, i1.$SyncBackendsTable> {
-  $$SyncBackendsTableFilterComposer(super.$state);
-  i0.ColumnFilters<String> get id => $state.composableBuilder(
-      column: $state.table.id,
-      builder: (column, joinBuilders) =>
-          i0.ColumnFilters(column, joinBuilders: joinBuilders));
-
-  i0.ColumnFilters<String> get type => $state.composableBuilder(
-      column: $state.table.type,
-      builder: (column, joinBuilders) =>
-          i0.ColumnFilters(column, joinBuilders: joinBuilders));
-
-  i0.ColumnFilters<String> get baseUrl => $state.composableBuilder(
-      column: $state.table.baseUrl,
-      builder: (column, joinBuilders) =>
-          i0.ColumnFilters(column, joinBuilders: joinBuilders));
-}
-
-class $$SyncBackendsTableOrderingComposer
-    extends i0.OrderingComposer<i0.GeneratedDatabase, i1.$SyncBackendsTable> {
-  $$SyncBackendsTableOrderingComposer(super.$state);
-  i0.ColumnOrderings<String> get id => $state.composableBuilder(
-      column: $state.table.id,
-      builder: (column, joinBuilders) =>
-          i0.ColumnOrderings(column, joinBuilders: joinBuilders));
-
-  i0.ColumnOrderings<String> get type => $state.composableBuilder(
-      column: $state.table.type,
-      builder: (column, joinBuilders) =>
-          i0.ColumnOrderings(column, joinBuilders: joinBuilders));
-
-  i0.ColumnOrderings<String> get baseUrl => $state.composableBuilder(
-      column: $state.table.baseUrl,
-      builder: (column, joinBuilders) =>
-          i0.ColumnOrderings(column, joinBuilders: joinBuilders));
-}
-
-class $$SyncBackendsTableTableManager extends i0.RootTableManager<
-    i0.GeneratedDatabase,
-    i1.$SyncBackendsTable,
-    i1.SyncBackend,
-    i1.$$SyncBackendsTableFilterComposer,
-    i1.$$SyncBackendsTableOrderingComposer,
-    $$SyncBackendsTableCreateCompanionBuilder,
-    $$SyncBackendsTableUpdateCompanionBuilder,
-    (
-      i1.SyncBackend,
-      i0.BaseReferences<i0.GeneratedDatabase, i1.$SyncBackendsTable,
-          i1.SyncBackend>
-    ),
-    i1.SyncBackend,
-    i0.PrefetchHooks Function()> {
-  $$SyncBackendsTableTableManager(
-      i0.GeneratedDatabase db, i1.$SyncBackendsTable table)
-      : super(i0.TableManagerState(
-          db: db,
-          table: table,
-          filteringComposer:
-              i1.$$SyncBackendsTableFilterComposer(i0.ComposerState(db, table)),
-          orderingComposer: i1
-              .$$SyncBackendsTableOrderingComposer(i0.ComposerState(db, table)),
-          updateCompanionCallback: ({
-            i0.Value<String> id = const i0.Value.absent(),
-            i0.Value<String> type = const i0.Value.absent(),
-            i0.Value<String> baseUrl = const i0.Value.absent(),
-            i0.Value<int> rowid = const i0.Value.absent(),
-          }) =>
-              i1.SyncBackendsCompanion(
-            id: id,
-            type: type,
-            baseUrl: baseUrl,
-            rowid: rowid,
-          ),
-          createCompanionCallback: ({
-            required String id,
-            required String type,
-            required String baseUrl,
-            i0.Value<int> rowid = const i0.Value.absent(),
-          }) =>
-              i1.SyncBackendsCompanion.insert(
-            id: id,
-            type: type,
-            baseUrl: baseUrl,
-            rowid: rowid,
-          ),
-          withReferenceMapper: (p0) => p0
-              .map((e) => (e.readTable(table), i0.BaseReferences(db, table, e)))
-              .toList(),
-          prefetchHooksCallback: null,
-        ));
-}
-
-typedef $$SyncBackendsTableProcessedTableManager = i0.ProcessedTableManager<
-    i0.GeneratedDatabase,
-    i1.$SyncBackendsTable,
-    i1.SyncBackend,
-    i1.$$SyncBackendsTableFilterComposer,
-    i1.$$SyncBackendsTableOrderingComposer,
-    $$SyncBackendsTableCreateCompanionBuilder,
-    $$SyncBackendsTableUpdateCompanionBuilder,
-    (
-      i1.SyncBackend,
-      i0.BaseReferences<i0.GeneratedDatabase, i1.$SyncBackendsTable,
-          i1.SyncBackend>
-    ),
-    i1.SyncBackend,
-    i0.PrefetchHooks Function()>;
 
 class $SyncRegistriesTable extends i2.SyncRegistries
     with i0.TableInfo<$SyncRegistriesTable, i1.SyncRegistry> {
@@ -1336,243 +1823,3 @@ class SyncRegistriesCompanion extends i0.UpdateCompanion<i1.SyncRegistry> {
         .toString();
   }
 }
-
-typedef $$SyncRegistriesTableCreateCompanionBuilder = i1.SyncRegistriesCompanion
-    Function({
-  i0.Value<int> id,
-  required int modelRecordId,
-  required String modelName,
-  required String backendId,
-  i0.Value<DateTime?> recordDeletedAt,
-  required DateTime recordWriteDate,
-  i0.Value<bool> pendingSync,
-  required DateTime updatedAt,
-  required DateTime createdAt,
-});
-typedef $$SyncRegistriesTableUpdateCompanionBuilder = i1.SyncRegistriesCompanion
-    Function({
-  i0.Value<int> id,
-  i0.Value<int> modelRecordId,
-  i0.Value<String> modelName,
-  i0.Value<String> backendId,
-  i0.Value<DateTime?> recordDeletedAt,
-  i0.Value<DateTime> recordWriteDate,
-  i0.Value<bool> pendingSync,
-  i0.Value<DateTime> updatedAt,
-  i0.Value<DateTime> createdAt,
-});
-
-class $$SyncRegistriesTableFilterComposer
-    extends i0.FilterComposer<i0.GeneratedDatabase, i1.$SyncRegistriesTable> {
-  $$SyncRegistriesTableFilterComposer(super.$state);
-  i0.ColumnFilters<int> get id => $state.composableBuilder(
-      column: $state.table.id,
-      builder: (column, joinBuilders) =>
-          i0.ColumnFilters(column, joinBuilders: joinBuilders));
-
-  i0.ColumnFilters<int> get modelRecordId => $state.composableBuilder(
-      column: $state.table.modelRecordId,
-      builder: (column, joinBuilders) =>
-          i0.ColumnFilters(column, joinBuilders: joinBuilders));
-
-  i0.ColumnFilters<String> get modelName => $state.composableBuilder(
-      column: $state.table.modelName,
-      builder: (column, joinBuilders) =>
-          i0.ColumnFilters(column, joinBuilders: joinBuilders));
-
-  i0.ColumnFilters<DateTime> get recordDeletedAt => $state.composableBuilder(
-      column: $state.table.recordDeletedAt,
-      builder: (column, joinBuilders) =>
-          i0.ColumnFilters(column, joinBuilders: joinBuilders));
-
-  i0.ColumnFilters<DateTime> get recordWriteDate => $state.composableBuilder(
-      column: $state.table.recordWriteDate,
-      builder: (column, joinBuilders) =>
-          i0.ColumnFilters(column, joinBuilders: joinBuilders));
-
-  i0.ColumnFilters<bool> get pendingSync => $state.composableBuilder(
-      column: $state.table.pendingSync,
-      builder: (column, joinBuilders) =>
-          i0.ColumnFilters(column, joinBuilders: joinBuilders));
-
-  i0.ColumnFilters<DateTime> get updatedAt => $state.composableBuilder(
-      column: $state.table.updatedAt,
-      builder: (column, joinBuilders) =>
-          i0.ColumnFilters(column, joinBuilders: joinBuilders));
-
-  i0.ColumnFilters<DateTime> get createdAt => $state.composableBuilder(
-      column: $state.table.createdAt,
-      builder: (column, joinBuilders) =>
-          i0.ColumnFilters(column, joinBuilders: joinBuilders));
-
-  i1.$$SyncBackendsTableFilterComposer get backendId {
-    final i1.$$SyncBackendsTableFilterComposer composer =
-        $state.composerBuilder(
-            composer: this,
-            getCurrentColumn: (t) => t.backendId,
-            referencedTable: i4.ReadDatabaseContainer($state.db)
-                .resultSet<i1.$SyncBackendsTable>('sync_backends'),
-            getReferencedColumn: (t) => t.id,
-            builder: (joinBuilder, parentComposers) =>
-                i1.$$SyncBackendsTableFilterComposer(i0.ComposerState(
-                    $state.db,
-                    i4.ReadDatabaseContainer($state.db)
-                        .resultSet<i1.$SyncBackendsTable>('sync_backends'),
-                    joinBuilder,
-                    parentComposers)));
-    return composer;
-  }
-}
-
-class $$SyncRegistriesTableOrderingComposer
-    extends i0.OrderingComposer<i0.GeneratedDatabase, i1.$SyncRegistriesTable> {
-  $$SyncRegistriesTableOrderingComposer(super.$state);
-  i0.ColumnOrderings<int> get id => $state.composableBuilder(
-      column: $state.table.id,
-      builder: (column, joinBuilders) =>
-          i0.ColumnOrderings(column, joinBuilders: joinBuilders));
-
-  i0.ColumnOrderings<int> get modelRecordId => $state.composableBuilder(
-      column: $state.table.modelRecordId,
-      builder: (column, joinBuilders) =>
-          i0.ColumnOrderings(column, joinBuilders: joinBuilders));
-
-  i0.ColumnOrderings<String> get modelName => $state.composableBuilder(
-      column: $state.table.modelName,
-      builder: (column, joinBuilders) =>
-          i0.ColumnOrderings(column, joinBuilders: joinBuilders));
-
-  i0.ColumnOrderings<DateTime> get recordDeletedAt => $state.composableBuilder(
-      column: $state.table.recordDeletedAt,
-      builder: (column, joinBuilders) =>
-          i0.ColumnOrderings(column, joinBuilders: joinBuilders));
-
-  i0.ColumnOrderings<DateTime> get recordWriteDate => $state.composableBuilder(
-      column: $state.table.recordWriteDate,
-      builder: (column, joinBuilders) =>
-          i0.ColumnOrderings(column, joinBuilders: joinBuilders));
-
-  i0.ColumnOrderings<bool> get pendingSync => $state.composableBuilder(
-      column: $state.table.pendingSync,
-      builder: (column, joinBuilders) =>
-          i0.ColumnOrderings(column, joinBuilders: joinBuilders));
-
-  i0.ColumnOrderings<DateTime> get updatedAt => $state.composableBuilder(
-      column: $state.table.updatedAt,
-      builder: (column, joinBuilders) =>
-          i0.ColumnOrderings(column, joinBuilders: joinBuilders));
-
-  i0.ColumnOrderings<DateTime> get createdAt => $state.composableBuilder(
-      column: $state.table.createdAt,
-      builder: (column, joinBuilders) =>
-          i0.ColumnOrderings(column, joinBuilders: joinBuilders));
-
-  i1.$$SyncBackendsTableOrderingComposer get backendId {
-    final i1.$$SyncBackendsTableOrderingComposer composer =
-        $state.composerBuilder(
-            composer: this,
-            getCurrentColumn: (t) => t.backendId,
-            referencedTable: i4.ReadDatabaseContainer($state.db)
-                .resultSet<i1.$SyncBackendsTable>('sync_backends'),
-            getReferencedColumn: (t) => t.id,
-            builder: (joinBuilder, parentComposers) =>
-                i1.$$SyncBackendsTableOrderingComposer(i0.ComposerState(
-                    $state.db,
-                    i4.ReadDatabaseContainer($state.db)
-                        .resultSet<i1.$SyncBackendsTable>('sync_backends'),
-                    joinBuilder,
-                    parentComposers)));
-    return composer;
-  }
-}
-
-class $$SyncRegistriesTableTableManager extends i0.RootTableManager<
-    i0.GeneratedDatabase,
-    i1.$SyncRegistriesTable,
-    i1.SyncRegistry,
-    i1.$$SyncRegistriesTableFilterComposer,
-    i1.$$SyncRegistriesTableOrderingComposer,
-    $$SyncRegistriesTableCreateCompanionBuilder,
-    $$SyncRegistriesTableUpdateCompanionBuilder,
-    (
-      i1.SyncRegistry,
-      i0.BaseReferences<i0.GeneratedDatabase, i1.$SyncRegistriesTable,
-          i1.SyncRegistry>
-    ),
-    i1.SyncRegistry,
-    i0.PrefetchHooks Function({bool backendId})> {
-  $$SyncRegistriesTableTableManager(
-      i0.GeneratedDatabase db, i1.$SyncRegistriesTable table)
-      : super(i0.TableManagerState(
-          db: db,
-          table: table,
-          filteringComposer: i1
-              .$$SyncRegistriesTableFilterComposer(i0.ComposerState(db, table)),
-          orderingComposer: i1.$$SyncRegistriesTableOrderingComposer(
-              i0.ComposerState(db, table)),
-          updateCompanionCallback: ({
-            i0.Value<int> id = const i0.Value.absent(),
-            i0.Value<int> modelRecordId = const i0.Value.absent(),
-            i0.Value<String> modelName = const i0.Value.absent(),
-            i0.Value<String> backendId = const i0.Value.absent(),
-            i0.Value<DateTime?> recordDeletedAt = const i0.Value.absent(),
-            i0.Value<DateTime> recordWriteDate = const i0.Value.absent(),
-            i0.Value<bool> pendingSync = const i0.Value.absent(),
-            i0.Value<DateTime> updatedAt = const i0.Value.absent(),
-            i0.Value<DateTime> createdAt = const i0.Value.absent(),
-          }) =>
-              i1.SyncRegistriesCompanion(
-            id: id,
-            modelRecordId: modelRecordId,
-            modelName: modelName,
-            backendId: backendId,
-            recordDeletedAt: recordDeletedAt,
-            recordWriteDate: recordWriteDate,
-            pendingSync: pendingSync,
-            updatedAt: updatedAt,
-            createdAt: createdAt,
-          ),
-          createCompanionCallback: ({
-            i0.Value<int> id = const i0.Value.absent(),
-            required int modelRecordId,
-            required String modelName,
-            required String backendId,
-            i0.Value<DateTime?> recordDeletedAt = const i0.Value.absent(),
-            required DateTime recordWriteDate,
-            i0.Value<bool> pendingSync = const i0.Value.absent(),
-            required DateTime updatedAt,
-            required DateTime createdAt,
-          }) =>
-              i1.SyncRegistriesCompanion.insert(
-            id: id,
-            modelRecordId: modelRecordId,
-            modelName: modelName,
-            backendId: backendId,
-            recordDeletedAt: recordDeletedAt,
-            recordWriteDate: recordWriteDate,
-            pendingSync: pendingSync,
-            updatedAt: updatedAt,
-            createdAt: createdAt,
-          ),
-          withReferenceMapper: (p0) => p0
-              .map((e) => (e.readTable(table), i0.BaseReferences(db, table, e)))
-              .toList(),
-          prefetchHooksCallback: null,
-        ));
-}
-
-typedef $$SyncRegistriesTableProcessedTableManager = i0.ProcessedTableManager<
-    i0.GeneratedDatabase,
-    i1.$SyncRegistriesTable,
-    i1.SyncRegistry,
-    i1.$$SyncRegistriesTableFilterComposer,
-    i1.$$SyncRegistriesTableOrderingComposer,
-    $$SyncRegistriesTableCreateCompanionBuilder,
-    $$SyncRegistriesTableUpdateCompanionBuilder,
-    (
-      i1.SyncRegistry,
-      i0.BaseReferences<i0.GeneratedDatabase, i1.$SyncRegistriesTable,
-          i1.SyncRegistry>
-    ),
-    i1.SyncRegistry,
-    i0.PrefetchHooks Function({bool backendId})>;
