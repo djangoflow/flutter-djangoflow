@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:odoo_rpc/odoo_rpc.dart';
 
@@ -11,29 +10,29 @@ class DjangoflowOdooAuthCubit extends HydratedCubit<DjangoflowOdooAuthState> {
     if (state.baseUrl != null && state.session != null) {
       checkAuthStatus();
     }
-    _repository.sessionStream.listen(_handleSessionChange);
+
+    _repository.loginEventStream.listen(_handleLoginEvent);
   }
   final DjangoflowOdooAuthRepository _repository;
-
-  void _handleSessionChange(OdooSession session) {
-    debugPrint('Session Changed : ${session.toJson()}');
-    if (session.id.isEmpty || session.userId == 0) {
+  void _handleLoginEvent(OdooLoginEvent event) {
+    if (event == OdooLoginEvent.loggedIn) {
+      final session = _repository.session;
       emit(
         state.copyWith(
-          status: AuthStatus.unauthenticated,
-          database: null,
-          errorMessage: null,
-          session: null,
-          dbList: null,
-          baseUrl: null,
+          status: AuthStatus.authenticated,
+          session: session,
+          database: session?.dbName ?? state.database,
         ),
       );
     } else {
       emit(
         state.copyWith(
-          status: AuthStatus.authenticated,
-          session: session,
-          database: session.dbName,
+          status: AuthStatus.unauthenticated,
+          database: null,
+          session: null,
+          dbList: null,
+          baseUrl: null,
+          errorMessage: null,
         ),
       );
     }
@@ -54,20 +53,10 @@ class DjangoflowOdooAuthCubit extends HydratedCubit<DjangoflowOdooAuthState> {
           ),
         );
       } else {
-        emit(
-          state.copyWith(
-            status: AuthStatus.unauthenticated,
-            session: null,
-          ),
-        );
+        _emitLogout();
       }
     } else {
-      emit(
-        state.copyWith(
-          status: AuthStatus.unauthenticated,
-          session: null,
-        ),
-      );
+      _emitLogout();
     }
   }
 
@@ -87,7 +76,7 @@ class DjangoflowOdooAuthCubit extends HydratedCubit<DjangoflowOdooAuthState> {
     try {
       final session =
           await _repository.login(state.database!, username, password);
-      if (session != null && session.id.isNotEmpty && session.userId != 0) {
+      if (session != null) {
         emit(
           state.copyWith(
             status: AuthStatus.authenticated,
@@ -111,6 +100,10 @@ class DjangoflowOdooAuthCubit extends HydratedCubit<DjangoflowOdooAuthState> {
 
   Future<void> logout() async {
     await _repository.logout();
+    _emitLogout();
+  }
+
+  void _emitLogout() {
     emit(
       state.copyWith(
         status: AuthStatus.unauthenticated,
