@@ -10,6 +10,7 @@ environment:
 dependencies:
   collection: ^1.18.0
   crypto: ^3.0.5
+  djangoflow_oauth: ^0.0.1
   flutter:
     sdk: flutter
   flutter_web_auth_2: ^4.0.1

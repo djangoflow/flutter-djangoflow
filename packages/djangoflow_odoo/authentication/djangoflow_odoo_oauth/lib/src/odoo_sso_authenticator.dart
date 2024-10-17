@@ -3,6 +3,8 @@ import 'package:djangoflow_odoo_oauth/src/odoo_sso_webview.dart';
 import 'package:djangoflow_odoo_oauth/src/utils/sso_url_extractor.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
+/// This class can be useful for totally automated Odoo based OAuthLogin
+/// Only supports mobile platforms for now
 class OdooSSOAuthenticator {
   OdooSSOAuthenticator();
 

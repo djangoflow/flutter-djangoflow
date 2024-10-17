@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 import 'package:djangoflow_odoo_oauth/src/utils/session_id_extractor.dart';
 
+/// Only for mobile platforms for now.
 class OdooSSOWebView extends StatefulWidget {
   const OdooSSOWebView({
     required this.ssoUrl,
