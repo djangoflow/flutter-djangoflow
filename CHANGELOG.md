@@ -3,6 +3,34 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2024-10-18
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`djangoflow_odoo_oauth` - `v0.1.0`](#djangoflow_odoo_oauth---v010)
+ - [`djangoflow_odoo_auth` - `v0.1.0+3`](#djangoflow_odoo_auth---v0103)
+
+---
+
+#### `djangoflow_odoo_oauth` - `v0.1.0`
+
+ - **REFACTOR**: remove custom http client, dev can pass whatever client they wish. ([93215f85](https://github.com/djangoflow/flutter-djangoflow/commit/93215f854740f7f9984668e87b31d9c71f95ea51))
+ - **FEAT**: use djangoflow_oauth package as foundation to build OAuthProvider for odoo oauth. ([545e867b](https://github.com/djangoflow/flutter-djangoflow/commit/545e867ba7e7c62197aa48bfe2202df091ac66c9))
+
+#### `djangoflow_odoo_auth` - `v0.1.0+3`
+
+ - **REFACTOR**: make relevant changes for odoo_rpc package changes. ([da09aab0](https://github.com/djangoflow/flutter-djangoflow/commit/da09aab0f29a11f49fc66a7b04da8ddb62996ff1))
+ - **REFACTOR**: expose loginStream. ([286ebf13](https://github.com/djangoflow/flutter-djangoflow/commit/286ebf132075a9a7c63335ccbb60cac6cfdc9491))
+
+
 ## 2024-10-15
 
 ### Changes

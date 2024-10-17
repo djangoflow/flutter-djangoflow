@@ -1,3 +1,8 @@
+## 0.1.0+3
+
+ - **REFACTOR**: make relevant changes for odoo_rpc package changes. ([da09aab0](https://github.com/djangoflow/flutter-djangoflow/commit/da09aab0f29a11f49fc66a7b04da8ddb62996ff1))
+ - **REFACTOR**: expose loginStream. ([286ebf13](https://github.com/djangoflow/flutter-djangoflow/commit/286ebf132075a9a7c63335ccbb60cac6cfdc9491))
+
 ## 0.1.0+2
 
  - **REFACTOR**: Simplify OdooSession handling and update dependencies. ([e5edc82d](https://github.com/djangoflow/flutter-djangoflow/commit/e5edc82d6b0ee6644b54abde1bba9d12a7ac03e9))
