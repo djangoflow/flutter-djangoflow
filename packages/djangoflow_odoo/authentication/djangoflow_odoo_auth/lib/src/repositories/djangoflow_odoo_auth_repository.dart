@@ -59,6 +59,9 @@ class DjangoflowOdooAuthRepository {
   Stream<OdooSession> get sessionStream =>
       _clientManager.getClient()?.sessionStream ?? const Stream.empty();
 
+  Stream<OdooLoginEvent> get loginEventStream =>
+      _clientManager.getClient()?.loginStream ?? const Stream.empty();
+  OdooSession? get session => _clientManager.getClient()?.sessionId;
   Future<List<String>> getDatabases() async {
     final odooClient = _clientManager.getClient();
     if (odooClient == null) {
@@ -77,6 +80,7 @@ class DjangoflowOdooAuthRepository {
     }
   }
 
+  /// Only for mobile platforms
   Future<OdooSession> loginWithSessionId(
     String baseUrl,
     String sessionId,
