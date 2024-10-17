@@ -1,3 +1,3 @@
 ## 0.0.1
 
-- Initail version release with basic PKCE authentication
+- Initial version release with basic PKCE authentication

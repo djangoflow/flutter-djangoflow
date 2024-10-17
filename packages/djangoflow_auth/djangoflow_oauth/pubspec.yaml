@@ -1,5 +1,5 @@
 name: djangoflow_oauth
-description: "A new Flutter package project."
+description: "djangoflow_oauth makes OAuth2 flows easy for Flutter apps! This package supports secure PKCE-based OAuth2 authentication with multiple providers, including Google, Facebook, and custom OAuth servers. Works seamlessly across mobile (Android/iOS) and web platforms with minimal configuration."
 version: 0.0.1
 homepage: https://github.com/djangoflow/flutter-djangoflow/tree/main/packages/djangoflow_auth/djangoflow_oauth
 
