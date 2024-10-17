@@ -26,32 +26,12 @@ class PKCEConfig {
   final Map<String, String> additionalTokenParams;
 }
 
-/// A customizable HTTP client that doesn't follow redirects.
-class NoRedirectHttpClient extends http.BaseClient {
-  NoRedirectHttpClient([http.Client? innerClient])
-      : _inner = innerClient ?? http.Client();
-
-  final http.Client _inner;
-
-  @override
-  Future<http.StreamedResponse> send(http.BaseRequest request) async {
-    request.followRedirects = false;
-    return _inner.send(request);
-  }
-
-  @override
-  void close() {
-    _inner.close();
-  }
-}
-
 /// Main class for handling PKCE authentication.
 class PKCEAuth {
-  PKCEAuth(this.config, {http.Client? httpClient})
-      : _client = NoRedirectHttpClient(httpClient);
+  PKCEAuth(this.config, this._client);
 
   final PKCEConfig config;
-  final NoRedirectHttpClient _client;
+  final http.BaseClient _client;
   String? _codeVerifier;
   String? _codeChallenge;
   String? _authorizationCode;
