@@ -136,6 +136,6 @@ class SyncBloc<T extends SyncModel> extends Bloc<ItemEvent, ItemState> {
   final SyncRepository<T> repository;
 
   void _logError(Object error, StackTrace stackTrace) {
-    logger.e('Error: ', error, stackTrace);
+    logger.e('Error: ', error: error, stackTrace: stackTrace);
   }
 }

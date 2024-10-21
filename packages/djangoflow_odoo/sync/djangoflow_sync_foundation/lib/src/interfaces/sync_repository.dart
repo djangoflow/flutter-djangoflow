@@ -28,7 +28,11 @@ abstract class SyncRepository<T extends SyncModel> implements Repository<T> {
         await syncStrategy.syncBatch(items, secondaryBackend);
         return items;
       } catch (e, stackTrace) {
-        logger.e('Error fetching items from primary backend:', e, stackTrace);
+        logger.e(
+          'Error fetching items from primary backend:',
+          error: e,
+          stackTrace: stackTrace,
+        );
         return secondaryBackend.getAll();
       }
     } else {
@@ -48,7 +52,11 @@ abstract class SyncRepository<T extends SyncModel> implements Repository<T> {
         }
         return item;
       } catch (e, stackTrace) {
-        logger.e('Error fetching item from primary backend:', e, stackTrace);
+        logger.e(
+          'Error fetching item from primary backend:',
+          error: e,
+          stackTrace: stackTrace,
+        );
         return secondaryBackend.getById(id);
       }
     } else {
@@ -64,7 +72,11 @@ abstract class SyncRepository<T extends SyncModel> implements Repository<T> {
         await updateSecondaryBackend([createdItem]);
         return createdItem;
       } catch (e, stackTrace) {
-        logger.e('Error creating item in primary backend:', e, stackTrace);
+        logger.e(
+          'Error creating item in primary backend:',
+          error: e,
+          stackTrace: stackTrace,
+        );
         return _createWithTemporaryId(item);
       }
     } else {
@@ -86,7 +98,11 @@ abstract class SyncRepository<T extends SyncModel> implements Repository<T> {
         await updateSecondaryBackend([updatedItem]);
         return updatedItem;
       } catch (e, stackTrace) {
-        logger.e('Error updating item in primary backend:', e, stackTrace);
+        logger.e(
+          'Error updating item in primary backend:',
+          error: e,
+          stackTrace: stackTrace,
+        );
         return secondaryBackend.update(item);
       }
     } else {
@@ -101,7 +117,11 @@ abstract class SyncRepository<T extends SyncModel> implements Repository<T> {
         await primaryBackend.delete(id);
         await secondaryBackend.delete(id);
       } catch (e, stackTrace) {
-        logger.e('Error deleting item in primary backend:', e, stackTrace);
+        logger.e(
+          'Error deleting item in primary backend:',
+          error: e,
+          stackTrace: stackTrace,
+        );
         final item = await secondaryBackend.getById(id);
         if (item != null) {
           await secondaryBackend
