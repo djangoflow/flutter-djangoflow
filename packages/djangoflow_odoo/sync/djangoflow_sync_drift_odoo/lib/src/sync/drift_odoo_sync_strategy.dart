@@ -91,8 +91,8 @@ class DriftOdooSyncStrategy<T extends SyncModel, TTable extends BaseTable>
       } catch (e, stackTrace) {
         logger.e(
           'Error syncing item ${odooItem.id} from Odoo to Drift: ',
-          e,
-          stackTrace,
+          error: e,
+          stackTrace: stackTrace,
         );
       }
     }
@@ -127,8 +127,8 @@ class DriftOdooSyncStrategy<T extends SyncModel, TTable extends BaseTable>
       } catch (e, stackTrace) {
         logger.e(
           'Error syncing item ${record.modelRecordId} to Odoo: ',
-          e,
-          stackTrace,
+          error: e,
+          stackTrace: stackTrace,
         );
       }
     }
@@ -177,7 +177,11 @@ class DriftOdooSyncStrategy<T extends SyncModel, TTable extends BaseTable>
       await syncRegistryRepository.markSyncComplete(syncRegistry.id);
       logger.i('Marked sync complete for record ${syncRegistry.id}');
     } catch (e, stackTrace) {
-      logger.e('Error in _syncItemToOdoo for item ${item.id}', e, stackTrace);
+      logger.e(
+        'Error in _syncItemToOdoo for item ${item.id}',
+        error: e,
+        stackTrace: stackTrace,
+      );
       // Depending on your error handling strategy, you might want to rethrow or handle the error differently
     }
   }
