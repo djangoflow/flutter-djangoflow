@@ -1,3 +1,7 @@
+## 0.1.0+2
+
+ - **REFACTOR**: Update logger usage and dependencies. ([4cae4864](https://github.com/djangoflow/flutter-djangoflow/commit/4cae4864ae08951d50e3e1bd6c4ad9d31dcba1e3))
+
 ## 0.1.0+1
 
  - **REFACTOR**: Update OdooBackend to use checkConnection() instead of isOnline. ([82665b1f](https://github.com/djangoflow/flutter-djangoflow/commit/82665b1f18254c2b57530aba0c02410f00f47129))

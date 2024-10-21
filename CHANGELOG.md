@@ -3,6 +3,32 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2024-10-21
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`djangoflow_sync_drift_odoo` - `v0.2.0+1`](#djangoflow_sync_drift_odoo---v0201)
+ - [`djangoflow_sync_foundation` - `v0.1.0+2`](#djangoflow_sync_foundation---v0102)
+
+---
+
+#### `djangoflow_sync_drift_odoo` - `v0.2.0+1`
+
+ - **REFACTOR**: logger update. ([f5cc2e8b](https://github.com/djangoflow/flutter-djangoflow/commit/f5cc2e8b3e134dfd7bd98cd18f1e4f7daf5e6d79))
+
+#### `djangoflow_sync_foundation` - `v0.1.0+2`
+
+ - **REFACTOR**: Update logger usage and dependencies. ([4cae4864](https://github.com/djangoflow/flutter-djangoflow/commit/4cae4864ae08951d50e3e1bd6c4ad9d31dcba1e3))
+
+
 ## 2024-10-18
 
 ### Changes
