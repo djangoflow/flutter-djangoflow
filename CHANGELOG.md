@@ -3,6 +3,132 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2024-11-29
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`djangoflow_analytics` - `v0.1.0+1`](#djangoflow_analytics---v0101)
+ - [`djangoflow_app` - `v6.0.1`](#djangoflow_app---v601)
+ - [`djangoflow_app_links` - `v3.0.1`](#djangoflow_app_links---v301)
+ - [`djangoflow_auth` - `v0.6.0+1`](#djangoflow_auth---v0601)
+ - [`djangoflow_auth_apple` - `v0.2.0+1`](#djangoflow_auth_apple---v0201)
+ - [`djangoflow_auth_discord` - `v0.2.0+1`](#djangoflow_auth_discord---v0201)
+ - [`djangoflow_auth_facebook` - `v0.2.0+1`](#djangoflow_auth_facebook---v0201)
+ - [`djangoflow_auth_google` - `v0.2.0+1`](#djangoflow_auth_google---v0201)
+ - [`djangoflow_chat` - `v0.2.0+1`](#djangoflow_chat---v0201)
+ - [`djangoflow_deep_link_interface` - `v2.0.1`](#djangoflow_deep_link_interface---v201)
+ - [`djangoflow_emoji_rain` - `v0.1.0+1`](#djangoflow_emoji_rain---v0101)
+ - [`djangoflow_facebook_analytics` - `v0.1.0+1`](#djangoflow_facebook_analytics---v0101)
+ - [`djangoflow_fcm` - `v0.2.0+1`](#djangoflow_fcm---v0201)
+ - [`djangoflow_firebase_analytics` - `v0.3.0+1`](#djangoflow_firebase_analytics---v0301)
+ - [`djangoflow_local_notification` - `v0.1.0+1`](#djangoflow_local_notification---v0101)
+ - [`djangoflow_mixpanel_analytics` - `v0.5.0+1`](#djangoflow_mixpanel_analytics---v0501)
+ - [`djangoflow_oauth` - `v0.0.1+1`](#djangoflow_oauth---v0011)
+ - [`djangoflow_odoo_oauth` - `v0.1.0+1`](#djangoflow_odoo_oauth---v0101)
+ - [`djangoflow_remote_config` - `v0.1.0+2`](#djangoflow_remote_config---v0102)
+ - [`djangoflow_sync_drift_odoo` - `v0.2.0+2`](#djangoflow_sync_drift_odoo---v0202)
+ - [`djangoflow_video_player` - `v0.2.0+1`](#djangoflow_video_player---v0201)
+ - [`djangoflow_websocket` - `v0.2.0+1`](#djangoflow_websocket---v0201)
+
+---
+
+#### `djangoflow_analytics` - `v0.1.0+1`
+
+ - **REFACTOR**: update dependencies. ([b1531da6](https://github.com/djangoflow/flutter-djangoflow/commit/b1531da6872511f1cbe86be74888db64f01f3b60))
+
+#### `djangoflow_app` - `v6.0.1`
+
+ - **REFACTOR**: update dependencies. ([b1531da6](https://github.com/djangoflow/flutter-djangoflow/commit/b1531da6872511f1cbe86be74888db64f01f3b60))
+
+#### `djangoflow_app_links` - `v3.0.1`
+
+ - **REFACTOR**: update dependencies. ([b1531da6](https://github.com/djangoflow/flutter-djangoflow/commit/b1531da6872511f1cbe86be74888db64f01f3b60))
+
+#### `djangoflow_auth` - `v0.6.0+1`
+
+ - **REFACTOR**: update dependencies. ([b1531da6](https://github.com/djangoflow/flutter-djangoflow/commit/b1531da6872511f1cbe86be74888db64f01f3b60))
+
+#### `djangoflow_auth_apple` - `v0.2.0+1`
+
+ - **REFACTOR**: update dependencies. ([b1531da6](https://github.com/djangoflow/flutter-djangoflow/commit/b1531da6872511f1cbe86be74888db64f01f3b60))
+
+#### `djangoflow_auth_discord` - `v0.2.0+1`
+
+ - **REFACTOR**: update dependencies. ([b1531da6](https://github.com/djangoflow/flutter-djangoflow/commit/b1531da6872511f1cbe86be74888db64f01f3b60))
+
+#### `djangoflow_auth_facebook` - `v0.2.0+1`
+
+ - **REFACTOR**: update dependencies. ([b1531da6](https://github.com/djangoflow/flutter-djangoflow/commit/b1531da6872511f1cbe86be74888db64f01f3b60))
+
+#### `djangoflow_auth_google` - `v0.2.0+1`
+
+ - **REFACTOR**: update dependencies. ([b1531da6](https://github.com/djangoflow/flutter-djangoflow/commit/b1531da6872511f1cbe86be74888db64f01f3b60))
+
+#### `djangoflow_chat` - `v0.2.0+1`
+
+ - **REFACTOR**: update dependencies. ([b1531da6](https://github.com/djangoflow/flutter-djangoflow/commit/b1531da6872511f1cbe86be74888db64f01f3b60))
+
+#### `djangoflow_deep_link_interface` - `v2.0.1`
+
+ - **REFACTOR**: update dependencies. ([b1531da6](https://github.com/djangoflow/flutter-djangoflow/commit/b1531da6872511f1cbe86be74888db64f01f3b60))
+
+#### `djangoflow_emoji_rain` - `v0.1.0+1`
+
+ - **REFACTOR**: update dependencies. ([b1531da6](https://github.com/djangoflow/flutter-djangoflow/commit/b1531da6872511f1cbe86be74888db64f01f3b60))
+
+#### `djangoflow_facebook_analytics` - `v0.1.0+1`
+
+ - **REFACTOR**: update dependencies. ([b1531da6](https://github.com/djangoflow/flutter-djangoflow/commit/b1531da6872511f1cbe86be74888db64f01f3b60))
+
+#### `djangoflow_fcm` - `v0.2.0+1`
+
+ - **REFACTOR**: update dependencies. ([b1531da6](https://github.com/djangoflow/flutter-djangoflow/commit/b1531da6872511f1cbe86be74888db64f01f3b60))
+
+#### `djangoflow_firebase_analytics` - `v0.3.0+1`
+
+ - **REFACTOR**: update dependencies. ([b1531da6](https://github.com/djangoflow/flutter-djangoflow/commit/b1531da6872511f1cbe86be74888db64f01f3b60))
+
+#### `djangoflow_local_notification` - `v0.1.0+1`
+
+ - **REFACTOR**: update dependencies. ([b1531da6](https://github.com/djangoflow/flutter-djangoflow/commit/b1531da6872511f1cbe86be74888db64f01f3b60))
+
+#### `djangoflow_mixpanel_analytics` - `v0.5.0+1`
+
+ - **REFACTOR**: update dependencies. ([b1531da6](https://github.com/djangoflow/flutter-djangoflow/commit/b1531da6872511f1cbe86be74888db64f01f3b60))
+
+#### `djangoflow_oauth` - `v0.0.1+1`
+
+ - **REFACTOR**: update dependencies. ([b1531da6](https://github.com/djangoflow/flutter-djangoflow/commit/b1531da6872511f1cbe86be74888db64f01f3b60))
+
+#### `djangoflow_odoo_oauth` - `v0.1.0+1`
+
+ - **REFACTOR**: update dependencies. ([b1531da6](https://github.com/djangoflow/flutter-djangoflow/commit/b1531da6872511f1cbe86be74888db64f01f3b60))
+
+#### `djangoflow_remote_config` - `v0.1.0+2`
+
+ - **REFACTOR**: update dependencies. ([b1531da6](https://github.com/djangoflow/flutter-djangoflow/commit/b1531da6872511f1cbe86be74888db64f01f3b60))
+
+#### `djangoflow_sync_drift_odoo` - `v0.2.0+2`
+
+ - **REFACTOR**: update dependencies. ([b1531da6](https://github.com/djangoflow/flutter-djangoflow/commit/b1531da6872511f1cbe86be74888db64f01f3b60))
+
+#### `djangoflow_video_player` - `v0.2.0+1`
+
+ - **REFACTOR**: update dependencies. ([b1531da6](https://github.com/djangoflow/flutter-djangoflow/commit/b1531da6872511f1cbe86be74888db64f01f3b60))
+
+#### `djangoflow_websocket` - `v0.2.0+1`
+
+ - **REFACTOR**: update dependencies. ([b1531da6](https://github.com/djangoflow/flutter-djangoflow/commit/b1531da6872511f1cbe86be74888db64f01f3b60))
+
+
 ## 2024-10-21
 
 ### Changes

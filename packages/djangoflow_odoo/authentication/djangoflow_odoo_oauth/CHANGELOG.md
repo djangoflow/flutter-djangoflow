@@ -1,3 +1,7 @@
+## 0.1.0+1
+
+ - **REFACTOR**: update dependencies. ([b1531da6](https://github.com/djangoflow/flutter-djangoflow/commit/b1531da6872511f1cbe86be74888db64f01f3b60))
+
 ## 0.1.0
 
  - **REFACTOR**: remove custom http client, dev can pass whatever client they wish. ([93215f85](https://github.com/djangoflow/flutter-djangoflow/commit/93215f854740f7f9984668e87b31d9c71f95ea51))
