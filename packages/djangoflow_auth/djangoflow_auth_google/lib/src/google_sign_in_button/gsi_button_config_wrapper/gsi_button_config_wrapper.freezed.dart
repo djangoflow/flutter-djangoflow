@@ -31,8 +31,12 @@ mixin _$GSIButtonConfigWrapper {
   String? get locale => throw _privateConstructorUsedError;
   double? get minimumWidth => throw _privateConstructorUsedError;
 
+  /// Serializes this GSIButtonConfigWrapper to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of GSIButtonConfigWrapper
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $GSIButtonConfigWrapperCopyWith<GSIButtonConfigWrapper> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -65,6 +69,8 @@ class _$GSIButtonConfigWrapperCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of GSIButtonConfigWrapper
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -144,6 +150,8 @@ class __$$GSIButtonConfigWrapperImplCopyWithImpl<$Res>
       $Res Function(_$GSIButtonConfigWrapperImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of GSIButtonConfigWrapper
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -249,12 +257,14 @@ class _$GSIButtonConfigWrapperImpl extends _GSIButtonConfigWrapper {
                 other.minimumWidth == minimumWidth));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, type, theme, size, text, shape,
       logoAlignment, locale, minimumWidth);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of GSIButtonConfigWrapper
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$GSIButtonConfigWrapperImplCopyWith<_$GSIButtonConfigWrapperImpl>
@@ -300,8 +310,11 @@ abstract class _GSIButtonConfigWrapper extends GSIButtonConfigWrapper {
   String? get locale;
   @override
   double? get minimumWidth;
+
+  /// Create a copy of GSIButtonConfigWrapper
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$GSIButtonConfigWrapperImplCopyWith<_$GSIButtonConfigWrapperImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

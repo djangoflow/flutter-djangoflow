@@ -1,3 +1,4 @@
+// dart format width=80
 // ignore_for_file: type=lint
 import 'package:drift/drift.dart' as i0;
 import 'package:djangoflow_sync_drift_odoo/src/database/database.drift.dart'

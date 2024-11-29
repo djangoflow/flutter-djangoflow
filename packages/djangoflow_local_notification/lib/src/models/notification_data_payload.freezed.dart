@@ -33,8 +33,12 @@ mixin _$NotificationDataPayload {
   String? get image => throw _privateConstructorUsedError;
   Map<String, dynamic>? get payload => throw _privateConstructorUsedError;
 
+  /// Serializes this NotificationDataPayload to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of NotificationDataPayload
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $NotificationDataPayloadCopyWith<NotificationDataPayload> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -70,6 +74,8 @@ class _$NotificationDataPayloadCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of NotificationDataPayload
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -167,6 +173,8 @@ class __$$NotificationDataPayloadImplCopyWithImpl<$Res>
       $Res Function(_$NotificationDataPayloadImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of NotificationDataPayload
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -308,7 +316,7 @@ class _$NotificationDataPayloadImpl implements _NotificationDataPayload {
             const DeepCollectionEquality().equals(other._payload, _payload));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -324,7 +332,9 @@ class _$NotificationDataPayloadImpl implements _NotificationDataPayload {
       image,
       const DeepCollectionEquality().hash(_payload));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of NotificationDataPayload
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$NotificationDataPayloadImplCopyWith<_$NotificationDataPayloadImpl>
@@ -378,8 +388,11 @@ abstract class _NotificationDataPayload implements NotificationDataPayload {
   String? get image;
   @override
   Map<String, dynamic>? get payload;
+
+  /// Create a copy of NotificationDataPayload
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$NotificationDataPayloadImplCopyWith<_$NotificationDataPayloadImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -394,8 +407,12 @@ mixin _$NotificationPayloadAction {
   String? get method => throw _privateConstructorUsedError;
   String? get url => throw _privateConstructorUsedError;
 
+  /// Serializes this NotificationPayloadAction to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of NotificationPayloadAction
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $NotificationPayloadActionCopyWith<NotificationPayloadAction> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -420,6 +437,8 @@ class _$NotificationPayloadActionCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of NotificationPayloadAction
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -461,6 +480,8 @@ class __$$NotificationPayloadActionImplCopyWithImpl<$Res>
       $Res Function(_$NotificationPayloadActionImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of NotificationPayloadAction
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -507,11 +528,13 @@ class _$NotificationPayloadActionImpl implements _NotificationPayloadAction {
             (identical(other.url, url) || other.url == url));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, method, url);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of NotificationPayloadAction
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$NotificationPayloadActionImplCopyWith<_$NotificationPayloadActionImpl>
@@ -538,8 +561,11 @@ abstract class _NotificationPayloadAction implements NotificationPayloadAction {
   String? get method;
   @override
   String? get url;
+
+  /// Create a copy of NotificationPayloadAction
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$NotificationPayloadActionImplCopyWith<_$NotificationPayloadActionImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

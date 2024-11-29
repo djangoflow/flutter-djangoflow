@@ -27,8 +27,12 @@ mixin _$DjangoflowWebsocketState {
   /// Connection state message
   String? get connectionStateMessage => throw _privateConstructorUsedError;
 
+  /// Serializes this DjangoflowWebsocketState to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of DjangoflowWebsocketState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $DjangoflowWebsocketStateCopyWith<DjangoflowWebsocketState> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -53,6 +57,8 @@ class _$DjangoflowWebsocketStateCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of DjangoflowWebsocketState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -94,6 +100,8 @@ class __$$DjangoflowWebsocketStateImplCopyWithImpl<$Res>
       $Res Function(_$DjangoflowWebsocketStateImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of DjangoflowWebsocketState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -155,12 +163,14 @@ class _$DjangoflowWebsocketStateImpl implements _DjangoflowWebsocketState {
                 other.connectionStateMessage == connectionStateMessage));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType,
       const DeepCollectionEquality().hash(_message), connectionStateMessage);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of DjangoflowWebsocketState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$DjangoflowWebsocketStateImplCopyWith<_$DjangoflowWebsocketStateImpl>
@@ -183,16 +193,18 @@ abstract class _DjangoflowWebsocketState implements DjangoflowWebsocketState {
   factory _DjangoflowWebsocketState.fromJson(Map<String, dynamic> json) =
       _$DjangoflowWebsocketStateImpl.fromJson;
 
-  @override
-
   /// The last message received from the server
-  Map<String, dynamic>? get message;
   @override
+  Map<String, dynamic>? get message;
 
   /// Connection state message
-  String? get connectionStateMessage;
   @override
-  @JsonKey(ignore: true)
+  String? get connectionStateMessage;
+
+  /// Create a copy of DjangoflowWebsocketState
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$DjangoflowWebsocketStateImplCopyWith<_$DjangoflowWebsocketStateImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

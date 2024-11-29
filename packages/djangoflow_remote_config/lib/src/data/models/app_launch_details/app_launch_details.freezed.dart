@@ -25,8 +25,12 @@ mixin _$AppLaunchDetails {
   VersionDetails? get appVersion => throw _privateConstructorUsedError;
   UpdatesDetails? get updates => throw _privateConstructorUsedError;
 
+  /// Serializes this AppLaunchDetails to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AppLaunchDetails
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $AppLaunchDetailsCopyWith<AppLaunchDetails> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -57,6 +61,8 @@ class _$AppLaunchDetailsCopyWithImpl<$Res, $Val extends AppLaunchDetails>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of AppLaunchDetails
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -80,6 +86,8 @@ class _$AppLaunchDetailsCopyWithImpl<$Res, $Val extends AppLaunchDetails>
     ) as $Val);
   }
 
+  /// Create a copy of AppLaunchDetails
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $BrandDetailsCopyWith<$Res>? get brand {
@@ -92,6 +100,8 @@ class _$AppLaunchDetailsCopyWithImpl<$Res, $Val extends AppLaunchDetails>
     });
   }
 
+  /// Create a copy of AppLaunchDetails
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $VersionDetailsCopyWith<$Res>? get appVersion {
@@ -104,6 +114,8 @@ class _$AppLaunchDetailsCopyWithImpl<$Res, $Val extends AppLaunchDetails>
     });
   }
 
+  /// Create a copy of AppLaunchDetails
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $UpdatesDetailsCopyWith<$Res>? get updates {
@@ -146,6 +158,8 @@ class __$$AppLaunchDetailsImplCopyWithImpl<$Res>
       $Res Function(_$AppLaunchDetailsImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AppLaunchDetails
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -205,11 +219,13 @@ class _$AppLaunchDetailsImpl implements _AppLaunchDetails {
             (identical(other.updates, updates) || other.updates == updates));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, brand, appVersion, updates);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AppLaunchDetails
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$AppLaunchDetailsImplCopyWith<_$AppLaunchDetailsImpl> get copyWith =>
@@ -240,8 +256,11 @@ abstract class _AppLaunchDetails implements AppLaunchDetails {
   VersionDetails? get appVersion;
   @override
   UpdatesDetails? get updates;
+
+  /// Create a copy of AppLaunchDetails
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$AppLaunchDetailsImplCopyWith<_$AppLaunchDetailsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -255,8 +274,12 @@ mixin _$BrandDetails {
   ThemeDetails? get theme => throw _privateConstructorUsedError;
   LogoDetails? get logo => throw _privateConstructorUsedError;
 
+  /// Serializes this BrandDetails to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of BrandDetails
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $BrandDetailsCopyWith<BrandDetails> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -283,6 +306,8 @@ class _$BrandDetailsCopyWithImpl<$Res, $Val extends BrandDetails>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of BrandDetails
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -301,6 +326,8 @@ class _$BrandDetailsCopyWithImpl<$Res, $Val extends BrandDetails>
     ) as $Val);
   }
 
+  /// Create a copy of BrandDetails
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $ThemeDetailsCopyWith<$Res>? get theme {
@@ -313,6 +340,8 @@ class _$BrandDetailsCopyWithImpl<$Res, $Val extends BrandDetails>
     });
   }
 
+  /// Create a copy of BrandDetails
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $LogoDetailsCopyWith<$Res>? get logo {
@@ -350,6 +379,8 @@ class __$$BrandDetailsImplCopyWithImpl<$Res>
       _$BrandDetailsImpl _value, $Res Function(_$BrandDetailsImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of BrandDetails
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -396,11 +427,13 @@ class _$BrandDetailsImpl implements _BrandDetails {
             (identical(other.logo, logo) || other.logo == logo));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, theme, logo);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of BrandDetails
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$BrandDetailsImplCopyWith<_$BrandDetailsImpl> get copyWith =>
@@ -426,8 +459,11 @@ abstract class _BrandDetails implements BrandDetails {
   ThemeDetails? get theme;
   @override
   LogoDetails? get logo;
+
+  /// Create a copy of BrandDetails
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$BrandDetailsImplCopyWith<_$BrandDetailsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -441,8 +477,12 @@ mixin _$ThemeDetails {
   Map<String, dynamic>? get lightTheme => throw _privateConstructorUsedError;
   Map<String, dynamic>? get darkTheme => throw _privateConstructorUsedError;
 
+  /// Serializes this ThemeDetails to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ThemeDetails
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ThemeDetailsCopyWith<ThemeDetails> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -467,6 +507,8 @@ class _$ThemeDetailsCopyWithImpl<$Res, $Val extends ThemeDetails>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of ThemeDetails
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -506,6 +548,8 @@ class __$$ThemeDetailsImplCopyWithImpl<$Res>
       _$ThemeDetailsImpl _value, $Res Function(_$ThemeDetailsImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ThemeDetails
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -573,14 +617,16 @@ class _$ThemeDetailsImpl implements _ThemeDetails {
                 .equals(other._darkTheme, _darkTheme));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(_lightTheme),
       const DeepCollectionEquality().hash(_darkTheme));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ThemeDetails
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ThemeDetailsImplCopyWith<_$ThemeDetailsImpl> get copyWith =>
@@ -606,8 +652,11 @@ abstract class _ThemeDetails implements ThemeDetails {
   Map<String, dynamic>? get lightTheme;
   @override
   Map<String, dynamic>? get darkTheme;
+
+  /// Create a copy of ThemeDetails
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ThemeDetailsImplCopyWith<_$ThemeDetailsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -620,8 +669,12 @@ UpdatesDetails _$UpdatesDetailsFromJson(Map<String, dynamic> json) {
 mixin _$UpdatesDetails {
   Map<String, DateTime?>? get parts => throw _privateConstructorUsedError;
 
+  /// Serializes this UpdatesDetails to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of UpdatesDetails
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $UpdatesDetailsCopyWith<UpdatesDetails> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -645,6 +698,8 @@ class _$UpdatesDetailsCopyWithImpl<$Res, $Val extends UpdatesDetails>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of UpdatesDetails
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -678,6 +733,8 @@ class __$$UpdatesDetailsImplCopyWithImpl<$Res>
       _$UpdatesDetailsImpl _value, $Res Function(_$UpdatesDetailsImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of UpdatesDetails
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -724,12 +781,14 @@ class _$UpdatesDetailsImpl implements _UpdatesDetails {
             const DeepCollectionEquality().equals(other._parts, _parts));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
       Object.hash(runtimeType, const DeepCollectionEquality().hash(_parts));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of UpdatesDetails
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$UpdatesDetailsImplCopyWith<_$UpdatesDetailsImpl> get copyWith =>
@@ -753,8 +812,11 @@ abstract class _UpdatesDetails implements UpdatesDetails {
 
   @override
   Map<String, DateTime?>? get parts;
+
+  /// Create a copy of UpdatesDetails
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$UpdatesDetailsImplCopyWith<_$UpdatesDetailsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -768,8 +830,12 @@ mixin _$LogoDetails {
   String? get large => throw _privateConstructorUsedError;
   String? get small => throw _privateConstructorUsedError;
 
+  /// Serializes this LogoDetails to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of LogoDetails
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $LogoDetailsCopyWith<LogoDetails> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -793,6 +859,8 @@ class _$LogoDetailsCopyWithImpl<$Res, $Val extends LogoDetails>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of LogoDetails
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -831,6 +899,8 @@ class __$$LogoDetailsImplCopyWithImpl<$Res>
       _$LogoDetailsImpl _value, $Res Function(_$LogoDetailsImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of LogoDetails
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -877,11 +947,13 @@ class _$LogoDetailsImpl implements _LogoDetails {
             (identical(other.small, small) || other.small == small));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, large, small);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of LogoDetails
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$LogoDetailsImplCopyWith<_$LogoDetailsImpl> get copyWith =>
@@ -906,8 +978,11 @@ abstract class _LogoDetails implements LogoDetails {
   String? get large;
   @override
   String? get small;
+
+  /// Create a copy of LogoDetails
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$LogoDetailsImplCopyWith<_$LogoDetailsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -921,8 +996,12 @@ mixin _$VersionDetails {
   String? get latest => throw _privateConstructorUsedError;
   String? get required => throw _privateConstructorUsedError;
 
+  /// Serializes this VersionDetails to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of VersionDetails
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $VersionDetailsCopyWith<VersionDetails> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -946,6 +1025,8 @@ class _$VersionDetailsCopyWithImpl<$Res, $Val extends VersionDetails>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of VersionDetails
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -984,6 +1065,8 @@ class __$$VersionDetailsImplCopyWithImpl<$Res>
       _$VersionDetailsImpl _value, $Res Function(_$VersionDetailsImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of VersionDetails
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1031,11 +1114,13 @@ class _$VersionDetailsImpl implements _VersionDetails {
                 other.required == required));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, latest, required);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of VersionDetails
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$VersionDetailsImplCopyWith<_$VersionDetailsImpl> get copyWith =>
@@ -1061,8 +1146,11 @@ abstract class _VersionDetails implements VersionDetails {
   String? get latest;
   @override
   String? get required;
+
+  /// Create a copy of VersionDetails
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$VersionDetailsImplCopyWith<_$VersionDetailsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -37,8 +37,12 @@ mixin _$OAuth2Configuration {
   /// Needed for mobile platforms
   String? get customUriScheme => throw _privateConstructorUsedError;
 
+  /// Serializes this OAuth2Configuration to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of OAuth2Configuration
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $OAuth2ConfigurationCopyWith<OAuth2Configuration> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -73,6 +77,8 @@ class _$OAuth2ConfigurationCopyWithImpl<$Res, $Val extends OAuth2Configuration>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of OAuth2Configuration
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -152,6 +158,8 @@ class __$$OAuth2ConfigurationImplCopyWithImpl<$Res>
       $Res Function(_$OAuth2ConfigurationImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of OAuth2Configuration
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -270,12 +278,14 @@ class _$OAuth2ConfigurationImpl extends _OAuth2Configuration {
                 other.customUriScheme == customUriScheme));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, clientId, redirectUri, scope,
       state, codeChallenge, codeChallengeMethod, responseType, customUriScheme);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of OAuth2Configuration
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$OAuth2ConfigurationImplCopyWith<_$OAuth2ConfigurationImpl> get copyWith =>
@@ -328,12 +338,15 @@ abstract class _OAuth2Configuration extends OAuth2Configuration {
   @override
   @JsonKey(name: 'response_type', includeIfNull: false)
   String? get responseType;
-  @override
 
   /// Needed for mobile platforms
-  String? get customUriScheme;
   @override
-  @JsonKey(ignore: true)
+  String? get customUriScheme;
+
+  /// Create a copy of OAuth2Configuration
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$OAuth2ConfigurationImplCopyWith<_$OAuth2ConfigurationImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

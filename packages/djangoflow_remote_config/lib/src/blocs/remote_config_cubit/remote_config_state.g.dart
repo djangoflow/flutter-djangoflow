@@ -19,18 +19,10 @@ _$RemoteConfigStateImpl _$$RemoteConfigStateImplFromJson(
     );
 
 Map<String, dynamic> _$$RemoteConfigStateImplToJson(
-    _$RemoteConfigStateImpl instance) {
-  final val = <String, dynamic>{
-    'is_loading': instance.isLoading,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('config', instance.config);
-  writeNotNull('last_update', instance.lastUpdate?.toIso8601String());
-  return val;
-}
+        _$RemoteConfigStateImpl instance) =>
+    <String, dynamic>{
+      'is_loading': instance.isLoading,
+      if (instance.config case final value?) 'config': value,
+      if (instance.lastUpdate?.toIso8601String() case final value?)
+        'last_update': value,
+    };

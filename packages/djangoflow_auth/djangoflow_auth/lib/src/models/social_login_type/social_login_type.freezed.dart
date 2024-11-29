@@ -23,8 +23,12 @@ mixin _$SocialLoginType {
   ProviderEnum get provider => throw _privateConstructorUsedError;
   String get id => throw _privateConstructorUsedError;
 
+  /// Serializes this SocialLoginType to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of SocialLoginType
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $SocialLoginTypeCopyWith<SocialLoginType> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -48,6 +52,8 @@ class _$SocialLoginTypeCopyWithImpl<$Res, $Val extends SocialLoginType>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of SocialLoginType
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -86,6 +92,8 @@ class __$$SocialLoginTypeImplCopyWithImpl<$Res>
       _$SocialLoginTypeImpl _value, $Res Function(_$SocialLoginTypeImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of SocialLoginType
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -133,11 +141,13 @@ class _$SocialLoginTypeImpl implements _SocialLoginType {
             (identical(other.id, id) || other.id == id));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, provider, id);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SocialLoginType
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$SocialLoginTypeImplCopyWith<_$SocialLoginTypeImpl> get copyWith =>
@@ -164,8 +174,11 @@ abstract class _SocialLoginType implements SocialLoginType {
   ProviderEnum get provider;
   @override
   String get id;
+
+  /// Create a copy of SocialLoginType
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SocialLoginTypeImplCopyWith<_$SocialLoginTypeImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

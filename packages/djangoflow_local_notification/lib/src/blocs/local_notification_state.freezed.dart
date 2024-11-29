@@ -26,8 +26,12 @@ mixin _$LocalNotificationState {
   NotificationResponse? get notificationResponse =>
       throw _privateConstructorUsedError;
 
+  /// Serializes this LocalNotificationState to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of LocalNotificationState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $LocalNotificationStateCopyWith<LocalNotificationState> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -54,6 +58,8 @@ class _$LocalNotificationStateCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of LocalNotificationState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -92,6 +98,8 @@ class __$$DjangoflowLocalNotificationStateImplCopyWithImpl<$Res>
       $Res Function(_$DjangoflowLocalNotificationStateImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of LocalNotificationState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -137,11 +145,13 @@ class _$DjangoflowLocalNotificationStateImpl
                 other.notificationResponse == notificationResponse));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, notificationResponse);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of LocalNotificationState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$DjangoflowLocalNotificationStateImplCopyWith<
@@ -168,11 +178,15 @@ abstract class _DjangoflowLocalNotificationState
           Map<String, dynamic> json) =
       _$DjangoflowLocalNotificationStateImpl.fromJson;
 
-  @override // ignore: invalid_annotation_target
+// ignore: invalid_annotation_target
+  @override
   @JsonKey(includeToJson: false, includeFromJson: false)
   NotificationResponse? get notificationResponse;
+
+  /// Create a copy of LocalNotificationState
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$DjangoflowLocalNotificationStateImplCopyWith<
           _$DjangoflowLocalNotificationStateImpl>
       get copyWith => throw _privateConstructorUsedError;

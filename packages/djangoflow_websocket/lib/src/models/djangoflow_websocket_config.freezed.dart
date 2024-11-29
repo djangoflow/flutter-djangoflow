@@ -25,7 +25,9 @@ mixin _$DjangoflowWebsocketConfig {
   Duration get wSReconnectDelay => throw _privateConstructorUsedError;
   Duration get wSCheckConnectionDelay => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of DjangoflowWebsocketConfig
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $DjangoflowWebsocketConfigCopyWith<DjangoflowWebsocketConfig> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -57,6 +59,8 @@ class _$DjangoflowWebsocketConfigCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of DjangoflowWebsocketConfig
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -130,6 +134,8 @@ class __$$DjangoflowWebsocketConfigImplCopyWithImpl<$Res>
       $Res Function(_$DjangoflowWebsocketConfigImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of DjangoflowWebsocketConfig
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -248,7 +254,9 @@ class _$DjangoflowWebsocketConfigImpl implements _DjangoflowWebsocketConfig {
       wSReconnectDelay,
       wSCheckConnectionDelay);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of DjangoflowWebsocketConfig
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$DjangoflowWebsocketConfigImplCopyWith<_$DjangoflowWebsocketConfigImpl>
@@ -280,8 +288,11 @@ abstract class _DjangoflowWebsocketConfig implements DjangoflowWebsocketConfig {
   Duration get wSReconnectDelay;
   @override
   Duration get wSCheckConnectionDelay;
+
+  /// Create a copy of DjangoflowWebsocketConfig
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$DjangoflowWebsocketConfigImplCopyWith<_$DjangoflowWebsocketConfigImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

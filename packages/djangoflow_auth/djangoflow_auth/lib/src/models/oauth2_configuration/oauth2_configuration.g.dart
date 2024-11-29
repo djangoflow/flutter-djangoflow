@@ -20,23 +20,15 @@ _$OAuth2ConfigurationImpl _$$OAuth2ConfigurationImplFromJson(
     );
 
 Map<String, dynamic> _$$OAuth2ConfigurationImplToJson(
-    _$OAuth2ConfigurationImpl instance) {
-  final val = <String, dynamic>{
-    'client_id': instance.clientId,
-    'redirect_uri': instance.redirectUri,
-    'scope': instance.scope,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('state', instance.state);
-  writeNotNull('code_challenge', instance.codeChallenge);
-  writeNotNull('code_challenge_method', instance.codeChallengeMethod);
-  writeNotNull('response_type', instance.responseType);
-  val['customUriScheme'] = instance.customUriScheme;
-  return val;
-}
+        _$OAuth2ConfigurationImpl instance) =>
+    <String, dynamic>{
+      'client_id': instance.clientId,
+      'redirect_uri': instance.redirectUri,
+      'scope': instance.scope,
+      if (instance.state case final value?) 'state': value,
+      if (instance.codeChallenge case final value?) 'code_challenge': value,
+      if (instance.codeChallengeMethod case final value?)
+        'code_challenge_method': value,
+      if (instance.responseType case final value?) 'response_type': value,
+      'customUriScheme': instance.customUriScheme,
+    };

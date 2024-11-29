@@ -22,20 +22,12 @@ _$AppLaunchDetailsImpl _$$AppLaunchDetailsImplFromJson(
     );
 
 Map<String, dynamic> _$$AppLaunchDetailsImplToJson(
-    _$AppLaunchDetailsImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('brand', instance.brand?.toJson());
-  writeNotNull('app_version', instance.appVersion?.toJson());
-  writeNotNull('updates', instance.updates?.toJson());
-  return val;
-}
+        _$AppLaunchDetailsImpl instance) =>
+    <String, dynamic>{
+      if (instance.brand?.toJson() case final value?) 'brand': value,
+      if (instance.appVersion?.toJson() case final value?) 'app_version': value,
+      if (instance.updates?.toJson() case final value?) 'updates': value,
+    };
 
 _$BrandDetailsImpl _$$BrandDetailsImplFromJson(Map<String, dynamic> json) =>
     _$BrandDetailsImpl(
@@ -47,19 +39,11 @@ _$BrandDetailsImpl _$$BrandDetailsImplFromJson(Map<String, dynamic> json) =>
           : LogoDetails.fromJson(json['logo'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$BrandDetailsImplToJson(_$BrandDetailsImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('theme', instance.theme?.toJson());
-  writeNotNull('logo', instance.logo?.toJson());
-  return val;
-}
+Map<String, dynamic> _$$BrandDetailsImplToJson(_$BrandDetailsImpl instance) =>
+    <String, dynamic>{
+      if (instance.theme?.toJson() case final value?) 'theme': value,
+      if (instance.logo?.toJson() case final value?) 'logo': value,
+    };
 
 _$ThemeDetailsImpl _$$ThemeDetailsImplFromJson(Map<String, dynamic> json) =>
     _$ThemeDetailsImpl(
@@ -67,19 +51,11 @@ _$ThemeDetailsImpl _$$ThemeDetailsImplFromJson(Map<String, dynamic> json) =>
       darkTheme: json['dark_theme'] as Map<String, dynamic>?,
     );
 
-Map<String, dynamic> _$$ThemeDetailsImplToJson(_$ThemeDetailsImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('light_theme', instance.lightTheme);
-  writeNotNull('dark_theme', instance.darkTheme);
-  return val;
-}
+Map<String, dynamic> _$$ThemeDetailsImplToJson(_$ThemeDetailsImpl instance) =>
+    <String, dynamic>{
+      if (instance.lightTheme case final value?) 'light_theme': value,
+      if (instance.darkTheme case final value?) 'dark_theme': value,
+    };
 
 _$UpdatesDetailsImpl _$$UpdatesDetailsImplFromJson(Map<String, dynamic> json) =>
     _$UpdatesDetailsImpl(
@@ -89,19 +65,12 @@ _$UpdatesDetailsImpl _$$UpdatesDetailsImplFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$$UpdatesDetailsImplToJson(
-    _$UpdatesDetailsImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('parts',
-      instance.parts?.map((k, e) => MapEntry(k, e?.toIso8601String())));
-  return val;
-}
+        _$UpdatesDetailsImpl instance) =>
+    <String, dynamic>{
+      if (instance.parts?.map((k, e) => MapEntry(k, e?.toIso8601String()))
+          case final value?)
+        'parts': value,
+    };
 
 _$LogoDetailsImpl _$$LogoDetailsImplFromJson(Map<String, dynamic> json) =>
     _$LogoDetailsImpl(
@@ -109,19 +78,11 @@ _$LogoDetailsImpl _$$LogoDetailsImplFromJson(Map<String, dynamic> json) =>
       small: json['small'] as String?,
     );
 
-Map<String, dynamic> _$$LogoDetailsImplToJson(_$LogoDetailsImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('large', instance.large);
-  writeNotNull('small', instance.small);
-  return val;
-}
+Map<String, dynamic> _$$LogoDetailsImplToJson(_$LogoDetailsImpl instance) =>
+    <String, dynamic>{
+      if (instance.large case final value?) 'large': value,
+      if (instance.small case final value?) 'small': value,
+    };
 
 _$VersionDetailsImpl _$$VersionDetailsImplFromJson(Map<String, dynamic> json) =>
     _$VersionDetailsImpl(
@@ -130,16 +91,8 @@ _$VersionDetailsImpl _$$VersionDetailsImplFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$$VersionDetailsImplToJson(
-    _$VersionDetailsImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('latest', instance.latest);
-  writeNotNull('required', instance.required);
-  return val;
-}
+        _$VersionDetailsImpl instance) =>
+    <String, dynamic>{
+      if (instance.latest case final value?) 'latest': value,
+      if (instance.required case final value?) 'required': value,
+    };

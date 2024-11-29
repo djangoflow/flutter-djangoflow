@@ -1,4 +1,4 @@
-library djangoflow_app_links;
+library;
 
 export 'src/blocs/app_links_cubit.dart';
 export 'src/data/app_links_repository.dart';

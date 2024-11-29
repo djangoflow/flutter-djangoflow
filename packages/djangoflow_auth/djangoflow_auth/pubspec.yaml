@@ -10,20 +10,20 @@ environment:
 dependencies:
   bloc: ^8.1.4
   collection: ^1.18.0
-  dio: ^5.5.0+1
+  dio: ^5.7.0
   djangoflow_openapi: ^0.1.22
   flutter:
     sdk: flutter
   freezed_annotation: ^2.4.4
   hydrated_bloc: ^9.1.5
   universal_html: ^2.2.4
-  uuid: ^4.4.2
+  uuid: ^4.5.1
 
 dev_dependencies:
-  build_runner: ^2.4.11
+  build_runner: ^2.4.13
   flutter_lints: ^4.0.0
   flutter_test:
     sdk: flutter
-  freezed: ^2.5.2
-  json_serializable: ^6.8.0
+  freezed: ^2.5.7
+  json_serializable: ^6.9.0
   mocktail: ^1.0.4

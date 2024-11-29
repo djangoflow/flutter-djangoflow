@@ -24,8 +24,12 @@ mixin _$RemoteConfigState {
   Map<String, Object>? get config => throw _privateConstructorUsedError;
   DateTime? get lastUpdate => throw _privateConstructorUsedError;
 
+  /// Serializes this RemoteConfigState to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of RemoteConfigState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $RemoteConfigStateCopyWith<RemoteConfigState> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -50,6 +54,8 @@ class _$RemoteConfigStateCopyWithImpl<$Res, $Val extends RemoteConfigState>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of RemoteConfigState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -94,6 +100,8 @@ class __$$RemoteConfigStateImplCopyWithImpl<$Res>
       $Res Function(_$RemoteConfigStateImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of RemoteConfigState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -163,12 +171,14 @@ class _$RemoteConfigStateImpl implements _RemoteConfigState {
                 other.lastUpdate == lastUpdate));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, isLoading,
       const DeepCollectionEquality().hash(_config), lastUpdate);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of RemoteConfigState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$RemoteConfigStateImplCopyWith<_$RemoteConfigStateImpl> get copyWith =>
@@ -198,8 +208,11 @@ abstract class _RemoteConfigState implements RemoteConfigState {
   Map<String, Object>? get config;
   @override
   DateTime? get lastUpdate;
+
+  /// Create a copy of RemoteConfigState
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$RemoteConfigStateImplCopyWith<_$RemoteConfigStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

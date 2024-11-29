@@ -25,8 +25,12 @@ mixin _$ActionCategoryState {
   List<PushActionCategory> get actionCategories =>
       throw _privateConstructorUsedError;
 
+  /// Serializes this ActionCategoryState to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ActionCategoryState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ActionCategoryStateCopyWith<ActionCategoryState> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -53,6 +57,8 @@ class _$ActionCategoryStateCopyWithImpl<$Res, $Val extends ActionCategoryState>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of ActionCategoryState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -99,6 +105,8 @@ class __$$ActionCategoryStateImplCopyWithImpl<$Res>
       $Res Function(_$ActionCategoryStateImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ActionCategoryState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -169,12 +177,14 @@ class _$ActionCategoryStateImpl implements _ActionCategoryState {
                 .equals(other._actionCategories, _actionCategories));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, isLoading, hasError,
       const DeepCollectionEquality().hash(_actionCategories));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ActionCategoryState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ActionCategoryStateImplCopyWith<_$ActionCategoryStateImpl> get copyWith =>
@@ -205,8 +215,11 @@ abstract class _ActionCategoryState implements ActionCategoryState {
   bool get hasError;
   @override
   List<PushActionCategory> get actionCategories;
+
+  /// Create a copy of ActionCategoryState
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ActionCategoryStateImplCopyWith<_$ActionCategoryStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

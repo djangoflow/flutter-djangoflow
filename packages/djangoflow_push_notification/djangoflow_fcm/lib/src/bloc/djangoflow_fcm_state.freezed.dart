@@ -22,7 +22,9 @@ mixin _$DjangoflowFCMState {
       throw _privateConstructorUsedError;
   bool? get remoteMessageOpenedApp => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of DjangoflowFCMState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $DjangoflowFCMStateCopyWith<DjangoflowFCMState> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -50,6 +52,8 @@ class _$DjangoflowFCMStateCopyWithImpl<$Res, $Val extends DjangoflowFCMState>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of DjangoflowFCMState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -103,6 +107,8 @@ class __$$DjangoflowFCMStateImplCopyWithImpl<$Res>
       $Res Function(_$DjangoflowFCMStateImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of DjangoflowFCMState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -176,7 +182,9 @@ class _$DjangoflowFCMStateImpl implements _DjangoflowFCMState {
   int get hashCode => Object.hash(runtimeType, remoteMessage, token,
       notificationAuthorizationStatus, remoteMessageOpenedApp);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of DjangoflowFCMState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$DjangoflowFCMStateImplCopyWith<_$DjangoflowFCMStateImpl> get copyWith =>
@@ -199,8 +207,11 @@ abstract class _DjangoflowFCMState implements DjangoflowFCMState {
   AuthorizationStatus? get notificationAuthorizationStatus;
   @override
   bool? get remoteMessageOpenedApp;
+
+  /// Create a copy of DjangoflowFCMState
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$DjangoflowFCMStateImplCopyWith<_$DjangoflowFCMStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

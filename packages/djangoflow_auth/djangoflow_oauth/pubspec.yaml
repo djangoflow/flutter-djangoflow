@@ -11,7 +11,7 @@ dependencies:
   crypto: ^3.0.6
   flutter:
     sdk: flutter
-  flutter_web_auth_2: ^4.0.1
+  flutter_web_auth_2: ^4.0.2
   http: ^1.2.2
 
 dev_dependencies:
