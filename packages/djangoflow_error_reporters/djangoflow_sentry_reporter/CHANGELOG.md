@@ -1,3 +1,7 @@
+## 0.3.0+1
+
+ - **REFACTOR**: update sentry_flutter dependency. ([650aaa95](https://github.com/djangoflow/flutter-djangoflow/commit/650aaa95966065ee37f66ec3773aaae2114efe2f))
+
 ## 0.3.0
 
 > Note: This release has breaking changes.

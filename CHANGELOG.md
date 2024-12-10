@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2024-12-10
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`djangoflow_sentry_reporter` - `v0.3.0+1`](#djangoflow_sentry_reporter---v0301)
+
+---
+
+#### `djangoflow_sentry_reporter` - `v0.3.0+1`
+
+ - **REFACTOR**: update sentry_flutter dependency. ([650aaa95](https://github.com/djangoflow/flutter-djangoflow/commit/650aaa95966065ee37f66ec3773aaae2114efe2f))
+
+
 ## 2024-11-29
 
 ### Changes
