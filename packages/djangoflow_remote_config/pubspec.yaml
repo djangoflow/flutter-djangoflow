@@ -18,7 +18,6 @@ dependencies:
   freezed_annotation: ^2.4.4
   hydrated_bloc: ^9.1.5
   json_annotation: ^4.9.0
-  json_theme: ^6.5.0+1
 
 dev_dependencies:
   flutter_test:
