@@ -1,3 +1,7 @@
+## 0.1.0+3
+
+ - **REFACTOR**: remove not needed dependency. ([f5c81710](https://github.com/djangoflow/flutter-djangoflow/commit/f5c8171069f4b26b0f92b307785a5bfb4e52a01d))
+
 ## 0.1.0+2
 
  - **REFACTOR**: update dependencies. ([b1531da6](https://github.com/djangoflow/flutter-djangoflow/commit/b1531da6872511f1cbe86be74888db64f01f3b60))

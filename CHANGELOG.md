@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2025-01-06
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`djangoflow_remote_config` - `v0.1.0+3`](#djangoflow_remote_config---v0103)
+
+---
+
+#### `djangoflow_remote_config` - `v0.1.0+3`
+
+ - **REFACTOR**: remove not needed dependency. ([f5c81710](https://github.com/djangoflow/flutter-djangoflow/commit/f5c8171069f4b26b0f92b307785a5bfb4e52a01d))
+
+
 ## 2024-12-10
 
 ### Changes
