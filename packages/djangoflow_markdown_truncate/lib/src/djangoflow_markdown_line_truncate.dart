@@ -1,11 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:djangoflow_markdown_truncate/src/base_markdown_truncate.dart';
 
+/// THE [scrollPhysicsForLimitedLines] USED WHEN maxLines IS NOT NULL.
+/// THE [scrollPhysicsForUnlimitedLines] USED WHEN maxLines IS NULL.
+///
+/// THE [paddingForLimitedLines] USED WHEN maxLines IS NOT NULL.
+/// THE [paddingForUnlimitedLines] USED WHEN maxLines IS NULL.
 class DjangoflowMarkdownLineTruncate extends BaseMarkdownTruncate {
   const DjangoflowMarkdownLineTruncate({
     required super.data,
     super.key,
     this.maxLines,
+    this.scrollPhysicsForLimitedLines,
+    this.scrollPhysicsForUnlimitedLines,
+    this.paddingForLimitedLines,
+    this.paddingForUnlimitedLines,
     super.selectable,
     super.styleSheet,
     super.styleSheetTheme,
@@ -25,11 +34,17 @@ class DjangoflowMarkdownLineTruncate extends BaseMarkdownTruncate {
   });
 
   final int? maxLines;
+  final EdgeInsetsGeometry? paddingForLimitedLines;
+  final EdgeInsetsGeometry? paddingForUnlimitedLines;
+  final ScrollPhysics? scrollPhysicsForLimitedLines;
+  final ScrollPhysics? scrollPhysicsForUnlimitedLines;
 
   @override
   Widget build(BuildContext context, List<Widget>? children) {
     if (maxLines == null) {
       return ListView(
+        padding: paddingForUnlimitedLines,
+        physics: scrollPhysicsForUnlimitedLines,
         shrinkWrap: shrinkWrap,
         children: children!,
       );
@@ -39,6 +54,8 @@ class DjangoflowMarkdownLineTruncate extends BaseMarkdownTruncate {
 
     return ListView(
       shrinkWrap: shrinkWrap,
+      padding: paddingForLimitedLines,
+      physics: scrollPhysicsForLimitedLines,
       children: [
         Text.rich(
           flattenedTextSpan,
