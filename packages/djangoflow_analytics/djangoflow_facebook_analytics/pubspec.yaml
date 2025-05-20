@@ -10,7 +10,7 @@ environment:
 dependencies:
   analytics: ^1.0.2
   djangoflow_analytics: ^0.1.0+1
-  facebook_app_events: ^0.19.4
+  facebook_app_events: ^0.19.7
   flutter:
     sdk: flutter
   mockito: ^5.4.4

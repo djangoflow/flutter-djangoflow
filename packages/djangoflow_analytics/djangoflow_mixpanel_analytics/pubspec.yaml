@@ -13,7 +13,7 @@ dependencies:
   flutter:
     sdk: flutter
   # need to update
-  mixpanel_flutter: ^2.3.3
+  mixpanel_flutter: ^2.4.1
   mockito: ^5.4.4
 
 dev_dependencies:

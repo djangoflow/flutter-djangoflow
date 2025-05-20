@@ -10,9 +10,9 @@ environment:
 dependencies:
   analytics: ^1.0.2
   djangoflow_analytics: ^0.1.0+1
-  firebase_analytics: ^11.3.5
-  firebase_analytics_platform_interface: ^4.2.7
-  firebase_core: ^3.8.0
+  firebase_analytics: ^11.4.6
+  firebase_analytics_platform_interface: ^4.3.6
+  firebase_core: ^3.13.1
   flutter:
     sdk: flutter
   mockito: ^5.4.4
