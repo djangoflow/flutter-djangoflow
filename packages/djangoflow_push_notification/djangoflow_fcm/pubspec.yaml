@@ -9,9 +9,9 @@ environment:
 
 dependencies:
   bloc_test: ^10.0.0
-  firebase_core: ^3.8.0
-  firebase_messaging: ^15.1.5
-  firebase_messaging_platform_interface: ^4.5.48
+  firebase_core: ^3.13.1
+  firebase_messaging: ^15.2.6
+  firebase_messaging_platform_interface: ^4.6.6
   flutter:
     sdk: flutter
   flutter_bloc: ^9.1.1
