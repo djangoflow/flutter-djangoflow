@@ -6,11 +6,10 @@ part of 'local_notification_state.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$DjangoflowLocalNotificationStateImpl
-    _$$DjangoflowLocalNotificationStateImplFromJson(
-            Map<String, dynamic> json) =>
-        _$DjangoflowLocalNotificationStateImpl();
+_DjangoflowLocalNotificationState _$DjangoflowLocalNotificationStateFromJson(
+        Map<String, dynamic> json) =>
+    _DjangoflowLocalNotificationState();
 
-Map<String, dynamic> _$$DjangoflowLocalNotificationStateImplToJson(
-        _$DjangoflowLocalNotificationStateImpl instance) =>
+Map<String, dynamic> _$DjangoflowLocalNotificationStateToJson(
+        _DjangoflowLocalNotificationState instance) =>
     <String, dynamic>{};

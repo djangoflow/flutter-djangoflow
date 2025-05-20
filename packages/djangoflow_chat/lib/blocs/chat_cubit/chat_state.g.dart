@@ -6,8 +6,7 @@ part of 'chat_state.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ChatStateImpl _$$ChatStateImplFromJson(Map<String, dynamic> json) =>
-    _$ChatStateImpl(
+_ChatState _$ChatStateFromJson(Map<String, dynamic> json) => _ChatState(
       roomId: (json['roomId'] as num).toInt(),
       room: json['room'] == null
           ? null
@@ -27,7 +26,7 @@ _$ChatStateImpl _$$ChatStateImplFromJson(Map<String, dynamic> json) =>
       loading: json['loading'] as bool? ?? false,
     );
 
-Map<String, dynamic> _$$ChatStateImplToJson(_$ChatStateImpl instance) =>
+Map<String, dynamic> _$ChatStateToJson(_ChatState instance) =>
     <String, dynamic>{
       'roomId': instance.roomId,
       'room': instance.room,

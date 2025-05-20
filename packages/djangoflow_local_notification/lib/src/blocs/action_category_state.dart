@@ -5,7 +5,7 @@ part 'action_category_state.freezed.dart';
 part 'action_category_state.g.dart';
 
 @freezed
-class ActionCategoryState with _$ActionCategoryState {
+abstract class ActionCategoryState with _$ActionCategoryState {
   const factory ActionCategoryState({
     @Default(true) bool isLoading,
     @Default(false) bool hasError,

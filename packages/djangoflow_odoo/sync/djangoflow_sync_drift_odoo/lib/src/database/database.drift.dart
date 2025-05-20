@@ -26,6 +26,37 @@ typedef $$BaseTableTableUpdateCompanionBuilder = i1.BaseTableCompanion
   i0.Value<int> rowid,
 });
 
+final class $$BaseTableTableReferences extends i0.BaseReferences<
+    i0.GeneratedDatabase, i1.$BaseTableTable, i1.BaseTableData> {
+  $$BaseTableTableReferences(super.$_db, super.$_table, super.$_typedResult);
+
+  static i1.$SyncBackendsTable _backendIdTable(i0.GeneratedDatabase db) =>
+      i4.ReadDatabaseContainer(db)
+          .resultSet<i1.$SyncBackendsTable>('sync_backends')
+          .createAlias(i0.$_aliasNameGenerator(
+              i4.ReadDatabaseContainer(db)
+                  .resultSet<i1.$BaseTableTable>('base_table')
+                  .backendId,
+              i4.ReadDatabaseContainer(db)
+                  .resultSet<i1.$SyncBackendsTable>('sync_backends')
+                  .id));
+
+  i1.$$SyncBackendsTableProcessedTableManager get backendId {
+    final $_column = $_itemColumn<String>('backend_id')!;
+
+    final manager = i1
+        .$$SyncBackendsTableTableManager(
+            $_db,
+            i4.ReadDatabaseContainer($_db)
+                .resultSet<i1.$SyncBackendsTable>('sync_backends'))
+        .filter((f) => f.id.sqlEquals($_column));
+    final item = $_typedResult.readTableOrNull(_backendIdTable($_db));
+    if (item == null) return manager;
+    return i0.ProcessedTableManager(
+        manager.$state.copyWith(prefetchedData: [item]));
+  }
+}
+
 class $$BaseTableTableFilterComposer
     extends i0.Composer<i0.GeneratedDatabase, i1.$BaseTableTable> {
   $$BaseTableTableFilterComposer({
@@ -171,11 +202,7 @@ class $$BaseTableTableTableManager extends i0.RootTableManager<
     i1.$$BaseTableTableAnnotationComposer,
     $$BaseTableTableCreateCompanionBuilder,
     $$BaseTableTableUpdateCompanionBuilder,
-    (
-      i1.BaseTableData,
-      i0.BaseReferences<i0.GeneratedDatabase, i1.$BaseTableTable,
-          i1.BaseTableData>
-    ),
+    (i1.BaseTableData, i1.$$BaseTableTableReferences),
     i1.BaseTableData,
     i0.PrefetchHooks Function({bool backendId})> {
   $$BaseTableTableTableManager(
@@ -222,9 +249,46 @@ class $$BaseTableTableTableManager extends i0.RootTableManager<
             rowid: rowid,
           ),
           withReferenceMapper: (p0) => p0
-              .map((e) => (e.readTable(table), i0.BaseReferences(db, table, e)))
+              .map((e) => (
+                    e.readTable(table),
+                    i1.$$BaseTableTableReferences(db, table, e)
+                  ))
               .toList(),
-          prefetchHooksCallback: null,
+          prefetchHooksCallback: ({backendId = false}) {
+            return i0.PrefetchHooks(
+              db: db,
+              explicitlyWatchedTables: [],
+              addJoins: <
+                  T extends i0.TableManagerState<
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic>>(state) {
+                if (backendId) {
+                  state = state.withJoin(
+                    currentTable: table,
+                    currentColumn: table.backendId,
+                    referencedTable:
+                        i1.$$BaseTableTableReferences._backendIdTable(db),
+                    referencedColumn:
+                        i1.$$BaseTableTableReferences._backendIdTable(db).id,
+                  ) as T;
+                }
+
+                return state;
+              },
+              getPrefetchedDataCallback: (items) async {
+                return [];
+              },
+            );
+          },
         ));
 }
 
@@ -237,11 +301,7 @@ typedef $$BaseTableTableProcessedTableManager = i0.ProcessedTableManager<
     i1.$$BaseTableTableAnnotationComposer,
     $$BaseTableTableCreateCompanionBuilder,
     $$BaseTableTableUpdateCompanionBuilder,
-    (
-      i1.BaseTableData,
-      i0.BaseReferences<i0.GeneratedDatabase, i1.$BaseTableTable,
-          i1.BaseTableData>
-    ),
+    (i1.BaseTableData, i1.$$BaseTableTableReferences),
     i1.BaseTableData,
     i0.PrefetchHooks Function({bool backendId})>;
 typedef $$SyncBackendsTableCreateCompanionBuilder = i1.SyncBackendsCompanion
@@ -258,6 +318,63 @@ typedef $$SyncBackendsTableUpdateCompanionBuilder = i1.SyncBackendsCompanion
   i0.Value<String> baseUrl,
   i0.Value<int> rowid,
 });
+
+final class $$SyncBackendsTableReferences extends i0.BaseReferences<
+    i0.GeneratedDatabase, i1.$SyncBackendsTable, i1.SyncBackend> {
+  $$SyncBackendsTableReferences(super.$_db, super.$_table, super.$_typedResult);
+
+  static i0.MultiTypedResultKey<i1.$BaseTableTable, List<i1.BaseTableData>>
+      _baseTableRefsTable(i0.GeneratedDatabase db) =>
+          i0.MultiTypedResultKey.fromTable(
+              i4.ReadDatabaseContainer(db)
+                  .resultSet<i1.$BaseTableTable>('base_table'),
+              aliasName: i0.$_aliasNameGenerator(
+                  i4.ReadDatabaseContainer(db)
+                      .resultSet<i1.$SyncBackendsTable>('sync_backends')
+                      .id,
+                  i4.ReadDatabaseContainer(db)
+                      .resultSet<i1.$BaseTableTable>('base_table')
+                      .backendId));
+
+  i1.$$BaseTableTableProcessedTableManager get baseTableRefs {
+    final manager = i1
+        .$$BaseTableTableTableManager(
+            $_db,
+            i4.ReadDatabaseContainer($_db)
+                .resultSet<i1.$BaseTableTable>('base_table'))
+        .filter((f) => f.backendId.id.sqlEquals($_itemColumn<String>('id')!));
+
+    final cache = $_typedResult.readTableOrNull(_baseTableRefsTable($_db));
+    return i0.ProcessedTableManager(
+        manager.$state.copyWith(prefetchedData: cache));
+  }
+
+  static i0.MultiTypedResultKey<i1.$SyncRegistriesTable, List<i1.SyncRegistry>>
+      _syncRegistriesRefsTable(i0.GeneratedDatabase db) =>
+          i0.MultiTypedResultKey.fromTable(
+              i4.ReadDatabaseContainer(db)
+                  .resultSet<i1.$SyncRegistriesTable>('sync_registries'),
+              aliasName: i0.$_aliasNameGenerator(
+                  i4.ReadDatabaseContainer(db)
+                      .resultSet<i1.$SyncBackendsTable>('sync_backends')
+                      .id,
+                  i4.ReadDatabaseContainer(db)
+                      .resultSet<i1.$SyncRegistriesTable>('sync_registries')
+                      .backendId));
+
+  i1.$$SyncRegistriesTableProcessedTableManager get syncRegistriesRefs {
+    final manager = i1
+        .$$SyncRegistriesTableTableManager(
+            $_db,
+            i4.ReadDatabaseContainer($_db)
+                .resultSet<i1.$SyncRegistriesTable>('sync_registries'))
+        .filter((f) => f.backendId.id.sqlEquals($_itemColumn<String>('id')!));
+
+    final cache = $_typedResult.readTableOrNull(_syncRegistriesRefsTable($_db));
+    return i0.ProcessedTableManager(
+        manager.$state.copyWith(prefetchedData: cache));
+  }
+}
 
 class $$SyncBackendsTableFilterComposer
     extends i0.Composer<i0.GeneratedDatabase, i1.$SyncBackendsTable> {
@@ -420,11 +537,7 @@ class $$SyncBackendsTableTableManager extends i0.RootTableManager<
     i1.$$SyncBackendsTableAnnotationComposer,
     $$SyncBackendsTableCreateCompanionBuilder,
     $$SyncBackendsTableUpdateCompanionBuilder,
-    (
-      i1.SyncBackend,
-      i0.BaseReferences<i0.GeneratedDatabase, i1.$SyncBackendsTable,
-          i1.SyncBackend>
-    ),
+    (i1.SyncBackend, i1.$$SyncBackendsTableReferences),
     i1.SyncBackend,
     i0.PrefetchHooks Function({bool baseTableRefs, bool syncRegistriesRefs})> {
   $$SyncBackendsTableTableManager(
@@ -463,9 +576,56 @@ class $$SyncBackendsTableTableManager extends i0.RootTableManager<
             rowid: rowid,
           ),
           withReferenceMapper: (p0) => p0
-              .map((e) => (e.readTable(table), i0.BaseReferences(db, table, e)))
+              .map((e) => (
+                    e.readTable(table),
+                    i1.$$SyncBackendsTableReferences(db, table, e)
+                  ))
               .toList(),
-          prefetchHooksCallback: null,
+          prefetchHooksCallback: (
+              {baseTableRefs = false, syncRegistriesRefs = false}) {
+            return i0.PrefetchHooks(
+              db: db,
+              explicitlyWatchedTables: [
+                if (baseTableRefs)
+                  i4.ReadDatabaseContainer(db)
+                      .resultSet<i1.$BaseTableTable>('base_table'),
+                if (syncRegistriesRefs)
+                  i4.ReadDatabaseContainer(db)
+                      .resultSet<i1.$SyncRegistriesTable>('sync_registries')
+              ],
+              addJoins: null,
+              getPrefetchedDataCallback: (items) async {
+                return [
+                  if (baseTableRefs)
+                    await i0.$_getPrefetchedData<i1.SyncBackend,
+                            i1.$SyncBackendsTable, i1.BaseTableData>(
+                        currentTable: table,
+                        referencedTable: i1.$$SyncBackendsTableReferences
+                            ._baseTableRefsTable(db),
+                        managerFromTypedResult: (p0) => i1
+                            .$$SyncBackendsTableReferences(db, table, p0)
+                            .baseTableRefs,
+                        referencedItemsForCurrentItem:
+                            (item, referencedItems) => referencedItems
+                                .where((e) => e.backendId == item.id),
+                        typedResults: items),
+                  if (syncRegistriesRefs)
+                    await i0.$_getPrefetchedData<i1.SyncBackend,
+                            i1.$SyncBackendsTable, i1.SyncRegistry>(
+                        currentTable: table,
+                        referencedTable: i1.$$SyncBackendsTableReferences
+                            ._syncRegistriesRefsTable(db),
+                        managerFromTypedResult: (p0) => i1
+                            .$$SyncBackendsTableReferences(db, table, p0)
+                            .syncRegistriesRefs,
+                        referencedItemsForCurrentItem:
+                            (item, referencedItems) => referencedItems
+                                .where((e) => e.backendId == item.id),
+                        typedResults: items)
+                ];
+              },
+            );
+          },
         ));
 }
 
@@ -478,11 +638,7 @@ typedef $$SyncBackendsTableProcessedTableManager = i0.ProcessedTableManager<
     i1.$$SyncBackendsTableAnnotationComposer,
     $$SyncBackendsTableCreateCompanionBuilder,
     $$SyncBackendsTableUpdateCompanionBuilder,
-    (
-      i1.SyncBackend,
-      i0.BaseReferences<i0.GeneratedDatabase, i1.$SyncBackendsTable,
-          i1.SyncBackend>
-    ),
+    (i1.SyncBackend, i1.$$SyncBackendsTableReferences),
     i1.SyncBackend,
     i0.PrefetchHooks Function({bool baseTableRefs, bool syncRegistriesRefs})>;
 typedef $$SyncRegistriesTableCreateCompanionBuilder = i1.SyncRegistriesCompanion
@@ -509,6 +665,38 @@ typedef $$SyncRegistriesTableUpdateCompanionBuilder = i1.SyncRegistriesCompanion
   i0.Value<DateTime> updatedAt,
   i0.Value<DateTime> createdAt,
 });
+
+final class $$SyncRegistriesTableReferences extends i0.BaseReferences<
+    i0.GeneratedDatabase, i1.$SyncRegistriesTable, i1.SyncRegistry> {
+  $$SyncRegistriesTableReferences(
+      super.$_db, super.$_table, super.$_typedResult);
+
+  static i1.$SyncBackendsTable _backendIdTable(i0.GeneratedDatabase db) =>
+      i4.ReadDatabaseContainer(db)
+          .resultSet<i1.$SyncBackendsTable>('sync_backends')
+          .createAlias(i0.$_aliasNameGenerator(
+              i4.ReadDatabaseContainer(db)
+                  .resultSet<i1.$SyncRegistriesTable>('sync_registries')
+                  .backendId,
+              i4.ReadDatabaseContainer(db)
+                  .resultSet<i1.$SyncBackendsTable>('sync_backends')
+                  .id));
+
+  i1.$$SyncBackendsTableProcessedTableManager get backendId {
+    final $_column = $_itemColumn<String>('backend_id')!;
+
+    final manager = i1
+        .$$SyncBackendsTableTableManager(
+            $_db,
+            i4.ReadDatabaseContainer($_db)
+                .resultSet<i1.$SyncBackendsTable>('sync_backends'))
+        .filter((f) => f.id.sqlEquals($_column));
+    final item = $_typedResult.readTableOrNull(_backendIdTable($_db));
+    if (item == null) return manager;
+    return i0.ProcessedTableManager(
+        manager.$state.copyWith(prefetchedData: [item]));
+  }
+}
 
 class $$SyncRegistriesTableFilterComposer
     extends i0.Composer<i0.GeneratedDatabase, i1.$SyncRegistriesTable> {
@@ -698,11 +886,7 @@ class $$SyncRegistriesTableTableManager extends i0.RootTableManager<
     i1.$$SyncRegistriesTableAnnotationComposer,
     $$SyncRegistriesTableCreateCompanionBuilder,
     $$SyncRegistriesTableUpdateCompanionBuilder,
-    (
-      i1.SyncRegistry,
-      i0.BaseReferences<i0.GeneratedDatabase, i1.$SyncRegistriesTable,
-          i1.SyncRegistry>
-    ),
+    (i1.SyncRegistry, i1.$$SyncRegistriesTableReferences),
     i1.SyncRegistry,
     i0.PrefetchHooks Function({bool backendId})> {
   $$SyncRegistriesTableTableManager(
@@ -761,9 +945,47 @@ class $$SyncRegistriesTableTableManager extends i0.RootTableManager<
             createdAt: createdAt,
           ),
           withReferenceMapper: (p0) => p0
-              .map((e) => (e.readTable(table), i0.BaseReferences(db, table, e)))
+              .map((e) => (
+                    e.readTable(table),
+                    i1.$$SyncRegistriesTableReferences(db, table, e)
+                  ))
               .toList(),
-          prefetchHooksCallback: null,
+          prefetchHooksCallback: ({backendId = false}) {
+            return i0.PrefetchHooks(
+              db: db,
+              explicitlyWatchedTables: [],
+              addJoins: <
+                  T extends i0.TableManagerState<
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic>>(state) {
+                if (backendId) {
+                  state = state.withJoin(
+                    currentTable: table,
+                    currentColumn: table.backendId,
+                    referencedTable:
+                        i1.$$SyncRegistriesTableReferences._backendIdTable(db),
+                    referencedColumn: i1.$$SyncRegistriesTableReferences
+                        ._backendIdTable(db)
+                        .id,
+                  ) as T;
+                }
+
+                return state;
+              },
+              getPrefetchedDataCallback: (items) async {
+                return [];
+              },
+            );
+          },
         ));
 }
 
@@ -776,11 +998,7 @@ typedef $$SyncRegistriesTableProcessedTableManager = i0.ProcessedTableManager<
     i1.$$SyncRegistriesTableAnnotationComposer,
     $$SyncRegistriesTableCreateCompanionBuilder,
     $$SyncRegistriesTableUpdateCompanionBuilder,
-    (
-      i1.SyncRegistry,
-      i0.BaseReferences<i0.GeneratedDatabase, i1.$SyncRegistriesTable,
-          i1.SyncRegistry>
-    ),
+    (i1.SyncRegistry, i1.$$SyncRegistriesTableReferences),
     i1.SyncRegistry,
     i0.PrefetchHooks Function({bool backendId})>;
 

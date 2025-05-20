@@ -6,9 +6,8 @@ part of 'oauth2_configuration.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$OAuth2ConfigurationImpl _$$OAuth2ConfigurationImplFromJson(
-        Map<String, dynamic> json) =>
-    _$OAuth2ConfigurationImpl(
+_OAuth2Configuration _$OAuth2ConfigurationFromJson(Map<String, dynamic> json) =>
+    _OAuth2Configuration(
       clientId: json['client_id'] as String,
       redirectUri: json['redirect_uri'] as String,
       scope: json['scope'] as String,
@@ -19,8 +18,8 @@ _$OAuth2ConfigurationImpl _$$OAuth2ConfigurationImplFromJson(
       customUriScheme: json['customUriScheme'] as String?,
     );
 
-Map<String, dynamic> _$$OAuth2ConfigurationImplToJson(
-        _$OAuth2ConfigurationImpl instance) =>
+Map<String, dynamic> _$OAuth2ConfigurationToJson(
+        _OAuth2Configuration instance) =>
     <String, dynamic>{
       'client_id': instance.clientId,
       'redirect_uri': instance.redirectUri,

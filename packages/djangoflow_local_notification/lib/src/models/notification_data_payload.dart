@@ -4,7 +4,7 @@ part 'notification_data_payload.freezed.dart';
 part 'notification_data_payload.g.dart';
 
 @freezed
-class NotificationDataPayload with _$NotificationDataPayload {
+abstract class NotificationDataPayload with _$NotificationDataPayload {
   const factory NotificationDataPayload({
     String? notificationId,
     String? id,
@@ -24,7 +24,7 @@ class NotificationDataPayload with _$NotificationDataPayload {
 }
 
 @freezed
-class NotificationPayloadAction with _$NotificationPayloadAction {
+abstract class NotificationPayloadAction with _$NotificationPayloadAction {
   const factory NotificationPayloadAction({
     String? method,
     String? url,

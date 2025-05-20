@@ -6,9 +6,8 @@ part of 'action_category_state.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ActionCategoryStateImpl _$$ActionCategoryStateImplFromJson(
-        Map<String, dynamic> json) =>
-    _$ActionCategoryStateImpl(
+_ActionCategoryState _$ActionCategoryStateFromJson(Map<String, dynamic> json) =>
+    _ActionCategoryState(
       isLoading: json['isLoading'] as bool? ?? true,
       hasError: json['hasError'] as bool? ?? false,
       actionCategories: (json['actionCategories'] as List<dynamic>?)
@@ -18,8 +17,8 @@ _$ActionCategoryStateImpl _$$ActionCategoryStateImplFromJson(
           const [],
     );
 
-Map<String, dynamic> _$$ActionCategoryStateImplToJson(
-        _$ActionCategoryStateImpl instance) =>
+Map<String, dynamic> _$ActionCategoryStateToJson(
+        _ActionCategoryState instance) =>
     <String, dynamic>{
       'isLoading': instance.isLoading,
       'hasError': instance.hasError,

@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,106 +10,62 @@ part of 'chat_state.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-ChatState _$ChatStateFromJson(Map<String, dynamic> json) {
-  return _ChatState.fromJson(json);
-}
 
 /// @nodoc
 mixin _$ChatState {
-  int get roomId => throw _privateConstructorUsedError;
-  ChatRoom? get room => throw _privateConstructorUsedError;
-  Map<int, User> get roomUsers => throw _privateConstructorUsedError;
-  List<ChatMessage> get messages => throw _privateConstructorUsedError;
-  User? get me => throw _privateConstructorUsedError;
-  bool get loading => throw _privateConstructorUsedError;
-
-  /// Serializes this ChatState to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  int get roomId;
+  ChatRoom? get room;
+  Map<int, User> get roomUsers;
+  List<ChatMessage> get messages;
+  User? get me;
+  bool get loading;
 
   /// Create a copy of ChatState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $ChatStateCopyWith<ChatState> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $ChatStateCopyWith<$Res> {
-  factory $ChatStateCopyWith(ChatState value, $Res Function(ChatState) then) =
-      _$ChatStateCopyWithImpl<$Res, ChatState>;
-  @useResult
-  $Res call(
-      {int roomId,
-      ChatRoom? room,
-      Map<int, User> roomUsers,
-      List<ChatMessage> messages,
-      User? me,
-      bool loading});
-}
-
-/// @nodoc
-class _$ChatStateCopyWithImpl<$Res, $Val extends ChatState>
-    implements $ChatStateCopyWith<$Res> {
-  _$ChatStateCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of ChatState
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $ChatStateCopyWith<ChatState> get copyWith =>
+      _$ChatStateCopyWithImpl<ChatState>(this as ChatState, _$identity);
+
+  /// Serializes this ChatState to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? roomId = null,
-    Object? room = freezed,
-    Object? roomUsers = null,
-    Object? messages = null,
-    Object? me = freezed,
-    Object? loading = null,
-  }) {
-    return _then(_value.copyWith(
-      roomId: null == roomId
-          ? _value.roomId
-          : roomId // ignore: cast_nullable_to_non_nullable
-              as int,
-      room: freezed == room
-          ? _value.room
-          : room // ignore: cast_nullable_to_non_nullable
-              as ChatRoom?,
-      roomUsers: null == roomUsers
-          ? _value.roomUsers
-          : roomUsers // ignore: cast_nullable_to_non_nullable
-              as Map<int, User>,
-      messages: null == messages
-          ? _value.messages
-          : messages // ignore: cast_nullable_to_non_nullable
-              as List<ChatMessage>,
-      me: freezed == me
-          ? _value.me
-          : me // ignore: cast_nullable_to_non_nullable
-              as User?,
-      loading: null == loading
-          ? _value.loading
-          : loading // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is ChatState &&
+            (identical(other.roomId, roomId) || other.roomId == roomId) &&
+            (identical(other.room, room) || other.room == room) &&
+            const DeepCollectionEquality().equals(other.roomUsers, roomUsers) &&
+            const DeepCollectionEquality().equals(other.messages, messages) &&
+            (identical(other.me, me) || other.me == me) &&
+            (identical(other.loading, loading) || other.loading == loading));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      roomId,
+      room,
+      const DeepCollectionEquality().hash(roomUsers),
+      const DeepCollectionEquality().hash(messages),
+      me,
+      loading);
+
+  @override
+  String toString() {
+    return 'ChatState(roomId: $roomId, room: $room, roomUsers: $roomUsers, messages: $messages, me: $me, loading: $loading)';
   }
 }
 
 /// @nodoc
-abstract class _$$ChatStateImplCopyWith<$Res>
-    implements $ChatStateCopyWith<$Res> {
-  factory _$$ChatStateImplCopyWith(
-          _$ChatStateImpl value, $Res Function(_$ChatStateImpl) then) =
-      __$$ChatStateImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $ChatStateCopyWith<$Res> {
+  factory $ChatStateCopyWith(ChatState value, $Res Function(ChatState) _then) =
+      _$ChatStateCopyWithImpl;
   @useResult
   $Res call(
       {int roomId,
@@ -120,12 +77,11 @@ abstract class _$$ChatStateImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$ChatStateImplCopyWithImpl<$Res>
-    extends _$ChatStateCopyWithImpl<$Res, _$ChatStateImpl>
-    implements _$$ChatStateImplCopyWith<$Res> {
-  __$$ChatStateImplCopyWithImpl(
-      _$ChatStateImpl _value, $Res Function(_$ChatStateImpl) _then)
-      : super(_value, _then);
+class _$ChatStateCopyWithImpl<$Res> implements $ChatStateCopyWith<$Res> {
+  _$ChatStateCopyWithImpl(this._self, this._then);
+
+  final ChatState _self;
+  final $Res Function(ChatState) _then;
 
   /// Create a copy of ChatState
   /// with the given fields replaced by the non-null parameter values.
@@ -139,29 +95,29 @@ class __$$ChatStateImplCopyWithImpl<$Res>
     Object? me = freezed,
     Object? loading = null,
   }) {
-    return _then(_$ChatStateImpl(
+    return _then(_self.copyWith(
       roomId: null == roomId
-          ? _value.roomId
+          ? _self.roomId
           : roomId // ignore: cast_nullable_to_non_nullable
               as int,
       room: freezed == room
-          ? _value.room
+          ? _self.room
           : room // ignore: cast_nullable_to_non_nullable
               as ChatRoom?,
       roomUsers: null == roomUsers
-          ? _value._roomUsers
+          ? _self.roomUsers
           : roomUsers // ignore: cast_nullable_to_non_nullable
               as Map<int, User>,
       messages: null == messages
-          ? _value._messages
+          ? _self.messages
           : messages // ignore: cast_nullable_to_non_nullable
               as List<ChatMessage>,
       me: freezed == me
-          ? _value.me
+          ? _self.me
           : me // ignore: cast_nullable_to_non_nullable
               as User?,
       loading: null == loading
-          ? _value.loading
+          ? _self.loading
           : loading // ignore: cast_nullable_to_non_nullable
               as bool,
     ));
@@ -170,8 +126,8 @@ class __$$ChatStateImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$ChatStateImpl implements _ChatState {
-  const _$ChatStateImpl(
+class _ChatState implements ChatState {
+  const _ChatState(
       {required this.roomId,
       this.room,
       final Map<int, User> roomUsers = const <int, User>{},
@@ -180,9 +136,8 @@ class _$ChatStateImpl implements _ChatState {
       this.loading = false})
       : _roomUsers = roomUsers,
         _messages = messages;
-
-  factory _$ChatStateImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ChatStateImplFromJson(json);
+  factory _ChatState.fromJson(Map<String, dynamic> json) =>
+      _$ChatStateFromJson(json);
 
   @override
   final int roomId;
@@ -212,16 +167,26 @@ class _$ChatStateImpl implements _ChatState {
   @JsonKey()
   final bool loading;
 
+  /// Create a copy of ChatState
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'ChatState(roomId: $roomId, room: $room, roomUsers: $roomUsers, messages: $messages, me: $me, loading: $loading)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$ChatStateCopyWith<_ChatState> get copyWith =>
+      __$ChatStateCopyWithImpl<_ChatState>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$ChatStateToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ChatStateImpl &&
+            other is _ChatState &&
             (identical(other.roomId, roomId) || other.roomId == roomId) &&
             (identical(other.room, room) || other.room == room) &&
             const DeepCollectionEquality()
@@ -242,51 +207,75 @@ class _$ChatStateImpl implements _ChatState {
       me,
       loading);
 
-  /// Create a copy of ChatState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$ChatStateImplCopyWith<_$ChatStateImpl> get copyWith =>
-      __$$ChatStateImplCopyWithImpl<_$ChatStateImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$ChatStateImplToJson(
-      this,
-    );
+  String toString() {
+    return 'ChatState(roomId: $roomId, room: $room, roomUsers: $roomUsers, messages: $messages, me: $me, loading: $loading)';
   }
 }
 
-abstract class _ChatState implements ChatState {
-  const factory _ChatState(
-      {required final int roomId,
-      final ChatRoom? room,
-      final Map<int, User> roomUsers,
-      final List<ChatMessage> messages,
-      final User? me,
-      final bool loading}) = _$ChatStateImpl;
+/// @nodoc
+abstract mixin class _$ChatStateCopyWith<$Res>
+    implements $ChatStateCopyWith<$Res> {
+  factory _$ChatStateCopyWith(
+          _ChatState value, $Res Function(_ChatState) _then) =
+      __$ChatStateCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {int roomId,
+      ChatRoom? room,
+      Map<int, User> roomUsers,
+      List<ChatMessage> messages,
+      User? me,
+      bool loading});
+}
 
-  factory _ChatState.fromJson(Map<String, dynamic> json) =
-      _$ChatStateImpl.fromJson;
+/// @nodoc
+class __$ChatStateCopyWithImpl<$Res> implements _$ChatStateCopyWith<$Res> {
+  __$ChatStateCopyWithImpl(this._self, this._then);
 
-  @override
-  int get roomId;
-  @override
-  ChatRoom? get room;
-  @override
-  Map<int, User> get roomUsers;
-  @override
-  List<ChatMessage> get messages;
-  @override
-  User? get me;
-  @override
-  bool get loading;
+  final _ChatState _self;
+  final $Res Function(_ChatState) _then;
 
   /// Create a copy of ChatState
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ChatStateImplCopyWith<_$ChatStateImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? roomId = null,
+    Object? room = freezed,
+    Object? roomUsers = null,
+    Object? messages = null,
+    Object? me = freezed,
+    Object? loading = null,
+  }) {
+    return _then(_ChatState(
+      roomId: null == roomId
+          ? _self.roomId
+          : roomId // ignore: cast_nullable_to_non_nullable
+              as int,
+      room: freezed == room
+          ? _self.room
+          : room // ignore: cast_nullable_to_non_nullable
+              as ChatRoom?,
+      roomUsers: null == roomUsers
+          ? _self._roomUsers
+          : roomUsers // ignore: cast_nullable_to_non_nullable
+              as Map<int, User>,
+      messages: null == messages
+          ? _self._messages
+          : messages // ignore: cast_nullable_to_non_nullable
+              as List<ChatMessage>,
+      me: freezed == me
+          ? _self.me
+          : me // ignore: cast_nullable_to_non_nullable
+              as User?,
+      loading: null == loading
+          ? _self.loading
+          : loading // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
 }
+
+// dart format on

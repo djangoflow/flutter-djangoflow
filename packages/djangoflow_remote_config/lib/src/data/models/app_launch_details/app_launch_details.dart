@@ -6,7 +6,7 @@ part 'app_launch_details.freezed.dart';
 part 'app_launch_details.g.dart';
 
 @freezed
-class AppLaunchDetails with _$AppLaunchDetails {
+abstract class AppLaunchDetails with _$AppLaunchDetails {
   const factory AppLaunchDetails({
     BrandDetails? brand,
     @JsonKey(name: 'app_version') VersionDetails? appVersion,
@@ -18,7 +18,7 @@ class AppLaunchDetails with _$AppLaunchDetails {
 }
 
 @freezed
-class BrandDetails with _$BrandDetails {
+abstract class BrandDetails with _$BrandDetails {
   const factory BrandDetails({
     ThemeDetails? theme,
     LogoDetails? logo,
@@ -29,7 +29,7 @@ class BrandDetails with _$BrandDetails {
 }
 
 @freezed
-class ThemeDetails with _$ThemeDetails {
+abstract class ThemeDetails with _$ThemeDetails {
   const factory ThemeDetails({
     Map<String, dynamic>? lightTheme,
     Map<String, dynamic>? darkTheme,
@@ -40,7 +40,7 @@ class ThemeDetails with _$ThemeDetails {
 }
 
 @freezed
-class UpdatesDetails with _$UpdatesDetails {
+abstract class UpdatesDetails with _$UpdatesDetails {
   const factory UpdatesDetails({
     Map<String, DateTime?>? parts,
   }) = _UpdatesDetails;
@@ -50,7 +50,7 @@ class UpdatesDetails with _$UpdatesDetails {
 }
 
 @freezed
-class LogoDetails with _$LogoDetails {
+abstract class LogoDetails with _$LogoDetails {
   const factory LogoDetails({
     String? large,
     String? small,
@@ -61,7 +61,7 @@ class LogoDetails with _$LogoDetails {
 }
 
 @freezed
-class VersionDetails with _$VersionDetails {
+abstract class VersionDetails with _$VersionDetails {
   const factory VersionDetails({
     String? latest,
     String? required,

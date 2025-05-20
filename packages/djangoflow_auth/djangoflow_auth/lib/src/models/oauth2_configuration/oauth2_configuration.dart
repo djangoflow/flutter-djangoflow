@@ -6,7 +6,7 @@ part 'oauth2_configuration.freezed.dart';
 part 'oauth2_configuration.g.dart';
 
 @freezed
-class OAuth2Configuration with _$OAuth2Configuration {
+abstract class OAuth2Configuration with _$OAuth2Configuration {
   const factory OAuth2Configuration({
     @JsonKey(name: 'client_id') required String clientId,
     @JsonKey(name: 'redirect_uri') required String redirectUri,

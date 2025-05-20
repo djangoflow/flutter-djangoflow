@@ -5,7 +5,7 @@ part 'local_notification_state.freezed.dart';
 part 'local_notification_state.g.dart';
 
 @freezed
-class LocalNotificationState with _$LocalNotificationState {
+abstract class LocalNotificationState with _$LocalNotificationState {
   const factory LocalNotificationState({
     // ignore: invalid_annotation_target
     @JsonKey(

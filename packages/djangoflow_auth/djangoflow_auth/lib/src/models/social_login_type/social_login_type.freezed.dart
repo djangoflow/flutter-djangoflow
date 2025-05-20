@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,133 +10,30 @@ part of 'social_login_type.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-SocialLoginType _$SocialLoginTypeFromJson(Map<String, dynamic> json) {
-  return _SocialLoginType.fromJson(json);
-}
 
 /// @nodoc
 mixin _$SocialLoginType {
-  ProviderEnum get provider => throw _privateConstructorUsedError;
-  String get id => throw _privateConstructorUsedError;
-
-  /// Serializes this SocialLoginType to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  ProviderEnum get provider;
+  String get id;
 
   /// Create a copy of SocialLoginType
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $SocialLoginTypeCopyWith<SocialLoginType> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+      _$SocialLoginTypeCopyWithImpl<SocialLoginType>(
+          this as SocialLoginType, _$identity);
 
-/// @nodoc
-abstract class $SocialLoginTypeCopyWith<$Res> {
-  factory $SocialLoginTypeCopyWith(
-          SocialLoginType value, $Res Function(SocialLoginType) then) =
-      _$SocialLoginTypeCopyWithImpl<$Res, SocialLoginType>;
-  @useResult
-  $Res call({ProviderEnum provider, String id});
-}
-
-/// @nodoc
-class _$SocialLoginTypeCopyWithImpl<$Res, $Val extends SocialLoginType>
-    implements $SocialLoginTypeCopyWith<$Res> {
-  _$SocialLoginTypeCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of SocialLoginType
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? provider = null,
-    Object? id = null,
-  }) {
-    return _then(_value.copyWith(
-      provider: null == provider
-          ? _value.provider
-          : provider // ignore: cast_nullable_to_non_nullable
-              as ProviderEnum,
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$SocialLoginTypeImplCopyWith<$Res>
-    implements $SocialLoginTypeCopyWith<$Res> {
-  factory _$$SocialLoginTypeImplCopyWith(_$SocialLoginTypeImpl value,
-          $Res Function(_$SocialLoginTypeImpl) then) =
-      __$$SocialLoginTypeImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({ProviderEnum provider, String id});
-}
-
-/// @nodoc
-class __$$SocialLoginTypeImplCopyWithImpl<$Res>
-    extends _$SocialLoginTypeCopyWithImpl<$Res, _$SocialLoginTypeImpl>
-    implements _$$SocialLoginTypeImplCopyWith<$Res> {
-  __$$SocialLoginTypeImplCopyWithImpl(
-      _$SocialLoginTypeImpl _value, $Res Function(_$SocialLoginTypeImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of SocialLoginType
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? provider = null,
-    Object? id = null,
-  }) {
-    return _then(_$SocialLoginTypeImpl(
-      provider: null == provider
-          ? _value.provider
-          : provider // ignore: cast_nullable_to_non_nullable
-              as ProviderEnum,
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$SocialLoginTypeImpl implements _SocialLoginType {
-  const _$SocialLoginTypeImpl({required this.provider, required this.id});
-
-  factory _$SocialLoginTypeImpl.fromJson(Map<String, dynamic> json) =>
-      _$$SocialLoginTypeImplFromJson(json);
-
-  @override
-  final ProviderEnum provider;
-  @override
-  final String id;
-
-  @override
-  String toString() {
-    return 'SocialLoginType(provider: $provider, id: $id)';
-  }
+  /// Serializes this SocialLoginType to a JSON map.
+  Map<String, dynamic> toJson();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SocialLoginTypeImpl &&
+            other is SocialLoginType &&
             (identical(other.provider, provider) ||
                 other.provider == provider) &&
             (identical(other.id, id) || other.id == id));
@@ -145,40 +43,135 @@ class _$SocialLoginTypeImpl implements _SocialLoginType {
   @override
   int get hashCode => Object.hash(runtimeType, provider, id);
 
-  /// Create a copy of SocialLoginType
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$SocialLoginTypeImplCopyWith<_$SocialLoginTypeImpl> get copyWith =>
-      __$$SocialLoginTypeImplCopyWithImpl<_$SocialLoginTypeImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$SocialLoginTypeImplToJson(
-      this,
-    );
+  String toString() {
+    return 'SocialLoginType(provider: $provider, id: $id)';
   }
 }
 
-abstract class _SocialLoginType implements SocialLoginType {
-  const factory _SocialLoginType(
-      {required final ProviderEnum provider,
-      required final String id}) = _$SocialLoginTypeImpl;
+/// @nodoc
+abstract mixin class $SocialLoginTypeCopyWith<$Res> {
+  factory $SocialLoginTypeCopyWith(
+          SocialLoginType value, $Res Function(SocialLoginType) _then) =
+      _$SocialLoginTypeCopyWithImpl;
+  @useResult
+  $Res call({ProviderEnum provider, String id});
+}
 
-  factory _SocialLoginType.fromJson(Map<String, dynamic> json) =
-      _$SocialLoginTypeImpl.fromJson;
+/// @nodoc
+class _$SocialLoginTypeCopyWithImpl<$Res>
+    implements $SocialLoginTypeCopyWith<$Res> {
+  _$SocialLoginTypeCopyWithImpl(this._self, this._then);
+
+  final SocialLoginType _self;
+  final $Res Function(SocialLoginType) _then;
+
+  /// Create a copy of SocialLoginType
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? provider = null,
+    Object? id = null,
+  }) {
+    return _then(_self.copyWith(
+      provider: null == provider
+          ? _self.provider
+          : provider // ignore: cast_nullable_to_non_nullable
+              as ProviderEnum,
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _SocialLoginType implements SocialLoginType {
+  const _SocialLoginType({required this.provider, required this.id});
+  factory _SocialLoginType.fromJson(Map<String, dynamic> json) =>
+      _$SocialLoginTypeFromJson(json);
 
   @override
-  ProviderEnum get provider;
+  final ProviderEnum provider;
   @override
-  String get id;
+  final String id;
 
   /// Create a copy of SocialLoginType
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$SocialLoginTypeImplCopyWith<_$SocialLoginTypeImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  _$SocialLoginTypeCopyWith<_SocialLoginType> get copyWith =>
+      __$SocialLoginTypeCopyWithImpl<_SocialLoginType>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$SocialLoginTypeToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _SocialLoginType &&
+            (identical(other.provider, provider) ||
+                other.provider == provider) &&
+            (identical(other.id, id) || other.id == id));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, provider, id);
+
+  @override
+  String toString() {
+    return 'SocialLoginType(provider: $provider, id: $id)';
+  }
 }
+
+/// @nodoc
+abstract mixin class _$SocialLoginTypeCopyWith<$Res>
+    implements $SocialLoginTypeCopyWith<$Res> {
+  factory _$SocialLoginTypeCopyWith(
+          _SocialLoginType value, $Res Function(_SocialLoginType) _then) =
+      __$SocialLoginTypeCopyWithImpl;
+  @override
+  @useResult
+  $Res call({ProviderEnum provider, String id});
+}
+
+/// @nodoc
+class __$SocialLoginTypeCopyWithImpl<$Res>
+    implements _$SocialLoginTypeCopyWith<$Res> {
+  __$SocialLoginTypeCopyWithImpl(this._self, this._then);
+
+  final _SocialLoginType _self;
+  final $Res Function(_SocialLoginType) _then;
+
+  /// Create a copy of SocialLoginType
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? provider = null,
+    Object? id = null,
+  }) {
+    return _then(_SocialLoginType(
+      provider: null == provider
+          ? _self.provider
+          : provider // ignore: cast_nullable_to_non_nullable
+              as ProviderEnum,
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+// dart format on

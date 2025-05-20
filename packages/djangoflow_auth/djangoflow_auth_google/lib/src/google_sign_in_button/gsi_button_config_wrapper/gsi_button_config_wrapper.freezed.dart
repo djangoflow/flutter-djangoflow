@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,125 +10,64 @@ part of 'gsi_button_config_wrapper.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-GSIButtonConfigWrapper _$GSIButtonConfigWrapperFromJson(
-    Map<String, dynamic> json) {
-  return _GSIButtonConfigWrapper.fromJson(json);
-}
 
 /// @nodoc
 mixin _$GSIButtonConfigWrapper {
-  GSIWrapperButtonType? get type => throw _privateConstructorUsedError;
-  GSIWrapperButtonTheme? get theme => throw _privateConstructorUsedError;
-  GSIWrapperButtonSize? get size => throw _privateConstructorUsedError;
-  GSIWrapperButtonText? get text => throw _privateConstructorUsedError;
-  GSIWrapperButtonShape? get shape => throw _privateConstructorUsedError;
-  GSIWrapperButtonLogoAlignment? get logoAlignment =>
-      throw _privateConstructorUsedError;
-  String? get locale => throw _privateConstructorUsedError;
-  double? get minimumWidth => throw _privateConstructorUsedError;
-
-  /// Serializes this GSIButtonConfigWrapper to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  GSIWrapperButtonType? get type;
+  GSIWrapperButtonTheme? get theme;
+  GSIWrapperButtonSize? get size;
+  GSIWrapperButtonText? get text;
+  GSIWrapperButtonShape? get shape;
+  GSIWrapperButtonLogoAlignment? get logoAlignment;
+  String? get locale;
+  double? get minimumWidth;
 
   /// Create a copy of GSIButtonConfigWrapper
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $GSIButtonConfigWrapperCopyWith<GSIButtonConfigWrapper> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $GSIButtonConfigWrapperCopyWith<$Res> {
-  factory $GSIButtonConfigWrapperCopyWith(GSIButtonConfigWrapper value,
-          $Res Function(GSIButtonConfigWrapper) then) =
-      _$GSIButtonConfigWrapperCopyWithImpl<$Res, GSIButtonConfigWrapper>;
-  @useResult
-  $Res call(
-      {GSIWrapperButtonType? type,
-      GSIWrapperButtonTheme? theme,
-      GSIWrapperButtonSize? size,
-      GSIWrapperButtonText? text,
-      GSIWrapperButtonShape? shape,
-      GSIWrapperButtonLogoAlignment? logoAlignment,
-      String? locale,
-      double? minimumWidth});
-}
-
-/// @nodoc
-class _$GSIButtonConfigWrapperCopyWithImpl<$Res,
-        $Val extends GSIButtonConfigWrapper>
-    implements $GSIButtonConfigWrapperCopyWith<$Res> {
-  _$GSIButtonConfigWrapperCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of GSIButtonConfigWrapper
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $GSIButtonConfigWrapperCopyWith<GSIButtonConfigWrapper> get copyWith =>
+      _$GSIButtonConfigWrapperCopyWithImpl<GSIButtonConfigWrapper>(
+          this as GSIButtonConfigWrapper, _$identity);
+
+  /// Serializes this GSIButtonConfigWrapper to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? type = freezed,
-    Object? theme = freezed,
-    Object? size = freezed,
-    Object? text = freezed,
-    Object? shape = freezed,
-    Object? logoAlignment = freezed,
-    Object? locale = freezed,
-    Object? minimumWidth = freezed,
-  }) {
-    return _then(_value.copyWith(
-      type: freezed == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as GSIWrapperButtonType?,
-      theme: freezed == theme
-          ? _value.theme
-          : theme // ignore: cast_nullable_to_non_nullable
-              as GSIWrapperButtonTheme?,
-      size: freezed == size
-          ? _value.size
-          : size // ignore: cast_nullable_to_non_nullable
-              as GSIWrapperButtonSize?,
-      text: freezed == text
-          ? _value.text
-          : text // ignore: cast_nullable_to_non_nullable
-              as GSIWrapperButtonText?,
-      shape: freezed == shape
-          ? _value.shape
-          : shape // ignore: cast_nullable_to_non_nullable
-              as GSIWrapperButtonShape?,
-      logoAlignment: freezed == logoAlignment
-          ? _value.logoAlignment
-          : logoAlignment // ignore: cast_nullable_to_non_nullable
-              as GSIWrapperButtonLogoAlignment?,
-      locale: freezed == locale
-          ? _value.locale
-          : locale // ignore: cast_nullable_to_non_nullable
-              as String?,
-      minimumWidth: freezed == minimumWidth
-          ? _value.minimumWidth
-          : minimumWidth // ignore: cast_nullable_to_non_nullable
-              as double?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is GSIButtonConfigWrapper &&
+            (identical(other.type, type) || other.type == type) &&
+            (identical(other.theme, theme) || other.theme == theme) &&
+            (identical(other.size, size) || other.size == size) &&
+            (identical(other.text, text) || other.text == text) &&
+            (identical(other.shape, shape) || other.shape == shape) &&
+            (identical(other.logoAlignment, logoAlignment) ||
+                other.logoAlignment == logoAlignment) &&
+            (identical(other.locale, locale) || other.locale == locale) &&
+            (identical(other.minimumWidth, minimumWidth) ||
+                other.minimumWidth == minimumWidth));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, type, theme, size, text, shape,
+      logoAlignment, locale, minimumWidth);
+
+  @override
+  String toString() {
+    return 'GSIButtonConfigWrapper(type: $type, theme: $theme, size: $size, text: $text, shape: $shape, logoAlignment: $logoAlignment, locale: $locale, minimumWidth: $minimumWidth)';
   }
 }
 
 /// @nodoc
-abstract class _$$GSIButtonConfigWrapperImplCopyWith<$Res>
-    implements $GSIButtonConfigWrapperCopyWith<$Res> {
-  factory _$$GSIButtonConfigWrapperImplCopyWith(
-          _$GSIButtonConfigWrapperImpl value,
-          $Res Function(_$GSIButtonConfigWrapperImpl) then) =
-      __$$GSIButtonConfigWrapperImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $GSIButtonConfigWrapperCopyWith<$Res> {
+  factory $GSIButtonConfigWrapperCopyWith(GSIButtonConfigWrapper value,
+          $Res Function(GSIButtonConfigWrapper) _then) =
+      _$GSIButtonConfigWrapperCopyWithImpl;
   @useResult
   $Res call(
       {GSIWrapperButtonType? type,
@@ -141,14 +81,12 @@ abstract class _$$GSIButtonConfigWrapperImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$GSIButtonConfigWrapperImplCopyWithImpl<$Res>
-    extends _$GSIButtonConfigWrapperCopyWithImpl<$Res,
-        _$GSIButtonConfigWrapperImpl>
-    implements _$$GSIButtonConfigWrapperImplCopyWith<$Res> {
-  __$$GSIButtonConfigWrapperImplCopyWithImpl(
-      _$GSIButtonConfigWrapperImpl _value,
-      $Res Function(_$GSIButtonConfigWrapperImpl) _then)
-      : super(_value, _then);
+class _$GSIButtonConfigWrapperCopyWithImpl<$Res>
+    implements $GSIButtonConfigWrapperCopyWith<$Res> {
+  _$GSIButtonConfigWrapperCopyWithImpl(this._self, this._then);
+
+  final GSIButtonConfigWrapper _self;
+  final $Res Function(GSIButtonConfigWrapper) _then;
 
   /// Create a copy of GSIButtonConfigWrapper
   /// with the given fields replaced by the non-null parameter values.
@@ -164,37 +102,37 @@ class __$$GSIButtonConfigWrapperImplCopyWithImpl<$Res>
     Object? locale = freezed,
     Object? minimumWidth = freezed,
   }) {
-    return _then(_$GSIButtonConfigWrapperImpl(
+    return _then(_self.copyWith(
       type: freezed == type
-          ? _value.type
+          ? _self.type
           : type // ignore: cast_nullable_to_non_nullable
               as GSIWrapperButtonType?,
       theme: freezed == theme
-          ? _value.theme
+          ? _self.theme
           : theme // ignore: cast_nullable_to_non_nullable
               as GSIWrapperButtonTheme?,
       size: freezed == size
-          ? _value.size
+          ? _self.size
           : size // ignore: cast_nullable_to_non_nullable
               as GSIWrapperButtonSize?,
       text: freezed == text
-          ? _value.text
+          ? _self.text
           : text // ignore: cast_nullable_to_non_nullable
               as GSIWrapperButtonText?,
       shape: freezed == shape
-          ? _value.shape
+          ? _self.shape
           : shape // ignore: cast_nullable_to_non_nullable
               as GSIWrapperButtonShape?,
       logoAlignment: freezed == logoAlignment
-          ? _value.logoAlignment
+          ? _self.logoAlignment
           : logoAlignment // ignore: cast_nullable_to_non_nullable
               as GSIWrapperButtonLogoAlignment?,
       locale: freezed == locale
-          ? _value.locale
+          ? _self.locale
           : locale // ignore: cast_nullable_to_non_nullable
               as String?,
       minimumWidth: freezed == minimumWidth
-          ? _value.minimumWidth
+          ? _self.minimumWidth
           : minimumWidth // ignore: cast_nullable_to_non_nullable
               as double?,
     ));
@@ -203,8 +141,8 @@ class __$$GSIButtonConfigWrapperImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$GSIButtonConfigWrapperImpl extends _GSIButtonConfigWrapper {
-  const _$GSIButtonConfigWrapperImpl(
+class _GSIButtonConfigWrapper extends GSIButtonConfigWrapper {
+  const _GSIButtonConfigWrapper(
       {this.type,
       this.theme,
       this.size,
@@ -214,9 +152,8 @@ class _$GSIButtonConfigWrapperImpl extends _GSIButtonConfigWrapper {
       this.locale,
       this.minimumWidth})
       : super._();
-
-  factory _$GSIButtonConfigWrapperImpl.fromJson(Map<String, dynamic> json) =>
-      _$$GSIButtonConfigWrapperImplFromJson(json);
+  factory _GSIButtonConfigWrapper.fromJson(Map<String, dynamic> json) =>
+      _$GSIButtonConfigWrapperFromJson(json);
 
   @override
   final GSIWrapperButtonType? type;
@@ -235,16 +172,27 @@ class _$GSIButtonConfigWrapperImpl extends _GSIButtonConfigWrapper {
   @override
   final double? minimumWidth;
 
+  /// Create a copy of GSIButtonConfigWrapper
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'GSIButtonConfigWrapper(type: $type, theme: $theme, size: $size, text: $text, shape: $shape, logoAlignment: $logoAlignment, locale: $locale, minimumWidth: $minimumWidth)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$GSIButtonConfigWrapperCopyWith<_GSIButtonConfigWrapper> get copyWith =>
+      __$GSIButtonConfigWrapperCopyWithImpl<_GSIButtonConfigWrapper>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$GSIButtonConfigWrapperToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$GSIButtonConfigWrapperImpl &&
+            other is _GSIButtonConfigWrapper &&
             (identical(other.type, type) || other.type == type) &&
             (identical(other.theme, theme) || other.theme == theme) &&
             (identical(other.size, size) || other.size == size) &&
@@ -262,59 +210,88 @@ class _$GSIButtonConfigWrapperImpl extends _GSIButtonConfigWrapper {
   int get hashCode => Object.hash(runtimeType, type, theme, size, text, shape,
       logoAlignment, locale, minimumWidth);
 
-  /// Create a copy of GSIButtonConfigWrapper
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$GSIButtonConfigWrapperImplCopyWith<_$GSIButtonConfigWrapperImpl>
-      get copyWith => __$$GSIButtonConfigWrapperImplCopyWithImpl<
-          _$GSIButtonConfigWrapperImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$GSIButtonConfigWrapperImplToJson(
-      this,
-    );
+  String toString() {
+    return 'GSIButtonConfigWrapper(type: $type, theme: $theme, size: $size, text: $text, shape: $shape, logoAlignment: $logoAlignment, locale: $locale, minimumWidth: $minimumWidth)';
   }
 }
 
-abstract class _GSIButtonConfigWrapper extends GSIButtonConfigWrapper {
-  const factory _GSIButtonConfigWrapper(
-      {final GSIWrapperButtonType? type,
-      final GSIWrapperButtonTheme? theme,
-      final GSIWrapperButtonSize? size,
-      final GSIWrapperButtonText? text,
-      final GSIWrapperButtonShape? shape,
-      final GSIWrapperButtonLogoAlignment? logoAlignment,
-      final String? locale,
-      final double? minimumWidth}) = _$GSIButtonConfigWrapperImpl;
-  const _GSIButtonConfigWrapper._() : super._();
+/// @nodoc
+abstract mixin class _$GSIButtonConfigWrapperCopyWith<$Res>
+    implements $GSIButtonConfigWrapperCopyWith<$Res> {
+  factory _$GSIButtonConfigWrapperCopyWith(_GSIButtonConfigWrapper value,
+          $Res Function(_GSIButtonConfigWrapper) _then) =
+      __$GSIButtonConfigWrapperCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {GSIWrapperButtonType? type,
+      GSIWrapperButtonTheme? theme,
+      GSIWrapperButtonSize? size,
+      GSIWrapperButtonText? text,
+      GSIWrapperButtonShape? shape,
+      GSIWrapperButtonLogoAlignment? logoAlignment,
+      String? locale,
+      double? minimumWidth});
+}
 
-  factory _GSIButtonConfigWrapper.fromJson(Map<String, dynamic> json) =
-      _$GSIButtonConfigWrapperImpl.fromJson;
+/// @nodoc
+class __$GSIButtonConfigWrapperCopyWithImpl<$Res>
+    implements _$GSIButtonConfigWrapperCopyWith<$Res> {
+  __$GSIButtonConfigWrapperCopyWithImpl(this._self, this._then);
 
-  @override
-  GSIWrapperButtonType? get type;
-  @override
-  GSIWrapperButtonTheme? get theme;
-  @override
-  GSIWrapperButtonSize? get size;
-  @override
-  GSIWrapperButtonText? get text;
-  @override
-  GSIWrapperButtonShape? get shape;
-  @override
-  GSIWrapperButtonLogoAlignment? get logoAlignment;
-  @override
-  String? get locale;
-  @override
-  double? get minimumWidth;
+  final _GSIButtonConfigWrapper _self;
+  final $Res Function(_GSIButtonConfigWrapper) _then;
 
   /// Create a copy of GSIButtonConfigWrapper
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$GSIButtonConfigWrapperImplCopyWith<_$GSIButtonConfigWrapperImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? type = freezed,
+    Object? theme = freezed,
+    Object? size = freezed,
+    Object? text = freezed,
+    Object? shape = freezed,
+    Object? logoAlignment = freezed,
+    Object? locale = freezed,
+    Object? minimumWidth = freezed,
+  }) {
+    return _then(_GSIButtonConfigWrapper(
+      type: freezed == type
+          ? _self.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as GSIWrapperButtonType?,
+      theme: freezed == theme
+          ? _self.theme
+          : theme // ignore: cast_nullable_to_non_nullable
+              as GSIWrapperButtonTheme?,
+      size: freezed == size
+          ? _self.size
+          : size // ignore: cast_nullable_to_non_nullable
+              as GSIWrapperButtonSize?,
+      text: freezed == text
+          ? _self.text
+          : text // ignore: cast_nullable_to_non_nullable
+              as GSIWrapperButtonText?,
+      shape: freezed == shape
+          ? _self.shape
+          : shape // ignore: cast_nullable_to_non_nullable
+              as GSIWrapperButtonShape?,
+      logoAlignment: freezed == logoAlignment
+          ? _self.logoAlignment
+          : logoAlignment // ignore: cast_nullable_to_non_nullable
+              as GSIWrapperButtonLogoAlignment?,
+      locale: freezed == locale
+          ? _self.locale
+          : locale // ignore: cast_nullable_to_non_nullable
+              as String?,
+      minimumWidth: freezed == minimumWidth
+          ? _self.minimumWidth
+          : minimumWidth // ignore: cast_nullable_to_non_nullable
+              as double?,
+    ));
+  }
 }
+
+// dart format on

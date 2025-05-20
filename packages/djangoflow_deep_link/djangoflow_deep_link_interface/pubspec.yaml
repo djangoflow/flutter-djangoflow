@@ -7,10 +7,10 @@ environment:
   sdk: ">=3.4.4 <4.0.0"
 
 dependencies:
-  bloc_test: ^9.1.7
+  bloc_test: ^10.0.0
   flutter:
     sdk: flutter
-  flutter_bloc: ^8.1.5
+  flutter_bloc: ^9.1.1
   mockito: ^5.4.4
 
 dev_dependencies:

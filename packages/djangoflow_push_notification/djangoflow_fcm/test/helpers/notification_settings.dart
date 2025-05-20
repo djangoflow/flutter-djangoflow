@@ -12,4 +12,5 @@ const testNotificationSettings = NotificationSettings(
   notificationCenter: AppleNotificationSetting.enabled,
   showPreviews: AppleShowPreviewSetting.always,
   timeSensitive: AppleNotificationSetting.enabled,
+  providesAppNotificationSettings: AppleNotificationSetting.notSupported,
 );

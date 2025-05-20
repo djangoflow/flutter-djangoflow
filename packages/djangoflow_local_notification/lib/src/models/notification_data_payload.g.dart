@@ -6,9 +6,9 @@ part of 'notification_data_payload.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$NotificationDataPayloadImpl _$$NotificationDataPayloadImplFromJson(
+_NotificationDataPayload _$NotificationDataPayloadFromJson(
         Map<String, dynamic> json) =>
-    _$NotificationDataPayloadImpl(
+    _NotificationDataPayload(
       notificationId: json['notificationId'] as String?,
       id: json['id'] as String?,
       title: json['title'] as String?,
@@ -22,8 +22,8 @@ _$NotificationDataPayloadImpl _$$NotificationDataPayloadImplFromJson(
       payload: json['payload'] as Map<String, dynamic>?,
     );
 
-Map<String, dynamic> _$$NotificationDataPayloadImplToJson(
-        _$NotificationDataPayloadImpl instance) =>
+Map<String, dynamic> _$NotificationDataPayloadToJson(
+        _NotificationDataPayload instance) =>
     <String, dynamic>{
       'notificationId': instance.notificationId,
       'id': instance.id,
@@ -38,15 +38,15 @@ Map<String, dynamic> _$$NotificationDataPayloadImplToJson(
       'payload': instance.payload,
     };
 
-_$NotificationPayloadActionImpl _$$NotificationPayloadActionImplFromJson(
+_NotificationPayloadAction _$NotificationPayloadActionFromJson(
         Map<String, dynamic> json) =>
-    _$NotificationPayloadActionImpl(
+    _NotificationPayloadAction(
       method: json['method'] as String?,
       url: json['url'] as String?,
     );
 
-Map<String, dynamic> _$$NotificationPayloadActionImplToJson(
-        _$NotificationPayloadActionImpl instance) =>
+Map<String, dynamic> _$NotificationPayloadActionToJson(
+        _NotificationPayloadAction instance) =>
     <String, dynamic>{
       'method': instance.method,
       'url': instance.url,

@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,221 +10,32 @@ part of 'djangoflow_websocket_config.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$DjangoflowWebsocketConfig {
-  String get connectingMessage => throw _privateConstructorUsedError;
-  String get reConnectingMessage => throw _privateConstructorUsedError;
-  String get failedToSubscribeMessage => throw _privateConstructorUsedError;
-  String get connectionErrorMessage => throw _privateConstructorUsedError;
-  String get serverClosedConnectionMessage =>
-      throw _privateConstructorUsedError;
-  Duration get wSReconnectDelay => throw _privateConstructorUsedError;
-  Duration get wSCheckConnectionDelay => throw _privateConstructorUsedError;
+  String get connectingMessage;
+  String get reConnectingMessage;
+  String get failedToSubscribeMessage;
+  String get connectionErrorMessage;
+  String get serverClosedConnectionMessage;
+  Duration get wSReconnectDelay;
+  Duration get wSCheckConnectionDelay;
 
   /// Create a copy of DjangoflowWebsocketConfig
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $DjangoflowWebsocketConfigCopyWith<DjangoflowWebsocketConfig> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $DjangoflowWebsocketConfigCopyWith<$Res> {
-  factory $DjangoflowWebsocketConfigCopyWith(DjangoflowWebsocketConfig value,
-          $Res Function(DjangoflowWebsocketConfig) then) =
-      _$DjangoflowWebsocketConfigCopyWithImpl<$Res, DjangoflowWebsocketConfig>;
-  @useResult
-  $Res call(
-      {String connectingMessage,
-      String reConnectingMessage,
-      String failedToSubscribeMessage,
-      String connectionErrorMessage,
-      String serverClosedConnectionMessage,
-      Duration wSReconnectDelay,
-      Duration wSCheckConnectionDelay});
-}
-
-/// @nodoc
-class _$DjangoflowWebsocketConfigCopyWithImpl<$Res,
-        $Val extends DjangoflowWebsocketConfig>
-    implements $DjangoflowWebsocketConfigCopyWith<$Res> {
-  _$DjangoflowWebsocketConfigCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of DjangoflowWebsocketConfig
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? connectingMessage = null,
-    Object? reConnectingMessage = null,
-    Object? failedToSubscribeMessage = null,
-    Object? connectionErrorMessage = null,
-    Object? serverClosedConnectionMessage = null,
-    Object? wSReconnectDelay = null,
-    Object? wSCheckConnectionDelay = null,
-  }) {
-    return _then(_value.copyWith(
-      connectingMessage: null == connectingMessage
-          ? _value.connectingMessage
-          : connectingMessage // ignore: cast_nullable_to_non_nullable
-              as String,
-      reConnectingMessage: null == reConnectingMessage
-          ? _value.reConnectingMessage
-          : reConnectingMessage // ignore: cast_nullable_to_non_nullable
-              as String,
-      failedToSubscribeMessage: null == failedToSubscribeMessage
-          ? _value.failedToSubscribeMessage
-          : failedToSubscribeMessage // ignore: cast_nullable_to_non_nullable
-              as String,
-      connectionErrorMessage: null == connectionErrorMessage
-          ? _value.connectionErrorMessage
-          : connectionErrorMessage // ignore: cast_nullable_to_non_nullable
-              as String,
-      serverClosedConnectionMessage: null == serverClosedConnectionMessage
-          ? _value.serverClosedConnectionMessage
-          : serverClosedConnectionMessage // ignore: cast_nullable_to_non_nullable
-              as String,
-      wSReconnectDelay: null == wSReconnectDelay
-          ? _value.wSReconnectDelay
-          : wSReconnectDelay // ignore: cast_nullable_to_non_nullable
-              as Duration,
-      wSCheckConnectionDelay: null == wSCheckConnectionDelay
-          ? _value.wSCheckConnectionDelay
-          : wSCheckConnectionDelay // ignore: cast_nullable_to_non_nullable
-              as Duration,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$DjangoflowWebsocketConfigImplCopyWith<$Res>
-    implements $DjangoflowWebsocketConfigCopyWith<$Res> {
-  factory _$$DjangoflowWebsocketConfigImplCopyWith(
-          _$DjangoflowWebsocketConfigImpl value,
-          $Res Function(_$DjangoflowWebsocketConfigImpl) then) =
-      __$$DjangoflowWebsocketConfigImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String connectingMessage,
-      String reConnectingMessage,
-      String failedToSubscribeMessage,
-      String connectionErrorMessage,
-      String serverClosedConnectionMessage,
-      Duration wSReconnectDelay,
-      Duration wSCheckConnectionDelay});
-}
-
-/// @nodoc
-class __$$DjangoflowWebsocketConfigImplCopyWithImpl<$Res>
-    extends _$DjangoflowWebsocketConfigCopyWithImpl<$Res,
-        _$DjangoflowWebsocketConfigImpl>
-    implements _$$DjangoflowWebsocketConfigImplCopyWith<$Res> {
-  __$$DjangoflowWebsocketConfigImplCopyWithImpl(
-      _$DjangoflowWebsocketConfigImpl _value,
-      $Res Function(_$DjangoflowWebsocketConfigImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of DjangoflowWebsocketConfig
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? connectingMessage = null,
-    Object? reConnectingMessage = null,
-    Object? failedToSubscribeMessage = null,
-    Object? connectionErrorMessage = null,
-    Object? serverClosedConnectionMessage = null,
-    Object? wSReconnectDelay = null,
-    Object? wSCheckConnectionDelay = null,
-  }) {
-    return _then(_$DjangoflowWebsocketConfigImpl(
-      connectingMessage: null == connectingMessage
-          ? _value.connectingMessage
-          : connectingMessage // ignore: cast_nullable_to_non_nullable
-              as String,
-      reConnectingMessage: null == reConnectingMessage
-          ? _value.reConnectingMessage
-          : reConnectingMessage // ignore: cast_nullable_to_non_nullable
-              as String,
-      failedToSubscribeMessage: null == failedToSubscribeMessage
-          ? _value.failedToSubscribeMessage
-          : failedToSubscribeMessage // ignore: cast_nullable_to_non_nullable
-              as String,
-      connectionErrorMessage: null == connectionErrorMessage
-          ? _value.connectionErrorMessage
-          : connectionErrorMessage // ignore: cast_nullable_to_non_nullable
-              as String,
-      serverClosedConnectionMessage: null == serverClosedConnectionMessage
-          ? _value.serverClosedConnectionMessage
-          : serverClosedConnectionMessage // ignore: cast_nullable_to_non_nullable
-              as String,
-      wSReconnectDelay: null == wSReconnectDelay
-          ? _value.wSReconnectDelay
-          : wSReconnectDelay // ignore: cast_nullable_to_non_nullable
-              as Duration,
-      wSCheckConnectionDelay: null == wSCheckConnectionDelay
-          ? _value.wSCheckConnectionDelay
-          : wSCheckConnectionDelay // ignore: cast_nullable_to_non_nullable
-              as Duration,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$DjangoflowWebsocketConfigImpl implements _DjangoflowWebsocketConfig {
-  const _$DjangoflowWebsocketConfigImpl(
-      {this.connectingMessage = 'Connecting....',
-      this.reConnectingMessage = 'Re-connecting....',
-      this.failedToSubscribeMessage = 'failed to subscribe',
-      this.connectionErrorMessage = 'connection error',
-      this.serverClosedConnectionMessage = 'server closed connection',
-      this.wSReconnectDelay = const Duration(milliseconds: 5000),
-      this.wSCheckConnectionDelay = const Duration(milliseconds: 100)});
-
-  @override
-  @JsonKey()
-  final String connectingMessage;
-  @override
-  @JsonKey()
-  final String reConnectingMessage;
-  @override
-  @JsonKey()
-  final String failedToSubscribeMessage;
-  @override
-  @JsonKey()
-  final String connectionErrorMessage;
-  @override
-  @JsonKey()
-  final String serverClosedConnectionMessage;
-  @override
-  @JsonKey()
-  final Duration wSReconnectDelay;
-  @override
-  @JsonKey()
-  final Duration wSCheckConnectionDelay;
-
-  @override
-  String toString() {
-    return 'DjangoflowWebsocketConfig(connectingMessage: $connectingMessage, reConnectingMessage: $reConnectingMessage, failedToSubscribeMessage: $failedToSubscribeMessage, connectionErrorMessage: $connectionErrorMessage, serverClosedConnectionMessage: $serverClosedConnectionMessage, wSReconnectDelay: $wSReconnectDelay, wSCheckConnectionDelay: $wSCheckConnectionDelay)';
-  }
+      _$DjangoflowWebsocketConfigCopyWithImpl<DjangoflowWebsocketConfig>(
+          this as DjangoflowWebsocketConfig, _$identity);
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$DjangoflowWebsocketConfigImpl &&
+            other is DjangoflowWebsocketConfig &&
             (identical(other.connectingMessage, connectingMessage) ||
                 other.connectingMessage == connectingMessage) &&
             (identical(other.reConnectingMessage, reConnectingMessage) ||
@@ -254,45 +66,237 @@ class _$DjangoflowWebsocketConfigImpl implements _DjangoflowWebsocketConfig {
       wSReconnectDelay,
       wSCheckConnectionDelay);
 
+  @override
+  String toString() {
+    return 'DjangoflowWebsocketConfig(connectingMessage: $connectingMessage, reConnectingMessage: $reConnectingMessage, failedToSubscribeMessage: $failedToSubscribeMessage, connectionErrorMessage: $connectionErrorMessage, serverClosedConnectionMessage: $serverClosedConnectionMessage, wSReconnectDelay: $wSReconnectDelay, wSCheckConnectionDelay: $wSCheckConnectionDelay)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $DjangoflowWebsocketConfigCopyWith<$Res> {
+  factory $DjangoflowWebsocketConfigCopyWith(DjangoflowWebsocketConfig value,
+          $Res Function(DjangoflowWebsocketConfig) _then) =
+      _$DjangoflowWebsocketConfigCopyWithImpl;
+  @useResult
+  $Res call(
+      {String connectingMessage,
+      String reConnectingMessage,
+      String failedToSubscribeMessage,
+      String connectionErrorMessage,
+      String serverClosedConnectionMessage,
+      Duration wSReconnectDelay,
+      Duration wSCheckConnectionDelay});
+}
+
+/// @nodoc
+class _$DjangoflowWebsocketConfigCopyWithImpl<$Res>
+    implements $DjangoflowWebsocketConfigCopyWith<$Res> {
+  _$DjangoflowWebsocketConfigCopyWithImpl(this._self, this._then);
+
+  final DjangoflowWebsocketConfig _self;
+  final $Res Function(DjangoflowWebsocketConfig) _then;
+
   /// Create a copy of DjangoflowWebsocketConfig
   /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? connectingMessage = null,
+    Object? reConnectingMessage = null,
+    Object? failedToSubscribeMessage = null,
+    Object? connectionErrorMessage = null,
+    Object? serverClosedConnectionMessage = null,
+    Object? wSReconnectDelay = null,
+    Object? wSCheckConnectionDelay = null,
+  }) {
+    return _then(_self.copyWith(
+      connectingMessage: null == connectingMessage
+          ? _self.connectingMessage
+          : connectingMessage // ignore: cast_nullable_to_non_nullable
+              as String,
+      reConnectingMessage: null == reConnectingMessage
+          ? _self.reConnectingMessage
+          : reConnectingMessage // ignore: cast_nullable_to_non_nullable
+              as String,
+      failedToSubscribeMessage: null == failedToSubscribeMessage
+          ? _self.failedToSubscribeMessage
+          : failedToSubscribeMessage // ignore: cast_nullable_to_non_nullable
+              as String,
+      connectionErrorMessage: null == connectionErrorMessage
+          ? _self.connectionErrorMessage
+          : connectionErrorMessage // ignore: cast_nullable_to_non_nullable
+              as String,
+      serverClosedConnectionMessage: null == serverClosedConnectionMessage
+          ? _self.serverClosedConnectionMessage
+          : serverClosedConnectionMessage // ignore: cast_nullable_to_non_nullable
+              as String,
+      wSReconnectDelay: null == wSReconnectDelay
+          ? _self.wSReconnectDelay
+          : wSReconnectDelay // ignore: cast_nullable_to_non_nullable
+              as Duration,
+      wSCheckConnectionDelay: null == wSCheckConnectionDelay
+          ? _self.wSCheckConnectionDelay
+          : wSCheckConnectionDelay // ignore: cast_nullable_to_non_nullable
+              as Duration,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _DjangoflowWebsocketConfig implements DjangoflowWebsocketConfig {
+  const _DjangoflowWebsocketConfig(
+      {this.connectingMessage = 'Connecting....',
+      this.reConnectingMessage = 'Re-connecting....',
+      this.failedToSubscribeMessage = 'failed to subscribe',
+      this.connectionErrorMessage = 'connection error',
+      this.serverClosedConnectionMessage = 'server closed connection',
+      this.wSReconnectDelay = const Duration(milliseconds: 5000),
+      this.wSCheckConnectionDelay = const Duration(milliseconds: 100)});
+
+  @override
+  @JsonKey()
+  final String connectingMessage;
+  @override
+  @JsonKey()
+  final String reConnectingMessage;
+  @override
+  @JsonKey()
+  final String failedToSubscribeMessage;
+  @override
+  @JsonKey()
+  final String connectionErrorMessage;
+  @override
+  @JsonKey()
+  final String serverClosedConnectionMessage;
+  @override
+  @JsonKey()
+  final Duration wSReconnectDelay;
+  @override
+  @JsonKey()
+  final Duration wSCheckConnectionDelay;
+
+  /// Create a copy of DjangoflowWebsocketConfig
+  /// with the given fields replaced by the non-null parameter values.
+  @override
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$DjangoflowWebsocketConfigCopyWith<_DjangoflowWebsocketConfig>
+      get copyWith =>
+          __$DjangoflowWebsocketConfigCopyWithImpl<_DjangoflowWebsocketConfig>(
+              this, _$identity);
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _DjangoflowWebsocketConfig &&
+            (identical(other.connectingMessage, connectingMessage) ||
+                other.connectingMessage == connectingMessage) &&
+            (identical(other.reConnectingMessage, reConnectingMessage) ||
+                other.reConnectingMessage == reConnectingMessage) &&
+            (identical(
+                    other.failedToSubscribeMessage, failedToSubscribeMessage) ||
+                other.failedToSubscribeMessage == failedToSubscribeMessage) &&
+            (identical(other.connectionErrorMessage, connectionErrorMessage) ||
+                other.connectionErrorMessage == connectionErrorMessage) &&
+            (identical(other.serverClosedConnectionMessage,
+                    serverClosedConnectionMessage) ||
+                other.serverClosedConnectionMessage ==
+                    serverClosedConnectionMessage) &&
+            (identical(other.wSReconnectDelay, wSReconnectDelay) ||
+                other.wSReconnectDelay == wSReconnectDelay) &&
+            (identical(other.wSCheckConnectionDelay, wSCheckConnectionDelay) ||
+                other.wSCheckConnectionDelay == wSCheckConnectionDelay));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      connectingMessage,
+      reConnectingMessage,
+      failedToSubscribeMessage,
+      connectionErrorMessage,
+      serverClosedConnectionMessage,
+      wSReconnectDelay,
+      wSCheckConnectionDelay);
+
+  @override
+  String toString() {
+    return 'DjangoflowWebsocketConfig(connectingMessage: $connectingMessage, reConnectingMessage: $reConnectingMessage, failedToSubscribeMessage: $failedToSubscribeMessage, connectionErrorMessage: $connectionErrorMessage, serverClosedConnectionMessage: $serverClosedConnectionMessage, wSReconnectDelay: $wSReconnectDelay, wSCheckConnectionDelay: $wSCheckConnectionDelay)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$DjangoflowWebsocketConfigCopyWith<$Res>
+    implements $DjangoflowWebsocketConfigCopyWith<$Res> {
+  factory _$DjangoflowWebsocketConfigCopyWith(_DjangoflowWebsocketConfig value,
+          $Res Function(_DjangoflowWebsocketConfig) _then) =
+      __$DjangoflowWebsocketConfigCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String connectingMessage,
+      String reConnectingMessage,
+      String failedToSubscribeMessage,
+      String connectionErrorMessage,
+      String serverClosedConnectionMessage,
+      Duration wSReconnectDelay,
+      Duration wSCheckConnectionDelay});
+}
+
+/// @nodoc
+class __$DjangoflowWebsocketConfigCopyWithImpl<$Res>
+    implements _$DjangoflowWebsocketConfigCopyWith<$Res> {
+  __$DjangoflowWebsocketConfigCopyWithImpl(this._self, this._then);
+
+  final _DjangoflowWebsocketConfig _self;
+  final $Res Function(_DjangoflowWebsocketConfig) _then;
+
+  /// Create a copy of DjangoflowWebsocketConfig
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  _$$DjangoflowWebsocketConfigImplCopyWith<_$DjangoflowWebsocketConfigImpl>
-      get copyWith => __$$DjangoflowWebsocketConfigImplCopyWithImpl<
-          _$DjangoflowWebsocketConfigImpl>(this, _$identity);
+  $Res call({
+    Object? connectingMessage = null,
+    Object? reConnectingMessage = null,
+    Object? failedToSubscribeMessage = null,
+    Object? connectionErrorMessage = null,
+    Object? serverClosedConnectionMessage = null,
+    Object? wSReconnectDelay = null,
+    Object? wSCheckConnectionDelay = null,
+  }) {
+    return _then(_DjangoflowWebsocketConfig(
+      connectingMessage: null == connectingMessage
+          ? _self.connectingMessage
+          : connectingMessage // ignore: cast_nullable_to_non_nullable
+              as String,
+      reConnectingMessage: null == reConnectingMessage
+          ? _self.reConnectingMessage
+          : reConnectingMessage // ignore: cast_nullable_to_non_nullable
+              as String,
+      failedToSubscribeMessage: null == failedToSubscribeMessage
+          ? _self.failedToSubscribeMessage
+          : failedToSubscribeMessage // ignore: cast_nullable_to_non_nullable
+              as String,
+      connectionErrorMessage: null == connectionErrorMessage
+          ? _self.connectionErrorMessage
+          : connectionErrorMessage // ignore: cast_nullable_to_non_nullable
+              as String,
+      serverClosedConnectionMessage: null == serverClosedConnectionMessage
+          ? _self.serverClosedConnectionMessage
+          : serverClosedConnectionMessage // ignore: cast_nullable_to_non_nullable
+              as String,
+      wSReconnectDelay: null == wSReconnectDelay
+          ? _self.wSReconnectDelay
+          : wSReconnectDelay // ignore: cast_nullable_to_non_nullable
+              as Duration,
+      wSCheckConnectionDelay: null == wSCheckConnectionDelay
+          ? _self.wSCheckConnectionDelay
+          : wSCheckConnectionDelay // ignore: cast_nullable_to_non_nullable
+              as Duration,
+    ));
+  }
 }
 
-abstract class _DjangoflowWebsocketConfig implements DjangoflowWebsocketConfig {
-  const factory _DjangoflowWebsocketConfig(
-      {final String connectingMessage,
-      final String reConnectingMessage,
-      final String failedToSubscribeMessage,
-      final String connectionErrorMessage,
-      final String serverClosedConnectionMessage,
-      final Duration wSReconnectDelay,
-      final Duration wSCheckConnectionDelay}) = _$DjangoflowWebsocketConfigImpl;
-
-  @override
-  String get connectingMessage;
-  @override
-  String get reConnectingMessage;
-  @override
-  String get failedToSubscribeMessage;
-  @override
-  String get connectionErrorMessage;
-  @override
-  String get serverClosedConnectionMessage;
-  @override
-  Duration get wSReconnectDelay;
-  @override
-  Duration get wSCheckConnectionDelay;
-
-  /// Create a copy of DjangoflowWebsocketConfig
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$DjangoflowWebsocketConfigImplCopyWith<_$DjangoflowWebsocketConfigImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
+// dart format on

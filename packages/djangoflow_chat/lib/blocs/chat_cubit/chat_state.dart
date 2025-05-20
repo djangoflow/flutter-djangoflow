@@ -5,7 +5,7 @@ part 'chat_state.freezed.dart';
 part 'chat_state.g.dart';
 
 @freezed
-class ChatState with _$ChatState {
+abstract class ChatState with _$ChatState {
   const factory ChatState({
     required int roomId,
     ChatRoom? room,

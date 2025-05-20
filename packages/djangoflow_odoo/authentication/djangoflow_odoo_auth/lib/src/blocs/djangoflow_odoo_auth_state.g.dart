@@ -6,9 +6,9 @@ part of 'djangoflow_odoo_auth_state.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$DjangoflowOdooAuthStateImpl _$$DjangoflowOdooAuthStateImplFromJson(
+_DjangoflowOdooAuthState _$DjangoflowOdooAuthStateFromJson(
         Map<String, dynamic> json) =>
-    _$DjangoflowOdooAuthStateImpl(
+    _DjangoflowOdooAuthState(
       status: $enumDecodeNullable(_$AuthStatusEnumMap, json['status']) ??
           AuthStatus.initial,
       errorMessage: json['errorMessage'] as String?,
@@ -20,8 +20,8 @@ _$DjangoflowOdooAuthStateImpl _$$DjangoflowOdooAuthStateImplFromJson(
           (json['dbList'] as List<dynamic>?)?.map((e) => e as String).toList(),
     );
 
-Map<String, dynamic> _$$DjangoflowOdooAuthStateImplToJson(
-        _$DjangoflowOdooAuthStateImpl instance) =>
+Map<String, dynamic> _$DjangoflowOdooAuthStateToJson(
+        _DjangoflowOdooAuthState instance) =>
     <String, dynamic>{
       'status': _$AuthStatusEnumMap[instance.status]!,
       'errorMessage': instance.errorMessage,

@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,145 +10,83 @@ part of 'notification_data_payload.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-NotificationDataPayload _$NotificationDataPayloadFromJson(
-    Map<String, dynamic> json) {
-  return _NotificationDataPayload.fromJson(json);
-}
 
 /// @nodoc
 mixin _$NotificationDataPayload {
-  String? get notificationId => throw _privateConstructorUsedError;
-  String? get id => throw _privateConstructorUsedError;
-  String? get title => throw _privateConstructorUsedError;
-  String? get actionCategoryId => throw _privateConstructorUsedError;
-  String? get body => throw _privateConstructorUsedError;
-  String? get actions => throw _privateConstructorUsedError;
-  String? get url => throw _privateConstructorUsedError;
-  String? get dismissed => throw _privateConstructorUsedError;
-  String? get multiline => throw _privateConstructorUsedError;
-  String? get image => throw _privateConstructorUsedError;
-  Map<String, dynamic>? get payload => throw _privateConstructorUsedError;
-
-  /// Serializes this NotificationDataPayload to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  String? get notificationId;
+  String? get id;
+  String? get title;
+  String? get actionCategoryId;
+  String? get body;
+  String? get actions;
+  String? get url;
+  String? get dismissed;
+  String? get multiline;
+  String? get image;
+  Map<String, dynamic>? get payload;
 
   /// Create a copy of NotificationDataPayload
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $NotificationDataPayloadCopyWith<NotificationDataPayload> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $NotificationDataPayloadCopyWith<$Res> {
-  factory $NotificationDataPayloadCopyWith(NotificationDataPayload value,
-          $Res Function(NotificationDataPayload) then) =
-      _$NotificationDataPayloadCopyWithImpl<$Res, NotificationDataPayload>;
-  @useResult
-  $Res call(
-      {String? notificationId,
-      String? id,
-      String? title,
-      String? actionCategoryId,
-      String? body,
-      String? actions,
-      String? url,
-      String? dismissed,
-      String? multiline,
-      String? image,
-      Map<String, dynamic>? payload});
-}
-
-/// @nodoc
-class _$NotificationDataPayloadCopyWithImpl<$Res,
-        $Val extends NotificationDataPayload>
-    implements $NotificationDataPayloadCopyWith<$Res> {
-  _$NotificationDataPayloadCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of NotificationDataPayload
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $NotificationDataPayloadCopyWith<NotificationDataPayload> get copyWith =>
+      _$NotificationDataPayloadCopyWithImpl<NotificationDataPayload>(
+          this as NotificationDataPayload, _$identity);
+
+  /// Serializes this NotificationDataPayload to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? notificationId = freezed,
-    Object? id = freezed,
-    Object? title = freezed,
-    Object? actionCategoryId = freezed,
-    Object? body = freezed,
-    Object? actions = freezed,
-    Object? url = freezed,
-    Object? dismissed = freezed,
-    Object? multiline = freezed,
-    Object? image = freezed,
-    Object? payload = freezed,
-  }) {
-    return _then(_value.copyWith(
-      notificationId: freezed == notificationId
-          ? _value.notificationId
-          : notificationId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      id: freezed == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      title: freezed == title
-          ? _value.title
-          : title // ignore: cast_nullable_to_non_nullable
-              as String?,
-      actionCategoryId: freezed == actionCategoryId
-          ? _value.actionCategoryId
-          : actionCategoryId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      body: freezed == body
-          ? _value.body
-          : body // ignore: cast_nullable_to_non_nullable
-              as String?,
-      actions: freezed == actions
-          ? _value.actions
-          : actions // ignore: cast_nullable_to_non_nullable
-              as String?,
-      url: freezed == url
-          ? _value.url
-          : url // ignore: cast_nullable_to_non_nullable
-              as String?,
-      dismissed: freezed == dismissed
-          ? _value.dismissed
-          : dismissed // ignore: cast_nullable_to_non_nullable
-              as String?,
-      multiline: freezed == multiline
-          ? _value.multiline
-          : multiline // ignore: cast_nullable_to_non_nullable
-              as String?,
-      image: freezed == image
-          ? _value.image
-          : image // ignore: cast_nullable_to_non_nullable
-              as String?,
-      payload: freezed == payload
-          ? _value.payload
-          : payload // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is NotificationDataPayload &&
+            (identical(other.notificationId, notificationId) ||
+                other.notificationId == notificationId) &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.title, title) || other.title == title) &&
+            (identical(other.actionCategoryId, actionCategoryId) ||
+                other.actionCategoryId == actionCategoryId) &&
+            (identical(other.body, body) || other.body == body) &&
+            (identical(other.actions, actions) || other.actions == actions) &&
+            (identical(other.url, url) || other.url == url) &&
+            (identical(other.dismissed, dismissed) ||
+                other.dismissed == dismissed) &&
+            (identical(other.multiline, multiline) ||
+                other.multiline == multiline) &&
+            (identical(other.image, image) || other.image == image) &&
+            const DeepCollectionEquality().equals(other.payload, payload));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      notificationId,
+      id,
+      title,
+      actionCategoryId,
+      body,
+      actions,
+      url,
+      dismissed,
+      multiline,
+      image,
+      const DeepCollectionEquality().hash(payload));
+
+  @override
+  String toString() {
+    return 'NotificationDataPayload(notificationId: $notificationId, id: $id, title: $title, actionCategoryId: $actionCategoryId, body: $body, actions: $actions, url: $url, dismissed: $dismissed, multiline: $multiline, image: $image, payload: $payload)';
   }
 }
 
 /// @nodoc
-abstract class _$$NotificationDataPayloadImplCopyWith<$Res>
-    implements $NotificationDataPayloadCopyWith<$Res> {
-  factory _$$NotificationDataPayloadImplCopyWith(
-          _$NotificationDataPayloadImpl value,
-          $Res Function(_$NotificationDataPayloadImpl) then) =
-      __$$NotificationDataPayloadImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $NotificationDataPayloadCopyWith<$Res> {
+  factory $NotificationDataPayloadCopyWith(NotificationDataPayload value,
+          $Res Function(NotificationDataPayload) _then) =
+      _$NotificationDataPayloadCopyWithImpl;
   @useResult
   $Res call(
       {String? notificationId,
@@ -164,14 +103,12 @@ abstract class _$$NotificationDataPayloadImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$NotificationDataPayloadImplCopyWithImpl<$Res>
-    extends _$NotificationDataPayloadCopyWithImpl<$Res,
-        _$NotificationDataPayloadImpl>
-    implements _$$NotificationDataPayloadImplCopyWith<$Res> {
-  __$$NotificationDataPayloadImplCopyWithImpl(
-      _$NotificationDataPayloadImpl _value,
-      $Res Function(_$NotificationDataPayloadImpl) _then)
-      : super(_value, _then);
+class _$NotificationDataPayloadCopyWithImpl<$Res>
+    implements $NotificationDataPayloadCopyWith<$Res> {
+  _$NotificationDataPayloadCopyWithImpl(this._self, this._then);
+
+  final NotificationDataPayload _self;
+  final $Res Function(NotificationDataPayload) _then;
 
   /// Create a copy of NotificationDataPayload
   /// with the given fields replaced by the non-null parameter values.
@@ -190,49 +127,49 @@ class __$$NotificationDataPayloadImplCopyWithImpl<$Res>
     Object? image = freezed,
     Object? payload = freezed,
   }) {
-    return _then(_$NotificationDataPayloadImpl(
+    return _then(_self.copyWith(
       notificationId: freezed == notificationId
-          ? _value.notificationId
+          ? _self.notificationId
           : notificationId // ignore: cast_nullable_to_non_nullable
               as String?,
       id: freezed == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
       title: freezed == title
-          ? _value.title
+          ? _self.title
           : title // ignore: cast_nullable_to_non_nullable
               as String?,
       actionCategoryId: freezed == actionCategoryId
-          ? _value.actionCategoryId
+          ? _self.actionCategoryId
           : actionCategoryId // ignore: cast_nullable_to_non_nullable
               as String?,
       body: freezed == body
-          ? _value.body
+          ? _self.body
           : body // ignore: cast_nullable_to_non_nullable
               as String?,
       actions: freezed == actions
-          ? _value.actions
+          ? _self.actions
           : actions // ignore: cast_nullable_to_non_nullable
               as String?,
       url: freezed == url
-          ? _value.url
+          ? _self.url
           : url // ignore: cast_nullable_to_non_nullable
               as String?,
       dismissed: freezed == dismissed
-          ? _value.dismissed
+          ? _self.dismissed
           : dismissed // ignore: cast_nullable_to_non_nullable
               as String?,
       multiline: freezed == multiline
-          ? _value.multiline
+          ? _self.multiline
           : multiline // ignore: cast_nullable_to_non_nullable
               as String?,
       image: freezed == image
-          ? _value.image
+          ? _self.image
           : image // ignore: cast_nullable_to_non_nullable
               as String?,
       payload: freezed == payload
-          ? _value._payload
+          ? _self.payload
           : payload // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
     ));
@@ -241,8 +178,8 @@ class __$$NotificationDataPayloadImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$NotificationDataPayloadImpl implements _NotificationDataPayload {
-  const _$NotificationDataPayloadImpl(
+class _NotificationDataPayload implements NotificationDataPayload {
+  const _NotificationDataPayload(
       {this.notificationId,
       this.id,
       this.title,
@@ -255,9 +192,8 @@ class _$NotificationDataPayloadImpl implements _NotificationDataPayload {
       this.image,
       final Map<String, dynamic>? payload})
       : _payload = payload;
-
-  factory _$NotificationDataPayloadImpl.fromJson(Map<String, dynamic> json) =>
-      _$$NotificationDataPayloadImplFromJson(json);
+  factory _NotificationDataPayload.fromJson(Map<String, dynamic> json) =>
+      _$NotificationDataPayloadFromJson(json);
 
   @override
   final String? notificationId;
@@ -289,16 +225,27 @@ class _$NotificationDataPayloadImpl implements _NotificationDataPayload {
     return EqualUnmodifiableMapView(value);
   }
 
+  /// Create a copy of NotificationDataPayload
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'NotificationDataPayload(notificationId: $notificationId, id: $id, title: $title, actionCategoryId: $actionCategoryId, body: $body, actions: $actions, url: $url, dismissed: $dismissed, multiline: $multiline, image: $image, payload: $payload)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$NotificationDataPayloadCopyWith<_NotificationDataPayload> get copyWith =>
+      __$NotificationDataPayloadCopyWithImpl<_NotificationDataPayload>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$NotificationDataPayloadToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$NotificationDataPayloadImpl &&
+            other is _NotificationDataPayload &&
             (identical(other.notificationId, notificationId) ||
                 other.notificationId == notificationId) &&
             (identical(other.id, id) || other.id == id) &&
@@ -332,198 +279,129 @@ class _$NotificationDataPayloadImpl implements _NotificationDataPayload {
       image,
       const DeepCollectionEquality().hash(_payload));
 
-  /// Create a copy of NotificationDataPayload
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$NotificationDataPayloadImplCopyWith<_$NotificationDataPayloadImpl>
-      get copyWith => __$$NotificationDataPayloadImplCopyWithImpl<
-          _$NotificationDataPayloadImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$NotificationDataPayloadImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _NotificationDataPayload implements NotificationDataPayload {
-  const factory _NotificationDataPayload(
-      {final String? notificationId,
-      final String? id,
-      final String? title,
-      final String? actionCategoryId,
-      final String? body,
-      final String? actions,
-      final String? url,
-      final String? dismissed,
-      final String? multiline,
-      final String? image,
-      final Map<String, dynamic>? payload}) = _$NotificationDataPayloadImpl;
-
-  factory _NotificationDataPayload.fromJson(Map<String, dynamic> json) =
-      _$NotificationDataPayloadImpl.fromJson;
-
-  @override
-  String? get notificationId;
-  @override
-  String? get id;
-  @override
-  String? get title;
-  @override
-  String? get actionCategoryId;
-  @override
-  String? get body;
-  @override
-  String? get actions;
-  @override
-  String? get url;
-  @override
-  String? get dismissed;
-  @override
-  String? get multiline;
-  @override
-  String? get image;
-  @override
-  Map<String, dynamic>? get payload;
-
-  /// Create a copy of NotificationDataPayload
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$NotificationDataPayloadImplCopyWith<_$NotificationDataPayloadImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-NotificationPayloadAction _$NotificationPayloadActionFromJson(
-    Map<String, dynamic> json) {
-  return _NotificationPayloadAction.fromJson(json);
-}
-
-/// @nodoc
-mixin _$NotificationPayloadAction {
-  String? get method => throw _privateConstructorUsedError;
-  String? get url => throw _privateConstructorUsedError;
-
-  /// Serializes this NotificationPayloadAction to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of NotificationPayloadAction
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $NotificationPayloadActionCopyWith<NotificationPayloadAction> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $NotificationPayloadActionCopyWith<$Res> {
-  factory $NotificationPayloadActionCopyWith(NotificationPayloadAction value,
-          $Res Function(NotificationPayloadAction) then) =
-      _$NotificationPayloadActionCopyWithImpl<$Res, NotificationPayloadAction>;
-  @useResult
-  $Res call({String? method, String? url});
-}
-
-/// @nodoc
-class _$NotificationPayloadActionCopyWithImpl<$Res,
-        $Val extends NotificationPayloadAction>
-    implements $NotificationPayloadActionCopyWith<$Res> {
-  _$NotificationPayloadActionCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of NotificationPayloadAction
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? method = freezed,
-    Object? url = freezed,
-  }) {
-    return _then(_value.copyWith(
-      method: freezed == method
-          ? _value.method
-          : method // ignore: cast_nullable_to_non_nullable
-              as String?,
-      url: freezed == url
-          ? _value.url
-          : url // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
+  String toString() {
+    return 'NotificationDataPayload(notificationId: $notificationId, id: $id, title: $title, actionCategoryId: $actionCategoryId, body: $body, actions: $actions, url: $url, dismissed: $dismissed, multiline: $multiline, image: $image, payload: $payload)';
   }
 }
 
 /// @nodoc
-abstract class _$$NotificationPayloadActionImplCopyWith<$Res>
-    implements $NotificationPayloadActionCopyWith<$Res> {
-  factory _$$NotificationPayloadActionImplCopyWith(
-          _$NotificationPayloadActionImpl value,
-          $Res Function(_$NotificationPayloadActionImpl) then) =
-      __$$NotificationPayloadActionImplCopyWithImpl<$Res>;
+abstract mixin class _$NotificationDataPayloadCopyWith<$Res>
+    implements $NotificationDataPayloadCopyWith<$Res> {
+  factory _$NotificationDataPayloadCopyWith(_NotificationDataPayload value,
+          $Res Function(_NotificationDataPayload) _then) =
+      __$NotificationDataPayloadCopyWithImpl;
   @override
   @useResult
-  $Res call({String? method, String? url});
+  $Res call(
+      {String? notificationId,
+      String? id,
+      String? title,
+      String? actionCategoryId,
+      String? body,
+      String? actions,
+      String? url,
+      String? dismissed,
+      String? multiline,
+      String? image,
+      Map<String, dynamic>? payload});
 }
 
 /// @nodoc
-class __$$NotificationPayloadActionImplCopyWithImpl<$Res>
-    extends _$NotificationPayloadActionCopyWithImpl<$Res,
-        _$NotificationPayloadActionImpl>
-    implements _$$NotificationPayloadActionImplCopyWith<$Res> {
-  __$$NotificationPayloadActionImplCopyWithImpl(
-      _$NotificationPayloadActionImpl _value,
-      $Res Function(_$NotificationPayloadActionImpl) _then)
-      : super(_value, _then);
+class __$NotificationDataPayloadCopyWithImpl<$Res>
+    implements _$NotificationDataPayloadCopyWith<$Res> {
+  __$NotificationDataPayloadCopyWithImpl(this._self, this._then);
 
-  /// Create a copy of NotificationPayloadAction
+  final _NotificationDataPayload _self;
+  final $Res Function(_NotificationDataPayload) _then;
+
+  /// Create a copy of NotificationDataPayload
   /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
   @override
+  @pragma('vm:prefer-inline')
   $Res call({
-    Object? method = freezed,
+    Object? notificationId = freezed,
+    Object? id = freezed,
+    Object? title = freezed,
+    Object? actionCategoryId = freezed,
+    Object? body = freezed,
+    Object? actions = freezed,
     Object? url = freezed,
+    Object? dismissed = freezed,
+    Object? multiline = freezed,
+    Object? image = freezed,
+    Object? payload = freezed,
   }) {
-    return _then(_$NotificationPayloadActionImpl(
-      method: freezed == method
-          ? _value.method
-          : method // ignore: cast_nullable_to_non_nullable
+    return _then(_NotificationDataPayload(
+      notificationId: freezed == notificationId
+          ? _self.notificationId
+          : notificationId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      id: freezed == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      title: freezed == title
+          ? _self.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String?,
+      actionCategoryId: freezed == actionCategoryId
+          ? _self.actionCategoryId
+          : actionCategoryId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      body: freezed == body
+          ? _self.body
+          : body // ignore: cast_nullable_to_non_nullable
+              as String?,
+      actions: freezed == actions
+          ? _self.actions
+          : actions // ignore: cast_nullable_to_non_nullable
               as String?,
       url: freezed == url
-          ? _value.url
+          ? _self.url
           : url // ignore: cast_nullable_to_non_nullable
               as String?,
+      dismissed: freezed == dismissed
+          ? _self.dismissed
+          : dismissed // ignore: cast_nullable_to_non_nullable
+              as String?,
+      multiline: freezed == multiline
+          ? _self.multiline
+          : multiline // ignore: cast_nullable_to_non_nullable
+              as String?,
+      image: freezed == image
+          ? _self.image
+          : image // ignore: cast_nullable_to_non_nullable
+              as String?,
+      payload: freezed == payload
+          ? _self._payload
+          : payload // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
     ));
   }
 }
 
 /// @nodoc
-@JsonSerializable()
-class _$NotificationPayloadActionImpl implements _NotificationPayloadAction {
-  const _$NotificationPayloadActionImpl({this.method, this.url});
+mixin _$NotificationPayloadAction {
+  String? get method;
+  String? get url;
 
-  factory _$NotificationPayloadActionImpl.fromJson(Map<String, dynamic> json) =>
-      _$$NotificationPayloadActionImplFromJson(json);
+  /// Create a copy of NotificationPayloadAction
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $NotificationPayloadActionCopyWith<NotificationPayloadAction> get copyWith =>
+      _$NotificationPayloadActionCopyWithImpl<NotificationPayloadAction>(
+          this as NotificationPayloadAction, _$identity);
 
-  @override
-  final String? method;
-  @override
-  final String? url;
-
-  @override
-  String toString() {
-    return 'NotificationPayloadAction(method: $method, url: $url)';
-  }
+  /// Serializes this NotificationPayloadAction to a JSON map.
+  Map<String, dynamic> toJson();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$NotificationPayloadActionImpl &&
+            other is NotificationPayloadAction &&
             (identical(other.method, method) || other.method == method) &&
             (identical(other.url, url) || other.url == url));
   }
@@ -532,40 +410,136 @@ class _$NotificationPayloadActionImpl implements _NotificationPayloadAction {
   @override
   int get hashCode => Object.hash(runtimeType, method, url);
 
-  /// Create a copy of NotificationPayloadAction
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$NotificationPayloadActionImplCopyWith<_$NotificationPayloadActionImpl>
-      get copyWith => __$$NotificationPayloadActionImplCopyWithImpl<
-          _$NotificationPayloadActionImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$NotificationPayloadActionImplToJson(
-      this,
-    );
+  String toString() {
+    return 'NotificationPayloadAction(method: $method, url: $url)';
   }
 }
 
-abstract class _NotificationPayloadAction implements NotificationPayloadAction {
-  const factory _NotificationPayloadAction(
-      {final String? method,
-      final String? url}) = _$NotificationPayloadActionImpl;
+/// @nodoc
+abstract mixin class $NotificationPayloadActionCopyWith<$Res> {
+  factory $NotificationPayloadActionCopyWith(NotificationPayloadAction value,
+          $Res Function(NotificationPayloadAction) _then) =
+      _$NotificationPayloadActionCopyWithImpl;
+  @useResult
+  $Res call({String? method, String? url});
+}
 
-  factory _NotificationPayloadAction.fromJson(Map<String, dynamic> json) =
-      _$NotificationPayloadActionImpl.fromJson;
+/// @nodoc
+class _$NotificationPayloadActionCopyWithImpl<$Res>
+    implements $NotificationPayloadActionCopyWith<$Res> {
+  _$NotificationPayloadActionCopyWithImpl(this._self, this._then);
+
+  final NotificationPayloadAction _self;
+  final $Res Function(NotificationPayloadAction) _then;
+
+  /// Create a copy of NotificationPayloadAction
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? method = freezed,
+    Object? url = freezed,
+  }) {
+    return _then(_self.copyWith(
+      method: freezed == method
+          ? _self.method
+          : method // ignore: cast_nullable_to_non_nullable
+              as String?,
+      url: freezed == url
+          ? _self.url
+          : url // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _NotificationPayloadAction implements NotificationPayloadAction {
+  const _NotificationPayloadAction({this.method, this.url});
+  factory _NotificationPayloadAction.fromJson(Map<String, dynamic> json) =>
+      _$NotificationPayloadActionFromJson(json);
 
   @override
-  String? get method;
+  final String? method;
   @override
-  String? get url;
+  final String? url;
 
   /// Create a copy of NotificationPayloadAction
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$NotificationPayloadActionImplCopyWith<_$NotificationPayloadActionImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  _$NotificationPayloadActionCopyWith<_NotificationPayloadAction>
+      get copyWith =>
+          __$NotificationPayloadActionCopyWithImpl<_NotificationPayloadAction>(
+              this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$NotificationPayloadActionToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _NotificationPayloadAction &&
+            (identical(other.method, method) || other.method == method) &&
+            (identical(other.url, url) || other.url == url));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, method, url);
+
+  @override
+  String toString() {
+    return 'NotificationPayloadAction(method: $method, url: $url)';
+  }
 }
+
+/// @nodoc
+abstract mixin class _$NotificationPayloadActionCopyWith<$Res>
+    implements $NotificationPayloadActionCopyWith<$Res> {
+  factory _$NotificationPayloadActionCopyWith(_NotificationPayloadAction value,
+          $Res Function(_NotificationPayloadAction) _then) =
+      __$NotificationPayloadActionCopyWithImpl;
+  @override
+  @useResult
+  $Res call({String? method, String? url});
+}
+
+/// @nodoc
+class __$NotificationPayloadActionCopyWithImpl<$Res>
+    implements _$NotificationPayloadActionCopyWith<$Res> {
+  __$NotificationPayloadActionCopyWithImpl(this._self, this._then);
+
+  final _NotificationPayloadAction _self;
+  final $Res Function(_NotificationPayloadAction) _then;
+
+  /// Create a copy of NotificationPayloadAction
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? method = freezed,
+    Object? url = freezed,
+  }) {
+    return _then(_NotificationPayloadAction(
+      method: freezed == method
+          ? _self.method
+          : method // ignore: cast_nullable_to_non_nullable
+              as String?,
+      url: freezed == url
+          ? _self.url
+          : url // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+// dart format on
