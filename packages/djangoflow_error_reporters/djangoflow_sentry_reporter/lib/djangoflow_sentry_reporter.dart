@@ -1,3 +1,3 @@
-library djangoflow_sentry_reporter;
+library;
 
 export 'src/data/sentry_reporter.dart';

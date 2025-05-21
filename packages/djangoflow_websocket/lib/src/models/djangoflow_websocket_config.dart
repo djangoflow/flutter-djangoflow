@@ -3,7 +3,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'djangoflow_websocket_config.freezed.dart';
 
 @freezed
-class DjangoflowWebsocketConfig with _$DjangoflowWebsocketConfig {
+abstract class DjangoflowWebsocketConfig with _$DjangoflowWebsocketConfig {
   const factory DjangoflowWebsocketConfig({
     @Default('Connecting....') String connectingMessage,
     @Default('Re-connecting....') String reConnectingMessage,

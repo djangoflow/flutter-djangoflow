@@ -1,4 +1,4 @@
-library djangoflow_local_notification;
+library;
 
 export 'src/blocs/action_category_cubit.dart';
 export 'src/blocs/local_notification_cubit.dart';

@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,11 +10,8 @@ part of 'local_notification_state.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
 LocalNotificationState _$LocalNotificationStateFromJson(
     Map<String, dynamic> json) {
   return _DjangoflowLocalNotificationState.fromJson(json);
@@ -23,124 +21,24 @@ LocalNotificationState _$LocalNotificationStateFromJson(
 mixin _$LocalNotificationState {
 // ignore: invalid_annotation_target
   @JsonKey(includeToJson: false, includeFromJson: false)
-  NotificationResponse? get notificationResponse =>
-      throw _privateConstructorUsedError;
-
-  /// Serializes this LocalNotificationState to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  NotificationResponse? get notificationResponse;
 
   /// Create a copy of LocalNotificationState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $LocalNotificationStateCopyWith<LocalNotificationState> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+      _$LocalNotificationStateCopyWithImpl<LocalNotificationState>(
+          this as LocalNotificationState, _$identity);
 
-/// @nodoc
-abstract class $LocalNotificationStateCopyWith<$Res> {
-  factory $LocalNotificationStateCopyWith(LocalNotificationState value,
-          $Res Function(LocalNotificationState) then) =
-      _$LocalNotificationStateCopyWithImpl<$Res, LocalNotificationState>;
-  @useResult
-  $Res call(
-      {@JsonKey(includeToJson: false, includeFromJson: false)
-      NotificationResponse? notificationResponse});
-}
-
-/// @nodoc
-class _$LocalNotificationStateCopyWithImpl<$Res,
-        $Val extends LocalNotificationState>
-    implements $LocalNotificationStateCopyWith<$Res> {
-  _$LocalNotificationStateCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of LocalNotificationState
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? notificationResponse = freezed,
-  }) {
-    return _then(_value.copyWith(
-      notificationResponse: freezed == notificationResponse
-          ? _value.notificationResponse
-          : notificationResponse // ignore: cast_nullable_to_non_nullable
-              as NotificationResponse?,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$DjangoflowLocalNotificationStateImplCopyWith<$Res>
-    implements $LocalNotificationStateCopyWith<$Res> {
-  factory _$$DjangoflowLocalNotificationStateImplCopyWith(
-          _$DjangoflowLocalNotificationStateImpl value,
-          $Res Function(_$DjangoflowLocalNotificationStateImpl) then) =
-      __$$DjangoflowLocalNotificationStateImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {@JsonKey(includeToJson: false, includeFromJson: false)
-      NotificationResponse? notificationResponse});
-}
-
-/// @nodoc
-class __$$DjangoflowLocalNotificationStateImplCopyWithImpl<$Res>
-    extends _$LocalNotificationStateCopyWithImpl<$Res,
-        _$DjangoflowLocalNotificationStateImpl>
-    implements _$$DjangoflowLocalNotificationStateImplCopyWith<$Res> {
-  __$$DjangoflowLocalNotificationStateImplCopyWithImpl(
-      _$DjangoflowLocalNotificationStateImpl _value,
-      $Res Function(_$DjangoflowLocalNotificationStateImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of LocalNotificationState
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? notificationResponse = freezed,
-  }) {
-    return _then(_$DjangoflowLocalNotificationStateImpl(
-      notificationResponse: freezed == notificationResponse
-          ? _value.notificationResponse
-          : notificationResponse // ignore: cast_nullable_to_non_nullable
-              as NotificationResponse?,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$DjangoflowLocalNotificationStateImpl
-    implements _DjangoflowLocalNotificationState {
-  const _$DjangoflowLocalNotificationStateImpl(
-      {@JsonKey(includeToJson: false, includeFromJson: false)
-      this.notificationResponse});
-
-  factory _$DjangoflowLocalNotificationStateImpl.fromJson(
-          Map<String, dynamic> json) =>
-      _$$DjangoflowLocalNotificationStateImplFromJson(json);
-
-// ignore: invalid_annotation_target
-  @override
-  @JsonKey(includeToJson: false, includeFromJson: false)
-  final NotificationResponse? notificationResponse;
-
-  @override
-  String toString() {
-    return 'LocalNotificationState(notificationResponse: $notificationResponse)';
-  }
+  /// Serializes this LocalNotificationState to a JSON map.
+  Map<String, dynamic> toJson();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$DjangoflowLocalNotificationStateImpl &&
+            other is LocalNotificationState &&
             (identical(other.notificationResponse, notificationResponse) ||
                 other.notificationResponse == notificationResponse));
   }
@@ -149,45 +47,133 @@ class _$DjangoflowLocalNotificationStateImpl
   @override
   int get hashCode => Object.hash(runtimeType, notificationResponse);
 
-  /// Create a copy of LocalNotificationState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$DjangoflowLocalNotificationStateImplCopyWith<
-          _$DjangoflowLocalNotificationStateImpl>
-      get copyWith => __$$DjangoflowLocalNotificationStateImplCopyWithImpl<
-          _$DjangoflowLocalNotificationStateImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$DjangoflowLocalNotificationStateImplToJson(
-      this,
-    );
+  String toString() {
+    return 'LocalNotificationState(notificationResponse: $notificationResponse)';
   }
 }
 
-abstract class _DjangoflowLocalNotificationState
-    implements LocalNotificationState {
-  const factory _DjangoflowLocalNotificationState(
-          {@JsonKey(includeToJson: false, includeFromJson: false)
-          final NotificationResponse? notificationResponse}) =
-      _$DjangoflowLocalNotificationStateImpl;
+/// @nodoc
+abstract mixin class $LocalNotificationStateCopyWith<$Res> {
+  factory $LocalNotificationStateCopyWith(LocalNotificationState value,
+          $Res Function(LocalNotificationState) _then) =
+      _$LocalNotificationStateCopyWithImpl;
+  @useResult
+  $Res call(
+      {@JsonKey(includeToJson: false, includeFromJson: false)
+      NotificationResponse? notificationResponse});
+}
 
+/// @nodoc
+class _$LocalNotificationStateCopyWithImpl<$Res>
+    implements $LocalNotificationStateCopyWith<$Res> {
+  _$LocalNotificationStateCopyWithImpl(this._self, this._then);
+
+  final LocalNotificationState _self;
+  final $Res Function(LocalNotificationState) _then;
+
+  /// Create a copy of LocalNotificationState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? notificationResponse = freezed,
+  }) {
+    return _then(_self.copyWith(
+      notificationResponse: freezed == notificationResponse
+          ? _self.notificationResponse
+          : notificationResponse // ignore: cast_nullable_to_non_nullable
+              as NotificationResponse?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _DjangoflowLocalNotificationState implements LocalNotificationState {
+  const _DjangoflowLocalNotificationState(
+      {@JsonKey(includeToJson: false, includeFromJson: false)
+      this.notificationResponse});
   factory _DjangoflowLocalNotificationState.fromJson(
-          Map<String, dynamic> json) =
-      _$DjangoflowLocalNotificationStateImpl.fromJson;
+          Map<String, dynamic> json) =>
+      _$DjangoflowLocalNotificationStateFromJson(json);
 
 // ignore: invalid_annotation_target
   @override
   @JsonKey(includeToJson: false, includeFromJson: false)
-  NotificationResponse? get notificationResponse;
+  final NotificationResponse? notificationResponse;
 
   /// Create a copy of LocalNotificationState
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$DjangoflowLocalNotificationStateImplCopyWith<
-          _$DjangoflowLocalNotificationStateImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  _$DjangoflowLocalNotificationStateCopyWith<_DjangoflowLocalNotificationState>
+      get copyWith => __$DjangoflowLocalNotificationStateCopyWithImpl<
+          _DjangoflowLocalNotificationState>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$DjangoflowLocalNotificationStateToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _DjangoflowLocalNotificationState &&
+            (identical(other.notificationResponse, notificationResponse) ||
+                other.notificationResponse == notificationResponse));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, notificationResponse);
+
+  @override
+  String toString() {
+    return 'LocalNotificationState(notificationResponse: $notificationResponse)';
+  }
 }
+
+/// @nodoc
+abstract mixin class _$DjangoflowLocalNotificationStateCopyWith<$Res>
+    implements $LocalNotificationStateCopyWith<$Res> {
+  factory _$DjangoflowLocalNotificationStateCopyWith(
+          _DjangoflowLocalNotificationState value,
+          $Res Function(_DjangoflowLocalNotificationState) _then) =
+      __$DjangoflowLocalNotificationStateCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {@JsonKey(includeToJson: false, includeFromJson: false)
+      NotificationResponse? notificationResponse});
+}
+
+/// @nodoc
+class __$DjangoflowLocalNotificationStateCopyWithImpl<$Res>
+    implements _$DjangoflowLocalNotificationStateCopyWith<$Res> {
+  __$DjangoflowLocalNotificationStateCopyWithImpl(this._self, this._then);
+
+  final _DjangoflowLocalNotificationState _self;
+  final $Res Function(_DjangoflowLocalNotificationState) _then;
+
+  /// Create a copy of LocalNotificationState
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? notificationResponse = freezed,
+  }) {
+    return _then(_DjangoflowLocalNotificationState(
+      notificationResponse: freezed == notificationResponse
+          ? _self.notificationResponse
+          : notificationResponse // ignore: cast_nullable_to_non_nullable
+              as NotificationResponse?,
+    ));
+  }
+}
+
+// dart format on

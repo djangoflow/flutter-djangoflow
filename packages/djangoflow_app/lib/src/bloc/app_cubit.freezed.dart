@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,172 +10,28 @@ part of 'app_cubit.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
 
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-AppState _$AppStateFromJson(Map<String, dynamic> json) {
-  return _AppState.fromJson(json);
-}
-
 /// @nodoc
-mixin _$AppState {
-  bool get firstRun => throw _privateConstructorUsedError;
-  AppEnvironment get environment => throw _privateConstructorUsedError;
-  String get locale => throw _privateConstructorUsedError;
-  ThemeMode get themeMode => throw _privateConstructorUsedError;
-
-  /// Serializes this AppState to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+mixin _$AppState implements DiagnosticableTreeMixin {
+  bool get firstRun;
+  AppEnvironment get environment;
+  String get locale;
+  ThemeMode get themeMode;
 
   /// Create a copy of AppState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $AppStateCopyWith<AppState> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+      _$AppStateCopyWithImpl<AppState>(this as AppState, _$identity);
 
-/// @nodoc
-abstract class $AppStateCopyWith<$Res> {
-  factory $AppStateCopyWith(AppState value, $Res Function(AppState) then) =
-      _$AppStateCopyWithImpl<$Res, AppState>;
-  @useResult
-  $Res call(
-      {bool firstRun,
-      AppEnvironment environment,
-      String locale,
-      ThemeMode themeMode});
-}
-
-/// @nodoc
-class _$AppStateCopyWithImpl<$Res, $Val extends AppState>
-    implements $AppStateCopyWith<$Res> {
-  _$AppStateCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of AppState
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? firstRun = null,
-    Object? environment = null,
-    Object? locale = null,
-    Object? themeMode = null,
-  }) {
-    return _then(_value.copyWith(
-      firstRun: null == firstRun
-          ? _value.firstRun
-          : firstRun // ignore: cast_nullable_to_non_nullable
-              as bool,
-      environment: null == environment
-          ? _value.environment
-          : environment // ignore: cast_nullable_to_non_nullable
-              as AppEnvironment,
-      locale: null == locale
-          ? _value.locale
-          : locale // ignore: cast_nullable_to_non_nullable
-              as String,
-      themeMode: null == themeMode
-          ? _value.themeMode
-          : themeMode // ignore: cast_nullable_to_non_nullable
-              as ThemeMode,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$AppStateImplCopyWith<$Res>
-    implements $AppStateCopyWith<$Res> {
-  factory _$$AppStateImplCopyWith(
-          _$AppStateImpl value, $Res Function(_$AppStateImpl) then) =
-      __$$AppStateImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {bool firstRun,
-      AppEnvironment environment,
-      String locale,
-      ThemeMode themeMode});
-}
-
-/// @nodoc
-class __$$AppStateImplCopyWithImpl<$Res>
-    extends _$AppStateCopyWithImpl<$Res, _$AppStateImpl>
-    implements _$$AppStateImplCopyWith<$Res> {
-  __$$AppStateImplCopyWithImpl(
-      _$AppStateImpl _value, $Res Function(_$AppStateImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of AppState
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? firstRun = null,
-    Object? environment = null,
-    Object? locale = null,
-    Object? themeMode = null,
-  }) {
-    return _then(_$AppStateImpl(
-      firstRun: null == firstRun
-          ? _value.firstRun
-          : firstRun // ignore: cast_nullable_to_non_nullable
-              as bool,
-      environment: null == environment
-          ? _value.environment
-          : environment // ignore: cast_nullable_to_non_nullable
-              as AppEnvironment,
-      locale: null == locale
-          ? _value.locale
-          : locale // ignore: cast_nullable_to_non_nullable
-              as String,
-      themeMode: null == themeMode
-          ? _value.themeMode
-          : themeMode // ignore: cast_nullable_to_non_nullable
-              as ThemeMode,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$AppStateImpl with DiagnosticableTreeMixin implements _AppState {
-  const _$AppStateImpl(
-      {this.firstRun = true,
-      this.environment = AppEnvironment.live,
-      this.locale = 'en',
-      this.themeMode = ThemeMode.light});
-
-  factory _$AppStateImpl.fromJson(Map<String, dynamic> json) =>
-      _$$AppStateImplFromJson(json);
-
-  @override
-  @JsonKey()
-  final bool firstRun;
-  @override
-  @JsonKey()
-  final AppEnvironment environment;
-  @override
-  @JsonKey()
-  final String locale;
-  @override
-  @JsonKey()
-  final ThemeMode themeMode;
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'AppState(firstRun: $firstRun, environment: $environment, locale: $locale, themeMode: $themeMode)';
-  }
+  /// Serializes this AppState to a JSON map.
+  Map<String, dynamic> toJson();
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type', 'AppState'))
       ..add(DiagnosticsProperty('firstRun', firstRun))
@@ -187,7 +44,7 @@ class _$AppStateImpl with DiagnosticableTreeMixin implements _AppState {
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$AppStateImpl &&
+            other is AppState &&
             (identical(other.firstRun, firstRun) ||
                 other.firstRun == firstRun) &&
             (identical(other.environment, environment) ||
@@ -202,45 +59,186 @@ class _$AppStateImpl with DiagnosticableTreeMixin implements _AppState {
   int get hashCode =>
       Object.hash(runtimeType, firstRun, environment, locale, themeMode);
 
-  /// Create a copy of AppState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$AppStateImplCopyWith<_$AppStateImpl> get copyWith =>
-      __$$AppStateImplCopyWithImpl<_$AppStateImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$AppStateImplToJson(
-      this,
-    );
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'AppState(firstRun: $firstRun, environment: $environment, locale: $locale, themeMode: $themeMode)';
   }
 }
 
-abstract class _AppState implements AppState {
-  const factory _AppState(
-      {final bool firstRun,
-      final AppEnvironment environment,
-      final String locale,
-      final ThemeMode themeMode}) = _$AppStateImpl;
+/// @nodoc
+abstract mixin class $AppStateCopyWith<$Res> {
+  factory $AppStateCopyWith(AppState value, $Res Function(AppState) _then) =
+      _$AppStateCopyWithImpl;
+  @useResult
+  $Res call(
+      {bool firstRun,
+      AppEnvironment environment,
+      String locale,
+      ThemeMode themeMode});
+}
 
-  factory _AppState.fromJson(Map<String, dynamic> json) =
-      _$AppStateImpl.fromJson;
+/// @nodoc
+class _$AppStateCopyWithImpl<$Res> implements $AppStateCopyWith<$Res> {
+  _$AppStateCopyWithImpl(this._self, this._then);
+
+  final AppState _self;
+  final $Res Function(AppState) _then;
+
+  /// Create a copy of AppState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? firstRun = null,
+    Object? environment = null,
+    Object? locale = null,
+    Object? themeMode = null,
+  }) {
+    return _then(_self.copyWith(
+      firstRun: null == firstRun
+          ? _self.firstRun
+          : firstRun // ignore: cast_nullable_to_non_nullable
+              as bool,
+      environment: null == environment
+          ? _self.environment
+          : environment // ignore: cast_nullable_to_non_nullable
+              as AppEnvironment,
+      locale: null == locale
+          ? _self.locale
+          : locale // ignore: cast_nullable_to_non_nullable
+              as String,
+      themeMode: null == themeMode
+          ? _self.themeMode
+          : themeMode // ignore: cast_nullable_to_non_nullable
+              as ThemeMode,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _AppState with DiagnosticableTreeMixin implements AppState {
+  const _AppState(
+      {this.firstRun = true,
+      this.environment = AppEnvironment.live,
+      this.locale = 'en',
+      this.themeMode = ThemeMode.light});
+  factory _AppState.fromJson(Map<String, dynamic> json) =>
+      _$AppStateFromJson(json);
 
   @override
-  bool get firstRun;
+  @JsonKey()
+  final bool firstRun;
   @override
-  AppEnvironment get environment;
+  @JsonKey()
+  final AppEnvironment environment;
   @override
-  String get locale;
+  @JsonKey()
+  final String locale;
   @override
-  ThemeMode get themeMode;
+  @JsonKey()
+  final ThemeMode themeMode;
 
   /// Create a copy of AppState
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$AppStateImplCopyWith<_$AppStateImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  _$AppStateCopyWith<_AppState> get copyWith =>
+      __$AppStateCopyWithImpl<_AppState>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$AppStateToJson(
+      this,
+    );
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    properties
+      ..add(DiagnosticsProperty('type', 'AppState'))
+      ..add(DiagnosticsProperty('firstRun', firstRun))
+      ..add(DiagnosticsProperty('environment', environment))
+      ..add(DiagnosticsProperty('locale', locale))
+      ..add(DiagnosticsProperty('themeMode', themeMode));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _AppState &&
+            (identical(other.firstRun, firstRun) ||
+                other.firstRun == firstRun) &&
+            (identical(other.environment, environment) ||
+                other.environment == environment) &&
+            (identical(other.locale, locale) || other.locale == locale) &&
+            (identical(other.themeMode, themeMode) ||
+                other.themeMode == themeMode));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, firstRun, environment, locale, themeMode);
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'AppState(firstRun: $firstRun, environment: $environment, locale: $locale, themeMode: $themeMode)';
+  }
 }
+
+/// @nodoc
+abstract mixin class _$AppStateCopyWith<$Res>
+    implements $AppStateCopyWith<$Res> {
+  factory _$AppStateCopyWith(_AppState value, $Res Function(_AppState) _then) =
+      __$AppStateCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {bool firstRun,
+      AppEnvironment environment,
+      String locale,
+      ThemeMode themeMode});
+}
+
+/// @nodoc
+class __$AppStateCopyWithImpl<$Res> implements _$AppStateCopyWith<$Res> {
+  __$AppStateCopyWithImpl(this._self, this._then);
+
+  final _AppState _self;
+  final $Res Function(_AppState) _then;
+
+  /// Create a copy of AppState
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? firstRun = null,
+    Object? environment = null,
+    Object? locale = null,
+    Object? themeMode = null,
+  }) {
+    return _then(_AppState(
+      firstRun: null == firstRun
+          ? _self.firstRun
+          : firstRun // ignore: cast_nullable_to_non_nullable
+              as bool,
+      environment: null == environment
+          ? _self.environment
+          : environment // ignore: cast_nullable_to_non_nullable
+              as AppEnvironment,
+      locale: null == locale
+          ? _self.locale
+          : locale // ignore: cast_nullable_to_non_nullable
+              as String,
+      themeMode: null == themeMode
+          ? _self.themeMode
+          : themeMode // ignore: cast_nullable_to_non_nullable
+              as ThemeMode,
+    ));
+  }
+}
+
+// dart format on

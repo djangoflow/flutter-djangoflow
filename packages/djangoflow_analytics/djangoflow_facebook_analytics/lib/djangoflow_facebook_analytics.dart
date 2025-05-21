@@ -1,4 +1,4 @@
-library djangoflow_facebook_analytics;
+library;
 
 export 'src/feauteres/user_properties_update/user_properties_update.dart';
 export 'src/feauteres/events/events.dart';

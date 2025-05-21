@@ -53,8 +53,10 @@ class DjangoflowAppRunner {
 
           final storage = await HydratedStorage.build(
             storageDirectory: kIsWeb
-                ? HydratedStorage.webStorageDirectory
-                : await getTemporaryDirectory(),
+                ? HydratedStorageDirectory.web
+                : HydratedStorageDirectory(
+                    (await getTemporaryDirectory()).path,
+                  ),
           );
 
           HydratedBloc.storage = storage;

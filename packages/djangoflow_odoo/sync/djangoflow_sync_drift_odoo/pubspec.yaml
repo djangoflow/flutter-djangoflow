@@ -12,15 +12,12 @@ dependencies:
   drift: ^2.21.0
   flutter:
     sdk: flutter
-  odoo_rpc:
-    git:
-      url: https://github.com/djangoflow/odoo-rpc-dart.git
-      ref: master
+  odoo_rpc: ^0.7.0
   recase: ^4.1.0
 
 dev_dependencies:
   build_runner: ^2.4.13
   drift_dev: ^2.21.0
-  flutter_lints: ^4.0.0
+  flutter_lints: ^5.0.0
   flutter_test:
     sdk: flutter

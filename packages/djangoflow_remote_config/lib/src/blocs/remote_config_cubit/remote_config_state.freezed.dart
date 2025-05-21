@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,96 +10,66 @@ part of 'remote_config_state.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-RemoteConfigState _$RemoteConfigStateFromJson(Map<String, dynamic> json) {
-  return _RemoteConfigState.fromJson(json);
-}
 
 /// @nodoc
 mixin _$RemoteConfigState {
-  bool get isLoading => throw _privateConstructorUsedError;
-  Map<String, Object>? get config => throw _privateConstructorUsedError;
-  DateTime? get lastUpdate => throw _privateConstructorUsedError;
-
-  /// Serializes this RemoteConfigState to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  bool get isLoading;
+  Map<String, Object>? get config;
+  DateTime? get lastUpdate;
 
   /// Create a copy of RemoteConfigState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $RemoteConfigStateCopyWith<RemoteConfigState> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $RemoteConfigStateCopyWith<$Res> {
-  factory $RemoteConfigStateCopyWith(
-          RemoteConfigState value, $Res Function(RemoteConfigState) then) =
-      _$RemoteConfigStateCopyWithImpl<$Res, RemoteConfigState>;
-  @useResult
-  $Res call(
-      {bool isLoading, Map<String, Object>? config, DateTime? lastUpdate});
-}
-
-/// @nodoc
-class _$RemoteConfigStateCopyWithImpl<$Res, $Val extends RemoteConfigState>
-    implements $RemoteConfigStateCopyWith<$Res> {
-  _$RemoteConfigStateCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of RemoteConfigState
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $RemoteConfigStateCopyWith<RemoteConfigState> get copyWith =>
+      _$RemoteConfigStateCopyWithImpl<RemoteConfigState>(
+          this as RemoteConfigState, _$identity);
+
+  /// Serializes this RemoteConfigState to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? isLoading = null,
-    Object? config = freezed,
-    Object? lastUpdate = freezed,
-  }) {
-    return _then(_value.copyWith(
-      isLoading: null == isLoading
-          ? _value.isLoading
-          : isLoading // ignore: cast_nullable_to_non_nullable
-              as bool,
-      config: freezed == config
-          ? _value.config
-          : config // ignore: cast_nullable_to_non_nullable
-              as Map<String, Object>?,
-      lastUpdate: freezed == lastUpdate
-          ? _value.lastUpdate
-          : lastUpdate // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is RemoteConfigState &&
+            (identical(other.isLoading, isLoading) ||
+                other.isLoading == isLoading) &&
+            const DeepCollectionEquality().equals(other.config, config) &&
+            (identical(other.lastUpdate, lastUpdate) ||
+                other.lastUpdate == lastUpdate));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, isLoading,
+      const DeepCollectionEquality().hash(config), lastUpdate);
+
+  @override
+  String toString() {
+    return 'RemoteConfigState(isLoading: $isLoading, config: $config, lastUpdate: $lastUpdate)';
   }
 }
 
 /// @nodoc
-abstract class _$$RemoteConfigStateImplCopyWith<$Res>
-    implements $RemoteConfigStateCopyWith<$Res> {
-  factory _$$RemoteConfigStateImplCopyWith(_$RemoteConfigStateImpl value,
-          $Res Function(_$RemoteConfigStateImpl) then) =
-      __$$RemoteConfigStateImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $RemoteConfigStateCopyWith<$Res> {
+  factory $RemoteConfigStateCopyWith(
+          RemoteConfigState value, $Res Function(RemoteConfigState) _then) =
+      _$RemoteConfigStateCopyWithImpl;
   @useResult
   $Res call(
       {bool isLoading, Map<String, Object>? config, DateTime? lastUpdate});
 }
 
 /// @nodoc
-class __$$RemoteConfigStateImplCopyWithImpl<$Res>
-    extends _$RemoteConfigStateCopyWithImpl<$Res, _$RemoteConfigStateImpl>
-    implements _$$RemoteConfigStateImplCopyWith<$Res> {
-  __$$RemoteConfigStateImplCopyWithImpl(_$RemoteConfigStateImpl _value,
-      $Res Function(_$RemoteConfigStateImpl) _then)
-      : super(_value, _then);
+class _$RemoteConfigStateCopyWithImpl<$Res>
+    implements $RemoteConfigStateCopyWith<$Res> {
+  _$RemoteConfigStateCopyWithImpl(this._self, this._then);
+
+  final RemoteConfigState _self;
+  final $Res Function(RemoteConfigState) _then;
 
   /// Create a copy of RemoteConfigState
   /// with the given fields replaced by the non-null parameter values.
@@ -109,17 +80,17 @@ class __$$RemoteConfigStateImplCopyWithImpl<$Res>
     Object? config = freezed,
     Object? lastUpdate = freezed,
   }) {
-    return _then(_$RemoteConfigStateImpl(
+    return _then(_self.copyWith(
       isLoading: null == isLoading
-          ? _value.isLoading
+          ? _self.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
       config: freezed == config
-          ? _value._config
+          ? _self.config
           : config // ignore: cast_nullable_to_non_nullable
               as Map<String, Object>?,
       lastUpdate: freezed == lastUpdate
-          ? _value.lastUpdate
+          ? _self.lastUpdate
           : lastUpdate // ignore: cast_nullable_to_non_nullable
               as DateTime?,
     ));
@@ -128,15 +99,14 @@ class __$$RemoteConfigStateImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$RemoteConfigStateImpl implements _RemoteConfigState {
-  const _$RemoteConfigStateImpl(
+class _RemoteConfigState implements RemoteConfigState {
+  const _RemoteConfigState(
       {this.isLoading = false,
       final Map<String, Object>? config,
       this.lastUpdate})
       : _config = config;
-
-  factory _$RemoteConfigStateImpl.fromJson(Map<String, dynamic> json) =>
-      _$$RemoteConfigStateImplFromJson(json);
+  factory _RemoteConfigState.fromJson(Map<String, dynamic> json) =>
+      _$RemoteConfigStateFromJson(json);
 
   @override
   @JsonKey()
@@ -154,16 +124,26 @@ class _$RemoteConfigStateImpl implements _RemoteConfigState {
   @override
   final DateTime? lastUpdate;
 
+  /// Create a copy of RemoteConfigState
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'RemoteConfigState(isLoading: $isLoading, config: $config, lastUpdate: $lastUpdate)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$RemoteConfigStateCopyWith<_RemoteConfigState> get copyWith =>
+      __$RemoteConfigStateCopyWithImpl<_RemoteConfigState>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$RemoteConfigStateToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$RemoteConfigStateImpl &&
+            other is _RemoteConfigState &&
             (identical(other.isLoading, isLoading) ||
                 other.isLoading == isLoading) &&
             const DeepCollectionEquality().equals(other._config, _config) &&
@@ -176,43 +156,56 @@ class _$RemoteConfigStateImpl implements _RemoteConfigState {
   int get hashCode => Object.hash(runtimeType, isLoading,
       const DeepCollectionEquality().hash(_config), lastUpdate);
 
-  /// Create a copy of RemoteConfigState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$RemoteConfigStateImplCopyWith<_$RemoteConfigStateImpl> get copyWith =>
-      __$$RemoteConfigStateImplCopyWithImpl<_$RemoteConfigStateImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$RemoteConfigStateImplToJson(
-      this,
-    );
+  String toString() {
+    return 'RemoteConfigState(isLoading: $isLoading, config: $config, lastUpdate: $lastUpdate)';
   }
 }
 
-abstract class _RemoteConfigState implements RemoteConfigState {
-  const factory _RemoteConfigState(
-      {final bool isLoading,
-      final Map<String, Object>? config,
-      final DateTime? lastUpdate}) = _$RemoteConfigStateImpl;
+/// @nodoc
+abstract mixin class _$RemoteConfigStateCopyWith<$Res>
+    implements $RemoteConfigStateCopyWith<$Res> {
+  factory _$RemoteConfigStateCopyWith(
+          _RemoteConfigState value, $Res Function(_RemoteConfigState) _then) =
+      __$RemoteConfigStateCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {bool isLoading, Map<String, Object>? config, DateTime? lastUpdate});
+}
 
-  factory _RemoteConfigState.fromJson(Map<String, dynamic> json) =
-      _$RemoteConfigStateImpl.fromJson;
+/// @nodoc
+class __$RemoteConfigStateCopyWithImpl<$Res>
+    implements _$RemoteConfigStateCopyWith<$Res> {
+  __$RemoteConfigStateCopyWithImpl(this._self, this._then);
 
-  @override
-  bool get isLoading;
-  @override
-  Map<String, Object>? get config;
-  @override
-  DateTime? get lastUpdate;
+  final _RemoteConfigState _self;
+  final $Res Function(_RemoteConfigState) _then;
 
   /// Create a copy of RemoteConfigState
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$RemoteConfigStateImplCopyWith<_$RemoteConfigStateImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? isLoading = null,
+    Object? config = freezed,
+    Object? lastUpdate = freezed,
+  }) {
+    return _then(_RemoteConfigState(
+      isLoading: null == isLoading
+          ? _self.isLoading
+          : isLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      config: freezed == config
+          ? _self._config
+          : config // ignore: cast_nullable_to_non_nullable
+              as Map<String, Object>?,
+      lastUpdate: freezed == lastUpdate
+          ? _self.lastUpdate
+          : lastUpdate // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+    ));
+  }
 }
+
+// dart format on

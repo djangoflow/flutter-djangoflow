@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,210 +10,32 @@ part of 'app_launch_details.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-AppLaunchDetails _$AppLaunchDetailsFromJson(Map<String, dynamic> json) {
-  return _AppLaunchDetails.fromJson(json);
-}
 
 /// @nodoc
 mixin _$AppLaunchDetails {
-  BrandDetails? get brand => throw _privateConstructorUsedError;
+  BrandDetails? get brand;
   @JsonKey(name: 'app_version')
-  VersionDetails? get appVersion => throw _privateConstructorUsedError;
-  UpdatesDetails? get updates => throw _privateConstructorUsedError;
-
-  /// Serializes this AppLaunchDetails to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  VersionDetails? get appVersion;
+  UpdatesDetails? get updates;
 
   /// Create a copy of AppLaunchDetails
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $AppLaunchDetailsCopyWith<AppLaunchDetails> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+      _$AppLaunchDetailsCopyWithImpl<AppLaunchDetails>(
+          this as AppLaunchDetails, _$identity);
 
-/// @nodoc
-abstract class $AppLaunchDetailsCopyWith<$Res> {
-  factory $AppLaunchDetailsCopyWith(
-          AppLaunchDetails value, $Res Function(AppLaunchDetails) then) =
-      _$AppLaunchDetailsCopyWithImpl<$Res, AppLaunchDetails>;
-  @useResult
-  $Res call(
-      {BrandDetails? brand,
-      @JsonKey(name: 'app_version') VersionDetails? appVersion,
-      UpdatesDetails? updates});
-
-  $BrandDetailsCopyWith<$Res>? get brand;
-  $VersionDetailsCopyWith<$Res>? get appVersion;
-  $UpdatesDetailsCopyWith<$Res>? get updates;
-}
-
-/// @nodoc
-class _$AppLaunchDetailsCopyWithImpl<$Res, $Val extends AppLaunchDetails>
-    implements $AppLaunchDetailsCopyWith<$Res> {
-  _$AppLaunchDetailsCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of AppLaunchDetails
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? brand = freezed,
-    Object? appVersion = freezed,
-    Object? updates = freezed,
-  }) {
-    return _then(_value.copyWith(
-      brand: freezed == brand
-          ? _value.brand
-          : brand // ignore: cast_nullable_to_non_nullable
-              as BrandDetails?,
-      appVersion: freezed == appVersion
-          ? _value.appVersion
-          : appVersion // ignore: cast_nullable_to_non_nullable
-              as VersionDetails?,
-      updates: freezed == updates
-          ? _value.updates
-          : updates // ignore: cast_nullable_to_non_nullable
-              as UpdatesDetails?,
-    ) as $Val);
-  }
-
-  /// Create a copy of AppLaunchDetails
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $BrandDetailsCopyWith<$Res>? get brand {
-    if (_value.brand == null) {
-      return null;
-    }
-
-    return $BrandDetailsCopyWith<$Res>(_value.brand!, (value) {
-      return _then(_value.copyWith(brand: value) as $Val);
-    });
-  }
-
-  /// Create a copy of AppLaunchDetails
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $VersionDetailsCopyWith<$Res>? get appVersion {
-    if (_value.appVersion == null) {
-      return null;
-    }
-
-    return $VersionDetailsCopyWith<$Res>(_value.appVersion!, (value) {
-      return _then(_value.copyWith(appVersion: value) as $Val);
-    });
-  }
-
-  /// Create a copy of AppLaunchDetails
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $UpdatesDetailsCopyWith<$Res>? get updates {
-    if (_value.updates == null) {
-      return null;
-    }
-
-    return $UpdatesDetailsCopyWith<$Res>(_value.updates!, (value) {
-      return _then(_value.copyWith(updates: value) as $Val);
-    });
-  }
-}
-
-/// @nodoc
-abstract class _$$AppLaunchDetailsImplCopyWith<$Res>
-    implements $AppLaunchDetailsCopyWith<$Res> {
-  factory _$$AppLaunchDetailsImplCopyWith(_$AppLaunchDetailsImpl value,
-          $Res Function(_$AppLaunchDetailsImpl) then) =
-      __$$AppLaunchDetailsImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {BrandDetails? brand,
-      @JsonKey(name: 'app_version') VersionDetails? appVersion,
-      UpdatesDetails? updates});
-
-  @override
-  $BrandDetailsCopyWith<$Res>? get brand;
-  @override
-  $VersionDetailsCopyWith<$Res>? get appVersion;
-  @override
-  $UpdatesDetailsCopyWith<$Res>? get updates;
-}
-
-/// @nodoc
-class __$$AppLaunchDetailsImplCopyWithImpl<$Res>
-    extends _$AppLaunchDetailsCopyWithImpl<$Res, _$AppLaunchDetailsImpl>
-    implements _$$AppLaunchDetailsImplCopyWith<$Res> {
-  __$$AppLaunchDetailsImplCopyWithImpl(_$AppLaunchDetailsImpl _value,
-      $Res Function(_$AppLaunchDetailsImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of AppLaunchDetails
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? brand = freezed,
-    Object? appVersion = freezed,
-    Object? updates = freezed,
-  }) {
-    return _then(_$AppLaunchDetailsImpl(
-      brand: freezed == brand
-          ? _value.brand
-          : brand // ignore: cast_nullable_to_non_nullable
-              as BrandDetails?,
-      appVersion: freezed == appVersion
-          ? _value.appVersion
-          : appVersion // ignore: cast_nullable_to_non_nullable
-              as VersionDetails?,
-      updates: freezed == updates
-          ? _value.updates
-          : updates // ignore: cast_nullable_to_non_nullable
-              as UpdatesDetails?,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$AppLaunchDetailsImpl implements _AppLaunchDetails {
-  const _$AppLaunchDetailsImpl(
-      {this.brand,
-      @JsonKey(name: 'app_version') this.appVersion,
-      this.updates});
-
-  factory _$AppLaunchDetailsImpl.fromJson(Map<String, dynamic> json) =>
-      _$$AppLaunchDetailsImplFromJson(json);
-
-  @override
-  final BrandDetails? brand;
-  @override
-  @JsonKey(name: 'app_version')
-  final VersionDetails? appVersion;
-  @override
-  final UpdatesDetails? updates;
-
-  @override
-  String toString() {
-    return 'AppLaunchDetails(brand: $brand, appVersion: $appVersion, updates: $updates)';
-  }
+  /// Serializes this AppLaunchDetails to a JSON map.
+  Map<String, dynamic> toJson();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$AppLaunchDetailsImpl &&
+            other is AppLaunchDetails &&
             (identical(other.brand, brand) || other.brand == brand) &&
             (identical(other.appVersion, appVersion) ||
                 other.appVersion == appVersion) &&
@@ -223,206 +46,276 @@ class _$AppLaunchDetailsImpl implements _AppLaunchDetails {
   @override
   int get hashCode => Object.hash(runtimeType, brand, appVersion, updates);
 
-  /// Create a copy of AppLaunchDetails
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$AppLaunchDetailsImplCopyWith<_$AppLaunchDetailsImpl> get copyWith =>
-      __$$AppLaunchDetailsImplCopyWithImpl<_$AppLaunchDetailsImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$AppLaunchDetailsImplToJson(
-      this,
-    );
+  String toString() {
+    return 'AppLaunchDetails(brand: $brand, appVersion: $appVersion, updates: $updates)';
   }
 }
 
-abstract class _AppLaunchDetails implements AppLaunchDetails {
-  const factory _AppLaunchDetails(
-      {final BrandDetails? brand,
-      @JsonKey(name: 'app_version') final VersionDetails? appVersion,
-      final UpdatesDetails? updates}) = _$AppLaunchDetailsImpl;
+/// @nodoc
+abstract mixin class $AppLaunchDetailsCopyWith<$Res> {
+  factory $AppLaunchDetailsCopyWith(
+          AppLaunchDetails value, $Res Function(AppLaunchDetails) _then) =
+      _$AppLaunchDetailsCopyWithImpl;
+  @useResult
+  $Res call(
+      {BrandDetails? brand,
+      @JsonKey(name: 'app_version') VersionDetails? appVersion,
+      UpdatesDetails? updates});
 
-  factory _AppLaunchDetails.fromJson(Map<String, dynamic> json) =
-      _$AppLaunchDetailsImpl.fromJson;
+  $BrandDetailsCopyWith<$Res>? get brand;
+  $VersionDetailsCopyWith<$Res>? get appVersion;
+  $UpdatesDetailsCopyWith<$Res>? get updates;
+}
 
-  @override
-  BrandDetails? get brand;
-  @override
-  @JsonKey(name: 'app_version')
-  VersionDetails? get appVersion;
-  @override
-  UpdatesDetails? get updates;
+/// @nodoc
+class _$AppLaunchDetailsCopyWithImpl<$Res>
+    implements $AppLaunchDetailsCopyWith<$Res> {
+  _$AppLaunchDetailsCopyWithImpl(this._self, this._then);
+
+  final AppLaunchDetails _self;
+  final $Res Function(AppLaunchDetails) _then;
 
   /// Create a copy of AppLaunchDetails
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$AppLaunchDetailsImplCopyWith<_$AppLaunchDetailsImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-BrandDetails _$BrandDetailsFromJson(Map<String, dynamic> json) {
-  return _BrandDetails.fromJson(json);
-}
-
-/// @nodoc
-mixin _$BrandDetails {
-  ThemeDetails? get theme => throw _privateConstructorUsedError;
-  LogoDetails? get logo => throw _privateConstructorUsedError;
-
-  /// Serializes this BrandDetails to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of BrandDetails
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $BrandDetailsCopyWith<BrandDetails> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $BrandDetailsCopyWith<$Res> {
-  factory $BrandDetailsCopyWith(
-          BrandDetails value, $Res Function(BrandDetails) then) =
-      _$BrandDetailsCopyWithImpl<$Res, BrandDetails>;
-  @useResult
-  $Res call({ThemeDetails? theme, LogoDetails? logo});
-
-  $ThemeDetailsCopyWith<$Res>? get theme;
-  $LogoDetailsCopyWith<$Res>? get logo;
-}
-
-/// @nodoc
-class _$BrandDetailsCopyWithImpl<$Res, $Val extends BrandDetails>
-    implements $BrandDetailsCopyWith<$Res> {
-  _$BrandDetailsCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of BrandDetails
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? theme = freezed,
-    Object? logo = freezed,
+    Object? brand = freezed,
+    Object? appVersion = freezed,
+    Object? updates = freezed,
   }) {
-    return _then(_value.copyWith(
-      theme: freezed == theme
-          ? _value.theme
-          : theme // ignore: cast_nullable_to_non_nullable
-              as ThemeDetails?,
-      logo: freezed == logo
-          ? _value.logo
-          : logo // ignore: cast_nullable_to_non_nullable
-              as LogoDetails?,
-    ) as $Val);
-  }
-
-  /// Create a copy of BrandDetails
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $ThemeDetailsCopyWith<$Res>? get theme {
-    if (_value.theme == null) {
-      return null;
-    }
-
-    return $ThemeDetailsCopyWith<$Res>(_value.theme!, (value) {
-      return _then(_value.copyWith(theme: value) as $Val);
-    });
-  }
-
-  /// Create a copy of BrandDetails
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $LogoDetailsCopyWith<$Res>? get logo {
-    if (_value.logo == null) {
-      return null;
-    }
-
-    return $LogoDetailsCopyWith<$Res>(_value.logo!, (value) {
-      return _then(_value.copyWith(logo: value) as $Val);
-    });
-  }
-}
-
-/// @nodoc
-abstract class _$$BrandDetailsImplCopyWith<$Res>
-    implements $BrandDetailsCopyWith<$Res> {
-  factory _$$BrandDetailsImplCopyWith(
-          _$BrandDetailsImpl value, $Res Function(_$BrandDetailsImpl) then) =
-      __$$BrandDetailsImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({ThemeDetails? theme, LogoDetails? logo});
-
-  @override
-  $ThemeDetailsCopyWith<$Res>? get theme;
-  @override
-  $LogoDetailsCopyWith<$Res>? get logo;
-}
-
-/// @nodoc
-class __$$BrandDetailsImplCopyWithImpl<$Res>
-    extends _$BrandDetailsCopyWithImpl<$Res, _$BrandDetailsImpl>
-    implements _$$BrandDetailsImplCopyWith<$Res> {
-  __$$BrandDetailsImplCopyWithImpl(
-      _$BrandDetailsImpl _value, $Res Function(_$BrandDetailsImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of BrandDetails
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? theme = freezed,
-    Object? logo = freezed,
-  }) {
-    return _then(_$BrandDetailsImpl(
-      theme: freezed == theme
-          ? _value.theme
-          : theme // ignore: cast_nullable_to_non_nullable
-              as ThemeDetails?,
-      logo: freezed == logo
-          ? _value.logo
-          : logo // ignore: cast_nullable_to_non_nullable
-              as LogoDetails?,
+    return _then(_self.copyWith(
+      brand: freezed == brand
+          ? _self.brand
+          : brand // ignore: cast_nullable_to_non_nullable
+              as BrandDetails?,
+      appVersion: freezed == appVersion
+          ? _self.appVersion
+          : appVersion // ignore: cast_nullable_to_non_nullable
+              as VersionDetails?,
+      updates: freezed == updates
+          ? _self.updates
+          : updates // ignore: cast_nullable_to_non_nullable
+              as UpdatesDetails?,
     ));
+  }
+
+  /// Create a copy of AppLaunchDetails
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $BrandDetailsCopyWith<$Res>? get brand {
+    if (_self.brand == null) {
+      return null;
+    }
+
+    return $BrandDetailsCopyWith<$Res>(_self.brand!, (value) {
+      return _then(_self.copyWith(brand: value));
+    });
+  }
+
+  /// Create a copy of AppLaunchDetails
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $VersionDetailsCopyWith<$Res>? get appVersion {
+    if (_self.appVersion == null) {
+      return null;
+    }
+
+    return $VersionDetailsCopyWith<$Res>(_self.appVersion!, (value) {
+      return _then(_self.copyWith(appVersion: value));
+    });
+  }
+
+  /// Create a copy of AppLaunchDetails
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $UpdatesDetailsCopyWith<$Res>? get updates {
+    if (_self.updates == null) {
+      return null;
+    }
+
+    return $UpdatesDetailsCopyWith<$Res>(_self.updates!, (value) {
+      return _then(_self.copyWith(updates: value));
+    });
   }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$BrandDetailsImpl implements _BrandDetails {
-  const _$BrandDetailsImpl({this.theme, this.logo});
-
-  factory _$BrandDetailsImpl.fromJson(Map<String, dynamic> json) =>
-      _$$BrandDetailsImplFromJson(json);
-
-  @override
-  final ThemeDetails? theme;
-  @override
-  final LogoDetails? logo;
+class _AppLaunchDetails implements AppLaunchDetails {
+  const _AppLaunchDetails(
+      {this.brand,
+      @JsonKey(name: 'app_version') this.appVersion,
+      this.updates});
+  factory _AppLaunchDetails.fromJson(Map<String, dynamic> json) =>
+      _$AppLaunchDetailsFromJson(json);
 
   @override
-  String toString() {
-    return 'BrandDetails(theme: $theme, logo: $logo)';
+  final BrandDetails? brand;
+  @override
+  @JsonKey(name: 'app_version')
+  final VersionDetails? appVersion;
+  @override
+  final UpdatesDetails? updates;
+
+  /// Create a copy of AppLaunchDetails
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$AppLaunchDetailsCopyWith<_AppLaunchDetails> get copyWith =>
+      __$AppLaunchDetailsCopyWithImpl<_AppLaunchDetails>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$AppLaunchDetailsToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$BrandDetailsImpl &&
+            other is _AppLaunchDetails &&
+            (identical(other.brand, brand) || other.brand == brand) &&
+            (identical(other.appVersion, appVersion) ||
+                other.appVersion == appVersion) &&
+            (identical(other.updates, updates) || other.updates == updates));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, brand, appVersion, updates);
+
+  @override
+  String toString() {
+    return 'AppLaunchDetails(brand: $brand, appVersion: $appVersion, updates: $updates)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$AppLaunchDetailsCopyWith<$Res>
+    implements $AppLaunchDetailsCopyWith<$Res> {
+  factory _$AppLaunchDetailsCopyWith(
+          _AppLaunchDetails value, $Res Function(_AppLaunchDetails) _then) =
+      __$AppLaunchDetailsCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {BrandDetails? brand,
+      @JsonKey(name: 'app_version') VersionDetails? appVersion,
+      UpdatesDetails? updates});
+
+  @override
+  $BrandDetailsCopyWith<$Res>? get brand;
+  @override
+  $VersionDetailsCopyWith<$Res>? get appVersion;
+  @override
+  $UpdatesDetailsCopyWith<$Res>? get updates;
+}
+
+/// @nodoc
+class __$AppLaunchDetailsCopyWithImpl<$Res>
+    implements _$AppLaunchDetailsCopyWith<$Res> {
+  __$AppLaunchDetailsCopyWithImpl(this._self, this._then);
+
+  final _AppLaunchDetails _self;
+  final $Res Function(_AppLaunchDetails) _then;
+
+  /// Create a copy of AppLaunchDetails
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? brand = freezed,
+    Object? appVersion = freezed,
+    Object? updates = freezed,
+  }) {
+    return _then(_AppLaunchDetails(
+      brand: freezed == brand
+          ? _self.brand
+          : brand // ignore: cast_nullable_to_non_nullable
+              as BrandDetails?,
+      appVersion: freezed == appVersion
+          ? _self.appVersion
+          : appVersion // ignore: cast_nullable_to_non_nullable
+              as VersionDetails?,
+      updates: freezed == updates
+          ? _self.updates
+          : updates // ignore: cast_nullable_to_non_nullable
+              as UpdatesDetails?,
+    ));
+  }
+
+  /// Create a copy of AppLaunchDetails
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $BrandDetailsCopyWith<$Res>? get brand {
+    if (_self.brand == null) {
+      return null;
+    }
+
+    return $BrandDetailsCopyWith<$Res>(_self.brand!, (value) {
+      return _then(_self.copyWith(brand: value));
+    });
+  }
+
+  /// Create a copy of AppLaunchDetails
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $VersionDetailsCopyWith<$Res>? get appVersion {
+    if (_self.appVersion == null) {
+      return null;
+    }
+
+    return $VersionDetailsCopyWith<$Res>(_self.appVersion!, (value) {
+      return _then(_self.copyWith(appVersion: value));
+    });
+  }
+
+  /// Create a copy of AppLaunchDetails
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $UpdatesDetailsCopyWith<$Res>? get updates {
+    if (_self.updates == null) {
+      return null;
+    }
+
+    return $UpdatesDetailsCopyWith<$Res>(_self.updates!, (value) {
+      return _then(_self.copyWith(updates: value));
+    });
+  }
+}
+
+/// @nodoc
+mixin _$BrandDetails {
+  ThemeDetails? get theme;
+  LogoDetails? get logo;
+
+  /// Create a copy of BrandDetails
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $BrandDetailsCopyWith<BrandDetails> get copyWith =>
+      _$BrandDetailsCopyWithImpl<BrandDetails>(
+          this as BrandDetails, _$identity);
+
+  /// Serializes this BrandDetails to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is BrandDetails &&
             (identical(other.theme, theme) || other.theme == theme) &&
             (identical(other.logo, logo) || other.logo == logo));
   }
@@ -431,122 +324,254 @@ class _$BrandDetailsImpl implements _BrandDetails {
   @override
   int get hashCode => Object.hash(runtimeType, theme, logo);
 
-  /// Create a copy of BrandDetails
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$BrandDetailsImplCopyWith<_$BrandDetailsImpl> get copyWith =>
-      __$$BrandDetailsImplCopyWithImpl<_$BrandDetailsImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$BrandDetailsImplToJson(
-      this,
-    );
+  String toString() {
+    return 'BrandDetails(theme: $theme, logo: $logo)';
   }
 }
 
-abstract class _BrandDetails implements BrandDetails {
-  const factory _BrandDetails(
-      {final ThemeDetails? theme,
-      final LogoDetails? logo}) = _$BrandDetailsImpl;
+/// @nodoc
+abstract mixin class $BrandDetailsCopyWith<$Res> {
+  factory $BrandDetailsCopyWith(
+          BrandDetails value, $Res Function(BrandDetails) _then) =
+      _$BrandDetailsCopyWithImpl;
+  @useResult
+  $Res call({ThemeDetails? theme, LogoDetails? logo});
 
-  factory _BrandDetails.fromJson(Map<String, dynamic> json) =
-      _$BrandDetailsImpl.fromJson;
+  $ThemeDetailsCopyWith<$Res>? get theme;
+  $LogoDetailsCopyWith<$Res>? get logo;
+}
+
+/// @nodoc
+class _$BrandDetailsCopyWithImpl<$Res> implements $BrandDetailsCopyWith<$Res> {
+  _$BrandDetailsCopyWithImpl(this._self, this._then);
+
+  final BrandDetails _self;
+  final $Res Function(BrandDetails) _then;
+
+  /// Create a copy of BrandDetails
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? theme = freezed,
+    Object? logo = freezed,
+  }) {
+    return _then(_self.copyWith(
+      theme: freezed == theme
+          ? _self.theme
+          : theme // ignore: cast_nullable_to_non_nullable
+              as ThemeDetails?,
+      logo: freezed == logo
+          ? _self.logo
+          : logo // ignore: cast_nullable_to_non_nullable
+              as LogoDetails?,
+    ));
+  }
+
+  /// Create a copy of BrandDetails
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ThemeDetailsCopyWith<$Res>? get theme {
+    if (_self.theme == null) {
+      return null;
+    }
+
+    return $ThemeDetailsCopyWith<$Res>(_self.theme!, (value) {
+      return _then(_self.copyWith(theme: value));
+    });
+  }
+
+  /// Create a copy of BrandDetails
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $LogoDetailsCopyWith<$Res>? get logo {
+    if (_self.logo == null) {
+      return null;
+    }
+
+    return $LogoDetailsCopyWith<$Res>(_self.logo!, (value) {
+      return _then(_self.copyWith(logo: value));
+    });
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _BrandDetails implements BrandDetails {
+  const _BrandDetails({this.theme, this.logo});
+  factory _BrandDetails.fromJson(Map<String, dynamic> json) =>
+      _$BrandDetailsFromJson(json);
 
   @override
-  ThemeDetails? get theme;
+  final ThemeDetails? theme;
   @override
-  LogoDetails? get logo;
+  final LogoDetails? logo;
 
   /// Create a copy of BrandDetails
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$BrandDetailsImplCopyWith<_$BrandDetailsImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  _$BrandDetailsCopyWith<_BrandDetails> get copyWith =>
+      __$BrandDetailsCopyWithImpl<_BrandDetails>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$BrandDetailsToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _BrandDetails &&
+            (identical(other.theme, theme) || other.theme == theme) &&
+            (identical(other.logo, logo) || other.logo == logo));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, theme, logo);
+
+  @override
+  String toString() {
+    return 'BrandDetails(theme: $theme, logo: $logo)';
+  }
 }
 
-ThemeDetails _$ThemeDetailsFromJson(Map<String, dynamic> json) {
-  return _ThemeDetails.fromJson(json);
+/// @nodoc
+abstract mixin class _$BrandDetailsCopyWith<$Res>
+    implements $BrandDetailsCopyWith<$Res> {
+  factory _$BrandDetailsCopyWith(
+          _BrandDetails value, $Res Function(_BrandDetails) _then) =
+      __$BrandDetailsCopyWithImpl;
+  @override
+  @useResult
+  $Res call({ThemeDetails? theme, LogoDetails? logo});
+
+  @override
+  $ThemeDetailsCopyWith<$Res>? get theme;
+  @override
+  $LogoDetailsCopyWith<$Res>? get logo;
+}
+
+/// @nodoc
+class __$BrandDetailsCopyWithImpl<$Res>
+    implements _$BrandDetailsCopyWith<$Res> {
+  __$BrandDetailsCopyWithImpl(this._self, this._then);
+
+  final _BrandDetails _self;
+  final $Res Function(_BrandDetails) _then;
+
+  /// Create a copy of BrandDetails
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? theme = freezed,
+    Object? logo = freezed,
+  }) {
+    return _then(_BrandDetails(
+      theme: freezed == theme
+          ? _self.theme
+          : theme // ignore: cast_nullable_to_non_nullable
+              as ThemeDetails?,
+      logo: freezed == logo
+          ? _self.logo
+          : logo // ignore: cast_nullable_to_non_nullable
+              as LogoDetails?,
+    ));
+  }
+
+  /// Create a copy of BrandDetails
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ThemeDetailsCopyWith<$Res>? get theme {
+    if (_self.theme == null) {
+      return null;
+    }
+
+    return $ThemeDetailsCopyWith<$Res>(_self.theme!, (value) {
+      return _then(_self.copyWith(theme: value));
+    });
+  }
+
+  /// Create a copy of BrandDetails
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $LogoDetailsCopyWith<$Res>? get logo {
+    if (_self.logo == null) {
+      return null;
+    }
+
+    return $LogoDetailsCopyWith<$Res>(_self.logo!, (value) {
+      return _then(_self.copyWith(logo: value));
+    });
+  }
 }
 
 /// @nodoc
 mixin _$ThemeDetails {
-  Map<String, dynamic>? get lightTheme => throw _privateConstructorUsedError;
-  Map<String, dynamic>? get darkTheme => throw _privateConstructorUsedError;
-
-  /// Serializes this ThemeDetails to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  Map<String, dynamic>? get lightTheme;
+  Map<String, dynamic>? get darkTheme;
 
   /// Create a copy of ThemeDetails
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $ThemeDetailsCopyWith<ThemeDetails> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $ThemeDetailsCopyWith<$Res> {
-  factory $ThemeDetailsCopyWith(
-          ThemeDetails value, $Res Function(ThemeDetails) then) =
-      _$ThemeDetailsCopyWithImpl<$Res, ThemeDetails>;
-  @useResult
-  $Res call(
-      {Map<String, dynamic>? lightTheme, Map<String, dynamic>? darkTheme});
-}
-
-/// @nodoc
-class _$ThemeDetailsCopyWithImpl<$Res, $Val extends ThemeDetails>
-    implements $ThemeDetailsCopyWith<$Res> {
-  _$ThemeDetailsCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of ThemeDetails
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $ThemeDetailsCopyWith<ThemeDetails> get copyWith =>
+      _$ThemeDetailsCopyWithImpl<ThemeDetails>(
+          this as ThemeDetails, _$identity);
+
+  /// Serializes this ThemeDetails to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? lightTheme = freezed,
-    Object? darkTheme = freezed,
-  }) {
-    return _then(_value.copyWith(
-      lightTheme: freezed == lightTheme
-          ? _value.lightTheme
-          : lightTheme // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-      darkTheme: freezed == darkTheme
-          ? _value.darkTheme
-          : darkTheme // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is ThemeDetails &&
+            const DeepCollectionEquality()
+                .equals(other.lightTheme, lightTheme) &&
+            const DeepCollectionEquality().equals(other.darkTheme, darkTheme));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(lightTheme),
+      const DeepCollectionEquality().hash(darkTheme));
+
+  @override
+  String toString() {
+    return 'ThemeDetails(lightTheme: $lightTheme, darkTheme: $darkTheme)';
   }
 }
 
 /// @nodoc
-abstract class _$$ThemeDetailsImplCopyWith<$Res>
-    implements $ThemeDetailsCopyWith<$Res> {
-  factory _$$ThemeDetailsImplCopyWith(
-          _$ThemeDetailsImpl value, $Res Function(_$ThemeDetailsImpl) then) =
-      __$$ThemeDetailsImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $ThemeDetailsCopyWith<$Res> {
+  factory $ThemeDetailsCopyWith(
+          ThemeDetails value, $Res Function(ThemeDetails) _then) =
+      _$ThemeDetailsCopyWithImpl;
   @useResult
   $Res call(
       {Map<String, dynamic>? lightTheme, Map<String, dynamic>? darkTheme});
 }
 
 /// @nodoc
-class __$$ThemeDetailsImplCopyWithImpl<$Res>
-    extends _$ThemeDetailsCopyWithImpl<$Res, _$ThemeDetailsImpl>
-    implements _$$ThemeDetailsImplCopyWith<$Res> {
-  __$$ThemeDetailsImplCopyWithImpl(
-      _$ThemeDetailsImpl _value, $Res Function(_$ThemeDetailsImpl) _then)
-      : super(_value, _then);
+class _$ThemeDetailsCopyWithImpl<$Res> implements $ThemeDetailsCopyWith<$Res> {
+  _$ThemeDetailsCopyWithImpl(this._self, this._then);
+
+  final ThemeDetails _self;
+  final $Res Function(ThemeDetails) _then;
 
   /// Create a copy of ThemeDetails
   /// with the given fields replaced by the non-null parameter values.
@@ -556,13 +581,13 @@ class __$$ThemeDetailsImplCopyWithImpl<$Res>
     Object? lightTheme = freezed,
     Object? darkTheme = freezed,
   }) {
-    return _then(_$ThemeDetailsImpl(
+    return _then(_self.copyWith(
       lightTheme: freezed == lightTheme
-          ? _value._lightTheme
+          ? _self.lightTheme
           : lightTheme // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
       darkTheme: freezed == darkTheme
-          ? _value._darkTheme
+          ? _self.darkTheme
           : darkTheme // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
     ));
@@ -571,15 +596,14 @@ class __$$ThemeDetailsImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$ThemeDetailsImpl implements _ThemeDetails {
-  const _$ThemeDetailsImpl(
+class _ThemeDetails implements ThemeDetails {
+  const _ThemeDetails(
       {final Map<String, dynamic>? lightTheme,
       final Map<String, dynamic>? darkTheme})
       : _lightTheme = lightTheme,
         _darkTheme = darkTheme;
-
-  factory _$ThemeDetailsImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ThemeDetailsImplFromJson(json);
+  factory _ThemeDetails.fromJson(Map<String, dynamic> json) =>
+      _$ThemeDetailsFromJson(json);
 
   final Map<String, dynamic>? _lightTheme;
   @override
@@ -601,16 +625,26 @@ class _$ThemeDetailsImpl implements _ThemeDetails {
     return EqualUnmodifiableMapView(value);
   }
 
+  /// Create a copy of ThemeDetails
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'ThemeDetails(lightTheme: $lightTheme, darkTheme: $darkTheme)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$ThemeDetailsCopyWith<_ThemeDetails> get copyWith =>
+      __$ThemeDetailsCopyWithImpl<_ThemeDetails>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$ThemeDetailsToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ThemeDetailsImpl &&
+            other is _ThemeDetails &&
             const DeepCollectionEquality()
                 .equals(other._lightTheme, _lightTheme) &&
             const DeepCollectionEquality()
@@ -624,114 +658,103 @@ class _$ThemeDetailsImpl implements _ThemeDetails {
       const DeepCollectionEquality().hash(_lightTheme),
       const DeepCollectionEquality().hash(_darkTheme));
 
-  /// Create a copy of ThemeDetails
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$ThemeDetailsImplCopyWith<_$ThemeDetailsImpl> get copyWith =>
-      __$$ThemeDetailsImplCopyWithImpl<_$ThemeDetailsImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$ThemeDetailsImplToJson(
-      this,
-    );
+  String toString() {
+    return 'ThemeDetails(lightTheme: $lightTheme, darkTheme: $darkTheme)';
   }
 }
 
-abstract class _ThemeDetails implements ThemeDetails {
-  const factory _ThemeDetails(
-      {final Map<String, dynamic>? lightTheme,
-      final Map<String, dynamic>? darkTheme}) = _$ThemeDetailsImpl;
-
-  factory _ThemeDetails.fromJson(Map<String, dynamic> json) =
-      _$ThemeDetailsImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$ThemeDetailsCopyWith<$Res>
+    implements $ThemeDetailsCopyWith<$Res> {
+  factory _$ThemeDetailsCopyWith(
+          _ThemeDetails value, $Res Function(_ThemeDetails) _then) =
+      __$ThemeDetailsCopyWithImpl;
   @override
-  Map<String, dynamic>? get lightTheme;
-  @override
-  Map<String, dynamic>? get darkTheme;
+  @useResult
+  $Res call(
+      {Map<String, dynamic>? lightTheme, Map<String, dynamic>? darkTheme});
+}
+
+/// @nodoc
+class __$ThemeDetailsCopyWithImpl<$Res>
+    implements _$ThemeDetailsCopyWith<$Res> {
+  __$ThemeDetailsCopyWithImpl(this._self, this._then);
+
+  final _ThemeDetails _self;
+  final $Res Function(_ThemeDetails) _then;
 
   /// Create a copy of ThemeDetails
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ThemeDetailsImplCopyWith<_$ThemeDetailsImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-UpdatesDetails _$UpdatesDetailsFromJson(Map<String, dynamic> json) {
-  return _UpdatesDetails.fromJson(json);
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? lightTheme = freezed,
+    Object? darkTheme = freezed,
+  }) {
+    return _then(_ThemeDetails(
+      lightTheme: freezed == lightTheme
+          ? _self._lightTheme
+          : lightTheme // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+      darkTheme: freezed == darkTheme
+          ? _self._darkTheme
+          : darkTheme // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$UpdatesDetails {
-  Map<String, DateTime?>? get parts => throw _privateConstructorUsedError;
-
-  /// Serializes this UpdatesDetails to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  Map<String, DateTime?>? get parts;
 
   /// Create a copy of UpdatesDetails
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $UpdatesDetailsCopyWith<UpdatesDetails> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $UpdatesDetailsCopyWith<$Res> {
-  factory $UpdatesDetailsCopyWith(
-          UpdatesDetails value, $Res Function(UpdatesDetails) then) =
-      _$UpdatesDetailsCopyWithImpl<$Res, UpdatesDetails>;
-  @useResult
-  $Res call({Map<String, DateTime?>? parts});
-}
-
-/// @nodoc
-class _$UpdatesDetailsCopyWithImpl<$Res, $Val extends UpdatesDetails>
-    implements $UpdatesDetailsCopyWith<$Res> {
-  _$UpdatesDetailsCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of UpdatesDetails
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $UpdatesDetailsCopyWith<UpdatesDetails> get copyWith =>
+      _$UpdatesDetailsCopyWithImpl<UpdatesDetails>(
+          this as UpdatesDetails, _$identity);
+
+  /// Serializes this UpdatesDetails to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? parts = freezed,
-  }) {
-    return _then(_value.copyWith(
-      parts: freezed == parts
-          ? _value.parts
-          : parts // ignore: cast_nullable_to_non_nullable
-              as Map<String, DateTime?>?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is UpdatesDetails &&
+            const DeepCollectionEquality().equals(other.parts, parts));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(parts));
+
+  @override
+  String toString() {
+    return 'UpdatesDetails(parts: $parts)';
   }
 }
 
 /// @nodoc
-abstract class _$$UpdatesDetailsImplCopyWith<$Res>
-    implements $UpdatesDetailsCopyWith<$Res> {
-  factory _$$UpdatesDetailsImplCopyWith(_$UpdatesDetailsImpl value,
-          $Res Function(_$UpdatesDetailsImpl) then) =
-      __$$UpdatesDetailsImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $UpdatesDetailsCopyWith<$Res> {
+  factory $UpdatesDetailsCopyWith(
+          UpdatesDetails value, $Res Function(UpdatesDetails) _then) =
+      _$UpdatesDetailsCopyWithImpl;
   @useResult
   $Res call({Map<String, DateTime?>? parts});
 }
 
 /// @nodoc
-class __$$UpdatesDetailsImplCopyWithImpl<$Res>
-    extends _$UpdatesDetailsCopyWithImpl<$Res, _$UpdatesDetailsImpl>
-    implements _$$UpdatesDetailsImplCopyWith<$Res> {
-  __$$UpdatesDetailsImplCopyWithImpl(
-      _$UpdatesDetailsImpl _value, $Res Function(_$UpdatesDetailsImpl) _then)
-      : super(_value, _then);
+class _$UpdatesDetailsCopyWithImpl<$Res>
+    implements $UpdatesDetailsCopyWith<$Res> {
+  _$UpdatesDetailsCopyWithImpl(this._self, this._then);
+
+  final UpdatesDetails _self;
+  final $Res Function(UpdatesDetails) _then;
 
   /// Create a copy of UpdatesDetails
   /// with the given fields replaced by the non-null parameter values.
@@ -740,9 +763,9 @@ class __$$UpdatesDetailsImplCopyWithImpl<$Res>
   $Res call({
     Object? parts = freezed,
   }) {
-    return _then(_$UpdatesDetailsImpl(
+    return _then(_self.copyWith(
       parts: freezed == parts
-          ? _value._parts
+          ? _self.parts
           : parts // ignore: cast_nullable_to_non_nullable
               as Map<String, DateTime?>?,
     ));
@@ -751,12 +774,10 @@ class __$$UpdatesDetailsImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$UpdatesDetailsImpl implements _UpdatesDetails {
-  const _$UpdatesDetailsImpl({final Map<String, DateTime?>? parts})
-      : _parts = parts;
-
-  factory _$UpdatesDetailsImpl.fromJson(Map<String, dynamic> json) =>
-      _$$UpdatesDetailsImplFromJson(json);
+class _UpdatesDetails implements UpdatesDetails {
+  const _UpdatesDetails({final Map<String, DateTime?>? parts}) : _parts = parts;
+  factory _UpdatesDetails.fromJson(Map<String, dynamic> json) =>
+      _$UpdatesDetailsFromJson(json);
 
   final Map<String, DateTime?>? _parts;
   @override
@@ -768,16 +789,26 @@ class _$UpdatesDetailsImpl implements _UpdatesDetails {
     return EqualUnmodifiableMapView(value);
   }
 
+  /// Create a copy of UpdatesDetails
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'UpdatesDetails(parts: $parts)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$UpdatesDetailsCopyWith<_UpdatesDetails> get copyWith =>
+      __$UpdatesDetailsCopyWithImpl<_UpdatesDetails>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$UpdatesDetailsToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$UpdatesDetailsImpl &&
+            other is _UpdatesDetails &&
             const DeepCollectionEquality().equals(other._parts, _parts));
   }
 
@@ -786,163 +817,67 @@ class _$UpdatesDetailsImpl implements _UpdatesDetails {
   int get hashCode =>
       Object.hash(runtimeType, const DeepCollectionEquality().hash(_parts));
 
-  /// Create a copy of UpdatesDetails
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$UpdatesDetailsImplCopyWith<_$UpdatesDetailsImpl> get copyWith =>
-      __$$UpdatesDetailsImplCopyWithImpl<_$UpdatesDetailsImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$UpdatesDetailsImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _UpdatesDetails implements UpdatesDetails {
-  const factory _UpdatesDetails({final Map<String, DateTime?>? parts}) =
-      _$UpdatesDetailsImpl;
-
-  factory _UpdatesDetails.fromJson(Map<String, dynamic> json) =
-      _$UpdatesDetailsImpl.fromJson;
-
-  @override
-  Map<String, DateTime?>? get parts;
-
-  /// Create a copy of UpdatesDetails
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$UpdatesDetailsImplCopyWith<_$UpdatesDetailsImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-LogoDetails _$LogoDetailsFromJson(Map<String, dynamic> json) {
-  return _LogoDetails.fromJson(json);
-}
-
-/// @nodoc
-mixin _$LogoDetails {
-  String? get large => throw _privateConstructorUsedError;
-  String? get small => throw _privateConstructorUsedError;
-
-  /// Serializes this LogoDetails to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of LogoDetails
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $LogoDetailsCopyWith<LogoDetails> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $LogoDetailsCopyWith<$Res> {
-  factory $LogoDetailsCopyWith(
-          LogoDetails value, $Res Function(LogoDetails) then) =
-      _$LogoDetailsCopyWithImpl<$Res, LogoDetails>;
-  @useResult
-  $Res call({String? large, String? small});
-}
-
-/// @nodoc
-class _$LogoDetailsCopyWithImpl<$Res, $Val extends LogoDetails>
-    implements $LogoDetailsCopyWith<$Res> {
-  _$LogoDetailsCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of LogoDetails
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? large = freezed,
-    Object? small = freezed,
-  }) {
-    return _then(_value.copyWith(
-      large: freezed == large
-          ? _value.large
-          : large // ignore: cast_nullable_to_non_nullable
-              as String?,
-      small: freezed == small
-          ? _value.small
-          : small // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
+  String toString() {
+    return 'UpdatesDetails(parts: $parts)';
   }
 }
 
 /// @nodoc
-abstract class _$$LogoDetailsImplCopyWith<$Res>
-    implements $LogoDetailsCopyWith<$Res> {
-  factory _$$LogoDetailsImplCopyWith(
-          _$LogoDetailsImpl value, $Res Function(_$LogoDetailsImpl) then) =
-      __$$LogoDetailsImplCopyWithImpl<$Res>;
+abstract mixin class _$UpdatesDetailsCopyWith<$Res>
+    implements $UpdatesDetailsCopyWith<$Res> {
+  factory _$UpdatesDetailsCopyWith(
+          _UpdatesDetails value, $Res Function(_UpdatesDetails) _then) =
+      __$UpdatesDetailsCopyWithImpl;
   @override
   @useResult
-  $Res call({String? large, String? small});
+  $Res call({Map<String, DateTime?>? parts});
 }
 
 /// @nodoc
-class __$$LogoDetailsImplCopyWithImpl<$Res>
-    extends _$LogoDetailsCopyWithImpl<$Res, _$LogoDetailsImpl>
-    implements _$$LogoDetailsImplCopyWith<$Res> {
-  __$$LogoDetailsImplCopyWithImpl(
-      _$LogoDetailsImpl _value, $Res Function(_$LogoDetailsImpl) _then)
-      : super(_value, _then);
+class __$UpdatesDetailsCopyWithImpl<$Res>
+    implements _$UpdatesDetailsCopyWith<$Res> {
+  __$UpdatesDetailsCopyWithImpl(this._self, this._then);
 
-  /// Create a copy of LogoDetails
+  final _UpdatesDetails _self;
+  final $Res Function(_UpdatesDetails) _then;
+
+  /// Create a copy of UpdatesDetails
   /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
   @override
+  @pragma('vm:prefer-inline')
   $Res call({
-    Object? large = freezed,
-    Object? small = freezed,
+    Object? parts = freezed,
   }) {
-    return _then(_$LogoDetailsImpl(
-      large: freezed == large
-          ? _value.large
-          : large // ignore: cast_nullable_to_non_nullable
-              as String?,
-      small: freezed == small
-          ? _value.small
-          : small // ignore: cast_nullable_to_non_nullable
-              as String?,
+    return _then(_UpdatesDetails(
+      parts: freezed == parts
+          ? _self._parts
+          : parts // ignore: cast_nullable_to_non_nullable
+              as Map<String, DateTime?>?,
     ));
   }
 }
 
 /// @nodoc
-@JsonSerializable()
-class _$LogoDetailsImpl implements _LogoDetails {
-  const _$LogoDetailsImpl({this.large, this.small});
+mixin _$LogoDetails {
+  String? get large;
+  String? get small;
 
-  factory _$LogoDetailsImpl.fromJson(Map<String, dynamic> json) =>
-      _$$LogoDetailsImplFromJson(json);
+  /// Create a copy of LogoDetails
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $LogoDetailsCopyWith<LogoDetails> get copyWith =>
+      _$LogoDetailsCopyWithImpl<LogoDetails>(this as LogoDetails, _$identity);
 
-  @override
-  final String? large;
-  @override
-  final String? small;
-
-  @override
-  String toString() {
-    return 'LogoDetails(large: $large, small: $small)';
-  }
+  /// Serializes this LogoDetails to a JSON map.
+  Map<String, dynamic> toJson();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$LogoDetailsImpl &&
+            other is LogoDetails &&
             (identical(other.large, large) || other.large == large) &&
             (identical(other.small, small) || other.small == small));
   }
@@ -951,136 +886,44 @@ class _$LogoDetailsImpl implements _LogoDetails {
   @override
   int get hashCode => Object.hash(runtimeType, large, small);
 
-  /// Create a copy of LogoDetails
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$LogoDetailsImplCopyWith<_$LogoDetailsImpl> get copyWith =>
-      __$$LogoDetailsImplCopyWithImpl<_$LogoDetailsImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$LogoDetailsImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _LogoDetails implements LogoDetails {
-  const factory _LogoDetails({final String? large, final String? small}) =
-      _$LogoDetailsImpl;
-
-  factory _LogoDetails.fromJson(Map<String, dynamic> json) =
-      _$LogoDetailsImpl.fromJson;
-
-  @override
-  String? get large;
-  @override
-  String? get small;
-
-  /// Create a copy of LogoDetails
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$LogoDetailsImplCopyWith<_$LogoDetailsImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-VersionDetails _$VersionDetailsFromJson(Map<String, dynamic> json) {
-  return _VersionDetails.fromJson(json);
-}
-
-/// @nodoc
-mixin _$VersionDetails {
-  String? get latest => throw _privateConstructorUsedError;
-  String? get required => throw _privateConstructorUsedError;
-
-  /// Serializes this VersionDetails to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of VersionDetails
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $VersionDetailsCopyWith<VersionDetails> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $VersionDetailsCopyWith<$Res> {
-  factory $VersionDetailsCopyWith(
-          VersionDetails value, $Res Function(VersionDetails) then) =
-      _$VersionDetailsCopyWithImpl<$Res, VersionDetails>;
-  @useResult
-  $Res call({String? latest, String? required});
-}
-
-/// @nodoc
-class _$VersionDetailsCopyWithImpl<$Res, $Val extends VersionDetails>
-    implements $VersionDetailsCopyWith<$Res> {
-  _$VersionDetailsCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of VersionDetails
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? latest = freezed,
-    Object? required = freezed,
-  }) {
-    return _then(_value.copyWith(
-      latest: freezed == latest
-          ? _value.latest
-          : latest // ignore: cast_nullable_to_non_nullable
-              as String?,
-      required: freezed == required
-          ? _value.required
-          : required // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
+  String toString() {
+    return 'LogoDetails(large: $large, small: $small)';
   }
 }
 
 /// @nodoc
-abstract class _$$VersionDetailsImplCopyWith<$Res>
-    implements $VersionDetailsCopyWith<$Res> {
-  factory _$$VersionDetailsImplCopyWith(_$VersionDetailsImpl value,
-          $Res Function(_$VersionDetailsImpl) then) =
-      __$$VersionDetailsImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $LogoDetailsCopyWith<$Res> {
+  factory $LogoDetailsCopyWith(
+          LogoDetails value, $Res Function(LogoDetails) _then) =
+      _$LogoDetailsCopyWithImpl;
   @useResult
-  $Res call({String? latest, String? required});
+  $Res call({String? large, String? small});
 }
 
 /// @nodoc
-class __$$VersionDetailsImplCopyWithImpl<$Res>
-    extends _$VersionDetailsCopyWithImpl<$Res, _$VersionDetailsImpl>
-    implements _$$VersionDetailsImplCopyWith<$Res> {
-  __$$VersionDetailsImplCopyWithImpl(
-      _$VersionDetailsImpl _value, $Res Function(_$VersionDetailsImpl) _then)
-      : super(_value, _then);
+class _$LogoDetailsCopyWithImpl<$Res> implements $LogoDetailsCopyWith<$Res> {
+  _$LogoDetailsCopyWithImpl(this._self, this._then);
 
-  /// Create a copy of VersionDetails
+  final LogoDetails _self;
+  final $Res Function(LogoDetails) _then;
+
+  /// Create a copy of LogoDetails
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? latest = freezed,
-    Object? required = freezed,
+    Object? large = freezed,
+    Object? small = freezed,
   }) {
-    return _then(_$VersionDetailsImpl(
-      latest: freezed == latest
-          ? _value.latest
-          : latest // ignore: cast_nullable_to_non_nullable
+    return _then(_self.copyWith(
+      large: freezed == large
+          ? _self.large
+          : large // ignore: cast_nullable_to_non_nullable
               as String?,
-      required: freezed == required
-          ? _value.required
-          : required // ignore: cast_nullable_to_non_nullable
+      small: freezed == small
+          ? _self.small
+          : small // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
   }
@@ -1088,27 +931,110 @@ class __$$VersionDetailsImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$VersionDetailsImpl implements _VersionDetails {
-  const _$VersionDetailsImpl({this.latest, this.required});
-
-  factory _$VersionDetailsImpl.fromJson(Map<String, dynamic> json) =>
-      _$$VersionDetailsImplFromJson(json);
-
-  @override
-  final String? latest;
-  @override
-  final String? required;
+class _LogoDetails implements LogoDetails {
+  const _LogoDetails({this.large, this.small});
+  factory _LogoDetails.fromJson(Map<String, dynamic> json) =>
+      _$LogoDetailsFromJson(json);
 
   @override
-  String toString() {
-    return 'VersionDetails(latest: $latest, required: $required)';
+  final String? large;
+  @override
+  final String? small;
+
+  /// Create a copy of LogoDetails
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$LogoDetailsCopyWith<_LogoDetails> get copyWith =>
+      __$LogoDetailsCopyWithImpl<_LogoDetails>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$LogoDetailsToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$VersionDetailsImpl &&
+            other is _LogoDetails &&
+            (identical(other.large, large) || other.large == large) &&
+            (identical(other.small, small) || other.small == small));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, large, small);
+
+  @override
+  String toString() {
+    return 'LogoDetails(large: $large, small: $small)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$LogoDetailsCopyWith<$Res>
+    implements $LogoDetailsCopyWith<$Res> {
+  factory _$LogoDetailsCopyWith(
+          _LogoDetails value, $Res Function(_LogoDetails) _then) =
+      __$LogoDetailsCopyWithImpl;
+  @override
+  @useResult
+  $Res call({String? large, String? small});
+}
+
+/// @nodoc
+class __$LogoDetailsCopyWithImpl<$Res> implements _$LogoDetailsCopyWith<$Res> {
+  __$LogoDetailsCopyWithImpl(this._self, this._then);
+
+  final _LogoDetails _self;
+  final $Res Function(_LogoDetails) _then;
+
+  /// Create a copy of LogoDetails
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? large = freezed,
+    Object? small = freezed,
+  }) {
+    return _then(_LogoDetails(
+      large: freezed == large
+          ? _self.large
+          : large // ignore: cast_nullable_to_non_nullable
+              as String?,
+      small: freezed == small
+          ? _self.small
+          : small // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+mixin _$VersionDetails {
+  String? get latest;
+  String? get required;
+
+  /// Create a copy of VersionDetails
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $VersionDetailsCopyWith<VersionDetails> get copyWith =>
+      _$VersionDetailsCopyWithImpl<VersionDetails>(
+          this as VersionDetails, _$identity);
+
+  /// Serializes this VersionDetails to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is VersionDetails &&
             (identical(other.latest, latest) || other.latest == latest) &&
             (identical(other.required, required) ||
                 other.required == required));
@@ -1118,39 +1044,135 @@ class _$VersionDetailsImpl implements _VersionDetails {
   @override
   int get hashCode => Object.hash(runtimeType, latest, required);
 
-  /// Create a copy of VersionDetails
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$VersionDetailsImplCopyWith<_$VersionDetailsImpl> get copyWith =>
-      __$$VersionDetailsImplCopyWithImpl<_$VersionDetailsImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$VersionDetailsImplToJson(
-      this,
-    );
+  String toString() {
+    return 'VersionDetails(latest: $latest, required: $required)';
   }
 }
 
-abstract class _VersionDetails implements VersionDetails {
-  const factory _VersionDetails(
-      {final String? latest, final String? required}) = _$VersionDetailsImpl;
+/// @nodoc
+abstract mixin class $VersionDetailsCopyWith<$Res> {
+  factory $VersionDetailsCopyWith(
+          VersionDetails value, $Res Function(VersionDetails) _then) =
+      _$VersionDetailsCopyWithImpl;
+  @useResult
+  $Res call({String? latest, String? required});
+}
 
-  factory _VersionDetails.fromJson(Map<String, dynamic> json) =
-      _$VersionDetailsImpl.fromJson;
+/// @nodoc
+class _$VersionDetailsCopyWithImpl<$Res>
+    implements $VersionDetailsCopyWith<$Res> {
+  _$VersionDetailsCopyWithImpl(this._self, this._then);
+
+  final VersionDetails _self;
+  final $Res Function(VersionDetails) _then;
+
+  /// Create a copy of VersionDetails
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? latest = freezed,
+    Object? required = freezed,
+  }) {
+    return _then(_self.copyWith(
+      latest: freezed == latest
+          ? _self.latest
+          : latest // ignore: cast_nullable_to_non_nullable
+              as String?,
+      required: freezed == required
+          ? _self.required
+          : required // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _VersionDetails implements VersionDetails {
+  const _VersionDetails({this.latest, this.required});
+  factory _VersionDetails.fromJson(Map<String, dynamic> json) =>
+      _$VersionDetailsFromJson(json);
 
   @override
-  String? get latest;
+  final String? latest;
   @override
-  String? get required;
+  final String? required;
 
   /// Create a copy of VersionDetails
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$VersionDetailsImplCopyWith<_$VersionDetailsImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  _$VersionDetailsCopyWith<_VersionDetails> get copyWith =>
+      __$VersionDetailsCopyWithImpl<_VersionDetails>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$VersionDetailsToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _VersionDetails &&
+            (identical(other.latest, latest) || other.latest == latest) &&
+            (identical(other.required, required) ||
+                other.required == required));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, latest, required);
+
+  @override
+  String toString() {
+    return 'VersionDetails(latest: $latest, required: $required)';
+  }
 }
+
+/// @nodoc
+abstract mixin class _$VersionDetailsCopyWith<$Res>
+    implements $VersionDetailsCopyWith<$Res> {
+  factory _$VersionDetailsCopyWith(
+          _VersionDetails value, $Res Function(_VersionDetails) _then) =
+      __$VersionDetailsCopyWithImpl;
+  @override
+  @useResult
+  $Res call({String? latest, String? required});
+}
+
+/// @nodoc
+class __$VersionDetailsCopyWithImpl<$Res>
+    implements _$VersionDetailsCopyWith<$Res> {
+  __$VersionDetailsCopyWithImpl(this._self, this._then);
+
+  final _VersionDetails _self;
+  final $Res Function(_VersionDetails) _then;
+
+  /// Create a copy of VersionDetails
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? latest = freezed,
+    Object? required = freezed,
+  }) {
+    return _then(_VersionDetails(
+      latest: freezed == latest
+          ? _self.latest
+          : latest // ignore: cast_nullable_to_non_nullable
+              as String?,
+      required: freezed == required
+          ? _self.required
+          : required // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+// dart format on

@@ -7,7 +7,7 @@ part 'djangoflow_odoo_auth_state.g.dart';
 enum AuthStatus { initial, unauthenticated, authenticated }
 
 @freezed
-class DjangoflowOdooAuthState with _$DjangoflowOdooAuthState {
+abstract class DjangoflowOdooAuthState with _$DjangoflowOdooAuthState {
   const factory DjangoflowOdooAuthState({
     @Default(AuthStatus.initial) AuthStatus status,
     String? errorMessage,

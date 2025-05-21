@@ -34,6 +34,9 @@ class NotificationInitializer {
     required List<PushActionCategory> pushActions,
     required String defaultAndroidNotificationIcon,
     bool? forceInitialize,
+    @Deprecated(
+      'This has no effect on iOS anymore, removed from FlutterLocalNotificationsPlugin',
+    )
     DidReceiveLocalNotificationCallback? onDidReceiveLocalNotification,
     DidReceiveNotificationResponseCallback? onDidReceiveNotificationResponse,
   }) async {
@@ -43,7 +46,6 @@ class NotificationInitializer {
       final DarwinInitializationSettings initializationSettingsDarwin =
           DarwinInitializationSettings(
         notificationCategories: pushActions.toDarwinNotificationCategoryList(),
-        onDidReceiveLocalNotification: onDidReceiveLocalNotification,
         requestAlertPermission: requestAlertPermission,
         requestBadgePermission: requestBadgePermission,
         requestCriticalPermission: requestCriticalPermission,

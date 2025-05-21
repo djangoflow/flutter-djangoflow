@@ -1,4 +1,4 @@
-library djangoflow_scrollable_column;
+library;
 
 import 'package:flutter/material.dart';
 

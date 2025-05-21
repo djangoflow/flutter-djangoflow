@@ -17,11 +17,11 @@ sealed class AuthState with _$AuthState {
 
   bool get isAuthenticated => this is _Authenticated;
 
-  String? get token => map(
-        initial: (_) => null,
-        authenticated: (state) => state.token,
-        unauthenticated: (_) => null,
-      );
+  String? get token => switch (this) {
+        _Initial() => null,
+        _Authenticated(token: final token) => token,
+        _Unauthenticated() => null,
+      };
 
   bool get isUnauthenticated => this is _Unauthenticated;
 

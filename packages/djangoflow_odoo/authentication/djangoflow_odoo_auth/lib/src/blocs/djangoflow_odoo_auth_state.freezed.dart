@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,111 +10,61 @@ part of 'djangoflow_odoo_auth_state.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-DjangoflowOdooAuthState _$DjangoflowOdooAuthStateFromJson(
-    Map<String, dynamic> json) {
-  return _DjangoflowOdooAuthState.fromJson(json);
-}
 
 /// @nodoc
 mixin _$DjangoflowOdooAuthState {
-  AuthStatus get status => throw _privateConstructorUsedError;
-  String? get errorMessage => throw _privateConstructorUsedError;
-  String? get baseUrl => throw _privateConstructorUsedError;
-  String? get database => throw _privateConstructorUsedError;
+  AuthStatus get status;
+  String? get errorMessage;
+  String? get baseUrl;
+  String? get database;
   @OdooSessionConverter()
-  OdooSession? get session => throw _privateConstructorUsedError;
-  List<String>? get dbList => throw _privateConstructorUsedError;
-
-  /// Serializes this DjangoflowOdooAuthState to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  OdooSession? get session;
+  List<String>? get dbList;
 
   /// Create a copy of DjangoflowOdooAuthState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $DjangoflowOdooAuthStateCopyWith<DjangoflowOdooAuthState> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $DjangoflowOdooAuthStateCopyWith<$Res> {
-  factory $DjangoflowOdooAuthStateCopyWith(DjangoflowOdooAuthState value,
-          $Res Function(DjangoflowOdooAuthState) then) =
-      _$DjangoflowOdooAuthStateCopyWithImpl<$Res, DjangoflowOdooAuthState>;
-  @useResult
-  $Res call(
-      {AuthStatus status,
-      String? errorMessage,
-      String? baseUrl,
-      String? database,
-      @OdooSessionConverter() OdooSession? session,
-      List<String>? dbList});
-}
-
-/// @nodoc
-class _$DjangoflowOdooAuthStateCopyWithImpl<$Res,
-        $Val extends DjangoflowOdooAuthState>
-    implements $DjangoflowOdooAuthStateCopyWith<$Res> {
-  _$DjangoflowOdooAuthStateCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of DjangoflowOdooAuthState
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $DjangoflowOdooAuthStateCopyWith<DjangoflowOdooAuthState> get copyWith =>
+      _$DjangoflowOdooAuthStateCopyWithImpl<DjangoflowOdooAuthState>(
+          this as DjangoflowOdooAuthState, _$identity);
+
+  /// Serializes this DjangoflowOdooAuthState to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? status = null,
-    Object? errorMessage = freezed,
-    Object? baseUrl = freezed,
-    Object? database = freezed,
-    Object? session = freezed,
-    Object? dbList = freezed,
-  }) {
-    return _then(_value.copyWith(
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as AuthStatus,
-      errorMessage: freezed == errorMessage
-          ? _value.errorMessage
-          : errorMessage // ignore: cast_nullable_to_non_nullable
-              as String?,
-      baseUrl: freezed == baseUrl
-          ? _value.baseUrl
-          : baseUrl // ignore: cast_nullable_to_non_nullable
-              as String?,
-      database: freezed == database
-          ? _value.database
-          : database // ignore: cast_nullable_to_non_nullable
-              as String?,
-      session: freezed == session
-          ? _value.session
-          : session // ignore: cast_nullable_to_non_nullable
-              as OdooSession?,
-      dbList: freezed == dbList
-          ? _value.dbList
-          : dbList // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is DjangoflowOdooAuthState &&
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.errorMessage, errorMessage) ||
+                other.errorMessage == errorMessage) &&
+            (identical(other.baseUrl, baseUrl) || other.baseUrl == baseUrl) &&
+            (identical(other.database, database) ||
+                other.database == database) &&
+            (identical(other.session, session) || other.session == session) &&
+            const DeepCollectionEquality().equals(other.dbList, dbList));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, status, errorMessage, baseUrl,
+      database, session, const DeepCollectionEquality().hash(dbList));
+
+  @override
+  String toString() {
+    return 'DjangoflowOdooAuthState(status: $status, errorMessage: $errorMessage, baseUrl: $baseUrl, database: $database, session: $session, dbList: $dbList)';
   }
 }
 
 /// @nodoc
-abstract class _$$DjangoflowOdooAuthStateImplCopyWith<$Res>
-    implements $DjangoflowOdooAuthStateCopyWith<$Res> {
-  factory _$$DjangoflowOdooAuthStateImplCopyWith(
-          _$DjangoflowOdooAuthStateImpl value,
-          $Res Function(_$DjangoflowOdooAuthStateImpl) then) =
-      __$$DjangoflowOdooAuthStateImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $DjangoflowOdooAuthStateCopyWith<$Res> {
+  factory $DjangoflowOdooAuthStateCopyWith(DjangoflowOdooAuthState value,
+          $Res Function(DjangoflowOdooAuthState) _then) =
+      _$DjangoflowOdooAuthStateCopyWithImpl;
   @useResult
   $Res call(
       {AuthStatus status,
@@ -125,14 +76,12 @@ abstract class _$$DjangoflowOdooAuthStateImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$DjangoflowOdooAuthStateImplCopyWithImpl<$Res>
-    extends _$DjangoflowOdooAuthStateCopyWithImpl<$Res,
-        _$DjangoflowOdooAuthStateImpl>
-    implements _$$DjangoflowOdooAuthStateImplCopyWith<$Res> {
-  __$$DjangoflowOdooAuthStateImplCopyWithImpl(
-      _$DjangoflowOdooAuthStateImpl _value,
-      $Res Function(_$DjangoflowOdooAuthStateImpl) _then)
-      : super(_value, _then);
+class _$DjangoflowOdooAuthStateCopyWithImpl<$Res>
+    implements $DjangoflowOdooAuthStateCopyWith<$Res> {
+  _$DjangoflowOdooAuthStateCopyWithImpl(this._self, this._then);
+
+  final DjangoflowOdooAuthState _self;
+  final $Res Function(DjangoflowOdooAuthState) _then;
 
   /// Create a copy of DjangoflowOdooAuthState
   /// with the given fields replaced by the non-null parameter values.
@@ -146,29 +95,29 @@ class __$$DjangoflowOdooAuthStateImplCopyWithImpl<$Res>
     Object? session = freezed,
     Object? dbList = freezed,
   }) {
-    return _then(_$DjangoflowOdooAuthStateImpl(
+    return _then(_self.copyWith(
       status: null == status
-          ? _value.status
+          ? _self.status
           : status // ignore: cast_nullable_to_non_nullable
               as AuthStatus,
       errorMessage: freezed == errorMessage
-          ? _value.errorMessage
+          ? _self.errorMessage
           : errorMessage // ignore: cast_nullable_to_non_nullable
               as String?,
       baseUrl: freezed == baseUrl
-          ? _value.baseUrl
+          ? _self.baseUrl
           : baseUrl // ignore: cast_nullable_to_non_nullable
               as String?,
       database: freezed == database
-          ? _value.database
+          ? _self.database
           : database // ignore: cast_nullable_to_non_nullable
               as String?,
       session: freezed == session
-          ? _value.session
+          ? _self.session
           : session // ignore: cast_nullable_to_non_nullable
               as OdooSession?,
       dbList: freezed == dbList
-          ? _value._dbList
+          ? _self.dbList
           : dbList // ignore: cast_nullable_to_non_nullable
               as List<String>?,
     ));
@@ -177,8 +126,8 @@ class __$$DjangoflowOdooAuthStateImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$DjangoflowOdooAuthStateImpl implements _DjangoflowOdooAuthState {
-  const _$DjangoflowOdooAuthStateImpl(
+class _DjangoflowOdooAuthState implements DjangoflowOdooAuthState {
+  const _DjangoflowOdooAuthState(
       {this.status = AuthStatus.initial,
       this.errorMessage,
       this.baseUrl,
@@ -186,9 +135,8 @@ class _$DjangoflowOdooAuthStateImpl implements _DjangoflowOdooAuthState {
       @OdooSessionConverter() this.session,
       final List<String>? dbList})
       : _dbList = dbList;
-
-  factory _$DjangoflowOdooAuthStateImpl.fromJson(Map<String, dynamic> json) =>
-      _$$DjangoflowOdooAuthStateImplFromJson(json);
+  factory _DjangoflowOdooAuthState.fromJson(Map<String, dynamic> json) =>
+      _$DjangoflowOdooAuthStateFromJson(json);
 
   @override
   @JsonKey()
@@ -212,16 +160,27 @@ class _$DjangoflowOdooAuthStateImpl implements _DjangoflowOdooAuthState {
     return EqualUnmodifiableListView(value);
   }
 
+  /// Create a copy of DjangoflowOdooAuthState
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'DjangoflowOdooAuthState(status: $status, errorMessage: $errorMessage, baseUrl: $baseUrl, database: $database, session: $session, dbList: $dbList)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$DjangoflowOdooAuthStateCopyWith<_DjangoflowOdooAuthState> get copyWith =>
+      __$DjangoflowOdooAuthStateCopyWithImpl<_DjangoflowOdooAuthState>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$DjangoflowOdooAuthStateToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$DjangoflowOdooAuthStateImpl &&
+            other is _DjangoflowOdooAuthState &&
             (identical(other.status, status) || other.status == status) &&
             (identical(other.errorMessage, errorMessage) ||
                 other.errorMessage == errorMessage) &&
@@ -237,53 +196,76 @@ class _$DjangoflowOdooAuthStateImpl implements _DjangoflowOdooAuthState {
   int get hashCode => Object.hash(runtimeType, status, errorMessage, baseUrl,
       database, session, const DeepCollectionEquality().hash(_dbList));
 
-  /// Create a copy of DjangoflowOdooAuthState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$DjangoflowOdooAuthStateImplCopyWith<_$DjangoflowOdooAuthStateImpl>
-      get copyWith => __$$DjangoflowOdooAuthStateImplCopyWithImpl<
-          _$DjangoflowOdooAuthStateImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$DjangoflowOdooAuthStateImplToJson(
-      this,
-    );
+  String toString() {
+    return 'DjangoflowOdooAuthState(status: $status, errorMessage: $errorMessage, baseUrl: $baseUrl, database: $database, session: $session, dbList: $dbList)';
   }
 }
 
-abstract class _DjangoflowOdooAuthState implements DjangoflowOdooAuthState {
-  const factory _DjangoflowOdooAuthState(
-      {final AuthStatus status,
-      final String? errorMessage,
-      final String? baseUrl,
-      final String? database,
-      @OdooSessionConverter() final OdooSession? session,
-      final List<String>? dbList}) = _$DjangoflowOdooAuthStateImpl;
+/// @nodoc
+abstract mixin class _$DjangoflowOdooAuthStateCopyWith<$Res>
+    implements $DjangoflowOdooAuthStateCopyWith<$Res> {
+  factory _$DjangoflowOdooAuthStateCopyWith(_DjangoflowOdooAuthState value,
+          $Res Function(_DjangoflowOdooAuthState) _then) =
+      __$DjangoflowOdooAuthStateCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {AuthStatus status,
+      String? errorMessage,
+      String? baseUrl,
+      String? database,
+      @OdooSessionConverter() OdooSession? session,
+      List<String>? dbList});
+}
 
-  factory _DjangoflowOdooAuthState.fromJson(Map<String, dynamic> json) =
-      _$DjangoflowOdooAuthStateImpl.fromJson;
+/// @nodoc
+class __$DjangoflowOdooAuthStateCopyWithImpl<$Res>
+    implements _$DjangoflowOdooAuthStateCopyWith<$Res> {
+  __$DjangoflowOdooAuthStateCopyWithImpl(this._self, this._then);
 
-  @override
-  AuthStatus get status;
-  @override
-  String? get errorMessage;
-  @override
-  String? get baseUrl;
-  @override
-  String? get database;
-  @override
-  @OdooSessionConverter()
-  OdooSession? get session;
-  @override
-  List<String>? get dbList;
+  final _DjangoflowOdooAuthState _self;
+  final $Res Function(_DjangoflowOdooAuthState) _then;
 
   /// Create a copy of DjangoflowOdooAuthState
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$DjangoflowOdooAuthStateImplCopyWith<_$DjangoflowOdooAuthStateImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? status = null,
+    Object? errorMessage = freezed,
+    Object? baseUrl = freezed,
+    Object? database = freezed,
+    Object? session = freezed,
+    Object? dbList = freezed,
+  }) {
+    return _then(_DjangoflowOdooAuthState(
+      status: null == status
+          ? _self.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as AuthStatus,
+      errorMessage: freezed == errorMessage
+          ? _self.errorMessage
+          : errorMessage // ignore: cast_nullable_to_non_nullable
+              as String?,
+      baseUrl: freezed == baseUrl
+          ? _self.baseUrl
+          : baseUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
+      database: freezed == database
+          ? _self.database
+          : database // ignore: cast_nullable_to_non_nullable
+              as String?,
+      session: freezed == session
+          ? _self.session
+          : session // ignore: cast_nullable_to_non_nullable
+              as OdooSession?,
+      dbList: freezed == dbList
+          ? _self._dbList
+          : dbList // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+    ));
+  }
 }
+
+// dart format on

@@ -1,3 +1,3 @@
-library djangoflow_sync_foundation;
+library;
 
 export 'src/src.dart';

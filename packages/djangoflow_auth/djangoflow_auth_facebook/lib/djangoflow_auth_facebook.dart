@@ -1,3 +1,3 @@
-library djangoflow_auth_facebook;
+library;
 
 export 'src/facebook_social_login.dart';

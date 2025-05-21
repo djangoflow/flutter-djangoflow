@@ -1,4 +1,4 @@
-library djangoflow_remote_config;
+library;
 
 export 'src/blocs/app_launch_remote_config_cubit/app_launch_remote_config_cubit.dart';
 export 'src/blocs/remote_config_cubit/remote_config_cubit.dart';

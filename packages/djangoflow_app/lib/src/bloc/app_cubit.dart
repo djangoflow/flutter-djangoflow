@@ -10,7 +10,7 @@ part 'app_cubit.g.dart';
 enum AppEnvironment { live, sandbox }
 
 @freezed
-class AppState with _$AppState {
+abstract class AppState with _$AppState {
   // AppState should *only* contain fields that require MaterialApp re-building
   const factory AppState({
     @Default(true) bool firstRun,

@@ -1,4 +1,4 @@
-library djangoflow_websocket;
+library;
 
 export 'src/blocs/djangoflow_websocket_cubit/djangoflow_websocket_cubit.dart';
 export 'src/widgets/djangoflow_websocket_bloc_listener.dart';

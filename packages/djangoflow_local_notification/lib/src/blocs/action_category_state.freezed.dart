@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,87 +10,55 @@ part of 'action_category_state.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-ActionCategoryState _$ActionCategoryStateFromJson(Map<String, dynamic> json) {
-  return _ActionCategoryState.fromJson(json);
-}
 
 /// @nodoc
 mixin _$ActionCategoryState {
-  bool get isLoading => throw _privateConstructorUsedError;
-  bool get hasError => throw _privateConstructorUsedError;
-  List<PushActionCategory> get actionCategories =>
-      throw _privateConstructorUsedError;
-
-  /// Serializes this ActionCategoryState to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  bool get isLoading;
+  bool get hasError;
+  List<PushActionCategory> get actionCategories;
 
   /// Create a copy of ActionCategoryState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $ActionCategoryStateCopyWith<ActionCategoryState> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $ActionCategoryStateCopyWith<$Res> {
-  factory $ActionCategoryStateCopyWith(
-          ActionCategoryState value, $Res Function(ActionCategoryState) then) =
-      _$ActionCategoryStateCopyWithImpl<$Res, ActionCategoryState>;
-  @useResult
-  $Res call(
-      {bool isLoading,
-      bool hasError,
-      List<PushActionCategory> actionCategories});
-}
-
-/// @nodoc
-class _$ActionCategoryStateCopyWithImpl<$Res, $Val extends ActionCategoryState>
-    implements $ActionCategoryStateCopyWith<$Res> {
-  _$ActionCategoryStateCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of ActionCategoryState
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $ActionCategoryStateCopyWith<ActionCategoryState> get copyWith =>
+      _$ActionCategoryStateCopyWithImpl<ActionCategoryState>(
+          this as ActionCategoryState, _$identity);
+
+  /// Serializes this ActionCategoryState to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? isLoading = null,
-    Object? hasError = null,
-    Object? actionCategories = null,
-  }) {
-    return _then(_value.copyWith(
-      isLoading: null == isLoading
-          ? _value.isLoading
-          : isLoading // ignore: cast_nullable_to_non_nullable
-              as bool,
-      hasError: null == hasError
-          ? _value.hasError
-          : hasError // ignore: cast_nullable_to_non_nullable
-              as bool,
-      actionCategories: null == actionCategories
-          ? _value.actionCategories
-          : actionCategories // ignore: cast_nullable_to_non_nullable
-              as List<PushActionCategory>,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is ActionCategoryState &&
+            (identical(other.isLoading, isLoading) ||
+                other.isLoading == isLoading) &&
+            (identical(other.hasError, hasError) ||
+                other.hasError == hasError) &&
+            const DeepCollectionEquality()
+                .equals(other.actionCategories, actionCategories));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, isLoading, hasError,
+      const DeepCollectionEquality().hash(actionCategories));
+
+  @override
+  String toString() {
+    return 'ActionCategoryState(isLoading: $isLoading, hasError: $hasError, actionCategories: $actionCategories)';
   }
 }
 
 /// @nodoc
-abstract class _$$ActionCategoryStateImplCopyWith<$Res>
-    implements $ActionCategoryStateCopyWith<$Res> {
-  factory _$$ActionCategoryStateImplCopyWith(_$ActionCategoryStateImpl value,
-          $Res Function(_$ActionCategoryStateImpl) then) =
-      __$$ActionCategoryStateImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $ActionCategoryStateCopyWith<$Res> {
+  factory $ActionCategoryStateCopyWith(
+          ActionCategoryState value, $Res Function(ActionCategoryState) _then) =
+      _$ActionCategoryStateCopyWithImpl;
   @useResult
   $Res call(
       {bool isLoading,
@@ -98,12 +67,12 @@ abstract class _$$ActionCategoryStateImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$ActionCategoryStateImplCopyWithImpl<$Res>
-    extends _$ActionCategoryStateCopyWithImpl<$Res, _$ActionCategoryStateImpl>
-    implements _$$ActionCategoryStateImplCopyWith<$Res> {
-  __$$ActionCategoryStateImplCopyWithImpl(_$ActionCategoryStateImpl _value,
-      $Res Function(_$ActionCategoryStateImpl) _then)
-      : super(_value, _then);
+class _$ActionCategoryStateCopyWithImpl<$Res>
+    implements $ActionCategoryStateCopyWith<$Res> {
+  _$ActionCategoryStateCopyWithImpl(this._self, this._then);
+
+  final ActionCategoryState _self;
+  final $Res Function(ActionCategoryState) _then;
 
   /// Create a copy of ActionCategoryState
   /// with the given fields replaced by the non-null parameter values.
@@ -114,17 +83,17 @@ class __$$ActionCategoryStateImplCopyWithImpl<$Res>
     Object? hasError = null,
     Object? actionCategories = null,
   }) {
-    return _then(_$ActionCategoryStateImpl(
+    return _then(_self.copyWith(
       isLoading: null == isLoading
-          ? _value.isLoading
+          ? _self.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
       hasError: null == hasError
-          ? _value.hasError
+          ? _self.hasError
           : hasError // ignore: cast_nullable_to_non_nullable
               as bool,
       actionCategories: null == actionCategories
-          ? _value._actionCategories
+          ? _self.actionCategories
           : actionCategories // ignore: cast_nullable_to_non_nullable
               as List<PushActionCategory>,
     ));
@@ -133,15 +102,14 @@ class __$$ActionCategoryStateImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$ActionCategoryStateImpl implements _ActionCategoryState {
-  const _$ActionCategoryStateImpl(
+class _ActionCategoryState implements ActionCategoryState {
+  const _ActionCategoryState(
       {this.isLoading = true,
       this.hasError = false,
       final List<PushActionCategory> actionCategories = const []})
       : _actionCategories = actionCategories;
-
-  factory _$ActionCategoryStateImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ActionCategoryStateImplFromJson(json);
+  factory _ActionCategoryState.fromJson(Map<String, dynamic> json) =>
+      _$ActionCategoryStateFromJson(json);
 
   @override
   @JsonKey()
@@ -159,16 +127,27 @@ class _$ActionCategoryStateImpl implements _ActionCategoryState {
     return EqualUnmodifiableListView(_actionCategories);
   }
 
+  /// Create a copy of ActionCategoryState
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'ActionCategoryState(isLoading: $isLoading, hasError: $hasError, actionCategories: $actionCategories)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$ActionCategoryStateCopyWith<_ActionCategoryState> get copyWith =>
+      __$ActionCategoryStateCopyWithImpl<_ActionCategoryState>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$ActionCategoryStateToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ActionCategoryStateImpl &&
+            other is _ActionCategoryState &&
             (identical(other.isLoading, isLoading) ||
                 other.isLoading == isLoading) &&
             (identical(other.hasError, hasError) ||
@@ -182,44 +161,58 @@ class _$ActionCategoryStateImpl implements _ActionCategoryState {
   int get hashCode => Object.hash(runtimeType, isLoading, hasError,
       const DeepCollectionEquality().hash(_actionCategories));
 
-  /// Create a copy of ActionCategoryState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$ActionCategoryStateImplCopyWith<_$ActionCategoryStateImpl> get copyWith =>
-      __$$ActionCategoryStateImplCopyWithImpl<_$ActionCategoryStateImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$ActionCategoryStateImplToJson(
-      this,
-    );
+  String toString() {
+    return 'ActionCategoryState(isLoading: $isLoading, hasError: $hasError, actionCategories: $actionCategories)';
   }
 }
 
-abstract class _ActionCategoryState implements ActionCategoryState {
-  const factory _ActionCategoryState(
-          {final bool isLoading,
-          final bool hasError,
-          final List<PushActionCategory> actionCategories}) =
-      _$ActionCategoryStateImpl;
+/// @nodoc
+abstract mixin class _$ActionCategoryStateCopyWith<$Res>
+    implements $ActionCategoryStateCopyWith<$Res> {
+  factory _$ActionCategoryStateCopyWith(_ActionCategoryState value,
+          $Res Function(_ActionCategoryState) _then) =
+      __$ActionCategoryStateCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {bool isLoading,
+      bool hasError,
+      List<PushActionCategory> actionCategories});
+}
 
-  factory _ActionCategoryState.fromJson(Map<String, dynamic> json) =
-      _$ActionCategoryStateImpl.fromJson;
+/// @nodoc
+class __$ActionCategoryStateCopyWithImpl<$Res>
+    implements _$ActionCategoryStateCopyWith<$Res> {
+  __$ActionCategoryStateCopyWithImpl(this._self, this._then);
 
-  @override
-  bool get isLoading;
-  @override
-  bool get hasError;
-  @override
-  List<PushActionCategory> get actionCategories;
+  final _ActionCategoryState _self;
+  final $Res Function(_ActionCategoryState) _then;
 
   /// Create a copy of ActionCategoryState
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ActionCategoryStateImplCopyWith<_$ActionCategoryStateImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? isLoading = null,
+    Object? hasError = null,
+    Object? actionCategories = null,
+  }) {
+    return _then(_ActionCategoryState(
+      isLoading: null == isLoading
+          ? _self.isLoading
+          : isLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      hasError: null == hasError
+          ? _self.hasError
+          : hasError // ignore: cast_nullable_to_non_nullable
+              as bool,
+      actionCategories: null == actionCategories
+          ? _self._actionCategories
+          : actionCategories // ignore: cast_nullable_to_non_nullable
+              as List<PushActionCategory>,
+    ));
+  }
 }
+
+// dart format on

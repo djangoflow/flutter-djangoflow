@@ -7,7 +7,7 @@ part 'djangoflow_fcm_state.freezed.dart';
   toJson: false,
   fromJson: false,
 )
-class DjangoflowFCMState with _$DjangoflowFCMState {
+abstract class DjangoflowFCMState with _$DjangoflowFCMState {
   const factory DjangoflowFCMState({
     RemoteMessage? remoteMessage,
     String? token,

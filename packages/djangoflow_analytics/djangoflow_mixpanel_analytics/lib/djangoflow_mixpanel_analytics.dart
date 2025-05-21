@@ -1,4 +1,4 @@
-library djangoflow_mixpanel_analytics;
+library;
 
 export 'src/features/events/events.dart';
 export 'src/features/user_properties_removal/user_properties_removal.dart';
