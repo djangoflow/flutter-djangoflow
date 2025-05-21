@@ -1,3 +1,3 @@
-library djangoflow_bloc_extensions;
+library;
 
 export 'src/safe_emit_mixin.dart';

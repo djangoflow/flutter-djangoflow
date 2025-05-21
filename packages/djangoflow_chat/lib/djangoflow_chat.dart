@@ -1,4 +1,4 @@
-library djangoflow_chat;
+library;
 
 export 'blocs/chat_cubit/chat_cubit.dart';
 export 'models/anonymous_user.dart';

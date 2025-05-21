@@ -1,3 +1,3 @@
-library djangoflow_sync_drift_odoo;
+library;
 
 export 'src/src.dart';

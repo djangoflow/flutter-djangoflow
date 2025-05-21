@@ -1,3 +1,3 @@
-library djangoflow_odoo_auth;
+library;
 
 export 'src/src.dart';

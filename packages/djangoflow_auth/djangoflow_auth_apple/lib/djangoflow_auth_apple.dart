@@ -1,3 +1,3 @@
-library djangoflow_auth_apple;
+library;
 
 export 'src/apple_social_login.dart';

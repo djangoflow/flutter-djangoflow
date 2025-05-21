@@ -1,4 +1,4 @@
-library djangoflow_auth;
+library;
 
 export 'src/interfaces/social_login.dart';
 export 'src/blocs/auth_cubit/auth_cubit.dart';
