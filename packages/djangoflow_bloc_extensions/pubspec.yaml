@@ -1,6 +1,6 @@
 name: djangoflow_bloc_extensions
 description: DjangoFlow BLoC Extensions is a Flutter package that provides helpful extensions and mixins to enhance the behavior of BLoC classes in your Flutter applications.
-version: 0.1.0
+version: 0.2.0
 homepage: https://github.com/djangoflow/flutter-djangoflow/tree/main/packages/djangoflow_bloc_extensions
 
 environment:

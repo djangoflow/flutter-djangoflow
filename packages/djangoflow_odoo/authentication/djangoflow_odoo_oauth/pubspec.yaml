@@ -1,6 +1,6 @@
 name: djangoflow_odoo_oauth
 description: "Odoo OAuth Authentication package for Flutter"
-version: 0.1.0+1
+version: 0.2.0
 homepage: https://github.com/djangoflow/flutter-djangoflow/tree/main/packages/djangoflow_odoo/authentication/djangoflow_odoo_oauth
 
 environment:
@@ -10,7 +10,7 @@ environment:
 dependencies:
   collection: ^1.18.0
   crypto: ^3.0.5
-  djangoflow_oauth: ^0.0.1+1
+  djangoflow_oauth: ^0.1.0
   flutter:
     sdk: flutter
   flutter_web_auth_2: ^4.0.2

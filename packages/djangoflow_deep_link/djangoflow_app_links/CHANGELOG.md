@@ -1,3 +1,9 @@
+## 4.0.0
+
+> Note: This release has breaking changes.
+
+ - **BREAKING** **REFACTOR**: update dependency of djangoflow_app_links. ([d826cd63](https://github.com/djangoflow/flutter-djangoflow/commit/d826cd63a2a494d7679b135347578758a3238687))
+
 ## 3.0.1
 
  - **REFACTOR**: update dependencies. ([b1531da6](https://github.com/djangoflow/flutter-djangoflow/commit/b1531da6872511f1cbe86be74888db64f01f3b60))

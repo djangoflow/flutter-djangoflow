@@ -1,3 +1,9 @@
+## 0.4.0
+
+> Note: This release has breaking changes.
+
+ - **BREAKING** **REFACTOR**: update dependencies. ([61db90af](https://github.com/djangoflow/flutter-djangoflow/commit/61db90af4da126a177106a23ac4f770fee796c65))
+
 ## 0.3.0+1
 
  - **REFACTOR**: update sentry_flutter dependency. ([650aaa95](https://github.com/djangoflow/flutter-djangoflow/commit/650aaa95966065ee37f66ec3773aaae2114efe2f))

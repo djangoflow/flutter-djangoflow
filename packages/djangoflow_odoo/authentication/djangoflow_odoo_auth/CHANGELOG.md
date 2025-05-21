@@ -1,3 +1,10 @@
+## 0.2.0
+
+> Note: This release has breaking changes.
+
+ - **REFACTOR**: update to pub dep from git dep. ([08216ecc](https://github.com/djangoflow/flutter-djangoflow/commit/08216ecc0835d637e4db557c180e20585760379b))
+ - **BREAKING** **REFACTOR**: update dependencies. ([61db90af](https://github.com/djangoflow/flutter-djangoflow/commit/61db90af4da126a177106a23ac4f770fee796c65))
+
 ## 0.1.0+3
 
  - **REFACTOR**: make relevant changes for odoo_rpc package changes. ([da09aab0](https://github.com/djangoflow/flutter-djangoflow/commit/da09aab0f29a11f49fc66a7b04da8ddb62996ff1))

@@ -1,3 +1,10 @@
+## 0.3.0
+
+> Note: This release has breaking changes.
+
+ - **BREAKING** **REFACTOR**: update dependencies to latest. ([54f7523d](https://github.com/djangoflow/flutter-djangoflow/commit/54f7523db17dc18fa8ed397554244d37b798c47d))
+ - **BREAKING** **REFACTOR**: update dependencies. ([61db90af](https://github.com/djangoflow/flutter-djangoflow/commit/61db90af4da126a177106a23ac4f770fee796c65))
+
 ## 0.2.0+1
 
  - **REFACTOR**: update dependencies. ([b1531da6](https://github.com/djangoflow/flutter-djangoflow/commit/b1531da6872511f1cbe86be74888db64f01f3b60))
