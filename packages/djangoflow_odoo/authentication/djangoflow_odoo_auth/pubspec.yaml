@@ -14,10 +14,7 @@ dependencies:
   freezed_annotation: ^3.0.0
   http: ^1.2.2
   hydrated_bloc: ^10.0.0
-  odoo_rpc:
-    git:
-      url: https://github.com/djangoflow/odoo-rpc-dart.git
-      ref: master
+  odoo_rpc: ^0.7.0
   xml_rpc: ^0.5.1
 
 dev_dependencies:
