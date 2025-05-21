@@ -162,7 +162,7 @@ class __VideoPlayerUIState extends State<_VideoPlayerUI> {
                 : IgnorePointer(
                     child: Container(
                       width: double.infinity,
-                      color: theme.colorScheme.surface.withOpacity(0.2),
+                      color: theme.colorScheme.surface.withValues(alpha: 0.2),
                       child: Center(
                         child: Icon(
                           widget.playIcon,
