@@ -13,8 +13,7 @@ class DiscordOAuth2Helper {
       } else {
         val = v.trim();
       }
-      qsList.add(k + '=' + Uri.encodeComponent(val));
-      // qsList.add(k + '=' + val);
+      qsList.add('$k=${Uri.encodeComponent(val)}');
     });
 
     return qsList.join('&');
