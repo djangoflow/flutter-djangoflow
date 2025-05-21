@@ -1,5 +1,5 @@
 extension MapExtensions on Map<String, dynamic>? {
-  /// Removes all null values from the map and casts it to a Map<String, Object>
+  /// Removes all null values from the map and casts it to a `Map<String, Object>`
   Map<String, Object>? removeNullAndCast() {
     final Map<String, Object> newMap = {};
     if (this == null || this!.isEmpty) {
