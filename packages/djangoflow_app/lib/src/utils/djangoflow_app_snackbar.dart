@@ -18,7 +18,7 @@ class DjangoflowAppSnackbar {
   static void showInfo(
     String message, {
     SnackBarAction? action,
-    Duration duration = const Duration(seconds: 4),
+    Duration duration = const Duration(seconds: 5),
     EdgeInsetsGeometry? margin,
     SnackBarBehavior? behavior,
     ShapeBorder? shape,
@@ -48,11 +48,12 @@ class DjangoflowAppSnackbar {
     DismissDirection dismissDirection = DismissDirection.down,
     Color? backgroundColor,
     TextStyle? textStyle,
+    Duration duration = const Duration(seconds: 5),
   }) {
     _showSnackBar(
       message,
       action: action,
-      duration: const Duration(seconds: 15),
+      duration: duration,
       margin: margin,
       behavior: behavior,
       shape: shape,
@@ -69,7 +70,7 @@ class DjangoflowAppSnackbar {
     SnackBarAction? action,
     TextStyle? titleTextStyle,
     TextStyle? bodyTextStyle,
-    Duration duration = const Duration(seconds: 12),
+    Duration duration = const Duration(seconds: 5),
     EdgeInsetsGeometry? margin,
     SnackBarBehavior? behavior,
     ShapeBorder? shape,
