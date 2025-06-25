@@ -1,3 +1,7 @@
+## 7.0.1
+
+ - **FIX**: configuration duration. ([5fef4dab](https://github.com/djangoflow/flutter-djangoflow/commit/5fef4dab94de28ce611727a93395bda6146e57dd))
+
 ## 7.0.0
 
 > Note: This release has breaking changes.

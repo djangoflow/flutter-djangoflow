@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2025-06-26
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`djangoflow_app` - `v7.0.1`](#djangoflow_app---v701)
+
+---
+
+#### `djangoflow_app` - `v7.0.1`
+
+ - **FIX**: configuration duration. ([5fef4dab](https://github.com/djangoflow/flutter-djangoflow/commit/5fef4dab94de28ce611727a93395bda6146e57dd))
+
+
 ## 2025-05-21
 
 ### Changes
