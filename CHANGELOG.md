@@ -11,6 +11,31 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 Packages with breaking changes:
 
+ - [`djangoflow_sentry_reporter` - `v0.5.0`](#djangoflow_sentry_reporter---v050)
+
+Packages with other changes:
+
+ - [`djangoflow_error_reporter` - `v0.3.0+1`](#djangoflow_error_reporter---v0301)
+
+---
+
+#### `djangoflow_sentry_reporter` - `v0.5.0`
+
+ - **BREAKING** **REFACTOR**: update sentry_flutter dependency. ([01c614d1](https://github.com/djangoflow/flutter-djangoflow/commit/01c614d1e3da9853cba1e7ee9f9902d26b6e3f02))
+
+#### `djangoflow_error_reporter` - `v0.3.0+1`
+
+ - **REFACTOR**: remove not needed flutter key in pubspec. ([96a40121](https://github.com/djangoflow/flutter-djangoflow/commit/96a4012169a292adc90f4c4e5f2cf9d56e35bc42))
+
+
+## 2025-07-10
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
  - [`djangoflow_websocket` - `v0.4.0`](#djangoflow_websocket---v040)
 
 Packages with other changes:

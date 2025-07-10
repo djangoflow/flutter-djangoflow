@@ -1,6 +1,6 @@
 name: djangoflow_error_reporter
 description: Djangoflow Error Reporter is a library that provides an easy and flexible way to handle errors in your flutter application.
-version: 0.3.0
+version: 0.3.0+1
 homepage: https://github.com/djangoflow/flutter-djangoflow/tree/main/packages/djangoflow_error_reporters/djangoflow_error_reporter
 
 environment:

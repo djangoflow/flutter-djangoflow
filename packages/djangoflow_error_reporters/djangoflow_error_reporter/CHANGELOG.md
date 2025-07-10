@@ -1,3 +1,7 @@
+## 0.3.0+1
+
+ - **REFACTOR**: remove not needed flutter key in pubspec. ([96a40121](https://github.com/djangoflow/flutter-djangoflow/commit/96a4012169a292adc90f4c4e5f2cf9d56e35bc42))
+
 ## 0.3.0
 
 > Note: This release has breaking changes.
