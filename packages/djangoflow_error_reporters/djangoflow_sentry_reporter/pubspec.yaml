@@ -10,7 +10,7 @@ dependencies:
   djangoflow_error_reporter: ^0.3.0
   flutter:
     sdk: flutter
-  sentry_flutter: ^8.11.0
+  sentry_flutter: ^9.3.0
 
 dev_dependencies:
   flutter_lints: ^5.0.0
