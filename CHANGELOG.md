@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2025-07-10
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - [`djangoflow_websocket` - `v0.4.0`](#djangoflow_websocket---v040)
+
+Packages with other changes:
+
+ - There are no other changes in this release.
+
+---
+
+#### `djangoflow_websocket` - `v0.4.0`
+
+ - **BREAKING** **REFACTOR**: support ping pong message. ([4db2a738](https://github.com/djangoflow/flutter-djangoflow/commit/4db2a73821baeaaadeb91031603fd9fdca17984a))
+
+
 ## 2025-06-26
 
 ### Changes

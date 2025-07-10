@@ -1,3 +1,9 @@
+## 0.4.0
+
+> Note: This release has breaking changes.
+
+ - **BREAKING** **REFACTOR**: support ping pong message. ([4db2a738](https://github.com/djangoflow/flutter-djangoflow/commit/4db2a73821baeaaadeb91031603fd9fdca17984a))
+
 ## 0.3.0
 
 > Note: This release has breaking changes.
