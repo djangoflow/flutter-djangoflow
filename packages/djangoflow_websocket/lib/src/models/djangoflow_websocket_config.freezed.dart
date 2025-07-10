@@ -22,6 +22,9 @@ mixin _$DjangoflowWebsocketConfig {
   String get serverClosedConnectionMessage;
   Duration get wSReconnectDelay;
   Duration get wSCheckConnectionDelay;
+  bool get enablePing;
+  Duration get pingInterval;
+  Map<String, dynamic> get pingMessage;
 
   /// Create a copy of DjangoflowWebsocketConfig
   /// with the given fields replaced by the non-null parameter values.
@@ -52,7 +55,13 @@ mixin _$DjangoflowWebsocketConfig {
             (identical(other.wSReconnectDelay, wSReconnectDelay) ||
                 other.wSReconnectDelay == wSReconnectDelay) &&
             (identical(other.wSCheckConnectionDelay, wSCheckConnectionDelay) ||
-                other.wSCheckConnectionDelay == wSCheckConnectionDelay));
+                other.wSCheckConnectionDelay == wSCheckConnectionDelay) &&
+            (identical(other.enablePing, enablePing) ||
+                other.enablePing == enablePing) &&
+            (identical(other.pingInterval, pingInterval) ||
+                other.pingInterval == pingInterval) &&
+            const DeepCollectionEquality()
+                .equals(other.pingMessage, pingMessage));
   }
 
   @override
@@ -64,11 +73,14 @@ mixin _$DjangoflowWebsocketConfig {
       connectionErrorMessage,
       serverClosedConnectionMessage,
       wSReconnectDelay,
-      wSCheckConnectionDelay);
+      wSCheckConnectionDelay,
+      enablePing,
+      pingInterval,
+      const DeepCollectionEquality().hash(pingMessage));
 
   @override
   String toString() {
-    return 'DjangoflowWebsocketConfig(connectingMessage: $connectingMessage, reConnectingMessage: $reConnectingMessage, failedToSubscribeMessage: $failedToSubscribeMessage, connectionErrorMessage: $connectionErrorMessage, serverClosedConnectionMessage: $serverClosedConnectionMessage, wSReconnectDelay: $wSReconnectDelay, wSCheckConnectionDelay: $wSCheckConnectionDelay)';
+    return 'DjangoflowWebsocketConfig(connectingMessage: $connectingMessage, reConnectingMessage: $reConnectingMessage, failedToSubscribeMessage: $failedToSubscribeMessage, connectionErrorMessage: $connectionErrorMessage, serverClosedConnectionMessage: $serverClosedConnectionMessage, wSReconnectDelay: $wSReconnectDelay, wSCheckConnectionDelay: $wSCheckConnectionDelay, enablePing: $enablePing, pingInterval: $pingInterval, pingMessage: $pingMessage)';
   }
 }
 
@@ -85,7 +97,10 @@ abstract mixin class $DjangoflowWebsocketConfigCopyWith<$Res> {
       String connectionErrorMessage,
       String serverClosedConnectionMessage,
       Duration wSReconnectDelay,
-      Duration wSCheckConnectionDelay});
+      Duration wSCheckConnectionDelay,
+      bool enablePing,
+      Duration pingInterval,
+      Map<String, dynamic> pingMessage});
 }
 
 /// @nodoc
@@ -108,6 +123,9 @@ class _$DjangoflowWebsocketConfigCopyWithImpl<$Res>
     Object? serverClosedConnectionMessage = null,
     Object? wSReconnectDelay = null,
     Object? wSCheckConnectionDelay = null,
+    Object? enablePing = null,
+    Object? pingInterval = null,
+    Object? pingMessage = null,
   }) {
     return _then(_self.copyWith(
       connectingMessage: null == connectingMessage
@@ -138,6 +156,18 @@ class _$DjangoflowWebsocketConfigCopyWithImpl<$Res>
           ? _self.wSCheckConnectionDelay
           : wSCheckConnectionDelay // ignore: cast_nullable_to_non_nullable
               as Duration,
+      enablePing: null == enablePing
+          ? _self.enablePing
+          : enablePing // ignore: cast_nullable_to_non_nullable
+              as bool,
+      pingInterval: null == pingInterval
+          ? _self.pingInterval
+          : pingInterval // ignore: cast_nullable_to_non_nullable
+              as Duration,
+      pingMessage: null == pingMessage
+          ? _self.pingMessage
+          : pingMessage // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>,
     ));
   }
 }
@@ -152,7 +182,11 @@ class _DjangoflowWebsocketConfig implements DjangoflowWebsocketConfig {
       this.connectionErrorMessage = 'connection error',
       this.serverClosedConnectionMessage = 'server closed connection',
       this.wSReconnectDelay = const Duration(milliseconds: 5000),
-      this.wSCheckConnectionDelay = const Duration(milliseconds: 100)});
+      this.wSCheckConnectionDelay = const Duration(milliseconds: 100),
+      this.enablePing = false,
+      this.pingInterval = const Duration(seconds: 30),
+      final Map<String, dynamic> pingMessage = const {'type': 'ping'}})
+      : _pingMessage = pingMessage;
 
   @override
   @JsonKey()
@@ -175,6 +209,20 @@ class _DjangoflowWebsocketConfig implements DjangoflowWebsocketConfig {
   @override
   @JsonKey()
   final Duration wSCheckConnectionDelay;
+  @override
+  @JsonKey()
+  final bool enablePing;
+  @override
+  @JsonKey()
+  final Duration pingInterval;
+  final Map<String, dynamic> _pingMessage;
+  @override
+  @JsonKey()
+  Map<String, dynamic> get pingMessage {
+    if (_pingMessage is EqualUnmodifiableMapView) return _pingMessage;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(_pingMessage);
+  }
 
   /// Create a copy of DjangoflowWebsocketConfig
   /// with the given fields replaced by the non-null parameter values.
@@ -207,7 +255,13 @@ class _DjangoflowWebsocketConfig implements DjangoflowWebsocketConfig {
             (identical(other.wSReconnectDelay, wSReconnectDelay) ||
                 other.wSReconnectDelay == wSReconnectDelay) &&
             (identical(other.wSCheckConnectionDelay, wSCheckConnectionDelay) ||
-                other.wSCheckConnectionDelay == wSCheckConnectionDelay));
+                other.wSCheckConnectionDelay == wSCheckConnectionDelay) &&
+            (identical(other.enablePing, enablePing) ||
+                other.enablePing == enablePing) &&
+            (identical(other.pingInterval, pingInterval) ||
+                other.pingInterval == pingInterval) &&
+            const DeepCollectionEquality()
+                .equals(other._pingMessage, _pingMessage));
   }
 
   @override
@@ -219,11 +273,14 @@ class _DjangoflowWebsocketConfig implements DjangoflowWebsocketConfig {
       connectionErrorMessage,
       serverClosedConnectionMessage,
       wSReconnectDelay,
-      wSCheckConnectionDelay);
+      wSCheckConnectionDelay,
+      enablePing,
+      pingInterval,
+      const DeepCollectionEquality().hash(_pingMessage));
 
   @override
   String toString() {
-    return 'DjangoflowWebsocketConfig(connectingMessage: $connectingMessage, reConnectingMessage: $reConnectingMessage, failedToSubscribeMessage: $failedToSubscribeMessage, connectionErrorMessage: $connectionErrorMessage, serverClosedConnectionMessage: $serverClosedConnectionMessage, wSReconnectDelay: $wSReconnectDelay, wSCheckConnectionDelay: $wSCheckConnectionDelay)';
+    return 'DjangoflowWebsocketConfig(connectingMessage: $connectingMessage, reConnectingMessage: $reConnectingMessage, failedToSubscribeMessage: $failedToSubscribeMessage, connectionErrorMessage: $connectionErrorMessage, serverClosedConnectionMessage: $serverClosedConnectionMessage, wSReconnectDelay: $wSReconnectDelay, wSCheckConnectionDelay: $wSCheckConnectionDelay, enablePing: $enablePing, pingInterval: $pingInterval, pingMessage: $pingMessage)';
   }
 }
 
@@ -242,7 +299,10 @@ abstract mixin class _$DjangoflowWebsocketConfigCopyWith<$Res>
       String connectionErrorMessage,
       String serverClosedConnectionMessage,
       Duration wSReconnectDelay,
-      Duration wSCheckConnectionDelay});
+      Duration wSCheckConnectionDelay,
+      bool enablePing,
+      Duration pingInterval,
+      Map<String, dynamic> pingMessage});
 }
 
 /// @nodoc
@@ -265,6 +325,9 @@ class __$DjangoflowWebsocketConfigCopyWithImpl<$Res>
     Object? serverClosedConnectionMessage = null,
     Object? wSReconnectDelay = null,
     Object? wSCheckConnectionDelay = null,
+    Object? enablePing = null,
+    Object? pingInterval = null,
+    Object? pingMessage = null,
   }) {
     return _then(_DjangoflowWebsocketConfig(
       connectingMessage: null == connectingMessage
@@ -295,6 +358,18 @@ class __$DjangoflowWebsocketConfigCopyWithImpl<$Res>
           ? _self.wSCheckConnectionDelay
           : wSCheckConnectionDelay // ignore: cast_nullable_to_non_nullable
               as Duration,
+      enablePing: null == enablePing
+          ? _self.enablePing
+          : enablePing // ignore: cast_nullable_to_non_nullable
+              as bool,
+      pingInterval: null == pingInterval
+          ? _self.pingInterval
+          : pingInterval // ignore: cast_nullable_to_non_nullable
+              as Duration,
+      pingMessage: null == pingMessage
+          ? _self._pingMessage
+          : pingMessage // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>,
     ));
   }
 }

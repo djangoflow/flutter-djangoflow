@@ -18,6 +18,7 @@ class DjangoflowWebsocketCubit extends DjangoflowWebsocketCubitBase
         );
   StreamSubscription? _subscription;
   WebSocketChannel? _channel;
+  Timer? _pingTimer;
 
   /// Connect to a websocket server
   @override
@@ -54,6 +55,11 @@ class DjangoflowWebsocketCubit extends DjangoflowWebsocketCubitBase
             connectionStateMessage: null,
           ),
         );
+        
+        // Start ping if enabled
+        if (config.enablePing) {
+          _startPing();
+        }
       } else {
         _reconnect(uri, config.failedToSubscribeMessage);
       }
@@ -98,9 +104,28 @@ class DjangoflowWebsocketCubit extends DjangoflowWebsocketCubitBase
     }
   }
 
+  /// Start ping timer
+  void _startPing() {
+    _stopPing(); // Stop any existing ping timer
+    _pingTimer = Timer.periodic(config.pingInterval, (timer) {
+      if (_channel != null) {
+        final pingData = Map<String, dynamic>.from(config.pingMessage);
+        pingData['timestamp'] = DateTime.now().millisecondsSinceEpoch;
+        sendMessage(jsonEncode(pingData));
+      }
+    });
+  }
+
+  /// Stop ping timer
+  void _stopPing() {
+    _pingTimer?.cancel();
+    _pingTimer = null;
+  }
+
   /// Disconnect from the websocket server
   @override
   void disconnect({int? closeCode, String? closeReason}) {
+    _stopPing();
     _channel?.sink.close(closeCode ?? status.normalClosure, closeReason);
     _subscription?.cancel();
 

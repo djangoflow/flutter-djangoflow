@@ -12,5 +12,8 @@ abstract class DjangoflowWebsocketConfig with _$DjangoflowWebsocketConfig {
     @Default('server closed connection') String serverClosedConnectionMessage,
     @Default(Duration(milliseconds: 5000)) Duration wSReconnectDelay,
     @Default(Duration(milliseconds: 100)) Duration wSCheckConnectionDelay,
+    @Default(false) bool enablePing,
+    @Default(Duration(seconds: 30)) Duration pingInterval,
+    @Default({'type': 'ping'}) Map<String, dynamic> pingMessage,
   }) = _DjangoflowWebsocketConfig;
 }
