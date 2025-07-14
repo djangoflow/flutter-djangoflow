@@ -19,7 +19,7 @@ void main() {
     expect(userPropertyUpdater.canHandle(event), true);
   });
 
-  test('perform() should call setUserId with correct value', () {
+  test('performAction() should call setUserId with correct value', () {
     final event = FirebaseUpdatableUserProperty(kUserIdKey, '1');
     when(
       mockFirebaseAnalytics.setUserId(id: anyNamed('id')),
@@ -31,7 +31,7 @@ void main() {
       ),
     ).thenAnswer((_) => Future.value());
 
-    userPropertyUpdater.perform(event);
+    userPropertyUpdater.performAction(event);
     verify(
       mockFirebaseAnalytics.setUserId(id: event.value),
     ).called(1);
@@ -44,7 +44,7 @@ void main() {
     );
   });
 
-  test('perform() should not call setUserId and update email', () {
+  test('performAction() should not call setUserId and update email', () {
     final event = FirebaseUpdatableUserProperty('email', 'email@example.com');
     when(
       mockFirebaseAnalytics.setUserId(id: anyNamed('id')),
@@ -55,7 +55,7 @@ void main() {
         value: anyNamed('value'),
       ),
     ).thenAnswer((_) => Future.value());
-    userPropertyUpdater.perform(event);
+    userPropertyUpdater.performAction(event);
     verify(
       mockFirebaseAnalytics.setUserProperty(
         name: event.key,
