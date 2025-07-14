@@ -43,7 +43,7 @@ final firebaseUserPropertyRemover =
     FirebaseUserPropertyRemover(firebaseAnalytics);
 
 DjangoflowAnalytics.instance.init();
-DjangoflowAnalytics.instance.addAllActionPerformers([
+DjangoflowAnalytics.instance.addAllStrategies([
     firebaseAnalyticsEventSender,
     firebaseUserPropertyUpdateder,
     firebaseUserPropertyRemover,
