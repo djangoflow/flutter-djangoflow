@@ -8,12 +8,12 @@ environment:
 
 dependencies:
   # Need to update
-  analytics: ^1.0.2
+  analytics: ^2.0.3
   djangoflow_analytics: ^0.2.0
   flutter:
     sdk: flutter
   # need to update
-  mixpanel_flutter: ^2.4.1
+  mixpanel_flutter: ^2.4.4
   mockito: ^5.4.4
 
 dev_dependencies:

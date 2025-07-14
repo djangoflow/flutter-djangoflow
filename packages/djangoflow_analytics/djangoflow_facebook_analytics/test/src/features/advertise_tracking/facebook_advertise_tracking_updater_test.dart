@@ -31,10 +31,10 @@ void main() {
     expect(updater.canHandle(event), true);
   });
 
-  test('perform() should call setAdvertiserTracking with correct value', () {
+  test('performAction() should call setAdvertiserTracking with correct value', () {
     when(mockFacebookAppEvents.setAdvertiserTracking(enabled: event.enabled))
         .thenAnswer((_) => Future.value());
-    updater.perform(event);
+    updater.performAction(event);
     verify(mockFacebookAppEvents.setAdvertiserTracking(enabled: event.enabled))
         .called(1);
   });

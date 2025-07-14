@@ -1,10 +1,8 @@
-import 'package:analytics/core/analytic_action.dart';
-import 'package:analytics/core/analytic_action_performer.dart';
+import 'package:analytics/analytics.dart';
 import 'package:djangoflow_mixpanel_analytics/djangoflow_mixpanel_analytics.dart';
 import 'package:mixpanel_flutter/mixpanel_flutter.dart';
 
-class MixpanelUserIdentityUpdater
-    implements AnalyticActionPerformer<UpdateMixpanelUserIdentity> {
+class MixpanelUserIdentityUpdater extends AnalyticStrategy {
   MixpanelUserIdentityUpdater(this._mixpanel);
   final Mixpanel _mixpanel;
 
@@ -12,13 +10,14 @@ class MixpanelUserIdentityUpdater
   bool canHandle(AnalyticAction action) => action is UpdateMixpanelUserIdentity;
 
   @override
-  void perform(UpdateMixpanelUserIdentity action) {
-    if (action.id != null) {
-      _mixpanel.identify(action.id!).then((_) {
-        if (action.userProperties != null &&
-            action.userProperties!.isNotEmpty) {
+  void performAction(AnalyticAction action) {
+    final typedAction = action as UpdateMixpanelUserIdentity;
+    if (typedAction.id != null) {
+      _mixpanel.identify(typedAction.id!).then((_) {
+        if (typedAction.userProperties != null &&
+            typedAction.userProperties!.isNotEmpty) {
           final people = _mixpanel.getPeople();
-          action.userProperties!.forEach((key, value) {
+          typedAction.userProperties!.forEach((key, value) {
             people.set(key, value);
           });
         }

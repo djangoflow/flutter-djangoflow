@@ -1,12 +1,10 @@
-import 'package:analytics/core/analytic_action.dart';
-import 'package:analytics/core/analytic_action_performer.dart';
+import 'package:analytics/analytics.dart';
 import 'package:djangoflow_mixpanel_analytics/src/utils/utils.dart';
 import 'package:mixpanel_flutter/mixpanel_flutter.dart';
 
 import 'package:djangoflow_mixpanel_analytics/src/features/user_properties_update/data/mixpanel_updatable_user_property.dart';
 
-class MixpanelUserPropertyUpdater
-    implements AnalyticActionPerformer<MixpanelUpdatableUserProperty> {
+class MixpanelUserPropertyUpdater extends AnalyticStrategy {
   MixpanelUserPropertyUpdater(this._mixpanel);
   final Mixpanel _mixpanel;
   final MixpanelUserPropertyCutter _userPropertyCutter =
@@ -16,11 +14,12 @@ class MixpanelUserPropertyUpdater
       action is MixpanelUpdatableUserProperty;
 
   @override
-  void perform(MixpanelUpdatableUserProperty action) {
+  void performAction(AnalyticAction action) {
+    final typedAction = action as MixpanelUpdatableUserProperty;
     final params = {
-      _userPropertyCutter.trimName(action.key): action.value != null
-          ? _userPropertyCutter.trimValue(action.value!)
-          : action.value,
+      _userPropertyCutter.trimName(typedAction.key): typedAction.value != null
+          ? _userPropertyCutter.trimValue(typedAction.value!)
+          : typedAction.value,
     };
 
     _mixpanel.registerSuperProperties(params);

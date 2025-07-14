@@ -3,11 +3,9 @@
 // Do not manually edit this file.
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:analytics/analytics.dart' as _i2;
-import 'package:analytics/core/analytic_action.dart' as _i4;
-import 'package:mockito/mockito.dart' as _i1;
-
-import 'analytics_test.dart' as _i3;
+import 'package:analytics/core/analytic_action.dart' as _i1;
+import 'package:analytics/core/analytic_strategy.dart' as _i3;
+import 'package:mockito/mockito.dart' as _i2;
 
 // ignore_for_file: type=lint
 // ignore_for_file: avoid_redundant_argument_values
@@ -23,13 +21,13 @@ import 'analytics_test.dart' as _i3;
 // ignore_for_file: camel_case_types
 // ignore_for_file: subtype_of_sealed_class
 
-/// A class which mocks [AnalyticActionPerformer].
+/// A class which mocks [AnalyticStrategy].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockAnalyticActionPerformer extends _i1.Mock
-    implements _i2.AnalyticActionPerformer<_i3.TestAnalyticsAction> {
+class MockAnalyticStrategy<A extends _i1.AnalyticAction> extends _i2.Mock
+    implements _i3.AnalyticStrategy<A> {
   @override
-  bool canHandle(_i4.AnalyticAction? action) => (super.noSuchMethod(
+  bool canHandle(_i1.AnalyticAction? action) => (super.noSuchMethod(
         Invocation.method(
           #canHandle,
           [action],
@@ -39,9 +37,9 @@ class MockAnalyticActionPerformer extends _i1.Mock
       ) as bool);
 
   @override
-  void perform(_i3.TestAnalyticsAction? action) => super.noSuchMethod(
+  void performAction(A? action) => super.noSuchMethod(
         Invocation.method(
-          #perform,
+          #performAction,
           [action],
         ),
         returnValueForMissingStub: null,

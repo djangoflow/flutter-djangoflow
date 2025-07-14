@@ -18,14 +18,14 @@ void main() {
     expect(userPropertyRemover.canHandle(event), true);
   });
 
-  test('perform() should call clearUserID and clearUserData with correct value',
+  test('performAction() should call clearUserID and clearUserData with correct value',
       () {
     final event = FacebookRemovableUserProperty(true, true);
     when(
       mockFacebookAppEvents.clearUserID(),
     ).thenAnswer((_) => Future.value());
     when(mockFacebookAppEvents.clearUserID()).thenAnswer((_) => Future.value());
-    userPropertyRemover.perform(event);
+    userPropertyRemover.performAction(event);
     verify(
       mockFacebookAppEvents.clearUserID(),
     ).called(1);
@@ -34,14 +34,14 @@ void main() {
     ).called(1);
   });
 
-  test('perform() should not call clearUserData when removeAllUserData = false',
+  test('performAction() should not call clearUserData when removeAllUserData = false',
       () {
     final event = FacebookRemovableUserProperty(true, false);
     when(
       mockFacebookAppEvents.clearUserID(),
     ).thenAnswer((_) => Future.value());
     when(mockFacebookAppEvents.clearUserID()).thenAnswer((_) => Future.value());
-    userPropertyRemover.perform(event);
+    userPropertyRemover.performAction(event);
     verify(
       mockFacebookAppEvents.clearUserID(),
     ).called(1);
@@ -51,13 +51,13 @@ void main() {
     );
   });
 
-  test('perform() should not call clearUserData when removeUserId = false', () {
+  test('performAction() should not call clearUserData when removeUserId = false', () {
     final event = FacebookRemovableUserProperty(false, true);
     when(
       mockFacebookAppEvents.clearUserID(),
     ).thenAnswer((_) => Future.value());
     when(mockFacebookAppEvents.clearUserID()).thenAnswer((_) => Future.value());
-    userPropertyRemover.perform(event);
+    userPropertyRemover.performAction(event);
     verifyNever(
       mockFacebookAppEvents.clearUserID(),
     );
