@@ -1,3 +1,7 @@
+## 1.0.0
+
+ - **DOCS**: update READMEs to reflect analytics v2.0.3 API changes. ([59c4f4a8](https://github.com/djangoflow/flutter-djangoflow/commit/59c4f4a88bf4f4e3168b3f4eb74c696c8ce4d137))
+
 ## 0.4.0
 
 > Note: This release has breaking changes.

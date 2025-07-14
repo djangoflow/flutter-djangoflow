@@ -3,6 +3,42 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2025-07-15
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`djangoflow_analytics` - `v1.0.0`](#djangoflow_analytics---v100)
+ - [`djangoflow_firebase_analytics` - `v1.0.0`](#djangoflow_firebase_analytics---v100)
+ - [`djangoflow_mixpanel_analytics` - `v1.0.0`](#djangoflow_mixpanel_analytics---v100)
+ - [`djangoflow_facebook_analytics` - `v1.0.0`](#djangoflow_facebook_analytics---v100)
+
+---
+
+#### `djangoflow_analytics` - `v1.0.0`
+
+ - **DOCS**: complete README updates for all analytics packages. ([f74f7324](https://github.com/djangoflow/flutter-djangoflow/commit/f74f73241c6f21a33b065f0204cda86eed06b663))
+
+#### `djangoflow_firebase_analytics` - `v1.0.0`
+
+ - **DOCS**: update READMEs to reflect analytics v2.0.3 API changes. ([59c4f4a8](https://github.com/djangoflow/flutter-djangoflow/commit/59c4f4a88bf4f4e3168b3f4eb74c696c8ce4d137))
+
+#### `djangoflow_mixpanel_analytics` - `v1.0.0`
+
+ - **DOCS**: complete README updates for all analytics packages. ([f74f7324](https://github.com/djangoflow/flutter-djangoflow/commit/f74f73241c6f21a33b065f0204cda86eed06b663))
+
+#### `djangoflow_facebook_analytics` - `v1.0.0`
+
+ - **DOCS**: complete README updates for all analytics packages. ([f74f7324](https://github.com/djangoflow/flutter-djangoflow/commit/f74f73241c6f21a33b065f0204cda86eed06b663))
+
+
 ## 2025-07-10
 
 ### Changes

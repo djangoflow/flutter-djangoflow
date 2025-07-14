@@ -1,3 +1,7 @@
+## 1.0.0
+
+ - **DOCS**: complete README updates for all analytics packages. ([f74f7324](https://github.com/djangoflow/flutter-djangoflow/commit/f74f73241c6f21a33b065f0204cda86eed06b663))
+
 ## 0.2.0
 
 > Note: This release has breaking changes.
