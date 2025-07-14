@@ -38,7 +38,7 @@ You will need to initialize the library and add the `FacebookAdvertiseTrackingUp
 You can then use the `DjangoflowAnalytics.instance.performAction` method to send data to Facebook Analytics.
 
 ```dart
-final facebookAppEvents = FacebookAppEvents;
+final facebookStrategies = <AnalyticStrategy>[];
 if (!kIsWeb) {
     final FacebookAppEvents facebookAppEvents = FacebookAppEvents();
 
@@ -52,7 +52,7 @@ if (!kIsWeb) {
     final facebookAdvertiseTracking = FacebookAdvertiseTrackingUpdater(
         facebookAppEvents,
     );
-    facebookActionPerformers.addAll([
+    facebookStrategies.addAll([
         facebookAnalyticsEventSender,
         facebookUserPropertyUpdateder,
         facebookUserPropertyRemover,
@@ -61,7 +61,7 @@ if (!kIsWeb) {
 }
 
 DjangoflowAnalytics.instance.init();
-DjangoflowAnalytics.instance.addAllActionPerformers(facebookActionPerformers);
+DjangoflowAnalytics.instance.addAllStrategies(facebookStrategies);
 ```
 
 Please find more details regarding it on `djangoflow_analytics` [package](https://pub.dev/packages/djangoflow_analytics).

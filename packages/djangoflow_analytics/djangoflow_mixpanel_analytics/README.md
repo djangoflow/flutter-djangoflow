@@ -28,7 +28,7 @@ You can then import the library and use it in your code:
 import 'package:djangoflow_mixpanel_analytics/djangoflow_mixpanel_analytics.dart';
 ```
 
-You will need to initialize the library and add the `MixpanelAnalyticEventSender`, `MixpanelUserPropertyRemover` and `MixpanelUserPropertyUpdater` `ActionPeferomer`s to the `DjangoflowAnalytics` instance from `djangoflow_analytics` package.
+You will need to initialize the library and add the `MixpanelAnalyticEventSender`, `MixpanelUserPropertyRemover` and `MixpanelUserPropertyUpdater` strategies to the `DjangoflowAnalytics` instance from `djangoflow_analytics` package.
 
 You can then use the `DjangoflowAnalytics.instance.performAction` method to send data to Mixpanel Analytics.
 
@@ -45,12 +45,10 @@ final mixpanelUserPropertyUpdateder =
 final mixpanelUserPropertyRemover = MixpanelUserPropertyRemover(mixpanel);
 
 DjangoflowAnalytics.instance.init();
-DjangoflowAnalytics.instance.addAllActionPerformers([
-
+DjangoflowAnalytics.instance.addAllStrategies([
     mixpanelAnalyticsEventSender,
     mixpanelUserPropertyUpdateder,
     mixpanelUserPropertyRemover,
-
 ]);
 ```
 

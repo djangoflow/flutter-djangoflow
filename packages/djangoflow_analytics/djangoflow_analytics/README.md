@@ -24,9 +24,9 @@ Before sending any data, the library must be initialized by calling the init met
 DjangoflowAnalytics.instance.init();
 ```
 
-### Adding Performers
+### Adding Strategies
 
-To handle the data that is sent, you can create a class by exnteding `AnalyticActionPerformer` and add them to the `DjangoflowAnalytics` class.
+To handle the data that is sent, you can create a class by extending `AnalyticStrategy` and add them to the `DjangoflowAnalytics` class.
 
 ```dart
 abstract class CustomAnalyticsAction implements AnalyticAction, HasKey, HasMapParams {}
@@ -45,17 +45,24 @@ class CustomLoginEvent extends CustomAnalyticsAction {
 }
 
 
-class CustomAnalyticActionPerformer extends AnalyticsActionPerformer<CustomAnalyticsAction>{
-    ...
+class CustomAnalyticStrategy extends AnalyticStrategy {
+  @override
+  bool canHandle(AnalyticAction action) => action is CustomAnalyticsAction;
+  
+  @override
+  void performAction(AnalyticAction action) {
+    final customAction = action as CustomAnalyticsAction;
+    // Handle the action
+  }
 }
 
-final performer = CustomAnalyticActionPerformer<CustomAnalyticAction>(); // could be firebase, facebook etc.
-DjangoflowAnalytics.instance.addAllActionPerformers([performer]);
+final strategy = CustomAnalyticStrategy(); // could be firebase, facebook etc.
+DjangoflowAnalytics.instance.addAllStrategies([strategy]);
 ```
 
 ### Sending Data
 
-To send data, you can create an instance of AnalyticAction and pass it to the `performAction` method on the DjangoflowAnalytics class. It will internally look for suitable `ActionPerformer` for the `AnalyticsAction` and send the data.
+To send data, you can create an instance of AnalyticAction and pass it to the `performAction` method on the DjangoflowAnalytics class. It will internally look for suitable `AnalyticStrategy` for the `AnalyticsAction` and send the data.
 
 ```Dart
 DjangoflowAnalytics.instance.performAction(CustomLoginEvent(method:'email'));
@@ -78,9 +85,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     DjangoflowAnalytics.instance.init();
-    final performer = CustomAnalyticActionPerformer<CustomAnalyticAction>();
+    final strategy = CustomAnalyticStrategy();
     DjangoflowAnalytics.instance
-        .addAllActionPerformers([performer]);
+        .addAllStrategies([strategy]);
     return MaterialApp(
       home: Scaffold(
         body: Center(
