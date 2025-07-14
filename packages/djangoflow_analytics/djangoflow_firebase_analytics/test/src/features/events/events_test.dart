@@ -37,7 +37,7 @@ void main() {
     expect(eventSender.canHandle(event), true);
   });
 
-  test('perform() should call logEvent with correct value', () {
+  test('performAction() should call logEvent with correct value', () {
     const event = TestFirebaseAnalyticsEvents(
       eventkey: 'testEvent',
       eventParams: {'testParam': 'testValue'},
@@ -48,7 +48,7 @@ void main() {
         parameters: event.params.cast(),
       ),
     ).thenAnswer((_) => Future.value());
-    eventSender.perform(event);
+    eventSender.performAction(event);
     verify(
       mockFirebaseAnalytics.logEvent(
         name: event.key,
@@ -57,7 +57,7 @@ void main() {
     ).called(1);
   });
 
-  test('perform() should not call logEvent un-trimmed values', () {
+  test('performAction() should not call logEvent un-trimmed values', () {
     final testGen = TestStringGenerator();
     final event = TestFirebaseAnalyticsEvents(
       eventkey: testGen.generateRandomString(kMaxEventKeyLength + 10),
@@ -69,7 +69,7 @@ void main() {
         parameters: event.params.cast(),
       ),
     ).thenAnswer((_) => Future.value());
-    eventSender.perform(event);
+    eventSender.performAction(event);
     verifyNever(
       mockFirebaseAnalytics.logEvent(
         name: event.key,

@@ -37,7 +37,7 @@ void main() {
     expect(eventSender.canHandle(event), true);
   });
 
-  test('perform() should call track with correct value', () {
+  test('performAction() should call track with correct value', () {
     const event = TestMixpanelAnalyticsEvents(
       eventkey: 'testEvent',
       eventParams: {'testParam': 'testValue'},
@@ -48,7 +48,7 @@ void main() {
         properties: event.params,
       ),
     ).thenAnswer((_) => Future.value());
-    eventSender.perform(event);
+    eventSender.performAction(event);
     verify(
       mockMixpanelAnalytics.track(
         event.key,
@@ -57,7 +57,7 @@ void main() {
     ).called(1);
   });
 
-  test('perform() should not call track un-trimmed values', () {
+  test('performAction() should not call track un-trimmed values', () {
     final testGen = TestStringGenerator();
     final event = TestMixpanelAnalyticsEvents(
       eventkey: testGen.generateRandomString(kMaxEventKeyLength + 10),
@@ -69,7 +69,7 @@ void main() {
         properties: event.params,
       ),
     ).thenAnswer((_) => Future.value());
-    eventSender.perform(event);
+    eventSender.performAction(event);
     verifyNever(
       mockMixpanelAnalytics.track(
         event.key,

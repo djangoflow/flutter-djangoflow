@@ -18,13 +18,13 @@ void main() {
     expect(userPropertyUpdater.canHandle(event), true);
   });
 
-  test('perform() should call setUserId with correct value', () {
+  test('performAction() should call setUserId with correct value', () {
     final event = MixpanelUpdatableUserProperty('key', 'value');
     when(
       mockMixpanelAnalytics.registerSuperProperties(any),
     ).thenAnswer((_) => Future.value());
 
-    userPropertyUpdater.perform(event);
+    userPropertyUpdater.performAction(event);
     verify(
       mockMixpanelAnalytics.registerSuperProperties({event.key: event.value}),
     ).called(1);

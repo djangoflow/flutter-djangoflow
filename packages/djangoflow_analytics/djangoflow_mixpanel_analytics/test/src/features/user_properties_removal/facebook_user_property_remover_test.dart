@@ -19,13 +19,13 @@ void main() {
     expect(userPropertyRemover.canHandle(event), true);
   });
 
-  test('perform() should call setUserId with null value', () {
+  test('performAction() should call setUserId with null value', () {
     final event = MixpanelRemovableUserProperty(kEmailKey);
     when(
       mockMixpanelAnalytics.unregisterSuperProperty(any),
     ).thenAnswer((_) => Future.value());
 
-    userPropertyRemover.perform(event);
+    userPropertyRemover.performAction(event);
     verify(
       mockMixpanelAnalytics.unregisterSuperProperty(event.key),
     ).called(1);

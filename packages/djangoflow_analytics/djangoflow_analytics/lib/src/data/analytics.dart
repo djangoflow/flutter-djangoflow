@@ -2,8 +2,8 @@ import 'package:analytics/analytics.dart';
 import 'package:flutter/foundation.dart';
 
 /// An [AnalyticService] that performs [AnalyticAction]s.
-class DjangoflowAnalytics extends AnalyticService<AnalyticAction> {
-  DjangoflowAnalytics._internal() : super();
+class DjangoflowAnalytics extends AnalyticService {
+  DjangoflowAnalytics._internal() : super.empty();
   static DjangoflowAnalytics get instance => _instance;
   static final DjangoflowAnalytics _instance = DjangoflowAnalytics._internal();
 
@@ -17,40 +17,40 @@ class DjangoflowAnalytics extends AnalyticService<AnalyticAction> {
     _hasInitialized = true;
   }
 
-  final _performers = <AnalyticActionPerformer<AnalyticAction>>{};
+  final _strategies = <AnalyticStrategy>{};
 
   /// Returns true if the DjangoflowAnalytics has been initialized.
   bool get hasInitialized => _hasInitialized;
 
-  /// Returns a list of all the performers.
-  List<AnalyticActionPerformer> get performers => _performers.toList();
+  /// Returns a list of all the strategies.
+  List<AnalyticStrategy> get strategies => _strategies.toList();
 
-  /// Perform [action] with all the performers.
+  /// Perform [action] with all the strategies.
   @override
   void performAction(AnalyticAction action) {
     if (hasInitialized) {
-      _getPerformersByAction(action)
-          .forEach((performer) => performer.perform(action));
+      _getStrategiesByAction(action)
+          .forEach((strategy) => strategy.performAction(action));
     }
   }
 
-  /// Add [performer]s to the service.
-  void addAllActionPerformers(
-    List<AnalyticActionPerformer<AnalyticAction>> performers,
+  /// Add [strategy]s to the service.
+  void addAllStrategies(
+    List<AnalyticStrategy> strategies,
   ) =>
-      _performers.addAll(performers);
+      _strategies.addAll(strategies);
 
-  List<AnalyticActionPerformer<AnalyticAction>> _getPerformersByAction(
+  List<AnalyticStrategy> _getStrategiesByAction(
     AnalyticAction event,
   ) {
-    final properPerformers =
-        _performers.where((performer) => performer.canHandle(event)).toList();
-    if (properPerformers.isEmpty) {
+    final properStrategies =
+        _strategies.where((strategy) => strategy.canHandle(event)).toList();
+    if (properStrategies.isEmpty) {
       debugPrint(
-        'No action performer for action:'
-        ' ${event.runtimeType} in performers $_performers',
+        'No strategy for action:'
+        ' ${event.runtimeType} in strategies $_strategies',
       );
     }
-    return properPerformers;
+    return properStrategies;
   }
 }

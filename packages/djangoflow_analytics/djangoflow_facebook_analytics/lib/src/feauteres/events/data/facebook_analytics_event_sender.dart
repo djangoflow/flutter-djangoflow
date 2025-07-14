@@ -8,7 +8,7 @@ import 'package:djangoflow_facebook_analytics/src/feauteres/events/data/facebook
 /// like [FacebookAppEvents.logPurchase] or [FacebookAppEvents.logAddToCart]
 /// to send sum value use `_valueToSum` key in [params] map
 class FacebookAnalyticEventSender
-    implements AnalyticActionPerformer<FacebookAnalyticsEvent> {
+    extends AnalyticStrategy {
   FacebookAnalyticEventSender(this._facebookAppEvents);
   final FacebookAppEvents _facebookAppEvents;
   final FacebookEventTrimmer _eventTrimmer = FacebookEventTrimmer();
@@ -17,13 +17,14 @@ class FacebookAnalyticEventSender
   bool canHandle(AnalyticAction action) => action is FacebookAnalyticsEvent;
 
   @override
-  void perform(FacebookAnalyticsEvent action) {
-    final notNullParams = _eventTrimmer.trimNullValueMapParams(action.params);
+  void performAction(AnalyticAction action) {
+    final facebookAction = action as FacebookAnalyticsEvent;
+    final notNullParams = _eventTrimmer.trimNullValueMapParams(facebookAction.params);
     final params = _eventTrimmer.trimMapParams(notNullParams);
     _facebookAppEvents.logEvent(
-      name: _eventTrimmer.trimName(action.key),
+      name: _eventTrimmer.trimName(facebookAction.key),
       parameters: params,
-      valueToSum: action.valueToSum,
+      valueToSum: facebookAction.valueToSum,
     );
   }
 }

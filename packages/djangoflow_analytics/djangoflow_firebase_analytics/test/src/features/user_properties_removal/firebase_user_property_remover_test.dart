@@ -19,7 +19,7 @@ void main() {
     expect(userPropertyRemover.canHandle(event), true);
   });
 
-  test('perform() should call setUserId with null value', () {
+  test('performAction() should call setUserId with null value', () {
     final event = FirebaseRemovableUserProperty(kUserIdKey);
     when(
       mockFirebaseAnalytics.setUserId(id: anyNamed('id')),
@@ -30,7 +30,7 @@ void main() {
         value: anyNamed('value'),
       ),
     ).thenAnswer((_) => Future.value());
-    userPropertyRemover.perform(event);
+    userPropertyRemover.performAction(event);
     verify(
       mockFirebaseAnalytics.setUserId(id: null),
     ).called(1);
@@ -42,7 +42,7 @@ void main() {
     );
   });
 
-  test('perform() should call setUserProperty with null value for the key', () {
+  test('performAction() should call setUserProperty with null value for the key', () {
     final event = FirebaseRemovableUserProperty('email');
 
     when(
@@ -51,7 +51,7 @@ void main() {
         value: anyNamed('value'),
       ),
     ).thenAnswer((_) => Future.value());
-    userPropertyRemover.perform(event);
+    userPropertyRemover.performAction(event);
     verify(
       mockFirebaseAnalytics.setUserProperty(name: 'email', value: null),
     ).called(1);

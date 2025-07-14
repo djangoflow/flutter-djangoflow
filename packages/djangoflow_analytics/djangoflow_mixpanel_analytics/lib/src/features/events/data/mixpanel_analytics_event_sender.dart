@@ -4,8 +4,7 @@ import 'package:djangoflow_mixpanel_analytics/src/utils/utils.dart';
 
 import 'package:djangoflow_mixpanel_analytics/src/features/events/data/mixpanel_analyics_event.dart';
 
-class MixpanelAnalyticEventSender
-    implements AnalyticActionPerformer<MixpanelAnalyticsEvent> {
+class MixpanelAnalyticEventSender extends AnalyticStrategy {
   MixpanelAnalyticEventSender(this._mixpanel);
   final Mixpanel _mixpanel;
   final MixpanelEventTrimmer _eventTrimmer = MixpanelEventTrimmer();
@@ -14,11 +13,12 @@ class MixpanelAnalyticEventSender
   bool canHandle(AnalyticAction action) => action is MixpanelAnalyticsEvent;
 
   @override
-  void perform(MixpanelAnalyticsEvent action) {
-    final notNullParams = _eventTrimmer.trimNullValueMapParams(action.params);
+  void performAction(AnalyticAction action) {
+    final typedAction = action as MixpanelAnalyticsEvent;
+    final notNullParams = _eventTrimmer.trimNullValueMapParams(typedAction.params);
     final params = _eventTrimmer.trimMapParams(notNullParams);
     _mixpanel.track(
-      _eventTrimmer.trimName(action.key),
+      _eventTrimmer.trimName(typedAction.key),
       properties: params,
     );
   }

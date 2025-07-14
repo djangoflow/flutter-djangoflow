@@ -7,7 +7,7 @@ import 'analytics_test.mocks.dart';
 
 class TestAnalyticsAction implements AnalyticAction {}
 
-@GenerateNiceMocks([MockSpec<AnalyticActionPerformer<TestAnalyticsAction>>()])
+@GenerateNiceMocks([MockSpec<AnalyticStrategy>()])
 void main() {
   group('DjangoflowAnalytics', () {
     test('init sets _hasInitialized to true', () {
@@ -17,42 +17,42 @@ void main() {
       expect(analytics.hasInitialized, true);
     });
 
-    test('performAction calls perform on performers that can handle action',
+    test('performAction calls performAction on strategies that can handle action',
         () {
       final analytics = DjangoflowAnalytics.testInstance;
       analytics.init();
       final action = TestAnalyticsAction();
-      final performer1 = MockAnalyticActionPerformer();
-      when(performer1.canHandle(action)).thenReturn(true);
-      final performer2 = MockAnalyticActionPerformer();
-      when(performer2.canHandle(action)).thenReturn(false);
-      analytics.addAllActionPerformers([performer1, performer2]);
+      final strategy1 = MockAnalyticStrategy();
+      when(strategy1.canHandle(action)).thenReturn(true);
+      final strategy2 = MockAnalyticStrategy();
+      when(strategy2.canHandle(action)).thenReturn(false);
+      analytics.addAllStrategies([strategy1, strategy2]);
 
       analytics.performAction(action);
 
-      verify(performer1.perform(action));
-      verifyNever(performer2.perform(action));
+      verify(strategy1.performAction(action));
+      verifyNever(strategy2.performAction(action));
     });
 
-    test('performAction does not call perform if _hasInitialized is false', () {
+    test('performAction does not call performAction if _hasInitialized is false', () {
       final analytics = DjangoflowAnalytics.testInstance;
 
       final action = TestAnalyticsAction();
-      final performer = MockAnalyticActionPerformer();
-      when(performer.canHandle(action)).thenReturn(true);
-      analytics.addAllActionPerformers([performer]);
+      final strategy = MockAnalyticStrategy();
+      when(strategy.canHandle(action)).thenReturn(true);
+      analytics.addAllStrategies([strategy]);
 
       analytics.performAction(action);
-      verifyNever(performer.perform(action));
+      verifyNever(strategy.performAction(action));
     });
 
-    test('addAllActionPerformers adds performers to _performers', () {
+    test('addAllStrategies adds strategies to _strategies', () {
       final analytics = DjangoflowAnalytics.testInstance;
-      final performer1 = MockAnalyticActionPerformer();
-      final performer2 = MockAnalyticActionPerformer();
+      final strategy1 = MockAnalyticStrategy();
+      final strategy2 = MockAnalyticStrategy();
 
-      analytics.addAllActionPerformers([performer1, performer2]);
-      expect(analytics.performers, [performer1, performer2]);
+      analytics.addAllStrategies([strategy1, strategy2]);
+      expect(analytics.strategies, [strategy1, strategy2]);
     });
   });
 }

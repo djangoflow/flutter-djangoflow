@@ -19,13 +19,13 @@ void main() {
     expect(userPropertyUpdater.canHandle(event), true);
   });
 
-  test('perform() should call setUserID with correct value', () {
+  test('performAction() should call setUserID with correct value', () {
     final event = FacebookUpdatableUserProperty(kUserIdKey, '1');
     when(
       mockFacebookAppEvents.setUserID(event.value),
     ).thenAnswer((_) => Future.value());
     when(mockFacebookAppEvents.setUserData()).thenAnswer((_) => Future.value());
-    userPropertyUpdater.perform(event);
+    userPropertyUpdater.performAction(event);
     verify(
       mockFacebookAppEvents.setUserID(event.value),
     ).called(1);
@@ -33,7 +33,7 @@ void main() {
     verifyNever(mockFacebookAppEvents.setUserData());
   });
 
-  test('perform() should not call setUserID and update email', () {
+  test('performAction() should not call setUserID and update email', () {
     final event = FacebookUpdatableUserProperty(kEmailKey, 'email@example.com');
     when(
       mockFacebookAppEvents.setUserID(null),
@@ -43,7 +43,7 @@ void main() {
         email: event.value,
       ),
     ).thenAnswer((_) => Future.value());
-    userPropertyUpdater.perform(event);
+    userPropertyUpdater.performAction(event);
     verify(
       mockFacebookAppEvents.setUserData(email: event.value),
     ).called(1);
@@ -51,7 +51,7 @@ void main() {
     verifyNever(mockFacebookAppEvents.setUserID(any));
   });
 
-  test('perform() should not call setUserID and update firstName', () {
+  test('performAction() should not call setUserID and update firstName', () {
     final event = FacebookUpdatableUserProperty(kFirstNameKey, 'John');
     when(
       mockFacebookAppEvents.setUserID(null),
@@ -61,7 +61,7 @@ void main() {
         firstName: event.value,
       ),
     ).thenAnswer((_) => Future.value());
-    userPropertyUpdater.perform(event);
+    userPropertyUpdater.performAction(event);
     verify(
       mockFacebookAppEvents.setUserData(firstName: event.value),
     ).called(1);
@@ -69,7 +69,7 @@ void main() {
     verifyNever(mockFacebookAppEvents.setUserID(any));
   });
 
-  test('perform() should not call setUserID and update lastName', () {
+  test('performAction() should not call setUserID and update lastName', () {
     final event = FacebookUpdatableUserProperty(kLastNameKey, 'Doe');
     when(
       mockFacebookAppEvents.setUserID(null),
@@ -79,7 +79,7 @@ void main() {
         lastName: event.value,
       ),
     ).thenAnswer((_) => Future.value());
-    userPropertyUpdater.perform(event);
+    userPropertyUpdater.performAction(event);
     verify(
       mockFacebookAppEvents.setUserData(lastName: event.value),
     ).called(1);
