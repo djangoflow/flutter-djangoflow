@@ -56,6 +56,9 @@ class AppCubit extends HydratedCubit<AppState> {
       );
 
   @override
+  String get storagePrefix => 'app_cubit';
+
+  @override
   AppState? fromJson(Map<String, dynamic> json) => AppState.fromJson(json);
 
   @override
