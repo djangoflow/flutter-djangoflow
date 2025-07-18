@@ -1,3 +1,7 @@
+## 7.0.2
+
+ - **FIX**: use storagePrefix so that on web it does not get lost due to obfuscation. ([ed79a7e3](https://github.com/djangoflow/flutter-djangoflow/commit/ed79a7e3a2de2c88f5abe3e7c141c1543b49df27))
+
 ## 7.0.1
 
  - **FIX**: configuration duration. ([5fef4dab](https://github.com/djangoflow/flutter-djangoflow/commit/5fef4dab94de28ce611727a93395bda6146e57dd))

@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2025-07-18
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`djangoflow_app` - `v7.0.2`](#djangoflow_app---v702)
+
+---
+
+#### `djangoflow_app` - `v7.0.2`
+
+ - **FIX**: use storagePrefix so that on web it does not get lost due to obfuscation. ([ed79a7e3](https://github.com/djangoflow/flutter-djangoflow/commit/ed79a7e3a2de2c88f5abe3e7c141c1543b49df27))
+
+
 ## 2025-07-15
 
 ### Changes
